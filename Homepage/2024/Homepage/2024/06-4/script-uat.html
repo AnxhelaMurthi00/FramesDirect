@@ -80,9 +80,9 @@
         });
 
         /*  let video = document.querySelector("#hero-slider .active video");
-          video.play();
-  
-          console.log("onAfterSlide") */
+            video.play();
+    
+            console.log("onAfterSlide") */
       },
     });
   }
@@ -95,173 +95,177 @@
   }
 
   $(function () {
-    /* if (
-        (checkDate >= "240516" && fdFncs.svrTm.hr >= "02") ||
-        (checkDate >= "240517" && checkDate < "240522")
-      ) {*/
-    $(".heroBanner").replaceWith(
-      `<div style="background: #EEEFEA" class="heroBanner position-relative extended transparent d-flex img-flex">
-       <a href="/promotions/top-brands-discounted-dp">
-    <video
-      autoplay
-      muted
-      playsinline
-      disablePictureInPicture
-      width="100%"
-      class="d-block"
-    >
-      <source
-        src="https://images.framesdirect.com/video/upload/v1717572022/homePage/FATHER_SDAY_EYE.mp4"
-        type="video/mp4"
-      />
-    </video>
-  </a>
-  <map name="image-map">
-    <area
-      target=""
-      alt="Coach HC6139U Eyeglasses"
-      title="Coach HC6139U Eyeglasses"
-      href="/coach-hc6139u-eyeglasses"
-      coords="686,0,1035,552"
-      shape="rect"
-    />
-    <area
-      target=""
-      alt="Ray-Ban RB3136 Caravan Sunglasses"
-      title="Ray-Ban RB3136 Caravan Sunglasses"
-      href="/ray-ban-rb3136-caravan-sunglasses"
-      coords="1037,0,1383,552"
-      shape="rect"
-    />
-    <area
-      target=""
-      alt="Ray-Ban RB5387 Eyeglasses"
-      title="Ray-Ban RB5387 Eyeglasses"
-      href="/ray-ban-rb5387-eyeglasses?color=10029784"
-      coords="1385,2,1802,553"
-      shape="rect"
-    />
-  </map>
-  <div class="text-overlay col-12 col-xl-3 d-flex">
-    <div
-   
-      class="home-promo col-12 d-flex flex-column align-items-center justify-content-center"
-    >
-      <div class="img-flex weight-bold size-18 mb-2">FATHER’S DAY FRAMES</div>
+    if (checkDate >= "240610" && fdFncs.svrTm.hr >= "02") {
+      $("#promoSale").removeClass("d-flex").addClass("d-none");
+    }
 
-      <div class="d-flex flex-row">
-        <div>
-          <h1 class="transform-uppercase size-30">
-            <span class="weight-extra-bold">20% OFF</span> <br />
-            <span class="weight-normal">FRAMES</span>
-          </h1>
-          <p class="hp-promo-sm weight-normal transform-none size-18">
-            From Versace,<br />
-            Burberry & More
-          </p>
-        </div>
-        <div class="size-60">
-          +
-        </div>
-        <div>
-          <h1 class="transform-uppercase size-30">
-            <span class="weight-extra-bold">60% OFF</span> <br />
-            <span class="weight-normal">LENSES</span>
-          </h1>
-          <p class="hp-promo-sm weight-normal transform-none size-18">
-            Save Big on<br>
-            Prescription Lenses
-          </p>
-        </div>
-      </div>
-
-      <a
-        href="/promotions/top-brands-discounted-dp"
-        class="btn-cta color-white px-4 d-block py-2 mt-4 d-inline-block"
-        style="background: #cd0000"
-        >Shop Now</a
+    if (
+      (checkDate >= "240612" && fdFncs.svrTm.hr >= "02") ||
+      (checkDate >= "240613" && checkDate < "240618")
+    ) {
+      $(".heroBanner").replaceWith(
+        `<div style="background: #EEEFEA" class="heroBanner position-relative extended transparent d-flex img-flex">
+         <a href="/promotions/top-brands-discounted-dp">
+      <video
+        autoplay
+        muted
+        playsinline
+        disablePictureInPicture
+        width="100%"
+        class="d-block"
       >
-    </div>
-  </div>
-    </div>`
-    );
-
-    //  if (checkDate > '240321' && checkDate < '240401')
-    //hero slider promotion
-    $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-    $("#hero-slider").append(
-      `<li>
-            <div class="heroBanner position-relative extended transparent d-flex img-flex" style="background: #E3DAC9;">
-  <a href="/promotions/top-brands-discounted-dp">
-    <video
-      autoplay
-      muted
-      playsinline
-      disablePictureInPicture
-      width="100%"
-      class="d-block"
-    >
-      <source
-        src="https://images.framesdirect.com/video/upload/v1717076683/homePage/FD_Father_s_Day_SUN.mp4"
-        type="video/mp4"
+        <source
+          src="https://images.framesdirect.com/video/upload/q_100/v1717572022/homePage/FATHER_SDAY_EYE.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </a>
+    <map name="image-map">
+      <area
+        target=""
+        alt="Coach HC6139U Eyeglasses"
+        title="Coach HC6139U Eyeglasses"
+        href="/coach-hc6139u-eyeglasses"
+        coords="686,0,1035,552"
+        shape="rect"
       />
-    </video>
-  </a>
-  <map name="image-map">
-    <area
-      target=""
-      alt="Coach HC6139U Eyeglasses"
-      title="Coach HC6139U Eyeglasses"
-      href="/coach-hc6139u-eyeglasses"
-      coords="686,0,1035,552"
-      shape="rect"
-    />
-    <area
-      target=""
-      alt="Ray-Ban RB3136 Caravan Sunglasses"
-      title="Ray-Ban RB3136 Caravan Sunglasses"
-      href="/ray-ban-rb3136-caravan-sunglasses"
-      coords="1037,0,1383,552"
-      shape="rect"
-    />
-    <area
-      target=""
-      alt="Ray-Ban RB5387 Eyeglasses"
-      title="Ray-Ban RB5387 Eyeglasses"
-      href="/ray-ban-rb5387-eyeglasses?color=10029784"
-      coords="1385,2,1802,553"
-      shape="rect"
-    />
-  </map>
-  <div class="text-overlay col-12 col-xl-3 d-flex">
-    <div
-      class="home-promo col-12 d-flex flex-column align-items-center justify-content-center"
-    >
-      <div class="img-flex weight-bold size-18 mb-2">FIND YOUR PERFECT <br>
-FATHER’S DAY SHADES</div>
-       
-        <div>
-          <h1 class="transform-uppercase size-30 pb-1">
-            <span class="weight-extra-bold">$40 OFF</span> <br />
-            <span class="weight-normal">DESIGNER SUNGLASSES</span>
-          </h1>
-          <p class="hp-promo-sm weight-normal transform-none size-14">
-            including <b>RAY-BAN, OAKLEY & Costa</b><br>
-Combinable with <b>60% off lenses*</b>
-          </p>
+      <area
+        target=""
+        alt="Ray-Ban RB3136 Caravan Sunglasses"
+        title="Ray-Ban RB3136 Caravan Sunglasses"
+        href="/ray-ban-rb3136-caravan-sunglasses"
+        coords="1037,0,1383,552"
+        shape="rect"
+      />
+      <area
+        target=""
+        alt="Ray-Ban RB5387 Eyeglasses"
+        title="Ray-Ban RB5387 Eyeglasses"
+        href="/ray-ban-rb5387-eyeglasses?color=10029784"
+        coords="1385,2,1802,553"
+        shape="rect"
+      />
+    </map>
+    <div class="text-overlay col-12 col-xl-3 d-flex">
+      <div
      
-        </div>
-        <a
-        href="/promotions/top-brands-discounted-dp"
-        class="btn-cta color-white px-4 d-block d-inline-block"
-        style="background: #cd0000"
-        >Save Now</a
+        class="home-promo col-12 d-flex flex-column align-items-center justify-content-center"
       >
+        <div class="img-flex weight-bold size-18 mb-2">FATHER’S DAY FRAMES</div>
+  
+        <div class="d-flex flex-row">
+          <div>
+            <h1 class="transform-uppercase size-30">
+              <span class="weight-extra-bold">20% OFF</span> <br />
+              <span class="weight-normal">FRAMES</span>
+            </h1>
+            <p class="hp-promo-sm weight-normal transform-none size-18">
+              From Versace,<br />
+              Burberry & More
+            </p>
+          </div>
+          <div class="size-60">
+            +
+          </div>
+          <div>
+            <h1 class="transform-uppercase size-30">
+              <span class="weight-extra-bold">60% OFF</span> <br />
+              <span class="weight-normal">LENSES</span>
+            </h1>
+            <p class="hp-promo-sm weight-normal transform-none size-18">
+              Save Big on<br>
+              Prescription Lenses
+            </p>
+          </div>
+        </div>
+  
+        <a
+          href="/promotions/top-brands-discounted-dp"
+          class="btn-cta color-white px-4 d-block py-2 mt-4 d-inline-block"
+          style="background: #cd0000"
+          >Shop Now</a
+        >
+      </div>
+    </div>
+      </div>`
+      );
+
+      //hero slider promotion
+      $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+      $("#hero-slider").append(
+        `<li>
+              <div class="heroBanner position-relative extended transparent d-flex img-flex" style="background: #E3DAC9;">
+    <a href="/promotions/top-brands-discounted-dp">
+      <video
+        autoplay
+        muted
+        playsinline
+        disablePictureInPicture
+        width="100%"
+        class="d-block"
+      >
+        <source
+          src="https://images.framesdirect.com/video/upload/q_100/v1717572041/homePage/FD_Father_s_Day_SUN.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </a>
+    <map name="image-map">
+      <area
+        target=""
+        alt="Coach HC6139U Eyeglasses"
+        title="Coach HC6139U Eyeglasses"
+        href="/coach-hc6139u-eyeglasses"
+        coords="686,0,1035,552"
+        shape="rect"
+      />
+      <area
+        target=""
+        alt="Ray-Ban RB3136 Caravan Sunglasses"
+        title="Ray-Ban RB3136 Caravan Sunglasses"
+        href="/ray-ban-rb3136-caravan-sunglasses"
+        coords="1037,0,1383,552"
+        shape="rect"
+      />
+      <area
+        target=""
+        alt="Ray-Ban RB5387 Eyeglasses"
+        title="Ray-Ban RB5387 Eyeglasses"
+        href="/ray-ban-rb5387-eyeglasses?color=10029784"
+        coords="1385,2,1802,553"
+        shape="rect"
+      />
+    </map>
+    <div class="text-overlay col-12 col-xl-3 d-flex">
+      <div
+        class="home-promo col-12 d-flex flex-column align-items-center justify-content-center"
+      >
+        <div class="img-flex weight-bold size-18 mb-2">FIND YOUR PERFECT <br>
+  FATHER’S DAY SHADES</div>
+         
+          <div>
+            <h1 class="transform-uppercase size-30 pb-1">
+              <span class="weight-extra-bold">$40 OFF</span> <br />
+              <span class="weight-normal">DESIGNER SUNGLASSES</span>
+            </h1>
+            <p class="hp-promo-sm weight-normal transform-none size-14">
+              including <b>RAY-BAN, OAKLEY & Costa</b><br>
+  Combinable with <b>60% off lenses*</b>
+            </p>
+       
+          </div>
+          <a
+          href="/promotions/top-brands-discounted-dp"
+          class="btn-cta color-white px-4 d-block d-inline-block"
+          style="background: #cd0000"
+          >Save Now</a
+        >
+      </div>
     </div>
   </div>
-</div>
-    </li>`
-    );
+      </li>`
+      );
+    }
 
     $("#polarizedSale").on("click", function () {
       window.location.href = "/sale/polarized-dp";
