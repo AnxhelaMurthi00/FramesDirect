@@ -1,0 +1,22 @@
+.ct_space{
+    .ct_cta{
+        display: inline-block;
+        padding: .5em 1.5em;
+        text-decoration: none !important;
+        font-family: inherit;
+        cursor: pointer;
+        border-radius: 0;
+        line-height: normal;
+        text-transform: uppercase;
+        text-align: center;
+        vertical-align: baseline;
+        font-size: 120%;
+        border-radius: 4px;
+        font-weight: 600 !important;
+
+        &.ct_cta__red{
+            color: white;
+            background-color: #cd0000;
+        }
+    }
+}

@@ -8,6 +8,7 @@ const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps')
 const argv = require('yargs').argv;
+const sass = require('gulp-sass')(require('sass'));
 
 // GET OPTION DEFINED ON PACKAGE.JSON
 const arg = (argList => {
@@ -58,8 +59,11 @@ gulp.task('js',done => {
     done()
 });
 
-
-
+gulp.task('css', done =>{
+  return gulp.src('DesignSystem/style/**/*.scss') // Path to your SCSS files
+  .pipe(sass().on('error', sass.logError))
+  .pipe(gulp.dest('DesignSystem/dist/css')); // Output directory for CSS files
+});
 
 const svgSprite = require('gulp-svg-sprite'),
 config = {

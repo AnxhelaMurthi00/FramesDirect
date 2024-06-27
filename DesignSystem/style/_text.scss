@@ -1,0 +1,27 @@
+.ct_space{
+    .ct_text__left{
+        text-align: left;
+    }
+
+    .ct_text__right{
+        text-align: right;
+    }
+
+    .ct_text__center{
+        text-align: center;
+    }
+
+    @media(max-width: 990px){
+        .ct_text__mob__left{
+            text-align: left;
+        }
+    
+        .ct_text__mob__right{
+            text-align: right;
+        }
+    
+        .ct_text__mob__center{
+            text-align: right;
+        }
+    }
+}
