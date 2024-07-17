@@ -54,6 +54,10 @@
   }
 }
 
+.ct_space a {
+  text-decoration: none !important;
+}
+
 .ct_space .ct_cta {
   display: inline-block;
   padding: .5em 1.5em;
@@ -77,6 +81,10 @@
 
 .ct_text__blue {
   color: #204379 !important;
+}
+
+.ct_text__white {
+  color: #fff !important;
 }
 
 .ct_space .ct_text__left {

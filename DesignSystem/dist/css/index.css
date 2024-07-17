@@ -33,9 +33,12 @@
 }
 @media (max-width: 1199px) {
   .ct_space .ct_hero .ct_text__overlay {
-    width: 100%;
+    width: 100% !important;
     position: relative;
   }
+}
+.ct_space a {
+  text-decoration: none !important;
 }
 
 .ct_space .ct_cta {
@@ -62,6 +65,10 @@
   color: #204379 !important;
 }
 
+.ct_text__white {
+  color: #fff !important;
+}
+
 .ct_space .ct_text__left {
   text-align: left;
 }
@@ -70,6 +77,15 @@
 }
 .ct_space .ct_text__center {
   text-align: center;
+}
+.ct_space .ct_lh__1 {
+  line-height: 1 !important;
+}
+.ct_space .ct_lh__sm {
+  line-height: 1.25 !important;
+}
+.ct_space .ct_lh__default {
+  line-height: 1.25 !important;
 }
 @media (max-width: 990px) {
   .ct_space .ct_text__mob__left {
@@ -95,15 +111,52 @@
 .ct_space .ct_w__20 {
   width: 20%;
 }
+.ct_space .ct_w__36 {
+  width: 36%;
+}
 .ct_space .ct_w__40 {
   width: 40%;
 }
-.ct_space .ct_w__40 {
+.ct_space .ct_w__50 {
   width: 50%;
+}
+@media (max-width: 1199px) {
+  .ct_space .ct_w__mob__0 {
+    width: 0% !important;
+  }
+  .ct_space .ct_w__mob__10 {
+    width: 10% !important;
+  }
+  .ct_space .ct_w__mob__20 {
+    width: 20% !important;
+  }
+  .ct_space .ct_w__mob__30 {
+    width: 30% !important;
+  }
+  .ct_space .ct_w__mob__40 {
+    width: 40% !important;
+  }
+  .ct_space .ct_w__mob__50 {
+    width: 50% !important;
+  }
+  .ct_space .ct_w__mob__60 {
+    width: 60% !important;
+  }
+  .ct_space .ct_w__mob__70 {
+    width: 70% !important;
+  }
+  .ct_space .ct_w__mob__80 {
+    width: 80% !important;
+  }
+  .ct_space .ct_w__mob__90 {
+    width: 90% !important;
+  }
+  .ct_space .ct_w__mob__100 {
+    width: 100% !important;
+  }
 }
 
 .ct_banner {
-  border: 1px #ccc solid;
   position: relative;
 }
 

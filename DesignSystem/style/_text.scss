@@ -1,4 +1,5 @@
 .ct_space{
+    
     .ct_text__left{
         text-align: left;
     }
@@ -9,6 +10,18 @@
 
     .ct_text__center{
         text-align: center;
+    }
+
+    .ct_lh__1 {
+        line-height: 1!important;
+    }
+
+    .ct_lh__sm {
+        line-height: 1.25!important;
+    }
+
+    .ct_lh__default {
+        line-height: 1.25!important;
     }
 
     @media(max-width: 990px){
