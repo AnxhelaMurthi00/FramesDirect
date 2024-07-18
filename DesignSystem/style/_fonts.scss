@@ -1,16 +1,24 @@
-.ct_font__32{
-    font-size: 32px;
+$font-sizes: (
+  "16": 16px,
+  "20": 20px,
+  "24": 24px,
+  "26": 26px,
+  "32": 32px,
+  "36": 36px,
+  "48": 48px,
+  "68": 68px
+);
+
+@each $size, $value in $font-sizes {
+  .ct_font__#{$size} {
+    font-size: #{$value};
+  }
 }
 
-.ct_font__48{
-    font-size: 48px;
-}
-
-.ct_font__24{
-    font-size: 24px;
-}
-
-
-.ct_font__20{
-    font-size: 20px;
+@media (min-width: 1400px) {
+  @each $size, $value in $font-sizes {
+    .ct_font__desk__#{$size} {
+      font-size: #{$value};
+    }
+  }
 }

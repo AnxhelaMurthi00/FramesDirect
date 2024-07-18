@@ -60,6 +60,10 @@
   color: white;
   background-color: #cd0000;
 }
+.ct_space .ct_cta.ct_cta__black {
+  color: white;
+  background-color: #000;
+}
 
 .ct_text__blue {
   color: #204379 !important;
@@ -614,18 +618,61 @@
   }
 }
 
-.ct_font__32 {
-  font-size: 32px;
+.ct_font__16 {
+  font-size: 16px;
 }
 
-.ct_font__48 {
-  font-size: 48px;
+.ct_font__20 {
+  font-size: 20px;
 }
 
 .ct_font__24 {
   font-size: 24px;
 }
 
-.ct_font__20 {
-  font-size: 20px;
+.ct_font__26 {
+  font-size: 26px;
+}
+
+.ct_font__32 {
+  font-size: 32px;
+}
+
+.ct_font__36 {
+  font-size: 36px;
+}
+
+.ct_font__48 {
+  font-size: 48px;
+}
+
+.ct_font__68 {
+  font-size: 68px;
+}
+
+@media (min-width: 1400px) {
+  .ct_font__desk__16 {
+    font-size: 16px;
+  }
+  .ct_font__desk__20 {
+    font-size: 20px;
+  }
+  .ct_font__desk__24 {
+    font-size: 24px;
+  }
+  .ct_font__desk__26 {
+    font-size: 26px;
+  }
+  .ct_font__desk__32 {
+    font-size: 32px;
+  }
+  .ct_font__desk__36 {
+    font-size: 36px;
+  }
+  .ct_font__desk__48 {
+    font-size: 48px;
+  }
+  .ct_font__desk__68 {
+    font-size: 68px;
+  }
 }
