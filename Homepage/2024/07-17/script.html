@@ -41,6 +41,11 @@
     );
   };
 
+  const isTestingParameter = () => {
+    const url = window.location.href;
+    return url.includes("?test=true");
+  };
+
   var bannerSlider = "";
   function initBannerSlider() {
     if (
@@ -122,10 +127,12 @@
   }
 
   $(function () {
+    /* HP HERO BANNER */
     if (
-      ((checkDate >= "240618" && fdFncs.svrTm.hr >= "02") ||
-        checkDate >= "240619") &&
-      checkDate < "240731"
+      (((checkDate >= "240725" && fdFncs.svrTm.hr >= "02") ||
+        checkDate >= "240726") &&
+        checkDate < "240801") ||
+      isTestingParameter()
     ) {
       let promoBanner =
         /* HTML */
@@ -176,8 +183,12 @@
                       <p
                         class="hp-promo-sm weight-normal transform-none ct_font__16 ct_font__desk__20 ct_m__0"
                       >
-                        Sunglasses from<br>
-                        <b>Versace, Coach,<br class="d-none d-md-block"> Burberry</b> & more
+                        Sunglasses from<br />
+                        <b
+                          >Versace, Coach,<br class="d-none d-md-block" />
+                          Burberry</b
+                        >
+                        & more
                       </p>
                     </div>
                     <div
@@ -194,11 +205,15 @@
                       <p
                         class="hp-promo-sm weight-normal transform-none ct_font__16 ct_font__desk__20 ct_m__0"
                       >
-                        <b>Lenses</b> like<br> Sun Prescription,<br class="d-none d-md-block"> Transitions<sup>®</sup> & more
+                        <b>Lenses</b> like<br />
+                        Sun Prescription,<br class="d-none d-md-block" />
+                        Transitions<sup>®</sup> & more
                       </p>
                     </div>
                   </div>
-                  <p class="ct_text__black ct_font__16 ct_font__desk__20 weight-bold">
+                  <p
+                    class="ct_text__black ct_font__16 ct_font__desk__20 weight-bold"
+                  >
                     Promo ends July 31st
                   </p>
                   <a
@@ -217,7 +232,7 @@
     if (
       ((checkDate >= "240618" && fdFncs.svrTm.hr >= "02") ||
         checkDate >= "240619") &&
-      checkDate < "240731"
+      checkDate < "240801"
     ) {
       let rayBanBanner =
         /* HTML */
