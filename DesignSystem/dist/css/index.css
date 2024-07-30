@@ -618,12 +618,24 @@
   }
 }
 
+.ct_font__14 {
+  font-size: 14px;
+}
+
 .ct_font__16 {
   font-size: 16px;
 }
 
+.ct_font__18 {
+  font-size: 18px;
+}
+
 .ct_font__20 {
   font-size: 20px;
+}
+
+.ct_font__22 {
+  font-size: 22px;
 }
 
 .ct_font__24 {
@@ -634,28 +646,109 @@
   font-size: 26px;
 }
 
+.ct_font__28 {
+  font-size: 28px;
+}
+
+.ct_font__30 {
+  font-size: 30px;
+}
+
 .ct_font__32 {
   font-size: 32px;
+}
+
+.ct_font__34 {
+  font-size: 34px;
 }
 
 .ct_font__36 {
   font-size: 36px;
 }
 
+.ct_font__38 {
+  font-size: 38px;
+}
+
+.ct_font__40 {
+  font-size: 40px;
+}
+
+.ct_font__42 {
+  font-size: 42px;
+}
+
+.ct_font__44 {
+  font-size: 44px;
+}
+
+.ct_font__46 {
+  font-size: 46px;
+}
+
 .ct_font__48 {
   font-size: 48px;
+}
+
+.ct_font__50 {
+  font-size: 50px;
+}
+
+.ct_font__52 {
+  font-size: 52px;
+}
+
+.ct_font__54 {
+  font-size: 54px;
+}
+
+.ct_font__56 {
+  font-size: 56px;
+}
+
+.ct_font__58 {
+  font-size: 58px;
+}
+
+.ct_font__60 {
+  font-size: 60px;
+}
+
+.ct_font__62 {
+  font-size: 62px;
+}
+
+.ct_font__64 {
+  font-size: 64px;
+}
+
+.ct_font__66 {
+  font-size: 66px;
 }
 
 .ct_font__68 {
   font-size: 68px;
 }
 
+.ct_font__70 {
+  font-size: 70px;
+}
+
 @media (min-width: 1400px) {
+  .ct_font__desk__14 {
+    font-size: 14px;
+  }
   .ct_font__desk__16 {
     font-size: 16px;
   }
+  .ct_font__desk__18 {
+    font-size: 18px;
+  }
   .ct_font__desk__20 {
     font-size: 20px;
+  }
+  .ct_font__desk__22 {
+    font-size: 22px;
   }
   .ct_font__desk__24 {
     font-size: 24px;
@@ -663,16 +756,70 @@
   .ct_font__desk__26 {
     font-size: 26px;
   }
+  .ct_font__desk__28 {
+    font-size: 28px;
+  }
+  .ct_font__desk__30 {
+    font-size: 30px;
+  }
   .ct_font__desk__32 {
     font-size: 32px;
+  }
+  .ct_font__desk__34 {
+    font-size: 34px;
   }
   .ct_font__desk__36 {
     font-size: 36px;
   }
+  .ct_font__desk__38 {
+    font-size: 38px;
+  }
+  .ct_font__desk__40 {
+    font-size: 40px;
+  }
+  .ct_font__desk__42 {
+    font-size: 42px;
+  }
+  .ct_font__desk__44 {
+    font-size: 44px;
+  }
+  .ct_font__desk__46 {
+    font-size: 46px;
+  }
   .ct_font__desk__48 {
     font-size: 48px;
   }
+  .ct_font__desk__50 {
+    font-size: 50px;
+  }
+  .ct_font__desk__52 {
+    font-size: 52px;
+  }
+  .ct_font__desk__54 {
+    font-size: 54px;
+  }
+  .ct_font__desk__56 {
+    font-size: 56px;
+  }
+  .ct_font__desk__58 {
+    font-size: 58px;
+  }
+  .ct_font__desk__60 {
+    font-size: 60px;
+  }
+  .ct_font__desk__62 {
+    font-size: 62px;
+  }
+  .ct_font__desk__64 {
+    font-size: 64px;
+  }
+  .ct_font__desk__66 {
+    font-size: 66px;
+  }
   .ct_font__desk__68 {
     font-size: 68px;
+  }
+  .ct_font__desk__70 {
+    font-size: 70px;
   }
 }
