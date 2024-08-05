@@ -1,0 +1,139 @@
+<script>
+  if (checkDate >= "240431" && checkDate <= "240507") {
+    if (pgURLPath("/wiley-x/brand")) {
+      $("#bnr-dyn-holder").html(
+        '<img id="bnr-dyn-full" alt="Wiley X Eyeglasses &amp; Sunglasses" src="https://images.framesdirect.com/image/upload/v1714384374/brand-banners/FD_promo_PLP_Wiley_X_2X.png" width="3840" height="600" title="Wiley X Eyeglasses &amp; Sunglasses">'
+      );
+      $(
+        '<a id="flash-disc-link" class="pl-2" href="#">Details <i></i></a><p id="flash-disclaimer" style="display:none">Get a 20% discount off the purchase of full-priced Eyeglasses, Sunglasses, or Prescription Sunglasses frames from Wiley X. Frame purchase required. Offer may not be used on any other products.  Does not apply to products that have already been discounted. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee. Free Shipping on domestic orders only. Offer ends May 7, 2024.</p>'
+      ).appendTo("#cata_desc");
+    }
+  }
+  if (checkDate >= "240502" && checkDate <= "240515") {
+    var mkAlt = "",
+      mkImg = "",
+      mkHeight = "",
+      deptText = "";
+    if (pgURLPath("/michael-kors/brand")) {
+      mkAlt = "Michael Kors Eyeglasses &amp; Sunglasses";
+      mkImg = "v1714472191/brand-banners/FD_promo_PLP_MK_Eye_and_Sun.png";
+      deptText = "Eyeglasses, Sunglasses, and Prescription Sunglasses";
+    } else if (pgURLPath("/eyeglasses/michael-kors")) {
+      mkAlt = "Michael Kors Eyeglasses";
+      mkImg = "v1714472122/brand-banners/FD_promo_PLP_MK_Eye.png";
+      deptText = "Eyeglasses";
+    } else if (pgURLPath("sunglasses/michael-kors")) {
+      mkAlt = "Michael Kors Sunglasses";
+      if (pgURLPath("prescription")) {
+        mkAlt = "Michael Kors Prescription Sunglasses";
+        deptText = "Prescription ";
+      }
+      deptText += "Sunglasses";
+      mkImg = "v1714472133/brand-banners/FD_promo_PLP_MK_Sun.png";
+    }
+    if (fdFncs.pageType === "Catalog" && pgURLPath("/michael-kors")) {
+      $("#bnr-dyn-holder").html(
+        '<img id="" alt="' +
+          mkAlt +
+          '" src="https://images.framesdirect.com/image/upload/' +
+          mkImg +
+          '" width="3840" height="600" title="' +
+          mkAlt +
+          '">'
+      );
+      $(
+        '<a id="flash-disc-link" class="pl-2" href="#">Details <i></i></a><p id="flash-disclaimer" style="display:none">Get 25% off the purchase price of full-priced Michael Kors ' +
+          deptText +
+          " frames. Does not apply to products that have already been discounted. Frame purchase required. Offer may not be used on any other product. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee. Free Shipping on domestic orders only. Offer ends May 15, 2024.</p>"
+      ).appendTo("#cata_desc");
+    }
+  }
+  /* Carrera PLPs */
+  if (
+    (checkDate >= "240603" && checkDate <= "240610") ||
+    (pgURLPath("fdwork.com") && checkDate >= "240531" && checkDate <= "240610")
+  ) {
+    var carAlt = "",
+      carImg = "",
+      carHeight = "",
+      deptText = "";
+    if (pgURLPath("/carrera/brand")) {
+      carAlt = "Carrera Eyeglasses &amp; Sunglasses";
+      carImg = "v1716980962/brand-banners/FD_promo_PLP_CARRERA__EYE_SUN.png";
+      deptText = "Eyeglasses, Sunglasses, and Prescription Sunglasses";
+    } else if (pgURLPath("/eyeglasses/carrera")) {
+      carAlt = "Carrera Eyeglasses";
+      carImg = "v1716980960/brand-banners/FD_promo_PLP_CARRERA_EYEGLASSES.png";
+      deptText = "Eyeglasses";
+    } else if (pgURLPath("sunglasses/carrera")) {
+      carAlt = "Carrera Sunglasses";
+      if (pgURLPath("prescription")) {
+        carAlt = "Carrera Prescription Sunglasses";
+        deptText = "Prescription ";
+        carImg = "v1716980966/brand-banners/FD_promo_PLP_CARRERA_SUN_RX.png";
+      }
+      deptText += "Sunglasses";
+      carImg = "v1716980969/brand-banners/FD_promo_PLP_CARRERA_SUN.png";
+    }
+    if (fdFncs.pageType === "Catalog" && pgURLPath("/carrera")) {
+      $("#bnr-dyn-holder").html(
+        '<img id="" alt="' +
+          carAlt +
+          '" src="https://images.framesdirect.com/image/upload/' +
+          carImg +
+          '" width="3840" height="600" title="' +
+          carAlt +
+          '">'
+      );
+      $(
+        '<a id="flash-disc-link" class="pl-2" href="#">Details <i></i></a><p id="flash-disclaimer" style="display:none">Get 25% off the purchase price of full-priced Carrera ' +
+          deptText +
+          " frames. Does not apply to products that have already been discounted. Frame purchase required. Offer may not be used on any other product. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee. Free Shipping on domestic orders only. Offer ends June 10, 2024.</p>"
+      ).appendTo("#cata_desc");
+    }
+  }
+  /* END Carrera PLPs */
+  /* Wiley-X PLPs */
+  if (
+    (checkDate >= "240829" && checkDate <= "240902") ||
+    (pgURLPath("fdwork.com") && checkDate >= "240603" && checkDate <= "240830")
+  ) {
+    var carAlt = "",
+      carImg = "",
+      carHeight = "",
+      deptText = "";
+    if (pgURLPath("/wiley-x/brand")) {
+      carAlt = "Wiley-X Eyewear";
+      carImg = "v1722530846/brand-banners/FD_promo_PLP_Wiley_X_EYEWEAR.png";
+      deptText = "Eyewear";
+    } else if (pgURLPath("sunglasses/wiley-x")) {
+      carAlt = "Wiley-X Sunglasses";
+      deptText = "Sunglasses";
+      carImg = "v1722253563/brand-banners/FD_promo_PLP_Wiley_X_SUNGLASSES.png";
+      if (pgURLPath("prescription")) {
+        carAlt = "Wiley-X Prescription Sunglasses";
+        deptText = "Prescription Sunglasses";
+        carImg = "v1722253564/brand-banners/FD_promo_PLP_Wiley_X_SUNRX.png";
+      }
+    }
+
+    if (fdFncs.pageType === "Catalog" && pgURLPath("/wiley-x")) {
+      $("#bnr-dyn-holder").html(
+        '<img id="" alt="' +
+          carAlt +
+          '" src="https://images.framesdirect.com/image/upload/' +
+          carImg +
+          '" width="3840" height="600" title="' +
+          carAlt +
+          '">'
+      );
+
+      $(
+        '<a id="flash-disc-link" class="pl-2" href="#">Details <i></i></a><p id="flash-disclaimer" style="display:none">Get a 20% discount off the purchase of full-priced Eyeglasses, Sunglasses, or Prescription Sunglasses frames from Wiley X ' +
+          deptText +
+          ". Frame purchase required. Offer may not be used on any other products.  Does not apply to products that have already been discounted. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee. Free Shipping on domestic orders only. Offer ends September 2, 2024. </p>"
+      ).appendTo("#cata_desc");
+    }
+  }
+  /* END Wiley-x PLPs */
+</script>

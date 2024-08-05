@@ -16,7 +16,7 @@ const areaVisualizer = () => {
       div.style.height = coords[3] - coords[1] + "px";
     }
 
-    document.querySelector(".ct_space.lslide").appendChild(div);
+    document.querySelector(".ct_space").appendChild(div);
   });
 };
 areaVisualizer();
