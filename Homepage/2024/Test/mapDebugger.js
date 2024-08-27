@@ -12,7 +12,7 @@ const mapDebugger = () => {
   canvasStyle.left = "0";
 
   // Attach canvas to Hero Banner
-  const containerElement = document.querySelector(".heroBanner");
+  const containerElement = document.querySelector(".ct_banner");
   containerElement.appendChild(canvasElement);
 
   // Create canvas context

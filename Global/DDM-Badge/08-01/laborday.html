@@ -12,21 +12,22 @@
         (checkDate >= "240826" &&
           checkDate <= "240902" &&
           $this.parents(".top-items").hasClass("top-eg")) ||
-          $this.parents(".top-items").hasClass("top-sg") ||
-          $this.parents(".top-items").hasClass("top-ps")
+        $this.parents(".top-items").hasClass("top-sg") ||
+        $this.parents(".top-items").hasClass("top-ps")
       ) {
         $this.attr("style", "cursor: pointer");
-        if (
-          checkDate >= "240826" &&
-          checkDate <= "240902" &&
-          $this.parents(".top-items").hasClass("top-eg")
-        ) {
-          promoMsg =
-            '<div> <p class="m-0">Up to</p> <div class="weight-bold size-22">30% OFF</div><p class="m-0">Ray-Ban, Versace & more</p><div class="size-22 m-0">+</div><div class="weight-bold size-22">60% OFF</div><p>Lenses & add-ons</p></div>';
-          $this.css("backgroundColor", "#D3D7E0");
-          $this.on("click", function () {
-            window.location.href = "/email/labor-day-dp";
-          });
+        if (checkDate >= "240826" && checkDate <= "240902") {
+          if ($this.parents(".top-items").hasClass("top-eg")) {
+            promoMsg =
+              '<div> <p class="m-0">Up to</p> <div class="weight-bold size-22">30% OFF</div><p class="m-0">Ray-Ban, Versace & more</p><div class="size-22 m-0">+</div><div class="weight-bold size-22">60% OFF</div><p>Lenses & add-ons</p></div>';
+            $this.css("backgroundColor", "#D3D7E0");
+            $this.on("click", function () {
+              window.location.href = "/email/labor-day-dp";
+            });
+          } else {
+            promoMsg =
+              '<div class="weight-bold size-22">20%-50% Off</div><div class="size-15">80+ Top Brands</div>';
+          }
         }
         if (
           checkDate >= "240829" &&
