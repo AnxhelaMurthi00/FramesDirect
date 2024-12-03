@@ -2,65 +2,13 @@
   var lensDisc = fdFncs.vars.lensPrices.discoPercent,
     promoMsg =
       '<div class="weight-bold size-22">20%-50% Off</div><div class="size-15">80+ Top Brands</div>';
-
   $("#site-nav .promo-bottom").each(function () {
     var $this = $(this),
       isRecognized = getCookie("fdRecognized") !== undefined;
     if ($this.is(":empty")) {
-      /* UPDATE SEPTEMBER WEEKEND SAVINGS 26/09/2024  PART 2*/
       if (
-        (checkDate >= "240926" &&
-          checkDate < "240930" &&
-          $this.parents(".top-items").hasClass("top-eg")) ||
-        $this.parents(".top-items").hasClass("top-sg") ||
-        $this.parents(".top-items").hasClass("top-ps")
-      ) {
-        $this.attr("style", "cursor: pointer");
-        //EYEGLASSES
-        if (checkDate >= "240926" && 
-         checkDate < "240930") {
-          if ($this.parents(".top-items").hasClass("top-eg")) {
-            promoMsg =
-              '<div class="weight-bold size-22 ">20% OFF</div><div class="size-15 weight-400">Eyeglasses from </br> Versace, Burberry & more</div><div class="size-22 m-0 weight-bold">+</div><div class="weight-bold size-22"> 60% OFF</div><p class="size-15 weight-400">Lenses & add-ons</p></div>';
-            $this.css("backgroundColor", "#EEEFEA");
-            $this.on("click", function () {
-              window.location.href = "/email/flash-sale-dp";
-            });
-          } else {
-            promoMsg =
-              '<div class="weight-bold size-22"> Off</div><div class="size-15">80+ Top Brands</div>';
-          }
-        }
-        //SUNGLASSES
-        if (
-          checkDate >= "240926" &&
-          checkDate < "240930" &&
-          $this.parents(".top-items").hasClass("top-sg")
-        ) {
-          promoMsg =
-            '<div><div class="weight-bold size-22">20% OFF</div><p class="m-0 size-15 weight-400">Sunglasses from<br> Versace, Burberry & more</p></div>';
-          $this.css("backgroundColor", "#AAB9C0");
-          $this.on("click", function () {
-            window.location.href = "/sale/polarized-dp";
-          });
-        }
-        //PRESCRIPTION GLASSES
-        if (
-          checkDate >= "240926" &&
-          checkDate < "240930" &&
-          $this.parents(".top-items").hasClass("top-ps")
-        ) {
-          promoMsg =
-          '<div class="weight-bold size-22">20% OFF</div><div class="size-15 weight-400">Eyeglasses from </br> Versace, Burberry & more</div><div class="size-22 m-0 weight-bold">+</div><div class="weight-bold size-22"> 60% OFF</div><p class="size-15 weight-400">Lenses & add-ons</p></div>';
-          $this.css("backgroundColor", "#AAB9C0");
-          $this.on("click", function () {
-            window.location.href = "/sale/polarized-dp";
-          });
-        }
-        $this.append(promoMsg);
-      } else if (
-        checkDate >= "240404" &&
-        checkDate <= "240414" &&
+        checkDate >= "241028" &&
+        checkDate <= "241123" &&
         ($this.parents(".top-items").hasClass("top-men") ||
           $this.parents(".top-items").hasClass("top-women") ||
           $this.parents(".top-items").hasClass("top-eg") ||
@@ -68,7 +16,6 @@
           $this.parents(".top-items").hasClass("top-ps"))
       ) {
         $this.attr("style", "cursor: pointer");
-        $this.addClass("background-black");
         if (isRecognized) {
           var isRx = "",
             hasOakley = "Oakley";
@@ -91,26 +38,21 @@
           var discAmt = "25";
           if (
             checkDate >= "240413" ||
-            (checkDate >= "240409" && location.hostname === "fd.fdwork.com")
-          ) {
-            discAmt = "30";
-          }
+            (checkDate >= "241123" && location.hostname === "fd.fdwork.com")
+          )
           $this.append(
-            '<div class="weight-bold size-18 color-white">' +
-              discAmt +
-              '% Off</div><div class="color-white size-12">Ray-Ban, ' +
-              hasOakley +
-              ", and more</div>" +
-              isRx
+            '<div><p>Up to</p> <span class="weight-bold size-20">50% OFF FRAMES </span></div><span class="weight-bold size-20">+</span><div><p>Up to</p><span class="weight-bold size-20">60% OFF LENSES </span></div>'
           );
+          $this.css("background", "linear-gradient(to left, #DF785B, #E99C77)");
           $this.on("click", function () {
-            window.location.href = "/email/customer-appreciation-dp";
+            window.location.href = "/email/black-friday-dp";
           });
         } //Customer Appreciation Sale with Sign Up / Sign In.  If recognized, Customer Appreciation Sale with Save Now
         else {
           $this.append(
-            '<div class="size-20 color-white mb-2"><a class="d-inline-block signUp weight-bold color-white" href="javascript:addWelcomeLayer();fdFncs.vars.allowEmPop = false;">Sign Up</a> or <a class="d-inline-block signIn color-white weight-bold" href="#">Sign In</a></div><div class="weight-normal size-16 mb-2 color-white">Private Week is live</div>'
+            '<div class=" mb-2" ><a class="d-inline-block signUp weight-bold size-20 " href="javascript:addWelcomeLayer();fdFncs.vars.allowEmPop = false;">Sign Up</a><br> <span class="weight-bold size-20">or</span> <a class="d-inline-block signIn size-20  weight-bold" href="#">Log In</a><br><div class="weight-normal size-14 mt-2 ">for Early Black Friday</div></div>'
           );
+          $this.css("background", "linear-gradient(to left, #DF785B, #E99C77)");
         }
       } else if ($this.parents(".top-items").hasClass("top-sg")) {
         $this.append(promoMsg);
@@ -151,7 +93,6 @@
           '<div class="weight-bold size-20">+</div><div class="weight-bold size-22">' +
           lensDisc +
           '% Off</div><div class="size-15">Rx Lenses</div>';
-
         //Set FSA/HSA banner instead of lens discount in mega menu
         if (
           (checkDate >= "211226" && checkDate <= "211231") ||
@@ -188,3 +129,24 @@
     $("#ctl01_lnkNewLogin a").click();
   });
 </script>
+
+
+
+
+
+
+
+
+
+
+
+Jot something down
+
+
+
+
+
+
+
+
+
