@@ -3,6 +3,7 @@
     let heroBanner;
     let vidMain;
     let vidSmall;
+    let newPromoMsg = '';
 
     if (
         (checkDate >= "241203" && checkDate <= "241206") ||
@@ -121,15 +122,34 @@
     ) {
       vidMain = 'v1730907437/homePage/FD_HP_EA.mp4';
       vidSmall = 'v1730104850/homePage/FD_HP_EA_Text.mp4';
+      newPromoMsg = '';
       if (
           (checkDate >= '241130' && checkDate <= '241202') || 
           (fdFncs.vars.isTest >= '241130' && fdFncs.vars.isTest <= '241202')
         ) {
         vidMain = 'v1731073820/homePage/FD_HP_CYBER_WEEKEND.mp4';
         vidSmall = 'v1731058877/homePage/FD_HP_CW_text.mp4';
+        newPromoMsg = `
+          <p
+            class="ct_font__mob_14 ct_font__16 ct_font__desk__18 weight-normal mt-3"
+          >
+            <span class="weight-bold">EXTRA $10 OFF YOUR ORDER TODAY ONLY!</span><br>
+            CODE:
+            <span class="weight-bold">HAPPYCYBER</span>
+          </p>
+        `;
         if (checkDate === '241202' ||  fdFncs.vars.isTest === '241202') {
           vidMain = 'v1731073824/homePage/FD_HP_CYBER_MONDAY.mp4';
           vidSmall = 'v1731058900/homePage/FD_HP_CM_text.mp4';
+          newPromoMsg = `
+            <p 
+              class="ct_font__mob_14 ct_font__16 ct_font__desk__18 weight-normal mt-3"
+            >
+              UP TO  
+              <span class="weight-bold">AN EXTRA 10% OFF TODAY ONLY!</span><br>
+              <span class="weight-normal">Applied directly at cart</span>
+            </p>
+          `;
         }
       } else if (
         (checkDate >= '241124' && checkDate <= '241129') || 
@@ -140,6 +160,15 @@
         if (checkDate === '241129' || fdFncs.vars.isTest === '241129') {
           vidMain = 'v1730909815/homePage/FD_HP_BF.mp4';
           vidSmall = 'v1730904648/homePage/FD_HP_BF_text.mp4';
+          newPromoMsg = `
+            <p 
+              class="ct_font__mob_14 ct_font__16 ct_font__desk__18 weight-normal mt-3"
+            >
+              UP TO  
+              <span class="weight-bold">AN EXTRA 10% OFF TODAY ONLY!</span><br>
+              <span class="weight-normal">Applied directly at cart</span>
+            </p>
+          `;
         }
       }      
       heroBanner =
@@ -179,7 +208,7 @@
                     autoplay
                     disablePictureInPicture
                     width="100%"
-                    class="d-block"
+                    class="d-block ct_mt__desk__10"
                     style="max-height: 200px"
                   >
                     <source
@@ -188,7 +217,8 @@
                     />
                   </video>
                 <div
-                  class="d-flex flex-row justify-content-center align-items-end ct_mt__0 ct_mt__mob__10 ct_mb__mob__10"
+                  class="d-flex flex-row justify-content-center  ct_mt__0 ct_mt__mob__10 ct_mb__mob__10 ct_mb__10"
+                  style="height:100px"
                 >
                   <div>
                     <p 
@@ -196,23 +226,18 @@
                       Up to
                     </p>
                     <h1
-                      class="transform-uppercase ct_font__mob_32 ct_font__30 ct_font__desk__48 weight-bold ct_lh__sm ct_m__0"
+                      class="transform-uppercase ct_font__mob_32 ct_font__30  weight-bold ct_lh__sm ct_m__0 ct_font__desk__32"
                     >
                       <span class="weight-bold">50% OFF</span>
                     </h1>
                     <p
-                      class="hp-promo-sm weight-bold transform-none ct_font__32 ct_font__desk__18 ct_m__0"
+                      class="hp-promo-sm weight-bold transform-none ct_font__32  ct_font__mob_32 ct_font__desk__18 ct_m__0 ct_font__desk__32"
                     >
                       FRAMES
                     </p>
-                    <p 
-                      class="ct_font__mob_14 ct_font__16 ct_m__0 ct_font__desk__18"
-                    >
-                      Including  <span class="weight-bold">Ray-Ban, Gucci,<br> Oakley, Versace </span>& more
-                    </p>
                   </div>
                   <div
-                    class="ct_font__68 ct_font__mob_58 ct_font__desk__68  align-self-center ct_p__20 ct_p__mob__0"
+                    class="ct_font__68 ct_font__mob_58 ct_font__desk__68  align-self-center ct_p__20 ct_p__mob__10"
                   >
                     +
                   </div>
@@ -223,26 +248,22 @@
                       Up to
                     </p>
                     <div
-                      class="transform-uppercase ct_font__mob_32 ct_font__30 ct_font__desk__48 ct_lh__sm weight-bold ct_m__0"
+                      class="transform-uppercase ct_font__mob_32 ct_font__30 ct_lh__sm weight-bold ct_m__0 ct_font__desk__32"
                     >
                       <span class="weight-bold">60% OFF</span><br />
                     </div>
                     <p
-                      class="hp-promo-sm weight-bold transform-none ct_font__32 ct_font__desk__18 ct_m__0"
+                      class="hp-promo-sm weight-bold transform-none ct_font__32 ct_font__desk__18 ct_m__0  ct_font__mob_32 ct_font__desk__32"
                     >
                       LENSES
-                    </p>
-                    <p 
-                      class="ct_font__mob_14 ct_font__16 ct_m__0 ct_font__desk__18"
-                    >
-                      Clear & Sun Prescription<br>
-                      <span class="weight-bold">Starting at $25.99</span>
-                    </p>
+                    </p> 
                   </div>
                 </div>
+                ${newPromoMsg}
                 <a
+                    style="background: #AB2317"
                   href="/email/black-friday-dp"
-                  class="ct_cta ct_cta__red ct_m__mob__10 ct_mb__40 ct_mt__20"
+                  class="ct_cta ct_cta__red ct_m__mob__10 ct_mb__40 ct_mt__10"
                   >SAVE NOW</a
                 >
               </div>
