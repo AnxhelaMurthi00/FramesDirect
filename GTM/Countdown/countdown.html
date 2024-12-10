@@ -21,7 +21,7 @@
           promoDates = checkDate >= '240926' && checkDate < '240927',
           countBnr = (function () {
               if (promoDates) {
-                endDateLong = '09/30/2024';
+                endDateLong = '09/12/2024';
                 showCountdown = true;
                 countBnrMsg = '<a href="/email/labor-day-dp" class="'+bnrLnkClasses+'">Labor day sale ends soon</a>';
               }
@@ -136,7 +136,7 @@
               }
               */
               if (showCountdown) {
-                countHTML = '<div id="countdown" class="d-flex justify-content-end pr-3"><div id="countdown-clockworks-holder" class="d-flex"></div></div>';
+                countHTML = '';
               }
               return lnkStart+'<div id="count-bnr-inner" style="min-height: 37px;" class="background-'+bgColor+' d-flex flex-wrap justify-content-center align-items-center cursor-pointer weight-bold">'+countHTML+countBnrMsg+'</div>'+lnkEnd;
           })();
