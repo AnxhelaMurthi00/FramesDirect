@@ -367,6 +367,12 @@
           `;
           $("#secondInsuranceBanner").replaceWith(secondInsuranceBanner);
         }
+        else if (
+            (checkDate >= '241230' && checkDate <= '241231') ||
+            (fdFncs.vars.isTest >= '241230' && fdFncs.vars.isTest <= '241231')  
+          ){
+              $("#secondInsuranceBanner").html("");
+        };
       };
       var bannerSlider = "";
       function initBannerSlider() {

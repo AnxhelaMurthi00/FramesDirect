@@ -1,0 +1,22 @@
+<script>
+    //Winter Sale
+    if ((checkDate >= '250116' && checkDate <= '250117') || (fdFncs.vars.isTest >= '250116' && fdFncs.vars.isTest <= '250117')) {
+      var locName = ['/eyeglasses/', '/sunglasses/', '/prescription-sunglasses/', '/men/eyewear-dp', '/women/eyewear-dp', '/eyeglasses/mens', '/eyeglasses/womens', '/sunglasses/mens', '/sunglasses/womens', '/prescription-sunglasses/mens', '/prescription-sunglasses/womens'],
+          imgPath = '';
+      for (x = 0, y = locName.length; x < y; ++x) {
+        if (location.pathname === locName[x]) {
+          imgPath = 'v1736932545/landing-pages/FD_PLP_ANNIVERSARY_SALE.png';
+        //   if (locName.indexOf('/sunglasses/') > -1) {
+        //     imgPath = 'v1736529148/landing-pages/FD_PLP_Winter_Sale_Generic_Sun.png';
+        //   }
+          $("#bnr-dyn-holder").html('<a href="/email/anniversary-dp"><img alt="Winter Sale: Get exclusive 20% off luxury frames and up to 60% off lenses" src="https://images.framesdirect.com/image/upload/'+imgPath+'" width="2100" height="431" title="Winter Sale: Get exclusive 20% off luxury frames and up to 60% off lenses"></a>');
+          break;
+        }
+      }
+      if (pgURLPath('/email/anniversary-dp')) {
+        $("#bnr-dyn-holder").html('<img alt="Winter Sale: Get exclusive 20% off luxury frames and up to 60% off lenses" src="https://images.framesdirect.com/image/upload/v1736932545/landing-pages/FD_PLP_ANNIVERSARY_SALE.png" width="2100" height="431" title="Winter Sale: Get exclusive 20% off luxury frames and up to 60% off lenses">');
+        $('h1').html("It's our 29th Anniversary Flash Sale! 29% Off Top Luxury Brands");
+        $("#cata_desc").html('<p>We’re celebrating 29 years of Frames Direct with savings and you’re invited! Get 29% off top luxury brands like Versace, Burberry, Dolce&Gabbana, and many more. Plus! Save an additional 60% off lenses.  <a id="flash-disc-link" href="#">Details <i></i></a></p><p id="flash-disclaimer" style="display:none">Get 29% off the purchase price of full-priced Eyeglasses, Sunglasses, and Prescription Sunglasses from these luxury brands:Armani Exchange, Arnette, Brooks Brothers, Burberry, Coach, Dolce&Gabbana, Dolce&Gabbana Kids, Emporio Armani, Emporio Armani Kids, Giorgio Armani, Polo, Polo Kids, Ralph Lauren, RALPH, Sferoflex, Swarovski, Tory Burch, Versace, Versace Kids, Vogue, Vogue Junior. Frame purchase required. Other exlusions may apply. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee. Free Shipping on domestic orders only. Offer ends January 25, 2025.</p>');
+      }
+    }
+  </script>
