@@ -46,9 +46,14 @@
             bnrLnkClasses = bnrLnkClasses + ' color-white';
             bgColor = 'black';
             digitBg = ' white';
-            endDateLong = '01/25/2025';
-            showCountdown = true;
-            addMsg = ' + 60% off lenses ends 01/25';
+            addMsg = ' + 65% off lenses';
+            if (checkDate === '250124' || fdFncs.vars.isTest === '250124') {
+              addMsg += ' ends 01/25';
+            }
+            if (checkDate === '250125' || fdFncs.vars.isTest === '250125') {
+              endDateLong = '01/26/2025'; //date must be after the day the sale ends
+              showCountdown = true;
+            }
             if ($(window).width() > 992) {
               bnrLnkClasses = bnrLnkClasses;
               msgTime = 'Anniversary Sale: ';

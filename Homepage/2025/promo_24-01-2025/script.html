@@ -6,19 +6,19 @@
       (fdFncs.vars.isTest >= '250124' && fdFncs.vars.isTest <= '250125')
     ) {      
     let heroBanner = `
-  <div class="ct_space">
+   <div class="ct_space">
     <div class="ct_banner ct_hero">
-      <a href="/email/anniversary-dp" aria-label="winter sale" class="w-100">
+      <a  href="/email/anniversary-dp" aria-label="anniversary sale" class="w-100">
         <div class="ct_assets__container">
           <picture class="ct_skeleton">
             <img
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjfPfu1X8GHIARnyQANYsHjTiCh7gAAAAASUVORK5CYII="
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjPH3vxX8GHIARnyQAJBoHIzNm15EAAAAASUVORK5CYII="
               alt="structure image"
             />
           </picture>
           <picture class="ct_img">
             <img
-              src="https://images.framesdirect.com/image/upload/v1736932399/homePage/FD_HP_ANNIVERSARY_SALE_VISUAL.png"
+            src="https://images.framesdirect.com/image/upload/v1736932399/homePage/FD_HP_ANNIVERSARY_SALE_VISUAL.png"
               fetchpriority="high"
               alt=""
               width="3840"
@@ -27,17 +27,19 @@
           </picture>
         </div>
         <div
-          class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0"
+          class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0 ct_pt__mob__20"
           style="background: #EEEFEA; width: 35%"
         >
-        <div class="d-xl-flex justify-content-xl-start m-xl-4 ct_mt__mob__20">
-            <picture class="ct_img">
-                <img src="https://images.framesdirect.com/image/upload/v1736932401/homePage/FD_HP_ANNIVERSARY_SALE_TEXT.png" fetchpriority="high" alt="" width="325" height="110">
-              </picture>
-          </div>
-          <div
-            class="d-flex flex-wrap ct_mt__0 mx-auto"
-          >
+        <picture class="ct_img">
+          <img
+            src="https://images.framesdirect.com/image/upload/v1736932401/homePage/FD_HP_ANNIVERSARY_SALE_TEXT.png"
+            alt="Anniversary Sale"
+            class="img-fluid d-block mx-auto"
+            id="text-image"
+          />
+        </picture>
+        
+        <div class="d-flex flex-wrap ct_mt__0 mx-auto pt-4 pl-1">
             <div class="col-5 mb-3 px-0">
               <div
                 class="transform-uppercase ct_font__mob_32 ct_font__32 ct_font__desk__32 weight-bold ct_lh__sm ct_m__0"
@@ -60,24 +62,24 @@
               <div
                 class="transform-uppercase ct_font__mob_32 ct_font__32 ct_font__desk__32 ct_lh__sm weight-bold ct_m__0"
               >
-                60% Off<br><span class="weight-normal">Lenses</span>
-              </div>
-               <div
-                class="ct_font__mob_12 ct_font__12 ct_m__0 ct_font__desk__12"
-              >
-                Clear & Sun Prescription
+                65% Off<br><span class="weight-normal">Lenses</span>
               </div>
               <div
                 class="ct_font__mob_12 ct_font__12 ct_m__0 ct_font__desk__12"
               >
                 <b>Starting at $25.99</b>
               </div>
+              <div
+                class="ct_font__mob_12 ct_font__14 ct_m__0 ct_font__desk__12"
+              >
+                Code: <b>EXTRA5</b>
+              </div>
             </div>
           </div>
           <a
-            href="/email/anniversary-dp"
-            class="ct_cta ct_cta__red ct_m__mob__10 ct_mb__mob__35 mb-3"
-            >SAVE NOW</a
+          href="/email/anniversary-dp"
+          class="ct_cta ct_cta__red ct_m__mob__10 ct_mb__mob__35 mb-3"
+          >SAVE NOW</a
           >
         </div>
       </a>
@@ -581,8 +583,8 @@
   
     const updateSecondInsuranceBanner = () => {
       if (
-        (checkDate >= '250101' && checkDate <= '250115') ||
-        (fdFncs.vars.isTest >= '250101' && fdFncs.vars.isTest <= '250115')  
+        (checkDate >= '250101' && checkDate <= '250202') ||
+        (fdFncs.vars.isTest >= '250101' && fdFncs.vars.isTest <= '250202')  
       ) {
         let secondInsuranceBanner = 
         ` <div
