@@ -37,34 +37,16 @@
           }
           */
           if (
-               (checkDate >= '250116' && checkDate <= '250117') ||
-               (fdFncs.vars.isTest >= '250116' && fdFncs.vars.isTest <= '250117')
+               (checkDate >= '250203' && checkDate <= '250205') ||
+               (fdFncs.vars.isTest >= '250203' && fdFncs.vars.isTest <= '250205')
             ) {
-            var msgTime = '',
+            var msgTime = 'Exclusive Valentine’s Day Savings:  ',
                 addMsg = '';
             bnrLnkClasses = bnrLnkClasses + ' color-white';
             bgColor = 'black';
             digitBg = ' white';
-            endDateLong = '01/18/2025';
-            showCountdown = true;
-            addMsg = ' + 60% off lenses';
-            if ($(window).width() > 992) {
-              bnrLnkClasses = bnrLnkClasses;
-              msgTime = 'Winter Sale: ';
-            }
-            loggedIn = '<a href="/email/winter-sale-dp" class="color-white weight-bold">20% off frames'+addMsg+'</a>';
-            countBnrMsg = '<div class="'+bnrLnkClasses+'">' + msgTime + loggedIn + '</div>';
-          } else if (
-               (checkDate >= '250113' && checkDate <= '250115') ||
-               (fdFncs.vars.isTest >= '250113' && fdFncs.vars.isTest <= '250115')
-            ) {
-            var msgTime = 'Early Winter Sale: ',
-                addMsg = '';
-            bnrLnkClasses = bnrLnkClasses + ' color-white';
-            bgColor = 'black';
-            digitBg = ' white';
-            if (checkDate >= '250114' || fdFncs.vars.isTest >= '250114') {
-              endDateLong = '01/16/2025';
+            if (checkDate >= '250204' || fdFncs.vars.isTest >= '250205') {
+              endDateLong = '02/06/2025';
               showCountdown = true;
             }
             if ($(window).width() > 992) {
@@ -72,7 +54,7 @@
               addMsg = ' + up to 65% off lenses';
             }
             if (isRecognized) {
-              loggedIn = '<a href="/email/winter-sale-dp" class="color-white weight-bold">25% off frames'+addMsg+'</a>';
+              loggedIn = '<a href="/email/winter-sale-dp" class="color-white weight-bold">20% off frames'+addMsg+'</a>';
             } else {
               loggedIn = '<a href="javascript:addWelcomeLayer();fdFncs.vars.allowEmPop = false;" id="recSignUp" class="color-white weight-bold">Sign up</a> or <a href="#" id="recSignIn" class="siteSignIn color-white weight-bold">log in</a> now';
             }
