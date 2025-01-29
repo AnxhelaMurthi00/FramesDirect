@@ -1,0 +1,47 @@
+<script>
+  //Winter Sale
+  if ((checkDate >= '250116' && checkDate <= '250117') || (fdFncs.vars.isTest >= '250116' && fdFncs.vars.isTest <= '250117')) {
+    //For Product PLPs not specific to the Sale Landing Page
+    var locName = ['/eyeglasses/', '/sunglasses/', '/prescription-sunglasses/', '/men/eyewear-dp', '/women/eyewear-dp', '/eyeglasses/mens', '/eyeglasses/womens', '/sunglasses/mens', '/sunglasses/womens', '/prescription-sunglasses/mens', '/prescription-sunglasses/womens'],
+        imgPath = '';
+    for (x = 0, y = locName.length; x < y; ++x) {
+      if (location.pathname === locName[x]) {
+
+        if (isRecognized || ((checkDate >= '250203' && checkDate <= '250205') || (fdFncs.vars.isTest >= '250203' && fdFncs.vars.isTest <= '250205'))) {
+          imgPath = 'v1730774994/landing-pages/FD_PLP_EA_OPT_IN.png';
+          imgAlt = 'Early Black Friday';
+          if ((checkDate >= '241130' && checkDate <= '241202') || (fdFncs.vars.isTest >= '241130' && fdFncs.vars.isTest <= '241202')) {
+            imgPath = 'v1732611654/landing-pages/FD_CYBER_WEEKEND_PLP_PLAN_B_GENERIC.png';
+            imgAlt = 'Cyber Weekend';
+            if (checkDate === '241202' || fdFncs.vars.isTest === '241202') {
+              imgPath = 'v1732792653/landing-pages/FD_CYBER_MONDAY_PLP_GENERIC_PLAN_C.png';
+              imgAlt = 'Cyber Monday';
+            }
+          } else if ((checkDate >= '241124' && checkDate <= '241129') || (fdFncs.vars.isTest >= '241124' && fdFncs.vars.isTest <= '241129')) {
+            imgPath = 'v1730904695/landing-pages/FD_BFW_PLP_GENERIC.png';
+            imgAlt = 'Black Friday';
+            if (checkDate === '241129' || fdFncs.vars.isTest === '241129') {
+              imgPath = 'v1732792623/landing-pages/FD_BF_PLP_GENERIC_PLAN_C.png';
+            }
+          } 
+          $("#bnr-dyn-holder").html('<a href="/email/black-friday-dp"><img alt="' + imgAlt + ' Sale" src="https://images.framesdirect.com/image/upload/' + imgPath + '" width="2100" height="431" title="' + imgAlt + ' Sale"></a>');
+        } else if (!isRecognized && (checkDate <= '241123' || fdFncs.vars.isTest <= '241123')) {
+          $("#bnr-dyn-holder").html('<img alt="Black Friday Sale" src="https://images.framesdirect.com/image/upload/v1730712786/landing-pages/FD_PLP_EA_OPT_OUT.png" width="2100" height="430" title="Black Friday Sale" usemap="#image-map"><map name="image-map" id="image-map"><area alt="Sign Up for Emails" title="Sign Up for Emails" href="javascript:addWelcomeLayer();fdFncs.vars.allowEmPop = false;" coords="83,314,252,379" shape="rect"><area class="siteSignIn" alt="Log Into Your Account" title="Log Into Your Account" href="#" coords="284,316,440,379" shape="rect"></map>');
+        }
+  
+        imgPath = 'v1736529131/landing-pages/FD_PLP_Winter_Sale_Generic_1.png';
+        if (locName.indexOf('/sunglasses/') > -1) {
+          imgPath = 'v1736529148/landing-pages/FD_PLP_Winter_Sale_Generic_Sun.png';
+        }
+        $("#bnr-dyn-holder").html('<a href="/email/winter-sale-dp"><img alt="Winter Sale: Get exclusive 20% off luxury frames and up to 60% off lenses" src="https://images.framesdirect.com/image/upload/'+imgPath+'" width="2100" height="431" title="Winter Sale: Get exclusive 20% off luxury frames and up to 60% off lenses"></a>');
+        break;
+      }
+    }
+    //Specific sale landing page
+    if (pgURLPath('/email/winter-sale-dp')) {
+      $("#bnr-dyn-holder").html('<img alt="Winter Sale: Get exclusive 20% off luxury frames and up to 60% off lenses" src="https://images.framesdirect.com/image/upload/v1736529073/landing-pages/FD_PLP_Winter_Sale.png" width="2100" height="431" title="Winter Sale: Get exclusive 20% off luxury frames and up to 60% off lenses">');
+      $('h1').html('Winter Sale: 20% Off Luxury Frames');
+      $("#cata_desc").html('<p>Shop the Winter Sale and save! Right now, you can claim 20% off Burberry, Versace, Coach &amp; more, plus up to 60% off lenses. <a id="flash-disc-link" href="#">Details <i></i></a></p><p id="flash-disclaimer" style="display:none">Get 20% off the purchase of full-priced Eyeglasses, Sunglasses, and Prescription Sunglasses from Armani Exchange, Arnette, Brooks Brothers, Burberry, Coach, D&amp;G, D&amp;G Kids, Emporio Armani, Emporio Armani Kids, Giorgio Armani, Polo, Polo Kids, Ralph Lauren, RALPH, Sferoflex, Swarovski, Tory Burch, Versace, Versace Kids, Vogue, Vogue Junior. Does not apply to products that have already been discounted. Other exclusions may apply. Frame purchase required. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee. Free Shipping on domestic orders only. Offer ends January 18th, 2025.<br><br>It can be combined with 60% discount on the price of lenses and add-ons with the purchase of an Eyeglass frame or a pair of Prescription Sunglasses. Frame purchase required. Offer may not be used on contact lenses or any Gunnar, Maui Jim, Rec Specs Liberty Sport, Ray-Ban Stories, Ray-Ban Meta, or VirtuClear products. Costa, Kaenon, Oakley, Randolph Engineering, and Zeal prescription sunglasses are also excluded. Other exclusions might apply. Discount valid before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantees. Free Shipping on domestic orders only.</p>');
+    }
+  }
+</script>

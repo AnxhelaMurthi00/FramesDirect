@@ -105,12 +105,8 @@
             countBnrMsg = '<div class="'+bnrLnkClasses+'">' + msgTime + loggedIn + '</div>';
             bnrActive = true;
           }
-          if (showCountdown) {
-            countHTML = '<div id="countdown" class="d-flex justify-content-end pr-2"><div id="countdown-clockworks-holder" class="d-flex"></div></div>';
-          }
-          return lnkStart+'<div id="count-bnr-inner" style="height: 37px;" class="background-'+bgColor+' d-flex flex-wrap justify-content-center align-items-center cursor-pointer weight-bold">'+countHTML+countBnrMsg+'</div>'+lnkEnd;
         })();
-    if (showBanner && bnrActive) {
+    if (bnrActive && showBanner) {
       //Add CSS header padding when banner is running
       var css = '#header-top { padding-top: 37px; } .scrollingHeader #header, .scrollingHeader #header-in { height: 133px; } .scrollingHeader #header-in.hide { transform : translateY(-133px); }',
           head = document.head || document.getElementsByTagName('head')[0],
@@ -119,6 +115,8 @@
       style.type = 'text/css';
       style.appendChild(document.createTextNode(css));
       //End CSS Addition
+      countHTML = '<div id="countdown" class="d-flex justify-content-end pr-2"><div id="countdown-clockworks-holder" class="d-flex"></div></div>';
+      lnkStart+'<div id="count-bnr-inner" style="height: 37px;" class="background-'+bgColor+' d-flex flex-wrap justify-content-center align-items-center cursor-pointer weight-bold">'+countHTML+countBnrMsg+'</div>'+lnkEnd;
       $('#count-bnr-inner').remove();
       if ($('#countdown').length === 0 && $(window).width() > 1300) {
         $(countBnr).insertBefore('#header');
