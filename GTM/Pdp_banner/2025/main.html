@@ -1,16 +1,17 @@
 <script>
-  ////////////////////////////////////
-  //for Eyeglasses and Plano Sun PDPs
-  ////////////////////////////////////
+    ////////////////////////////////////
+    //for Eyeglasses and Plano Sun PDPs
+    ////////////////////////////////////
   
     function prodDiscoBanner() {
       //Holiday Savings Banner
-      /*
-      if ((checkDate >= '241212' && checkDate <= '241229') || (fdFncs.vars.isTest >= '241212' && fdFncs.vars.isTest <= '241229')) {
-        let includedBrands = ['Alexander McQueen', 'Armani Exchange', 'Arnette', 'Brooks Brothers', 'Burberry', 'Coach', 'Costa', 'Dolce & Gabbana', 'Emporio Armani', 'Giorgio Armani', 'Oakley', 'Polo', 'RALPH by Ralph Lauren', 'Ralph Lauren', 'Ray-Ban', 'Saint Laurent', 'Sferoflex', 'Starck', 'Swarovski', 'Tory Burch', 'Versace', 'Vogue'];
+  
+      if ((checkDate >= '250203' && checkDate <= '250205') || (fdFncs.vars.isTest >= '250203' && fdFncs.vars.isTest <= '250205')) {
+        /*
+        var includedBrands = ['Alexander McQueen', 'Armani Exchange', 'Arnette', 'Brooks Brothers', 'Burberry', 'Coach', 'Costa', 'Dolce & Gabbana', 'Emporio Armani', 'Giorgio Armani', 'Oakley', 'Polo', 'RALPH by Ralph Lauren', 'Ralph Lauren', 'Ray-Ban', 'Saint Laurent', 'Sferoflex', 'Starck', 'Swarovski', 'Tory Burch', 'Versace', 'Vogue'];
         for (x = 0, y = includedBrands.length; x < y; ++x) {
           if (fdFncs.currentProduct.brand === includedBrands[x]) {
-            let getRetail = $('.total-retail.total').length !== 0 && !$('.total-retail.total').is(':empty') ? +$('.total-retail.total').text().replace(/[^\d.]/g, '') : (!$('#spanRetailPrice').is(':empty') ? +$('#spanRetailPrice').text().replace(/[^\d.]/g, '') : 0),
+            var getRetail = $('.total-retail.total').length !== 0 && !$('.total-retail.total').is(':empty') ? +$('.total-retail.total').text().replace(/[^\d.]/g, '') : (!$('#spanRetailPrice').is(':empty') ? +$('#spanRetailPrice').text().replace(/[^\d.]/g, '') : 0),
                 getSale = $('.total-sale.total').length !== 0 && (!$('.total-sale.total').is(':empty') && !$('.total-retail.total').is(':empty')) ? +$('.total-sale.total').text().replace(/[^\d.]/g, '') : (!$('#spanOurPrice').is(':empty') ? +$('#spanOurPrice').text().replace(/[^\d.]/g, '') : 0),
                 getPrice = getRetail > getSale ? (getRetail - getSale).toFixed(0) : 0,
                 oakCosta = '';
@@ -30,15 +31,19 @@
             }
           }
         }
-      }
-      */
-      if ((checkDate >= '250203' && checkDate <= '250205') || (fdFncs.vars.isTest >= '250203' && fdFncs.vars.isTest <= '250205')) {
-        var excludePgs = $('h1:contains("Costa")').length === 0 && $('h1:contains("Gunnar")').length === 0 && $('h1:contains("Kaenon")').length === 0 && $('h1:contains("Maui Jim")').length === 0 && $('h1:contains("Oakley")').length === 0 && $('h1:contains("Randolph")').length === 0 && $('h1:contains("Rec Specs")').length === 0 && $('h1:contains("Zeal")').length === 0;
+        */
+  
+        var oakCosta = '',
+            excludePgs = $('h1:contains("Gunnar")').length === 0 && $('h1:contains("Kaenon")').length === 0 && $('h1:contains("Maui Jim")').length === 0 && $('h1:contains("Randolph")').length === 0 && $('h1:contains("Rec Specs")').length === 0 && $('h1:contains("Zeal")').length === 0;
         if ($('.lens-bar-holder').length > 0) {
           $('.lens-bar-holder').remove();
         }
         if (($('h1:contains("Prescription")').length > 0 || $('h1:contains("Eyeglasses")').length > 0) && excludePgs) {
-          $('<div class="lens-bar-holder mx-0 mb-3"><div class="lens-bar d-block color-black px-2 size-12 text-center" style="background: #e7c2b3; border-radius: 5px;">Get <b>extra 5% off </b>on lenses.<br class="d-lg-none"> Use code: <b>EXTRA5</b></div></div>').prependTo('#prod-header-right');
+          if ($('h1:contains("Prescription Sunglasses")').length > 0 && ($('h1:contains("Costa")').length > 0 || $('h1:contains("Oakley")').length > 0)) {
+            $('<div class="lens-bar-holder mx-0 mb-3"><div class="lens-bar d-block color-black px-2 size-12 text-center" style="background: #e7c2b3; border-radius: 5px;">Get <b>25% off</b> lenses.<br class="d-lg-none"> Use code: <b>COSTAOAK25</b></div></div>').prependTo('#prod-header-right');
+          } else {
+            $('<div class="lens-bar-holder mx-0 mb-3"><div class="lens-bar d-block color-black px-2 size-12 text-center" style="background: #e7c2b3; border-radius: 5px;">Get <b>extra 5% off </b>on lenses.<br class="d-lg-none"> Use code: <b>EXTRA5</b></div></div>').prependTo('#prod-header-right');
+          }
         }
       } else {
         if ($('body').hasClass('fd-eye') && fdFncs.pageType === "Product" && !pgURLPath('/gunnar') && !pgURLPath('/rec-specs') && !pgURLPath('/ray-ban-stories') && !pgURLPath('/ray-ban-meta')) {
@@ -50,14 +55,12 @@
         }
       }
     }
-    $(function() {
-      prodDiscoBanner();
-    });
+    prodDiscoBanner();
   
-  //////////////////  
-  //for Rx Sun PDPs 
-  //////////////////
-    
+    //////////////////  
+    //for Rx Sun PDPs 
+    //////////////////
+  
     function updateRxSunPolarizedDiscount() {
       if ((checkDate >= '241101' && checkDate <= '241103') || (fdFncs.vars.isTest >= '241101' && fdFncs.vars.isTest <= '241103')) {
         var brands = ['armani-exchange', 'arnette', 'brooks-brothers', 'burberry', 'coach', 'costa', 'dolce-gabbana', 'emporio-armani', 'giorgio-armani', 'oakley', 'polo', 'ralph-lauren', 'ray-ban', 'tory-burch', 'versace', 'vogue'];

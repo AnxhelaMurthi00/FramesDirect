@@ -1,0 +1,46 @@
+<script>
+  var isRecognized = getCookie('fdRecognized') !== undefined;
+  //For Product PLPs not specific to the Sale Landing Page
+  var locName = ['/eyeglasses/', '/sunglasses/', '/prescription-sunglasses/', '/men/eyewear-dp', '/women/eyewear-dp', '/eyeglasses/mens', '/eyeglasses/womens', '/sunglasses/mens', '/sunglasses/womens', '/prescription-sunglasses/mens', '/prescription-sunglasses/womens'],
+      imgPath = '';
+  for (x = 0, y = locName.length; x < y; ++x) {
+    if (location.pathname === locName[x]) {
+
+      if (isRecognized && ((checkDate >= '250203' && checkDate <= '250205') || (fdFncs.vars.isTest >= '250203' && fdFncs.vars.isTest <= '250205'))) {
+        imgPath = 'v1738250214/landing-pages/PLP_EYE_OPT_IN.png';
+        imgAlt = 'Pre-Valentine';
+        if (location.pathname.indexOf('/sunglasses/') > -1) {
+          imgPath = 'v1738250467/landing-pages/PLP_EA_SUN.png';
+        }
+        $("#bnr-dyn-holder").html('<a href="/email/valentine-day-dp"><img alt="' + imgAlt + ' Sale" src="https://images.framesdirect.com/image/upload/' + imgPath + '" width="2880" height="591" title="' + imgAlt + ' Sale"></a>');
+      } else if (!isRecognized &&  ((checkDate >= '250203' && checkDate <= '250205') || (fdFncs.vars.isTest >= '250203' && fdFncs.vars.isTest <= '250205'))) {
+        $("#bnr-dyn-holder").html('<img alt="Pre-Valentine Sale" src="https://images.framesdirect.com/image/upload/v1738249706/landing-pages/PLP_EYE_OPT_OUT.png" width="2880" height="591" title="Pre-Valentine Sale" usemap="#image-map"><map name="image-map" id="image-map"><area alt="Sign Up for Emails" title="Sign Up for Emails" href="javascript:addWelcomeLayer();fdFncs.vars.allowEmPop = false;" coords="117,436,343,517" shape="rect"><area class="siteSignIn" alt="Log Into Your Account" title="Log Into Your Account" href="#" coords="392,438,600,517" shape="rect"></map>');
+        $('map').imageMapResize();
+      }
+     else if ((checkDate >= '250206' && checkDate <= '250217') || (fdFncs.vars.isTest >= '250206' && fdFncs.vars.isTest <= '250217')) {
+    //For Product PLPs not specific to the Sale Landing Page
+    var locNameNew = ['/sunglasses/', '/prescription-sunglasses/'],
+        imgPath = '';
+    for (x = 0, y = locName.length; x < y; ++x) {
+      if (location.pathname === locNameNew[x]) {
+        imgPath = 'v1736529131/landing-pages/FD_PLP_Winter_Sale_Generic_1.png';
+        if (locNameNew.indexOf('/sunglasses/') > -1) {
+          imgPath = 'v1738313987/landing-pages/FD_PLP_PRESIDENTS_DAY_GENERIC_SUN.png';
+        }
+       if (locNameNew.indexOf('/prescription-sunglasses/') > -1) {
+          imgPath = 'v1738313985/landing-pages/FD_PLP_PRESIDENTS_DAY_GENERIC_SUN_RX_MAYBE_EYE.png';
+        }
+        $("#bnr-dyn-holder").html('<a href="/email/valentine-day-dp"><img alt="Valentine Sale: Get exclusive 20% off sunglasses and up to 65% off lenses" src="https://images.framesdirect.com/image/upload/'+imgPath+'" width="2100" height="431" title="Valentine Sale: Get exclusive 20% off sunglasses and up to 65% off lenses"></a>');
+        break;
+      }
+    }
+    
+  }
+    }
+  }
+  if (pgURLPath('/email/valentine-day-dp')) {
+    $("#bnr-dyn-holder").html('<img alt="Valentines day" src="https://images.framesdirect.com/image/upload/v1738321782/landing-pages/PLP_EYE_OPT_OUT-1.png" width="2100" height="431" title="Valentines day: Get exclusive 20% off frames and up to 65% off lenses">');
+    $('h1').html("Valentine's Day Savings: 20% off sunglasses + 65% off lenses");
+    $("#cata_desc").html('<p>For Valentine’s Day, we’re treating our subscribers to an exclusive 20% off on eyeglasses, sunglasses, and prescription sunglasses. Plus! Get up to 65% off lenses. Opt in for sweet savings!  <a id="flash-disc-link" href="#">Details <i></i></a></p><p id="flash-disclaimer" style="display:none">Get 20% off the purchase of full-priced Eyeglasses, Sunglasses, and Prescription Sunglasses from Armani Exchange, Arnette, Brooks Brothers, Burberry, Coach, D&G, D&G Kids, Emporio Armani, Emporio Armani Kids, Giorgio Armani, Polo, Polo Kids, Ralph Lauren, RALPH, Sferoflex, Swarovski, Tory Burch, Versace, Versace Kids, Vogue, Vogue Junior. Does not apply to products that have already been discounted. Other exclusions may apply. Frame purchase required. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee. Free Shipping on domestic orders only. Offer ends February 5th, 2025.  It can be combined with up to 65% discount on the price of lenses and add-ons with the purchase of an Eyeglass frame or a pair of Prescription Sunglasses. Frame purchase required. Offer may not be used on contact lenses or any Gunnar, Maui Jim, Rec Specs Liberty Sport, Ray-Ban Stories, Ray-Ban Meta, or VirtuClear products. Kaenon, Randolph Engineering and Zeal prescription sunglasses are also excluded. Other exclusions might apply. Discount valid before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantees. Free Shipping on domestic orders only. </p>');
+  }
+</script>

@@ -21,7 +21,7 @@
                      window.location.href.indexOf('checkout.aspx') === -1 && //Checkout
                      window.location.href.indexOf('lens_selection') === -1 && //Lens Configurator
                      window.location.href.indexOf('eyewear-lens-selector') === -1, //Lens Configurator
-        bnrLnkClasses = 'size-12 text-center weight-bold color-white',
+        bnrLnkClasses = 'size-12 text-center weight-normal color-white',
         countBnr = (function () {
           /*
           if (checkDate > '240226' && checkDate < '240316') {
@@ -37,10 +37,31 @@
           }
           */
           if (
+               (checkDate >= '250206' && checkDate <= '250217') ||
+               (fdFncs.vars.isTest >= '250206' && fdFncs.vars.isTest <= '250217')
+            ) {
+            var msgTime = '',
+                addMsg = '';
+            bnrLnkClasses = bnrLnkClasses + ' color-white';
+            bgColor = 'black';
+            digitBg = ' white';
+            if (checkDate >= '250206' || fdFncs.vars.isTest >= '250217') {
+              endDateLong = '02/18/2025';
+              showCountdown = true;
+            }
+            addMsg = ' + up to 65% off lenses';
+            if ($(window).width() > 992) {
+              bnrLnkClasses = bnrLnkClasses;
+              msgTime = 'Valentine’s Day Savings: ';
+            }
+            loggedIn = '<a href="/email/valentine-day-dp" class="color-white weight-bold">20% off sunglasses'+addMsg+'</a>';
+            countBnrMsg = '<div class="'+bnrLnkClasses+'">' + msgTime + loggedIn + '</div>';
+            bnrActive = true;
+          } else if (
                (checkDate >= '250203' && checkDate <= '250205') ||
                (fdFncs.vars.isTest >= '250203' && fdFncs.vars.isTest <= '250205')
             ) {
-            var msgTime = ' ',
+            var msgTime = '',
                 addMsg = '';
             bnrLnkClasses = bnrLnkClasses + ' color-white';
             bgColor = 'black';

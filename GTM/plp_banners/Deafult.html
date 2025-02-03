@@ -6,8 +6,8 @@
         imgPath = '';
     for (x = 0, y = locName.length; x < y; ++x) {
       if (location.pathname === locName[x]) {
-
-        if (isRecognized || ((checkDate >= '250203' && checkDate <= '250205') || (fdFncs.vars.isTest >= '250203' && fdFncs.vars.isTest <= '250205'))) {
+        /*
+        if (isRecognized || ((checkDate >= '241124' && checkDate <= '241202') || (fdFncs.vars.isTest >= '241124' && fdFncs.vars.isTest <= '241202'))) {
           imgPath = 'v1730774994/landing-pages/FD_PLP_EA_OPT_IN.png';
           imgAlt = 'Early Black Friday';
           if ((checkDate >= '241130' && checkDate <= '241202') || (fdFncs.vars.isTest >= '241130' && fdFncs.vars.isTest <= '241202')) {
@@ -28,7 +28,7 @@
         } else if (!isRecognized && (checkDate <= '241123' || fdFncs.vars.isTest <= '241123')) {
           $("#bnr-dyn-holder").html('<img alt="Black Friday Sale" src="https://images.framesdirect.com/image/upload/v1730712786/landing-pages/FD_PLP_EA_OPT_OUT.png" width="2100" height="430" title="Black Friday Sale" usemap="#image-map"><map name="image-map" id="image-map"><area alt="Sign Up for Emails" title="Sign Up for Emails" href="javascript:addWelcomeLayer();fdFncs.vars.allowEmPop = false;" coords="83,314,252,379" shape="rect"><area class="siteSignIn" alt="Log Into Your Account" title="Log Into Your Account" href="#" coords="284,316,440,379" shape="rect"></map>');
         }
-  
+        */
         imgPath = 'v1736529131/landing-pages/FD_PLP_Winter_Sale_Generic_1.png';
         if (locName.indexOf('/sunglasses/') > -1) {
           imgPath = 'v1736529148/landing-pages/FD_PLP_Winter_Sale_Generic_Sun.png';
