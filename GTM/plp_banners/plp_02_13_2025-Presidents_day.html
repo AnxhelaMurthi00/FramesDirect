@@ -1,8 +1,51 @@
 <script>
   //President Sale
   if (
-    (checkDate >= "250213" && checkDate <= "250217") ||
-    (fdFncs.vars.isTest >= "250213" && fdFncs.vars.isTest <= "250217")
+    (checkDate >= "250214" && checkDate <= "250217") ||
+    (fdFncs.vars.isTest >= "250214" && fdFncs.vars.isTest <= "250217")
+  ) {
+    // For Product PLPs not specific to the Sale Landing Page
+    var locName = ["/eyeglasses/", "/sunglasses/", "/prescription-sunglasses/"];
+    var imgPath = "v1738752354/landing-pages/PLP_PRESIDENT_S_DAY_EYE_SUN_RX.jpg";
+
+    for (var x = 0; x < locName.length; x++) {
+      if (location.pathname === locName[x]) {
+        switch (location.pathname) {
+          case "/sunglasses/":
+            imgPath = "v1739358347/landing-pages/PLP_PRESIDENT_S_DAY_SUN_14.jpg";
+            break;
+          case "/prescription-sunglasses/":
+            imgPath = "v1739358347/landing-pages/PLP_PRESIDENT_S_DAY_EYE_SUN_RX_14.jpg";
+            break;
+          case "/eyeglasses/":
+          imgPath = "v1739358347/landing-pages/PLP_PRESIDENT_S_DAY_EYE_SUN_RX_14.jpg";
+            break;
+        }
+
+        $("#bnr-dyn-holder").html(
+          '<a href="/email/presidents-dp"><img alt="Presidents Day Sale: Get up to 30% off frames and up to 65% off lenses" src="https://images.framesdirect.com/image/upload/' +
+            imgPath +
+            '" width="2100" height="431" title="Presidents Day Sale: Get up to 30% off frames and up to 65% off lenses"></a>'
+        );
+        break;
+      }
+    }
+
+    // Sale Landing Page
+    if (pgURLPath("/email/presidents-dp")) {
+      $("#bnr-dyn-holder").html(
+        '<img alt="Presidents Day Sale: Get up to 30% off frames and up to 65% off lenses" src="https://images.framesdirect.com/image/upload/v1739358347/landing-pages/PLP_PRESIDENTS_DAY_PROMO_14.png" width="2100" height="431" title="Presidents Day Sale: Get up to 30% off frames and up to 65% off lenses">'
+      );
+      $("h1").html(
+        "Presidents Day Sale: Get up to 30% off frames and up to 65% off lenses"
+      );
+      $("#cata_desc").html(
+        '<p>Take time to upgrade your eyeglasses and save.For a limited time, save on top brands like Ray-Ban, Oakley, Costa, and more. Take 60% off lenses.<a id="flash-disc-link" href="#">Details <i></i></a></p><p id="flash-disclaimer" style="display:none">Get 20%-30% off the purchase price of full-priced Eyeglasses, Sunglasses and Prescription Sunglasses from Ray-Ban, Oakley, Costa, Armani Exchange, Arnette, Brooks Brothers, Burberry, Coach, Dolce&Gabbana, Dolce&Gabbana Kids, Emporio Armani, Emporio Armani Kids, Giorgio Armani, Polo, Polo Kids, Ralph Lauren, RALPH, Sferoflex, Swarovski, Tory Burch, Versace, Versace Kids, Vogue, Vogue Junior. Save $20 when you purchase eyeglasses, sunglasses, or prescription frames. Some exclusions may apply. Offer valid on order amount before any shipping costs and/or any applicable taxes added. Cannot be used in conjunction with price match guarantee. Offer valid until February 17th, 2025. <br><br>It can be combined with 65% discount, with code EXTRA5, on the price of lenses and add-ons with the purchase of an Eyeglass, Sunglass or Prescription Sunglass frame. Frame purchase required. Offer may not be used on contact lenses or any Gunnar, Maui Jim, Rec Specs Liberty Sport, Ray-Ban Stories, Ray-Ban Meta, or VirtuClear products. Kaenon, Randolph Engineering, and Zeal prescription sunglasses are also excluded. Other exclusions might apply. Discount valid before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantees. Free Shipping on domestic orders only.</p>'
+      );
+    }
+  }else if (
+    (checkDate >= "250213" && checkDate <= "250213") ||
+    (fdFncs.vars.isTest >= "250213" && fdFncs.vars.isTest <= "250213")
   ) {
     // For Product PLPs not specific to the Sale Landing Page
     var locName = ["/eyeglasses/", "/sunglasses/", "/prescription-sunglasses/"];

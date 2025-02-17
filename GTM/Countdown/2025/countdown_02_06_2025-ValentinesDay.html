@@ -37,16 +37,16 @@
           }
           */
           if (
-               (checkDate >= '250206' && checkDate <= '250217') ||
-               (fdFncs.vars.isTest >= '250206' && fdFncs.vars.isTest <= '250217')
+               (checkDate >= '250206' && checkDate <= '250212') ||
+               (fdFncs.vars.isTest >= '250206' && fdFncs.vars.isTest <= '250212')
             ) {
             var msgTime = '',
                 addMsg = '';
             bnrLnkClasses = bnrLnkClasses + ' color-white';
             bgColor = 'black';
             digitBg = ' white';
-            if (checkDate >= '250206' || fdFncs.vars.isTest >= '250217') {
-              endDateLong = '02/18/2025';
+            if (checkDate >= '250206' || fdFncs.vars.isTest >= '250212') {
+              endDateLong = '02/13/2025';
               showCountdown = true;
             }
             addMsg = ' + up to 65% off lenses';
@@ -87,7 +87,7 @@
           }
           return lnkStart+'<div id="count-bnr-inner" style="height: 37px;" class="background-'+bgColor+' d-flex flex-wrap justify-content-center align-items-center cursor-pointer weight-bold">'+countHTML+countBnrMsg+'</div>'+lnkEnd;
         })();
-    if (showBanner && (checkDate >= '250203' && checkDate <= '250205') || (fdFncs.vars.isTest >= '250203' && fdFncs.vars.isTest <= '250205')) {
+    if (showBanner && (checkDate >= '250206' && checkDate <= '250212') || (fdFncs.vars.isTest >= '250206' && fdFncs.vars.isTest <= '250212')) {
       //Add CSS header padding when banner is running
       var css = '#header-top { padding-top: 37px; } .scrollingHeader #header, .scrollingHeader #header-in { height: 133px; } .scrollingHeader #header-in.hide { transform : translateY(-133px); }',
           head = document.head || document.getElementsByTagName('head')[0],

@@ -10,7 +10,74 @@
     
 
 
+        
     if (
+      !$this.parents('.top-items').hasClass('top-sale') && 
+      (
+        (checkDate >= '250214' && checkDate <= '250217') ||
+        (fdFncs.vars.isTest >= '250214' && checkDate <= '250217')
+      )
+    )
+    { 
+      $this.css('backgroundColor', '#98B8CDFF');
+      setPg = '/sale/top-brands-discounted-dp';
+      if ($this.parents('.top-items').hasClass('top-cl')) {
+        $this.append(
+          clMsg
+        )
+        setPg = '/contact-lenses/';
+      } else if ($this.parents('.top-items').hasClass('top-sale')) {
+        $this.append(
+          '<div class="size-14">Outlet Deals</div><div class="size-18 pt-2 mt-2" style="line-height: 1; border-top: 1px #fff solid;">Save Up To</div><div class="size-40" style="line-height: 1;">50%</div>'
+        );
+        $this.addClass(
+          'background-red color-white weight-bold transform-uppercase'
+        )
+      } else if ($this.parents('.top-items').hasClass('top-sg')) {
+        $this.append(
+          '<div><div>Up to</div><span class="weight-bold size-18"> 30% OFF<br> FRAMES</span><div class="lh-1 pt-2" style="line-height: 1.5;">Limited time only deal:<br><strong> Extra $20 off </strong>at cart* </div></div>'
+        );
+        setPg = '/email/presidents-dp';
+      } else {
+        $this.append(
+          '<div>Up to</div><div class="weight-bold size-18"> 30% OFF FRAMES<br></div><div class="weight-bold size-18">+</div><div class="weight-bold size-18">65% OFF LENSES</div><div class="lh-1 pt-2" style="line-height: 1.5;">Limited time only deal:<br><strong> Extra $20 off </strong>at cart* </div>'
+          );
+          setPg = '/email/presidents-dp';
+      }
+    }else if (
+      !$this.parents('.top-items').hasClass('top-sale') && 
+      (
+        (checkDate >= '250213' && checkDate <= '250213') ||
+        (fdFncs.vars.isTest >= '250213' && checkDate <= '250213')
+      )
+    )
+    { 
+      $this.css('backgroundColor', '#98B8CDFF');
+      setPg = '/sale/top-brands-discounted-dp';
+      if ($this.parents('.top-items').hasClass('top-cl')) {
+        $this.append(
+          clMsg
+        )
+        setPg = '/contact-lenses/';
+      } else if ($this.parents('.top-items').hasClass('top-sale')) {
+        $this.append(
+          '<div class="size-14">Outlet Deals</div><div class="size-18 pt-2 mt-2" style="line-height: 1; border-top: 1px #fff solid;">Save Up To</div><div class="size-40" style="line-height: 1;">50%</div>'
+        );
+        $this.addClass(
+          'background-red color-white weight-bold transform-uppercase'
+        )
+      } else if ($this.parents('.top-items').hasClass('top-sg')) {
+        $this.append(
+          '<div><div>Up to</div><span class="weight-bold size-18"> 30% OFF<br> FRAMES</span></div>'
+        );
+        setPg = '/email/presidents-dp';
+      } else {
+        $this.append(
+          '<div>Up to</div><div class="weight-bold size-18"> 30% OFF <br>FRAMES<br></div><div class="weight-bold size-18">+</div><div class="weight-bold size-18">65% OFF<br> LENSES</div>'
+          );
+          setPg = '/email/presidents-dp';
+      }
+    }else if (
       !$this.parents('.top-items').hasClass('top-sale') && 
       (
         (checkDate >= '250206' && checkDate <= '250212') ||
@@ -19,7 +86,7 @@
     )
     { 
       $this.css('backgroundColor', '#E7C2B2');
-      setPg = '/sale/top-brands-discounted-dp';
+      setPg = '/email/valentine-day-dp';
       if ($this.parents('.top-items').hasClass('top-cl')) {
         $this.append(
           clMsg
@@ -36,12 +103,10 @@
         $this.append(
           '<div><span class="weight-bold size-18">20% OFF<br> SUNGLASSES</span><div class="weight-normal">from Ray-Ban, Oakley & more</div></div>'
         );
-        setPg = '/email/valentine-day-dp';
       } else {
         $this.append(
           '<div class="weight-bold size-18">20% OFF <br>SUNGLASSES</div><div>from Ray-Ban, Oakley & more</div><div class="weight-bold size-18">+</div><div class="weight-bold size-18">65% OFF LENSES</div><div>Code: <b>EXTRA5</b></div>'
           );
-          setPg = '/email/valentine-day-dp';
       }
     }else if (
       !$this.parents('.top-items').hasClass('top-sale') &&

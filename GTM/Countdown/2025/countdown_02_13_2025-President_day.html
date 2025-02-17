@@ -21,26 +21,56 @@
                      window.location.href.indexOf('checkout.aspx') === -1 && //Checkout
                      window.location.href.indexOf('lens_selection') === -1 && //Lens Configurator
                      window.location.href.indexOf('eyewear-lens-selector') === -1, //Lens Configurator
-        bnrLnkClasses = 'size-12 text-center weight-bold color-white',
+        bnrLnkClasses = 'size-12 text-center weight-normal color-white',
         countBnr = (function () {
-          /*
-          if (checkDate > '240226' && checkDate < '240316') {
-            if (checkDate > '240305') {
-              endDateLong = '03/16/2024';
-              showCountdown = true;
-              // bnrLnkClasses = bnrLnkClasses + ' col-lg-7 text-lg-left';
-            }
-            if (pgURLPath('/knowledge-center/do-you-have-flex-spending-dollars')) {
-              $('#landing-content').prepend('<div class="p-3 size-24 align-center weight-bold">FSA Dollars May Expire March 15th! Use Yours Today!</div>');
-            }
-            countBnrMsg = '<a href="/collections/fsa-hsa-eligible-eyewear-dp" class="'+bnrLnkClasses+'">FSA Dollars&nbsp;may expire 3/15</a>';
-          }
-          */
+    
           if (
+               (checkDate >= '250214' && checkDate <= '250217') ||
+               (fdFncs.vars.isTest >= '250214' && fdFncs.vars.isTest <= '250217')
+            ) {
+            var msgTime = '',
+                addMsg = '';
+            bnrLnkClasses = bnrLnkClasses + ' color-white';
+            bgColor = 'black';
+            digitBg = ' white';
+            if (checkDate >= '250217' || fdFncs.vars.isTest >= '250217') {
+              endDateLong = '02/18/2025';
+              showCountdown = true;
+            }
+            addMsg = '';
+            if ($(window).width() > 992) {
+              bnrLnkClasses = bnrLnkClasses;
+              msgTime = 'President’s Day Limited Time Deal:';
+            }
+            loggedIn = '<a href="/email/presidents-dp" class="color-white weight-bold"> An extra $20 off at cart*'+addMsg+'</a>';
+            countBnrMsg = '<div class="'+bnrLnkClasses+'">' + msgTime + loggedIn + '</div>';
+            bnrActive = true;
+          } else if (
+               (checkDate >= '250213' && checkDate <= '250213') ||
+               (fdFncs.vars.isTest >= '250213' && fdFncs.vars.isTest <= '250213')
+            ) {
+            var msgTime = '',
+                addMsg = '';
+            bnrLnkClasses = bnrLnkClasses + ' color-white';
+            bgColor = 'black';
+            digitBg = ' white';
+            if (checkDate >= '250213' || fdFncs.vars.isTest >= '250213') {
+              endDateLong = '02/18/2025';
+              showCountdown = false;
+            }
+            addMsg = ' + 65% off lenses ends 02/18';
+            if ($(window).width() > 992) {
+              bnrLnkClasses = bnrLnkClasses;
+              msgTime = 'President’s Day Savings: ';
+            }
+            loggedIn = '<a href="/email/presidents-dp" class="color-white weight-bold"> Up to 30% off frames'+addMsg+'</a>';
+            countBnrMsg = '<div class="'+bnrLnkClasses+'">' + msgTime + loggedIn + '</div>';
+            bnrActive = true;
+          }  else if (
                (checkDate >= '250203' && checkDate <= '250205') ||
                (fdFncs.vars.isTest >= '250203' && fdFncs.vars.isTest <= '250205')
             ) {
-            var msgTime = ' ',
+            var msgTime = '',
                 addMsg = '';
             bnrLnkClasses = bnrLnkClasses + ' color-white';
             bgColor = 'black';
@@ -66,7 +96,7 @@
           }
           return lnkStart+'<div id="count-bnr-inner" style="height: 37px;" class="background-'+bgColor+' d-flex flex-wrap justify-content-center align-items-center cursor-pointer weight-bold">'+countHTML+countBnrMsg+'</div>'+lnkEnd;
         })();
-    if (showBanner && (checkDate >= '250203' && checkDate <= '250205') || (fdFncs.vars.isTest >= '250203' && fdFncs.vars.isTest <= '250205')) {
+    if (showBanner && (checkDate >= '250203' && checkDate <= '250217') || (fdFncs.vars.isTest >= '250203' && fdFncs.vars.isTest <= '250217')) {
       //Add CSS header padding when banner is running
       var css = '#header-top { padding-top: 37px; } .scrollingHeader #header, .scrollingHeader #header-in { height: 133px; } .scrollingHeader #header-in.hide { transform : translateY(-133px); }',
           head = document.head || document.getElementsByTagName('head')[0],
