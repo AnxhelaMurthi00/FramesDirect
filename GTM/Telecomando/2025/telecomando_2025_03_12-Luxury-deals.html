@@ -1,0 +1,45 @@
+<script>
+  if (
+    (checkDate >= "250224" && checkDate <= "250312") ||
+    (fdFncs.vars.isTest >= "250224" && fdFncs.vars.isTest <= "250312")
+  ) {
+    $("#discountBar #exclusiveToggle").html(
+      $("#discountBar #exclusiveToggle")
+        .html()
+        .replace("See Exclusive Savings!", " Luxury Style at a Steal")
+        .replace("Exclusive Savings", " Luxury Style at a Steal")
+    );
+    $("#exclusiveSavings #discountBar > .blue-bg").css({
+      background: "#D3BDAF",
+    });
+  } else
+    if (
+    (checkDate >= "250218" && checkDate <= "250223") ||
+    (fdFncs.vars.isTest >= "250218" && fdFncs.vars.isTest <= "250223")
+  ) {
+    $("#discountBar #exclusiveToggle").html(
+      $("#discountBar #exclusiveToggle")
+        .html()
+        .replace("See Exclusive Savings!", "Best Deals")
+        .replace("Exclusive Savings", "Best Deals")
+    );
+    $("#exclusiveSavings #discountBar > .blue-bg").css({
+      background: "#DDDDDD",
+    });
+  } else if (fdFncs.vars.fdRecognized) {
+    if (
+      (checkDate >= "250203" && checkDate <= "250205") ||
+      (fdFncs.vars.isTest >= "250203" && fdFncs.vars.isTest <= "250205")
+    ) {
+      $("#discountBar #exclusiveToggle").html(
+        $("#discountBar #exclusiveToggle")
+          .html()
+          .replace("See Exclusive Savings!", "Valentine’s Day Savings")
+          .replace("Exclusive Savings", "Valentine’s Day Savings")
+      );
+      $("#exclusiveSavings #discountBar > .blue-bg").css({
+        background: "#E7C2B3",
+      });
+    }
+  }
+</script>
