@@ -1,0 +1,24 @@
+<ul class="menu-header">
+	<li class='menu-back'><a href='#' class="weight-bold"><span class='icon-arrow-left'></span>Back</a></li>
+	<li class='menu-header pad-10 weight-bold'>Brands</li>
+</ul>
+<div class="mt-brand-logos-holder align-center marg-bot-20">
+  <div class="mt-brand-logo-item"><a class="mt-brand-logo-link" href="/ray-ban/brand" title="Ray-Ban Eyewear"><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://images.framesdirect.com/image/upload/w_80,f_auto,q_auto/v1531417379/logos/ray-ban-logo.svg" width="58" height="40"  alt="Ray-Ban Eyewear"></a></div>
+  <div class="mt-brand-logo-item"><a class="mt-brand-logo-link" href="/oakley/brand" title="Oakley Eyewear"><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://images.framesdirect.com/image/upload/w_80,f_auto,q_auto/v1531417376/logos/oakley-logo.svg" width="80" height="30" alt="Oakley Eyewear"></a></div>
+  <div class="mt-brand-logo-item"><a class="mt-brand-logo-link" href="/gucci/brand" title="Gucci Eyewear"><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://images.framesdirect.com/image/upload/c_fit,f_auto,q_auto/v1531417379/logos/gucci-logo.svg" width="80" height="12" alt="Gucci Eyewear"></a></div>
+  <div class="mt-brand-logo-item"><a class="mt-brand-logo-link" href="/kate-spade/brand" title="Kate Spade Eyewear"><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://images.framesdirect.com/image/upload/w_80,f_auto,q_auto/v1578930137/logos/kate-spade-logo.svg" width="80" height="24" alt="Kate Spade Eyewear"></a></div>
+  <div class="mt-brand-logo-item"><a class="mt-brand-logo-link" href="/maui-jim/brand" title="Maui Jim Eyewear"><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://images.framesdirect.com/image/upload/w_80,f_auto,q_auto/v1531912917/logos/maui-jim-nb-logo.svg" width="80" height="40" alt="Maui Jim Eyewear"></a></div>
+</div>
+<div class="mt-brand-logos-holder align-center marg-bot-20">
+  <div class="mt-brand-logo-item"><a class="mt-brand-logo-link" href="/wiley-x/brand" title="Wiley X Eyewear"><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://images.framesdirect.com/image/upload/h_30,f_auto,q_auto/v1707250152/logos/WX_logo_stacked_black.svg" width="235" height="30" alt="Wiley X Eyewear"></a></div>
+  <div class="mt-brand-logo-item"><a class="mt-brand-logo-link" href="/costa/brand" title="Costa Eyewear"><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://images.framesdirect.com/image/upload/w_80,f_auto,q_auto/v1531417375/logos/costa-logo.svg" width="80" height="15" alt="Costa Eyewear"></a></div>
+  <div class="mt-brand-logo-item"><a class="mt-brand-logo-link" href="/giorgio-armani/brand" title="Giorgio Armani Eyewear"><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://images.framesdirect.com/image/upload/h_11,c_fit/v1626742482/logos/giorgio-armani-logo.svg" width="542" height="11" alt="Giorgio Armani Eyewear"></a></div>
+  <div class="mt-brand-logo-item"><a class="mt-brand-logo-link" href="/burberry/brand" title="Burberry Eyewear"><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://images.framesdirect.com/image/upload/w_80/v1531417380/logos/burberry-logo.svg" width="80" height="13" alt="Burberry Eyewear"></a></div>
+  <div class="mt-brand-logo-item"><a class="mt-brand-logo-link" href="/versace/brand" title="Versace Eyewear"><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://images.framesdirect.com/image/upload/f_auto,q_auto/v1531417371/logos/versace-logo.svg" width="80" height="12" alt="Versace Eyewear"></a></div>
+</div>
+
+<div class="text-center mx-auto">
+<ul class="tm-shop-all">
+<li class="menu-btn"><a href="/brands">Shop All Brands</a></li>
+</ul>
+</div>
