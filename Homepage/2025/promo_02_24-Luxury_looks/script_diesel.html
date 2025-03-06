@@ -83,7 +83,7 @@
                   class="ct_font__mob_18 ct_font__18 ct_m__10 ct_font__desk__24"
                   style="margin-bottom: 25px !important"
                 >
-                  <b>Code: EXTRA5</b>
+                  <b id="promoCode" >Code: EXTRA5</b>
                 </p>
               </div>
             </div>
@@ -1514,6 +1514,20 @@ $(window)
     };
   });
 
+  document.getElementById("promoCode").addEventListener("click", function () {
+            let text = this.textContent;  
+            let promoCode = text.split(":")[1]?.trim();  
+
+            if (promoCode) {
+                const tempInput = document.createElement("input");
+                tempInput.value = promoCode;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                tempInput.setSelectionRange(0, 99999); 
+                document.execCommand("copy");
+                document.body.removeChild(tempInput);
+            } 
+        });
   /* UTILS */
   function isTestingParameter(date) {
     const url = window.location.href;
