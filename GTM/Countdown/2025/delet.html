@@ -1,0 +1,177 @@
+<script>
+  fdFncs.vars = fdFncs.vars || {};
+  fdFncs.vars.discNoBrands = "80";
+  fdFncs.vars.add50 = "50";
+  fdFncs.vars.setLuxMSRP = "";
+
+  var checkDate = "250320"; // Example date, replace with dynamic check
+  var messages = [];
+  var mobileMessages = [];
+
+  if (
+    (checkDate >= "250320" && checkDate <= "250330") ||
+    (fdFncs.vars.isTest >= "250320" && fdFncs.vars.isTest <= "250330")
+  ) {
+    messages = [
+      "Early Spring Savings: Up to 50% off selected frames + 65% off lenses",
+      "Save 40% on prescription lenses from Wiley X, Maui Jim, Costa & Oakley",
+      "Use your insurance, including FSA benefits before they expire on March 15!",
+    ];
+
+    mobileMessages = [
+      "Up to 50% off frames + 65% off lenses!",
+      "40% off RX lenses from Oakley, Maui Jim & more",
+      "Use FSA benefits before they expire on March 15!",
+    ];
+  } else if (
+    (checkDate >= "250313" && checkDate <= "250319") ||
+    (fdFncs.vars.isTest >= "250313" && fdFncs.vars.isTest <= "250319")
+  ) {
+    messages = [
+      "Spring Savings: Up to 50% off your favorite brands",
+      "New Arrivals for Spring Are Here!",
+    ];
+
+    mobileMessages = [
+      "Spring Savings: Up to 50% off your favorite brands",
+      "New Arrivals for Spring Are Here!",
+    ];
+  }
+
+  // Detect screen width and adjust messages accordingly
+  var isMobile = window.innerWidth < 768;
+  var currentMessages = isMobile ? mobileMessages : messages;
+
+  var currentMessageIndex = 0;
+
+  function updateBannerMessage() {
+    var countBnrMsg =
+      '<div class="carousel-arrow left-arrow" onclick="navigateCarousel(\'prev\')">&#10094;</div>' +
+      currentMessages[currentMessageIndex] +
+      '<div class="carousel-arrow right-arrow" onclick="navigateCarousel(\'next\')">&#10095;</div>';
+
+    $("#count-bnr-inner .carousel-message").html(countBnrMsg);
+  }
+
+  function navigateCarousel(direction) {
+    if (direction === "next") {
+      currentMessageIndex = (currentMessageIndex + 1) % currentMessages.length;
+    } else if (direction === "prev") {
+      currentMessageIndex =
+        (currentMessageIndex - 1 + currentMessages.length) %
+        currentMessages.length;
+    }
+    updateBannerMessage();
+  }
+
+  var carouselCSS =
+    "#count-bnr-inner {" +
+    "  display: flex;" +
+    "  align-items: center;" +
+    "  justify-content: center;" +
+    "  height: 37px;" +
+    "  background-color: black;" +
+    "  color: white;" +
+    "  padding: 0 10px;" +
+    "  cursor: pointer;" +
+    "}" +
+    ".carousel-arrow {" +
+    "  cursor: pointer;" +
+    "  padding: 0 10px;" +
+    "  font-size: 14px;" +
+    "  color: white;" +
+    "}" +
+    ".carousel-message {" +
+    "  display: flex;" +
+    "  align-items: center;" +
+    "  font-size: 12px;" +
+    "  font-weight: normal;" +
+    "}" +
+    "#header-top {" +
+    "  padding-top: 37px;" +
+    "}" +
+    ".scrollingHeader #header, .scrollingHeader #header-in {" +
+    "  height: 133px;" +
+    "}" +
+    ".scrollingHeader #header-in.hide {" +
+    "  transform: translateY(-133px);" +
+    "}";
+
+  var style = document.createElement("style");
+  style.type = "text/css";
+  if (style.styleSheet) {
+    style.styleSheet.cssText = carouselCSS;
+  } else {
+    style.appendChild(document.createTextNode(carouselCSS));
+  }
+  document.head.appendChild(style);
+
+  fdFncs.countBnr = function () {
+    var showBanner =
+      window.location.href.indexOf("shopping") === -1 &&
+      window.location.href.indexOf("password_email.aspx") === -1 &&
+      window.location.href.indexOf("login.aspx") === -1 &&
+      window.location.href.indexOf("checkout.aspx") === -1 &&
+      window.location.href.indexOf("lens_selection") === -1 &&
+      window.location.href.indexOf("eyewear-lens-selector") === -1;
+
+    countBnr = (function () {
+      return (
+        '<div id="count-bnr-inner">' +
+        '<div class="carousel-message">' +
+        '<div class="carousel-arrow left-arrow" onclick="navigateCarousel(\'prev\')">&#10094;</div>' +
+        currentMessages[currentMessageIndex] +
+        '<div class="carousel-arrow right-arrow" onclick="navigateCarousel(\'next\')">&#10095;</div>' +
+        "</div>" +
+        "</div>"
+      );
+    })();
+
+    if (showBanner) {
+      $("#count-bnr-inner").remove();
+      if ($("#countdown").length === 0 && $(window).width() > 1300) {
+        $(countBnr).insertBefore("#header");
+        $("#header-top").css("padding-top", 0);
+        $("body").addClass("changeSticky");
+      } else if ($("#countdown").length === 0) {
+        $(countBnr).prependTo("#header-in");
+        $("#header-top").css("padding-top", 0);
+      } else {
+        $(countBnr).prependTo("#header-in");
+      }
+
+      $("#count-bnr-inner").on("click", function () {
+        var $this = $(this);
+        if ($this.find("a").length === 1) {
+          var linkLoc = $this.find("a").attr("href");
+          window.location.href = linkLoc;
+        }
+      });
+    }
+  };
+
+  window.navigateCarousel = function (direction) {
+    if (direction === "next") {
+      currentMessageIndex = (currentMessageIndex + 1) % currentMessages.length;
+    } else if (direction === "prev") {
+      currentMessageIndex =
+        (currentMessageIndex - 1 + currentMessages.length) %
+        currentMessages.length;
+    }
+    updateBannerMessage();
+  };
+
+  // Ensure the correct messages load on mobile or desktop
+  window.addEventListener("resize", function () {
+    var wasMobile = isMobile;
+    isMobile = window.innerWidth < 768;
+    if (wasMobile !== isMobile) {
+      currentMessages = isMobile ? mobileMessages : messages;
+      currentMessageIndex = 0; // Reset index when switching
+      updateBannerMessage();
+    }
+  });
+
+  // Initialize the banner
+  fdFncs.countBnr();
+</script>

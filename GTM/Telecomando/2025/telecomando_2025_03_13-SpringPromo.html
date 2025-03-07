@@ -1,5 +1,18 @@
 <script>
-    if (
+  if (
+    (checkDate >= "250320" && checkDate <= "250330") ||
+    (fdFncs.vars.isTest >= "250320" && fdFncs.vars.isTest <= "250330")
+  ) {
+    $("#discountBar #exclusiveToggle").html(
+      $("#discountBar #exclusiveToggle")
+        .html()
+        .replace("See Exclusive Savings!", "Spring into Savings")
+        .replace("Exclusive Savings", " Spring into Savings")
+    );
+    $("#exclusiveSavings #discountBar > .blue-bg").css({
+      background: "#E3DAC9",
+    });
+  } else if (
     (checkDate >= "250313" && checkDate <= "250319") ||
     (fdFncs.vars.isTest >= "250313" && fdFncs.vars.isTest <= "250319")
   ) {
@@ -12,8 +25,7 @@
     $("#exclusiveSavings #discountBar > .blue-bg").css({
       background: "#C7D7D6",
     });
-  } else
-  if (
+  } else if (
     (checkDate >= "250224" && checkDate <= "250312") ||
     (fdFncs.vars.isTest >= "250224" && fdFncs.vars.isTest <= "250312")
   ) {
