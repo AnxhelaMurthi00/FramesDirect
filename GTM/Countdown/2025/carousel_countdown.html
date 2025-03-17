@@ -20,11 +20,11 @@
     messages =
       $(window).width() <= 768
         ? [
-            "Up to 50% off frames & 65% off lenses",
+            "Spring Savings: Up to 50% off frames & 65% off lenses",
             "New Arrivals for Spring Are Here!",
           ]
         : [
-            "Spring Savings: Up to 50% off frames & 65% off lenses",
+            "Spring Savings: Up to 50% off your favorite brands",
             "New Arrivals for Spring Are Here!",
           ];
   } else if (
@@ -57,27 +57,26 @@
             "Save 40% on prescription lenses from Wiley X, Maui Jim, Costa & Oakley",
             "Use your insurance, including FSA benefits before they expire on March 15!",
           ];
-  } else {
-    messages =
-      $(window).width() <= 768
-        ? ["Up to 50% off frames + 65% off lenses"]
-        : [
-            "Early Spring Savings: Up to 50% off selected frames + 65% off lenses",
-          ];
   }
+
   var currentMessageIndex = 0;
 
   // Function to update the banner message
   function updateBannerMessage() {
-    var countBnrMsg = messages[currentMessageIndex];
+    var countBnrMsg =
+      '<div class="carousel-message">' +
+      '<div class="carousel-arrow left-arrow" onclick="navigateCarousel(\'prev\')">&#10094;</div>' +
+      messages[currentMessageIndex] +
+      '<div class="carousel-arrow right-arrow" onclick="navigateCarousel(\'next\')">&#10095;</div>' +
+      "</div>";
 
     // Add countdown only for the specific message
     if (messages[currentMessageIndex].includes("March 15")) {
       countBnrMsg +=
-        '<div id="countdown" class="d-flex justify-content-end pr-2 size-6 ml-3"><div id="countdown-clockworks-holder" class="d-flex"></div></div>';
+        '<div id="countdown" class="d-flex justify-content-end pr-2"><div id="countdown-clockworks-holder" class="d-flex"></div></div>';
     }
 
-    $("#count-bnr-inner").html(countBnrMsg);
+    $("#count-bnr-inner .carousel-message").html(countBnrMsg);
 
     // Initialize the countdown if the specific message is active
     if (
@@ -115,13 +114,57 @@
   }
 
   // Function to handle the carousel navigation
-  function navigateCarousel() {
-    currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+  function navigateCarousel(direction) {
+    if (direction === "next") {
+      currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+    } else if (direction === "prev") {
+      currentMessageIndex =
+        (currentMessageIndex - 1 + messages.length) % messages.length;
+    }
     updateBannerMessage();
   }
+  var carouselCSS =
+    "#count-bnr-inner {" +
+    "  display: flex;" +
+    "  align-items: center;" +
+    "  justify-content: center;" +
+    "  height: 37px;" +
+    "  background-color: black;" +
+    "  color: white;" +
+    "  padding: 0 10px;" +
+    "  position: relative;" +
+    "}" +
+    ".carousel-message {" +
+    "  display: flex;" +
+    "  align-items: center;" +
+    "  font-size: 12px;" +
+    "  text-align: center;" +
+    "  justify-content: center;" +
+    "  white-space: nowrap;" + // Prevents wrapping
+    "}" +
+    ".carousel-arrow {" +
+    "  font-size: 14px;" +
+    "  color: white;" +
+    "  padding: 0 5px;" + // Reduce padding to bring arrows closer
+    "  display: flex;" +
+    "  align-items: center;" +
+    "}" +
+    ".left-arrow {" +
+    "  margin-right: 5px;" + // Reduce space between left arrow and text
+    "}" +
+    ".right-arrow {" +
+    "  margin-left: 5px;" + // Reduce space between right arrow and text
+    "}";
 
-  // Automatically cycle through messages every 3 seconds
-  setInterval(navigateCarousel, 4000);
+  // Inject the CSS into the document
+  var style = document.createElement("style");
+  style.type = "text/css";
+  if (style.styleSheet) {
+    style.styleSheet.cssText = carouselCSS;
+  } else {
+    style.appendChild(document.createTextNode(carouselCSS));
+  }
+  document.head.appendChild(style);
 
   fdFncs.countBnr = function () {
     var endDateLong = "01/01/1900",
@@ -143,32 +186,24 @@
         window.location.href.indexOf("lens_selection") === -1 && //Lens Configurator
         window.location.href.indexOf("eyewear-lens-selector") === -1; //Lens Configurator
 
-    // Create the carousel HTML structure without carousel-message div
+    // Create the carousel HTML structure
     countBnr = (function () {
       return (
         lnkStart +
-        '<div id="count-bnr-inner" style="height: 37px; color:white;" class="background-black ' +
+        '<div id="count-bnr-inner" style="height: 37px;" class="background-' +
         bgColor +
-        ' d-flex justify-content-center align-items-center weight-bold">' +
+        ' d-flex flex-wrap justify-content-center align-items-center  weight-bold">' +
+        '<div class="carousel-message">' +
+        '<div class="carousel-arrow left-arrow" onclick="navigateCarousel(\'prev\')">&#10094;</div>' +
         messages[currentMessageIndex] +
+        '<div class="carousel-arrow right-arrow" onclick="navigateCarousel(\'next\')">&#10095;</div>' +
+        "</div>" +
         "</div>" +
         lnkEnd
       );
     })();
 
-    if (
-      (showBanner && checkDate >= "250224" && checkDate <= "250330") ||
-      (fdFncs.vars.isTest >= "250224" && fdFncs.vars.isTest <= "250330")
-    ) {
-      //Add CSS header padding when banner is running
-      var css =
-          "#header-top { padding-top: 37px; } .scrollingHeader #header, .scrollingHeader #header-in { height: 133px; } .scrollingHeader #header-in.hide { transform : translateY(-133px); }",
-        head = document.head || document.getElementsByTagName("head")[0],
-        style = document.createElement("style");
-      head.appendChild(style);
-      style.type = "text/css";
-      style.appendChild(document.createTextNode(css));
-      //End CSS Addition
+    if (showBanner) {
       $("#count-bnr-inner").remove();
       if ($("#countdown").length === 0 && $(window).width() > 1300) {
         $(countBnr).insertBefore("#header");
@@ -180,6 +215,7 @@
       } else {
         $(countBnr).prependTo("#header-in");
       }
+
       $("#count-bnr-inner").on("click", function () {
         var $this = $(this);
         if ($this.find("a").length === 1) {
@@ -187,35 +223,24 @@
           window.location.href = linkLoc;
         }
       });
+
       if (endDateLong === "01/01/1900") {
         $("#count-bnr-inner > div:first-child")
           .removeClass("col-lg-6 justify-content-lg-start m-0")
           .addClass("m-auto");
       }
     }
-    if ($("#countdown").length > 0) {
-      $("#countdown-clockworks-holder").countdown(
-        endDateLong,
-        function (event) {
-          var $this = $(this),
-            totalHours = event.offset.totalDays * 24 + event.offset.hours;
-          //This is for Hours only
-          $this.html(
-            event.strftime(
-              '<div class="dash hours_dash"> <div class="countdown-digit-wrapper' +
-                digitBg +
-                '"> <div class="digit">' +
-                totalHours +
-                '</div> <div class="time-label">hours</div> </div> <div class="colon">:</div></div><div class="dash minutes_dash"> <div class="countdown-digit-wrapper' +
-                digitBg +
-                '"> <div class="digit">%M</div> <div class="time-label">min</div> </div> <div class="colon">:</div></div><div class="dash seconds_dash"> <div class="countdown-digit-wrapper' +
-                digitBg +
-                '"> <div class="digit">%S</div> <div class="time-label">sec</div> </div></div>'
-            )
-          );
-        }
-      );
+  };
+
+  // Define the navigateCarousel function in the global scope
+  window.navigateCarousel = function (direction) {
+    if (direction === "next") {
+      currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+    } else if (direction === "prev") {
+      currentMessageIndex =
+        (currentMessageIndex - 1 + messages.length) % messages.length;
     }
+    updateBannerMessage();
   };
 
   // Initialize the banner
