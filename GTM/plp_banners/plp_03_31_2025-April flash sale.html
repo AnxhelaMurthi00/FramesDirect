@@ -1,6 +1,35 @@
 <script>
   //Winter Sale
+
   if (
+    (checkDate >= "250407" && checkDate <= "250410") ||
+    (fdFncs.vars.isTest >= "250407" && fdFncs.vars.isTest <= "250410")
+  ) {
+    //Specific sale landing page
+    if (pgURLPath("/sale")) {
+      $("#cata_desc").html(
+        '<p>Our eyeglasses and sunglasses sale is your chance to discover great savings on hundreds of name brands. Take advantage of deep discounts on the most popular styles and top-selling brands, including Prada, Versace, Burberry, and many others.<a id="flash-disc-link" href="#">Details <i></i></a></p><p id="flash-disclaimer" style="display:none">Get 30% off the purchase of full-priced eyeglasses, sunglasses and prescription sunglasses from Vogue, Swarovski, Emporio Armani, Sferoflex, Ralph Lauren, Arnette, Brooks Brothers, Jimmy Choo. Does not apply to products that have already been discounted. Other exclusions may apply. Frame purchase required. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee. Free Shipping on domestic orders only. Offer ends April 10th, 2025.  </p>'
+      );
+    }
+  } else if (
+    (checkDate >= "250331" && checkDate <= "250406") ||
+    (fdFncs.vars.isTest >= "250331" && fdFncs.vars.isTest <= "250406")
+  ) {
+    //Specific sale landing page
+    if (pgURLPath("/michael-kors/brand")) {
+      $("#bnr-dyn-holder").html(
+        '<img alt=" Designer Spotlight: Michael Kors" src="https://images.framesdirect.com/image/upload/v1742984710/landing-pages/PLP_EYE_OPT_OUT.png" width="2100" height="431" title=" Designer Spotlight: Michael Kors">'
+      );
+      $("h1").html(" Designer Spotlight: Michael Kors");
+      $("#cata_desc").html(
+        '<p>Get 25% off Michael Kores frames. Don’t wait! Sale ends April 6.  <a id="flash-disc-link" href="#">Details <i></i></a></p><p id="flash-disclaimer" style="display:none">Get a 25% discount off the purchase of full-priced Eyeglasses, Sunglass and Prescription Sunglass frames from Michael Kors. Frame purchase required. Offer may not be used on any other products. Does not apply to products that have already been discounted. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee. Free Shipping on domestic orders only. Offer ends April 6, 2025.  </p>'
+      );
+    } else if (pgURLPath("/sale")) {
+      $("#cata_desc").html(
+        '<p>Our eyeglasses and sunglasses sale is your chance to discover great savings on hundreds of name brands. Take advantage of deep discounts on the most popular styles and top-selling brands, including Prada, Versace, Burberry, and many others. <a id="flash-disc-link" href="#">Details <i></i></a></p><p id="flash-disclaimer" style="display:none">Get 30% off the purchase of full-priced eyeglasses, sunglasses and prescription sunglasses from Vogue, Swarovski, Emporio Armani, Sferoflex, Ralph Lauren, Arnette, Brooks Brothers, Jimmy Choo. Does not apply to products that have already been discounted. Other exclusions may apply. Frame purchase required. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee. Free Shipping on domestic orders only. Offer ends April 10th, 2025.  </p>'
+      );
+    }
+  } else if (
     (checkDate >= "250320" && checkDate <= "250330") ||
     (fdFncs.vars.isTest >= "250320" && fdFncs.vars.isTest <= "250330")
   ) {
@@ -23,9 +52,9 @@
       if (location.pathname === locName[x]) {
         imgPath = "v1741341375/landing-pages/FD_PLP_SPRING_PROMO_GENERAL.png";
         $("#bnr-dyn-holder").html(
-          '<a href="/email/spring-sale-dp"><img alt="Spring into Savings: Up to 50% off Ray-Ban, Oakley, Michael Kors & more, plus 65% off lenses with code EXTRA5" src="https://images.framesdirect.com/image/upload/' +
+          '<a href="/email/spring-sale-dp"><img alt="Spring into Savings: Up to 50% off Ray-Ban, Oakley, Michael Kors & more, plus 65% off lenses " src="https://images.framesdirect.com/image/upload/' +
             imgPath +
-            '" width="2100" height="431" title="Spring into Savings: Up to 50% off Ray-Ban, Oakley, Michael Kors & more, plus 65% off lenses with code EXTRA5"></a>'
+            '" width="2100" height="431" title="Spring into Savings: Up to 50% off Ray-Ban, Oakley, Michael Kors & more, plus 65% off lenses"></a>'
         );
         break;
       }
@@ -33,7 +62,7 @@
     //Specific sale landing page
     if (pgURLPath("/email/spring-sale-dp")) {
       $("h1").html(
-        "Spring into Savings: Up to 50% off Ray-Ban, Oakley, Michael Kors & more, plus 65% off lenses with code EXTRA5 "
+        "Spring into Savings: Up to 50% off Ray-Ban, Oakley, Michael Kors & more, plus 65% off lenses "
       );
       $("#cata_desc").html(
         '<p>It`s time to get ready for spring with a new look. We`ll help! Save on luxury frames from top brands, and the best lenses to suit your vision needs. <a id="flash-disc-link" href="#">Details <i></i></a></p><p id="flash-disclaimer" style="display:none">Get 30% off the purchase of full-priced Eyeglasses from Ray-Ban, Ray-Ban Junior, Oakley, Oakley Youth, Costa, Armani Exchange, Arnette, Brooks Brothers, Burberry, Coach, Dolce & Gabbana, Dolce & Gabbana Kids, Emporio Armani, Emporio Armani Kids, Giorgio Armani, Polo, Polo Kids, Ralph Lauren, RALPH, Sferoflex, Swarovski, Tory Burch, Versace, Versace Kids, Vogue, Vogue Junior. Does not apply to products that have already been discounted. Other exclusions may apply. Frame purchase required. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee. Free Shipping on domestic orders only. Offer ends March 30th, 2025. <br><br>Get 30% off the purchase of full-priced Sunglasses and Prescription Sunglasses from Armani Exchange, Arnette, Brooks Brothers, Burberry, Coach, Dolce & Gabbana, Dolce & Gabbana Kids, Emporio Armani, Emporio Armani Kids, Giorgio Armani, Polo, Polo Kids, Ralph Lauren, RALPH, Sferoflex, Swarovski, Tory Burch, Versace, Versace Kids, Vogue, Vogue Junior. Does not apply to products that have already been discounted. Other exclusions may apply. Frame purchase required. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee. Free Shipping on domestic orders only. Offer ends March 30th, 2025. </p>'

@@ -1,0 +1,60 @@
+<script>
+  if (
+    pgURLPath("/cart_summary.aspx") &&
+    !!!$("#ctl00_ContentPlaceHolderProductDisplay_pnlEmptyCart").length
+  ) {
+    if (
+      (getCookie("fdRecognized") !== undefined &&
+        ((checkDate >= "241121" && checkDate <= "241123") ||
+          (fdFncs.vars.isTest >= "241121" &&
+            fdFncs.vars.isTest <= "241123"))) ||
+      (checkDate >= "241124" && checkDate <= "241202") ||
+      (fdFncs.vars.isTest >= "241124" && fdFncs.vars.isTest <= "241202")
+    ) {
+      if (
+        (checkDate >= "241130" && checkDate <= "241202") ||
+        (fdFncs.vars.isTest >= "241130" && fdFncs.vars.isTest <= "241202")
+      ) {
+        var setStyle = "270deg, #BAC26D 0%, #E6EE9E",
+          setLabel = "Cyber ";
+        if (checkDate === "241202" || fdFncs.vars.isTest === "241202") {
+          setStyle = "270deg, #E1CFE3 0%, #D0B5D3";
+          setLabel += "Monday";
+        } else {
+          setLabel += "Weekend";
+        }
+      } else if (
+        (checkDate >= "241124" && checkDate <= "241129") ||
+        (fdFncs.vars.isTest >= "241124" && fdFncs.vars.isTest <= "241129")
+      ) {
+        var setStyle = "270deg, #6FCAE1 0%, #C6F1FF",
+          setLabel = "Black Friday";
+        if (checkDate === "241129" || fdFncs.vars.isTest === "241129") {
+          setStyle = "270deg, #C9B97E 0%, #F5EEC4";
+        } else {
+          setLabel += " Week";
+        }
+      } else if (
+        (checkDate >= "241121" && checkDate <= "241123") ||
+        (fdFncs.vars.isTest >= "241121" && fdFncs.vars.isTest <= "241123")
+      ) {
+        var setStyle = "90deg, #E99C77 32.08%, #DF785B",
+          setLabel = "Early Black Friday";
+      }
+      $(
+        '<div id="cartPromoMsg" class="py-1 px-3" style="background: linear-gradient(' +
+          setStyle +
+          ' 100%); border-radius: 5px;">Your exclusive <b>' +
+          setLabel +
+          " savings</b> have been applied!</div>"
+      ).insertAfter($("h1"));
+    } else if (
+      (checkDate >= "241121" && checkDate <= "241123") ||
+      (fdFncs.vars.isTest >= "241121" && fdFncs.vars.isTest <= "241123")
+    ) {
+      $(
+        '<div class="d-flex flex-wrap justify-content-between align-items-center text-left py-1 px-2" style="background: linear-gradient(90deg, #E99C77 32.08%, #DF785B 100%); border-radius: 5px;"><div>Don\'t miss potential <span class="weight-bold">Early Black Friday</span> savings</div><div><a href="javascript:addWelcomeLayer();fdFncs.vars.allowEmPop = false;" class="weight-bold">Sign up</a> or <a href="#" class="siteSignIn weight-bold">Log in</a></div></div>'
+      ).insertAfter("h1");
+    }
+  }
+</script>
