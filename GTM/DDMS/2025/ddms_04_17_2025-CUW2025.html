@@ -10,6 +10,49 @@
     $this.attr("style", "cursor: pointer");
 
     if (
+      !$this.parents('.top-items').hasClass('top-sale') &&
+      (
+        (checkDate >= '250417' && checkDate <= '250427') ||
+        (fdFncs.vars.isTest >= '250417' && checkDate <= '250427')
+      )
+    ) {
+      $this.css('backgroundColor', '#D1595A');
+      if ($this.parents('.top-items').hasClass('top-cl')) {
+        $this.append(
+          clMsg
+        )
+        setPg = '/contact-lenses/';
+      } else if ($this.parents('.top-items').hasClass('top-sale')) {
+        $this.append(
+          '<div class="size-14">Outlet Deals</div><div class="size-18 pt-2 mt-2" style="line-height: 1; border-top: 1px #fff solid;">Save Up To</div><div class="size-40" style="line-height: 1;">50%</div>'
+        );
+        $this.addClass(
+          'background-red color-white weight-bold transform-uppercase'
+        )
+      } else if ($this.parents('.top-items').hasClass('top-sg')) {
+        if (isRecognized) {
+          $this.append(
+            '<div>Up to</div><div class="weight-bold size-18">30% OFF<br> FRAMES</div>'
+          );
+          setPg = '/email/winter-sale-dp';
+        } else {
+          $this.append(
+            '<div class="weight-bold size-21 pb-2"><a href="#" class="emailSignUp weight-bold">Sign up</a><br>or <a href="#" class="siteSignIn weight-bold">sign in</a></div><div>to unlock up<br> to 30% off top brands<br> + 65% off lenses</div>'
+          );
+        }
+      } else {
+        if (isRecognized) {
+          $this.append(
+            '<div class="size-16">Up to<br> <span class="weight-bold">30% OFF FRAMES</span></div><div class="weight-bold size-16">+</div><div class="weight-bold size-16">65% OFF LENSES</div><div class="size-14 mt-2">Code: EXTRA5</div>'
+          );
+          setPg = '/email/winter-sale-dp';
+        } else {
+          $this.append(
+            '<div class="weight-bold size-21 pb-2"><a href="#" class="emailSignUp weight-bold">Sign up</a><br>or <a href="#" class="siteSignIn weight-bold">sign in</a></div><div>to unlock up<br> to 30% off top brands<br> + 65% off lenses</div>'
+          );
+        }
+      }
+    } else if (
       !$this.parents(".top-items").hasClass("top-sale") &&
       ((checkDate >= "250411" && checkDate <= "250416") ||
         (fdFncs.vars.isTest >= "250411" && checkDate <= "250416"))
@@ -42,7 +85,7 @@
       ((checkDate >= "250331" && checkDate <= "250410") ||
         (fdFncs.vars.isTest >= "250331" && checkDate <= "250410"))
     ) {
-      $this.css("backgroundColor", "#F2EEE2");
+      $this.css("backgroundColor", "#D1595A");
       setPg = "/sale/top-brands-discounted-dp";
       if ($this.parents(".top-items").hasClass("top-cl")) {
         $this.append(clMsg);
@@ -61,7 +104,7 @@
         setPg = "/sale";
       } else {
         $this.append(
-          '<div class="size-16"><span class="weight-bold">UP TO 50% OFF <br>FRAMES</div><div class="size-14 mt-2">New styles added </div><div class="weight-bold size-16">+</div><div class="weight-bold size-16">65% OFF LENSES</div>'
+          '<div class="size-16">Up to<br> <span class="weight-bold">30% OFF FRAMES</span></div><div class="weight-bold size-16">+</div><div class="weight-bold size-16">65% OFF LENSES</div><div class="size-14 mt-2">Code: EXTRA5</div>'
         );
         setPg = "/sale";
       }

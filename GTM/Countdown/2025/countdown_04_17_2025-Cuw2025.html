@@ -14,6 +14,32 @@
   // Define the messages for the carousel based on date and device type
   var messages = [];
   if (
+    (checkDate >= "250417" && checkDate <= "250427") ||
+    (fdFncs.vars.isTest >= "250417" && fdFncs.vars.isTest <= "250427")
+  ) {
+    var messages;
+    if (getCookie("fdRecognized") !== undefined) {
+      messages =
+        $(window).width() <= 768
+          ? [
+            "Up to 30% off frames + 65% off lenses",
+          ]
+          : [
+            "Members Week: Up to 30% off top brands + 65% off lenses with code EXTRA5",
+          ];
+    } else {
+      //user not logged
+      messages =
+        $(window).width() <= 768
+          ? [
+            "30% off top brands + 65% off lenses: Sign up or sign in",
+          ]
+          : [
+            "20% off selected luxury brands or sign up to unlock 30% off top brands + 65% off lenses: Sign up or sign in now",
+          ];
+    }
+  }
+  else if (
     (checkDate >= "250411" && checkDate <= "250416") ||
     (fdFncs.vars.isTest >= "250411" && fdFncs.vars.isTest <= "250416")
   ) {
