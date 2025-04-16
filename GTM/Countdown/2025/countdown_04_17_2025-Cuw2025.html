@@ -22,20 +22,20 @@
       messages =
         $(window).width() <= 768
           ? [
-            "Up to 30% off frames + 65% off lenses",
+            "Up to <b>&nbsp; 30% off frames + 65% off lenses</b>",
           ]
           : [
-            "Members Week: Up to 30% off top brands + 65% off lenses with code EXTRA5",
+            "Members Week: Up to <b>&nbsp; 30% off frames + 65% off lenses</b>",
           ];
     } else {
       //user not logged
       messages =
         $(window).width() <= 768
           ? [
-            "30% off top brands + 65% off lenses: Sign up or sign in",
+            '30% lenses:&nbsp;<a href="javascript:addWelcomeLayer();" id="recSignUp" class="color-white weight-bold mx-1">Sign up</a>&nbsp;or&nbsp;<a href="#" id="recSignIn" class="siteSignIn color-white weight-bold mx-1">sign in</a>&nbsp;now',
           ]
           : [
-            "20% off selected luxury brands or sign up to unlock 30% off top brands + 65% off lenses: Sign up or sign in now",
+            '20% off selected luxury brands or sign up to unlock 30% off top brands + 65% off lenses:&nbsp;<a href="javascript:addWelcomeLayer();" id="recSignUp" class="color-white weight-bold mx-1">Sign up</a>&nbsp;or&nbsp;<a href="#" id="recSignIn" class="siteSignIn color-white weight-bold mx-1">sign in</a>&nbsp;now',
           ];
     }
   }
@@ -134,7 +134,7 @@
     var countBnrMsg = messages[currentMessageIndex];
 
     // Add countdown only for the specific message
-    if (messages[currentMessageIndex].includes("EASTER SAVINGS")) {
+    if (messages[currentMessageIndex].includes("Sign up")) {
       countBnrMsg +=
         '<div id="countdown" class="d-flex justify-content-end pr-2 size-6 ml-3"><div id="countdown-clockworks-holder" class="d-flex"></div></div>';
     }
@@ -143,9 +143,9 @@
 
     // Initialize the countdown if the specific message is active
     if (
-      (messages[currentMessageIndex].includes("EASTER SAVINGS") &&
-        checkDate === "250421") ||
-      fdFncs.vars.isTest === "250421"
+      (messages[currentMessageIndex].includes("Sign up") &&
+        checkDate === "250426") ||
+      fdFncs.vars.isTest === "250426"
     ) {
       initializeCountdown();
     }
@@ -153,7 +153,7 @@
 
   // Function to initialize the countdown
   function initializeCountdown() {
-    var endDateLong = "04/22/2025"; // Set the end date for the countdown
+    var endDateLong = "04/27/2025"; // Set the end date for the countdown
     var digitBg = " white";
 
     $("#countdown-clockworks-holder").countdown(endDateLong, function (event) {
@@ -211,7 +211,7 @@
         lnkStart +
         '<div id="count-bnr-inner" style="height: 37px; color:white;" class="background-black ' +
         bgColor +
-        ' d-flex justify-content-center align-items-center weight-bold">' +
+        ' d-flex justify-content-center align-items-center">' +
         messages[currentMessageIndex] +
         "</div>" +
         lnkEnd

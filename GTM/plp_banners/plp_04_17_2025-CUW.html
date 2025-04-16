@@ -1,0 +1,28 @@
+<script>
+  var isRecognized = getCookie('fdRecognized') !== undefined;
+  //For Product PLPs not specific to the Sale Landing Page
+  var locName = ['/eyeglasses/', '/sunglasses/', '/prescription-sunglasses/', '/men/eyewear-dp', '/women/eyewear-dp', '/eyeglasses/mens', '/eyeglasses/womens', '/sunglasses/mens', '/sunglasses/womens', '/prescription-sunglasses/mens', '/prescription-sunglasses/womens'],
+    imgPath = '';
+  for (x = 0, y = locName.length; x < y; ++x) {
+    if (location.pathname === locName[x]) {
+
+      if (isRecognized && ((checkDate >= '250417' && checkDate <= '250427') || (fdFncs.vars.isTest >= '250417' && fdFncs.vars.isTest <= '250427'))) {
+        imgPath = 'v1744296837/landing-pages/FD_CUW_PLP_LOGGED_GENERIC.png';
+        imgAlt = 'Customer week sale';
+        if (location.pathname.indexOf('/sunglasses/') > -1) {
+          imgPath = 'v1744296837/landing-pages/FD_CUW_PLP_LOGGED_GENERIC.png';
+        }
+        $("#bnr-dyn-holder").html('<a href="/email/customer-appreciation-dp"><img alt="' + imgAlt + ' Sale" src="https://images.framesdirect.com/image/upload/' + imgPath + '" width="2880" height="591" title="' + imgAlt + ' Sale"></a>');
+      } else if (!isRecognized && ((checkDate >= '250417' && checkDate <= '250427') || (fdFncs.vars.isTest >= '250417' && fdFncs.vars.isTest <= '250427'))) {
+        $("#bnr-dyn-holder").html('<img alt="Customer week sale" src="https://images.framesdirect.com/image/upload/v1744296841/landing-pages/FD_CUW_PLP_OPT_OUT_GENERIC_PROMO.png" width="2100" height="431" title="Customer week sale" usemap="#image-map"><map name="image-map" id="image-map"><area alt="Sign Up for Emails" title="Sign Up for Emails" href="javascript:addWelcomeLayer();fdFncs.vars.allowEmPop = false;" coords="79,314,253,377" shape="rect"><area class="siteSignIn" alt="Log Into Your Account" title="Log Into Your Account" href="#" coords="279,315,453,378" shape="rect"></map>');
+        $('map').imageMapResize();
+      }
+      break;
+    }
+  }
+  if (pgURLPath('/email/customer-appreciation-dp')) {
+    $("#bnr-dyn-holder").html('<img alt="Customer week sale" src="https://images.framesdirect.com/image/upload/v1738321782/landing-pages/PLP_EYE_OPT_OUT-1.png" width="2100" height="431" title="Customer week sale: Get exclusive 20% off frames and up to 65% off lenses">');
+    $('h1').html("Valentine's Day Savings: 20% off sunglasses + 65% off lenses");
+    $("#cata_desc").html('<p>For Valentine’s Day, we’re treating our subscribers to an exclusive 20% off on eyeglasses, sunglasses, and prescription sunglasses. Plus! Get up to 65% off lenses. Opt in for sweet savings!  <a id="flash-disc-link" href="#">Details <i></i></a></p><p id="flash-disclaimer" style="display:none">Get 20% off the purchase of full-priced Eyeglasses, Sunglasses, and Prescription Sunglasses from Armani Exchange, Arnette, Brooks Brothers, Burberry, Coach, D&G, D&G Kids, Emporio Armani, Emporio Armani Kids, Giorgio Armani, Polo, Polo Kids, Ralph Lauren, RALPH, Sferoflex, Swarovski, Tory Burch, Versace, Versace Kids, Vogue, Vogue Junior. Does not apply to products that have already been discounted. Other exclusions may apply. Frame purchase required. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee. Free Shipping on domestic orders only. Offer ends February 5th, 2025.  It can be combined with up to 65% discount on the price of lenses and add-ons with the purchase of an Eyeglass frame or a pair of Prescription Sunglasses. Frame purchase required. Offer may not be used on contact lenses or any Gunnar, Maui Jim, Rec Specs Liberty Sport, Ray-Ban Stories, Ray-Ban Meta, or VirtuClear products. Kaenon, Randolph Engineering and Zeal prescription sunglasses are also excluded. Other exclusions might apply. Discount valid before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantees. Free Shipping on domestic orders only. </p>');
+  }
+</script>
