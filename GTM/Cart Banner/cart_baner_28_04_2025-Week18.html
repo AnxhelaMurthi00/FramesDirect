@@ -1,0 +1,15 @@
+<script>
+  if (
+    pgURLPath("/cart_summary.aspx") &&
+    !!!$("#ctl00_ContentPlaceHolderProductDisplay_pnlEmptyCart").length
+  ) {
+    if (
+      (checkDate >= "250428" && checkDate <= "250507") ||
+      (fdFncs.vars.isTest >= "250428" && fdFncs.vars.isTest <= "250507")
+    ) {
+      $(
+        '<div id="cartPromoMsg" class="py-1 px-3" style="background:#ACB9BF; border-radius: 5px; color: black; font-weight: normal;"><b>40% off designer brands</b> directly applied at checkout<br><b>40% off sun lenses </b>by Oakley, Costa & Maui Jim with code <b>SPECIAL40</b></div>'
+      ).insertAfter($("h1"));
+    }
+  }
+</script>

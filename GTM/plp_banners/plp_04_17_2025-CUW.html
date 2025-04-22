@@ -5,18 +5,36 @@
     imgPath = '';
   for (x = 0, y = locName.length; x < y; ++x) {
     if (location.pathname === locName[x]) {
-
-      if (isRecognized && ((checkDate >= '250417' && checkDate <= '250427') || (fdFncs.vars.isTest >= '250417' && fdFncs.vars.isTest <= '250427'))) {
-        imgPath = 'v1744296837/landing-pages/FD_CUW_PLP_LOGGED_GENERIC.png';
-        imgAlt = 'Customer week sale';
-        if (location.pathname.indexOf('/sunglasses/') > -1) {
-          imgPath = 'v1744296837/landing-pages/FD_CUW_PLP_LOGGED_GENERIC.png';
+      if (
+        (checkDate >= "250428" && checkDate <= "250430") ||
+        (fdFncs.vars.isTest >= "250428" && fdFncs.vars.isTest <= "250430")
+      ) {
+        //Specific sale landing page
+        if (pgURLPath("/michael-kors/brand")) {
+          $("#bnr-dyn-holder").html(
+            '<img alt=" Designer Spotlight: Michael Kors" src="https://images.framesdirect.com/image/upload/v1742984710/landing-pages/PLP_EYE_OPT_OUT.png" width="2100" height="431" title=" Designer Spotlight: Michael Kors">'
+          );
+          $("h1").html(" Designer Spotlight: Michael Kors");
+          $("#cata_desc").html(
+            '<p>Get 25% off Michael Kores frames. Don’t wait! Sale ends April 6.  <a id="flash-disc-link" href="#">Details <i></i></a></p><p id="flash-disclaimer" style="display:none">Get a 25% discount off the purchase of full-priced Eyeglasses, Sunglass and Prescription Sunglass frames from Michael Kors. Frame purchase required. Offer may not be used on any other products. Does not apply to products that have already been discounted. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee. Free Shipping on domestic orders only. Offer ends April 6, 2025.  </p>'
+          );
+        } else if (pgURLPath("/sale")) {
+          $("#cata_desc").html(
+            '<p>Our eyeglasses and sunglasses sale is your chance to discover great savings on hundreds of name brands. Take advantage of deep discounts on the most popular styles and top-selling brands, including Prada, Versace, Burberry, and many others. <a id="flash-disc-link" href="#">Details <i></i></a></p><p id="flash-disclaimer" style="display:none">Get 30% off the purchase of full-priced eyeglasses, sunglasses and prescription sunglasses from Vogue, Swarovski, Emporio Armani, Sferoflex, Ralph Lauren, Arnette, Brooks Brothers, Jimmy Choo. Does not apply to products that have already been discounted. Other exclusions may apply. Frame purchase required. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee. Free Shipping on domestic orders only. Offer ends April 10th, 2025.  </p>'
+          );
         }
-        $("#bnr-dyn-holder").html('<a href="/email/customer-appreciation-dp"><img alt="' + imgAlt + ' Sale" src="https://images.framesdirect.com/image/upload/' + imgPath + '" width="2880" height="591" title="' + imgAlt + ' Sale"></a>');
-      } else if (!isRecognized && ((checkDate >= '250417' && checkDate <= '250427') || (fdFncs.vars.isTest >= '250417' && fdFncs.vars.isTest <= '250427'))) {
-        $("#bnr-dyn-holder").html('<img alt="Customer week sale" src="https://images.framesdirect.com/image/upload/v1744296841/landing-pages/FD_CUW_PLP_OPT_OUT_GENERIC_PROMO.png" width="2100" height="431" title="Customer week sale" usemap="#image-map"><map name="image-map" id="image-map"><area alt="Sign Up for Emails" title="Sign Up for Emails" href="javascript:addWelcomeLayer();fdFncs.vars.allowEmPop = false;" coords="79,314,253,377" shape="rect"><area class="siteSignIn" alt="Log Into Your Account" title="Log Into Your Account" href="#" coords="279,315,453,378" shape="rect"></map>');
-        $('map').imageMapResize();
-      }
+      } else
+        if (isRecognized && ((checkDate >= '250417' && checkDate <= '250427') || (fdFncs.vars.isTest >= '250417' && fdFncs.vars.isTest <= '250427'))) {
+          imgPath = 'v1744296837/landing-pages/FD_CUW_PLP_LOGGED_GENERIC.png';
+          imgAlt = 'Customer week sale';
+          if (location.pathname.indexOf('/sunglasses/') > -1) {
+            imgPath = 'v1744296837/landing-pages/FD_CUW_PLP_LOGGED_GENERIC.png';
+          }
+          $("#bnr-dyn-holder").html('<a href="/email/customer-appreciation-dp"><img alt="' + imgAlt + ' Sale" src="https://images.framesdirect.com/image/upload/' + imgPath + '" width="2880" height="591" title="' + imgAlt + ' Sale"></a>');
+        } else if (!isRecognized && ((checkDate >= '250417' && checkDate <= '250427') || (fdFncs.vars.isTest >= '250417' && fdFncs.vars.isTest <= '250427'))) {
+          $("#bnr-dyn-holder").html('<img alt="Customer week sale" src="https://images.framesdirect.com/image/upload/v1744296841/landing-pages/FD_CUW_PLP_OPT_OUT_GENERIC_PROMO.png" width="2100" height="431" title="Customer week sale" usemap="#image-map"><map name="image-map" id="image-map"><area alt="Sign Up for Emails" title="Sign Up for Emails" href="javascript:addWelcomeLayer();fdFncs.vars.allowEmPop = false;" coords="79,314,253,377" shape="rect"><area class="siteSignIn" alt="Log Into Your Account" title="Log Into Your Account" href="#" coords="279,315,453,378" shape="rect"></map>');
+          $('map').imageMapResize();
+        }
       break;
     }
   }
