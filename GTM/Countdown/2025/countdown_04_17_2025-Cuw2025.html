@@ -150,6 +150,19 @@
       initializeCountdown();
     }
   }
+  var style = document.createElement("style");
+style.type = "text/css";
+style.appendChild(document.createTextNode(`
+  .colon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    line-height: 1;
+    padding: 0 5px;
+  }
+`));
+document.head.appendChild(style);
 
   // Function to initialize the countdown
   function initializeCountdown() {

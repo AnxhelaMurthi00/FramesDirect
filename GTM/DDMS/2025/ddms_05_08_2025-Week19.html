@@ -12,6 +12,40 @@
     //------ This will only show on QC for now
     if (
       !$this.parents(".top-items").hasClass("top-sale") &&
+      ((checkDate >= "250507" && checkDate <= "250511") ||
+        (fdFncs.vars.isTest >= "250507" && checkDate <= "250511"))
+    ) {
+      $this.css("backgroundColor", "#CBC4BA");
+      setPg = "/sale/top-brands-discounted-dp";
+      if ($this.parents(".top-items").hasClass("top-cl")) {
+        $this.append(clMsg);
+        setPg = "/contact-lenses/";
+      } else if ($this.parents(".top-items").hasClass("top-sale")) {
+        $this.append(
+          '<div class="size-14">Outlet Deals</div><div class="size-18 pt-2 mt-2" style="line-height: 1; border-top: 1px #fff solid;">Save Up To</div><div class="size-40" style="line-height: 1;">50%</div>'
+        );
+        $this.addClass(
+          "background-red color-white weight-bold transform-uppercase"
+        );
+      } else if ($this.parents(".top-items").hasClass("top-sg")) {
+        $this.append(
+          '<div class="size-16 weight-bold">Up to 40% off<br> Ray-Ban, Oakley,<br> Costa & more/div>'
+        );
+        setPg = "/email/designer-brands-dp";
+      }
+      else if ($this.parents(".top-items").hasClass("top-ps")) {
+        $this.append(
+          '<div class="size-16 weight-bold">Up to 40% off<br> Ray-Ban, Oakley,<br> Costa & more<div class="weight-bold size-16 m-2">+</div>60% off lenses</div'
+        );
+        setPg = "/email/designer-brands-dp";
+      } else {
+        $this.append(
+          '<div class="size-16 weight-bold">Up to 40% off<br> Burberry, Versace & <br>more<br><div class="weight-bold size-16 m-2">+</div>60% off lenses</div>'
+        );
+        setPg = "/email/designer-brands-dp";
+      }
+    } else if (
+      !$this.parents(".top-items").hasClass("top-sale") &&
       ((checkDate >= "250428" && checkDate <= "250507") ||
         (fdFncs.vars.isTest >= "250428" && checkDate <= "250507"))
     ) {
@@ -29,12 +63,12 @@
         );
       } else if ($this.parents(".top-items").hasClass("top-sg")) {
         $this.append(
-          '<div class="size-14 weight-bold">YOUR COMPLETE PAIR</div><div class="size-16"><span class="weight-bold">40% OFF<br> SELECT FRAMES</div>'
+          '<div class="size-16"><span class="weight-bold">40% OFF<br> DESIGNER <br>BRANDS</div>'
         );
         setPg = "/email/designer-brands-dp";
       } else {
         $this.append(
-          '<div class="size-14 weight-bold">YOUR COMPLETE PAIR</div><div class="size-16"><span class="weight-bold">40% OFF<br>SELECT FRAMES<br> + <br>UP TO 60% OFF <br>LENSES</div>'
+          '<div class="size-16"><span class="weight-bold">40% OFF<br> DESIGNER <br>BRANDS<br> + <br>UP TO 60% OFF <br>LENSES</div>'
         );
         setPg = "/email/designer-brands-dp";
       }
