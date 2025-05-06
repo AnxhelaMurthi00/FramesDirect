@@ -1,0 +1,24 @@
+<script>
+  var hasIns = setInterval(checkIns, 360);
+  function checkIns() {
+    if (
+      !!!$("#ctl00_ContentPlaceHolderProductDisplay_pnlEmptyCart").length
+    ) {
+      if ($('#insuranceAppToggle input').is(':checked')) {
+        clearInterval(hasIns);
+        hasIns = null;
+      } else if (!$('#insuranceAppToggle input').is(':checked')) {
+        if (
+          (checkDate >= "250512" && checkDate <= "250518") ||
+          (fdFncs.vars.isTest >= "250512" && fdFncs.vars.isTest <= "250518")
+        ) {
+          $(
+            '<div id="cartPromoMsg" class="mb-3 py-1 px-3 weight-normal color-black" style="background:#CBC4BA; border-radius: 5px; ">Give Mom A Complete Pair: Up to <b>40% off select frames</b> at checkout + <b>60% off lenses</b></div>'
+          ).insertAfter($("h1"));
+        }
+        clearInterval(hasIns);
+        hasIns = null;
+      }
+    }
+  }
+</script>
