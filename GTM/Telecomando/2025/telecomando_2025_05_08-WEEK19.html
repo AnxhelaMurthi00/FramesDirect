@@ -1,0 +1,44 @@
+<script>
+  if (
+    (checkDate >= "250508" && checkDate <= "250511") ||
+    (fdFncs.vars.isTest >= "250508" && fdFncs.vars.isTest <= "250511")
+  ) {
+    $("#discountBar #exclusiveToggle").html(
+      $("#discountBar #exclusiveToggle")
+        .html()
+        .replace("See Exclusive Savings!", "Mother’s Day")
+        .replace("Exclusive Savings", "Mother’s Day")
+    );
+    $("#exclusiveSavings #discountBar > .blue-bg").css({
+      background: "#CBC4BA",
+    });
+  } else
+    if (
+      (checkDate >= "250428" && checkDate <= "250507") ||
+      (fdFncs.vars.isTest >= "250428" && fdFncs.vars.isTest <= "250507")
+    ) {
+      $("#discountBar #exclusiveToggle").html(
+        $("#discountBar #exclusiveToggle")
+          .html()
+          .replace("See Exclusive Savings!", "Exclusive offers")
+          .replace("Exclusive Savings", "Exclusive offers")
+      );
+      $("#exclusiveSavings #discountBar > .blue-bg").css({
+        background: "#CBC4BA",
+      });
+    } else
+      if (
+        (checkDate >= "250417" && checkDate <= "250427") ||
+        (fdFncs.vars.isTest >= "250417" && fdFncs.vars.isTest <= "250427")
+      ) {
+        $("#discountBar #exclusiveToggle").html(
+          $("#discountBar #exclusiveToggle")
+            .html()
+            .replace("See Exclusive Savings!", "Exclusive Savings")
+            .replace("Exclusive Savings", "Exclusive Savings")
+        );
+        $("#exclusiveSavings #discountBar > .blue-bg").css({
+          background: "#D1595A",
+        });
+      }
+</script>

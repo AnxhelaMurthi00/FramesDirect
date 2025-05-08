@@ -14,8 +14,8 @@
   // Define the messages for the carousel based on date and device type
   var messages = [];
   if (
-    (checkDate >= "250512" && checkDate <= "250518") ||
-    (fdFncs.vars.isTest >= "250512" && fdFncs.vars.isTest <= "250518")
+    (checkDate >= "250513" && checkDate <= "250518") ||
+    (fdFncs.vars.isTest >= "250513" && fdFncs.vars.isTest <= "250518")
   ) {
     messages =
       $(window).width() <= 768
@@ -24,117 +24,132 @@
           "<b>&nbsp; Get a free hat  &nbsp;</b> with every Wiley X purchase",
         ]
         : [
-          "Give Mom A Complete Pair: Up to <b>&nbsp; 40% off select frames + 60% off lenses. &nbsp;</b>Includes designer brands</b>",
+          "Up to <b>&nbsp; 40% off select frames + 60% off lenses. &nbsp;</b>Includes designer brands</b>",
           "<b>&nbsp; Get a free hat  &nbsp;</b> with every Wiley X purchase",
         ];
   } else
     if (
-      (checkDate >= "250508" && checkDate <= "250511") ||
-      (fdFncs.vars.isTest >= "250508" && fdFncs.vars.isTest <= "250511")
+      (checkDate >= "250512" && checkDate <= "250512") ||
+      (fdFncs.vars.isTest >= "250512" && fdFncs.vars.isTest <= "250512")
     ) {
       messages =
         $(window).width() <= 768
           ? [
-            "up to <b>&nbsp; 40% off selected frames &nbsp;</b>+ up to <b>&nbsp; 60% off lenses </b>",
-            "25% off <b>&nbsp; Michael Kors &nbsp;</b> & 60% off lenses",
+            "Up to <b>&nbsp; 40% off select frames + 60% off lenses. &nbsp;</b>",
+            "<b>&nbsp; Get a free hat  &nbsp;</b> with every Wiley X purchase",
           ]
           : [
-            "Mother’s Day Special: up to <b>&nbsp; 40% off selected frames &nbsp;</b>+ up to <b>&nbsp; 60% off lenses </b>",
-            "25% off <b>&nbsp; Michael Kors &nbsp;</b> & 60% off lenses",
+            "Give Mom A Complete Pair: Up to <b>&nbsp; 40% off select frames + 60% off lenses. &nbsp;</b>Includes designer brands</b>",
+            "<b>&nbsp; Get a free hat  &nbsp;</b> with every Wiley X purchase",
           ];
     } else
       if (
-        (checkDate >= "250501" && checkDate <= "250507") ||
-        (fdFncs.vars.isTest >= "250501" && fdFncs.vars.isTest <= "250507")
+        (checkDate >= "250508" && checkDate <= "250511") ||
+        (fdFncs.vars.isTest >= "250508" && fdFncs.vars.isTest <= "250511")
       ) {
         messages =
           $(window).width() <= 768
             ? [
-              "<b>40% off designer brands + up to 60% off lenses</b>",
-              "<b>40% off sun lenses &nbsp;</b> by Oakley, Costa & Maui Jim",
-              "20% off <b>Wiley X &nbsp;</b> frames & 60% off lenses",
+              "Up to <b>&nbsp; 40% off selected frames + 60% off lenses </b>",
               "25% off <b>&nbsp; Michael Kors &nbsp;</b> & 60% off lenses",
             ]
             : [
-              "GET YOUR COMPLETE YOUR PAIR: <b>&nbsp; 40% off designer brands + up to 60% off lenses. &nbsp;</b>Includes designer brands ",
-              "<b>40% off sun lenses &nbsp;</b> by Oakley, Costa & Maui Jim with code <b>&nbsp;SPECIAL40</b>",
-              "20% off <b>&nbsp; Wiley X &nbsp;</b> frames & 60% off lenses",
+              "Mother’s Day Special: Up to <b>&nbsp; 40% off selected frames &nbsp;</b>+ up to <b>&nbsp; 60% off lenses </b>",
               "25% off <b>&nbsp; Michael Kors &nbsp;</b> & 60% off lenses",
             ];
       } else
         if (
-          (checkDate >= "250428" && checkDate <= "250430") ||
-          (fdFncs.vars.isTest >= "250428" && fdFncs.vars.isTest <= "250430")
+          (checkDate >= "250501" && checkDate <= "250507") ||
+          (fdFncs.vars.isTest >= "250501" && fdFncs.vars.isTest <= "250507")
         ) {
           messages =
             $(window).width() <= 768
               ? [
                 "<b>40% off designer brands + up to 60% off lenses</b>",
                 "<b>40% off sun lenses &nbsp;</b> by Oakley, Costa & Maui Jim",
+                "20% off <b>Wiley X &nbsp;</b> frames & 60% off lenses",
                 "25% off <b>&nbsp; Michael Kors &nbsp;</b> & 60% off lenses",
               ]
               : [
-                "GET YOUR COMPLETE YOUR PAIR: <b>&nbsp; 40% off designer brands + up to 60% off lenses. &nbsp;</b>Includes designer brands",
-                "<b>40% off sun lenses &nbsp;</b> by Oakley, Costa & Maui Jim with code <b>&nbsp; SPECIAL40</b>",
+                "GET YOUR COMPLETE YOUR PAIR: <b>&nbsp; 40% off designer brands + up to 60% off lenses. &nbsp;</b>Includes designer brands ",
+                "<b>40% off sun lenses &nbsp;</b> by Oakley, Costa & Maui Jim with code <b>&nbsp;SPECIAL40</b>",
+                "20% off <b>&nbsp; Wiley X &nbsp;</b> frames & 60% off lenses",
                 "25% off <b>&nbsp; Michael Kors &nbsp;</b> & 60% off lenses",
               ];
         } else
           if (
-            (checkDate >= "250417" && checkDate <= "250427") ||
-            (fdFncs.vars.isTest >= "250417" && fdFncs.vars.isTest <= "250427")
-          ) {
-            var messages;
-            if (getCookie("fdRecognized") !== undefined) {
-              messages =
-                $(window).width() <= 768
-                  ? [
-                    "Up to <b>&nbsp; 30% off frames + 65% off lenses</b>",
-                  ]
-                  : [
-                    "Members Week: Up to <b>&nbsp; 30% off frames + 65% off lenses</b>",
-                  ];
-            } else {
-              //user not logged
-              messages =
-                $(window).width() <= 768
-                  ? [
-                    '30% lenses:&nbsp;<a href="javascript:addWelcomeLayer();" id="recSignUp" class="color-white weight-bold mx-1">Sign up</a>&nbsp;or&nbsp;<a href="#" id="recSignIn" class="siteSignIn color-white weight-bold mx-1">sign in</a>&nbsp;now',
-                  ]
-                  : [
-                    '20% off selected luxury brands or sign up to unlock 30% off top brands + 65% off lenses:&nbsp;<a href="javascript:addWelcomeLayer();" id="recSignUp" class="color-white weight-bold mx-1">Sign up</a>&nbsp;or&nbsp;<a href="#" id="recSignIn" class="siteSignIn color-white weight-bold mx-1">sign in</a>&nbsp;now',
-                  ];
-            }
-          }
-          else if (
-            (checkDate >= "250411" && checkDate <= "250416") ||
-            (fdFncs.vars.isTest >= "250411" && fdFncs.vars.isTest <= "250416")
+            (checkDate >= "250428" && checkDate <= "250430") ||
+            (fdFncs.vars.isTest >= "250428" && fdFncs.vars.isTest <= "250430")
           ) {
             messages =
               $(window).width() <= 768
                 ? [
-                  "CLEARANCE: Up to 50% off + 65% off lenses  ",
-                  "EASTER SAVINGS: Save $50 on frames",
+                  "<b>40% off designer brands + up to 60% off lenses</b>",
+                  "<b>40% off sun lenses &nbsp;</b> by Oakley, Costa & Maui Jim",
+                  "25% off <b>&nbsp; Michael Kors &nbsp;</b> & 60% off lenses",
                 ]
                 : [
-                  "CLEARANCE: Up to 50% off clearance & sale frames. Explore 350+ newly added styles + 65% off lenses ",
-                  "EASTER SAVINGS: Save $50 on frames priced $200+",
+                  "GET YOUR COMPLETE YOUR PAIR: <b>&nbsp; 40% off designer brands + up to 60% off lenses. &nbsp;</b>Includes designer brands",
+                  "<b>40% off sun lenses &nbsp;</b> by Oakley, Costa & Maui Jim with code <b>&nbsp; SPECIAL40</b>",
+                  "25% off <b>&nbsp; Michael Kors &nbsp;</b> & 60% off lenses",
                 ];
-          } else if (
-            (checkDate >= "250407" && checkDate <= "250410") ||
-            (fdFncs.vars.isTest >= "250407" && fdFncs.vars.isTest <= "250410")
-          ) {
-            messages =
-              $(window).width() <= 768
-                ? ["FLASH SALE: Up to 50% off frames & 60% off lenses  "]
-                : ["FLASH SALE: Up to 50% off frames & 60% off lenses until April 10 "];
-          } else {
-            messages =
-              $(window).width() <= 768
-                ? ["Up to 50% off frames + 65% off lenses"]
-                : [
-                  "Up to 50% off selected frames + 65% off lenses",
-                ];
-          }
+          } else
+            if (
+              (checkDate >= "250417" && checkDate <= "250427") ||
+              (fdFncs.vars.isTest >= "250417" && fdFncs.vars.isTest <= "250427")
+            ) {
+              var messages;
+              if (getCookie("fdRecognized") !== undefined) {
+                messages =
+                  $(window).width() <= 768
+                    ? [
+                      "Up to <b>&nbsp; 30% off frames + 65% off lenses</b>",
+                    ]
+                    : [
+                      "Members Week: Up to <b>&nbsp; 30% off frames + 65% off lenses</b>",
+                    ];
+              } else {
+                //user not logged
+                messages =
+                  $(window).width() <= 768
+                    ? [
+                      '30% lenses:&nbsp;<a href="javascript:addWelcomeLayer();" id="recSignUp" class="color-white weight-bold mx-1">Sign up</a>&nbsp;or&nbsp;<a href="#" id="recSignIn" class="siteSignIn color-white weight-bold mx-1">sign in</a>&nbsp;now',
+                    ]
+                    : [
+                      '20% off selected luxury brands or sign up to unlock 30% off top brands + 65% off lenses:&nbsp;<a href="javascript:addWelcomeLayer();" id="recSignUp" class="color-white weight-bold mx-1">Sign up</a>&nbsp;or&nbsp;<a href="#" id="recSignIn" class="siteSignIn color-white weight-bold mx-1">sign in</a>&nbsp;now',
+                    ];
+              }
+            }
+            else if (
+              (checkDate >= "250411" && checkDate <= "250416") ||
+              (fdFncs.vars.isTest >= "250411" && fdFncs.vars.isTest <= "250416")
+            ) {
+              messages =
+                $(window).width() <= 768
+                  ? [
+                    "CLEARANCE: Up to 50% off + 65% off lenses  ",
+                    "EASTER SAVINGS: Save $50 on frames",
+                  ]
+                  : [
+                    "CLEARANCE: Up to 50% off clearance & sale frames. Explore 350+ newly added styles + 65% off lenses ",
+                    "EASTER SAVINGS: Save $50 on frames priced $200+",
+                  ];
+            } else if (
+              (checkDate >= "250407" && checkDate <= "250410") ||
+              (fdFncs.vars.isTest >= "250407" && fdFncs.vars.isTest <= "250410")
+            ) {
+              messages =
+                $(window).width() <= 768
+                  ? ["FLASH SALE: Up to 50% off frames & 60% off lenses  "]
+                  : ["FLASH SALE: Up to 50% off frames & 60% off lenses until April 10 "];
+            } else {
+              messages =
+                $(window).width() <= 768
+                  ? ["Up to 50% off frames + 65% off lenses"]
+                  : [
+                    "Up to 50% off selected frames + 65% off lenses",
+                  ];
+            }
   var currentMessageIndex = 0;
 
   // Function to update the banner message

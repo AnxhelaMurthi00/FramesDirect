@@ -3,19 +3,19 @@
     (checkDate >= "250508" && checkDate <= "250511") ||
     (fdFncs.vars.isTest >= "250508" && fdFncs.vars.isTest <= "250511")
   ) {
-    var locName = ['/eyeglasses/', '/sunglasses/', '/prescription-sunglasses/', '/men/eyewear-dp', '/women/eyewear-dp', '/eyeglasses/mens', '/eyeglasses/womens', '/sunglasses/mens', '/sunglasses/womens', '/prescription-sunglasses/mens', '/prescription-sunglasses/womens'],
+    var locName = ['/eyeglasses/', '/sunglasses/', '/prescription-sunglasses/'],
       imgPath = '';
     for (x = 0, y = locName.length; x < y; ++x) {
       if (location.pathname === locName[x]) {
         $("#bnr-dyn-holder").html(
-          '<img alt="Mothers Day" src="https://images.framesdirect.com/image/upload/v1746523903/landing-pages/PLP_Mothersday_2025.png" width="2100" height="431" title="Mothers Day">'
+          '<a href="/email/mothers-day-dp"><img alt="Mothers Day" src="https://images.framesdirect.com/image/upload/v1746523903/landing-pages/PLP_Mothersday_2025.png" width="2100" height="431" title="Mothers Day"></a>'
         );
       }
       //Specific sale landing page
-      if (pgURLPath("email/mothers-day-d[]")) {
+      if (pgURLPath("email/mothers-day-dp")) {
         $("h1").html("Give Mom a New View ");
         $("#cata_desc").html(
-          '<p>Celebrate the mom in your life with a new look. Save 20% on selected frames from Ray-Ban, Oakley, Costa, and more. Plus, up to 60% off lenses. <a id="flash-disc-link" href="#">Details <i></i></a></p><p id="flash-disclaimer" style="display:none">Get 20% off the purchase of full-priced Sunglasses and Prescription Sunglasses from Ray-Ban, Ray-Ban Junior, Oakley, Oakley Youth, Costa. Or 40% off the purchase of full-priced Eyeglasses , Sunglasses and Prescription Sunglasses from Armani Exchange, Arnette, Brooks Brothers, Burberry, Coach, Dolce & Gabbana, Dolce & Gabbana Kids, Emporio Armani, Emporio Armani Kids, Giorgio Armani, Jimmy Choo, Polo, Polo Kids, Ralph Lauren, RALPH, Scuderia Ferrari, Sferoflex, Swarovski, Tory Burch, Versace, Versace Kids, Vogue, Vogue Junior. Other exclusions may apply. Does not apply to products that have already been discounted. Frame purchase required. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee. Free Shipping on domestic orders only. Offer ends May 12, 2025.</p>'
+          '<p>Celebrate the mom in your life with a new look. Save up to 40% off on selected frames from Ray-Ban, Oakley, Costa, and more. Plus, up to 60% off lenses. <a id="flash-disc-link" href="#">Details <i></i></a></p><p id="flash-disclaimer" style="display:none">Get 20% off the purchase of full-priced Sunglasses and Prescription Sunglasses from Ray-Ban, Ray-Ban Junior, Oakley, Oakley Youth, Costa. Or 40% off the purchase of full-priced Eyeglasses , Sunglasses and Prescription Sunglasses from Armani Exchange, Arnette, Brooks Brothers, Burberry, Coach, Dolce & Gabbana, Dolce & Gabbana Kids, Emporio Armani, Emporio Armani Kids, Giorgio Armani, Jimmy Choo, Polo, Polo Kids, Ralph Lauren, RALPH, Scuderia Ferrari, Sferoflex, Swarovski, Tory Burch, Versace, Versace Kids, Vogue, Vogue Junior. Other exclusions may apply. Does not apply to products that have already been discounted. Frame purchase required. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee. Free Shipping on domestic orders only. Offer ends May 12, 2025.</p>'
         );
       }
     }

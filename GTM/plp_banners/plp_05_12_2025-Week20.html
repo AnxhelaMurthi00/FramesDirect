@@ -1,0 +1,30 @@
+<script>
+  if (
+    (checkDate >= "250512" && checkDate <= "250512") ||
+    (fdFncs.vars.isTest >= "250512" && fdFncs.vars.isTest <= "250512")
+  ) {
+    var locName = ['/eyeglasses/', '/sunglasses/', '/prescription-sunglasses/'],
+      imgPath = '';
+    for (x = 0, y = locName.length; x < y; ++x) {
+      if (location.pathname === locName[x]) {
+        $("#bnr-dyn-holder").html(
+          '<a href="/email/mothers-day-dp"><img alt="Mothers Day" src="https://images.framesdirect.com/image/upload/v1746703601/landing-pages/plp_mothersday_1x.png" width="2880" height="201" title="Mothers Day"></a>'
+        );
+        $("h1").html("Give Mom a New View ");
+        $("#cata_desc").html(
+          '<p>Celebrate the mom in your life with a new look. Save up to 40% off on selected frames from Ray-Ban, Oakley, Costa, and more. Plus, up to 60% off lenses. <a id="flash-disc-link" href="#">Details <i></i></a></p><p id="flash-disclaimer" style="display:none">Get 20% off the purchase of full-priced Sunglasses and Prescription Sunglasses from Ray-Ban, Ray-Ban Junior, Oakley, Oakley Youth, Costa. Or 40% off the purchase of full-priced Eyeglasses , Sunglasses and Prescription Sunglasses from Armani Exchange, Arnette, Brooks Brothers, Burberry, Coach, Dolce & Gabbana, Dolce & Gabbana Kids, Emporio Armani, Emporio Armani Kids, Giorgio Armani, Jimmy Choo, Polo, Polo Kids, Ralph Lauren, RALPH, Scuderia Ferrari, Sferoflex, Swarovski, Tory Burch, Versace, Versace Kids, Vogue, Vogue Junior. Other exclusions may apply. Does not apply to products that have already been discounted. Frame purchase required. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee. Free Shipping on domestic orders only. Offer ends May 12, 2025.</p>'
+        );
+      }
+      //Specific sale landing page
+      if (pgURLPath("/wiley-x/brand")) {
+        $("#bnr-dyn-holder").html(
+          '<img alt="WILIEY X" src="https://images.framesdirect.com/image/upload/v1746701695/landing-pages/PLP_WILEY_X.png" width="2100" height="431" title="Wiliey X">'
+        );
+        $("h1").html("Wiley X Free Gift  ");
+        $("#cata_desc").html(
+          '<p>Meet Wiley X, our highest safety rate eyewear. Now find rugged frames and durable lenses and receive a free hat with your purchase.  <a id="flash-disc-link" href="#">Details <i></i></a></p><p id="flash-disclaimer" style="display:none">Get a free gift with the purchase of a prescription glasses from Wiley X. Offer valid until stocks last.</p>'
+        );
+      }
+    }
+  }
+</script>

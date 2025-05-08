@@ -6,36 +6,34 @@
     ) {
       //hero slider promotion
       $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-      $("#hero-slider").append(
-        `<li>
+      $("#hero-slider").append(`
+   <li>
  <style>
   #pb_200{
     padding-bottom: 200px;
   }
   @media (min-width: 1400px) {
-#willieXImg {
-width: auto;
-left: 70%;
-}
-}
-
-@media (min-width: 1200px) and (max-width: 1439px) {
-#willieXImg {
-width: auto;
-left: 70%;
-}
-}
-
-@media (max-width: 1200px) {
-  #willieXImg  {
-padding: 0px !important;
-background-image: url("https://images.framesdirect.com/image/upload/v1746526749/homePage/HP_WILEYX_M_1x.png") !important;
-}
-}
-  </style>
+    #willieXImg {
+      width: auto;
+      left: 70%;
+    }
+  }
+  @media (min-width: 1200px) and (max-width: 1439px) {
+    #willieXImg { 
+      width: auto;
+      left: 70%;
+    }
+  }
+  @media (max-width: 1200px) {
+    #willieXImg  {
+      padding: 0px !important;
+      background-image: url("https://images.framesdirect.com/image/upload/v1746526749/homePage/HP_WILEYX_M_1x.png") !important;
+    }
+  }
+ </style>
 <div class="ct_space">
 <div class="ct_banner ct_hero">
- <a href="/email/easter-promo-dp" aria-label="sale">
+ <a href="/wiley-x/brand" aria-label="sale">
    <div class="ct_assets__container">
      <picture class="ct_skeleton">
        <img
@@ -60,16 +58,91 @@ background-image: url("https://images.framesdirect.com/image/upload/v1746526749/
        class="ct_font__32 ct_font__desk__32 ct_font__mob_32 weight-bold ct_lh__sm ct_mb__mob__20 ct_mt__mob__30 m-0" id="pb_200">
      GET A FREE HAT
      </h1>
-         <p class="ct_font__mob_20 ct_font__20 ct_m__10 ct_font__desk__20">
+         <p class="ct_font__mob_20 ct_font__20 ct_font__desk__20 mt-0">
            with every <b class="weight-bold">WILLIE X</b> purchase
          </p>
-       <a href="/email/wiley-x/brand" class="ct_cta ct_cta__red ct_m__mob__10 ct_mb__mob__40"
+       <a href="/wiley-x/brand" class="ct_cta ct_cta__red ct_m__mob__10 ct_mb__mob__40"
          style="background-color: #ab2317; font-size: 16px">
          SHOP NOW
        </a>
      </div>
    </div>
  </a>
+</div>
+</div>
+   </li>`
+      )
+      $("#hero-slider").append(
+        `
+   <li>
+   <style>
+
+  #clearance_btn{
+    border: 1px solid #fff;
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 16px;
+  }
+  @media (min-width: 1400px) {
+#thirdHeroImg {
+width: auto;
+left: 33%;
+}
+}
+
+@media (min-width: 1200px) and (max-width: 1440px) {
+#thirdHeroImg {
+width: auto;
+left: 33%;
+}
+}
+
+@media (max-width: 1200px) {
+#thirdHeroImg {
+padding: 0px !important;
+background-image: url("https://images.framesdirect.com/image/upload/v1745089591/homePage/HP_CLEARANCE_M.png") !important;
+}
+}
+  </style>
+<div class="ct_space">
+<div class="ct_banner ct_hero">
+<a href="/sale" aria-label="sale" style="color: white;">
+<div class="ct_assets__container">
+<picture class="ct_skeleton">
+  <img
+    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjXKco/p8BB2DEJwkAmwIDzfz492EAAAAASUVORK5CYII="
+    alt="structure image" />
+</picture>
+<picture class="ct_img">
+  <img src="https://images.framesdirect.com/image/upload/v1745089592/homePage/HP_CLEARANCE_D.jpg"
+    fetchpriority="high" alt="Clearance glasses"
+    width="3840" height="1108" />
+</picture>
+</div>
+
+<div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0 " id="thirdHeroImg" style="color: white !important;">
+<div class="mt-4 mt-lg-0">
+  <div class="ct_font__mob_28 ct_font__30 ct_font__desk__30 weight-bold ct_lh__sm ct_m__0 ct_mb__15 ">
+    NEW Clearance Deals
+  </div>
+  <div class="ct_font__24 2 ct_font__desk__24 align-self-center ct_p__0 ct_mt__30 weight-medium" style="line-height: 1">
+    Save up to 
+  </div>
+  <div>
+    <p class="ct_font__mob_55 ct_font__50 ct_font__desk__50 weight-bold ct_m__0 transform-uppercase ct_mb__20">
+      <span class="d-block d-sm-inline">50% off</span>
+      <span class="d-block d-sm-inline ct_font__mob_32" style="line-height: 1;">frames</span>
+    </p>
+    <p class="ct_font__mob_30 ct_font__32 ct_font__desk__32 ct_lh__sm weight-bold ct_m__0 ct_mb__20 transform-uppercase">
+      + 60% off Lenses
+    </p>
+  </div>
+  <a href="/sale" class=" btn-cta ct_m__mob__10 ct_mb__mob__50 ct_mt__30 " id="clearance_btn">
+   SHOP CLEARANCE
+  </a>
+</div>
+</div>
+</a>
 </div>
 </div>
    </li>`
@@ -1213,8 +1286,8 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
 
   const updateSecondBanner = () => {
     if (
-      (checkDate >= "250428" && checkDate <= "250507") ||
-      (fdFncs.vars.isTest >= "250428" && fdFncs.vars.isTest <= "250507")
+      (checkDate >= "250428" && checkDate <= "250511") ||
+      (fdFncs.vars.isTest >= "250428" && fdFncs.vars.isTest <= "250511")
     ) {
       let secondBanner = `
 <div 
