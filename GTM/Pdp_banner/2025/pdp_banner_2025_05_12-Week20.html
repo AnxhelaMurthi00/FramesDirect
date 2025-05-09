@@ -3,19 +3,6 @@
   //for Eyeglasses and Plano Sun PDPs
   ////////////////////////////////////
 
-  //var hasIns = setInterval(checkIns, 360);
-  $(window).on('load', function () {
-    $('.insurance-app-toggle input').change(function () {
-      var $this = $(this)
-      if ($this.checked) {
-        window.console.log('toggle on');
-        $('.lens-bar-holder').hide();
-      } else {
-        window.console.log('toggle off');
-        $('.lens-bar-holder').show();
-      }
-    });
-  });
   function prodDiscoBanner() {
     if (
       (checkDate >= "250513" && checkDate <= "250518") ||
