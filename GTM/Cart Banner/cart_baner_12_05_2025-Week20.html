@@ -1,31 +1,16 @@
 <script>
-  var hasIns = setInterval(checkIns, 360);
-  function checkIns() {
+  if (
+    pgURLPath("/cart_summary.aspx") &&
+    !!!$("#ctl00_ContentPlaceHolderProductDisplay_pnlEmptyCart").length
+  ) {
     if (
-      !!!$("#ctl00_ContentPlaceHolderProductDisplay_pnlEmptyCart").length
+      (checkDate >= "250512" && checkDate <= "250512") ||
+      (fdFncs.vars.isTest >= "250512" && fdFncs.vars.isTest <= "250512")
     ) {
-      if ($('.cart-item.insurance-selected').length > 0) {
-        clearInterval(hasIns);
-        hasIns = null;
-      } else {
-        if (
-          (checkDate >= "250513" && checkDate <= "250518") ||
-          (fdFncs.vars.isTest >= "250513" && fdFncs.vars.isTest <= "250518")
-        ) {
-          $(
-            '<div id="cartPromoMsg" class="mb-3 py-1 px-3 weight-normal color-black" style="background:#F0ECE1; border-radius: 5px; ">Up to <b>40% off select frames</b> at checkout + <b>60% off lenses</b></div>'
-          ).insertAfter($("h1"));
-        } else if (
-          (checkDate >= "250512" && checkDate <= "250512") ||
-          (fdFncs.vars.isTest >= "250512" && fdFncs.vars.isTest <= "250512")
-        ) {
-          $(
-            '<div id="cartPromoMsg" class="mb-3 py-1 px-3 weight-normal color-black" style="background:#CBC4BA; border-radius: 5px; ">Give Mom A Complete Pair: Up to <b>40% off select frames</b> at checkout + <b>60% off lenses</b></div>'
-          ).insertAfter($("h1"));
-        }
-        clearInterval(hasIns);
-        hasIns = null;
-      }
+      $('<div id="cartPromoMsg" class="mb-3 py-1 px-3 weight-normal color-black" style="background:#F0ECE0; border-radius: 5px; "><b>Get a free hat</b> with every Wiley X prescription glasses purchase. While supplies last. Directly applied at checkout.</div>')
+        .insertAfter($("h1"));
+      $('<div id="cartPromoMsg" class="mb-3 py-1 px-3 weight-normal color-black" style="background:#CBC4BA; border-radius: 5px; ">Give Mom A Complete Pair: Up to <b>40% off select frames</b> at checkout + <b>60% off lenses</b></div>')
+        .insertAfter($("h1"));
     }
   }
 </script>

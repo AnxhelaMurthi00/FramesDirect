@@ -79,6 +79,34 @@
 
       if (
         !$this.parents(".top-items").hasClass("top-sale") &&
+        ((checkDate >= "250519" && checkDate <= "250526") ||
+          (fdFncs.vars.isTest >= "250519" && checkDate <= "250526"))
+      ) {
+        $this.css("backgroundColor", "#EADBC6");
+        setPg = "/sale/top-brands-discounted-dp";
+        if ($this.parents(".top-items").hasClass("top-cl")) {
+          $this.append(clMsg);
+          setPg = "/contact-lenses/";
+        } else if ($this.parents(".top-items").hasClass("top-sale")) {
+          $this.append(
+            '<div class="size-14">Outlet Deals</div><div class="size-18 pt-2 mt-2" style="line-height: 1; border-top: 1px #fff solid;">Save Up To</div><div class="size-40" style="line-height: 1;">50%</div>'
+          );
+          $this.addClass(
+            "background-red color-white weight-bold transform-uppercase"
+          );
+        } else if ($this.parents(".top-items").hasClass("top-sg")) {
+          $this.append(
+            '<div class="size-16 weight-bold transform-uppercase">Up to 40% off<br> Ray-Ban, Oakley<br> & more</div>'
+          );
+          setPg = "/email/memorial-day-dp";
+        } else {
+          $this.append(
+            '<div class="size-16 weight-bold transform-uppercase">Up to 40% off<br> Ray-Ban, Oakley<br> & more<div class="weight-bold size-16 m-2">+</div>60% off lenses</div'
+          );
+          setPg = "/email/memorial-day-dp";
+        }
+      } else if (
+        !$this.parents(".top-items").hasClass("top-sale") &&
         ((checkDate >= "250513" && checkDate <= "250518") ||
           (fdFncs.vars.isTest >= "250513" && checkDate <= "250518"))
       ) {
