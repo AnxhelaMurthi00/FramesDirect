@@ -1,0 +1,2616 @@
+<script>
+  const updateHeroBanner = () => {
+    if (
+        (checkDate >= "250528" && checkDate <= "250611") ||
+        (fdFncs.vars.isTest >= "250528" && fdFncs.vars.isTest <= "250611")
+      ) {
+        //hero slider promotion
+        $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+        $("#hero-slider").append(`
+   <li>
+
+<div class="ct_space">
+  <div class="ct_banner ct_hero">
+    <div class="ct_assets__container">
+      <picture class="ct_skeleton">
+        <img
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjvP7l1X8GHIARnyQAL9oHa2j4BAUAAAAASUVORK5CYII="
+          alt="structure image">
+      </picture>
+      <picture class="ct_img">
+        <img src="https://images.framesdirect.com/image/upload/v1746525590/homePage/HP_INSURANCE_D.png"
+          fetchpriority="high" alt="" width="3840" height="1108">
+      </picture>
+    </div>
+    <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pb__mob__30 ct_pt__mob__30"
+      style="background: #D7F4EA; width: 35%">
+      <div class="ct_text__black size-26 mt-lg-3 ct_lh__sm">
+        <b> <svg width="36" height="28" viewBox="0 0 36 28" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.0996094" y="0.473633" width="35.8521" height="26.889" rx="6.20807" fill="white" />
+            <path
+              d="M32.964 0.4729H3.08728C1.43734 0.4729 0.0996094 1.81063 0.0996094 3.46057V24.3743C0.0996094 26.0242 1.43734 27.3619 3.08728 27.3619H32.964C34.6139 27.3619 35.9517 26.0242 35.9517 24.3743V3.46057C35.9517 1.81063 34.6139 0.4729 32.964 0.4729ZM34.4578 24.3743C34.4578 25.1981 33.7878 25.8681 32.964 25.8681H3.08728C2.26343 25.8681 1.59344 25.1981 1.59344 24.3743V10.9297H34.4578V24.3743ZM34.4578 9.43591H1.59344V6.44824H34.4578V9.43591ZM34.4578 4.95441H1.59344V3.46057C1.59344 2.63672 2.26343 1.96674 3.08728 1.96674H32.964C33.7878 1.96674 34.4578 2.63672 34.4578 3.46057V4.95441Z"
+              fill="black" />
+            <path d="M4.89258 21.2717H18.0266" stroke="black" stroke-width="1.24161" stroke-linecap="round" />
+            <path
+              d="M26.9093 13.1895C26.4363 13.8258 24.892 15.2686 22.498 15.9496C22.498 20.0772 23.7731 22.1149 26.9093 23.9986C30.7892 21.8316 31.4841 17.7297 31.3465 15.9496C29.5716 15.9496 27.6488 14.1095 26.9093 13.1895Z"
+              fill="#D6F3E9" stroke="black" stroke-width="1.40047" stroke-linejoin="round" />
+          </svg>
+          BIG NEWS: <br>
+          We now accept <br>vision insurance!</b>
+      </div>
+      <div class="ct_text__black mt-lg-3 ct_font__18">
+        <p class="mt-2 mt-lg-0">
+          Using your vision insurance to <br> purchase eyewear is easier than ever
+        </p>
+        <p>Select your carrier and save up to <br> ##% at checkout.</p>
+      </div>
+      <div class="text-center ml-2 d-flex flex-column flex-lg-row">
+        <a
+          href="/knowledge-center/do-you-have-flex-spending-dollars"
+          class="btn-cta nowrap mt-4"
+          style="background: #AB2317; color: #fff !important; border: 0"
+          >LEARN MORE
+          </a>
+         <a
+          href="/collections/fsa-hsa-eligible-eyewear-dp"
+          class="btn-cta nowrap mt-2 mt-lg-4 ml-lg-5 d-none d-lg-block"
+          style="background: #000; color: #fff !important; border: 0"
+          >Shop Now</a>
+      </div>
+  </div>
+</div>
+   </li>`
+        )
+        $("#hero-slider").append(
+          `
+   <li>
+   <style>
+
+  #clearance_btn{
+    border: 1px solid #fff;
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 16px;
+  }
+  @media (min-width: 1400px) {
+#thirdHeroImg {
+width: auto;
+left: 33%;
+}
+}
+
+@media (min-width: 1200px) and (max-width: 1440px) {
+#thirdHeroImg {
+width: auto;
+left: 33%;
+}
+}
+
+@media (max-width: 1200px) {
+#thirdHeroImg {
+padding: 0px !important;
+background-image: url("https://images.framesdirect.com/image/upload/v1745089591/homePage/HP_CLEARANCE_M.png") !important;
+}
+}
+  </style>
+<div class="ct_space">
+<div class="ct_banner ct_hero">
+<a href="/sale" aria-label="sale" style="color: white;">
+<div class="ct_assets__container">
+<picture class="ct_skeleton">
+  <img
+    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjXKco/p8BB2DEJwkAmwIDzfz492EAAAAASUVORK5CYII="
+    alt="structure image" />
+</picture>
+<picture class="ct_img">
+  <img src="https://images.framesdirect.com/image/upload/v1745089592/homePage/HP_CLEARANCE_D.jpg"
+    fetchpriority="high" alt="Clearance glasses"
+    width="3840" height="1108" />
+</picture>
+</div>
+
+<div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0 " id="thirdHeroImg" style="color: white !important;">
+<div class="mt-4 mt-lg-0">
+  <div class="ct_font__mob_28 ct_font__30 ct_font__desk__30 weight-bold ct_lh__sm ct_m__0 ct_mb__15 ">
+    Clearance Deals
+  </div>
+  <div class="ct_font__24 2 ct_font__desk__24 align-self-center ct_p__0 ct_mt__30 weight-medium" style="line-height: 1">
+    Save up to 
+  </div>
+  <div>
+    <p class="ct_font__mob_55 ct_font__50 ct_font__desk__50 weight-bold ct_m__0 transform-uppercase ct_mb__20">
+      <span class="d-block d-sm-inline">50% off</span>
+      <span class="d-block d-sm-inline ct_font__mob_32" style="line-height: 1;">frames</span>
+    </p>
+    <p class="ct_font__mob_30 ct_font__32 ct_font__desk__32 ct_lh__sm weight-bold ct_m__0 ct_mb__20 transform-uppercase">
+      + 60% off Lenses
+    </p>
+  </div>
+  <a href="/sale" class=" btn-cta ct_m__mob__10 ct_mb__mob__50 ct_mt__30 " id="clearance_btn">
+   SHOP CLEARANCE
+  </a>
+</div>
+</div>
+</a>
+</div>
+</div>
+   </li>`
+        );
+      } else
+         if (
+      (checkDate >= "250527" && checkDate <= "250527") ||
+      (fdFncs.vars.isTest >= "250527" && fdFncs.vars.isTest <= "250527")
+    ) {
+      //hero slider promotion
+      $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+      $("#hero-slider").append(
+        `   <li>
+   <style>
+
+  #clearance_btn{
+    border: 1px solid #fff;
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 16px;
+  }
+  @media (min-width: 1400px) {
+#thirdHeroImg {
+width: auto;
+left: 33%;
+}
+}
+
+@media (min-width: 1200px) and (max-width: 1440px) {
+#thirdHeroImg {
+width: auto;
+left: 33%;
+}
+}
+
+@media (max-width: 1200px) {
+#thirdHeroImg {
+padding: 0px !important;
+background-image: url("https://images.framesdirect.com/image/upload/v1745089591/homePage/HP_CLEARANCE_M.png") !important;
+}
+}
+  </style>
+<div class="ct_space">
+<div class="ct_banner ct_hero">
+<a href="/sale" aria-label="sale" style="color: white;">
+<div class="ct_assets__container">
+<picture class="ct_skeleton">
+  <img
+    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjXKco/p8BB2DEJwkAmwIDzfz492EAAAAASUVORK5CYII="
+    alt="structure image" />
+</picture>
+<picture class="ct_img">
+  <img src="https://images.framesdirect.com/image/upload/v1745089592/homePage/HP_CLEARANCE_D.jpg"
+    fetchpriority="high" alt="Clearance glasses"
+    width="3840" height="1108" />
+</picture>
+</div>
+
+<div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0 " id="thirdHeroImg" style="color: white !important;">
+<div class="mt-4 mt-lg-0">
+  <div class="ct_font__mob_28 ct_font__30 ct_font__desk__30 weight-bold ct_lh__sm ct_m__0 ct_mb__15 ">
+   Clearance Deals
+  </div>
+  <div class="ct_font__24 2 ct_font__desk__24 align-self-center ct_p__0 ct_mt__30 weight-medium" style="line-height: 1">
+    Save up to 
+  </div>
+  <div>
+    <p class="ct_font__mob_55 ct_font__50 ct_font__desk__50 weight-bold ct_m__0 transform-uppercase ct_mb__20">
+      <span class="d-block d-sm-inline">50% off</span>
+      <span class="d-block d-sm-inline ct_font__mob_32" style="line-height: 1;">frames</span>
+    </p>
+    <p class="ct_font__mob_30 ct_font__32 ct_font__desk__32 ct_lh__sm weight-bold ct_m__0 ct_mb__20 transform-uppercase">
+      + 60% off Lenses
+    </p>
+  </div>
+  <a href="/sale" class=" btn-cta ct_m__mob__10 ct_mb__mob__50 ct_mt__30 " id="clearance_btn">
+   SHOP CLEARANCE
+  </a>
+</div>
+</div>
+</a>
+</div>
+</div>
+   </li>`
+      );
+    } else
+    if (
+      (checkDate >= "250519" && checkDate <= "250526") ||
+      (fdFncs.vars.isTest >= "250519" && fdFncs.vars.isTest <= "250526")
+    ) {
+      //hero slider promotion
+      $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+      $("#hero-slider").append(
+        `<div class="ct_space">
+  <div class="ct_banner ct_hero">
+  <a  href="/email/customer-appreciation-dp" aria-label="customer week sale" class="w-100">
+  <div class="ct_assets__container">
+  <picture class="ct_skeleton">
+    <img
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdj1JSQ+s+AAzDikwQAbOECt2pHOuMAAAAASUVORK5CYII="
+      alt="structure image"
+    />
+  </picture>
+  <picture class="ct_img">
+    <img
+    src="https://images.framesdirect.com/image/upload/v1746795250/homePage/HP_FLASH_SALE_D_WEEK21.jpg"
+      fetchpriority="high"
+      alt="The woman is wearing Ray-Ban rb4340 eyeglasses and the men is wearing Versace ve2199 sunglasses"
+      width="3840"
+      height="1108"
+      usemap="#image-map"
+    />
+  </picture>
+  <map name="image-map">
+    <area
+      target=""
+      alt="Ray-Ban rb4340 eyeglasses"
+      title="Ray-Ban rb4340 eyeglasses"
+      href="/ray-ban-rb4340v-eyeglasses"
+      coords="2000,478,2583,751"
+      shape="rect"
+    />
+    <area
+      target=""
+      alt="Versace ve2199 sunglasses"
+      title="Versace ve2199 sunglasses"
+      href="/versace-ve2199-sunglasses"
+      coords="2587,307,3170,580"
+      shape="rect"
+    />
+  </map>
+  </div>
+  <div
+  class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0 ct_pt__mob__20 ct_pb__mob__20"
+  style="background: #EFEFEA; width: 35%"
+  >
+  <div class="size-26 mt-lg-3">Memorial Day <b>Saving</b></div>
+  <picture class="ct_img">
+    <source
+      srcset="https://images.framesdirect.com/image/upload/v1746804801/logos/FD-CUW-LOGOS-M-BLACK.png"
+      media="(max-width: 768px)"
+    />
+    <img
+      src="https://images.framesdirect.com/image/upload/v1746804802/logos/FD-CUW-LOGOS-D-BLACK.png"
+      alt="Customer week Sale"
+      class="img-fluid d-block mx-auto"
+      id="text-image"
+      style="height:111px;"
+    />
+  </picture>
+  
+  
+  <div class="d-flex flex-wrap ct_mt__0 mx-auto pl-1 mb-3">
+    <div class="col-5 mb-3 px-0">
+      <div>Up to</div>
+      <div
+        class="transform-uppercase ct_font__mob_32 ct_font__32 ct_font__desk__32 weight-bold ct_lh__sm ct_m__0"
+      >
+        40% Off<br><span class="weight-normal">FRAMES</span>
+      </div>
+    </div>
+    <div
+      class="col-2 ct_font__70 ct_font__mob_60 ct_font__desk__70 align-self-center ct_p__0 px-0" style="line-height:1"
+    >
+      +
+    </div>
+    <div class="col-5 px-0">
+      <div
+        class="transform-uppercase ct_font__mob_32 ct_font__32 ct_font__desk__32 ct_lh__sm weight-bold ct_m__0 pt-4"
+      >
+        60% Off<br><span class="weight-normal">LENSES</span>
+      </div>
+    </div>
+  </div>
+  <a
+  href="/email/customer-appreciation-dp"
+  class="ct_cta ct_cta__red ct_m__mob__10 ct_mb__mob__35 mb-3"
+  style="background-color: #AB2317;"
+  >SAVE NOW</a
+  >
+  </div>
+  </a>
+  </div>
+  </div>
+  </div>`
+      );
+    } else
+      if (
+        (checkDate >= "250512" && checkDate <= "250518") ||
+        (fdFncs.vars.isTest >= "250512" && fdFncs.vars.isTest <= "250518")
+      ) {
+        //hero slider promotion
+        $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+        $("#hero-slider").append(`
+   <li>
+ <style>
+  #pb_200{
+    padding-bottom: 200px;
+  }
+  @media (min-width: 1400px) {
+    #willieXImg {
+      width: auto;
+      left: 70%;
+    }
+       #pb_200{
+    padding-bottom: 230px;
+  }
+  }
+  @media (min-width: 1200px) and (max-width: 1439px) {
+    #willieXImg { 
+      width: auto;
+      left: 70%;
+    }
+  }
+  @media (max-width: 1200px) {
+    #willieXImg  {
+      padding: 0px !important;
+      background-image: url("https://images.framesdirect.com/image/upload/v1746526749/homePage/HP_WILEYX_M_1x.png") !important;
+    }
+  }
+ </style>
+<div class="ct_space">
+<div class="ct_banner ct_hero">
+ <a href="/wiley-x/brand" aria-label="sale">
+   <div class="ct_assets__container">
+     <picture class="ct_skeleton">
+       <img
+         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdj/Pzu8X8GHIARnyQANP0HiSbhWk8AAAAASUVORK5CYII="
+         alt="structure image" />
+     </picture>
+     <picture class="ct_img">
+       <img src="https://images.framesdirect.com/image/upload/v1746525580/homePage/HP_WILEYX_D_2025.png"
+         fetchpriority="high"
+         alt="The left is wearing Oakley sutro sunglasses, other is waering Coach eyeglasses" width="3840"
+         height="1108" usemap="#image-map2" />
+     </picture>
+     <map name="image-map2">
+       <area target="" alt="Oakley sutro sunglasses" title="Oakley sutro sunglasses"
+         href="/oakley-sutro-sunglasses?color=1" coords="1783,296,2542,601" shape="rect" />
+       <area target="" alt="Coach eyeglasses" title="Coach eyeglasses"
+         href="/coach-hc6065-eyeglasses?color=10015098" coords="2700,264,3459,569" shape="rect" />
+     </map>
+   </div>
+   <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0" id="willieXImg">
+     <h1
+       class="ct_font__32 ct_font__desk__32 ct_font__mob_32 weight-bold ct_lh__sm ct_mb__mob__20 ct_mt__mob__30 m-0" id="pb_200">
+     GET A FREE HAT
+     </h1>
+         <p class="ct_font__mob_20 ct_font__20 ct_font__desk__20 mt-0">
+           with every <b class="weight-bold">WILEY X</b> purchase
+         </p>
+       <a href="/wiley-x/brand" class="ct_cta ct_cta__red ct_m__mob__10 ct_mb__mob__40"
+         style="background-color: #ab2317; font-size: 16px">
+         SHOP NOW
+       </a>
+     </div>
+   </div>
+ </a>
+</div>
+</div>
+   </li>`
+        )
+        $("#hero-slider").append(
+          `
+   <li>
+   <style>
+
+  #clearance_btn{
+    border: 1px solid #fff;
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 16px;
+  }
+  @media (min-width: 1400px) {
+#thirdHeroImg {
+width: auto;
+left: 33%;
+}
+}
+
+@media (min-width: 1200px) and (max-width: 1440px) {
+#thirdHeroImg {
+width: auto;
+left: 33%;
+}
+}
+
+@media (max-width: 1200px) {
+#thirdHeroImg {
+padding: 0px !important;
+background-image: url("https://images.framesdirect.com/image/upload/v1745089591/homePage/HP_CLEARANCE_M.png") !important;
+}
+}
+  </style>
+<div class="ct_space">
+<div class="ct_banner ct_hero">
+<a href="/sale" aria-label="sale" style="color: white;">
+<div class="ct_assets__container">
+<picture class="ct_skeleton">
+  <img
+    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjXKco/p8BB2DEJwkAmwIDzfz492EAAAAASUVORK5CYII="
+    alt="structure image" />
+</picture>
+<picture class="ct_img">
+  <img src="https://images.framesdirect.com/image/upload/v1745089592/homePage/HP_CLEARANCE_D.jpg"
+    fetchpriority="high" alt="Clearance glasses"
+    width="3840" height="1108" />
+</picture>
+</div>
+
+<div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0 " id="thirdHeroImg" style="color: white !important;">
+<div class="mt-4 mt-lg-0">
+  <div class="ct_font__mob_28 ct_font__30 ct_font__desk__30 weight-bold ct_lh__sm ct_m__0 ct_mb__15 ">
+    NEW Clearance Deals
+  </div>
+  <div class="ct_font__24 2 ct_font__desk__24 align-self-center ct_p__0 ct_mt__30 weight-medium" style="line-height: 1">
+    Save up to 
+  </div>
+  <div>
+    <p class="ct_font__mob_55 ct_font__50 ct_font__desk__50 weight-bold ct_m__0 transform-uppercase ct_mb__20">
+      <span class="d-block d-sm-inline">50% off</span>
+      <span class="d-block d-sm-inline ct_font__mob_32" style="line-height: 1;">frames</span>
+    </p>
+    <p class="ct_font__mob_30 ct_font__32 ct_font__desk__32 ct_lh__sm weight-bold ct_m__0 ct_mb__20 transform-uppercase">
+      + 60% off Lenses
+    </p>
+  </div>
+  <a href="/sale" class=" btn-cta ct_m__mob__10 ct_mb__mob__50 ct_mt__30 " id="clearance_btn">
+   SHOP CLEARANCE
+  </a>
+</div>
+</div>
+</a>
+</div>
+</div>
+   </li>`
+        );
+      } else
+        if (
+          (checkDate >= "250508" && checkDate <= "250511") ||
+          (fdFncs.vars.isTest >= "250508" && fdFncs.vars.isTest <= "250511")
+        ) {
+          //hero slider promotion
+          $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+          $("#hero-slider").append(
+            `<li>
+   <style>
+
+  #clearance_btn{
+    border: 1px solid #fff;
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 16px;
+  }
+  @media (min-width: 1400px) {
+#thirdHeroImg {
+width: auto;
+left: 33%;
+}
+}
+
+@media (min-width: 1200px) and (max-width: 1440px) {
+#thirdHeroImg {
+width: auto;
+left: 33%;
+}
+}
+
+@media (max-width: 1200px) {
+#thirdHeroImg {
+padding: 0px !important;
+background-image: url("https://images.framesdirect.com/image/upload/v1745089591/homePage/HP_CLEARANCE_M.png") !important;
+}
+}
+  </style>
+<div class="ct_space">
+<div class="ct_banner ct_hero">
+<a href="/sale" aria-label="sale" style="color: white;">
+<div class="ct_assets__container">
+<picture class="ct_skeleton">
+  <img
+    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjXKco/p8BB2DEJwkAmwIDzfz492EAAAAASUVORK5CYII="
+    alt="structure image" />
+</picture>
+<picture class="ct_img">
+  <img src="https://images.framesdirect.com/image/upload/v1745089592/homePage/HP_CLEARANCE_D.jpg"
+    fetchpriority="high" alt="Clearance glasses"
+    width="3840" height="1108" />
+</picture>
+</div>
+
+<div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0 " id="thirdHeroImg" style="color: white !important;">
+<div class="mt-4 mt-lg-0">
+  <div class="ct_font__mob_28 ct_font__30 ct_font__desk__30 weight-bold ct_lh__sm ct_m__0 ct_mb__15 ">
+    NEW Clearance Deals
+  </div>
+  <div class="ct_font__24 2 ct_font__desk__24 align-self-center ct_p__0 ct_mt__30 weight-medium" style="line-height: 1">
+    Save up to 
+  </div>
+  <div>
+    <p class="ct_font__mob_55 ct_font__50 ct_font__desk__50 weight-bold ct_m__0 transform-uppercase ct_mb__20">
+      <span class="d-block d-sm-inline">50% off</span>
+      <span class="d-block d-sm-inline ct_font__mob_32" style="line-height: 1;">frames</span>
+    </p>
+    <p class="ct_font__mob_30 ct_font__32 ct_font__desk__32 ct_lh__sm weight-bold ct_m__0 ct_mb__20 transform-uppercase">
+      + 60% off Lenses
+    </p>
+  </div>
+  <a href="/sale" class=" btn-cta ct_m__mob__10 ct_mb__mob__50 ct_mt__30 " id="clearance_btn">
+   SHOP CLEARANCE
+  </a>
+</div>
+</div>
+</a>
+</div>
+</div>
+   </li>`
+          );
+        } else if (
+          (checkDate >= "250501" && checkDate <= "250507") ||
+          (fdFncs.vars.isTest >= "250501" && fdFncs.vars.isTest <= "250507")
+        ) {
+          //hero slider promotion
+          $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+          $("#hero-slider").append(
+            `<li>
+          <style>
+  @media (min-width: 1400px) {
+#secondHeroImg {
+width: auto;
+left: 35%;
+}
+}
+
+@media (min-width: 1200px) and (max-width: 1439px) {
+#secondHeroImg {
+width: auto;
+left: 33%;
+}
+}
+
+@media (max-width: 1200px) {
+#secondHeroImg {
+padding: 0px !important;
+background-image: url("https://images.framesdirect.com/image/upload/v1745089591/homePage/HP_WILEYX_M.png") !important;
+}
+}
+@media (max-width: 768px) {
+  #brands_svg svg {
+    width: 113px;
+  }
+}
+  </style>
+<div class="ct_space">
+<div class="ct_banner ct_hero">
+<a href="/email/auth-lenses-dp" aria-label="sale">
+<div class="ct_assets__container">
+<picture class="ct_skeleton">
+  <img
+    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjXLNr338GHIARnyQAANkGSX9qwNcAAAAASUVORK5CYII="
+    alt="structure image" />
+</picture>
+<picture class="ct_img">
+  <img src="https://images.framesdirect.com/image/upload/v1745089594/homePage/HP_WILEYX_D.png"
+    fetchpriority="high" alt="The left is wearing Wiley X WX Saint sunglasses, other is Wiley X WX Kingpin sunglasses"
+    width="3840" height="1108" usemap="#image-map1" />
+</picture>
+<map name="image-map1" class="map-slider">
+  <area target="" alt="Wiley X WX Saint sunglasses" title="Wiley X WX Saint sunglasses"
+    href="/wiley-x-wx-saint-sunglasses" coords="344,230,1047,508" shape="rect" />
+  <area target="" alt="Wiley X WX Kingpin sunglasses" title="Wiley X WX Kingpin sunglasses" href="/wiley-x-wx-kingpin-sunglasses"
+    coords="2675,275,3268,560" shape="rect" />
+</map>
+</div>
+
+<div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0" id="secondHeroImg">
+<div class="mt-4 mt-lg-0">
+  <h1 class="ct_font__mob_40 ct_font__38 ct_font__desk__38 weight-bold ct_lh__sm ct_m__0 ct_mb__desk__10">
+    20% off Wiley X
+  </h1>
+  <div class="ct_font__48 ct_font__mob_48 ct_font__desk__42 align-self-center ct_p__0" style="line-height: 1">
+    +
+  </div>
+  <div>
+    <h1 class="ct_font__mob_40 ct_font__38 ct_font__desk__38 ct_lh__sm weight-bold ct_m__0 d-block d-sm-none">
+
+      60% off lenses
+     </h1>
+     <h1 class="ct_font__mob_40 ct_font__38 ct_font__desk__38 ct_lh__sm weight-bold ct_m__0 d-none d-lg-block">
+     60% off Wiley x lenses
+     </h1>
+     <p class="ct_font__mob_18 ct_font__18 ct_m__10 ct_font__desk__20">
+     or use code <b>SPECIAL40 </b>  <br class="ct_desk__hide">for <b>40% off</b> sun lenses by:
+    </p>
+    <p id="brands_svg">
+      <svg width="153" height="80" viewBox="0 0 153 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M71.5168 23.2283C55.1555 23.2283 41.5674 27.7128 41.5674 33.5856C41.5674 39.4473 55.1555 43.9391 71.5168 43.9391C87.8765 43.9391 101.465 39.4473 101.465 33.5843C101.465 27.715 87.8765 23.2283 71.5168 23.2283ZM31.0479 54.974V55.1011C31.0479 55.5829 31.4623 55.6833 32.0971 55.6833C32.8698 55.6833 33.2643 55.5947 33.2643 55.165V55.0511V49.2023V49.076C33.2643 48.7095 32.7898 48.6194 32.1169 48.6194C31.4033 48.6194 31.0479 48.7095 31.0479 49.1014V49.2278V54.974ZM37.0849 55.1894V55.2777C37.0849 56.1514 35.7591 56.4935 32.0956 56.4935C29.1644 56.4935 27.6402 56.2147 27.3227 55.5825C27.2835 55.4932 27.2441 55.303 27.2441 55.0375V54.9232V49.4927V49.3538C27.2441 48.6071 27.5603 48.3166 28.4914 48.1008C29.2838 47.9113 30.5899 47.81 32.1155 47.81C33.5607 47.81 34.8882 47.9113 35.7394 48.0754C36.7689 48.278 37.0849 48.5567 37.0849 49.2652V49.3916V55.1894ZM49.7435 56.342L49.0497 54.2407H46.4568L45.8611 56.342H42.9114L45.9608 47.9115H50.773L54.0796 56.342H49.7435ZM47.6449 49.9368L48.7938 53.2657H46.6544L47.6449 49.9368ZM64.5833 47.9116V51.3409L67.752 47.9116H71.3156L68.0875 51.3915L71.1173 56.3407H66.7227L64.5833 52.6324V56.3407H60.4649V47.9116H64.5833ZM81.6739 55.2268V47.9116H77.5539L77.5555 56.3407H85.7527V55.2268H81.6739ZM99.937 48.9737H95.9957V51.5814H99.0267L99.0461 52.5689H96.0164V55.2776H99.9186V56.3403H91.8771V47.9113L99.937 47.9097V48.9737ZM108.292 56.3403H112.43V53.2134L115.975 47.9097H112.768L110.926 51.0616L109.104 47.9097H104.708L108.292 53.2134V56.3403ZM53.3385 33.5015C53.3385 38.2223 61.9824 41.7253 71.5872 41.7253C81.1877 41.7253 89.8318 38.2223 89.8318 33.5015C89.8318 28.779 81.1877 25.2717 71.5872 25.2717C61.9892 25.2717 53.3385 28.779 53.3385 33.5015ZM118.758 48.5716C118.758 48.916 118.369 49.1896 117.877 49.1896C117.385 49.1896 116.994 48.916 116.994 48.5716C116.994 48.2279 117.385 47.959 117.883 47.959C118.369 47.959 118.758 48.2279 118.758 48.5716ZM117.883 49.0606C117.502 49.0606 117.213 48.8447 117.213 48.5712C117.213 48.3032 117.502 48.0817 117.872 48.0817C118.254 48.0817 118.536 48.3032 118.536 48.5751C118.536 48.8447 118.254 49.0661 117.883 49.0606ZM117.742 48.8892H117.544V48.2755L117.575 48.2726C117.651 48.2658 117.749 48.2567 117.871 48.2567C118.036 48.2567 118.108 48.2755 118.166 48.3058C118.218 48.3332 118.254 48.3769 118.254 48.4371C118.254 48.5108 118.175 48.5601 118.077 48.5819V48.59C118.16 48.6092 118.202 48.6571 118.228 48.7407C118.254 48.833 118.276 48.866 118.292 48.889L118.292 48.8892H118.082C118.058 48.8685 118.043 48.8246 118.022 48.763L118.014 48.7407C117.997 48.6759 117.945 48.6462 117.836 48.6462H117.742V48.8892ZM117.841 48.5456H117.745V48.3689C117.767 48.3662 117.804 48.3618 117.856 48.3618C117.982 48.3618 118.039 48.399 118.039 48.4563C118.039 48.5191 117.95 48.5456 117.841 48.5456ZM97.994 41.8598C97.994 42.2042 97.6052 42.4777 97.1132 42.4777C96.6212 42.4777 96.2302 42.2042 96.2302 41.8598C96.2302 41.5159 96.6212 41.247 97.1189 41.247C97.6052 41.247 97.994 41.5159 97.994 41.8598ZM97.1189 42.3493C96.7377 42.3493 96.4489 42.1333 96.4489 41.8601C96.4489 41.5919 96.7377 41.3704 97.1075 41.3704C97.4902 41.3704 97.7717 41.5919 97.7717 41.864C97.7717 42.1333 97.4902 42.3548 97.1189 42.3493ZM96.9779 42.1785H96.7795V41.5648L96.8115 41.5619C96.8865 41.555 96.9849 41.546 97.1072 41.546C97.2715 41.546 97.3442 41.5648 97.4017 41.5951C97.4535 41.6227 97.49 41.6662 97.49 41.7264C97.49 41.8001 97.4109 41.8494 97.3124 41.8712V41.8793C97.396 41.8985 97.438 41.9464 97.4641 42.03C97.4898 42.1219 97.5121 42.155 97.5275 42.178L97.5278 42.1785H97.3178C97.2937 42.158 97.2788 42.1146 97.2578 42.0536L97.2497 42.03C97.2327 41.9652 97.1812 41.9355 97.0714 41.9355H96.9779V42.1785ZM97.0776 41.8348H96.9814V41.6581C97.0032 41.6554 97.0399 41.6512 97.092 41.6512C97.2185 41.6512 97.275 41.6882 97.275 41.7457C97.275 41.8083 97.1867 41.8348 97.0776 41.8348Z" fill="black"/>
+        </svg>
+        <svg width="161" height="80" viewBox="0 0 161 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_2669_6995)">
+          <path d="M59.2934 40.2431C59.4756 34.9298 51.7029 30.416 42.7437 30.416C33.7844 30.416 26.1914 34.907 26.1914 40.2431C26.1914 45.5792 33.7819 50.0702 42.7437 50.0702C46.5794 50.0702 50.152 49.2403 52.9958 47.8842C51.7956 48.1257 50.5742 48.246 49.3499 48.2435C43.8898 48.2435 39.4646 45.9815 39.4646 43.2009C39.4646 40.4202 43.8898 38.1532 49.3499 38.1532C51.7561 38.1532 53.9042 38.5049 55.6753 39.3222C55.8726 39.4132 56.5052 39.7599 56.6646 40.0812C56.2294 39.8881 55.7682 39.7602 55.2958 39.7017C52.7656 39.4309 51.5967 40.3747 51.2475 41.1818C50.7415 42.3482 51.6447 43.8233 53.894 44.0282C56.3584 44.2509 57.8006 43.4868 58.6457 42.3254C59.0565 41.7077 59.2814 40.9849 59.2934 40.2431V40.2431Z" fill="black"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M88.1898 35.919H84.1693C84.1378 35.9155 84.1059 35.9186 84.0756 35.9281C84.0453 35.9376 84.0174 35.9534 83.9936 35.9743C83.9698 35.9953 83.9506 36.021 83.9373 36.0498C83.924 36.0786 83.9168 36.1099 83.9163 36.1416V44.5848C83.9172 44.6163 83.9246 44.6473 83.938 44.6758C83.9515 44.7043 83.9707 44.7297 83.9945 44.7504C84.0183 44.7711 84.0461 44.7866 84.0762 44.796C84.1063 44.8054 84.138 44.8084 84.1693 44.8049H88.1898C88.2211 44.8084 88.2528 44.8054 88.2829 44.796C88.313 44.7866 88.3408 44.7711 88.3646 44.7504C88.3884 44.7297 88.4076 44.7043 88.4211 44.6758C88.4345 44.6473 88.4419 44.6163 88.4428 44.5848V36.1416C88.4423 36.1099 88.4351 36.0786 88.4218 36.0498C88.4085 36.021 88.3893 35.9953 88.3655 35.9743C88.3417 35.9534 88.3138 35.9376 88.2835 35.9281C88.2532 35.9186 88.2213 35.9155 88.1898 35.919ZM89.3511 47.7221H83.0105C81.4368 47.7221 80.1768 46.6392 80.1768 45.2907V35.4231C80.1768 34.077 81.4418 32.9941 83.0105 32.9941H89.3511C90.9223 32.9941 92.1849 34.077 92.1849 35.4231V45.2907C92.1823 46.6392 90.9198 47.7221 89.3511 47.7221Z" fill="black"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M130.53 47.7219H134.343L130.732 33.0015H123.572L119.964 47.7219H123.779L124.48 44.5364H129.831L130.53 47.7219ZM125.105 41.7128L126.388 35.8934H127.906L129.194 41.7128H125.105Z" fill="black"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M76.7774 42.2189V45.2804C76.7774 46.629 75.5123 47.7119 73.9411 47.7119H68.0433C66.4721 47.7119 65.207 46.629 65.207 45.2804V35.4128C65.207 34.0668 66.4721 32.9839 68.0433 32.9839H73.9411C75.5123 32.9839 76.7774 34.0668 76.7774 35.4128V38.1555H73.1188V36.1314C73.1183 36.0997 73.1112 36.0684 73.0979 36.0396C73.0846 36.0108 73.0654 35.9851 73.0416 35.9641C73.0177 35.9431 72.9898 35.9274 72.9595 35.9178C72.9293 35.9083 72.8973 35.9052 72.8658 35.9087H69.2021C69.1706 35.9052 69.1387 35.9083 69.1084 35.9178C69.0781 35.9274 69.0502 35.9431 69.0264 35.9641C69.0026 35.9851 68.9834 36.0108 68.9701 36.0396C68.9568 36.0684 68.9496 36.0997 68.9491 36.1314V44.5745C68.95 44.606 68.9574 44.637 68.9708 44.6655C68.9843 44.694 69.0035 44.7194 69.0273 44.7401C69.0511 44.7608 69.0789 44.7764 69.109 44.7857C69.1391 44.7951 69.1708 44.7981 69.2021 44.7946H72.8607C72.8921 44.7981 72.9238 44.7951 72.9539 44.7857C72.984 44.7764 73.0118 44.7608 73.0356 44.7401C73.0594 44.7194 73.0786 44.694 73.0921 44.6655C73.1055 44.637 73.1129 44.606 73.1138 44.5745V42.2189H76.7774Z" fill="black"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M107.088 41.8646C107.088 40.516 106.235 39.9189 104.768 39.5647C101.367 38.7474 99.8995 38.3932 99.6414 38.3274C99.4845 38.2819 99.358 38.2161 99.358 38.039V36.1414C99.3585 36.1097 99.3657 36.0784 99.379 36.0496C99.3923 36.0208 99.4115 35.995 99.4353 35.9741C99.4591 35.9531 99.4871 35.9374 99.5173 35.9278C99.5476 35.9183 99.5795 35.9152 99.6111 35.9187H103.062C103.094 35.9152 103.126 35.9183 103.156 35.9278C103.186 35.9374 103.214 35.9531 103.238 35.9741C103.262 35.995 103.281 36.0208 103.294 36.0496C103.308 36.0784 103.315 36.1097 103.315 36.1414V37.3786H106.984V35.4304C106.984 34.0844 105.719 33.0015 104.15 33.0015H98.4826C96.9089 33.0015 95.6463 34.0844 95.6463 35.4304V38.7196C95.6463 40.0656 96.5243 40.64 98.0449 41.017C101.238 41.7887 102.599 42.1227 103.042 42.2315C103.247 42.277 103.378 42.3656 103.378 42.5199V44.5769C103.377 44.6083 103.37 44.6391 103.356 44.6674C103.342 44.6958 103.323 44.721 103.3 44.7416C103.276 44.7623 103.248 44.7778 103.218 44.7873C103.188 44.7969 103.157 44.8002 103.125 44.797H99.5124C99.4811 44.8005 99.4493 44.7975 99.4192 44.7881C99.3891 44.7788 99.3613 44.7632 99.3375 44.7425C99.3137 44.7218 99.2945 44.6964 99.2811 44.6679C99.2676 44.6394 99.2602 44.6084 99.2594 44.5769V43.3118H95.5957V45.2803C95.5957 46.6289 96.8608 47.7118 98.432 47.7118H104.251C105.823 47.7118 107.085 46.6289 107.085 45.2803L107.088 41.8646Z" fill="black"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M108.548 35.9187H112.5V47.7219H116.234V35.9187H120.187V33.0015H108.548V35.9187Z" fill="black"/>
+          <path d="M133.912 33.7934C133.912 34.0019 133.83 34.202 133.683 34.3498C133.536 34.4977 133.336 34.5815 133.128 34.5828C132.918 34.5822 132.717 34.4985 132.569 34.3501C132.42 34.2018 132.337 34.0007 132.336 33.7909C132.337 33.5811 132.422 33.3803 132.57 33.2324C132.719 33.0845 132.921 33.0015 133.13 33.0015C133.234 33.0005 133.336 33.0207 133.431 33.0607C133.527 33.1007 133.613 33.1598 133.684 33.2343C133.759 33.3069 133.817 33.3941 133.856 33.4902C133.896 33.5864 133.915 33.6896 133.912 33.7934ZM133.773 33.7934C133.774 33.7067 133.758 33.6206 133.725 33.5402C133.693 33.4598 133.645 33.3868 133.583 33.3254C133.524 33.2632 133.452 33.2141 133.372 33.1815C133.292 33.1488 133.206 33.1332 133.12 33.1356C133.034 33.1345 132.949 33.1512 132.87 33.1847C132.79 33.2183 132.719 33.2679 132.66 33.3304C132.538 33.4561 132.469 33.6245 132.469 33.7998C132.469 33.9751 132.538 34.1435 132.66 34.2691C132.719 34.3306 132.789 34.3796 132.868 34.4131C132.946 34.4465 133.03 34.4638 133.115 34.4638C133.2 34.4638 133.285 34.4465 133.363 34.4131C133.441 34.3796 133.512 34.3306 133.571 34.2691C133.636 34.208 133.688 34.1338 133.723 34.0514C133.757 33.9691 133.775 33.8803 133.773 33.7909V33.7934ZM133.52 34.2489H133.315L133.168 33.882H132.948V34.2489H132.753V33.338H133.176C133.267 33.3329 133.356 33.3597 133.429 33.4139C133.456 33.4384 133.478 33.4685 133.492 33.5022C133.507 33.5358 133.513 33.5722 133.512 33.6087C133.513 33.6612 133.497 33.7124 133.467 33.7555C133.437 33.7986 133.395 33.8313 133.345 33.8491L133.52 34.2489ZM132.948 33.7428H133.148C133.262 33.7428 133.32 33.6998 133.32 33.6113C133.32 33.5227 133.267 33.4873 133.163 33.4873H132.948V33.7428Z" fill="black"/>
+          </g>
+          <defs>
+          <clipPath id="clip0_2669_6995">
+          <rect width="108.151" height="19.6542" fill="white" transform="translate(26.1914 30.416)"/>
+          </clipPath>
+          </defs>
+          </svg>
+          <svg width="154" height="80" viewBox="0 0 154 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_2986_11902)">
+            <path d="M100.437 31.0532C100.748 30.907 101.012 30.6763 101.199 30.3874C101.385 30.0985 101.486 29.763 101.491 29.4192C101.453 29.2578 101.375 29.1086 101.264 28.9857C101.152 28.8628 101.011 28.7701 100.855 28.7164C100.698 28.6627 100.53 28.6497 100.366 28.6786C100.203 28.7075 100.05 28.7773 99.9207 28.8816C99.663 29.1122 99.4736 29.4092 99.3732 29.7401C99.2729 30.071 99.2653 30.4231 99.3515 30.758C99.4603 30.928 99.6279 31.0521 99.8223 31.1065C100.017 31.1609 100.224 31.142 100.406 31.0532" fill="black"/>
+            <path d="M72.2372 37.8734C72.5507 37.7303 72.8166 37.5003 73.0035 37.2107C73.1903 36.9211 73.2902 36.584 73.2913 36.2394C73.255 36.0781 73.178 35.9288 73.0678 35.8056C72.9575 35.6824 72.8175 35.5894 72.6612 35.5356C72.5049 35.4817 72.3374 35.4687 72.1746 35.4978C72.0118 35.5269 71.8592 35.5971 71.7313 35.7018C71.4736 35.9324 71.2842 36.2293 71.1838 36.5603C71.0834 36.8912 71.0759 37.2433 71.162 37.5782C71.2709 37.7482 71.4385 37.8723 71.6329 37.9267C71.8273 37.9811 72.0348 37.9621 72.2161 37.8734" fill="black"/>
+            <path d="M36.3876 55.0669C36.8514 55.204 37.4944 54.9826 37.5682 54.5188C38.1058 51.2825 44.8941 37.1884 50.1329 32.2445C49.3845 37.7682 45.4317 43.9983 44.599 47.593C44.2827 48.9634 45.653 48.9739 45.8955 48.2887C47.7612 42.4592 49.4794 39.3916 52.22 36.324C53.0633 35.2699 56.4364 31.5803 56.5102 31.6331C56.8159 32.0969 49.6902 45.1789 49.2686 54.1393C49.2686 54.9931 50.9973 55.847 51.0605 54.2974C51.4506 44.0194 57.5537 33.2143 59.2192 29.5564C59.683 28.5022 58.7448 28.1438 57.6381 28.7763C56.5313 29.4088 52.3676 33.7835 50.7232 35.9656C51.1659 34.1946 52.4098 30.1678 52.1146 29.4404C51.9249 28.9555 51.6719 28.7552 51.1554 28.966C47.7085 30.5473 37.8001 47.7722 35.85 53.9179C35.7757 54.1393 35.7876 54.3805 35.8833 54.5935C35.9791 54.8065 36.1516 54.9756 36.3665 55.0669" fill="black"/>
+            <path d="M59.2831 39.3071C59.5571 39.2333 59.9893 39.1489 60.0842 39.4441C60.2103 39.8167 60.2103 40.2205 60.0842 40.5931C58.8856 43.2932 57.4757 45.8945 55.8678 48.3728C54.7294 49.954 54.7189 48.9842 55.0983 47.0551C55.5668 44.5247 56.6531 42.1493 58.2606 40.1398C58.5689 39.7851 58.95 39.5011 59.378 39.3071M57.5122 39.3914C56.5617 40.4433 55.7891 41.6432 55.2248 42.9439C54.1405 44.9893 53.393 47.1963 53.0112 49.4797C52.8742 51.3455 53.5488 51.7355 53.9388 51.7355C54.3289 51.7355 54.9929 51.4299 56.6689 48.9948C56.7527 49.1519 56.8682 49.29 57.0081 49.4002C57.1481 49.5104 57.3094 49.5903 57.4818 49.6349C57.6542 49.6795 57.834 49.6878 58.0098 49.6593C58.1856 49.6307 58.3536 49.566 58.5031 49.4691C59.485 49.0126 60.3128 48.28 60.8853 47.3608C61.075 48.5942 62.6983 48.9209 64.2268 46.7915C65.1755 49.0158 67.4628 46.3277 68.6961 44.7465C68.5439 45.6441 68.6805 46.5669 69.0861 47.3819C69.3249 47.7196 69.6829 47.9542 70.0878 48.0383C70.4928 48.1224 70.9146 48.0498 71.2681 47.8352C71.8669 47.3652 72.2841 46.702 72.4487 45.9588C72.5646 45.5687 72.1851 45.126 71.8584 45.5371C71.1521 46.4437 70.8043 46.8864 70.3827 46.7389C69.961 46.5913 69.961 45.6847 70.077 44.6305C70.2752 43.1419 70.7168 41.696 71.3841 40.3507C71.7319 39.7603 70.994 38.8643 70.3932 39.5284C69.7924 40.1925 69.0545 42.09 68.2323 43.4393C67.4101 44.7887 66.1874 46.0009 66.0082 45.8112C65.7236 44.9468 67.8739 40.3401 68.1164 39.8868C68.3588 39.4336 67.1782 38.6851 66.9147 39.3914C66.1589 41.6379 65.151 43.7915 63.9105 45.8112C63.1094 46.9813 62.4981 46.6545 62.4559 46.5175C62.0448 45.1682 64.8171 40.5931 65.1438 39.8868C65.3441 39.4652 64.3849 38.8854 64.0054 39.4546C63.3519 40.5088 61.6548 45.01 59.6309 47.2027C59.4623 47.3819 58.8193 47.7298 58.6296 47.54C58.4398 47.3503 58.6295 46.8232 59.2093 45.5055C59.7766 44.0545 60.4459 42.6454 61.2121 41.2889C61.3807 41.0148 61.9183 40.3296 61.9921 40.1714C62.0659 40.0133 62.1291 39.4863 61.8656 39.3176C61.643 39.1972 61.3908 39.1424 61.1383 39.1595C61.075 39.1595 61.0856 38.9592 60.9591 38.6851C60.8326 38.411 60.3477 38.1053 59.5044 38.1686C58.7232 38.2886 58.0178 38.7036 57.5333 39.3281" fill="black"/>
+            <path d="M92.6863 32.7399C92.6863 32.9824 92.6335 33.3302 92.6019 33.7097C89.851 35.6222 87.415 37.9517 85.3814 40.6144C84.5611 41.6097 83.6507 42.5272 82.6619 43.3553C82.2438 43.8009 81.7371 44.154 81.1743 44.3919C80.6115 44.6297 80.0051 44.747 79.3942 44.7362C79.0885 44.7362 78.3401 44.4621 78.2136 43.7558C77.7287 39.6552 80.8804 33.7835 86.2458 28.9977C87.732 27.6589 90.2935 26.0249 91.6743 27.174C93.0552 28.323 92.7284 32.0758 92.7284 32.7821M89.9456 46.0855C87.3174 46.6126 84.7138 47.1643 82.1348 47.7406C84.8509 43.2864 88.2516 39.2878 92.2119 35.8918L92.5282 35.6388C92.0575 39.2061 91.1914 42.7099 89.9456 46.0855M85.5817 56.2476C82.8094 61.7397 79.8791 66.0091 78.4244 67.1265C78.3174 67.2202 78.1912 67.2895 78.0547 67.3295C77.9182 67.3696 77.7746 67.3794 77.6339 67.3584C77.2333 67.253 77.2017 66.7786 77.0541 66.494C76.623 65.1727 76.4688 63.7768 76.6008 62.3933C76.8038 59.1492 77.6797 55.9828 79.1728 53.0956C79.8053 51.778 80.501 50.5024 81.2178 49.2585C83.8811 48.6682 86.6112 48.0989 89.408 47.5508C88.2865 50.515 87.0093 53.418 85.5817 56.2476M120.936 33.151C119.766 33.4989 112.503 36.05 109.562 38.4745C109.603 36.6655 110.099 34.896 111.006 33.3302C111.639 32.6556 110.869 31.8228 109.952 32.0758C109.193 32.2866 107.675 34.5003 107.401 34.8377C107.549 34.1208 108.677 31.9809 107.201 32.0863C106.453 32.139 103.912 35.5018 103.638 35.934C103.775 35.5861 104.144 34.279 104.229 34.047C104.283 33.8921 104.287 33.7241 104.241 33.5665C104.195 33.4089 104.102 33.2695 103.973 33.1675C103.844 33.0656 103.687 33.0061 103.523 32.9975C103.36 32.9889 103.197 33.0315 103.059 33.1194C102.342 33.4778 100.708 35.4596 99.3692 37.0619C98.7703 37.8334 98.1187 38.5625 97.4191 39.2441C97.5351 38.4024 97.773 37.582 98.1254 36.8089C98.6735 35.5018 99.443 33.9627 99.6327 33.5516C99.9911 32.8031 98.7684 32.4974 98.5259 33.1616C97.1918 35.884 95.3697 38.3386 93.1501 40.4036C93.6074 38.5863 93.921 36.7358 94.0882 34.8693C94.0941 34.7604 94.0941 34.6513 94.0882 34.5425C94.5766 34.2348 95.1276 34.0403 95.7009 33.9733C96.0593 33.9733 96.6813 33.5938 96.6602 33.1932C96.65 33.0957 96.62 33.0014 96.5719 32.9159C96.5239 32.8305 96.4588 32.7559 96.3808 32.6966C96.3027 32.6373 96.2134 32.5947 96.1182 32.5713C96.023 32.5479 95.9241 32.5443 95.8275 32.5607C95.2607 32.593 94.704 32.7251 94.1831 32.9507C94.1831 32.6134 94.1831 32.3288 94.1831 31.8966C94.1831 30.3048 93.8668 26.8472 92.2646 25.8036C91.0735 25.0235 88.6596 24.8548 85.413 27.7748C79.5628 33.0456 76.1265 39.2546 76.8433 44.051C76.9349 44.6028 77.2238 45.1025 77.6561 45.4573C78.0885 45.8121 78.6349 45.9979 79.1939 45.9801C80.2669 45.9974 81.3143 45.652 82.1664 44.9997C81.4707 46.0539 80.8172 47.1081 80.1847 48.1622C59.9357 52.79 41.8264 58.6089 36.0289 62.7306C35.0908 63.4053 35.7021 63.8902 36.44 63.4369C41.4153 60.4115 57.954 54.5293 79.3204 49.6696C78.7934 50.6184 78.2663 51.5671 77.8341 52.5159C76.2501 55.6021 75.3036 58.9757 75.0513 62.4355C74.8642 64.1245 75.1109 65.8334 75.7681 67.4006C75.936 67.7829 76.1598 68.1381 76.4322 68.4547C76.6716 68.718 76.9832 68.9049 77.3282 68.9923C77.976 69.0334 78.6145 68.8218 79.1096 68.402C80.9753 67.0737 84.127 62.2774 87.0679 56.3425C88.5411 53.3721 89.8535 50.3247 90.9997 47.2135C98.5048 45.7693 106.389 44.5148 114.432 43.5872C116.878 43.1971 116.182 41.9321 115.096 41.9321C107.591 42.8282 99.5378 44.1459 91.5162 45.7376C91.9695 44.4199 92.3806 43.1128 92.7284 41.8267C92.8122 41.7947 92.8933 41.7559 92.9709 41.7108C94.1158 40.9354 95.1757 40.0415 96.1331 39.0438C96.022 39.7195 95.9762 40.4043 95.9961 41.0888C95.9961 41.5948 96.5232 41.89 96.871 41.4894C97.2189 41.0888 98.5576 39.2335 99.8435 37.7682C100.539 36.8783 101.359 36.0936 102.278 35.4385C102.278 35.4385 102.352 35.4385 102.352 35.4385C102.352 36.6614 101.045 39.2124 100.782 39.8976C100.518 40.5828 101.077 40.9518 101.488 40.8147C101.628 40.7638 101.745 40.6624 101.815 40.5301C103.026 38.4373 104.48 36.4948 106.147 34.7428C106.147 34.9009 105.789 35.7969 105.557 36.4505C105.209 37.5047 104.85 38.2321 104.64 39.0438C104.429 39.8555 105.072 40.3931 105.525 39.5076C106.531 37.6767 107.74 35.9652 109.13 34.4055C109.13 34.5109 108.824 35.3331 108.666 35.9867C108.41 37.046 108.245 38.1251 108.171 39.2124C108.087 40.5828 109.309 40.1612 110.153 39.4654C113.368 36.9248 117.121 35.151 121.126 34.279C121.495 34.1208 121.558 33.8046 121.6 33.4673C121.642 33.1299 121.315 32.9718 120.894 33.0983" fill="black"/>
+            <path d="M112.536 30.6313C112.64 30.5239 112.765 30.4386 112.902 30.3806C113.04 30.3227 113.188 30.2932 113.338 30.2939C113.525 30.2926 113.71 30.3379 113.877 30.4255C114.043 30.5131 114.184 30.6405 114.289 30.7962C114.394 30.9519 114.459 31.1312 114.478 31.318C114.497 31.5049 114.469 31.6935 114.397 31.867C114.326 32.0406 114.212 32.1937 114.067 32.3128C113.922 32.4318 113.749 32.5131 113.565 32.5494C113.381 32.5857 113.191 32.5759 113.011 32.5207C112.832 32.4656 112.669 32.367 112.536 32.2336C112.328 32.0191 112.211 31.7317 112.211 31.4324C112.211 31.1332 112.328 30.8458 112.536 30.6313ZM113.338 32.7396C113.687 32.7396 114.022 32.6007 114.269 32.3536C114.516 32.1065 114.655 31.7713 114.655 31.4219C114.658 31.248 114.626 31.0754 114.561 30.9143C114.495 30.7531 114.398 30.6067 114.276 30.4838C114.153 30.3609 114.006 30.2639 113.845 30.1987C113.684 30.1335 113.511 30.1013 113.338 30.1042C113.165 30.1015 112.994 30.1338 112.835 30.199C112.675 30.2642 112.531 30.361 112.41 30.4837C112.287 30.6066 112.19 30.7531 112.125 30.9142C112.06 31.0754 112.028 31.248 112.03 31.4219C112.028 31.5941 112.06 31.7651 112.125 31.9245C112.19 32.084 112.287 32.2285 112.41 32.3495C112.528 32.4766 112.672 32.5772 112.832 32.6444C112.992 32.7117 113.164 32.7441 113.338 32.7396Z" fill="black"/>
+            <path d="M113.061 30.9161H113.282C113.388 30.9089 113.493 30.9307 113.588 30.9794C113.62 31.0007 113.647 31.0307 113.664 31.0661C113.68 31.1014 113.687 31.1408 113.683 31.1797C113.686 31.229 113.673 31.2781 113.647 31.3199C113.62 31.3616 113.581 31.3937 113.535 31.4116C113.455 31.4255 113.373 31.4255 113.292 31.4116H113.061V30.9161ZM113.061 31.6224H113.261C113.354 31.6 113.452 31.6 113.545 31.6224C113.64 31.6224 113.683 31.7911 113.683 31.9598V32.1389H113.925C113.925 32.1389 113.925 32.1389 113.925 32.0651C113.92 32.0302 113.92 31.9947 113.925 31.9598V31.8543C113.918 31.7937 113.896 31.7358 113.862 31.6857C113.833 31.6441 113.795 31.6094 113.752 31.5839C113.708 31.5585 113.659 31.5428 113.609 31.5381C113.683 31.5331 113.755 31.5114 113.82 31.4748C113.867 31.4441 113.905 31.4017 113.931 31.3519C113.956 31.302 113.969 31.2463 113.967 31.1902C113.973 31.1121 113.953 31.0342 113.911 30.9678C113.87 30.9015 113.808 30.8502 113.735 30.8212C113.61 30.776 113.477 30.758 113.345 30.7686H112.808V32.2127H113.061V31.6224Z" fill="black"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_2986_11902">
+            <rect width="86.0453" height="43.6842" fill="white" transform="translate(35.5547 25.2869)"/>
+            </clipPath>
+            </defs>
+            </svg>
+            
+            
+      </p>
+  </div>
+  <a href="/email/auth-lenses-dp" class="ct_cta ct_cta__red ct_m__mob__10 ct_mb__mob__40 "
+    style="background-color: #AB2317; font-size: 16px">
+    SAVE NOW
+  </a>
+</div>
+</div>
+</a>
+</div>
+</div>
+      </li>
+      
+   <style>
+
+  #clearance_btn{
+    border: 1px solid #fff;
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 16px;
+  }
+  @media (min-width: 1400px) {
+#thirdHeroImg {
+width: auto;
+left: 33%;
+}
+}
+
+@media (min-width: 1200px) and (max-width: 1440px) {
+#thirdHeroImg {
+width: auto;
+left: 33%;
+}
+}
+
+@media (max-width: 1200px) {
+#thirdHeroImg {
+padding: 0px !important;
+background-image: url("https://images.framesdirect.com/image/upload/v1745089591/homePage/HP_CLEARANCE_M.png") !important;
+}
+}
+  </style>
+<div class="ct_space">
+<div class="ct_banner ct_hero">
+<a href="/sale" aria-label="sale" style="color: white;">
+<div class="ct_assets__container">
+<picture class="ct_skeleton">
+  <img
+    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjXKco/p8BB2DEJwkAmwIDzfz492EAAAAASUVORK5CYII="
+    alt="structure image" />
+</picture>
+<picture class="ct_img">
+  <img src="https://images.framesdirect.com/image/upload/v1745089592/homePage/HP_CLEARANCE_D.jpg"
+    fetchpriority="high" alt="Clearance glasses"
+    width="3840" height="1108" />
+</picture>
+</div>
+
+<div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0 " id="thirdHeroImg" style="color: white !important;">
+<div class="mt-5 mt-lg-0">
+  <div class="ct_font__mob_28 ct_font__30 ct_font__desk__30 weight-bold ct_lh__sm ct_m__0 ct_mb__15 ">
+    Clearance Deals
+  </div>
+  <div class="ct_font__24 2 ct_font__desk__24 align-self-center ct_p__0 ct_mt__30 weight-medium" style="line-height: 1">
+    Save up to 
+  </div>
+  <div>
+    <p class="ct_font__mob_55 ct_font__50 ct_font__desk__50 weight-bold ct_m__0 transform-uppercase ct_mb__20">
+      <span class="d-block d-sm-inline">50% off</span>
+      <span class="d-block d-sm-inline ct_font__mob_32" style="line-height: 1;">frames</span>
+    </p>
+    <p class="ct_font__mob_30 ct_font__32 ct_font__desk__32 ct_lh__sm weight-bold ct_m__0 ct_mb__20 transform-uppercase">
+      + 60% off Lenses
+    </p>
+  </div>
+  <a href="/sale" class=" btn-cta ct_m__mob__10 ct_mb__mob__50 ct_mt__30 " id="clearance_btn">
+   SHOP CLEARANCE
+  </a>
+</div>
+</div>
+</a>
+</div>
+</div>
+   </li>`
+          );
+        } else if (
+          (checkDate >= "250428" && checkDate <= "250507") ||
+          (fdFncs.vars.isTest >= "250428" && fdFncs.vars.isTest <= "250507")
+        ) {
+          //hero slider promotion
+          $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+          $("#hero-slider").append(
+            `<li>
+   <style>
+
+  #clearance_btn{
+    border: 1px solid #fff;
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 16px;
+  }
+  @media (min-width: 1400px) {
+#thirdHeroImg {
+width: auto;
+left: 33%;
+}
+}
+
+@media (min-width: 1200px) and (max-width: 1440px) {
+#thirdHeroImg {
+width: auto;
+left: 33%;
+}
+}
+
+@media (max-width: 1200px) {
+#thirdHeroImg {
+padding: 0px !important;
+background-image: url("https://images.framesdirect.com/image/upload/v1745089591/homePage/HP_CLEARANCE_M.png") !important;
+}
+}
+  </style>
+<div class="ct_space">
+<div class="ct_banner ct_hero">
+<a href="/sale" aria-label="sale" style="color: white;">
+<div class="ct_assets__container">
+<picture class="ct_skeleton">
+  <img
+    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjXKco/p8BB2DEJwkAmwIDzfz492EAAAAASUVORK5CYII="
+    alt="structure image" />
+</picture>
+<picture class="ct_img">
+  <img src="https://images.framesdirect.com/image/upload/v1745089592/homePage/HP_CLEARANCE_D.jpg"
+    fetchpriority="high" alt="Clearance glasses"
+    width="3840" height="1108" />
+</picture>
+</div>
+
+<div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0 " id="thirdHeroImg" style="color: white !important;">
+<div class="mt-5 mt-lg-0">
+  <div class="ct_font__mob_28 ct_font__30 ct_font__desk__30 weight-bold ct_lh__sm ct_m__0 ct_mb__15 ">
+    Clearance Deals
+  </div>
+  <div class="ct_font__24 2 ct_font__desk__24 align-self-center ct_p__0 ct_mt__30 weight-medium" style="line-height: 1">
+    Save up to 
+  </div>
+  <div>
+    <p class="ct_font__mob_55 ct_font__50 ct_font__desk__50 weight-bold ct_m__0 transform-uppercase ct_mb__20">
+      <span class="d-block d-sm-inline">50% off</span>
+      <span class="d-block d-sm-inline ct_font__mob_32" style="line-height: 1;">frames</span>
+    </p>
+    <p class="ct_font__mob_30 ct_font__32 ct_font__desk__32 ct_lh__sm weight-bold ct_m__0 ct_mb__20 transform-uppercase">
+      + 60% off Lenses
+    </p>
+  </div>
+  <a href="/sale" class=" btn-cta ct_m__mob__10 ct_mb__mob__50 ct_mt__30 " id="clearance_btn">
+   SHOP CLEARANCE
+  </a>
+</div>
+</div>
+</a>
+</div>
+</div>
+   </li>`
+          );
+        } else if (
+          getCookie("fdRecognized") !== undefined &&
+          ((checkDate >= "250417" && checkDate <= "250427") ||
+            (fdFncs.vars.isTest >= "250417" && fdFncs.vars.isTest <= "250427"))
+        ) {
+          let heroBanner = `
+
+
+<div class="ct_space">
+  <div class="ct_banner ct_hero">
+  <a  href="/email/customer-appreciation-dp" aria-label="customer week sale" class="w-100">
+  <div class="ct_assets__container">
+  <picture class="ct_skeleton">
+    <img
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdj1JSQ+s+AAzDikwQAbOECt2pHOuMAAAAASUVORK5CYII="
+      alt="structure image"
+    />
+  </picture>
+  <picture class="ct_img">
+    <img
+    src="https://images.framesdirect.com/image/upload/v1744296734/homePage/FD_CUW_HP_LOGGED.png"
+      fetchpriority="high"
+      alt="The woman is wearing Ray-Ban rb4340 eyeglasses and the men is wearing Versace ve2199 sunglasses"
+      width="3840"
+      height="1108"
+      usemap="#image-map"
+    />
+  </picture>
+  <map name="image-map">
+    <area
+      target=""
+      alt="Ray-Ban rb4340 eyeglasses"
+      title="Ray-Ban rb4340 eyeglasses"
+      href="/ray-ban-rb4340v-eyeglasses"
+      coords="2000,478,2583,751"
+      shape="rect"
+    />
+    <area
+      target=""
+      alt="Versace ve2199 sunglasses"
+      title="Versace ve2199 sunglasses"
+      href="/versace-ve2199-sunglasses"
+      coords="2587,307,3170,580"
+      shape="rect"
+    />
+  </map>
+  </div>
+  <div
+  class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0 ct_pt__mob__20 ct_pb__mob__20"
+  style="background: #28181A; width: 35%"
+  >
+  <div class="ct_text__white size-26 mt-lg-3">Members <b>Week</b></div>
+  <picture class="ct_img">
+    <source
+      srcset="https://images.framesdirect.com/image/upload/v1744570739/homePage/FD_CUW_LOGOS_M.png"
+      media="(max-width: 768px)"
+    />
+    <img
+      src="https://images.framesdirect.com/image/upload/v1744570739/homePage/FD_CUW_LOGOS_D.png"
+      alt="Customer week Sale"
+      class="img-fluid d-block mx-auto"
+      id="text-image"
+      style="height:111px;"
+    />
+  </picture>
+  
+  
+  <div class="d-flex flex-wrap ct_mt__0 mx-auto pl-1 ct_text__white mb-3">
+    <div class="col-5 mb-3 px-0">
+      <div>Up to</div>
+      <div
+        class="transform-uppercase ct_font__mob_32 ct_font__32 ct_font__desk__32 weight-bold ct_lh__sm ct_m__0"
+      >
+        30% Off<br><span class="weight-normal">FRAMES</span>
+      </div>
+    </div>
+    <div
+      class="col-2 ct_font__70 ct_font__mob_60 ct_font__desk__70 align-self-center ct_p__0 px-0" style="line-height:1"
+    >
+      +
+    </div>
+    <div class="col-5 px-0">
+      <div
+        class="transform-uppercase ct_font__mob_32 ct_font__32 ct_font__desk__32 ct_lh__sm weight-bold ct_m__0 pt-4"
+      >
+        65% Off<br><span class="weight-normal">LENSES</span>
+      </div>
+      <div
+        class="ct_font__mob_12 ct_font__14 ct_m__0 ct_font__desk__12"
+      >
+        Code: <b>EXTRA5</b>
+      </div>
+    </div>
+  </div>
+  <a
+  href="/email/customer-appreciation-dp"
+  class="ct_cta ct_cta__red ct_m__mob__10 ct_mb__mob__35 mb-3"
+  style="background-color: #AB2317;"
+  >SAVE NOW</a
+  >
+  </div>
+  </a>
+  </div>
+  </div>
+  </div>
+     `;
+          $(".heroBanner").replaceWith(heroBanner);
+        } else if (
+          (checkDate >= "250417" && checkDate <= "250427") ||
+          (fdFncs.vars.isTest >= "250417" && fdFncs.vars.isTest <= "250427")
+        ) {
+          let heroBanner = `
+<div class="ct_space">
+  <div class="ct_banner ct_hero">
+    <a href="/email/customer-promo-dp" aria-label="customer week sale" class="w-100">
+      <div class="ct_assets__container">
+        <div>
+          <video loop autoplay muted playsinline disablePictureInPicture width="100%" class="d-block">
+            <source src="https://images.framesdirect.com/video/upload/v1744296736/homePage/FD_CUW_HP_OPT_OUT.mp4" />
+          </video>
+        </div>
+      </div>
+      <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0 ct_pt__mob__30 ct_pb__mob__30"
+        style="background: #F3F2EA; width: 35%">
+        <h1 class="size-28"><b>Sign up</b> and unlock up to</h1>
+        <div class="d-flex flex-wrap ct_mt__0 mx-auto pt-4 pl-1">
+          <div class="col-5 mb-3 px-0">
+
+            <div
+              class="transform-uppercase ct_font__mob_32 ct_font__32 ct_font__desk__32 weight-bold ct_lh__sm ct_m__0">
+              30% Off<br><span class="weight-normal">Frames</span>
+            </div>
+            <div class="ct_font__mob_12 ct_font__12 ct_m__0 ct_font__desk__12">
+              from <b>top brands</b><br>
+            </div>
+          </div>
+          <div class="col-2 ct_font__70 ct_font__mob_60 ct_font__desk__70 align-self-center ct_p__0 px-0"
+            style="line-height:1">
+            +
+          </div>
+          <div class="col-5 px-0">
+            <div
+              class="transform-uppercase ct_font__mob_32 ct_font__32 ct_font__desk__32 ct_lh__sm weight-bold ct_m__0">
+              65% Off<br><span class="weight-normal">Lenses</span>
+            </div>
+            <div class="ct_font__mob_12 ct_font__12 ct_m__0 ct_font__desk__12">
+              starting at $25.99
+            </div>
+          </div>
+        </div>
+        <div><b>Or simply shop our selection and save<br> 20% on luxury brands + 60% on lenses</b></div>
+
+        <div class="align-items-center justify-content-center py-4">
+          <a href="#" id="btn-sign-up" class="emailSignUp btn-cta ml-md-0 mx-2 d-inline-block"
+            style="background: #AB2317; color: #fff !important;">SIGN UP</a>
+          <a href="/email/customer-promo-dp" class="btn-cta mx-2 mr-md-0 d-inline-block"
+            style="background: #333333; color: #fff !important;">SHOP NOW</a>
+        </div>
+
+      </div>
+    </a>
+  </div>
+</div>
+      `;
+          $(".heroBanner").replaceWith(heroBanner);
+        } else if (
+          (checkDate >= "250411" && checkDate <= "250416") ||
+          (fdFncs.vars.isTest >= "250411" && fdFncs.vars.isTest <= "250416")
+        ) {
+          //hero slider promotion
+          $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+          $("#hero-slider").append(
+            `<li>
+       <style>
+          @media (min-width: 1200px) {
+          #secondHeroImg{
+          left:8%;
+          }
+       }
+  @media (max-width: 1200px) {
+    #secondHeroImg{
+      padding: 0px !important;
+      background-image: url('https://images.framesdirect.com/image/upload/v1742932106/homePage/HP_MK_M.png') !important;
+    }
+  }  
+  </style>
+  <div class="ct_space">
+    <div class="ct_banner ct_hero">
+      <a href="/email/easter-promo-dp" aria-label="sale">
+        <div class="ct_assets__container">
+          <picture class="ct_skeleton">
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdj/Pzu8X8GHIARnyQANP0HiSbhWk8AAAAASUVORK5CYII="
+              alt="structure image" />
+          </picture>
+          <picture class="ct_img">
+            <img src="https://images.framesdirect.com/image/upload/v1743501650/homePage/HP_EASTER_SAVINGS_D.png"
+              fetchpriority="high"
+              alt="The left is wearing Oakley sutro sunglasses, other is waering Coach eyeglasses" width="3840"
+              height="1108" usemap="#image-map2" />
+          </picture>
+          <map name="image-map2">
+            <area target="" alt="Oakley sutro sunglasses" title="Oakley sutro sunglasses"
+              href="/oakley-sutro-sunglasses?color=1" coords="1783,296,2542,601" shape="rect" />
+            <area target="" alt="Coach eyeglasses" title="Coach eyeglasses"
+              href="/coach-hc6065-eyeglasses?color=10015098" coords="2700,264,3459,569" shape="rect" />
+          </map>
+        </div>
+        <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0" id="secondHeroImg">
+          <h1
+            class="ct_font__24 ct_font__desk__20 ct_font__mob_24 weight-normal ct_lh__sm ct_mb__mob__20 ct_mt__mob__30">
+            Easter Savings
+          </h1>
+            <div class="mt-4 mt-lg-0">
+            <h1
+                class="ct_font__mob_30 ct_font__40 ct_font__desk__32 weight-bold ct_lh__sm ct_m__0 ct_mb__10">
+               $50 off frames priced <br>
+                $200 or more
+              </h1>
+              <span class="ct_font__mob_14 ct_font__18 ct_m__10 ct_font__desk__16">
+                Automatically applied at checkout
+          </span>
+            <div class="ct_font__48 ct_font__mob_48 ct_font__desk__42 align-self-center ct_p__0" style="line-height: 1">
+              +
+            </div>
+            <div>
+              <h1 class="ct_font__mob_32 ct_font__40 ct_font__desk__32 ct_lh__sm weight-bold ct_m__0">
+                65% off Lenses
+              </h1>
+              <p class="ct_font__mob_18 ct_font__18 ct_m__10 ct_font__desk__20">
+                Code:<b> EXTRA5</b>
+              </p>
+            </div>
+            <a href="/email/easter-promo-dp" class="ct_cta ct_cta__red ct_m__mob__10 ct_mb__mob__40"
+              style="background-color: #ab2317; font-size: 16px">
+              SAVE NOW
+            </a>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+      </li>`
+          );
+        } else if (
+          (checkDate >= "250407" && checkDate <= "250410") ||
+          (fdFncs.vars.isTest >= "250407" && fdFncs.vars.isTest <= "250410")
+        ) {
+          let heroBanner = `
+      <style>
+  @media (max-width: 768px) {
+    #firstHeroImg{
+      padding: 0px !important;
+      background-image: url('https://images.framesdirect.com/image/upload/v1742376979/homePage/FD_HP_FLASH_SALE_W14_M.jpg') !important;
+    }
+  }
+      @media (min-width: 1200px) {
+   .ct_text__overlay{
+    width: auto;
+    left: 38%;
+   }
+  }
+  </style>
+
+  <div class="ct_space">
+    <div class="ct_banner ct_hero ">
+      <a href="/sale" aria-label="sale">
+        <div class="ct_assets__container">
+          <picture class="ct_skeleton">
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdj/Pzu8X8GHIARnyQANP0HiSbhWk8AAAAASUVORK5CYII="
+              alt="structure image" />
+          </picture>
+          <picture class="ct_img">
+            <img src="https://images.framesdirect.com/image/upload/v1742376979/homePage/FD_HP_FLASH_SALE_W14_D.jpg"
+              fetchpriority="high"
+              alt="The left is wearing Ray Ban rb7226 eyeglasses, other is Okaley Holbrook Ti Sunglasses"
+              width="3840" height="1108" usemap="#image-map" />
+          </picture>
+          <map name="image-map">
+            <area target="" alt="Ray Ban rb7226 eyeglasses" title="Ray Ban rb7226 eyeglasses"
+              href="/ray-ban-rb7226-eyeglasses" coords="348,225,1074,569" shape="rect" />
+            <area target="" alt="Okaley Holbrook Ti Sunglasses" title="Okaley Holbrook Ti Sunglasses"
+              href="/oakley-holbrook-ti-sunglasses" coords="2695,260,3418,554" shape="rect" />
+          </map>
+        </div>
+              <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0" id="firstHeroImg">
+          <h1
+            class="ct_font__24 ct_font__desk__20 ct_font__mob_24 weight-normal ct_lh__sm ct_mb__mob__20 ct_mt__mob__30 d-none d-lg-block">
+            Spring Flash Sale
+          </h1>
+          <div class="mt-4 mt-lg-0">
+              <h1
+                class="ct_font__mob_32 ct_font__40 ct_font__desk__32 weight-bold ct_lh__sm ct_m__0 ct_mb__10">
+                Up To 50% <br class="ct_desk__hide">Off Frames
+              </h1>
+              <span class="ct_font__mob_18 ct_font__18 ct_m__10 ct_font__desk__16">
+                <b>250 + New styles added to clearance.</b><br>
+                Don’t wait! Sale ends April 10.
+              </span>
+            <div class="ct_font__48 ct_font__mob_48 ct_font__desk__42 align-self-center ct_p__0" style="line-height:1">
+              +
+            </div>
+            <div>
+              <h1
+                class=" ct_font__mob_32 ct_font__40 ct_font__desk__32 ct_lh__sm weight-bold ct_m__0">
+                65% Off Lenses</span>
+              </h1>
+              <p class="ct_font__mob_18 ct_font__18 ct_m__10 ct_font__desk__20">
+                Code:<b> EXTRA5</b>
+              </p>
+            </div>
+          </div>
+          <a
+                  href="/sale"
+                  class="ct_cta ct_cta__red ct_m__mob__10 ct_mb__mob__40"
+            style="background-color:#AB2317; font-size:16px;">
+                  SAVE NOW
+                </a>
+        </div>
+      </a>
+    </div>
+  </div>`;
+          $(".heroBanner").replaceWith(heroBanner);
+        } else if (
+          (checkDate >= "250331" && checkDate <= "250406") ||
+          (fdFncs.vars.isTest >= "250320" && fdFncs.vars.isTest <= "250406")
+        ) {
+          //hero slider promotion
+          $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>'); //Required to wrap around the existing heroBanner class for the first slide.
+          $("#hero-slider").append(
+            //This appends the second slide in the hero slider (second list item)
+            `<li>
+      <style>
+  @media (min-width: 1200px) {
+   .second_banner{
+    width: auto;
+    left: 38%;
+   }
+  }
+  @media (max-width: 768px) {
+    #secondHeroImg{
+      padding: 0px !important;
+      background-image: url('https://images.framesdirect.com/image/upload/v1742376981/homePage/FD_HP_MK_W14_M.jpg') !important;
+    }
+  }
+     
+  </style>
+
+<div class="ct_space">
+<div class="ct_banner ct_hero ct_mb__10">
+  <a href="/michael-kors/brand" aria-label="michael kors sale">
+    <div class="ct_assets__container">
+      <picture class="ct_skeleton">
+        <img
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjfHz7xH8GHIARnyQAIPkHDf57ZBAAAAAASUVORK5CYII="
+          alt="structure image"
+        />
+      </picture>
+      <picture class="ct_img">
+        <img
+          src="https://images.framesdirect.com/image/upload/v1742376980/homePage/FD_HP_MK_W14_D.jpg"
+          fetchpriority="high"
+          alt="The left is wearing Michael Kors mk4117u eyeglasses, other is wearing Michael Kors mk4104u sunglasses"
+          width="3840"
+          height="1107"
+          usemap="#image-map2"
+        />
+      </picture>
+      <map name="image-map2">
+        <area
+          target=""
+          alt="Michael Kors mk4117u eyeglasses"
+          title="Michael Kors mk4117u eyeglasses"
+          href="/michael-kors-mk4117u-eyeglasses"
+          coords="502,305,1339,572"
+          shape="rect"
+        />
+        <area
+          target=""
+          alt="Michael Kors mk4104u sunglasses"
+          title="Michael Kors mk4104u sunglasses"
+          href="/michael-kors-mk4104u-sunglasses"
+          coords="2476,290,3219,553"
+          shape="rect"
+        />
+      </map>
+    </div>
+          <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0 second_banner" id="secondHeroImg">
+
+    <div class="d-block d-lg-none">
+        <img
+          src="https://images.framesdirect.com/image/upload/v1536603243/logos/michael-kors-logo.svg"
+          class="m-4"
+        />
+        <h1
+          class="ct_font__mob_36 ct_font__40 ct_font__desk__32 weight-bold ct_lh__sm ct_m__0"
+          style="margin: 0"
+        >
+          25% Off <br />
+          All Frames
+        </h1>
+      </div>
+      <div class="ct_mt__10">
+        <div class="d-none d-lg-block">
+          <h1
+            class="ct_font__40 ct_font__desk__32 weight-bold ct_lh__sm ct_m__0"
+            style="margin: 0"
+          >
+            25% Off <br />
+            Michael Kors
+          </h1>
+        </div>
+        <div
+          class="ct_font__48 ct_font__mob_48 ct_font__desk__38 align-self-center ct_p__0"
+          style="line-height: 1; margin: 0"
+        >
+          +
+        </div>
+        <div>
+          <h1
+            class="ct_font__mob_36 ct_font__40 ct_font__desk__32 ct_lh__sm weight-bold ct_m__0"
+            style="margin: 0"
+          >
+            65% Off Lenses
+          </h1>
+          <p
+            class="ct_font__mob_18 ct_font__18 ct_font__desk__18"
+            style="margin-bottom: 25px !important; margin: 0"
+          >
+            Code:<b> EXTRA5</b>
+          </p>
+        </div>
+      </div>
+      <a
+        href="/michael-kors/brand"
+        class="ct_cta ct_cta__red ct_m__mob__10 ct_mb__mob__40"
+        style="background-color: #ab2317; font-size: 18px"
+      >
+        SAVE NOW
+      </a>
+    </div>
+  </a>
+</div>
+</div>
+
+      </li>`
+          );
+        } else if (
+          (checkDate >= "250320" && checkDate <= "250330") ||
+          (fdFncs.vars.isTest >= "250320" && fdFncs.vars.isTest <= "250330")
+        ) {
+          let heroBanner = `
+<style>
+  .ct_text__overlay {
+    background: #E3DAC9;
+    background-image: url('https://images.framesdirect.com/image/upload/v1741341313/homePage/FD_HP_text_frame.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding: 95px !important;
+  }
+
+  /* Mobile-specific styles */
+  @media (max-width: 768px) {
+    .ct_text__overlay {
+      padding: 0px !important;
+      background-image: url('https://images.framesdirect.com/image/upload/v1741605994/homePage/MOBILE_FRAME.png') !important;
+    }
+  }
+</style>
+
+<div class="ct_space">
+  <div class="ct_banner ct_hero ct_mb__10">
+    <a href="/email/spring-sale-dp" aria-label="spring-sale-dp">
+      <div class="ct_assets__container">
+        <picture class="ct_skeleton">
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjfHz7xH8GHIARnyQAIPkHDf57ZBAAAAAASUVORK5CYII="
+            alt="structure image"
+          />
+        </picture>
+        <picture class="ct_img">
+          <img
+            src="https://images.framesdirect.com/image/upload/v1741341311/homePage/FD_HP_SPRING_PROMO.png"
+            fetchpriority="high"
+            alt="The left is wearing Ray-Ban RB5154 Clubmaster eyeglasses, other is wearing Burberry BE4337 Carnaby"
+            width="3840"
+            height="1107"
+            usemap="#image-map"
+          />
+        </picture>
+        <map name="image-map">
+          <area
+            target=""
+            alt="Ray-Ban RB5154 Clubmaster"
+            title="Ray-Ban RB5154 Clubmaster"
+            href="ray-ban-rb5154-clubmaster-eyeglasses"
+            coords="1688,338,2431,601"
+            shape="rect"
+          />
+          <area
+            target=""
+            alt="Burberry BE4337 Carnaby"
+            title="Burberry BE4337 Carnaby"
+            href="/burberry-be4337-sunglasses"
+            coords="2476,290,3219,553"
+            shape="rect"
+          />
+        </map>
+      </div>
+      <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0 ml-md-3">
+        <h1
+          class="transform-uppercase ct_font__22 ct_font__desk__22 ct_font__mob_22 ct_lh__sm  ct_mt__mob__50 ct_mb__20"
+          style="font-weight:300; margin: 0;">
+          spring into savings
+        </h1>
+        <div class="ct_mt__10">
+          <div>
+            <h1
+              class="transform-uppercase ct_font__mob_24 ct_font__24 ct_font__desk__20 weight-bold ct_lh__sm ct_m__0"
+              style="margin: 0;">
+              UP TO 50% OFF RAY-BAN,<br> OAKLEY, MICHAEL KORS </br>& MORE 
+            </h1>
+          </div>
+          <div
+            class="ct_font__48 ct_font__mob_32 ct_font__desk__38 align-self-center ct_p__0"
+            style="line-height:1; margin: 0;">
+            +
+          </div>
+          <div>
+            <h1
+              class="transform-uppercase ct_font__mob_24 ct_font__24 ct_font__desk__20 ct_lh__sm weight-bold ct_m__0"
+              style="margin: 0;">
+              65% OFF LENSES
+            </h1>
+            <p
+              class="ct_font__mob_18 ct_font__18 ct_m__10 ct_font__desk__20"
+              style="margin-bottom: 25px !important; margin: 0;">
+              Code:<b> EXTRA5</b>
+            </p>
+          </div>
+        </div>
+        <a
+          href="/email/spring-sale-dp"
+          class="ct_cta ct_cta__red ct_m__mob__10 ct_mb__mob__40"
+          style="background-color:#AB2317; font-size:18px;">
+          SAVE NOW
+        </a>
+      </div>
+    </a>
+  </div>
+</div>
+`;
+          $(".heroBanner").replaceWith(heroBanner);
+        } else if (
+          (checkDate >= "250313" && checkDate <= "250319") ||
+          (fdFncs.vars.isTest >= "250313" && fdFncs.vars.isTest <= "250319")
+        ) {
+          let heroBanner = `
+  <style>
+      .ct_text__overlay {
+    background: #C7D7D6;
+    background-image: url('https://images.framesdirect.com/image/upload/v1741340543/homePage/FD_HP_text_EARLY_SPRING.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding: 60px !important;
+  }
+
+@media screen and (min-width: 1270px) and (max-width: 1400px) {
+  .ct_text__overlay {
+    padding: 80px !important;
+  }
+}
+
+  @media (max-width: 768px) {
+    .ct_text__overlay {
+      padding: 0px !important;
+      background-image: url('https://images.framesdirect.com/image/upload/v1741607702/homePage/FD_EARLY_SPRING.png') !important;
+    }
+  }
+        </style>
+
+        <div class="ct_space">
+          <div class="ct_banner ct_hero ct_mb__10">
+            <a href="/email/spring-sale-dp" aria-label="spring-sale-dp">
+              <div class="ct_assets__container">
+                <picture class="ct_skeleton">
+                  <img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjfPfu1X8GHIARnyQANYsHjTiCh7gAAAAASUVORK5CYII="
+                    alt="structure image"
+                  />
+                </picture>
+                <picture class="ct_img">
+                  <img
+                    src="https://images.framesdirect.com/image/upload/v1741340543/homePage/FD_HP_EARLY_SPRING_PROMO.png"
+                    fetchpriority="high"
+                    alt="Models wearing Versace VE2168 sunglasses,Polo PH1147 eyeglasses and Burberry BE2073 eyeglasses"
+                    width="1440"
+                    height="415"
+                    usemap="#image-map"
+          
+                  />
+                </picture>
+                <map name="image-map">
+                  <area
+                    target=""
+                    alt="Versace VE2168 sunglasses"
+                    title="Versace VE2168 sunglasses"
+                    href="/versace-ve2168-prescription-sunglasses"
+                    coords="575,206,740,124"
+                    shape="rect"
+                  />
+                  <area
+                    target=""
+                    alt="Polo PH1147 eyeglasses"
+                    title="Polo PH1147 eyeglasses"
+                    href="/polo-ph1147-eyeglasses"
+                    coords="872,220,1136,119"
+                    shape="rect"
+                  />
+                  <area
+                    target=""
+                    alt="Burberry BE2073"
+                    title="Burberry BE2073"
+                    href="/burberry-be2073-eyeglasses?color=469971"
+                    coords="1190,219,1439,68"
+                    shape="rect"
+                  />
+                </map>
+              </div>
+              <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__30">
+                <h1
+                  class="transform-uppercase ct_font__24 ct_font__desk__22 ct_font__mob_22 ct_lh__sm  ct_mt__mob__50 ct_mb__20"
+                  style="font-weight:300; margin: 0;">
+                  EARLY SPRING SAVINGS
+                </h1>
+                <div class="ct_mt__10">
+                  <div>
+                    <h1
+                      class="transform-uppercase ct_font__mob_22 ct_font__28 ct_font__desk__22 weight-bold ct_lh__sm ct_m__0"
+                      style="margin: 0;">
+                      UP TO 50% OFF VERSACE,<br /> BURBERRY & MORE
+                    </h1>
+                  </div>
+                  <div
+                    class="ct_font__48 ct_font__mob_32 ct_font__desk__38 align-self-center ct_p__0"
+                    style="line-height:1; margin: 0;">
+                    +
+                  </div>
+                  <div>
+                    <h1
+                      class="transform-uppercase ct_font__mob_22 ct_font__28 ct_font__desk__22 ct_lh__sm weight-bold ct_m__0"
+                      style="margin: 0;">
+                      65% OFF LENSES
+                    </h1>
+                    <p
+                      class="ct_font__mob_18 ct_font__18 ct_m__10 ct_font__desk__20"
+                      style="margin-bottom: 25px !important; margin: 0;">
+                      Code:<b> EXTRA5</b>
+                    </p>
+                  </div>
+                </div>
+                <a
+                  href="/email/spring-sale-dp"
+                  class="ct_cta ct_cta__red ct_m__mob__10 ct_mb__mob__40"
+            style="background-color:#AB2317; font-size:18px;">
+                  SAVE NOW
+                </a>
+              </div>
+            </a>
+          </div>
+        </div>`;
+          $(".heroBanner").replaceWith(heroBanner);
+        } else if (
+          (checkDate >= "250224" && checkDate <= "250312") ||
+          (fdFncs.vars.isTest >= "250224" && fdFncs.vars.isTest <= "250312")
+        ) {
+          let heroBanner = `
+
+          <div class="ct_space">
+            <div class="ct_banner ct_hero ct_mb__10">
+              <a
+                href="/sale"
+                aria-label="email-flash-sale"
+              >
+                <div class="ct_assets__container">
+                  <picture class="ct_skeleton">
+                    <img
+                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjfPfu1X8GHIARnyQANYsHjTiCh7gAAAAASUVORK5CYII="     alt="structure image"
+                    />
+                  </picture>
+                  <picture class="ct_img">
+            <img
+              src="https://images.framesdirect.com/image/upload/v1739972990/homePage/HP_EA_D_1920.png"
+              fetchpriority="high"
+              alt="The left is wearing Guardian eyeglasses, other is wearing Guess gu2904 eyeglasses"
+              width="2160"
+              height="623"
+              usemap="#image-map"
+              id="hero_img"
+            />
+          </picture>
+          <map name="image-map">
+            <area
+              target=""
+              alt="Guardian eyeglasses"
+              title="Guardian eyeglasses"
+              href="/xxl-guardian-eyeglasses?color=2"
+              coords="1043,109,1382,275"
+              shape="rect"
+            />
+            <area
+              target=""
+              alt="Guess gu2904 eyeglasses"
+              title="Guess gu2904 eyeglasses"
+              href="/guess-gu2904-eyeglasses?color=4"
+              coords="1501,231,1808,354"
+              shape="rect"
+            />
+          </map>
+                </div>
+          <div
+            class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0"
+            style="background: #D4BDAE; width: 36%"
+          >
+            <h1
+              class="transform-uppercase ct_font__32 ct_font__desk__30 ct_font__mob_26 ct_lh__sm ct_mb__mob__20 ct_mt__mob__50 ct_mb__20" style="font-weight:300"
+            >
+              Luxury style at a steal
+            </h1>
+            <div
+              class="ct_mt__10"
+            >
+              <div>
+                <h1
+                  class="transform-uppercase ct_font__mob_26 ct_font__32 ct_font__desk__32 weight-bold ct_lh__sm ct_m__0"
+                >
+                  UP TO 50% OFF FRAMES
+                </h1>
+              </div>
+              <div
+                class="ct_font__48 ct_font__mob_32 ct_font__desk__38 align-self-center ct_p__0" style="line-height:1"
+              >
+                +
+              </div>
+              <div>
+                <h1
+                  class="transform-uppercase ct_font__mob_26 ct_font__32 ct_font__desk__32 ct_lh__sm weight-bold ct_m__0"
+                >
+                 65% OFF LENSES
+                </h1>
+                <p
+                  class="ct_font__mob_18 ct_font__18 ct_m__10 ct_font__desk__24"
+                  style="margin-bottom: 25px !important"
+                >
+                  <b id="promoCode" >Code: EXTRA5</b>
+                </p>
+              </div>
+            </div>
+            <a
+              href="/sale"
+              class="ct_cta ct_cta__red ct_m__mob__10 ct_mb__mob__40"
+              style="background-color:#AB2317"
+              >SAVE NOW</a
+            >
+          </div>
+        </a>
+      </div>
+    </div>
+       `;
+          $(".heroBanner").replaceWith(heroBanner);
+        } else {
+        }
+  };
+
+  const updateSecondBanner = () => {
+    if (
+      (checkDate >= "250428" && checkDate <= "250511") ||
+      (fdFncs.vars.isTest >= "250428" && fdFncs.vars.isTest <= "250511")
+    ) {
+      let secondBanner = `
+<div 
+id="clearanceBanner"
+class="d-flex flex-wrap mx-3 mt-3 mt-lg-5 mb-4 px-0 order weight-medium"
+style="min-height: 176px; background: #C5CEC1 !important; color: #2d3547;"
+>
+
+<div class="order-1 order-lg-1 col-12 col-lg-4 d-flex flex-column justify-content-center align-items-center mt-4 mt-sm-0">
+  <h1 class="ct_font__mob_40 ct_font__40 ct_font__desk__40 text-center color-black d-none d-lg-block" style="line-height: 1.2;">
+    <b>25% off</b><br> Michael Kors 
+  </h1>
+  <div class="ct_font__mob_40 ct_font__40 ct_font__desk__40 text-center color-black d-lg-none d-block ct_mt__20" style="line-height: 1.4;">
+    <b>25% off</b><br> Michael Kors <br>
+    +<br>
+    <b>60% off lenses </b>
+  </div>
+</div>
+
+<div
+  class="order-3 order-lg-2 col-12 col-lg-4 position-relative text-center d-flex flex-column align-items-center justify-content-center pt-0 py-0 px-0 mt-3 mt-lg-0"
+  style="min-height:200px; background: #C5CEC1 url('https://images.framesdirect.com/image/upload/v1745089655/homePage/HPSecondary_MK_D.png') no-repeat bottom center/auto 200px;"
+>
+  <a href="/michael-kors/brand" class="btn-cta position-absolute " style="background: #cd0000; min-width: 130px; bottom: 10px;">
+    SHOP NOW
+  </a>
+</div>
+
+<div class="order-2 order-lg-3 col-12 col-lg-4 text-center d-flex flex-column align-items-center justify-content-center pt-0 px-0">
+  <h1 class="ct_font__mob_40 ct_font__40 ct_font__desk__40 text-center color-black d-none d-lg-block" style="line-height: 1.2;">
+    Combinable with <br>
+   <b>60% off lenses </b>
+  </h1>
+</div>
+</div>
+   `;
+      $("#clearanceBanner").replaceWith(secondBanner);
+    } else if (
+      getCookie("fdRecognized") !== undefined &&
+      ((checkDate >= "250417" && checkDate <= "250427") ||
+        (fdFncs.vars.isTest >= "250417" && fdFncs.vars.isTest <= "250427"))
+    ) {
+      let secondBanner = `
+  <div 
+  id="clearanceBanner"
+  class="d-flex flex-wrap mx-3 mt-3 mt-lg-5 mb-4 px-0 order weight-medium"
+  style="min-height: 176px; background: #AAB9C0 !important; color: #2d3547;"
+  >
+  
+  <div class="order-1 order-lg-1 col-12 col-lg-4 d-flex flex-column justify-content-center align-items-center">
+    <p class="size-16 text-center color-black d-none d-lg-block">
+      <b>CLEARANCE:</b> Up to 50% off <br>clearance & sales styles
+    </p>
+    <p class="size-22 text-center color-black d-lg-none d-block mt-5" style="font-weight: 700;">
+      Clearance
+    </p>
+  </div>
+  
+  <div
+    class="order-3 order-lg-2 col-12 col-lg-4 position-relative text-center d-flex flex-column align-items-center justify-content-center pt-0 py-0 px-0 mt-3 mt-lg-0"
+    style="min-height:200px; background: #aab9c0 url('https://images.framesdirect.com/image/upload/v1732541064/homePage/FD_Secondary_HP_Always_On.png') no-repeat bottom center/auto 200px;"
+  >
+    <a href="/sale" class="btn-cta position-absolute d-none d-lg-block" style="background: #cd0000; min-width: 130px; bottom: 10px;">
+      SAVE NOW
+    </a>
+  </div>
+  
+  <div class="order-2 order-lg-3 col-12 col-lg-4 text-center d-flex flex-column align-items-center justify-content-center pt-0 px-0">
+    <p class="size-16 text-center color-black d-none d-lg-block">
+      Combinable with 65% off lenses <br>
+      Code: <b>EXTRA5</b>
+    </p>
+    <p class="size-16 text-center color-black d-lg-none d-block mt-3">
+      Up to 50% off clearance &<br> sales styles + 65% off lenses<br><br>
+      Code: <b>EXTRA5</b>
+    </p>
+    <a href="/sale" class="btn-cta d-lg-none d-block mt-3" style="background: #cd0000; max-width: 150px; font-size: 16px; margin: 0 auto;">
+      SAVE NOW
+    </a>
+  </div>
+  </div>
+   `;
+      $("#clearanceBanner").replaceWith(secondBanner);
+    } else if (
+      (checkDate >= "250417" && checkDate <= "250427") ||
+      (fdFncs.vars.isTest >= "250417" && fdFncs.vars.isTest <= "250427")
+    ) {
+      let secondBanner = `
+  <div id="clearanceBanner" class="d-flex flex-wrap mx-3 mt-3 mt-lg-5 mb-4 px-0 order weight-medium" style="min-height: 176px; background: #AAB9C0 !important; color: #2d3547;">
+
+    <div class="order-1 order-lg-1 col-12 col-lg-4 d-flex flex-column justify-content-center align-items-center">
+      <p class="size-18 text-center color-black weight-bold d-none d-lg-block">
+        Don't want to sign up? 
+      </p>
+      <h1 class="d-lg-none d-block size-22 mt-5">Don't want to <b>sign up?</b> </h1>
+    </div>
+    
+    <div class="order-3 order-lg-2 col-12 col-lg-4 position-relative text-center d-flex flex-column align-items-center justify-content-center pt-0 py-0 px-0 mt-3 mt-lg-0" style="min-height:200px; background: #aab9c0 url('https://images.framesdirect.com/image/upload/v1732541064/homePage/FD_Secondary_HP_Always_On.png') no-repeat bottom center/auto 200px;">
+      <a href="/sale" class="btn-cta position-absolute d-none d-lg-block" style="background: #cd0000; min-width: 130px; bottom: 10px;">
+        SAVE NOW
+      </a>
+    </div>
+    <div class="order-2 order-lg-3 col-12 col-lg-4 text-center d-flex flex-column align-items-center justify-content-center pt-0 px-0">
+      <p class="size-16 text-center color-black">
+        Shop our <b>Clearance deals <br> + 60% off lenses</b>
+      </p>
+      <a href="/sale" class="btn-cta d-lg-none d-block mt-3" style="background: #cd0000; max-width: 150px; font-size: 16px; margin: 0 auto;">
+        SAVE NOW
+      </a>
+    </div>
+    
+    </div>
+  
+    `;
+      $("#clearanceBanner").replaceWith(secondBanner);
+    } else {
+      /* DEFAULT BANNER IS STATIC IN HTML */
+    }
+  };
+  const updateFirstInsuranceBanner = () => {
+    if (
+      (checkDate >= "250101" && checkDate <= "250101") ||
+      (fdFncs.vars.isTest >= "250101" && fdFncs.vars.isTest <= "250101")
+    ) {
+      let firstInsuranceBanner = `
+ <div id="firstInsuranceBanner" class="d-flex flex-wrap mx-3 mt-3 mt-lg-5 mb-4 px-0 order weight-medium" style="min-height: 176px; background: #AAB9C0 !important; color: #2d3547;">
+
+  <div class="order-1 order-lg-1 col-12 col-lg-4 d-flex flex-column justify-content-center align-items-center">
+    <p class="size-18 text-center color-black weight-bold d-none d-lg-block">
+      Don't want to sign up? 
+    </p>
+    <h1 class="d-lg-none d-block size-22 mt-5">Don't want to <b>sign up?</b> </h1>
+  </div>
+  
+  <div class="order-3 order-lg-2 col-12 col-lg-4 position-relative text-center d-flex flex-column align-items-center justify-content-center pt-0 py-0 px-0 mt-3 mt-lg-0" style="min-height:200px; background: #aab9c0 url('https://images.framesdirect.com/image/upload/v1732541064/homePage/FD_Secondary_HP_Always_On.png') no-repeat bottom center/auto 200px;">
+    <a href="/sale/top-brands-discounted-dp" class="btn-cta position-absolute d-none d-lg-block" style="background: #cd0000; min-width: 130px; bottom: 10px;">
+      SAVE NOW
+    </a>
+  </div>
+  <div class="order-2 order-lg-3 col-12 col-lg-4 text-center d-flex flex-column align-items-center justify-content-center pt-0 px-0">
+    <p class="size-16 text-center color-black">
+      Shop our <b>Clearance deals <br> + 60% off lenses</b>
+    </p>
+    <a href="/sale/top-brands-discounted-dp" class="btn-cta d-lg-none d-block mt-3" style="background: #cd0000; max-width: 150px; font-size: 16px; margin: 0 auto;">
+      SAVE NOW
+    </a>
+  </div>
+  
+  </div>
+
+        `;
+      $("#firstInsuranceBanner").replaceWith(firstInsuranceBanner);
+    } else {
+      /* DEFAULT BANNER IS STATIC IN HTML */
+    }
+  };
+
+  const updateRayBanBanner = () => {
+    let rayBanBanner;
+    if (
+      (((checkDate >= "250331" && fdFncs.svrTm.hr >= "02") ||
+        checkDate >= "250331") &&
+        checkDate < "250409") ||
+      isTestingParameter(250331)
+    ) {
+      rayBanBanner =
+        /* HTML */
+        `
+          <div class="rbBanner d-flex flex-wrap mb-4 mx-3">
+            <div class="img-block">&nbsp;</div>
+            <div
+              class="copy-block d-flex flex-wrap text-center justify-content-center col-lg-5 weight-medium py-3"
+            >
+              <p class="col-12 size-21 my-2 my-xl-1" style="line-height: 1">
+                FIND YOUR <span class="weight-extra-bold">STYLE</span>
+              </p>
+              <div class="col-12 size-12 my-xl-1 weight-normal">
+                Discover the Ray-Ban collection and make a
+                <br class="d-none d-md-block" />
+                statement in iconic eyeglasses and sunglasses
+              </div>
+              <div class="d-flex flex-column">
+                <a
+                  href="/ray-ban/brand"
+                  class="btn-cta nowrap mt-4"
+                  style="min-width: 290px; background: #cd0000; color: #fff !important; border: 0"
+                  >Shop Ray-Ban Collection</a
+                >
+                <a
+                  href="/sunglasses/ray-ban-meta"
+                  class="btn-cta nowrap mt-4"
+                  style="min-width: 290px; background: #000; color: #fff !important; border: 0"
+                  >DISCOVER RAY-BAN META</a
+                >
+              </div>
+            </div>
+          </div>
+        `;
+      $(".rbBanner").replaceWith(rayBanBanner);
+
+      $(".rbBanner").css(
+        "background",
+        "url('https://images.framesdirect.com/image/upload/v1718629642/homePage/FD_promo_Ray-Ban__tightly_cropped_SUN.png') no-repeat center right / auto 100%"
+      );
+
+      $(".rbBanner .img-block").css(
+        "background",
+        "url('https://images.framesdirect.com/image/upload/v1718629642/homePage/FD_promo_Ray-Ban__tightly_cropped_SUN.png') no-repeat center center/auto 100%"
+      );
+    } else {
+      /* BANNER DEFAULT */
+      rayBanBanner =
+        /* HTML */
+        `
+          <div class="rbBanner d-flex flex-wrap mb-4 mx-3">
+            <div class="img-block">&nbsp;</div>
+            <div
+              class="copy-block d-flex flex-wrap text-center justify-content-center col-lg-5 weight-medium py-3"
+            >
+              <p
+                class="col-12 size-21 weight-extra-bold my-2 my-xl-1"
+                style="line-height: 1"
+              >
+                Find Your<br />Genuine Style
+              </p>
+              <div class="col-12 size-12 my-xl-1">
+                Discover the Ray-Ban collection<br />and make a statement in
+                iconic<br />eyeglasses and sunglasses
+              </div>
+              <a
+                href="/ray-ban/brand"
+                class="btn-cta nowrap mt-4"
+                style="background: #cd0000; color: #fff !important; border: 0"
+                >Shop Ray-Ban Collection</a
+              >
+            </div>
+          </div>
+        `;
+
+      $(".rbBanner").replaceWith(rayBanBanner);
+
+      $(".rbBanner").css(
+        "background",
+        "url('https://images.framesdirect.com/image/upload/v1714725178/homePage/FD_promo_Ray-Ban__tightly_cropped.png') no-repeat center right / auto 100%"
+      );
+
+      $(".rbBanner .img-block").css(
+        "background",
+        "url('https://images.framesdirect.com/image/upload/v1714725178/homePage/FD_promo_Ray-Ban__tightly_cropped.png') no-repeat center center/auto 100%"
+      );
+    }
+  };
+  var bannerSlider = "";
+  function initBannerSlider() {
+    if (
+      bannerSlider.lightSlider &&
+      typeof bannerSlider.destroy === "function"
+    ) {
+      bannerSlider.destroy();
+    }
+    bannerSlider = $("#light-slider").lightSlider({
+      item: 9,
+      auto: true,
+      slideMove: 3,
+      loop: true,
+      autoWidth: false,
+      pauseOnHover: true,
+      easing: "cubic-bezier(0.25, 0, 0.25, 1)",
+      speed: 1000,
+      pause: 3000,
+      slideMargin: 5,
+      responsive: [
+        {
+          breakpoint: 1400,
+          settings: {
+            item: 6,
+          },
+        },
+        {
+          breakpoint: 1080,
+          settings: {
+            item: 4,
+          },
+        },
+        {
+          breakpoint: 500,
+          settings: {
+            item: 3,
+          },
+        },
+      ],
+      onSliderLoad: function (el) {
+        $("#light-slider").css("opacity", 1);
+      },
+    });
+  }
+  var heroSlider = "";
+  function initHeroSlider() {
+    if (heroSlider.lightSlider && typeof heroSlider.destroy === "function") {
+      heroSlider.destroy();
+    }
+    heroSlider = $("#hero-slider").lightSlider({
+      item: 1,
+      loop: true,
+      auto: true,
+      autoWidth: false,
+      easing: "cubic-bezier(0.25, 0, 0.25, 1)",
+      speed: 1000,
+      pauseOnHover: true,
+      pager: false,
+      pause: 8000,
+      onSliderLoad: function (el) {
+        $("#hero-slider").css("opacity", 1);
+      },
+      onBeforeSlide: function (el) {
+        let videos = document.querySelectorAll("#hero-slider video");
+        videos.forEach((video) => {
+          video.pause();
+          video.currentTime = 0;
+        });
+      },
+
+      onAfterSlide: function (el) {
+        let videos = document.querySelectorAll("#hero-slider video");
+        videos.forEach((video) => {
+          video.play();
+          video.currentTime = 0;
+        });
+      },
+    });
+  }
+
+  $(function () {
+    updateHeroBanner();
+    updateFirstInsuranceBanner();
+    updateSecondBanner();
+    if (checkDate > "240508" && checkDate < "240514") {
+      $("#promoSale").removeClass("d-none").addClass("d-flex");
+    }
+    if (
+      checkDate > "240403" &&
+      checkDate < "240415" &&
+      getCookie("fdRecognized") !== undefined
+    ) {
+      var discAmt = "25";
+      if (checkDate > "240412") {
+        discAmt = "30";
+      }
+      $(".heroBanner").replaceWith(
+        '<div class="heroBanner position-relative img-flex extended d-flex"><a href="/email/customer-appreciation-dp" class="d-block"><video autoplay muted loop playsinline disablePictureInPicture width="100%" class="d-block"><source src="https://images.framesdirect.com/video/upload/v1711381956/homePage/FD_HP_CUW.mp4" type="video/mp4" /></video></a><div class="text-overlay col-12 col-xl-3 d-flex"><div class="home-promo col-12 d-flex flex-column align-items-center justify-content-center"><div class="size-16 color-white">Private Week is live<div class="weight-bold">Offer ends April 14th</div></div><div class="align-items-center pt-xl-3 pb-xl-5 py-4"><h1 class="size-50 mb-0">' +
+        discAmt +
+        '% OFF</h1><div class="size-18 weight-bold transform-none mt-0">Ray-Ban, Oakley, and more</div><div class="size-14 weight-normal transform-none mt-3">Combinable with 60% off lenses.<br class="d-none d-sm-block"> Enjoy your exclusive savings at checkout.</div></div><a href="/email/customer-appreciation-dp" class="btn-cta mx-5 px-5 py-2 d-inline-block" style="background: #bd0000; color: #fff !important;">Save Now</a></div></div></div>'
+      );
+    } else if (checkDate > "240403" && checkDate < "240415") {
+      $(".heroBanner").replaceWith(
+        '<div class="heroBanner position-relative img-flex extended d-flex"><a href="#" class="d-block"><video autoplay muted loop playsinline disablePictureInPicture width="100%" class="d-block"><source src="https://images.framesdirect.com/video/upload/v1711381956/homePage/FD_HP_CUW.mp4" type="video/mp4" /></video></a><div class="text-overlay col-12 col-xl-3 d-flex"><div class="home-promo col-12 d-flex flex-column align-items-center justify-content-center"><div class="img-flex mt-2" style="margin-bottom: 30px;"><img src="https://images.framesdirect.com/image/upload/v1711633428/homePage/FD_CUW_Herobanner_Mobile.png" width="581" height="437" alt="Private Week is Live" style="max-width: 200px;"></div><div class="color-white size-16">Sign up or sign in to access<br class="d-none d-sm-block"> your exclusive offer ending April 14th.</div><div class="align-items-center justify-content-center pt-4"><a href="#" id="btn-sign-up" class="btn-cta mx-5 ml-md-0 mr-md-5 px-5 py-2 d-inline-block" style="background: #bd0000; color: #fff !important;">SIGN UP</a> <a href="#" id="btn-sign-in" class="btn-cta signIn mx-5 mr-md-0 ml-md-5 px-5 py-2 d-inline-block" style="background: #fff; color: #000 !important;">SIGN IN</a></div></div></div>'
+      );
+      $("#btn-sign-up").on("click", function () {
+        $("#footer-newsletter-submit").click();
+      });
+      $(document).on("click", "a.signIn", function (e) {
+        e.preventDefault();
+        $("#ctl01_lnkNewLogin a").click();
+      });
+    }
+    if (checkDate > "240430" && checkDate < "240508") {
+      $("#promoSale").removeClass("display-none");
+    }
+    if (checkDate > "231108" && checkDate < "231116") {
+      $("#email-signup").removeClass("display-none");
+    }
+    $("#polarizedSale").on("click", function () {
+      window.location.href = "/sale/polarized-dp";
+    });
+    $(
+      "#saleBlock > div, #brand-callout, #text-overlay, #promoSale, #cyberSale"
+    ).on("click", function () {
+      let $this = $(this),
+        linkLoc = $this.find("a").attr("href");
+      window.location.href = linkLoc;
+    });
+    $("#email-signup").on("click", function () {
+      $("#footer-newsletter-submit").click();
+    });
+    if (checkDate > "230109") {
+      $("#saleBlock").removeClass("d-flex").addClass("d-none");
+    }
+    if (checkDate > "231130" && checkDate < "240101") {
+      $("#FSABar h2").html(
+        "Use Your FSA Dollars<br>Before They Expire December 31st"
+      );
+      $("#FSABar p").html(
+        "Many Flexible Spending Accounts expire on December 31st, but yours don't have to go to waste. Get new eyeglasses, prescription sunglasses, readers, or contact lenses before the new year."
+      );
+      $("#FSABar").insertBefore("#rfk-hp-custFaves");
+    } else if (checkDate > "231231" && checkDate < "240201") {
+      $("#FSABar h2").html("New Year, New FSA Dollars to Use!");
+      $("#FSABar p").html(
+        "Many Flexible Spending Accounts renewed January 1st. It's the perfect time to get new eyeglasses, prescription sunglasses, readers, or contact lenses."
+      );
+      $("#FSABar a.btn-cta")
+        .clone()
+        .text("FIND OUT MORE")
+        .attr(
+          "href",
+          "https://www.framesdirect.com/knowledge-center/do-you-have-flex-spending-dollars"
+        )
+        .attr(
+          "style",
+          "background: #000 !important; color: #fff !important; margin-left: 20px !important;"
+        )
+        .insertAfter("#FSABar a.btn-cta");
+    } else if (checkDate > "240304" && checkDate < "240316") {
+      $("#FSABar h2").html("Your FSA Dollars deadline is approaching!");
+      $("#FSABar p").html(
+        "With many Flexible Spending Accounts expiring on March 15th, it's the perfect time to get new prescription eyeglasses, sunglasses, readers, or contacts lenses."
+      );
+    } else {
+      $("#FSABar h2").html("We Accept FSA &amp; HSA");
+      $("#FSABar p").html(
+        "Did you know that you can use your flexible spending account (FSA) or health savings account (HSA) dollars to purchase prescription eyeglasses, prescription sunglasses, and prescription contact lenses? These funds can be used whether you have vision insurance or not. And if you use your flex spending or HSA debit card, you won't have to submit a reimbursement form to your insurance provider!"
+      );
+    }
+    $(".heroBanner").css("opacity", 1);
+    if (checkDate > "221205" && checkDate < "221209") {
+      $("#home-promo > a").attr("href", "/email/holiday-deals-dp");
+    }
+    $("#TransitionsBar").on("click", function () {
+      window.location.href = "/eyeglasses";
+    });
+    $("#FSABar").on("click", function () {
+      window.location.href = "/collections/fsa-hsa-eligible-eyewear-dp";
+    });
+
+    $("#klarna").on("click", function () {
+      window.location.href = "/knowledge-center/shopping-with-Klarna";
+    });
+    $("#promoBanner").show();
+
+    if (checkDate > "240205" && checkDate < "240215") {
+      $("#cyberSale").removeClass("display-none");
+    }
+    if (checkDate > "240311" && checkDate < "240315") {
+      $("#cyberSale").replaceWith(
+        '<div id="cyberSale" class="d-flex flex-wrap px-0 mb-4 weight-medium order" style="background: #D1D7D0; color: #535752;"><div class="col-12 col-xl-4 text-center d-flex flex-column align-items-center justify-content-center pt-0 py-2 px-0 img-flex"><p class="size-20 my-1 mt-0 mt-xl-0 weight-bold" style="line-height: 1.3;">Spring Break Sale</p><p class="size-40 weight-extra-bold my-xl-0 mt-2 mb-0">20% OFF</p><p class="size-20 my-1 mt-0 mt-xl-0 weight-bold" style="line-height: 1.3;">Frames from Versace,<br>Burberry, & more</p></div><div class="col-12 col-xl-4 text-center d-flex flex-column align-items-center justify-content-center pt-0 py-0 px-0 img-flex"><div class="my-0 my-lg-4 my-xl-0 px-2" style="max-width: 100%; width: 100%;"><img src="https://images.framesdirect.com/image/upload/v1709886560/homePage/FD_promo_Homepage_Spring_Break_Photo.png" alt="Spring Break Savings"></div><a href="/email/spring-break-sun-dp" class="btn-cta" style="background: #cd0000; border: 0; color: #fff !important;">SAVE NOW</a></div><div class="col-12 col-xl-4 d-flex flex-column justify-content-center align-items-center pb-4 pt-0 py-xl-5"><div class="size-20 pt-xl-0">Combinable with</div><p class="size-20 weight-extra-bold my-xl-2 mt-4 mb-0">60% OFF LENSES</p><a class="btn-cta py-2 px-5 transform-uppercase mt-3" href="/email/spring-break-sun-dp" style="background:#000; color: #fff !important; border: 0 !important; min-width: 250px;">SAVE NOW</a></div></div>'
+      );
+    }
+    initHeroSlider();
+    if (fdFncs.custType !== undefined) {
+      if (fdFncs.custType === "preferred" || fdFncs.custType === "vip") {
+        $(".ct_hero").html($(".ct_hero").html().replace("60", "65"));
+      }
+    }
+    if (window.location.href.toLowerCase().includes("upto50")) {
+      $(".home-promo h1").replaceWith(
+        '<h1>Up to 50% Off<div class="hp-promo-sm weight-normal transform-none">80+ Designer Brands</div></h1>'
+      );
+    }
+  });
+
+  function hpHero() {
+    if ($(".heroBanner > a img").length < 1) {
+      $(".heroImg").on("load", function () {
+        $(".heroBanner").css("min-height", "inherit");
+        $(".heroImg").rwdImageMaps();
+      });
+    }
+    $(".text-overlay").css("opacity", 1);
+  }
+  $(window)
+    .on("load", function () {
+      initHeroSlider();
+      $(".heroBanner").css("min-height", "auto");
+      $(
+        '<li class="larger-brand"><a href="/dolce-gabbana/brand"><img src="https://images.framesdirect.com/image/upload/h_40,c_fit/v1531418607/logos/dolce-gabbana-logo.svg" width="300" height="29" alt="Dolce &amp; Gabbana Eyewear"></a></li><li><a href="/coach/brand"><img src="/images/customerimages/global/logos/coach-logo.svg" width="300" height="121" alt="Coach"></a></li><li class="larger-brand"><a href="/giorgio-armani/brand"><img src="https://images.framesdirect.com/image/upload/h_40,c_fit/v1626742482/logos/giorgio-armani-logo.svg" width="300" height="29" alt="Giorgio Armani"></a></li><li><a href="/wiley-x/brand"><img src="https://images.framesdirect.com/image/upload/v1707250152/logos/WX_logo_stacked_black.svg" width="110" height="70" alt="Wiley X Eyewear"></a></li><li class="larger-brand"><a href="/michael-kors/brand"><img src="/images/customerimages/global/logos/michael-kors-logo.svg" width="300" height="28" alt="Michael Kors"></a></li><li class="larger-brand"><a href="/tory-burch/brand"><img src="/images/customerimages/global/logos/tory-burch-logo.png" width="200" height="70" alt="Tory Burch"></a></li><li><a href="/hugo-boss/brand"><img src="/images/customerimages/global/logos/hugo-boss-logo.svg" width="300" height="110" alt="Hugo Boss"></a></li><li><a href="/polo/brand"><img src="https://images.framesdirect.com/image/upload/h_33/v1542731790/logos/polo-logo.svg" width="300" height="117" alt="Polo"></a></li><li><a href="/nike/brand"><img src="https://images.framesdirect.com/image/upload/h_33/v1591982175/logos/nike-logo.svg" width="300" height="105" alt="Nike"></a></li>   <li><a href="/shuron/brand"><img src="https://images.framesdirect.com/image/upload/w_103/v1630593191/logos/shuron-logo.png" width="103" height="24" alt="Shuron"></a></li><li><a href="/carrera/brand"><img src="https://images.framesdirect.com/image/upload/h_33/v1591982126/logos/carrera-logo.svg" width="300" height="60" alt="Carrera"></a></li><li><a href="/guess/brand"><img src="https://images.framesdirect.com/image/upload/h_33/v1591982146/logos/guess-logo.svg" width="300" height="53" alt="Guess"></a></li><li class="larger-brand"><a href="/ralph-lauren/brand"><img src="https://images.framesdirect.com/image/upload/h_40/v1531417371/logos/ralph-lauren-logo.svg" width="300" height="22" alt="Ralph Lauren"></a></li>'
+      ).appendTo("#light-slider");
+
+      if ($(window).width() < 1300) {
+        var array = $("#brand-showcase #light-slider li:not(.clone) a");
+
+        for (var i = array.length; i >= 0; i--) {
+          if (i % 2 == 0) {
+            $(array[i - 1])
+              .addClass("mb-auto")
+              .insertAfter(array[i - 2]);
+            $(array[i - 1])
+              .parent("li")
+              .addClass("keep");
+          }
+        }
+        $("#brand-showcase #light-slider li:not(.keep)").remove();
+        $("#brand-showcase #light-slider").addClass("d-flex");
+      }
+      $("#light-slider .lslide")
+        .removeAttr("style")
+        .prop("style", "min-height:1px;");
+      initBannerSlider();
+    })
+    .on("resize orientationchange", function () {
+      if ($(window).width() < 550) {
+        var array = $("#brand-showcase #light-slider li:not(.clone) a");
+
+        for (var i = array.length; i >= 0; i--) {
+          if (i % 2 == 0) {
+            $(array[i - 1])
+              .addClass("mb-auto")
+              .insertAfter(array[i - 2]);
+            $(array[i - 1])
+              .parent("li")
+              .addClass("keep");
+          }
+        }
+        $("#brand-showcase #light-slider li:not(.keep)").remove();
+        $("#brand-showcase #light-slider").addClass("d-flex");
+      }
+      initBannerSlider();
+
+      const ct_printProducts = function (products) {
+        // Shopping bag icon print
+        for (let element in ct_page__products.elements) {
+          let shoppingBag;
+          if ($(window).width() > 1199) {
+            shoppingBag = `<span class="ct_shopping-bag-icon icon-shopping-cart-o ${shoppingBagPosition[
+              ct_page__products.elements[element][0].shop_icon_position.desk
+            ]
+              }"></span>`;
+          }
+
+          // Banner type structure control
+          const dataElementId = `[data-element-id="${element}"]`;
+
+          $(dataElementId).append(shoppingBag);
+
+          const bannerElementIdSelector = $(dataElementId)
+            .children()
+            .hasClass("cm-hero__media-wrapper")
+            ? `${dataElementId} .cm-hero__media-wrapper`
+            : `${dataElementId} > a > div`;
+          if (
+            !$(bannerElementIdSelector).find(".ct_shopping-bag-icon").length
+          ) {
+            $(bannerElementIdSelector).append(shoppingBag);
+          }
+
+          // Desktop and mobile different behaviour
+          if ($(window).width() < 768) {
+            // ctas always clickables
+            $(dataElementId + " a").css("pointerEvents", "auto");
+            // Mobile pin show on scroll
+            const banners = document.querySelectorAll(dataElementId);
+            const observer = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    entry.target.classList.add("ct_show-pin");
+                  }
+                });
+              },
+
+              { threshold: 0.2 }
+            );
+
+            banners.forEach((pin) => {
+              observer.observe(pin);
+            });
+
+            // Desktop pin show on hover
+          } else {
+            $(dataElementId).addClass("ct_show-pin");
+          }
+
+          // Cycle on products inside each banner (we can have multiple products inside a single banner)
+
+          for (let productIndex in ct_page__products.elements[element]) {
+            const ct_productInfo =
+              ct_page__products.elements[element][productIndex];
+
+            // Check if an element/product already exist in the banner
+            if (
+              !$(
+                `${bannerElementIdSelector} a[data-element-id="${element}-PIN${productIndex}"]`
+              ).length
+            ) {
+              const ct_shopPin = ct_printPin(
+                ct_productInfo,
+                element,
+                productIndex,
+                products
+              );
+
+              $(bannerElementIdSelector).append(ct_shopPin);
+            }
+          }
+        }
+      };
+
+      // Pin print and positioning inside banner
+
+      const ct_printPin = (pinInfo, dataElementId, productIndex, products) => {
+        let pinStyleTop;
+        let pinStyleLeft;
+        let panelPosition;
+
+        if ($(window).width() < 768) {
+          pinStyleTop = pinInfo.top.mob;
+          pinStyleLeft = pinInfo.left.mob;
+          panelPosition = infoPanelPosition[pinInfo.panel_position.mob];
+        } else {
+          pinStyleTop = pinInfo.top.desk;
+          pinStyleLeft = pinInfo.left.desk;
+          panelPosition = infoPanelPosition[pinInfo.panel_position.desk];
+        }
+
+        const pinStyle = `top:${pinStyleTop + "%"};left:${pinStyleLeft + "%"};`;
+
+        // Filtering JSON products <-> Products in page
+
+        const productFilter = $(products.products).filter(function (index) {
+          return pinInfo.upc === products.products[index].UPC;
+        });
+
+        if (productFilter[0] === undefined) return;
+
+        const skuType = productFilter[0].skuType;
+
+        let modelImage = productFilter[0].qtImage;
+
+        const offerPrice = parseFloat(productFilter[0].offerPrice);
+
+        const listPrice = parseFloat(productFilter[0].listPrice);
+
+        const modelName = productFilter[0].modelName;
+
+        const pdpURL = productFilter[0].pdpURL;
+
+        const stock = productFilter[0].stock;
+
+        let imageUrl = modelImage;
+
+        const activePreviewDesktop = pinInfo.preview.desk;
+
+        const activePreviewMobile = pinInfo.preview.mob;
+
+        let previewClass;
+
+        if (activePreviewMobile && activePreviewDesktop) {
+          previewClass = "d-block";
+        } else if (activePreviewMobile && !activePreviewDesktop) {
+          previewClass = "d-block d-md-none";
+        } else if (!activePreviewMobile && activePreviewDesktop) {
+          previewClass = "d-none d-md-block";
+        }
+
+        // Currency
+
+        const currency = "$";
+
+        if (skuType === "AFA Accessories" || skuType === "AFA Apparel") {
+          modelImage = productFilter[0].frontImage;
+
+          imageUrl = modelImage
+
+            .replace("CostaDelMar", "CDMAFA")
+
+            .replace("__", "_main_");
+        } else if (skuType === "Accessory") {
+          imageUrl = modelImage
+
+            .replace("CostaDelMar", "CDMACC")
+
+            .replace("__", "_main_");
+        }
+
+        // Has offer price?
+
+        const hasOfferPrice = listPrice !== offerPrice;
+
+        // Is out of stock?
+
+        const isOutOfStock = stock == "0";
+
+        // Render based on different conditions (normal price | offer price | out of stock)
+
+        const printPrice =
+          hasOfferPrice && !isOutOfStock
+            ? `<p class="ct_infoPanel_productPrice">${currency}<del style="font-size: 11px">${listPrice.toFixed(
+              2
+            )}</del> <span>${currency}${offerPrice.toFixed(2)}</span></p>`
+            : `<p class="ct_infoPanel_productPrice">${currency}${listPrice.toFixed(
+              2
+            )}</p>`;
+
+        if (isOutOfStock) {
+          return `
+      
+          <div class="ct_pin-container ct_pin-container-not-clickable" style=${pinStyle}>
+      
+          <div class="ct_pin ct_pin-icon ct_pin-icon-light">
+      
+          </div>
+      
+          <div class="ct_infoPanel ${panelPosition}">
+      
+          <p class="ct_infoPanel_productName">${modelName}</p>
+      
+          <p class="ct_infoPanel_productPrice">Is Out of Stock</p>
+      
+          <img src="${imageUrl}?imwidth=220" alt="${modelName}" class="${previewClass}" />
+      
+          </div>
+      
+          </div>`;
+        } else {
+          return `
+      
+          <div class="ct_pin-container" style=${pinStyle}>
+      
+          <div class="ct_pin ct_pin-icon ct_pin-icon-light">
+      
+          </div>
+      
+          <a data-description="${modelName}" data-element-id="${dataElementId}-PIN${productIndex}" href="${pdpURL}" class="ct_infoPanel ${panelPosition} ct_infoPanel-hidden">
+      
+          <div>
+      
+          <p class="ct_infoPanel_productName">${modelName}</p>
+      
+          ${printPrice}
+      
+          </div>
+      
+          <img src="${imageUrl}?imwidth=220" alt="${modelName}" class="${previewClass}" />
+      
+          </a>
+      
+        </div>`;
+        }
+      };
+
+      const ct_HandleOnClickEvents = () => {
+        const infoPanels = document.querySelectorAll(".ct_infoPanel");
+
+        const pins = document.querySelectorAll(".ct_pin");
+
+        const shoppingBags = document.querySelectorAll(".ct_shopping-bag-icon");
+
+        // Banner behavior -> Click on image with panels closed redirect
+
+        if (banner_behavior !== "custom") {
+          $(document).on("click", function (e) {
+            pins.forEach((el) => {
+              el.classList.add("ct_pin-icon-light");
+              el.classList.remove("ct_pin-icon-dark");
+            });
+
+            infoPanels.forEach((el) => {
+              el.classList.add("ct_infoPanel-hidden");
+              el.classList.remove("ct_infoPanel-visible");
+            });
+
+            for (let element in ct_page__products.elements) {
+              const dataElementId = `[data-element-id="${element}"]`;
+
+              const banners = document.querySelectorAll(dataElementId);
+
+              banners.forEach((el) => {
+                el.classList.remove("ct_preventBannerClick");
+              });
+            }
+          });
+        }
+
+        const ct_PanelOpeningLogic = (e, target) => {
+          const targetElement = target[0];
+
+          let IsVisible = $(targetElement).hasClass("ct_infoPanel-visible")
+            ? true
+            : false;
+
+          if (!IsVisible) {
+            targetElement.classList.remove("ct_infoPanel-hidden");
+            targetElement.classList.add("ct_infoPanel-visible");
+          } else {
+            targetElement.classList.remove("ct_infoPanel-visible");
+            targetElement.classList.add("ct_infoPanel-hidden");
+          }
+
+          e.stopPropagation();
+          e.stopImmediatePropagation();
+        };
+
+        infoPanels.forEach((el) => {
+          $(`.ct_infoPanel`).click((e) => {
+            e.stopPropagation();
+
+            e.stopImmediatePropagation();
+          });
+
+          if ($(window).width() > 767) {
+            $(`.ct_infoPanel`).mouseenter((e) => {
+              const ct_infoPanels = $(e.currentTarget);
+
+              ct_infoPanels[0].classList.add("ct_infoPanel-visible");
+
+              ct_infoPanels[0].classList.remove("ct_infoPanel-hidden");
+
+              const pin = ct_infoPanels[0].previousElementSibling;
+
+              pin.classList.add("ct_pin-icon-dark");
+
+              pin.classList.remove("ct_pin-icon-light");
+            });
+
+            $(`.ct_infoPanel`).mouseleave((e) => {
+              const ct_infoPanels = $(e.currentTarget);
+
+              ct_infoPanels[0].classList.remove("ct_infoPanel-visible");
+
+              ct_infoPanels[0].classList.add("ct_infoPanel-hidden");
+
+              const pin = ct_infoPanels[0].previousElementSibling;
+
+              pin.classList.add("ct_pin-icon-light");
+
+              pin.classList.remove("ct_pin-icon-dark");
+            });
+
+            $(`.ct_show-pin`).mouseleave((e) => {
+              el.classList.remove("ct_infoPanel-visible");
+
+              el.classList.add("ct_infoPanel-hidden");
+
+              const pin = el.previousElementSibling;
+
+              pin.classList.remove("ct_pin-icon-dark");
+
+              pin.classList.add("ct_pin-icon-light");
+            });
+
+            $(`.ct_pin`).mouseenter((e) => {
+              const ct_pin = $(e.currentTarget);
+
+              ct_pin[0].classList.add("ct_pin-icon-dark");
+
+              ct_pin[0].classList.remove("ct_pin-icon-light");
+            });
+
+            $(`.ct_pin`).mouseleave((e) => {
+              const ct_pin = $(e.currentTarget);
+              ct_pin[0].classList.add("ct_pin-icon-light");
+
+              ct_pin[0].classList.remove("ct_pin-icon-dark");
+            });
+          }
+        });
+
+        pins.forEach((pin) => {
+          if ($(window).width() > 767) {
+            $(pin).click((e) => {
+              e.stopPropagation();
+
+              e.stopImmediatePropagation();
+            });
+
+            $(pin).mouseenter((e) => {
+              const ct_infoPanels = $(e.currentTarget)
+                .next()
+                .addClass("ct_infoPanel-visible")
+                .removeClass("ct_infoPanel-hidden");
+            });
+
+            $(pin).mouseleave((e) => {
+              const ct_infoPanels = $(e.currentTarget)
+                .next()
+                .addClass("ct_infoPanel-hidden")
+                .removeClass("ct_infoPanel-visible");
+            });
+          } else if ($(window).width() < 768) {
+            $(pin).click((e) => {
+              let banner = $(e.target).closest("[data-element-id]");
+
+              console.log("banner", banner);
+
+              let IsVisible = $(e.target).hasClass("ct_pin-icon-dark")
+                ? true
+                : false;
+
+              if (IsVisible) {
+                $(e.target)
+                  .addClass("ct_pin-icon-light")
+
+                  .removeClass("ct_pin-icon-dark");
+              } else {
+                $(e.target)
+                  .addClass("ct_pin-icon-dark")
+
+                  .removeClass("ct_pin-icon-light");
+              }
+
+              const ct_infoPanels = $(e.target).next();
+
+              ct_PanelOpeningLogic(e, ct_infoPanels);
+
+              // Banner behavior -> Click on image with panels closed redirect
+
+              if (banner_behavior !== "custom") {
+                const ct_infoPanelsActive = banner[0].querySelectorAll(
+                  ".ct_infoPanel.ct_infoPanel-visible"
+                );
+
+                const ct_infoPanelsHidden = banner[0].querySelectorAll(
+                  ".ct_infoPanel.ct_infoPanel-hidden"
+                );
+
+                if (ct_infoPanelsActive.length > 0) {
+                  $(banner[0]).addClass("ct_preventBannerClick");
+                } else {
+                  $(banner[0]).removeClass("ct_preventBannerClick");
+                }
+              }
+            });
+          }
+        });
+
+        shoppingBags.forEach((shoppingBag) => {
+          // Banner behavior -> Click on image with panels closed redirect
+          let bannerSelector;
+
+          if (banner_behavior !== "custom") {
+            bannerSelector = shoppingBag;
+          } else {
+            bannerSelector = $(shoppingBag).parent();
+          }
+
+          $(bannerSelector).click((e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+
+            let ct_pinContainers;
+
+            let banner;
+
+            if (banner_behavior !== "custom") {
+              ct_pinContainers = $(e.target).parent();
+
+              banner = $(e.target).closest("[data-element-id]");
+            } else {
+              ct_pinContainers = bannerSelector;
+
+              banner = $(e.target).closest("[data-element-id]");
+            }
+
+            const ct_infoPanelsActive = ct_pinContainers[0].querySelectorAll(
+              ".ct_infoPanel.ct_infoPanel-visible"
+            );
+
+            const ct_infoPanelsHidden = ct_pinContainers[0].querySelectorAll(
+              ".ct_infoPanel.ct_infoPanel-hidden"
+            );
+
+            const ct_infoPanels =
+              ct_infoPanelsActive.length === 0 ||
+                ct_infoPanelsHidden.length === 0
+                ? ct_pinContainers[0].querySelectorAll(".ct_infoPanel")
+                : ct_infoPanelsHidden;
+
+            for (let i = 0; i < ct_infoPanels.length; i++) {
+              ct_infoPanels[i].classList.toggle("ct_infoPanel-hidden");
+
+              ct_infoPanels[i].classList.toggle("ct_infoPanel-visible");
+            }
+
+            const ct_pinActive = ct_pinContainers[0].querySelectorAll(
+              ".ct_pin.ct_pin-icon-dark"
+            );
+
+            const ct_pinHidden = ct_pinContainers[0].querySelectorAll(
+              ".ct_pin.ct_pin-icon-light"
+            );
+
+            const ct_pinIcons =
+              ct_pinActive.length === 0 || ct_pinHidden.length === 0
+                ? ct_pinContainers[0].querySelectorAll(".ct_pin")
+                : ct_pinHidden;
+
+            for (let i = 0; i < ct_pinIcons.length; i++) {
+              ct_pinIcons[i].classList.toggle("ct_pin-icon-light");
+
+              ct_pinIcons[i].classList.toggle("ct_pin-icon-dark");
+            }
+          });
+        });
+      };
+    });
+
+  /* UTILS */
+  function isTestingParameter(date) {
+    const url = window.location.href;
+    return url.includes(`?test=true&date=${date}`);
+  }
+  /* END UTILS*/
+</script>
