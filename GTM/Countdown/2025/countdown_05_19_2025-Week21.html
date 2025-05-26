@@ -20,7 +20,7 @@
     messages =
       $(window).width() <= 768
         ? [
-          "Up to <b>&nbsp; 40% off frames & 60% off lenses &nbsp;</b>",
+          "Up to <b>&nbsp;40% off frames & 60% off lenses &nbsp;</b>",
         ]
         : [
           "Memorial Day: Up to<b>&nbsp; 40% off frames & 60% off lenses &nbsp;</b>",
@@ -42,127 +42,35 @@
           ];
     } else
       if (
-        (checkDate >= "250512" && checkDate <= "250512") ||
-        (fdFncs.vars.isTest >= "250512" && fdFncs.vars.isTest <= "250512")
+        (checkDate >= "250411" && checkDate <= "250416") ||
+        (fdFncs.vars.isTest >= "250411" && fdFncs.vars.isTest <= "250416")
       ) {
         messages =
           $(window).width() <= 768
             ? [
-              "Up to <b>&nbsp; 40% off select frames + 60% off lenses. &nbsp;</b>",
-              "<b>&nbsp; Get a free hat  &nbsp;</b> with every Wiley X purchase",
+              "CLEARANCE: Up to 50% off + 65% off lenses  ",
+              "EASTER SAVINGS: Save $50 on frames",
             ]
             : [
-              "Give Mom A Complete Pair: Up to <b>&nbsp; 40% off select frames + 60% off lenses. &nbsp;</b>Includes designer brands</b>",
-              "<b>&nbsp; Get a free hat  &nbsp;</b> with every Wiley X purchase",
+              "CLEARANCE: Up to 50% off clearance & sale frames. Explore 350+ newly added styles + 65% off lenses ",
+              "EASTER SAVINGS: Save $50 on frames priced $200+",
             ];
-      } else
-        if (
-          (checkDate >= "250508" && checkDate <= "250511") ||
-          (fdFncs.vars.isTest >= "250508" && fdFncs.vars.isTest <= "250511")
-        ) {
-          messages =
-            $(window).width() <= 768
-              ? [
-                "Up to <b>&nbsp; 40% off selected frames + 60% off lenses </b>",
-                "25% off <b>&nbsp; Michael Kors &nbsp;</b> & 60% off lenses",
-              ]
-              : [
-                "Mother’s Day Special: Up to <b>&nbsp; 40% off selected frames &nbsp;</b>+ up to <b>&nbsp; 60% off lenses </b>",
-                "25% off <b>&nbsp; Michael Kors &nbsp;</b> & 60% off lenses",
-              ];
-        } else
-          if (
-            (checkDate >= "250501" && checkDate <= "250507") ||
-            (fdFncs.vars.isTest >= "250501" && fdFncs.vars.isTest <= "250507")
-          ) {
-            messages =
-              $(window).width() <= 768
-                ? [
-                  "<b>40% off designer brands + up to 60% off lenses</b>",
-                  "<b>40% off sun lenses &nbsp;</b> by Oakley, Costa & Maui Jim",
-                  "20% off <b>Wiley X &nbsp;</b> frames & 60% off lenses",
-                  "25% off <b>&nbsp; Michael Kors &nbsp;</b> & 60% off lenses",
-                ]
-                : [
-                  "GET YOUR COMPLETE YOUR PAIR: <b>&nbsp; 40% off designer brands + up to 60% off lenses. &nbsp;</b>Includes designer brands ",
-                  "<b>40% off sun lenses &nbsp;</b> by Oakley, Costa & Maui Jim with code <b>&nbsp;SPECIAL40</b>",
-                  "20% off <b>&nbsp; Wiley X &nbsp;</b> frames & 60% off lenses",
-                  "25% off <b>&nbsp; Michael Kors &nbsp;</b> & 60% off lenses",
-                ];
-          } else
-            if (
-              (checkDate >= "250428" && checkDate <= "250430") ||
-              (fdFncs.vars.isTest >= "250428" && fdFncs.vars.isTest <= "250430")
-            ) {
-              messages =
-                $(window).width() <= 768
-                  ? [
-                    "<b>40% off designer brands + up to 60% off lenses</b>",
-                    "<b>40% off sun lenses &nbsp;</b> by Oakley, Costa & Maui Jim",
-                    "25% off <b>&nbsp; Michael Kors &nbsp;</b> & 60% off lenses",
-                  ]
-                  : [
-                    "GET YOUR COMPLETE YOUR PAIR: <b>&nbsp; 40% off designer brands + up to 60% off lenses. &nbsp;</b>Includes designer brands",
-                    "<b>40% off sun lenses &nbsp;</b> by Oakley, Costa & Maui Jim with code <b>&nbsp; SPECIAL40</b>",
-                    "25% off <b>&nbsp; Michael Kors &nbsp;</b> & 60% off lenses",
-                  ];
-            } else
-              if (
-                (checkDate >= "250417" && checkDate <= "250427") ||
-                (fdFncs.vars.isTest >= "250417" && fdFncs.vars.isTest <= "250427")
-              ) {
-                var messages;
-                if (getCookie("fdRecognized") !== undefined) {
-                  messages =
-                    $(window).width() <= 768
-                      ? [
-                        "Up to <b>&nbsp; 30% off frames + 65% off lenses</b>",
-                      ]
-                      : [
-                        "Members Week: Up to <b>&nbsp; 30% off frames + 65% off lenses</b>",
-                      ];
-                } else {
-                  //user not logged
-                  messages =
-                    $(window).width() <= 768
-                      ? [
-                        '30% lenses:&nbsp;<a href="javascript:addWelcomeLayer();" id="recSignUp" class="color-white weight-bold mx-1">Sign up</a>&nbsp;or&nbsp;<a href="#" id="recSignIn" class="siteSignIn color-white weight-bold mx-1">sign in</a>&nbsp;now',
-                      ]
-                      : [
-                        '20% off selected luxury brands or sign up to unlock 30% off top brands + 65% off lenses:&nbsp;<a href="javascript:addWelcomeLayer();" id="recSignUp" class="color-white weight-bold mx-1">Sign up</a>&nbsp;or&nbsp;<a href="#" id="recSignIn" class="siteSignIn color-white weight-bold mx-1">sign in</a>&nbsp;now',
-                      ];
-                }
-              }
-              else if (
-                (checkDate >= "250411" && checkDate <= "250416") ||
-                (fdFncs.vars.isTest >= "250411" && fdFncs.vars.isTest <= "250416")
-              ) {
-                messages =
-                  $(window).width() <= 768
-                    ? [
-                      "CLEARANCE: Up to 50% off + 65% off lenses  ",
-                      "EASTER SAVINGS: Save $50 on frames",
-                    ]
-                    : [
-                      "CLEARANCE: Up to 50% off clearance & sale frames. Explore 350+ newly added styles + 65% off lenses ",
-                      "EASTER SAVINGS: Save $50 on frames priced $200+",
-                    ];
-              } else if (
-                (checkDate >= "250407" && checkDate <= "250410") ||
-                (fdFncs.vars.isTest >= "250407" && fdFncs.vars.isTest <= "250410")
-              ) {
-                messages =
-                  $(window).width() <= 768
-                    ? ["FLASH SALE: Up to 50% off frames & 60% off lenses  "]
-                    : ["FLASH SALE: Up to 50% off frames & 60% off lenses until April 10 "];
-              } else {
-                messages =
-                  $(window).width() <= 768
-                    ? ["Up to 50% off frames + 65% off lenses"]
-                    : [
-                      "Up to 50% off selected frames + 65% off lenses",
-                    ];
-              }
+      } else if (
+        (checkDate >= "250407" && checkDate <= "250410") ||
+        (fdFncs.vars.isTest >= "250407" && fdFncs.vars.isTest <= "250410")
+      ) {
+        messages =
+          $(window).width() <= 768
+            ? ["FLASH SALE: Up to 50% off frames & 60% off lenses  "]
+            : ["FLASH SALE: Up to 50% off frames & 60% off lenses until April 10 "];
+      } else {
+        messages =
+          $(window).width() <= 768
+            ? ["Up to 50% off frames + 65% off lenses"]
+            : [
+              "Up to 50% off selected frames + 65% off lenses",
+            ];
+      }
   var currentMessageIndex = 0;
 
   // Function to update the banner message
@@ -170,18 +78,18 @@
     var countBnrMsg = messages[currentMessageIndex];
 
     // Add countdown only for the specific message
-    if (messages[currentMessageIndex].includes("Sign up")) {
+    if (messages[currentMessageIndex].includes("40% off frames")) {
       countBnrMsg +=
-        '<div id="countdown" class="d-flex justify-content-end pr-2 size-6 ml-3"><div id="countdown-clockworks-holder" class="d-flex"></div></div>';
+        '<div id="countdown" class="d-flex justify-content-end  size-6 "><div id="countdown-clockworks-holder" class="d-flex"></div></div>';
     }
 
     $("#count-bnr-inner").html(countBnrMsg);
 
     // Initialize the countdown if the specific message is active
     if (
-      (messages[currentMessageIndex].includes("Sign up") &&
-        checkDate === "250426") ||
-      fdFncs.vars.isTest === "250426"
+      (messages[currentMessageIndex].includes("40% off frames") &&
+        checkDate === "250526") ||
+      fdFncs.vars.isTest === "250526"
     ) {
       initializeCountdown();
     }
@@ -189,7 +97,7 @@
 
   // Function to initialize the countdown
   function initializeCountdown() {
-    var endDateLong = "04/27/2025"; // Set the end date for the countdown
+    var endDateLong = "05/27/2025"; // Set the end date for the countdown
     var digitBg = " white";
 
     $("#countdown-clockworks-holder").countdown(endDateLong, function (event) {
@@ -245,7 +153,7 @@
     countBnr = (function () {
       return (
         lnkStart +
-        '<div id="count-bnr-inner" style="height: 37px; color:white;" class="background-black ' +
+        '<div id="count-bnr-inner" style="height: 37px; color:white; font-size:13px;" class="background-black ' +
         bgColor +
         ' d-flex justify-content-center align-items-center">' +
         messages[currentMessageIndex] +
@@ -260,7 +168,7 @@
     ) {
       //Add CSS header padding when banner is running
       var css =
-        "#header-top { padding-top: 37px; } .scrollingHeader #header, .scrollingHeader #header-in { height: 133px; } .scrollingHeader #header-in.hide { transform : translateY(-133px); }",
+        "#header-top { padding-top: 37px; } .scrollingHeader #header, .scrollingHeader #header-in { height: 133px; } .scrollingHeader #header-in.hide { transform : translateY(-133px); } #countdown .dash .colon { margin-top: 5px !important; }",
         head = document.head || document.getElementsByTagName("head")[0],
         style = document.createElement("style");
       head.appendChild(style);
