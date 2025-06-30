@@ -50,17 +50,10 @@
 
   #dbFSA-Benefits {
     background: #D6F3E9 url('https://images.framesdirect.com/image/upload/v1742927431/insurance/using-benefits.png') right bottom / contain no-repeat;
-    min-height: 310px;
   }
 
   #dbFSA-Benefits.bg-green {
     border-radius: 0px;
-  }
-
-  @media screen and (max-width: 991px) {
-    #dbFSA-Benefits {
-      background-position: 390px bottom;
-    }
   }
 
   @media screen and (max-width: 900px) {
@@ -72,16 +65,17 @@
   @media screen and (max-width: 767px) {
     #dbFSA-Benefits {
       background-position: center bottom;
+      background-size: 300px;
       border-radius: 0;
     }
 
     #dbFSA-Benefits>div>div {
       text-align: center;
-      padding-bottom: 400px;
+      padding-bottom: 380px;
     }
 
     #dbFSA-Benefits .btn-cta {
-      width: 300px;
+      width: 305px;
     }
   }
 
@@ -857,7 +851,7 @@
 
   #homepage-content,
   #about-fd {
-    max-width: 91%;
+    max-width: 80%;
     margin: 0 auto;
   }
 
@@ -2444,13 +2438,15 @@
     }
   }
 
-  .ct_mob__hide {
-    display: none;
+  @media (max-width: 1023px) {
+    .ct_mob__hide {
+      display: none !important;
+    }
   }
 
   @media (min-width: 1023px) {
     .ct_desk__hide {
-      display: none;
+      display: none !important;
     }
   }
 

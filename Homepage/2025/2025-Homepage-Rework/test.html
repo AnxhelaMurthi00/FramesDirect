@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+        <div class="container-fluid p-0">
+            <div class="hero-banner d-flex flex-column justify-content-center align-items-center text-center">
+                <div class="hero-content text-dark">
+                    <h5 class="mb-2">Spring Flash Sale</h5>
+                    <h1 class="font-weight-bold mb-2">Up To 50% Off Frames</h1>
+                    <p class="mb-2 font-weight-bold">250+ New styles added to clearance.</p>
+                    <p class="mb-3">Don't wait! Sale ends April 6.</p>
+                    <h1 class="font-weight-bold mb-2">+<br>65% Off Lenses</h1>
+                    <p class="mb-3">Code: <b>EXTRA5</b></p>
+                    <a href="#" class="btn btn-danger">SAVE NOW</a>
+                </div>
+
+                <!-- 4 white boxes at bottom -->
+                <div class="info-boxes d-flex justify-content-center flex-wrap mt-4">
+                    <div class="info-box text-center p-3 m-2 position-relative">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/shipped.png" class="mb-2" alt="Shipping">
+                        <div>Free shipping available*</div>
+                        <a href="#" class="learn-more">Learn More</a>
+                    </div>
+                    <div class="info-box text-center p-3 m-2 position-relative">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/eye.png" class="mb-2" alt="Vision plan">
+                        <div>Use your vision plan. FSA & HSA included</div>
+                        <a href="#" class="learn-more">Learn More</a>
+                    </div>
+                    <div class="info-box text-center p-3 m-2 position-relative">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/technical-support.png" class="mb-2"
+                            alt="Support">
+                        <div>Expert care, always. Ask us anything</div>
+                        <a href="#" class="learn-more">Learn More</a>
+                    </div>
+                    <div class="info-box text-center p-3 m-2 position-relative">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/credit-card.png" class="mb-2"
+                            alt="Payment">
+                        <div>Pay with your favorite methods</div>
+                        <a href="#" class="learn-more">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .hero-banner {
+                background-image: url('https://images.framesdirect.com/image/upload/v1750836233/homePage/test2.png');
+                background-size: cover;
+                background-position: center;
+                color: #000;
+                min-height: 500px;
+                padding: 50px 15px;
+            }
+
+            .hero-content {
+                background: rgba(255, 255, 255, 0.7);
+                padding: 20px;
+                border-radius: 8px;
+                max-width: 600px;
+            }
+
+            .info-boxes {
+                width: 100%;
+                max-width: 1000px;
+                margin-top: 30px;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+
+            .info-box {
+                background: #fff;
+                border-radius: 8px;
+                min-width: 200px;
+                flex: 1 1 200px;
+                max-width: 220px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .info-box img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .learn-more {
+                display: block;
+                margin-top: 10px;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                color: #007bff;
+                font-weight: bold;
+                text-decoration: none;
+            }
+
+            .info-box:hover {
+                transform: translateY(-20px);
+            }
+
+            .info-box:hover .learn-more {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            /* Mobile Styles */
+            @media (max-width: 767.98px) {
+                .hero-banner {
+                    background: #fff;
+                    background-image: none;
+                    min-height: auto;
+                    padding: 30px 15px;
+                }
+
+                .hero-content {
+                    background: none;
+                    padding: 0;
+                }
+
+                .hero-banner h1,
+                .hero-banner p {
+                    color: #000;
+                }
+
+                .info-boxes {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .info-box {
+                    margin: 10px 0;
+                }
+            }
+        </style>
+
+    </body>
+
+</html>
