@@ -1,14 +1,14 @@
 <script>
   const updateHeroBanner = () => {
     if (
-      (checkDate >= "250707" && checkDate <= "250714") ||
-      (fdFncs.vars.isTest >= "250707" && fdFncs.vars.isTest <= "250714")
+      (checkDate >= "250707" && checkDate <= "250707") ||
+      (fdFncs.vars.isTest >= "250707" && fdFncs.vars.isTest <= "250707")
     ) {
       //hero slider promotion
       $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
       $("#hero-slider").append(
         `
-     <li>
+       <li>
  <style>
   #pb_200{
     padding-bottom: 200px;
@@ -41,21 +41,15 @@
    <div class="ct_assets__container">
      <picture class="ct_skeleton">
        <img
-         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjfPfy3n8GHIARnyQAMCAHaziWkKQAAAAASUVORK5CYII="
+         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdj/Pzu8X8GHIARnyQANP0HiSbhWk8AAAAASUVORK5CYII="
          alt="structure image" />
      </picture>
      <picture class="ct_img">
-       <img src="https://images.framesdirect.com/image/upload/v1750086884/homePage/HP_WILEYX_W28_D.png"
+       <img src="https://images.framesdirect.com/image/upload/v1747298953/homePage/HP_WILEYX_D.png"
          fetchpriority="high"
-         alt="The left is wearing Oakley sutro sunglasses, other is waering Coach eyeglasses" width="3840"
-         height="1108" usemap="#image-map2" />
+         alt=""
+         height="1108"/>
      </picture>
-     <map name="image-map2">
-       <area target="" alt="Oakley sutro sunglasses" title="Oakley sutro sunglasses"
-         href="/oakley-sutro-sunglasses?color=1" coords="1783,296,2542,601" shape="rect" />
-       <area target="" alt="Coach eyeglasses" title="Coach eyeglasses"
-         href="/coach-hc6065-eyeglasses?color=10015098" coords="2700,264,3459,569" shape="rect" />
-     </map>
    </div>
    <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0" id="willieXImg">
      <h1
@@ -203,67 +197,8 @@
 </div>
    </li>
 `
-          )
-          $("#hero-slider").append(
-            `
-     <li>
-<div class="ct_space">
-<div class="ct_banner ct_hero">
-<a href="/wiley-x/brand" aria-label="sale">
-<div class="ct_assets__container">
-<picture class="ct_skeleton">
-  <img
-    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjXKco/p8BB2DEJwkAmwIDzfz492EAAAAASUVORK5CYII="
-    alt="structure image" />
-</picture>
-  <picture class="ct_img">
-                <img src="https://images.framesdirect.com/image/upload/v1748848871/homePage/HP_wiley_week25.png" fetchpriority="
-                    high" alt="The Man is wearing Wiley X Romer II" width="3840"
-                    height="1108"  usemap="#image-map3" />
-            </picture>
-            <map name="image-map3" class="map-slider">
-                     <area target="" alt="Wiley X Romer II Sunglasses"
-                    title="Wiley X Romer II Sunglasses"
-                    href="/wiley-x-romer-iii-sunglasses" coords="2184,537,1329,191" shape="rect">
-                </map>
-</div>
-
-    <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pb__mob__30 " style="background: #AAB9C0; width: 35%"><div class="mt-4 mt-lg-0">
-                <img src="https://images.framesdirect.com/image/upload/v1748852523/logos/WX_logo_stacked_black_2.png" class="d-inline d-lg-none">
-  <div class="ct_font__mob_24 ct_font__24 ct_font__desk__24  ct_lh__sm ct_m__0 ct_mb__15 ct_mob__hide" style="font-weight:300">
-Tactical Meets Style
-  </div>
-
-  <div>
-    <p class="ct_font__mob_40 ct_font__40 ct_font__desk__40 weight-bold ct_m__0   pt-3">
-<span class="d-block d-sm-inline">
-  20% off <span class="d-inline d-lg-none">frames</span>
-</span>
-
-      <span class="d-block d-sm-inline ct_font__mob_32" style="line-height: 1;">
-        <img src="https://images.framesdirect.com/image/upload/v1748852523/logos/WX_logo_stacked_black_2.png" class="ct_mob__hide">
-
-</span>
-    </p>
-      <div class="ct_font__48 ct_font__mob_48 ct_font__desk__42 align-self-center ct_p__0"
-                            style="line-height: 1">
-                            +
-                        </div>
-    <p class="ct_font__mob_40 ct_font__40 ct_font__desk__40 ct_lh__sm weight-bold ct_m__0 ct_mb__20 ">
-up to <br class="d-lg-none d-block"> 60% off lenses
-    </p>
-  </div>
-  <a href="/wiley-x/brand" class=" btn-cta ct_m__mob__10 ct_mb__mob__50 ct_mt__30 "    style="background:#AB2317; color: #fff !important; border: 0">
-   SHOP THE DEAL
-  </a>
-</div>
- 
-</div>
-</a>
-</div>
-</div>
-   </li>`
           );
+
         } else
           if (
             (checkDate >= "250612" && checkDate <= "250615") ||
@@ -2215,6 +2150,7 @@ style="min-height: 176px; background: #C5CEC1 !important; color: #2d3547;"
     }
   };
 
+
   const updateRayBanBanner = () => {
     let rayBanBanner;
     if (
@@ -3053,6 +2989,43 @@ style="min-height: 176px; background: #C5CEC1 !important; color: #2d3547;"
         });
       };
     });
+  setTimeout(() => {
+    (function () {
+      function checkElements() {
+        const heroSlider = document.getElementById('hero-slider');
+        const prevArrow = document.querySelector('.lSPrev');
+        const nextArrow = document.querySelector('.lSNext');
+
+        if (!heroSlider || !prevArrow || !nextArrow) {
+          setTimeout(checkElements, 100);
+          return;
+        }
+
+        function updateArrowVisibility() {
+          const slides = document.querySelectorAll('#hero-slider .lslide');
+          const activeSlide = document.querySelector('#hero-slider .lslide.active');
+
+          if (!slides.length || !activeSlide) return;
+
+          prevArrow.style.display = slides[0] === activeSlide ? 'none' : 'block';
+          nextArrow.style.display = slides[slides.length - 1] === activeSlide ? 'none' : 'block';
+        }
+
+        updateArrowVisibility();
+
+        const observer = new MutationObserver(updateArrowVisibility);
+        observer.observe(heroSlider, {
+          attributes: true,
+          childList: true,
+          subtree: true
+        });
+
+        heroSlider.addEventListener('transitionend', updateArrowVisibility);
+      }
+
+      checkElements();
+    })();
+  }, 800);
 
   /* UTILS */
   function isTestingParameter(date) {
@@ -3060,4 +3033,140 @@ style="min-height: 176px; background: #C5CEC1 !important; color: #2d3547;"
     return url.includes(`?test=true&date=${date}`);
   }
   /* END UTILS*/
+  const track = document.getElementById('carouselTrackcard');
+  const nextBtn = document.getElementById('nextBtn');
+  const prevBtn = document.getElementById('prevBtn');
+  const progressBar = document.getElementById('progressBar');
+
+  const cardWidth = 275 + 20;
+  let scrollAmount = 0;
+  let scrollIndex = 0;
+  const totalCards = track.children.length;
+
+
+  const maxScrollAmount = track.scrollWidth - track.clientWidth;
+
+
+  prevBtn.style.display = 'none';
+
+  function updateProgressBar() {
+    const percent = (scrollAmount / maxScrollAmount) * 100;
+    progressBar.style.width = `${Math.min(percent, 100)}%`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    if (scrollAmount + cardWidth <= maxScrollAmount) {
+      scrollAmount += cardWidth;
+      scrollIndex++;
+      track.style.transform = `translateX(-${scrollAmount}px)`;
+    } else {
+
+      scrollAmount = maxScrollAmount;
+      scrollIndex = totalCards - 1;
+      track.style.transform = `translateX(-${scrollAmount}px)`;
+    }
+
+
+    prevBtn.style.display = scrollAmount > 0 ? 'block' : 'none';
+    nextBtn.style.display = scrollAmount >= maxScrollAmount ? 'none' : 'block';
+    updateProgressBar();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (scrollAmount - cardWidth >= 0) {
+      scrollAmount -= cardWidth;
+      scrollIndex--;
+      track.style.transform = `translateX(-${scrollAmount}px)`;
+    } else {
+      scrollAmount = 0;
+      scrollIndex = 0;
+      track.style.transform = `translateX(0)`;
+    }
+
+
+    prevBtn.style.display = scrollAmount > 0 ? 'block' : 'none';
+    nextBtn.style.display = scrollAmount >= maxScrollAmount ? 'none' : 'block';
+    updateProgressBar();
+  });
+
+
+  window.addEventListener('resize', () => {
+
+    const newMaxScroll = track.scrollWidth - track.clientWidth;
+    scrollAmount = Math.min(scrollAmount, newMaxScroll);
+    track.style.transform = `translateX(-${scrollAmount}px)`;
+    updateProgressBar();
+
+    prevBtn.style.display = scrollAmount > 0 ? 'block' : 'none';
+    nextBtn.style.display = scrollAmount >= newMaxScroll ? 'none' : 'block';
+  });
+
+  const carouselImages = [
+    {
+      src: "https://www.framesdirect.com/product_elarge_images/Versace-VE1285-Black-1443-Eyeglasses.jpg",
+      alt: "Versace Glasses - Front View"
+    },
+    {
+      src: "https://www.framesdirect.com/product_elarge_images/Versace-VE1285-Black-1443-Eyeglasses-fr.jpg",
+      alt: "Versace Glasses - Side View"
+    },
+    {
+      src: "https://www.framesdirect.com/product_elarge_images/Versace-VE1285-Black-1443-Eyeglasses-sd.jpg",
+      alt: "Versace Glasses - Detail View"
+    }
+  ];
+
+  let currentImageIndex = 0;
+  const carouselImage = document.getElementById('carouselImage');
+  const prevBtnLens = document.getElementById('prevBtnLens');
+  const nextBtnLens = document.getElementById('nextBtnLens');
+  function goToImage(index) {
+    if (index >= 0 && index < carouselImages.length) {
+      currentImageIndex = index;
+      carouselImage.src = carouselImages[currentImageIndex].src;
+      carouselImage.alt = carouselImages[currentImageIndex].alt;
+      nextBtnLens.style.background = "white"
+      prevBtnLens.style.background = "white"
+
+    }
+  }
+
+
+  function prevImageLens() {
+
+    if (currentImageIndex > 0) {
+
+      goToImage(currentImageIndex - 1);
+      if (currentImageIndex === 0) {
+        prevBtnLens.style.background = "gray";
+      }
+    }
+  }
+  function nextImageLens() {
+    if (currentImageIndex < carouselImages.length - 1) {
+      goToImage(currentImageIndex + 1);
+
+      if (currentImageIndex === carouselImages.length - 1) {
+        nextBtnLens.style.background = "gray";
+      }
+
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const container = document.querySelector('.info-boxes-container');
+    const progressBar = document.querySelector('.slider-progress-bar');
+
+    if (container && progressBar) {
+      container.addEventListener('scroll', function () {
+
+        const scrollWidth = container.scrollWidth - container.clientWidth;
+        const scrollPosition = container.scrollLeft;
+        const progress = (scrollPosition / scrollWidth) * 75;
+        progressBar.style.width = `${25 + progress}%`;
+      });
+    }
+  });
+
+
 </script>

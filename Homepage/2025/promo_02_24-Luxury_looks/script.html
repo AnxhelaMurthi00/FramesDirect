@@ -1506,4 +1506,183 @@ $(window)
     return url.includes(`?test=true&date=${date}`);
   }
   /* END UTILS*/
+const products = [
+    {
+      title: "Burberry 2025",
+      description: "Burberry eyewear blends refined elegance and bold design, pairing modern fashion influences with vintage-inspired glamour. Discover now.",
+      thumbnail: "https://media.contactsdirect.com/2025/Jj_landing_page/product2.png",
+      mainImage: "https://media.contactsdirect.com/2025/Jj_landing_page/product1.png",
+      price: "$200",
+      originalPrice: "$249"
+    },
+    {
+      title: "Ray-Ban Classic",
+      description: "Timeless style meets modern comfort. Ray-Ban's iconic frames fit any occasion.",
+      thumbnail: "https://media.contactsdirect.com/2025/Jj_landing_page/product3.png",
+      mainImage: "https://media.contactsdirect.com/2025/Jj_landing_page/product4.png",
+      price: "$180",
+      originalPrice: "$210"
+    },
+    {
+      title: "Oakley Performance",
+      description: "Engineered for precision, Oakley eyewear redefines clarity and durability in extreme conditions.",
+      thumbnail: "https://media.contactsdirect.com/2025/Jj_landing_page/product2.png",
+      mainImage: "https://media.contactsdirect.com/2025/Jj_landing_page/product3.png",
+      price: "$220",
+      originalPrice: "$260"
+    }
+  ];
+
+  let currentIndex = 0;
+
+  function updateProduct() {
+    const product = products[currentIndex];
+    document.getElementById("product-title").innerText = product.title;
+    document.getElementById("product-description").innerText = product.description;
+    document.getElementById("product-thumbnail").src = product.thumbnail;
+    document.getElementById("product-main-image").src = product.mainImage;
+    document.getElementById("product-price").innerHTML =
+      `<del class="text-muted mr-2">${product.originalPrice}</del> <span class="text-dark font-weight-bold">${product.price}</span>`;
+  }
+
+  function changeProduct(direction) {
+    currentIndex = (currentIndex + direction + products.length) % products.length;
+    updateProduct();
+  }
+  const track = document.getElementById('carouselTrackcard');
+  const nextBtn = document.getElementById('nextBtn');
+  const prevBtn = document.getElementById('prevBtn');
+  const progressBar = document.getElementById('progressBar');
+
+  const cardWidth = 263.1 + 20;
+  let scrollAmount = 0;
+  let scrollIndex = 0;
+  const totalCards = track.children.length;
+
+
+  const maxScrollAmount = track.scrollWidth - track.clientWidth;
+
+
+  prevBtn.style.display = 'none';
+
+  function updateProgressBar() {
+    const percent = (scrollAmount / maxScrollAmount) * 100;
+    progressBar.style.width = `${Math.min(percent, 100)}%`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    if (scrollAmount + cardWidth <= maxScrollAmount) {
+      scrollAmount += cardWidth;
+      scrollIndex++;
+      track.style.transform = `translateX(-${scrollAmount}px)`;
+    } else {
+
+      scrollAmount = maxScrollAmount;
+      scrollIndex = totalCards - 1;
+      track.style.transform = `translateX(-${scrollAmount}px)`;
+    }
+
+
+    prevBtn.style.display = scrollAmount > 0 ? 'block' : 'none';
+    nextBtn.style.display = scrollAmount >= maxScrollAmount ? 'none' : 'block';
+    updateProgressBar();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (scrollAmount - cardWidth >= 0) {
+      scrollAmount -= cardWidth;
+      scrollIndex--;
+      track.style.transform = `translateX(-${scrollAmount}px)`;
+    } else {
+      scrollAmount = 0;
+      scrollIndex = 0;
+      track.style.transform = `translateX(0)`;
+    }
+
+
+    prevBtn.style.display = scrollAmount > 0 ? 'block' : 'none';
+    nextBtn.style.display = scrollAmount >= maxScrollAmount ? 'none' : 'block';
+    updateProgressBar();
+  });
+
+
+  window.addEventListener('resize', () => {
+
+    const newMaxScroll = track.scrollWidth - track.clientWidth;
+    scrollAmount = Math.min(scrollAmount, newMaxScroll);
+    track.style.transform = `translateX(-${scrollAmount}px)`;
+    updateProgressBar();
+
+    prevBtn.style.display = scrollAmount > 0 ? 'block' : 'none';
+    nextBtn.style.display = scrollAmount >= newMaxScroll ? 'none' : 'block';
+  });
+
+  /*Single product display*/
+
+  const carouselImages = [
+    {
+      src: "https://www.framesdirect.com/product_elarge_images/Versace-VE1285-Black-1443-Eyeglasses.jpg",
+      alt: "Versace Glasses - Front View"
+    },
+    {
+      src: "https://www.framesdirect.com/product_elarge_images/Versace-VE1285-Black-1443-Eyeglasses-fr.jpg",
+      alt: "Versace Glasses - Side View"
+    },
+    {
+      src: "https://www.framesdirect.com/product_elarge_images/Versace-VE1285-Black-1443-Eyeglasses-sd.jpg",
+      alt: "Versace Glasses - Detail View"
+    }
+  ];
+
+  let currentImageIndex = 0;
+  const carouselImage = document.getElementById('carouselImage');
+  const prevBtnLens = document.getElementById('prevBtnLens');
+  const nextBtnLens = document.getElementById('nextBtnLens');
+  function goToImage(index) {
+    if (index >= 0 && index < carouselImages.length) {
+      currentImageIndex = index;
+      carouselImage.src = carouselImages[currentImageIndex].src;
+      carouselImage.alt = carouselImages[currentImageIndex].alt;
+      nextBtnLens.style.background = "white"
+      prevBtnLens.style.background = "white"
+
+    }
+  }
+
+
+  function prevImageLens() {
+
+    if (currentImageIndex > 0) {
+
+      goToImage(currentImageIndex - 1);
+      if (currentImageIndex === 0) {
+        prevBtnLens.style.background = "gray";
+      }
+    }
+  }
+  function nextImageLens() {
+    if (currentImageIndex < carouselImages.length - 1) {
+      goToImage(currentImageIndex + 1);
+
+      if (currentImageIndex === carouselImages.length - 1) {
+        nextBtnLens.style.background = "gray";
+      }
+
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const container = document.querySelector('.info-boxes-container');
+    const progressBar = document.querySelector('.slider-progress-bar');
+
+    if (container && progressBar) {
+      container.addEventListener('scroll', function () {
+
+        const scrollWidth = container.scrollWidth - container.clientWidth;
+        const scrollPosition = container.scrollLeft;
+        const progress = (scrollPosition / scrollWidth) * 75;
+        progressBar.style.width = `${25 + progress}%`;
+      });
+    }
+  });
 </script>

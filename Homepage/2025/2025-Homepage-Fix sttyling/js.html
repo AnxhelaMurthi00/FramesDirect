@@ -1,14 +1,14 @@
 <script>
   const updateHeroBanner = () => {
     if (
-      (checkDate >= "250707" && checkDate <= "250714") ||
-      (fdFncs.vars.isTest >= "250707" && fdFncs.vars.isTest <= "250714")
+      (checkDate >= "250707" && checkDate <= "250707") ||
+      (fdFncs.vars.isTest >= "250707" && fdFncs.vars.isTest <= "250707")
     ) {
       //hero slider promotion
       $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
       $("#hero-slider").append(
         `
-     <li>
+       <li>
  <style>
   #pb_200{
     padding-bottom: 200px;
@@ -41,21 +41,15 @@
    <div class="ct_assets__container">
      <picture class="ct_skeleton">
        <img
-         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjfPfy3n8GHIARnyQAMCAHaziWkKQAAAAASUVORK5CYII="
+         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdj/Pzu8X8GHIARnyQANP0HiSbhWk8AAAAASUVORK5CYII="
          alt="structure image" />
      </picture>
      <picture class="ct_img">
-       <img src="https://images.framesdirect.com/image/upload/v1750086884/homePage/HP_WILEYX_W28_D.png"
+       <img src="https://images.framesdirect.com/image/upload/v1747298953/homePage/HP_WILEYX_D.png"
          fetchpriority="high"
-         alt="The left is wearing Oakley sutro sunglasses, other is waering Coach eyeglasses" width="3840"
-         height="1108" usemap="#image-map2" />
+         alt=""
+         height="1108"/>
      </picture>
-     <map name="image-map2">
-       <area target="" alt="Oakley sutro sunglasses" title="Oakley sutro sunglasses"
-         href="/oakley-sutro-sunglasses?color=1" coords="1783,296,2542,601" shape="rect" />
-       <area target="" alt="Coach eyeglasses" title="Coach eyeglasses"
-         href="/coach-hc6065-eyeglasses?color=10015098" coords="2700,264,3459,569" shape="rect" />
-     </map>
    </div>
    <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0" id="willieXImg">
      <h1
@@ -3046,7 +3040,7 @@ style="min-height: 176px; background: #C5CEC1 !important; color: #2d3547;"
 
   const cardWidth = 275 + 20;
   let scrollAmount = 0;
-  let scrollIndex = 0;
+  let scrollIndex = -1;
   const totalCards = track.children.length;
 
 
@@ -3056,8 +3050,8 @@ style="min-height: 176px; background: #C5CEC1 !important; color: #2d3547;"
   prevBtn.style.display = 'none';
 
   function updateProgressBar() {
-    const percent = (scrollAmount / maxScrollAmount) * 100;
-    progressBar.style.width = `${Math.min(percent, 100)}%`;
+    const percent = (scrollAmount / maxScrollAmount) * 75;
+    progressBar.style.width = `${25 + percent}%`;
   }
 
   nextBtn.addEventListener('click', () => {
@@ -3093,6 +3087,18 @@ style="min-height: 176px; background: #C5CEC1 !important; color: #2d3547;"
     prevBtn.style.display = scrollAmount > 0 ? 'block' : 'none';
     nextBtn.style.display = scrollAmount >= maxScrollAmount ? 'none' : 'block';
     updateProgressBar();
+  });
+
+
+  window.addEventListener('resize', () => {
+
+    const newMaxScroll = track.scrollWidth - track.clientWidth;
+    scrollAmount = Math.min(scrollAmount, newMaxScroll);
+    track.style.transform = `translateX(-${scrollAmount}px)`;
+    updateProgressBar();
+
+    prevBtn.style.display = scrollAmount > 0 ? 'block' : 'none';
+    nextBtn.style.display = scrollAmount >= newMaxScroll ? 'none' : 'block';
   });
 
 
