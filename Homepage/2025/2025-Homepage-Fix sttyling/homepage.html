@@ -3,8 +3,60 @@
 </h1>
 <!-- HERO BANNER -->
 <style>
+    /* Add this CSS */
+    .see-brands-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgba(255, 255, 255, 0.7);
+        padding: 2px 8px;
+        border-radius: 10px;
+        font-size: 12px;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    /* Hide card bottom by default on mobile */
+    @media (max-width: 767px) {
+
+        .eyewear-card.active .card-bottom {
+            display: block;
+        }
+    }
+
+    .selection .btn {
+        margin-top: auto;
+        width: 160px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .selection .card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    a.btn.btn-outline-dark.weight-bold.btn-sm.mb-4 {
+        border-color: rgba(107, 119, 123, 1);
+    }
+
+    .selection .card-body {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .selection .card-body p {
+        margin-bottom: 0.5rem;
+    }
+
+    .selection .btn {
+        margin-top: auto;
+    }
+
     .lSAction>.lSNext:before {
-        margin-left: 2px !important;
+        margin-left: 7px !important;
     }
 
     .lSAction>.lSPrev:before {
@@ -27,7 +79,7 @@
     /* From 1200px to 1500px */
     @media (min-width: 1200px) and (max-width: 1400px) {
         #hero-slider {
-            height: 470px !important;
+            height: 450px !important;
         }
     }
 
@@ -53,39 +105,12 @@
     }
 
     .ct_img img {
-        height: 505px !important;
+        height: auto !important;
     }
 
-    /* From 1200px to 1500px */
-    @media (min-width: 1200px) and (max-width: 1400px) {
-        .ct_img img {
-            height: 470px !important;
-        }
-    }
-
-    /* From 1200px to 1500px */
-    @media (min-width: 1401px) and (max-width: 1500px) {
-        .ct_img img {
-            height: 505px !important;
-        }
-    }
-
-    /* From 1501px to 1800px */
-    @media (min-width: 1501px) and (max-width: 1800px) {
-        .ct_img img {
-            height: 605px !important;
-        }
-    }
-
-    /* From 1801px and above */
-    @media (min-width: 1801px) {
-        .ct_img img {
-            height: 800px !important;
-        }
-    }
 
     .info-boxes-wrapper {
-        margin-top: -40px;
+        margin-top: -54px;
         padding: 15px 0;
         z-index: 10;
         position: relative;
@@ -102,7 +127,7 @@
 
     .info-box {
         background: white;
-        padding: 10px;
+        padding: 5px;
         text-align: center;
         width: 18%;
         max-width: 250px;
@@ -323,12 +348,16 @@
     }
 
     #prevBtnLens {
-        box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.4), 0 3px 6px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 23.56px 47.13px 0px rgba(96, 97, 112, 0.16);
+
+        box-shadow: 0px 5.89px 11.78px 0px rgba(40, 41, 61, 0.04);
 
     }
 
     #nextBtnLens {
-        box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.4), 0 3px 6px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 23.56px 47.13px 0px rgba(96, 97, 112, 0.16);
+
+        box-shadow: 0px 5.89px 11.78px 0px rgba(40, 41, 61, 0.04);
 
     }
 
@@ -546,29 +575,18 @@
         height: 100%;
     }
 
-
     #eyewear-prices {
         background-color: #F1EDE3;
-        margin-top: 40px;
     }
 
-    .eyewear-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
 
-    .eyewear-card-bottom:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
 
-    .decoration {
-        text-decoration: none !important;
-    }
 
-    .h-100 {
-        height: 100%;
-    }
+    /* .selection {
+        padding-left: 64px;
+        padding-right: 64px;
+
+    } */
 
     .card-top {
         color: black;
@@ -586,7 +604,7 @@
     }
 
     .category-title {
-        font-size: 1.3rem;
+        font-size: 1rem;
         font-weight: bold;
         margin-bottom: 5px;
     }
@@ -596,7 +614,7 @@
         color: black;
         padding: 2px 8px;
         border-radius: 15px;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         display: inline-block;
         margin-bottom: 8px;
     }
@@ -632,7 +650,7 @@
 
     .price-container {
         position: relative;
-        text-align: center;
+        text-align: left;
         padding-top: 10px;
     }
 
@@ -667,34 +685,24 @@
 
         .eyewear-card {
             height: auto;
-            max-height: 140px;
-            /* overflow: hidden; */
-            transition: none;
-            overflow: visible !important;
+            max-height: auto;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out !important;
         }
 
         .eyewear-card:hover,
         .eyewear-card:focus,
         .eyewear-card.active {
-            transition: none !important;
-            transform: none !important;
+            max-height: 315px;
+            margin-bottom: 30px;
+            transition: max-height 0.5s ease-in-out !important;
         }
 
-        .eyewear-card-bottom:hover,
-        .eyewear-card-bottom:focus,
-        .eyewear-card-bottom.active {
-            transition: none !important;
-            transform: none !important;
+        .active {
+            max-height: 315px !important;
         }
 
-        .eyewear-card-bottom {
-            max-height: 300px;
 
-        }
-
-        /* .eyewear-card.active {
-            max-height: 300px;
-        } */
     }
 
     .img-radius {
@@ -713,14 +721,14 @@
     @media (min-width: 1400px) {
         #firstHeroImg {
             width: auto;
-            left: 37%;
+            left: 33%;
         }
     }
 
     @media (min-width: 1200px) and (max-width: 1439px) {
         #firstHeroImg {
             width: auto;
-            left: 35%;
+            left: 31%;
         }
     }
 
@@ -745,7 +753,6 @@
 
     .info-box {
         background: white;
-        padding: 10px;
         text-align: center;
         width: 18%;
         max-width: 250px;
@@ -883,6 +890,22 @@
 
     }
 
+    .cardStyle:hover {
+        .display {
+            display: block;
+        }
+
+    }
+
+    /* .cardStyle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 324px;
+        padding: 16px;
+        text-align: center;
+    } */
+
     .display {
         display: none;
     }
@@ -994,7 +1017,8 @@
                     </map>
                 </div>
 
-                <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0 pb-3" id="firstHeroImg">
+                <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0 " style="padding-bottom:4rem;"
+                    id="firstHeroImg">
                     <h1
                         class="ct_font__26 ct_font__desk__26 ct_font__mob_24 weight-normal ct_lh__sm ct_mb__mob__15 ct_mt__mob__40">
                         Complete Pair, Summer Deal
@@ -1006,10 +1030,8 @@
                         </h1>
                         <span class="ct_font__mob_18 ct_font__18 ct_m__10 ct_font__desk__18">
                             Directly applied at checkout.
-                        </span>
-                        <p class="ct_m__0 ct_font__18">
                             Includes designer brands.
-                        </p>
+                        </span>
                         <div class="ct_font__48 ct_font__mob_48 ct_font__desk__42 align-self-center ct_p__0"
                             style="line-height: 1">
                             +
@@ -1143,7 +1165,7 @@
 <div id="homepage-content">
     <!-- SECONDARY BANNER -->
     <div id="firstInsuranceBanner" class="mb-4 pt-3 mt-5 mx-64" style="border-radius: 32px;">
-        <div class="col-12 col-md-7 col-lg-8 ml-sm-auto text-center text-md-left p-3 bg-green">
+        <div class="col-12 col-md-7 col-lg-8 ml-sm-auto text-center text-md-left p-3 bg-green mt-lg-5">
             <h2 class="size-14 mt-4 mb-0">Purchasing with insurance, made easy.</h2>
             <p class="mt-0">This is our promise to you. We accept most vision insurance plans, both in and
                 out-of-network.</p>
@@ -1188,7 +1210,8 @@ More">Learn
                         <div class="card-body text-center px-0">
                             <p class="weight-bold ct_font__16" style="color: #333333;">The Wayfarer Puffer by A$AP ROCKY
                             </p>
-                            <p class="ct_font__14">The most iconic sunglasses in history, blending art and fashion with
+                            <p class="ct_font__14 pb-3">The most iconic sunglasses in history, blending art and fashion
+                                with
                                 a hip-hop edge.</p>
                             <a href="/ray-ban/brand" class="btn btn-outline-dark weight-bold btn-sm text-secondary mb-4"
                                 style="color: #6B777B !important;">SHOP NOW</a>
@@ -1231,8 +1254,8 @@ More">Learn
                         </a>
                         <div class="card-body text-center px-0">
                             <p class="weight-bold ct_font__16" style="color: #333333;">Offers Hub</p>
-                            <p class="ct_font__14">Don’t miss our best deals on glasses and lenses.</p>
-                            <a href="#" class="btn btn-outline-dark weight-bold btn-sm mb-4"
+                            <p class="ct_font__14">Don’t miss our best deals on glasses and <br>lenses.</p>
+                            <a href="/promotions" class="btn btn-outline-dark weight-bold btn-sm mb-4"
                                 style="color: #6B777B !important;">VIEW ALL</a>
                         </div>
                     </div>
@@ -1245,7 +1268,199 @@ More">Learn
 
 
 
-    <div class="container py-5" id="eyewear-prices">
+    <div class="container py-5 ct_desk__hide" id="eyewear-prices">
+        <h1 class="text-center mb-5 ct_font__24 weight-bold" style="color: #333333;">Branded eyewear for every <br
+                class="ct_desk__hide">price</h1>
+
+        <div class="row mr-1 ml-1 ml-lg-5 mr-lg-5">
+            <!-- Best value for money -->
+            <div class="col-md-6 col-lg-3">
+                <div class="eyewear-card  mb-md-0 active">
+
+                    <div class="card-top" style="background-color: #FDFAF3;">
+                        <div class="see-brands-btn" onclick="toggleBrands(this)">See brands</div>
+                        <div class="category-title">Best value for money</div>
+                        <div class="savings-badge">starting at</div>
+                        <div class="price-container">
+                            <span class="dollar-sign">$</span>
+                            <div class="price-number">40</div>
+                        </div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="branded-logos">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-6  d-flex justify-content-center align-items-center">
+                                        <img src="https://images.framesdirect.com/image/upload/v1750931087/logos/wilie-x-hp-logo.png"
+                                            class="img-fluid" alt="Wilie X">
+                                    </div>
+                                    <div class="col-6  d-flex justify-content-center align-items-center">
+                                        <img src="https://images.framesdirect.com/image/upload/v1750931088/logos/ralph-lauren-hp-logo.png"
+                                            class="img-fluid" alt="Ralph Lauren">
+                                    </div>
+                                    <div class="col-6  d-flex justify-content-center align-items-center">
+                                        <img src="https://images.framesdirect.com/image/upload/v1750931088/logos/bliz-hp-logo.png"
+                                            class="img-fluid" alt="Bliz">
+                                    </div>
+                                    <div class="col-6  d-flex justify-content-center align-items-center">
+                                        <img src="https://images.framesdirect.com/image/upload/v1750931088/logos/nike-hp-logo.png"
+                                            class="img-fluid" alt="Nike">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/eyewear-from-40-dp" class="d-flex justify-content-center weight-bold">Shop now</a>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- On-Trend Favorites -->
+            <div class="col-md-6 col-lg-3">
+
+                <div class="eyewear-card ">
+
+                    <div class="card-top" style=" background-color:#D3BDAF">
+                        <div class="see-brands-btn" onclick="toggleBrands(this)">See brands</div>
+                        <div class="category-title">On-Trend Favorites</div>
+                        <div class="savings-badge">starting at</div>
+                        <div class="price-container">
+                            <span class="dollar-sign">$</span>
+                            <div class="price-number">99</div>
+                        </div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="branded-logos">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-6  d-flex justify-content-center align-items-center">
+                                        <img src="https://images.framesdirect.com/image/upload/v1750931087/logos/costa-hp-logo.png"
+                                            class="img-fluid" alt="Costa">
+                                    </div>
+                                    <div class="col-6  d-flex justify-content-center align-items-center">
+                                        <img src="https://images.framesdirect.com/image/upload/v1750931088/logos/michael-kors-hp-logo.png"
+                                            class="img-fluid" alt="Michael Kors">
+                                    </div>
+                                    <div class="col-6  d-flex justify-content-center align-items-center">
+                                        <img src="https://images.framesdirect.com/image/upload/v1750931087/logos/easy-clip-hp-logo.png"
+                                            class="img-fluid" alt="Easy Clip">
+                                    </div>
+                                    <div class="col-6  d-flex justify-content-center align-items-center">
+                                        <img src="https://images.framesdirect.com/image/upload/v1750931087/logos/oakley-hp-logo.png"
+                                            class="img-fluid" alt="Oakley">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/eyewear-from-99-dp" class="d-flex justify-content-center weight-bold">Shop now</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Elevated Essentials -->
+            <div class="col-md-6 col-lg-3">
+
+                <div class="eyewear-card ">
+
+                    <div class="card-top" style="background-color: #CABEA5;">
+                        <div class="see-brands-btn" onclick="toggleBrands(this)">See brands</div>
+                        <div class="category-title">Elevated Essentials</div>
+                        <div class="savings-badge">starting at</div>
+                        <div class="price-container">
+                            <span class="dollar-sign">$</span>
+                            <div class="price-number">150</div>
+                        </div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="branded-logos">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-6  d-flex justify-content-center align-items-center">
+                                        <img src="https://images.framesdirect.com/image/upload/v1750931087/logos/ray-ban-hp-logo.png"
+                                            class="img-fluid" alt="Ray-Ban">
+                                    </div>
+                                    <div class="col-6  d-flex justify-content-center align-items-center">
+                                        <img src="https://images.framesdirect.com/image/upload/v1750931088/logos/michael-kors-hp-logo.png"
+                                            class="img-fluid" alt="Michael Kors">
+                                    </div>
+                                    <div class="col-6  d-flex justify-content-center align-items-center">
+                                        <img src="https://images.framesdirect.com/image/upload/v1750931087/logos/easy-clip-hp-logo.png"
+                                            class="img-fluid" alt="Esy Clip">
+                                    </div>
+                                    <div class="col-6  d-flex justify-content-center align-items-center">
+                                        <img src="https://images.framesdirect.com/image/upload/v1750931087/logos/oakley-hp-logo.png"
+                                            class="img-fluid" alt="Oakley">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/eyewear-from-150-dp" class="d-flex justify-content-center weight-bold">Shop now</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Premium brands -->
+            <div class="col-md-6 col-lg-3">
+                <div class="eyewear-card-bottom">
+                    <div class="card-top" style="background-color: #A29886;">
+                        <div class="see-brands-btn" onclick="toggleBrands(this)">See brands</div>
+                        <div class="category-title">Premium brands</div>
+                        <div class="savings-badge">starting at</div>
+                        <div class="price-container">
+                            <span class="dollar-sign">$</span>
+                            <div class="price-number">200</div>
+                        </div>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="branded-logos">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-6  d-flex justify-content-center align-items-center">
+                                        <img src="https://images.framesdirect.com/image/upload/v1750931088/logos/ralph-lauren-hp-logo.png"
+                                            class="img-fluid" alt="Ralph Lauren">
+                                    </div>
+                                    <div class="col-6  d-flex justify-content-center align-items-center">
+                                        <img src="https://images.framesdirect.com/image/upload/v1750931088/logos/bliz-hp-logo.png"
+                                            class="img-fluid" alt="Bliz">
+                                    </div>
+                                    <div class="col-6  d-flex justify-content-center align-items-center">
+                                        <img src="https://images.framesdirect.com/image/upload/v1750931088/logos/nike-hp-logo.png"
+                                            class="img-fluid" alt="Nike">
+                                    </div>
+                                    <div class="col-6  d-flex justify-content-center align-items-center">
+                                        <img src="https://images.framesdirect.com/image/upload/v1750931088/logos/michael-kors-hp-logo.png"
+                                            class="img-fluid" alt="Michael Kors">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/eyewear-from-200-dp" class="d-flex justify-content-center weight-bold">Shop now</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="text-center my-4 ml-3  mt-lg-4 mt-5">
+            <a href="/eyeglasses" class="btn btn-custom mx-2 grey-btn weight-bold">
+                SHOP EYEGLASSES
+            </a>
+            <a href="/prescription-sunglasses" class="btn btn-custom mx-2 grey-btn weight-bold">
+                SHOP PRESCRIPTION SUNGLASSES
+            </a>
+            <a href="/sunglasses" class="btn btn-custom mx-2 grey-btn weight-bold">
+                SHOP SUNGLASSES
+            </a>
+        </div>
+
+    </div>
+
+
+    <div class="container py-5 ct_mob__hide" id="eyewear-prices">
         <h1 class="text-center mb-5 ct_font__24 weight-bold" style="color: #333333;">Branded eyewear for every <br
                 class="ct_desk__hide">price</h1>
 
@@ -1350,7 +1565,7 @@ More">Learn
                             </div>
                         </div>
                         <div class="card-bottom">
-                            <div class="branded-logos" style="height:114px">
+                            <div class="branded-logos">
                                 <div class="container-fluid">
                                     <div class="row">
                                         <div class="col-6  d-flex justify-content-center align-items-center">
@@ -1358,16 +1573,16 @@ More">Learn
                                                 class="img-fluid" alt="Ray-Ban">
                                         </div>
                                         <div class="col-6  d-flex justify-content-center align-items-center">
-                                            <img src="https://images.framesdirect.com/image/upload/v1751448550/logos/diesel-hp-logo.png"
-                                                class="img-fluid" alt="Diesel">
+                                            <img src="https://images.framesdirect.com/image/upload/v1750931088/logos/michael-kors-hp-logo.png"
+                                                class="img-fluid" alt="Michael Kors">
                                         </div>
                                         <div class="col-6  d-flex justify-content-center align-items-center">
-                                            <img src="https://images.framesdirect.com/image/upload/v1751448566/logos/coach-hp-logo.png"
-                                                class="img-fluid" alt="Coach">
+                                            <img src="https://images.framesdirect.com/image/upload/v1750931087/logos/easy-clip-hp-logo.png"
+                                                class="img-fluid" alt="Esy Clip">
                                         </div>
                                         <div class="col-6  d-flex justify-content-center align-items-center">
-                                            <img src="https://images.framesdirect.com/image/upload/v1751448500/logos/maui-hp-logo.png"
-                                                class="img-fluid" alt="Maui">
+                                            <img src="https://images.framesdirect.com/image/upload/v1750931087/logos/oakley-hp-logo.png"
+                                                class="img-fluid" alt="Oakley">
                                         </div>
                                     </div>
                                 </div>
@@ -1380,7 +1595,7 @@ More">Learn
 
             <!-- Premium brands -->
             <div class="col-md-6 col-lg-3">
-                <div class="eyewear-card-bottom" style=" max-height: 300px;">
+                <div class="eyewear-card-bottom">
                     <a href="/eyewear-from-200-dp" class="decoration">
                         <div class="card-top" style="background-color: #A29886;">
                             <div class="category-title">Premium brands</div>
@@ -1395,20 +1610,20 @@ More">Learn
                                 <div class="container-fluid">
                                     <div class="row">
                                         <div class="col-6  d-flex justify-content-center align-items-center">
-                                            <img src="https://images.framesdirect.com/image/upload/v1751448524/logos/versace-hp-logo.png"
-                                                class="img-fluid" alt="Versace">
+                                            <img src="https://images.framesdirect.com/image/upload/v1750931088/logos/ralph-lauren-hp-logo.png"
+                                                class="img-fluid" alt="Ralph Lauren">
                                         </div>
                                         <div class="col-6  d-flex justify-content-center align-items-center">
-                                            <img src="https://images.framesdirect.com/image/upload/v1751448428/logos/burberry-hp-logo.png"
-                                                class="img-fluid" alt="Burberry">
+                                            <img src="https://images.framesdirect.com/image/upload/v1750931088/logos/bliz-hp-logo.png"
+                                                class="img-fluid" alt="Bliz">
                                         </div>
                                         <div class="col-6  d-flex justify-content-center align-items-center">
-                                            <img src="https://images.framesdirect.com/image/upload/v1751448380/logos/dolce_gabbana-hp-logo.png"
-                                                class="img-fluid" alt="Dolce&Gabbana">
+                                            <img src="https://images.framesdirect.com/image/upload/v1750931088/logos/nike-hp-logo.png"
+                                                class="img-fluid" alt="Nike">
                                         </div>
                                         <div class="col-6  d-flex justify-content-center align-items-center">
-                                            <img src="https://images.framesdirect.com/image/upload/v1751448321/logos/persol-hp-logo.png"
-                                                class="img-fluid" alt="Persol">
+                                            <img src="https://images.framesdirect.com/image/upload/v1750931088/logos/michael-kors-hp-logo.png"
+                                                class="img-fluid" alt="Michael Kors">
                                         </div>
                                     </div>
                                 </div>
@@ -1432,7 +1647,6 @@ More">Learn
         </div>
 
     </div>
-
 
 
     <div class="containerLens d-flex justify-content-center align-items-start pt-5 pb-5">

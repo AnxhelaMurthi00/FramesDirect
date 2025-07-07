@@ -27,22 +27,23 @@
         );
       } else if ($this.parents(".top-items").hasClass("top-sg")) {
         $this.append(
-          '<div class="size-14 weight-bold">PRIME TIME </div><div class="size-16"><span class="weight-bold"> 25% OFF<br> SELECT FRAMES</div>'
+          '<div class="size-13 weight-bold">PRIME TIME </div><div class="size-16"><span class="weight-bold"> 25% OFF<br> SELECT FRAMES</div>'
         );
         setPg = "/email/flash-sale-dp";
       } else {
         $this.append(
-          '<div class="size-14 weight-bold">PRIME TIME </div><div class="size-16"><span class="weight-bold">25% OFF<BR> SELECT FRAMES<br> + <br>UP TO 60% OFF<br> LENSES <br> LENSES</div>'
+          '<div class="size-13 weight-bold">PRIME TIME </div><div class="size-16"><span class="weight-bold">25% OFF<BR> SELECT FRAMES<br> + <br>60% OFF<br> LENSES <br></div>'
         );
         setPg = "/email/flash-sale-dp";
       }
     } else
+
       if (
         !$this.parents(".top-items").hasClass("top-sale") &&
         ((checkDate >= "250707" && checkDate <= "250707") ||
           (fdFncs.vars.isTest >= "250707" && checkDate <= "250707"))
       ) {
-        $this.css("backgroundColor", "#D3BDAF");
+        $this.css("backgroundColor", "#AF2318");
         setPg = "/sale/top-brands-discounted-dp";
         if ($this.parents(".top-items").hasClass("top-cl")) {
           $this.append(clMsg);
@@ -56,14 +57,14 @@
           );
         } else if ($this.parents(".top-items").hasClass("top-sg")) {
           $this.append(
-            '<div class="size-14 weight-bold">CLEARANCE DEALS </div><div class="size-16"><span class="weight-bold"> UP TO 50% OFF FRAMES</div>'
+            '<div class="size-13 weight-bold">CLEARANCE DEALS </div><div class="size-16"><span class="weight-bold"> UP TO 50% OFF <br>FRAMES</div>'
           );
-          setPg = "/email/designer-brands-dp";
+          setPg = "/sale";
         } else {
           $this.append(
-            '<div class="size-14 weight-bold">CLEARANCE DEALS </div><div class="size-16"><span class="weight-bold">UP TO 50% OFF FRAMES<br> + <br> 60% OFF LENSES <br> LENSES</div>'
+            '<div class="size-13 weight-bold">CLEARANCE DEALS </div><div class="size-16"><span class="weight-bold">UP TO 50% OFF <br>FRAMES<br> + <br> 60% OFF LENSES</div>'
           );
-          setPg = "/email/designer-brands-dp";
+          setPg = "/sale";
         }
       } else
 
