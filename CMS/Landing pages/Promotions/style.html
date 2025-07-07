@@ -1,0 +1,733 @@
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans',sans-serif !important;
+    color: #333 !important;
+}
+
+#landing-content{
+    max-width: 100%;
+    margin: 0;
+}
+
+#content-main{
+    padding: 0;
+}
+
+/* Custom 1440px container */
+.container-1440 {
+    width: 100%;
+    padding-right: 15px; /* Standard Bootstrap gutter */
+    padding-left: 15px;  /* Standard Bootstrap gutter */
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.post-signup-actions a{
+    width: 30% !important;
+}
+
+.force-hide {
+    display: none !important;
+}
+
+
+.mobileOnly{
+    display: none;
+}
+
+
+@media (min-width: 1440px) {
+    .container-1440 {
+        max-width: 1440px;
+    }
+}
+/* If you want it strictly 1440px and not scaling down with smaller bootstrap breakpoints
+   before hitting 1440px, you might consider this, but the above is more typical with BS grid */
+/* @media (min-width: 576px) { .container-1440 { max-width: 540px; } }
+@media (min-width: 768px) { .container-1440 { max-width: 720px; } }
+@media (min-width: 992px) { .container-1440 { max-width: 960px; } }
+@media (min-width: 1200px) { .container-1440 { max-width: 1140px; } }
+@media (min-width: 1440px) { .container-1440 { max-width: 1440px; } } */
+
+
+.header-main {
+    background-color: #f0ebe5;
+    min-height: 180px;
+    align-content: center;
+}
+
+.header-main h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 16px;
+}
+
+.header-main p{
+    font-size: 14px;
+    font-weight: normal;
+    color: #000;
+} 
+
+main{
+    padding-top: 64px;
+}
+
+.offers-section h2,
+.other-offers-section h2,
+.additional-services h2 {
+    font-size: 1.5em;
+    font-weight: bold !important;
+    color: #1F2937 !important;
+    line-height: 36px;
+    margin-top: 0 !important;
+}
+.additional-services h2 {
+    color: white !important;
+}
+
+.featured-offer-card, .other-offer-card, .service-card{
+    border-radius: 1rem !important;
+}
+
+/* Featured Offer Card specific layout */
+
+.featured-offer-card .card-img-feature {
+    width: 100%;
+    height: 100%; /* Fill the height of its column parent */
+    object-fit: cover; /* Cover the area, cropping if necessary */
+    border-radius: 0.25rem 0 0 0.25rem; /* Optional: round corners only on the left */
+}
+
+.offer-card { /* General styles for all offer cards, may not be needed if .card is enough */
+    border: 1px solid #ddd;
+    /* Bootstrap card class handles much of this, add specifics if needed */
+}
+
+.offer-card .card-title {
+    font-size: 16px !important;
+    font-weight: bold !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.offer-badge {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: bold;
+    color: var(--Base-Primary, #333);
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+.featured-offer-card .card-front .offer-details {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 4.75rem;
+}
+
+
+
+.details-link {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: bold !important;
+    color: var(--Base-Secondary, #6B777B) !important;
+    text-decoration: underline;
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.btn-shop-now, .btn-shop-now-light, .btn-shop-now.btn-sm {
+    border-radius: 4px;
+    background: var(--Base-Secondary, #6B777B) !important;
+    color: white !important;
+    border: none;
+    text-transform: uppercase;
+    font-size: 1em !important;
+    padding: 10px 24px !important;
+    font-weight: bold !important;
+    width: 100%;
+}
+
+section.other-offers-section{
+  padding-top:64px;
+    padding-bottom: 64px;
+}
+
+.other-offers-section .btn-shop-now, .other-offers-section .btn-shop-now.btn-sm{
+    width: unset;
+}
+
+.other-offers-section .btn-shop-now, .btn-shop-now-light, .btn-shop-now.btn-sm{
+    padding: 6px 16px !important;
+}
+
+.offer-card-colored-bg {
+    background-color: #B12519 !important; 
+    border: none;
+}
+
+.offer-card-colored-bg .offer-badge,
+.offer-card-colored-bg .card-title,
+.offer-card-colored-bg .offer-details,
+.offer-card-colored-bg p.small {
+    color: white;
+}
+
+.btn-shop-now-light {
+    background-color: #ececec;
+    color: #333;
+}
+
+.brand-logo {
+    height: 25px;
+    width: auto;
+}
+
+
+/* Other Offers Section */
+
+.other-offer-card {
+    background: var(--Base-Other-Color-1, #F1EDE3) !important;
+    border: 0 !important;
+}
+
+.other-offer-card .card-title {
+    color: var(--Base-Text-Dark, #000);
+    font-size: 16px !important;
+    font-style: normal;
+    font-weight: 700 !important;
+    line-height: 24px;
+    margin-bottom: 4px !important;
+    margin-top: 0 !important;
+}
+
+.other-offer-card .card-text.small{
+    color: var(--Base-Primary, #333);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    margin-bottom: 3rem;
+    }
+
+.other-offer-card .details-link{
+    margin-bottom: 0;
+}
+
+.and-more-link {
+    display: inline-block;
+    text-align: left;
+    margin-top: 1rem;
+    font-size: 0.9em;
+    font-weight: 700;
+    color: #1F2937;
+    text-decoration: none;
+}
+
+.other-offer-card .btn-shop-now, .btn-shop-now-light, .btn-shop-now.btn-sm{
+    font-size: 14px !important;
+    line-height: 16px;
+}
+
+.btn:hover{
+    color: white;
+}
+
+.other-offer-card a:link{
+    font-weight: 700 !important;
+}
+
+.and-more-link .arrow {
+    margin-left: 5px;
+}
+
+/* Additional Services Section */
+
+.additional-services {
+    background: var(--Base-Secondary, #6B777B);
+}
+
+.service-card {
+    background-color: white !important;
+    border: none;
+}
+
+.additional-services .card-body{
+    padding: 16px 24px;
+}
+
+.service-icon {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 24px !important;
+}
+
+.service-card .card-title {
+    color: var(--Base-Text-Dark, #000);
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    line-height: 24px; 
+    margin-bottom: 8px !important;
+}
+
+.service-card p.small {
+    color: var(--Base-Text-Dark, #000);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-bottom: 8px;
+}
+.service-card a {
+    color: var(--Base-Secondary, #6B777B) !important;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    text-decoration-line: underline;
+    margin-bottom: 8px;
+}
+
+.and-more-link svg {
+  vertical-align: middle; /* Aligns the icon nicely with the text */
+  margin-left: 4px; /* Adds a small space next to the text */
+}
+
+
+a, a:hover, a.and-more-link:hover{
+    color: unset;
+    text-decoration: underline;
+}
+
+/* Hide the scrollbar container by default */
+.carousel-scrollbar-container {
+    display: none;
+}
+
+
+/* --- Collapsible Easing Effect for Desktop Toggle --- */
+/* .collapsible-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.collapsible-wrapper.is-open {
+  max-height: 1000px; 
+} */
+
+/* =============================================== */
+/* --- Details Overlay Styles --- */
+/* =============================================== */
+
+/* The parent card needs these properties for the overlay to work correctly */
+.card {
+    position: relative;
+    overflow: hidden; /* This hides the overlay when it's positioned outside */
+}
+
+/* The wrapper for the original content */
+.card-front {
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* The new overlay div */
+.details-overlay {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    max-height: 100%; /* UPDATED: Use max-height instead of height */
+    background: rgba(255, 255, 255, 0.98); /* A slightly transparent white background */
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    
+    /* Animation setup: Start positioned below the card */
+    transform: translateY(100%);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.other-offers-section .details-overlay{
+   background: var(--Base-Other-Color-1, #F1EDE3);
+}
+
+/* The close button (X) in the top right */
+.close-overlay {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    color: #333;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* The content area of the overlay */
+.details-overlay .overlay-content {
+    flex-grow: 1; /* Allows this area to take up available space */
+    overflow-y: auto; /* Make content scrollable if it's too long */
+    padding-top: 30px; /* Add space below the close button */
+    overflow-wrap: break-word;
+    word-wrap: break-word; 
+    align-content: center;
+}
+
+.featured-offer-card .overlay-content p {
+    color: var(--Base-Text-Dark, #000);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+/* --- State-based visibility managed by JavaScript --- */
+
+/* When the card has the 'details-visible' class... */
+.card.details-visible .details-overlay {
+    /* ...slide the overlay into view. */
+    transform: translateY(0);
+    box-shadow: 0px -11.78px 23.564px 0px rgba(96, 97, 112, 0.16);
+}
+
+.card.details-visible .card-front {
+    pointer-events: none; /* Make original content un-clickable */
+}
+
+.other-offers-section .col-md-4 {
+    transition: opacity 0.35s ease, 
+                transform 0.35s ease, 
+                max-height 0.5s ease-in-out,
+                margin 0.5s ease-in-out,
+                padding 0.5s ease-in-out;
+    overflow: hidden;
+    transform-origin: top center;
+}
+
+/* The new state for hidden cards */
+.other-offers-section .col-md-4.is-hidden {
+    opacity: 0;
+    max-height: 0;
+    transform: scaleY(0.9);
+    pointer-events: none; /* Make it un-clickable while hidden */
+
+    /* Remove margin and padding to fully collapse the space */
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.d-flex.justify-content-between > :only-child {
+    /* It then applies an auto left margin, pushing that single child to the far right */
+    margin-left: auto;
+}
+
+/* Default (Desktop) style for the Featured Offer close icon */
+.featured-offer-card .close-overlay {
+    color: black; /* The SVG's "currentColor" will use this */
+}
+
+#footer-review{
+  display:none;
+}
+
+@media (min-width: 768px) {
+
+  /* For featured cards that HAVE an image (i.e., not .no-image)... */
+  .featured-offer-card:not(.no-image) .details-overlay {
+    /* ...position the overlay to start where the text column begins (5/12ths of the way across). */
+    left: calc(5 / 12 * 100%);
+    /* ...and make it the width of the text column (7/12th of the total width). */
+    width: calc(7 / 12 * 100%);
+  }
+}
+
+
+/* =============================================== */
+/* --- Mobile Specific Styles --- */
+/* =============================================== */
+
+
+@media (max-width: 768px) {
+  .mobileOnly{
+    display: block;
+}
+main{
+    padding-top: 16px !important;
+}    
+.header-main {
+    display: none;
+}
+
+.offers-section{
+    background: var(--Base-Other-Color-1, #F1EDE3);
+}
+
+.offers-section h2,
+.other-offers-section h2,
+.additional-services h2{
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 16px !important;
+}
+
+.btn-shop-now, .btn-shop-now-light, .btn-shop-now.btn-sm{
+    font-size: 14px !important;
+    line-height: 16px !important;
+}
+
+/* --- Featured Offers Section on Mobile --- */
+    /* 1. Style the main card container */
+    .featured-offer-card {
+        display: flex;
+        max-width: 100%; /* Ensures it doesn't overflow the screen on very small devices */
+        margin-left: auto; /* Centers the card on the screen */
+        margin-right: auto; /* Centers the card on the screen */
+        padding: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        border: 0px solid #E5E7EB;
+    }
+
+    .offers-section .col-md-5{
+        display: none;
+    }
+
+   .offers-section .offer-badge, .offer-card .offer-details{
+        margin-bottom: 24px;
+    }
+
+    .offer-card .card-title{
+        margin-bottom: 4px;
+    }
+
+    /* 2. Override the desktop grid layout inside the card */
+    .featured-offer-card .row {
+        flex-direction: column; 
+    }
+
+    .featured-offer-card .col-md-5,
+    .featured-offer-card .col-md-7 {
+        flex: 1 1 100%; 
+        max-width: 100%;
+    }
+
+    /* 3. Style the image for the new vertical layout */
+    .featured-offer-card .card-img-feature {
+        height: auto; 
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 24px; 
+    }
+    
+    /* 4. Make all the text inside the card white so it's readable */
+    .featured-offer-card,
+    .featured-offer-card .card-title,
+    .featured-offer-card .offer-badge,
+    .featured-offer-card .offer-details,
+    .featured-offer-card .details-link {
+        color: #000 !important;
+    } 
+
+    .featured-offer-card .details-overlay{
+        padding-top: 2.3rem;
+        transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    }
+
+
+    .other-offer-card.card.details-visible .details-overlay{
+        box-shadow: 0px -11.78px 23.564px 0px rgba(96, 97, 112, 0.16);
+    }
+
+    .featured-offer-card .details-overlay .overlay-content{
+        padding-top: 0;
+        align-items: end;
+    }
+
+
+    /* We also need to adjust the close button on the white overlay to be black */
+    .featured-offer-card .details-overlay .close-overlay {
+        color: black;
+    }
+
+    .featured-offer-card .overlay-content p{
+        font-size: 12px;
+        line-height: 16px;
+        margin-bottom: 5px;
+    }
+
+    .featured-offer-card .details-link{
+        margin-bottom: 0;
+    }
+    
+    /* 5. Apply the gap to the card body's flex container */
+     .featured-offer-card .card-body{
+        padding: 0; 
+    } 
+
+    .other-offer-card .card-body, .additional-services .card-body{
+        padding: 16px;
+    }
+
+    /* 6. Ensure the "Shop Now" button is a light style */
+    .featured-offer-card .btn-shop-now {
+        padding: 6px 16px !important;
+    }
+
+    .details-link, .btn-shop-now{
+        width: 50%;
+    }
+
+    .featured-offer-card .details-overlay .btn-shop-now{
+        width: 100%;
+    }
+
+   .useful-links{
+    display: flex;
+   } 
+
+ /* --- Other Offers Section on Mobile --- */
+
+   .other-offers-section .offer-badge, .other-offers-section .details-link{
+    color: var(--Base-Secondary, #6B777B);
+   }
+
+   .other-offers-section .other-offer-card{
+    background-color: #ffffff !important;
+    min-height: 265px;
+    border: 1px solid var(--Base-Other-Color-2, #CABEA5) !important;
+   }
+
+    .other-offer-card .card-text.small, .other-offers-section .details-overlay p{
+        color: var(--Base-Text-Dark, #000);
+        margin-bottom: 24px;
+        font-size: 14px;
+   }
+
+   .other-offers-section .details-overlay{
+        background: var(--Base-White, #FFF);
+   }
+
+   .post-signup-actions a{
+    width: 48% !important;
+}
+
+ /* --- Additional Services Section on Mobile --- */
+
+ .additional-services, .other-offers-section{
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+ }
+
+   .additional-services svg{
+    width: 32px;
+    height: 32px;
+   }
+
+    .other-offers-section h2, .additional-services h2{
+        margin-bottom: 16px !important;
+    }
+
+
+   .additional-services .d-flex svg {
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+   
+/* Show the scrollbar container only on mobile */
+
+    .carousel-scrollbar-container {
+        display: block;
+    }
+
+    /* The gray track */
+    .carousel-scrollbar {
+        position: relative;
+        width: 100%;
+        height: 4px;
+        border-radius: 2px;
+    }
+
+    .other-offers-section .carousel-scrollbar {
+      background: var(--Alpha-Black-Light, rgba(0, 0, 0, 0.20));
+    }
+
+    .other-offers-section .carousel-scrollbar .scrollbar-thumb {
+      background: var(--Base-Primary, #333);
+    }
+
+    .additional-services .carousel-scrollbar{
+        background: var(--Alpha-White-Light, rgba(255, 255, 255, 0.25));
+    }
+
+    .additional-services .carousel-scrollbar .scrollbar-thumb {
+        background: var(--Base-Text-Light, #FFF);
+    }
+
+    /* The dark, movable thumb */
+    .scrollbar-thumb {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: #333; /* Dark thumb color */
+        border-radius: 2px;
+        /* Width and left position will be set by JavaScript */
+    }
+
+/* =============================================== */
+/* --- Mobile Carousel Styles --- */
+/* =============================================== */
+
+   #other-offers-collapsible-wrapper {
+        display: block; /* Revert this from 'contents' back to default */
+    }
+    
+    /* 1. Turn the target rows into non-wrapping, scrollable containers */
+    .other-offers-section .row,
+    .additional-services .row {
+        flex-wrap: nowrap; /* This is the key: prevents columns from stacking */
+        overflow-x: auto;  /* Allows horizontal scrolling */
+        -webkit-overflow-scrolling: touch; /* Adds smooth scrolling on iOS devices */
+    }
+
+    /* 2. Style the columns to act as carousel items */
+    .other-offers-section .col-md-4,
+    .additional-services .col-md-4,
+    .additional-services .col-md-6 {
+        flex: 0 0 85%;
+        min-width: 316px;
+        padding-right: 0;
+}
+
+    /* 3. Hide the scrollbar for a cleaner look (optional but recommended) */
+    .other-offers-section .row::-webkit-scrollbar,
+    .additional-services .row::-webkit-scrollbar {
+        display: none; /* Hides scrollbar for WebKit browsers like Chrome, Safari */
+    }
+
+    .other-offers-section .row,
+    .additional-services .row {
+        -ms-overflow-style: none;  /* Hides scrollbar for IE and Edge */
+        scrollbar-width: none;  /* Hides scrollbar for Firefox */
+        padding-right: 15px;
+    }
+
+    /* 4. Hide the "and more" toggle button on mobile, since it's now a carousel */
+    #toggle-other-offers {
+        display: none !important;
+    }
+
+    /* 5. Hide the collapsible wrapper on mobile */
+    #other-offers-collapsible-wrapper {
+       display: contents; /* This makes the wrapper 'disappear' so its inner .row is treated correctly */
+    }
+}
+</style>
