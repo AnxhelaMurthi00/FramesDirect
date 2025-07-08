@@ -3,7 +3,6 @@
 </h1>
 <!-- HERO BANNER -->
 <style>
-    /* Add this CSS */
     .see-brands-btn {
         position: absolute;
         top: 20px;
@@ -997,6 +996,7 @@
         background-color: white !important;
         color: black !important;
         font-weight: 400 !important;
+        font-size: 15px;
     }
 
     .banner-container {
@@ -1014,6 +1014,11 @@
     }
 
     @media (max-width: 767px) {
+        #rayban_meta_btn {
+            width: 189px;
+            margin: 0 auto;
+        }
+
         .banner-content {
             color: white;
             left: 50%;
@@ -1052,7 +1057,7 @@
                             alt="structure image">
                     </picture>
                     <picture class="ct_img">
-                        <img src="https://images.framesdirect.com/image/upload/v1751554592/homePage/HP_JULYBF_D.png"
+                        <img src="https://images.framesdirect.com/image/upload/v1751962637/homePage/HP_SUMMER_SAVINGS_D.png"
                             fetchpriority="high"
                             alt="The left is wearing Polo ph2083 Eyeglasses, other is Ray-Ban rb3025 Sunglasses"
                             width="3840" height="1108" usemap="#image-map">
@@ -1225,28 +1230,30 @@
 <!-- HOMEPAGE CONTENT -->
 <div id="homepage-content">
     <!-- SECONDARY BANNER -->
-    <div id="firstInsuranceBanner" class="mb-4 pt-3 mt-5 mx-64" style="border-radius: 32px;">
-        <div class="col-12 col-md-7 col-lg-8 ml-sm-auto text-center text-md-left p-3 bg-green mt-lg-5">
-            <h2 class="size-14 mt-4 mb-0">Purchasing with insurance, made easy.</h2>
-            <p class="mt-0">This is our promise to you. We accept most vision insurance plans, both in and
-                out-of-network.</p>
-            <p>
-                <img src="https://images.framesdirect.com/image/upload/v1742409416/insurance/logo-eyemed.png" width="57"
-                    height="35" alt="EyeMed" class="m-2">
-                <img src="https://images.framesdirect.com/image/upload/v1742409416/insurance/logo-aetna.png" width="75"
-                    height="15" alt="Aetna" class="m-2">
-                <img src="https://images.framesdirect.com/image/upload/v1742409416/insurance/logo-humana.png" width="76"
-                    height="15" alt="Humana" class="m-2">
-                <img src="https://images.framesdirect.com/image/upload/v1742409416/insurance/logo-cigna.png" width="67"
-                    height="40" alt="Cigna" class="m-2">
-                ...and many more!
-            </p>
-            <a href="/eyeglasses" class="btn-cta background-dk-gray" data-element-id="5Placement_Banner1_CTA"
-                data-description="shopWithInsurance">Shop with Insurance</a>
-            <a href="/knowledge-center/vision-insurance-fsa-eligibility" class="btn-cta background-clear ml-lg-3"
-                data-element-id="5Placement_Banner1_CTA" data-description="learn
-More">Learn
-                More</a>
+    <div class="banner-container mb-4 mt-5 mx-64" style="border-radius: 32px;">
+        <!-- Desktop Image (hidden on mobile) -->
+        <img src="https://images.framesdirect.com/image/upload/v1751884872/homePage/Secondary_banner_meta.png"
+            alt="Ray-Ban Meta Collection" class="img-fluid d-none d-md-block w-100">
+
+        <!-- Mobile Image (hidden on desktop) -->
+        <img src="https://images.framesdirect.com/image/upload/v1751884870/homePage/ray-ban-meta_mobile.png"
+            alt="Ray-Ban Meta Collection" class="img-fluid d-block d-md-none w-100">
+
+        <!-- Banner Content -->
+        <div class="banner-content">
+            <h2 class="size-14 mt-4 mb-0">Ray-Ban Meta collection</h2>
+            <p class="mb-4">Integrated with AI-enhanced technology,
+                Ray-Ban Meta AI Glasses enable you to
+                call, listen, capture and livestream - all with
+                your phone in your pocket.</p>
+
+            <div class="d-flex flex-column flex-md-row">
+                <a href="/ray-ban/brand?p=1&collection=1466" class=" btn-cta ct_m__mob__10 ct_mb__mob__50 ct_mt__30 "
+                    id="rayban_meta_btn" data-element-id="1Hero_Banner1_CTA" data-description="shop ray-ban meta"
+                    style="font-weigt:400 !important;">
+                    Shop RAY-BAN <br class="ct_desk__hide">| META Ai GLASSES
+                </a>
+            </div>
         </div>
     </div>
 
@@ -1298,8 +1305,7 @@ More">Learn
                             <p class="ct_font__14">Vision meets performance — upgrade your everyday clarity.</p>
                             <a href="/promotions/rx-frames-60-off-lenses-dp"
                                 class="btn btn-outline-dark weight-bold btn-sm mb-4"
-                                style="color: #6B777B !important;">LEARN
-                                MORE</a>
+                                style="color: #6B777B !important;">SHOP NOW</a>
                         </div>
                     </div>
 
@@ -1715,33 +1721,31 @@ More">Learn
     </div>
 
 
-
-    <div class="banner-container mb-4 mt-5 mx-64" style="border-radius: 32px;">
-        <!-- Desktop Image (hidden on mobile) -->
-        <img src="https://images.framesdirect.com/image/upload/v1751884872/homePage/Secondary_banner_meta.png"
-            alt="Ray-Ban Meta Collection" class="img-fluid d-none d-md-block w-100">
-
-        <!-- Mobile Image (hidden on desktop) -->
-        <img src="https://images.framesdirect.com/image/upload/v1751884870/homePage/ray-ban-meta_mobile.png"
-            alt="Ray-Ban Meta Collection" class="img-fluid d-block d-md-none w-100">
-
-        <!-- Banner Content -->
-        <div class="banner-content">
-            <h2 class="size-14 mt-4 mb-0">Ray-Ban Meta collection</h2>
-            <p class="mb-4">Integrated with AI-enhanced technology,
-                Ray-Ban Meta smart glasses enable you to
-                call, listen, capture and livestream - all with
-                your phone in your pocket.</p>
-
-            <div class="d-flex flex-column flex-md-row">
-                <a href="/ray-ban/brand?p=1&collection=1466" class=" btn-cta ct_m__mob__10 ct_mb__mob__50 ct_mt__30 "
-                    id="rayban_meta_btn" data-element-id="1Hero_Banner1_CTA" data-description="shop ray-ban meta"
-                    style="font-weigt:400 !important;">
-                    Shop RAY-BAN <br class="ct_desk__hide">| META Ai GLASSES
-                </a>
-            </div>
+    <div id="firstInsuranceBanner" class="mb-4 pt-3 mt-5 mx-64" style="border-radius: 32px;">
+        <div class="col-12 col-md-7 col-lg-8 ml-sm-auto text-center text-md-left p-3 bg-green mt-lg-5">
+            <h2 class="size-14 mt-4 mb-0">Purchasing with insurance, made easy.</h2>
+            <p class="mt-0">This is our promise to you. We accept most vision insurance plans, both in and
+                out-of-network.</p>
+            <p>
+                <img src="https://images.framesdirect.com/image/upload/v1742409416/insurance/logo-eyemed.png" width="57"
+                    height="35" alt="EyeMed" class="m-2">
+                <img src="https://images.framesdirect.com/image/upload/v1742409416/insurance/logo-aetna.png" width="75"
+                    height="15" alt="Aetna" class="m-2">
+                <img src="https://images.framesdirect.com/image/upload/v1742409416/insurance/logo-humana.png" width="76"
+                    height="15" alt="Humana" class="m-2">
+                <img src="https://images.framesdirect.com/image/upload/v1742409416/insurance/logo-cigna.png" width="67"
+                    height="40" alt="Cigna" class="m-2">
+                ...and many more!
+            </p>
+            <a href="/email/vision-insurance-dp" class="btn-cta background-dk-gray"
+                data-element-id="5Placement_Banner1_CTA" data-description="shopWithInsurance">Shop with Insurance</a>
+            <a href="/knowledge-center/vision-insurance-fsa-eligibility" class="btn-cta background-clear ml-lg-3"
+                data-element-id="5Placement_Banner1_CTA" data-description="learn
+More">Learn
+                More</a>
         </div>
     </div>
+
 
 
     <div class="containerLens d-flex justify-content-center align-items-start pt-5 pb-5">
