@@ -1,6 +1,4 @@
 <script>
-
-
   if (
     (checkDate >= "250712" && checkDate <= "250727") ||
     (fdFncs.vars.isTest >= "250712" && fdFncs.vars.isTest <= "250727")
@@ -17,25 +15,21 @@
       if (pgURLPath("/email/flash-sale-dp")) {
         $("h1").html("Up to 50% off select frames + 60% off lenses <i class='arrow2'></i>");
         $("#cata_desc").html(
-          '<p>Explore our curated collection of designer frames and lenses. Whether you prefer iconic styles or trend-forward designs, unleash your summer look and enjoy 50% off frames and 60% off lenses. Discounts are automatically applied at checkout. Selected styles only. <a id="flash-disc-link" href="#">Details <i></i></a></p><p id="flash-disclaimer" style="display:none">Explore our curated collection of designer frames and lenses. Whether you prefer iconic styles or trend-forward designs, unleash your summer look and enjoy 50% off frames and 60% off lenses. Discounts are automatically applied at checkout. Selected styles only. Details </p>'
+          '<p>Explore our curated collection of designer frames and lenses. Whether you prefer iconic styles or trend-forward designs, unleash your summer look and enjoy 50% off frames and 60% off lenses. Discounts are automatically applied at checkout. Selected styles only. <a id="flash-disc-link" href="#">Details <i></i></a></p><p id="flash-disclaimer" style="display:none">Get 25% off the purchase of full-priced Eyeglasses, Sunglasses and Prescription Sunglasses from Armani Exchange, Arnette, Brooks Brothers, Burberry, Coach, Dolce & Gabbana, Dolce & Gabbana Kids, Emporio Armani, Emporio Armani Kids, Giorgio Armani, Jimmy Choo, Polo, Polo Kids, Ralph Lauren, RALPH, Scuderia Ferrari, Sferoflex, Swarovski, Tory Burch, Versace, Versace Kids, Vogue, Vogue Junior. Does not apply to products that have already been discounted. Frame purchase required. Offer may not be used on Oakley Goggles, Oakley Replacement Lenses, Ray-Ban Meta. Other exclusions may apply. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee or insurance benefits. Free Shipping on domestic orders only. Offer ends July 27th, 2025.</p>'
+        );
+        $("#bnr-dyn-holder").html(
+          '<a href="#"><img alt="Summer Sale" src="https://images.framesdirect.com/image/upload/v1751962769/plp-banners/PLP_DEDICATED_SUMMER_SAVINGS.png" width="1440" height="100" title="Summer Sale"></a>'
         );
       }
-      if (pgURLPath("/email/auth-lenses-dp")) {
-        $("h1").html("Lorem ipsum dolor sit amet <i class='arrow2'></i>");
-        $("#cata_desc").html(
-          '<p>Wherever life takes you, Transitions® GEN S™ lenses seamlessly adapt to changing light — fully clear indoors, dark outdoors, and perfectly tinted in between. Discover next-gen comfort, protection, and style in every frame. Details  <a id="flash-disc-link" href="#">Details <i></i></a></p><p id="flash-disclaimer" style="display:none">Get a free gift with the purchase of a prescription glasses from Wiley X. Offer valid until stocks last</p>'
-        );
-      }
-      if (pgURLPath("/email/auth-lenses-dp")) {
+      if (pgURLPath("/top-brand-dp")) {
         $("h1").html("More brands you’ll love <i class='arrow2'></i>");
         $("#cata_desc").html(
           '<p>Explore standout styles from our extended brand collection. From fashion-forward frames to timeless classics, find the perfect match for your personality—backed by comfort, quality, and special savings.</p>'
         );
+        $("#bnr-dyn-holder").html(
+          '<a href="#"><img alt="More Brands" src="https://images.framesdirect.com/image/upload/v1751962770/plp-banners/PLP_DEDICATED_NON_LUXBRANDS.png" width="1440" height="100" title="More Brands"></a>'
+        );
       }
     }
   }
-
-
-
-
 </script>

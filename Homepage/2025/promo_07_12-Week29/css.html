@@ -4,6 +4,19 @@
     height: 505px;
   }
 
+  .see-brands-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: rgba(231, 231, 231, 1);
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 12px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+
   .lSSlideWrapper.usingCss.ls-hover {
     min-height: 505px;
   }
@@ -78,6 +91,7 @@
   }
 
   @media (max-width: 767px) {
+
     #firstInsuranceBanner {
       background: #D6F3E9 url('https://images.framesdirect.com/image/upload/v1744116035/insurance/hero-image-mobile.png') center bottom / contain no-repeat;
       background-size: 250px 260px;
@@ -2561,7 +2575,7 @@
   }
 
   .lSAction>.lSPrev:before {
-    margin-left: 4px !important;
+    margin-left: -1px !important;
   }
 
   .lSSlideWrapper.usingCss.ls-hover {
@@ -2573,23 +2587,36 @@
   }
 
 
-
   /* Default height for all screens */
   #hero-slider {
     height: 505px !important;
   }
 
   /* From 1200px to 1500px */
-  @media (min-width: 1200px) and (max-width: 1500px) {
+  @media (min-width: 1200px) and (max-width: 1400px) {
+    #hero-slider {
+      height: 455px !important;
+    }
+  }
+
+  /* From 1200px to 1500px */
+  @media (min-width: 1401px) and (max-width: 1500px) {
     #hero-slider {
       height: 505px !important;
     }
   }
 
   /* From 1501px to 1800px */
-  @media (min-width: 1501px) and (max-width: 1800px) {
+  @media (min-width: 1501px) and (max-width: 1650px) {
     #hero-slider {
-      height: 560px !important;
+      height: 530px !important;
+    }
+  }
+
+  /* From 1501px to 1800px */
+  @media (min-width: 1651px) and (max-width: 1800px) {
+    #hero-slider {
+      height: 590px !important;
     }
   }
 
@@ -2601,28 +2628,7 @@
   }
 
   .ct_img img {
-    height: 505px !important;
-  }
-
-  /* From 1200px to 1500px */
-  @media (min-width: 1200px) and (max-width: 1500px) {
-    .ct_img img {
-      height: 505px !important;
-    }
-  }
-
-  /* From 1501px to 1800px */
-  @media (min-width: 1501px) and (max-width: 1800px) {
-    .ct_img img {
-      height: 605px !important;
-    }
-  }
-
-  /* From 1801px and above */
-  @media (min-width: 1801px) {
-    .ct_img img {
-      height: 800px !important;
-    }
+    height: auto !important;
   }
 
   .info-boxes-wrapper {
@@ -3087,6 +3093,14 @@
 
   }
 
+  .eyewear-card-bottom {
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+  }
+
 
   #eyewear-prices {
     background-color: #F1EDE3;
@@ -3425,8 +3439,14 @@
   }
 
   .display {
-    display: none;
+    display: none !important;
   }
+
+  .cardStyle:hover .display {
+    display: flex !important;
+  }
+
+
 
   .cardStyle:hover {
     .display {
@@ -3504,6 +3524,93 @@
       overflow: hidden;
       margin-left: 25%;
     }
+  }
+
+  .selection .btn {
+    margin-top: auto;
+    width: 160px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .selection .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  a.btn.btn-outline-dark.weight-bold.btn-sm.mb-4 {
+    border-color: rgba(107, 119, 123, 1);
+  }
+
+  .selection .card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .selection .card-body p {
+    margin-bottom: 0.5rem;
+  }
+
+  .selection .btn {
+    margin-top: auto;
+  }
+
+  .cardStyle>a {
+    height: 44px !important;
+  }
+
+
+
+  #rayban_meta_btn {
+    background-color: white !important;
+    color: black !important;
+    font-weight: 400 !important;
+    font-size: 15px;
+  }
+
+  .banner-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .banner-content {
+    position: absolute;
+    top: 45%;
+    left: 6%;
+    transform: translateY(-50%);
+    color: black;
+    width: 50%;
+  }
+
+  @media (max-width: 767px) {
+    #rayban_meta_btn {
+      width: 189px;
+      margin: 0 auto;
+    }
+
+    .banner-content {
+      color: white;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      text-align: center;
+      top: 20%;
+    }
+
+    .banner-content h2 {
+      color: white;
+    }
+  }
+
+  .btn-white-outline {
+    background-color: white;
+    color: black !important;
+  }
+
+  .btn-white-outline:hover {
+    background-color: #f8f9fa !important;
   }
 </style>
 </meta>
