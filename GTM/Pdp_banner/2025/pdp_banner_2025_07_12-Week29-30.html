@@ -41,18 +41,7 @@
       ) {
         $('<div class="lens-bar-holder mx-0 mb-3 mt-4"><div class="lens-bar d-block color-black px-2 size-12 text-left" style="background:#F0ECE1; border-radius: 5px;"><b>40% off prescription sun lenses</b> by Oakley, Costa & Maui Jim with code <b>SPECIAL40</b></div></div>')
           .prependTo("#prod-header-right");
-      } else if (
-        (
-          $('h1:contains("Prescription")').length > 0 ||
-          $('h1:contains("Eyeglasses")').length > 0 ||
-          $('h1:contains("Sunglasses")').length > 0
-        ) &&
-        excludePgs
-      ) {
-        $('<div class="lens-bar-holder mx-0 mb-3"><div class="lens-bar d-block color-black px-2 size-12 text-left" style="background:#B7C4B3; border-radius: 5px;">Complete Pair: <b>40% off select frames</b> at checkout + <b>up to 60% off lenses</b></div></div>')
-          .prependTo("#prod-header-right");
       }
-
     } else
       if (
         (checkDate >= "250707" && checkDate <= "250711") ||

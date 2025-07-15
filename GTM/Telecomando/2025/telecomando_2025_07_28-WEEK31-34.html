@@ -1,0 +1,59 @@
+<script>
+  if (
+    (checkDate >= "250728" && checkDate <= "250824") ||
+    (fdFncs.vars.isTest >= "250728" && fdFncs.vars.isTest <= "250824")
+  ) {
+    $("#discountBar #exclusiveToggle").html(
+      $("#discountBar #exclusiveToggle")
+        .html()
+        .replace("See Exclusive Savings!", "Exclusive offers")
+        .replace("Exclusive Savings", "Exclusive offers")
+    );
+    $("#exclusiveSavings #discountBar > .blue-bg").css({
+      background: "#D8CDB8",
+    });
+  } else
+    if (
+      (checkDate >= "250712" && checkDate <= "250727") ||
+      (fdFncs.vars.isTest >= "250712" && fdFncs.vars.isTest <= "250727")
+    ) {
+      $("#discountBar #exclusiveToggle").html(
+        $("#discountBar #exclusiveToggle")
+          .html()
+          .replace("See Exclusive Savings!", "Sizzling Summer Savings")
+          .replace("Exclusive Savings", "Sizzling Summer Savings")
+      );
+      $("#exclusiveSavings #discountBar > .blue-bg").css({
+        background: "#B7C4B3",
+      });
+    } else
+      if (
+        (checkDate >= "250708" && checkDate <= "250711") ||
+        (fdFncs.vars.isTest >= "250708" && fdFncs.vars.isTest <= "250711")
+      ) {
+        $("#discountBar #exclusiveToggle").html(
+          $("#discountBar #exclusiveToggle")
+            .html()
+            .replace("See Exclusive Savings!", "Prime Time Deals")
+            .replace("Exclusive Savings", "Prime Time Deals")
+        );
+        $("#exclusiveSavings #discountBar > .blue-bg").css({
+          background: "#8AAED3",
+        });
+      } else
+        if (
+          (checkDate >= "250707" && checkDate <= "250707") ||
+          (fdFncs.vars.isTest >= "250707" && fdFncs.vars.isTest <= "250707")
+        ) {
+          $("#discountBar #exclusiveToggle").html(
+            $("#discountBar #exclusiveToggle")
+              .html()
+              .replace("See Exclusive Savings!", "Exclusive offers")
+              .replace("Exclusive Savings", "Exclusive offers")
+          );
+          $("#exclusiveSavings #discountBar > .blue-bg").css({
+            background: "#D0BEB2",
+          });
+        }
+
+</script>
