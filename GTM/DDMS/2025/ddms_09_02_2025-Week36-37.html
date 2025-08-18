@@ -10,10 +10,10 @@
     $this.attr("style", "cursor: pointer");
     if (
       !$this.parents(".top-items").hasClass("top-sale") &&
-      ((checkDate >= "250728" && checkDate <= "250825") ||
-        (fdFncs.vars.isTest >= "250728" && checkDate <= "250825"))
+      ((checkDate >= "250825" && checkDate <= "250901") ||
+        (fdFncs.vars.isTest >= "250825" && checkDate <= "250901"))
     ) {
-      $this.css("backgroundColor", "#E5DAC5");
+      $this.css("backgroundColor", "#C7D0DD");
       setPg = "/sale/top-brands-discounted-dp";
       if ($this.parents(".top-items").hasClass("top-cl")) {
         $this.append(clMsg);
@@ -27,22 +27,22 @@
         );
       } else if ($this.parents(".top-items").hasClass("top-sg")) {
         $this.append(
-          '<div class="size-13">Get your complete pair</div><div class="size-16 mt-2"><span class="weight-bold"> 40% OFF<br> SELECT FRAMES</div>'
+          '<div class="size-14">Back To Office Savings</div><div class="size-16 mt-2"><span class="weight-bold"> UP TO 50% OFF<br> SELECT FRAMES</div>'
         );
-        setPg = "/email/designer-brands-dp";
+        setPg = "/email/flash-sale-dp";
       } else {
         $this.append(
-          '<div class="size-13">Get your complete pair</div><div class="size-16 mt-3"><span class="weight-bold"> 40% OFF<br> SELECT FRAMES<br> + <br>60% OFF LENSES <br></div><div class="size-13">(Frame purchase is required)</div>'
+          '<div class="size-14">Back To Office Savings</div><div class="size-16 mt-3"><span class="weight-bold">UP TO 50% OFF<br> SELECT FRAMES<br> + <br>UP TO 60% OFF <br>LENSES <br></div>'
         );
-        setPg = "/email/designer-brands-dp";
+        setPg = "/email/flash-sale-dp";
       }
     } else
       if (
         !$this.parents(".top-items").hasClass("top-sale") &&
-        ((checkDate >= "250712" && checkDate <= "250727") ||
-          (fdFncs.vars.isTest >= "250712" && checkDate <= "250727"))
+        ((checkDate >= "250825" && checkDate <= "250901") ||
+          (fdFncs.vars.isTest >= "250825" && checkDate <= "250901"))
       ) {
-        $this.css("backgroundColor", "#B7C4B3");
+        $this.css("backgroundColor", "#EFE3D7");
         setPg = "/sale/top-brands-discounted-dp";
         if ($this.parents(".top-items").hasClass("top-cl")) {
           $this.append(clMsg);
@@ -56,22 +56,22 @@
           );
         } else if ($this.parents(".top-items").hasClass("top-sg")) {
           $this.append(
-            '<div class="size-13">Sizzling Summer Savings</div><div class="size-16 mt-3"><span class="weight-bold"> UP TO 50% OFF<br> SELECT FRAMES</div>'
+            '<div class="size-14">Labor Day Savings</div><div class="size-16 mt-2"><span class="weight-bold"> UP TO 30% OFF<br> SELECT FRAMES</div>'
           );
-          setPg = "/email/flash-sale-dp";
+          setPg = "/email/labor-day-dp";
         } else {
           $this.append(
-            '<div class="size-13">Sizzling Summer Savings</div><div class="size-16 mt-3"><span class="weight-bold">UP TO 50% OFF<br> SELECT FRAMES<br> + <br>60% OFF LENSES <br></div>'
+            '<div class="size-14">Labor Day Savings</div><div class="size-16 mt-3"><span class="weight-bold">UP TO 30% OFF<br> SELECT FRAMES<br> + <br>60% OFF LENSES <br></div>'
           );
-          setPg = "/email/flash-sale-dp";
+          setPg = "/email/labor-day-dp";
         }
       } else
         if (
           !$this.parents(".top-items").hasClass("top-sale") &&
-          ((checkDate >= "250708" && checkDate <= "250711") ||
-            (fdFncs.vars.isTest >= "250708" && checkDate <= "250711"))
+          ((checkDate >= "250712" && checkDate <= "250727") ||
+            (fdFncs.vars.isTest >= "250712" && checkDate <= "250727"))
         ) {
-          $this.css("backgroundColor", "#8AAED3");
+          $this.css("backgroundColor", "#E5DAC5");
           setPg = "/sale/top-brands-discounted-dp";
           if ($this.parents(".top-items").hasClass("top-cl")) {
             $this.append(clMsg);
@@ -85,23 +85,22 @@
             );
           } else if ($this.parents(".top-items").hasClass("top-sg")) {
             $this.append(
-              '<div class="size-13 weight-bold">PRIME TIME </div><div class="size-16"><span class="weight-bold"> 25% OFF<br> SELECT FRAMES</div>'
+              '<div class="size-13">Get your complete pair</div><div class="size-16 mt-2"><span class="weight-bold"> 40% OFF<br> SELECT FRAMES</div>'
             );
-            setPg = "/email/flash-sale-dp";
+            setPg = "/email/designer-brands-dp";
           } else {
             $this.append(
-              '<div class="size-13 weight-bold">PRIME TIME </div><div class="size-16"><span class="weight-bold">25% OFF<BR> SELECT FRAMES<br> + <br>UP TO 60% OFF<br> LENSES <br></div>'
+              '<div class="size-13">Get your complete pair</div><div class="size-16 mt-3"><span class="weight-bold"> 40% OFF<br> SELECT FRAMES<br> + <br>60% OFF LENSES <br></div><div class="size-13">(Frame purchase is required)</div>'
             );
-            setPg = "/email/flash-sale-dp";
+            setPg = "/email/designer-brands-dp";
           }
         } else
-
           if (
             !$this.parents(".top-items").hasClass("top-sale") &&
-            ((checkDate >= "250707" && checkDate <= "250707") ||
-              (fdFncs.vars.isTest >= "250707" && checkDate <= "250707"))
+            ((checkDate >= "250712" && checkDate <= "250727") ||
+              (fdFncs.vars.isTest >= "250712" && checkDate <= "250727"))
           ) {
-            $this.css("backgroundColor", "#AF2318");
+            $this.css("backgroundColor", "#B7C4B3");
             setPg = "/sale/top-brands-discounted-dp";
             if ($this.parents(".top-items").hasClass("top-cl")) {
               $this.append(clMsg);
@@ -115,14 +114,14 @@
               );
             } else if ($this.parents(".top-items").hasClass("top-sg")) {
               $this.append(
-                '<div class="size-13 weight-bold">CLEARANCE DEALS </div><div class="size-16"><span class="weight-bold"> UP TO 50% OFF <br>FRAMES</div>'
+                '<div class="size-13">Sizzling Summer Savings</div><div class="size-16 mt-3"><span class="weight-bold"> UP TO 50% OFF<br> SELECT FRAMES</div>'
               );
-              setPg = "/sale";
+              setPg = "/email/flash-sale-dp";
             } else {
               $this.append(
-                '<div class="size-13 weight-bold">CLEARANCE DEALS </div><div class="size-16"><span class="weight-bold">UP TO 50% OFF <br>FRAMES<br> + <br> 60% OFF LENSES</div>'
+                '<div class="size-13">Sizzling Summer Savings</div><div class="size-16 mt-3"><span class="weight-bold">UP TO 50% OFF<br> SELECT FRAMES<br> + <br>60% OFF LENSES <br></div>'
               );
-              setPg = "/sale";
+              setPg = "/email/flash-sale-dp";
             }
           } else {
             $this.css("backgroundColor", "#C7C9AF");
