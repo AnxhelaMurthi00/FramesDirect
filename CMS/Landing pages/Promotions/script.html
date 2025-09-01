@@ -42,11 +42,11 @@ function loadPromotions() {
 
 function createPromoCardHTML(promo) {
     const imageColumnHTML = promo.imageSrc ?
-        `<div class="col-md-5">
+        `<div class="col-md-6">
              <img src="${promo.imageSrc}" class="card-img-feature" alt="${promo.imageAlt}">
            </div>` :
         '';
-    const contentColumnClass = promo.imageSrc ? 'col-md-7' : 'col-md-12';
+    const contentColumnClass = promo.imageSrc ? 'col-md-6' : 'col-md-12';
     const specialCardClass = promo.isSpecial ? 'text-white offer-card-colored-bg' : '';
     const specialButtonClass = promo.isSpecial ? 'btn-shop-now-light' : 'btn-shop-now';
     
@@ -66,16 +66,16 @@ function createPromoCardHTML(promo) {
     }
 
     return `
-        <div class="col-lg-6 mb-4 d-flex align-items-stretch">
+        <div class="col-lg-6 mb-4 align-items-stretch">
             <div class="card offer-card featured-offer-card w-100 ${specialCardClass}">
 
-                <div class="row no-gutters w-100">
+                <div class="row no-gutters w-100 h-100"> 
                 
                     ${imageColumnHTML} 
                     
                     <div class="${contentColumnClass}">
-                        <div class="card-body d-flex flex-column">
-                            <div class="card-front d-flex flex-column">
+                        <div class="card-body d-flex flex-column h-100">
+                            <div class="card-front d-flex flex-column h-100">
 
                                     ${badgeHTML}
                                     <h3 class="card-title">${promo.title}</h3>
