@@ -1,0 +1,169 @@
+<script>
+
+
+
+
+    let lastScrollTop = 0;
+    let isFixed = false;
+
+    const target = document.getElementById("sticky");
+    const lensesDiv = document.querySelector(".prescription-lens");
+    const pills = document.querySelectorAll('.lens-pill');
+
+    const sections = Array.from(pills).map(pill => {
+        const sectionId = pill.getAttribute("data-section");
+        const element = document.getElementById(sectionId);
+        return element ? { id: sectionId, element } : null;
+    }).filter(Boolean);
+
+    window.addEventListener("scroll", () => {
+        if (!target || !lensesDiv) return;
+
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        const lensesTop = lensesDiv.offsetTop;
+        const hasReachedLenses = currentScroll >= lensesTop + 300;
+        const lastSection = sections[sections.length - 1];
+        const scrollingDown = currentScroll > lastScrollTop;
+
+        if (hasReachedLenses && !isFixed) {
+            target.classList.remove("ct_display_hide");
+            target.classList.add("fixed-position");
+            isFixed = true;
+        }
+
+        if (lastSection) {
+            const lastRect = lastSection.element.getBoundingClientRect();
+            const isPastLast = lastRect.top < 0 && lastRect.bottom < 0;
+
+            if (isPastLast && isFixed) {
+                target.classList.add("ct_display_hide");
+                target.classList.remove("fixed-position");
+                isFixed = false;
+            }
+
+            if (!isFixed && lastRect.bottom > 0 && hasReachedLenses) {
+                target.classList.remove("ct_display_hide");
+                target.classList.add("fixed-position");
+                isFixed = true;
+            }
+        }
+
+        if (!hasReachedLenses && isFixed) {
+            target.classList.add("ct_display_hide");
+            target.classList.remove("fixed-position");
+            isFixed = false;
+        }
+
+        sections.forEach(({ id, element }) => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top <= 100 && rect.bottom > 100) {
+                pills.forEach(p => {
+                    p.classList.toggle("active", p.getAttribute("data-section") === id);
+                });
+            }
+        });
+
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+
+
+    const track = document.getElementById('carouselTrackcard');
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const progressBar = document.getElementById('progressBar');
+
+    const cardWidth = 275 + 20;
+    const totalCards = track.children.length;
+
+    function updateProgressBar() {
+        const scrollLeft = track.scrollLeft;
+        const maxScroll = track.scrollWidth - track.clientWidth;
+        const percent = (scrollLeft / maxScroll) * 75;
+        progressBar.style.width = `${25 + percent}%`;
+
+
+        prevBtn.style.display = scrollLeft > 0 ? 'block' : 'none';
+        nextBtn.style.display = scrollLeft >= maxScroll - 5 ? 'none' : 'block';
+    }
+
+
+    nextBtn.addEventListener('click', () => {
+        track.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    });
+
+
+    prevBtn.addEventListener('click', () => {
+        track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+    });
+
+    track.addEventListener('scroll', updateProgressBar);
+
+    updateProgressBar();
+
+
+    $(document).ready(function () {
+        $(".ct_range_slider .ct_range-slider__range").on("input", function () {
+            let ct_range_value = $(this)[0].valueAsNumber / 100;
+
+            $(".ct_sunglasses_container.ct_lens_change > img.ct_hover").css("opacity", "" + ct_range_value + "");
+        });
+    });
+
+
+    const visionCards = document.querySelector('.vision-cards');
+    const progressBarSlider = document.getElementById('progressBarSlider');
+
+    function updateSlider() {
+        const scrollLeft = visionCards.scrollLeft;
+        const maxScrollLeft = visionCards.scrollWidth - visionCards.clientWidth;
+
+        if (maxScrollLeft <= 0) {
+            progressBarSlider.style.width = '25%';
+            return;
+        }
+
+        const progress = (scrollLeft / maxScrollLeft) * 75;
+        progressBarSlider.style.width = `${25 + progress}%`;
+    }
+
+    visionCards.addEventListener('scroll', updateSlider);
+    updateSlider();
+
+
+
+    document.querySelectorAll(".lens-card").forEach((card) => {
+        const video = card.querySelector("video");
+
+        card.addEventListener("mouseenter", () => {
+            video.play();
+        });
+
+        card.addEventListener("mouseleave", () => {
+            video.pause();
+            video.currentTime = 0;
+        });
+    });
+
+    const lazyVideos = document.querySelectorAll('.lazy-video');
+
+    const handleVideoPlayback = (entries) => {
+        entries.forEach(entry => {
+            const video = entry.target;
+
+            if (entry.isIntersecting) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(handleVideoPlayback, {
+        threshold: 0.5
+    });
+
+    lazyVideos.forEach(video => {
+        observer.observe(video);
+    });
+
+</script>

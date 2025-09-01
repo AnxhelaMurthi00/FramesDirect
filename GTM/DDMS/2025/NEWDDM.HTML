@@ -1,0 +1,188 @@
+<script>
+    $("#site-nav .promo-bottom").each(function () {
+        var $this = $(this),
+            isRecognized = getCookie("fdRecognized") !== undefined,
+            setPg = "",
+            clMsg = '<div class="weight-bold size-18 mb-3">Free Shipping</div><div class="size-15">On Contact Lens<br>Orders over $175</div>'
+        isQC = window.location.host === 'qc.framesdirect.com';
+
+        $this.css("backgroundColor", "#fff");
+        $this.attr("style", "cursor: pointer");
+        if (
+            !$this.parents(".top-items").hasClass("top-sale") &&
+            ((checkDate >= "250825" && checkDate <= "250901") ||
+                (fdFncs.vars.isTest >= "250825" && checkDate <= "250901"))
+        ) {
+            $this.css("backgroundColor", "#EFE3D7");
+            setPg = "/sale/top-brands-discounted-dp";
+            if ($this.parents(".top-items").hasClass("top-cl")) {
+                $this.append(clMsg);
+                setPg = "/contact-lenses/";
+            } else if ($this.parents(".top-items").hasClass("top-sale")) {
+                $this.append(
+                    '<div class="size-14">Outlet Deals</div><div class="size-18 pt-2 mt-2" style="line-height: 1; border-top: 1px #fff solid;">Save Up To</div><div class="size-40" style="line-height: 1;">50%</div>'
+                );
+                $this.addClass(
+                    "background-red color-white weight-bold transform-uppercase"
+                );
+            } else if ($this.parents(".top-items").hasClass("top-sg")) {
+                $this.append(
+                    '<div class="size-14">Labor Day Savings</div><div class="size-16 mt-2"><span class="weight-bold"> UP TO 30% OFF<br> SELECT FRAMES</div>'
+                );
+                setPg = "/email/labor-day-dp";
+            } else {
+                $this.append(
+                    '<div class="size-14">Labor Day Savings</div><div class="size-16 mt-3"><span class="weight-bold">UP TO 30% OFF<br> SELECT FRAMES<br> + <br>60% OFF LENSES <br></div>'
+                );
+                setPg = "/email/labor-day-dp";
+            }
+        } else
+            if (
+                !$this.parents(".top-items").hasClass("top-sale") &&
+                ((checkDate >= "250712" && checkDate <= "250727") ||
+                    (fdFncs.vars.isTest >= "250712" && checkDate <= "250727"))
+            ) {
+                $this.css("backgroundColor", "#E5DAC5");
+                setPg = "/sale/top-brands-discounted-dp";
+                if ($this.parents(".top-items").hasClass("top-cl")) {
+                    $this.append(clMsg);
+                    setPg = "/contact-lenses/";
+                } else if ($this.parents(".top-items").hasClass("top-sale")) {
+                    $this.append(
+                        '<div class="size-14">Outlet Deals</div><div class="size-18 pt-2 mt-2" style="line-height: 1; border-top: 1px #fff solid;">Save Up To</div><div class="size-40" style="line-height: 1;">50%</div>'
+                    );
+                    $this.addClass(
+                        "background-red color-white weight-bold transform-uppercase"
+                    );
+                } else if ($this.parents(".top-items").hasClass("top-sg")) {
+                    $this.append(
+                        '<div class="size-13">Get your complete pair</div><div class="size-16 mt-2"><span class="weight-bold"> 40% OFF<br> SELECT FRAMES</div>'
+                    );
+                    setPg = "/email/designer-brands-dp";
+                } else {
+                    $this.append(
+                        '<div class="size-13">Get your complete pair</div><div class="size-16 mt-3"><span class="weight-bold"> 40% OFF<br> SELECT FRAMES<br> + <br>60% OFF LENSES <br></div><div class="size-13">(Frame purchase is required)</div>'
+                    );
+                    setPg = "/email/designer-brands-dp";
+                }
+            } else
+                if (
+                    !$this.parents(".top-items").hasClass("top-sale") &&
+                    ((checkDate >= "250712" && checkDate <= "250727") ||
+                        (fdFncs.vars.isTest >= "250712" && checkDate <= "250727"))
+                ) {
+                    $this.css("backgroundColor", "#B7C4B3");
+                    setPg = "/sale/top-brands-discounted-dp";
+                    if ($this.parents(".top-items").hasClass("top-cl")) {
+                        $this.append(clMsg);
+                        setPg = "/contact-lenses/";
+                    } else if ($this.parents(".top-items").hasClass("top-sale")) {
+                        $this.append(
+                            '<div class="size-14">Outlet Deals</div><div class="size-18 pt-2 mt-2" style="line-height: 1; border-top: 1px #fff solid;">Save Up To</div><div class="size-40" style="line-height: 1;">50%</div>'
+                        );
+                        $this.addClass(
+                            "background-red color-white weight-bold transform-uppercase"
+                        );
+                    } else if ($this.parents(".top-items").hasClass("top-sg")) {
+                        $this.append(
+                            '<div class="size-13">Sizzling Summer Savings</div><div class="size-16 mt-3"><span class="weight-bold"> UP TO 50% OFF<br> SELECT FRAMES</div>'
+                        );
+                        setPg = "/email/flash-sale-dp";
+                    } else {
+                        $this.append(
+                            '<div class="size-13">Sizzling Summer Savings</div><div class="size-16 mt-3"><span class="weight-bold">UP TO 50% OFF<br> SELECT FRAMES<br> + <br>60% OFF LENSES <br></div>'
+                        );
+                        setPg = "/email/flash-sale-dp";
+                    }
+                } else
+                    if (
+                        !$this.parents(".top-items").hasClass("top-sale") &&
+                        ((checkDate >= "250708" && checkDate <= "250711") ||
+                            (fdFncs.vars.isTest >= "250708" && checkDate <= "250711"))
+                    ) {
+                        $this.css("backgroundColor", "#8AAED3");
+                        setPg = "/sale/top-brands-discounted-dp";
+                        if ($this.parents(".top-items").hasClass("top-cl")) {
+                            $this.append(clMsg);
+                            setPg = "/contact-lenses/";
+                        } else if ($this.parents(".top-items").hasClass("top-sale")) {
+                            $this.append(
+                                '<div class="size-14">Outlet Deals</div><div class="size-18 pt-2 mt-2" style="line-height: 1; border-top: 1px #fff solid;">Save Up To</div><div class="size-40" style="line-height: 1;">50%</div>'
+                            );
+                            $this.addClass(
+                                "background-red color-white weight-bold transform-uppercase"
+                            );
+                        } else if ($this.parents(".top-items").hasClass("top-sg")) {
+                            $this.append(
+                                '<div class="size-13 weight-bold">PRIME TIME </div><div class="size-16"><span class="weight-bold"> 25% OFF<br> SELECT FRAMES</div>'
+                            );
+                            setPg = "/email/flash-sale-dp";
+                        } else {
+                            $this.append(
+                                '<div class="size-13 weight-bold">PRIME TIME </div><div class="size-16"><span class="weight-bold">25% OFF<BR> SELECT FRAMES<br> + <br>UP TO 60% OFF<br> LENSES <br></div>'
+                            );
+                            setPg = "/email/flash-sale-dp";
+                        }
+                    } else
+
+                        if (
+                            !$this.parents(".top-items").hasClass("top-sale") &&
+                            ((checkDate >= "250707" && checkDate <= "250707") ||
+                                (fdFncs.vars.isTest >= "250707" && checkDate <= "250707"))
+                        ) {
+                            $this.css("backgroundColor", "#AF2318");
+                            setPg = "/sale/top-brands-discounted-dp";
+                            if ($this.parents(".top-items").hasClass("top-cl")) {
+                                $this.append(clMsg);
+                                setPg = "/contact-lenses/";
+                            } else if ($this.parents(".top-items").hasClass("top-sale")) {
+                                $this.append(
+                                    '<div class="size-14">Outlet Deals</div><div class="size-18 pt-2 mt-2" style="line-height: 1; border-top: 1px #fff solid;">Save Up To</div><div class="size-40" style="line-height: 1;">50%</div>'
+                                );
+                                $this.addClass(
+                                    "background-red color-white weight-bold transform-uppercase"
+                                );
+                            } else if ($this.parents(".top-items").hasClass("top-sg")) {
+                                $this.append(
+                                    '<div class="size-13 weight-bold">CLEARANCE DEALS </div><div class="size-16"><span class="weight-bold"> UP TO 50% OFF <br>FRAMES</div>'
+                                );
+                                setPg = "/sale";
+                            } else {
+                                $this.append(
+                                    '<div class="size-13 weight-bold">CLEARANCE DEALS </div><div class="size-16"><span class="weight-bold">UP TO 50% OFF <br>FRAMES<br> + <br> 60% OFF LENSES</div>'
+                                );
+                                setPg = "/sale";
+                            }
+                        } else {
+                            $this.css("backgroundColor", "#C7C9AF");
+                            setPg = "/sale/top-brands-discounted-dp";
+                            //$this.css("backgroundColor", "#A7E5DA");
+                            if ($this.parents(".top-items").hasClass("top-cl")) {
+                                $this.append(clMsg);
+                                setPg = "/contact-lenses/";
+                            } else if ($this.parents(".top-items").hasClass("top-sale")) {
+                                $this.append(
+                                    '<div class="size-14">Outlet Deals</div><div class="size-18 pt-2 mt-2" style="line-height: 1; border-top: 1px #fff solid;">Save Up To</div><div class="size-40" style="line-height: 1;">50%</div>'
+                                );
+                                $this.addClass(
+                                    "background-red color-white weight-bold transform-uppercase"
+                                );
+                                setPg = "/sale/designer-eyewear-outlet-dp";
+                            } else if ($this.parents(".top-items").hasClass("top-sg")) {
+                                $this.append(
+                                    '<div><p class="mt-0">Up to</p> <span class="weight-bold size-18">50% OFF<br>FRAMES</span></div>'
+                                );
+                            } else {
+                                $this.append(
+                                    '<div>Up to</div><div class="weight-bold size-18">50% OFF FRAMES</div><div class="weight-bold size-18">+</div><div>Up to</div><div class="weight-bold size-18">60% OFF LENSES</div>'
+                                );
+                            }
+                        }
+
+        if (setPg !== "") {
+            $this.on("click", function () {
+                window.location.href = setPg;
+            });
+        }
+    });
+</script>
