@@ -1,8 +1,6 @@
 <script>
 
 
-
-
     let lastScrollTop = 0;
     let isFixed = false;
 
@@ -23,7 +21,6 @@
         const lensesTop = lensesDiv.offsetTop;
         const hasReachedLenses = currentScroll >= lensesTop + 300;
         const lastSection = sections[sections.length - 1];
-        const scrollingDown = currentScroll > lastScrollTop;
 
         if (hasReachedLenses && !isFixed) {
             target.classList.remove("ct_display_hide");
@@ -58,13 +55,28 @@
             const rect = element.getBoundingClientRect();
             if (rect.top <= 100 && rect.bottom > 100) {
                 pills.forEach(p => {
-                    p.classList.toggle("active", p.getAttribute("data-section") === id);
+                    const isActive = p.getAttribute("data-section") === id;
+                    p.classList.toggle("active", isActive);
+
+                    if (isActive) {
+                        const pill = document.querySelector(`.lens-pill[data-section="${id}"]`);
+                        if (pill) {
+                            pill.scrollIntoView({
+                                behavior: "smooth",
+                                block: "nearest",
+                                inline: "start"
+                            });
+                        }
+                    }
                 });
             }
         });
 
         lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     });
+
+
+
 
 
     const track = document.getElementById('carouselTrackcard');

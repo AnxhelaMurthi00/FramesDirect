@@ -1,0 +1,1807 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap 4.1.3 -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="styles.css">
+        <title>Asymmetrical Grid (Bootstrap 4.1.3)</title>
+        <style>
+     .steps-progress-container {
+  width: 192px;
+  height: 4px;
+  background: #eee;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+#stepsProgressBar {
+  width: 0;
+  height: 100%;
+  background: #6B777B;
+  transition: width 0.2s linear;
+}
+
+            .steps-text {
+                font-size: 20px !important;
+            }
+
+            .id-me-title {
+                font-family: Open Sans;
+                font-weight: 700;
+                font-style: Bold;
+                font-size: 24px;
+                line-height: 150%;
+                letter-spacing: 0%;
+                text-align: center;
+
+            }
+
+
+            @media (max-width: 768px) {
+
+                #military {
+                    height: 280px;
+                }
+
+                .hide-mobile {
+                    display: none !important;
+                }
+            }
+
+
+            @media (min-width: 769px) {
+                .hide-desktop {
+                    display: none !important;
+                }
+            }
+
+            .claim-discount {
+                background: var(--bg);
+                color: var(--text);
+                padding: clamp(16px, 4vw, 40px) 16px;
+                margin: 0 auto;
+            }
+
+            .cd-header {
+                text-align: center;
+                margin-bottom: 16px;
+            }
+
+            .cd-header h2 {
+                margin: 0 0 6px 0;
+                font-size: clamp(18px, 3.5vw, 24px);
+                font-weight: 700;
+            }
+
+            .cd-header p {
+                margin: 0;
+                font-size: 12px;
+                color: var(--muted);
+            }
+
+            /* Track: mobile = horizontal scroll; desktop = grid */
+            .cd-track {
+                display: grid;
+                gap: 16px;
+                grid-auto-flow: column;
+                grid-auto-columns: 85%;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                padding: 8px 2px 16px;
+            }
+
+            .cd-track::-webkit-scrollbar {
+                display: none;
+            }
+
+            .cd-card {
+                background: #F1EDE3;
+                border-radius: 16px;
+                padding: 20px 16px;
+                scroll-snap-align: start;
+                display: grid;
+                place-items: center;
+                text-align: center;
+                min-height: 196px;
+            }
+
+            .cd-card h3 {
+                margin: 8px 0 6px;
+                font-size: 14px;
+            }
+
+            .cd-card p {
+                margin: 0;
+                font-size: 12px;
+                color: var(--muted);
+            }
+
+            .cd-icon {
+                width: 28px;
+                height: 28px;
+            }
+
+            .cd-icon svg {
+                width: 40px;
+                height: 40px;
+                fill: #111;
+            }
+
+            /* Slider control (mobile only) */
+            .cd-slider {
+                display: grid;
+                justify-items: center;
+                gap: 8px;
+                margin-top: 4px;
+            }
+
+            .cd-slider input[type="range"] {
+                width: 180px;
+            }
+
+            .cd-dots {
+                display: flex;
+                gap: 8px;
+            }
+
+            .cd-dots span {
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: #d1d5db;
+                opacity: .9;
+            }
+
+            .cd-dots span.active {
+                background: #111;
+            }
+
+            /* Larger screens: 3 columns, hide slider */
+            @media (min-width: 700px) {
+                .cd-track {
+                    grid-auto-flow: initial;
+                    grid-template-columns: repeat(3, 1fr);
+                    overflow: visible;
+                    scroll-snap-type: none;
+                }
+
+                .cd-card {
+                    min-height: 140px;
+                }
+
+                .cd-slider {
+                    display: none;
+                }
+            }
+
+            /* Reduce motion preference */
+            @media (prefers-reduced-motion: reduce) {
+                .cd-track {
+                    scroll-behavior: auto;
+                }
+            }
+
+            .container {
+                margin-left: 64px;
+                margin-right: 64px;
+            }
+
+            .rounded-16 {
+                border-radius: 16px !important;
+                overflow: hidden;
+
+            }
+
+            .id-me-btn img {
+                max-height: 45px;
+                height: auto;
+            }
+
+            .card-body {
+                background-color: #F1EDE3;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            .hero-content {
+                position: absolute;
+                left: 5%;
+                top: 50%;
+                transform: translateY(-50%);
+                max-width: 585px;
+                color: #000;
+            }
+
+            .lens-card>img {
+                width: -webkit-fill-available;
+                border-radius: 30px;
+
+            }
+
+            .lens-title {
+                font-weight: bold;
+                font-size: 24px;
+                min-height: 48px;
+            }
+
+            .hero-title {
+                font-weight: 700;
+                font-size: 24px !important;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+                color: #333333;
+            }
+
+
+            @media (min-width: 768px) {
+                .w-lg-50 {
+                    width: 50% !important;
+                }
+
+                .left-desk {
+                    text-align: left !important;
+                }
+
+                .cd__desk__hide {
+                    display: none !important;
+                }
+
+                .mx-md {
+                    margin-left: 64px;
+                    margin-right: 64px;
+                }
+
+                .ml-md-64 {
+
+                    margin-left: 64px;
+                }
+
+
+            }
+
+            .left-desk {
+                text-align: center;
+            }
+
+            @media (max-width: 767.98px) {
+                .hero-content {
+                    position: absolute;
+                    top: 0%;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(0);
+                    width: 100%;
+                    margin: 0;
+                    text-align: center;
+                    color: #000;
+                    z-index: 2;
+                    /* above the image */
+                }
+
+                .slider-progress {
+                    width: calc(50% - 40px) !important;
+                }
+
+                h2 {
+                    font-size: 24px;
+                }
+
+
+                .step-card {
+                    min-height: auto !important;
+                }
+
+                .display {
+                    display: flex !important;
+                    flex-direction: column;
+                    gap: 10px;
+
+
+                }
+
+                .undisplay {
+                    display: none !important;
+                }
+
+                .btn-shop-white {
+                    margin: 15px 5px 0 5px;
+                    background-color: #F1EDE3;
+                    font-weight: bold !important;
+                    border: none;
+                    width: 90%;
+                }
+
+
+                /* .d-none {
+            display: none !important;
+        } */
+
+                #lens-card {
+
+                    margin-right: 15px !important;
+                    margin-left: 15px !important;
+                    height: 550px !important;
+
+                }
+
+                video.img-fluid.lazy-video {
+                    max-width: 315px !important;
+                }
+
+
+                #glasses {
+                    width: -webkit-fill-available;
+                }
+
+                .glasses-container {
+                    width: -webkit-fill-available;
+
+                }
+
+                .lens-section {
+                    flex-direction: column;
+                }
+
+                .cd__mob__hide {
+                    display: none !important;
+                }
+
+                .small {
+                    min-height: 330px;
+                }
+
+                .lens-colors {
+                    min-height: 150px;
+                }
+
+                .prevBtn,
+                .nextBtn {
+                    top: 50% !important;
+                }
+
+                .card-img-overlay {
+                    left: 0% !important;
+
+                }
+
+                .information img {
+                    border-radius: 0 !important;
+                }
+
+                .information .card-img-overlay:first-child {
+                    top: 40% !important;
+                }
+
+                .first {
+                    top: 40% !important;
+                    width: 100%;
+                }
+
+                .second {
+                    width: 100%;
+                }
+            }
+
+
+
+            .icon-section {
+                padding: 2rem 0;
+                text-align: center;
+                font-family: 'Open Sans', 'Helvetica Neue', sans-serif !important;
+            }
+
+
+            .section-subtitle {
+                max-width: 700px;
+                margin: 0 auto 2rem;
+
+                color: #000000;
+                font-size: 1rem;
+            }
+
+            .icon-wrapper {
+                background-color: #F1EDE3;
+                width: 64px;
+                height: 64px;
+                border-radius: 50%;
+                margin: 0 auto 0.75rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+
+            .icon-label {
+                font-weight: 600;
+                font-size: 0.9rem;
+                margin-top: 0.25rem;
+                font-family: 'Open Sans' !important;
+            }
+
+            @media (max-width: 575px) {
+                .col-6 {
+                    margin-bottom: 1rem;
+                }
+
+                .vision-cards {
+                    margin-left: 0px !important;
+                    margin-right: 0px !important;
+                }
+
+                .prescription-lens {
+                    justify-content: unset !important;
+                }
+
+                .btn-shop {
+                    width: 90%;
+                }
+            }
+
+
+
+            .vision-types img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .prescription-lens {
+                justify-content: center;
+            }
+
+
+            .btn-shop {
+                margin: 15px 5px 0 5px;
+                background-color: #6B777B;
+                font-weight: bold !important;
+                color: white !important;
+                border: none;
+            }
+
+
+
+
+            #landing-content {
+                max-width: 100% !important;
+                margin: 0 !important;
+            }
+
+            .max-width {
+                width: 100% !important;
+            }
+
+            #content-main {
+                padding: 0px;
+                overflow: hidden;
+            }
+
+            .vision-cards {
+                overflow-x: auto;
+                white-space: nowrap;
+                scroll-behavior: smooth;
+                gap: 1rem;
+                scrollbar-width: none
+            }
+
+            .vision-cards>div {
+                display: inline-block;
+                white-space: normal;
+                /* allow inner content to wrap */
+                vertical-align: top;
+                width: 300px;
+                /* set fixed width to force horizontal scroll */
+            }
+
+            .prescription-lens {
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+
+
+            .lens-desc {
+                min-height: 96px;
+            }
+
+            .lens-price {
+                margin-top: auto;
+            }
+
+            .slider-progress {
+                width: calc(20% - 40px);
+                height: 2px;
+                background: #bebebe;
+                margin: 15px auto 0;
+                position: relative;
+            }
+
+            .slider-progress-bar {
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 25%;
+                background: #6B777B;
+                transition: width 0.3s ease;
+            }
+
+            .lenses-order-section {
+                background: #5f6a6e;
+                color: #fff;
+            }
+
+            .step-card {
+                background: #F1EDE3;
+                border-radius: 1rem;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+                color: #000000;
+                min-height: 230px;
+
+            }
+
+
+            .fs-13 {
+                font-size: 13px;
+            }
+
+            .display {
+                display: none;
+            }
+
+
+            .lens-pill {
+                padding: .5rem 1.5rem;
+                margin: 0 .6rem;
+                font-size: .8125rem;
+                border-radius: 999rem;
+                background: #F1EDE3;
+                min-width: fit-content;
+                text-decoration: none !important;
+            }
+
+            .lens-pill:hover,
+            .lens-pill:focus {
+                background: #6B777B !important;
+                color: #fff !important;
+            }
+
+
+            .lens-pill:hover svg path,
+            .lens-pill:focus svg path {
+                fill: #fff;
+            }
+
+            .bg-soft-sand {
+                background: #F1EDE3;
+            }
+
+            #lens-card {
+                border-radius: 2rem;
+                background-color: white;
+                margin-right: 64px;
+                margin-left: 64px;
+                overflow-y: scroll;
+                height: 400px;
+                scrollbar-width: none;
+                padding-bottom: 0px !important;
+            }
+
+
+            .default-position {
+                position: static;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            .fixed-position {
+                position: fixed;
+                top: 0%;
+                left: 0;
+                width: 100%;
+                z-index: 999;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 16px;
+                background: white;
+                /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+                border-bottom: 1px solid #eee;
+            }
+
+            .default-position>a {
+                max-width: fit-content;
+            }
+
+
+            .circle-icon {
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                background-color: #F1EDE3;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .lens-comparison {
+                background-color: #f6f1ea;
+                padding: 2rem;
+                border-radius: 20px;
+            }
+
+
+            .lens-icon {
+                font-size: 1.5rem;
+            }
+
+            .dot-filled {
+                height: 10px;
+                width: 10px;
+                background-color: #000;
+                border-radius: 50%;
+                display: inline-block;
+                margin: 0 2px;
+            }
+
+            .dot-empty {
+                height: 10px;
+                width: 10px;
+                border: 1px solid #000;
+                border-radius: 50%;
+                display: inline-block;
+                margin: 0 2px;
+            }
+
+            .btn-custom {
+                background-color: #5c6c7d;
+                color: white;
+            }
+
+            .mx {
+                margin-left: 64px;
+                margin-right: 64px;
+            }
+
+            .ct_range_slider {
+                position: relative;
+                z-index: 2;
+                width: 100%;
+                margin: auto;
+                margin-top: -2.1vw;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                -webkit-box-pack: start;
+                -ms-flex-pack: start;
+                justify-content: center;
+            }
+
+
+            .ct_range_slider input[type=range].ct_range-slider__range {
+                position: relative;
+                width: 400px;
+                margin: 19px 0;
+                background-color: rgba(0, 0, 0, 0);
+                -webkit-appearance: none
+            }
+
+            .ct_range_slider input[type=range].ct_range-slider__range:focus {
+                outline: 0;
+                padding-left: 0 !important
+            }
+
+            .ct_range_slider input[type=range].ct_range-slider__range::-webkit-slider-runnable-track {
+                background: -webkit-gradient(linear, right top, left top, from(rgba(148, 148, 148, 0.49)), color-stop(100%, rgba(138, 138, 138, 0.49)), to(rgba(217, 230, 254, .49)));
+                background: linear-gradient(270deg, rgba(153, 153, 153, 0.49) 0, rgba(255, 255, 255, .49) 100%, rgba(131, 131, 131, 0.49) 100%);
+                border: 0;
+                border-radius: 2px;
+                width: 100%;
+                height: 6px;
+                cursor: pointer
+            }
+
+            .ct_range_slider input[type=range].ct_range-slider__range::-webkit-slider-thumb {
+                z-index: 4;
+                position: relative;
+                margin-top: -12px;
+                width: 32px;
+                height: 32px;
+                background: rgba(0, 0, 0, 0);
+                border: 0;
+                cursor: pointer;
+                -webkit-appearance: none;
+                background-image: url(https://images.framesdirect.com/image/upload/v1756302031/fd_lens_hub/Sun.png);
+                background-position: center;
+                background-size: 100%;
+                -webkit-transition: .2s ease;
+                transition: .2s ease;
+                -webkit-transform: scale(1.2);
+                transform: scale(1.2);
+                -webkit-box-shadow: none !important;
+                box-shadow: none !important
+            }
+
+            .ct_range_slider input[type=range].ct_range-slider__range::-webkit-slider-thumb:hover {
+                -webkit-transform: scale(1.4);
+                transform: scale(1.4)
+            }
+
+            .ct_range_slider input[type=range].ct_range-slider__range:focus::-webkit-slider-runnable-track {
+                background: -webkit-gradient(linear, right top, left top, from(rgba(172, 172, 172, 0.49)), color-stop(100%, rgba(255, 255, 255, .49)), to(rgba(206, 219, 244, .49)));
+                background: linear-gradient(270deg, rgba(185, 185, 185, 0.49) 0, rgba(255, 255, 255, .49) 100%, rgba(206, 219, 244, .49) 100%)
+            }
+
+            .ct_range_slider input[type=range].ct_range-slider__range::-moz-range-track {
+                background: linear-gradient(270deg, rgba(133, 133, 133, 0.49) 0, rgba(255, 255, 255, .49) 100%, rgba(206, 219, 244, .49) 100%);
+                border: 0;
+                border-radius: 2px;
+                width: 100%;
+                height: 6px;
+                cursor: pointer
+            }
+
+            .ct_range_slider input[type=range].ct_range-slider__range::-moz-range-thumb {
+                position: relative;
+                width: 37px;
+                height: 37px;
+                background: rgba(0, 0, 0, 0);
+                border: 0;
+                cursor: pointer;
+                background-image: url(https://media.glasses.com/2021/Varie/transition_sun.svg);
+                background-position: center;
+                background-size: 100%;
+                -webkit-transition: .2s ease;
+                -moz-transition: .2s ease;
+                transition: .2s ease;
+                transform: scale(1.1)
+            }
+
+            .ct_range_slider input[type=range].ct_range-slider__range::-moz-range-thumb:hover {
+                transform: scale(1.3)
+            }
+
+            .ct_range_slider input[type=range].ct_range-slider__range::-ms-track {
+                background: rgba(0, 0, 0, 0);
+                border-color: transparent;
+                border-width: 19px 0;
+                color: transparent;
+                width: 100%;
+                height: 2px;
+                cursor: pointer
+            }
+
+            .ct_range_slider input[type=range].ct_range-slider__range::-ms-fill-lower {
+                background: #6B777B;
+                border: 0;
+                border-radius: 4px
+            }
+
+            .ct_range_slider input[type=range].ct_range-slider__range::-ms-fill-upper {
+                background: #6B777B;
+                border: 0;
+                border-radius: 4px
+            }
+
+            .ct_range_slider input[type=range].ct_range-slider__range::-ms-thumb {
+                position: relative;
+                margin-top: -5px;
+                width: 32px;
+                height: 32px;
+                background: rgba(0, 0, 0, 0);
+                border: 0;
+                cursor: pointer;
+                -webkit-appearance: none;
+                background-image: url(https://media.glasses.com/2021/Varie/transition_sun.svg);
+                background-position: center;
+                background-size: 100%;
+                -webkit-transition: .2s ease;
+                -ms-transition: .2s ease;
+                transition: .2s ease;
+                transform: scale(1.2)
+            }
+
+            .sun-slider {
+                box-shadow: none !important;
+            }
+
+            .ct_range_slider input[type=range].ct_range-slider__range::-ms-thumb:hover {
+                transform: scale(1.4)
+            }
+
+            .ct_range_slider input[type=range].ct_range-slider__range:focus::-ms-fill-lower {
+                background: #ccc
+            }
+
+            .ct_range_slider input[type=range].ct_range-slider__range:focus::-ms-fill-upper {
+                background: #6B777B
+            }
+
+            @supports(-ms-ime-align:auto) {
+                .ct_range_slider input[type=range].ct_range-slider__range {
+                    margin: 0
+                }
+            }
+
+
+            .ct_sunglasses {
+                right: 0;
+
+                transform: translateY(-10%);
+                z-index: 11;
+            }
+
+            .ct_sunglasses_container {
+                position: relative;
+                width: 100%;
+            }
+
+            .ct_sunglasses_container>img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            .ct_sunglasses_container.ct_lens_change .ct_hover {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                opacity: 0.5;
+                pointer-events: none;
+            }
+
+            @media (orientation: portrait) and (max-width: 1024px),
+            (orientation: landscape) and (max-width: 1023px) {
+                .ct_sunglasses {
+                    top: 22vw;
+                    left: 2%;
+                    right: auto;
+                    width: 96%;
+                    transform: translateY(0);
+                }
+
+
+            }
+
+            @media (min-width: 824px) and (max-width: 924px) {
+                .text-center.mb-3.col-md-12.col-12 {
+                    min-height: 590px;
+                }
+
+                .compTitle {
+                    height: 60px;
+                }
+
+
+            }
+
+            @media (min-width: 925px) and (max-width:1024px) {
+                .text-center.mb-3.col-md-12.col-12 {
+                    min-height: 550px;
+                }
+
+                .compTitle {
+                    height: 60px;
+                }
+
+
+
+
+            }
+
+            @media (min-width: 525px) and (max-width: 768px) {
+                .text-center.mb-3.col-md-12.col-12 {
+                    min-height: 640px;
+                }
+
+                .compTitle {
+                    height: 60px;
+                }
+
+                .small {
+                    min-height: 260px;
+                }
+
+
+            }
+
+            .comTitle {
+                height: min-content;
+            }
+
+
+            @media (min-width: 768px) and (max-width: 1300px) {
+                .card-img-overlay {
+                    top: 40% !important;
+                }
+
+                .first {
+                    left: 10% !important;
+                }
+            }
+
+            @media (max-width: 767px) {
+                .container {
+                    margin-left: 16px !important;
+                    margin-right: 16px;
+                }
+
+                .ct_sunglasses {
+                    top: 46vw;
+                    left: 2%;
+                    right: auto;
+                    width: 96%;
+                }
+
+                .carousel-track {
+                    margin-left: 16px;
+                }
+
+
+            }
+
+            @media (max-width: 1023px) {
+                .ct_space .ct_sunglasses {
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    width: 100%;
+                    transform: translateY(-65%);
+                }
+            }
+
+
+            .step-container {
+                position: relative;
+                padding-left: 60px;
+                margin-bottom: 50px;
+            }
+
+            .step-icon {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                background-color: #f5f3ec;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .step-icon img {
+                width: 24px;
+                height: 24px;
+            }
+
+            .step-line {
+                position: absolute;
+                left: 24px;
+                top: 48px;
+                bottom: -50px;
+                width: 2px;
+                border-left: 2px solid #d6cec2;
+                z-index: 0;
+            }
+
+            .last .step-line {
+                display: none;
+            }
+
+            .step-text {
+                font-size: 16px;
+                color: #000;
+                padding-top: 14px;
+            }
+
+            .border-bottom {
+                border-bottom: 1px solid white !important;
+                display: block;
+            }
+
+            .border-right {
+                border-right: 1px solid white !important;
+                display: block;
+            }
+
+            .border-left {
+                border-left: 1px solid white !important;
+                display: block;
+            }
+
+
+            .description {
+                height: 80px;
+                font-family: Open Sans;
+                font-weight: 400;
+                font-style: Regular;
+                font-size: 20px;
+                line-height: 28px;
+                letter-spacing: 0%;
+                text-align: center;
+
+            }
+
+            .icon {
+                height: 57px;
+            }
+
+            .branded_lenses .cardStyle {
+                background: white;
+                padding: 30px 10px;
+                border-radius: 15px;
+                text-align: center;
+                width: 235px;
+                flex: 0 0 auto;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+                text-decoration: none !important;
+                height: 250px;
+            }
+
+            .branded_lenses .cardStyle>a {
+                height: unset !important;
+            }
+
+
+
+
+            .carousel-container {
+                position: relative;
+                overflow: hidden;
+            }
+
+            .carousel-track {
+                display: flex;
+                gap: 20px;
+                transition: transform 0.5s ease;
+                overflow-x: auto;
+                scrollbar-width: none;
+                scroll-snap-type: x mandatory;
+
+            }
+
+            .cardStyle {
+                background: white;
+                padding: 30px 20px;
+                border-radius: 15px;
+                text-align: center;
+                width: 310px;
+                flex: 0 0 auto;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+                text-decoration: none !important;
+                height: 300px;
+
+            }
+
+            .display {
+                display: none !important;
+            }
+
+            .cardStyle:hover .display {
+                display: flex !important;
+            }
+
+
+
+            .cardStyle:hover {
+                .display {
+                    display: block;
+                }
+
+            }
+
+            .display:hover {
+                text-decoration: none;
+            }
+
+            .prevBtn,
+            .nextBtn {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+
+                margin-top: -22px;
+                /* padding: 16px; */
+                color: white;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                border: none;
+                background: #CABEA5;
+            }
+
+            .nextBtn {
+                right: calc(20px - 20px);
+                border-radius: 50%;
+            }
+
+
+
+            .progress-segment.dark {
+                background-color: #f3efe5;
+                height: 100%;
+                width: 0%;
+                transition: width 0.3s ease;
+            }
+
+            .progress-segment.light {
+                visibility: hidden;
+            }
+
+            .progress-bar-container {
+                width: 20%;
+                height: 2px;
+                background-color: white;
+                margin-top: 15px;
+                border-radius: 5px;
+                overflow: hidden;
+                margin-left: 40%;
+            }
+
+            .progress-bar-fill {
+                height: 100%;
+                width: 15%;
+                background-color: #6B777B;
+                transition: width 0.3s ease;
+            }
+
+            @media (max-width: 945px) {
+                .progress-bar-container {
+                    width: 50%;
+                    height: 6px;
+                    background-color: #ffffff;
+                    margin-top: 15px;
+                    border-radius: 5px;
+                    overflow: hidden;
+                    margin-left: 25%;
+                }
+
+                .lens-comparison {
+                    border-radius: 0;
+                }
+            }
+
+            .selection .btn {
+                margin-top: auto;
+                width: 160px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .selection .card {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+
+            a.btn.btn-outline-dark.weight-bold.btn-sm.mb-4 {
+                border-color: rgba(107, 119, 123, 1);
+            }
+
+            .selection .card-body {
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+            }
+
+            .selection .card-body p {
+                margin-bottom: 0.5rem;
+            }
+
+            .selection .btn {
+                margin-top: auto;
+            }
+
+            .cardStyle>a {
+                height: 44px !important;
+            }
+
+            .display:hover {
+                text-decoration: none;
+            }
+
+
+            .branded_lenses {
+                background: #f3efe5;
+            }
+
+            .information img {
+                border-radius: 12px;
+            }
+
+            .information a {
+                background-color: #333;
+                color: white !important;
+            }
+
+            .card-img-overlay h5 {
+                font-size: 24px !important;
+            }
+
+            .ct_display_hide {
+                display: none !important;
+            }
+
+            #lens-package-section.lock-scroll {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                overflow-y: auto;
+                z-index: 9999;
+                background: white;
+            }
+
+            body.scroll-locked {
+                overflow: hidden;
+            }
+
+            .lens-card:hover .lens-video {
+                opacity: 1;
+                pointer-events: auto;
+
+            }
+
+            .lens-video {
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s ease;
+                border-radius: 30px;
+            }
+
+            .rounded-1 {
+                border-radius: 1rem;
+            }
+
+            .lens-pill.active {
+                background: #6B777B !important;
+                color: #fff !important;
+            }
+
+            .lens-pill.active svg path {
+                fill: #fff;
+            }
+
+            #epp-faqs {
+                max-width: 930px;
+            }
+
+            .prescription-lens>a {
+                text-decoration: none;
+            }
+
+            .lead>a {
+                font-weight: 600;
+                color: white !important;
+            }
+
+
+
+            /* Custom height utility for 33.333% (Bootstrap has h-25, h-50, h-75 only) */
+            .h-33 {
+                height: 33.3333%;
+            }
+
+
+
+            /* Cards fill their parent slice fully */
+            .lp-col .card {
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* Images cover space uniformly */
+            .card img {
+                flex: 1;
+                object-fit: cover;
+                width: 100%;
+            }
+
+            /* On mobile, reset to natural stacking */
+            @media (max-width: 767.98px) {
+                .lp-col {
+                    height: auto;
+                }
+
+                .h-25,
+                .h-33,
+                .h-50,
+                .h-75 {
+                    height: auto;
+                }
+
+                .card img {
+                    height: 200px;
+                }
+
+                /* or auto; tweak to your mobile look */
+            }
+        </style>
+    </head>
+
+    <body class="bg-light">
+        <section class="hero-section position-relative">
+
+
+            <img src="https://images.framesdirect.com/image/upload/v1756717750/id-me/id_me_hero_d.png"
+                class="img-fluid w-100 hero-img d-none d-md-block" alt="Lens">
+
+
+            <img src="https://images.framesdirect.com/image/upload/v1756718855/id-me/id_me_hero_m.png"
+                class="img-fluid w-100 hero-img d-block d-md-none" alt="Lens Mobile">
+
+
+            <div class="hero-content">
+                <h2 class="hero-title">ID.me: Easy, secure,<br class="hide-desktop "> rewarding</h2>
+                <p class="hero-subtitle mb-0">
+                    As a heartfelt thank-you to those who serve and support our communities every day , enjoy 10% off
+                    sitewide with a $75 minimum spend.<br>
+                    Verify with ID.me to unlock secure savings—combinable with vision insurance.
+                </p><br><br class="hide-mobile">
+                <a href="https://www.id.me/" target="_blank" class="id-me-btn">
+                    <img src="https://images.framesdirect.com/image/upload/v1756719088/id-me/id-me-button.png"
+                        alt="Verify with ID.me" class="img-fluid">
+                </a>
+
+
+            </div>
+
+        </section>
+        <div class="container">
+            <h2 class="text-center mb-4">Your role comes with rewards</h2>
+
+            <!-- ========= DESKTOP/TABLET (≥ md) ========= -->
+            <div class="row d-none d-md-flex">
+                <!-- Col 1: 50/50 -->
+                <div class="col-md-4 d-flex flex-column lp-col">
+                    <div class="card border-0 shadow-sm mb-3 h-50 rounded-16">
+                        <img class="w-100 h-100 object-cover"
+                            src="https://images.framesdirect.com/image/upload/v1756717743/id-me/military.png"
+                            alt=" Military">
+                        <div class="card-body text-center py-2"><strong>Military</strong></div>
+                    </div>
+                    <div class="card border-0 shadow-sm h-50 rounded-16">
+                        <img class="w-100 h-100 object-cover"
+                            src="https://images.framesdirect.com/image/upload/v1756717745/id-me/teachers.png"
+                            alt="Nurses">
+                        <div class="card-body text-center py-2"><strong>Teachers</strong></div>
+                    </div>
+                </div>
+
+                <!-- Col 2: 33/33/33 -->
+                <div class="col-md-4 d-flex flex-column lp-col">
+                    <div class="card border-0 shadow-sm mb-3 h-33 rounded-16">
+                        <img class="w-100 h-100 object-cover"
+                            src="https://images.framesdirect.com/image/upload/v1756717743/id-me/nurse.png" alt="Nurses">
+                        <div class="card-body text-center py-2"><strong>Nurses</strong></div>
+                    </div>
+                    <div class="card border-0 shadow-sm mb-3 h-33 rounded-16">
+                        <img class="w-100 h-100 object-cover"
+                            src="https://images.framesdirect.com/image/upload/v1756717741/id-me/government-employees.png"
+                            alt="Government Employees">
+                        <div class="card-body text-center py-2"><strong>Government
+                                Employees</strong></div>
+                    </div>
+                    <div class="card border-0 shadow-sm h-33 rounded-16">
+                        <img class="w-100 h-100 object-cover"
+                            src="https://images.framesdirect.com/image/upload/v1756717740/id-me/medical-professionals.png"
+                            alt="Medical Professionals">
+                        <div class="card-body text-center py-2"><strong>Medical <br
+                                    class="hide-desktop">Professionals</strong></div>
+                    </div>
+                </div>
+
+                <!-- Col 3: 25/75 -->
+                <div class="col-md-4 d-flex flex-column lp-col">
+                    <div class="card border-0 shadow-sm mb-3 h-25 rounded-16">
+                        <img class="w-100 h-100 object-cover"
+                            src="https://images.framesdirect.com/image/upload/v1756717740/id-me/first-responders.png"
+                            alt="First Responders">
+                        <div class="card-body text-center py-2"><strong>First
+                                Responders</strong></div>
+                    </div>
+                    <div class="card border-0 shadow-sm h-75 rounded-16">
+                        <img class="w-100 h-100 object-cover"
+                            src="https://images.framesdirect.com/image/upload/v1756717746/id-me/students.png"
+                            alt="Students">
+                        <div class="card-body text-center py-2"><strong>Students</strong></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========= MOBILE (< md) ========= -->
+            <div class="d-block d-md-none">
+                <div class="row">
+                    <!-- First card full width -->
+                    <div class="col-12 mb-3">
+                        <div class="card border-0 shadow-sm rounded-16">
+                            <img class="w-100 object-cover-mobile" id="military"
+                                src="https://images.framesdirect.com/image/upload/v1756717743/id-me/military.png"
+                                alt="Military">
+                            <div class="card-body text-center py-2"><strong>Military</strong></div>
+                        </div>
+                    </div>
+
+                    <!-- Rest: two per row -->
+                    <div class="col-6 mb-3">
+                        <div class="card border-0 shadow-sm h-100 rounded-16">
+                            <img class="w-100 object-cover-mobile"
+                                src="https://images.framesdirect.com/image/upload/v1756717743/id-me/nurse.png"
+                                alt="Nurses">
+                            <div class="card-body text-center py-2"><strong>Nurses</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 mb-3">
+                        <div class="card border-0 shadow-sm h-100 rounded-16">
+                            <img class="w-100 object-cover-mobile"
+                                src="https://images.framesdirect.com/image/upload/v1756717740/id-me/first-responders.png"
+                                alt="First Responders">
+                            <div class="card-body text-center py-2"><strong>First Responders</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 mb-3">
+                        <div class="card border-0 shadow-sm h-100 rounded-16">
+                            <img class="w-100 object-cover-mobile"
+                                src="https://images.framesdirect.com/image/upload/v1756717741/id-me/government-employees.png"
+                                alt="Government Employees">
+                            <div class="card-body text-center py-2"><strong>Government <br>Employees</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 mb-3">
+                        <div class="card border-0 shadow-sm h-100 rounded-16">
+                            <img class="w-100 object-cover-mobile"
+                                src="https://images.framesdirect.com/image/upload/v1756717740/id-me/medical-professionals.png"
+                                alt="Medical Professionals">
+                            <div class="card-body text-center py-2"><strong>Medical <br>Professionals</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 mb-3">
+                        <div class="card border-0 shadow-sm h-100 rounded-16">
+                            <img class="w-100 object-cover-mobile"
+                                src="https://images.framesdirect.com/image/upload/v1756717745/id-me/teachers.png"
+                                alt="Teachers">
+                            <div class="card-body text-center py-2"><strong>Teachers</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 mb-3">
+                        <div class="card border-0 shadow-sm h-100 rounded-16">
+                            <img class="w-100 object-cover-mobile"
+                                src="https://images.framesdirect.com/image/upload/v1756717746/id-me/students.png"
+                                alt="Students">
+                            <div class="card-body text-center py-2"><strong>Students</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="/eyeglasses/" class="btn btn-primary btn-shop" data-element-id="content8"
+                    data-description="SHOP EYEGLASSES">SHOP EYEGLASSES</a>
+                <a href="/prescription-sunglasses/" class="btn btn-secondary btn-shop" data-element-id="content9"
+                    data-description="SHOP PRESCRIPTION
+                        SUNGLASSES">SHOP PRESCRIPTION
+                    SUNGLASSES</a>
+                <a href="/sunglasses/" class="btn btn-secondary btn-shop" data-element-id="content9" data-description="SHOP PRESCRIPTION
+                        SUNGLASSES">SHOP
+                    SUNGLASSES</a>
+            </div>
+            <section class="claim-discount" aria-label="How to claim your discount">
+                <div class="cd-header">
+                    <h2>How to claim your discount</h2>
+                    <p>Unlock your savings in 3 easy steps:</p>
+                </div>
+
+
+                <div class="cd-track" id="cdTrack">
+                    <article class="cd-card" aria-label="Step 1">
+                        <div class="cd-icon" aria-hidden="true">
+                            <!-- cart icon -->
+                            <svg width="41" height="40" viewBox="0 0 41 40" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_6768_2294)">
+                                    <path
+                                        d="M40.1057 10.6483C39.7882 10.2608 39.3182 10.0383 38.8165 10.0383H6.189L5.08567 4.5225C4.854 3.35083 3.82317 2.5 2.63317 2.5H0.666504V4.16667H2.63317C3.03484 4.16667 3.3715 4.44583 3.45067 4.8475L8.14234 28.2992L7.13817 31.8133C6.92067 32.5742 7.069 33.3733 7.54567 34.005C8.02317 34.6375 8.75067 35 9.54234 35H10.2965C10.0098 35.4925 9.83317 36.0567 9.83317 36.6667C9.83317 38.505 11.3282 40 13.1665 40C15.0048 40 16.4998 38.505 16.4998 36.6667C16.4998 36.0567 16.3232 35.4925 16.0365 35H27.7973C27.5098 35.4925 27.3332 36.0567 27.3332 36.6667C27.3332 38.505 28.8282 40 30.6665 40C32.5048 40 33.9998 38.505 33.9998 36.6667C33.9998 36.0567 33.8232 35.4925 33.5365 35H35.6665V33.3333H9.54234C9.279 33.3333 9.0365 33.2125 8.87734 33.0017C8.719 32.7908 8.669 32.525 8.7415 32.2717L9.8565 28.3683L9.84984 28.3333H35.8173C36.6082 28.3333 37.2957 27.77 37.4515 26.995L40.4507 12.0325C40.549 11.5408 40.4232 11.0358 40.1057 10.6483ZM14.8332 36.6667C14.8332 37.5858 14.0857 38.3333 13.1665 38.3333C12.2473 38.3333 11.4998 37.5858 11.4998 36.6667C11.4998 35.7475 12.2473 35 13.1665 35C14.0857 35 14.8332 35.7475 14.8332 36.6667ZM32.3332 36.6667C32.3332 37.5858 31.5857 38.3333 30.6665 38.3333C29.7473 38.3333 28.9998 37.5858 28.9998 36.6667C28.9998 35.7475 29.7473 35 30.6665 35C31.5857 35 32.3332 35.7475 32.3332 36.6667ZM35.8173 26.6667H9.5165L6.52234 11.7042H38.8165L35.8173 26.6667Z"
+                                        fill="black" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_6768_2294">
+                                        <rect width="40" height="40" fill="white" transform="translate(0.666504)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+
+                        </div>
+                        <h3>Step 1</h3>
+                        <p class="steps-text">Add your favorite styles to <br><strong>cart</strong></p>
+                    </article>
+
+                    <article class="cd-card" aria-label="Step 2">
+                        <div class="cd-icon" aria-hidden="true">
+                            <!-- check icon -->
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_6768_2300)">
+                                    <path
+                                        d="M18.3333 23.8217L13.0892 18.5775L11.9108 19.7558L18.3333 26.1783L28.9225 15.5892L27.7442 14.4108L18.3333 23.8217Z"
+                                        fill="black" />
+                                    <path
+                                        d="M20 0C8.9725 0 0 8.9725 0 20C0 31.0275 8.9725 40 20 40C31.0275 40 40 31.0275 40 20C40 8.9725 31.0275 0 20 0ZM20 38.3333C9.89083 38.3333 1.66667 30.1092 1.66667 20C1.66667 9.89083 9.89083 1.66667 20 1.66667C30.1092 1.66667 38.3333 9.89083 38.3333 20C38.3333 30.1092 30.1092 38.3333 20 38.3333Z"
+                                        fill="black" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_6768_2300">
+                                        <rect width="40" height="40" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+
+                        </div>
+                        <h3>Step 2</h3>
+                        <p class="steps-text">Verify your eligibility <br>with ID.me</p>
+                    </article>
+
+                    <article class="cd-card" aria-label="Step 3">
+                        <div class="cd-icon" aria-hidden="true">
+                            <!-- bag icon -->
+                            <svg width="41" height="40" viewBox="0 0 41 40" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M40.1997 20.7217C39.8997 19.6592 39.0563 18.8008 37.998 18.4825C36.9863 18.1783 35.9163 18.35 35.0688 18.9542L32.5413 20.7533L31.2388 8.16167C31.1505 7.30917 30.438 6.66667 29.5813 6.66667H26.1663V5.83333C26.1663 2.61667 23.5497 0 20.333 0C17.1163 0 14.4997 2.61667 14.4997 5.83333V6.66667H11.0847C10.228 6.66667 9.51551 7.30917 9.42717 8.16167L8.02967 21.6667H6.99967C6.85967 21.6667 6.72134 21.7017 6.59884 21.77L0.765508 24.9758C0.498841 25.1217 0.333008 25.4017 0.333008 25.7058V39.1667C0.333008 39.4633 0.491341 39.7383 0.748008 39.8875C0.877174 39.9625 1.02217 40 1.16634 40C1.30884 40 1.45134 39.9633 1.57967 39.89L7.22134 36.6667H24.4997C24.7005 36.6667 24.8947 36.5942 25.0463 36.4617L39.073 24.2625C40.143 23.4067 40.5755 22.05 40.1997 20.7217ZM16.1663 5.83333C16.1663 3.53583 18.0355 1.66667 20.333 1.66667C22.6305 1.66667 24.4997 3.53583 24.4997 5.83333V6.66667H16.1663V5.83333ZM11.0847 8.33333H14.4997V11.6667H16.1663V8.33333H24.4997V11.6667H26.1663V8.33333H29.5813L30.9813 21.865L24.2338 26.6667H21.5388C21.8038 26.2258 21.9663 25.72 21.9947 25.1775C22.043 24.2533 21.7197 23.375 21.0847 22.7058C20.458 22.0458 19.5763 21.6667 18.6663 21.6667H9.70551L11.0847 8.33333ZM38.0055 22.9833L24.188 35H6.99967C6.85467 35 6.71217 35.0375 6.58634 35.11L1.99967 37.7308V26.1983L7.21384 23.3333H18.6663C19.128 23.3333 19.558 23.5183 19.8755 23.8533C20.193 24.1883 20.3547 24.6275 20.3305 25.0908C20.2847 25.96 19.4747 26.6667 18.5247 26.6667H13.6663V28.3333H24.4997C24.673 28.3333 24.8422 28.2792 24.983 28.1792L36.0372 20.3125C36.4697 20.0033 36.9947 19.9208 37.5188 20.0792C38.0288 20.2325 38.4522 20.6625 38.5963 21.1742C38.7888 21.8567 38.578 22.525 38.0055 22.9833Z"
+                                    fill="black" />
+                            </svg>
+
+                        </div>
+                        <h3>Step 3</h3>
+                        <p class="steps-text">Complete your purchase <br>with savings applied</p>
+                    </article>
+                </div>
+                <div class="steps-progress-container">
+                    <div id="stepsProgressBar"></div>
+                </div>
+
+                <div class="cd-track" id="cdTrack">
+                    <!-- step cards here -->
+                </div>
+
+
+            </section>
+
+
+        </div>
+        <section style="background-color: #f3efe5;">
+            <div class="py-4 mt-3">
+
+                <h2 class="id-me-title"><b>Trusted by millions</b></h2>
+                <p class="text-center mt-2"> See how ID.me is powering secure access and benefits across the
+                    country.
+
+                </p>
+
+
+                <div class="carousel-container ml-md-64" id="carouselContainer">
+                    <div class="carousel-track " id="carouselTrackcard">
+                        <!-- Example cards -->
+
+
+
+                        <div class="cardStyle">
+                            <!-- SVG Icon -->
+                            <div class="title">
+                                <svg width="130" height="128" viewBox="0 0 130 128" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M16.9531 44H10.918V27.4766L10.9766 24.7617L11.0742 21.793C10.0716 22.7956 9.375 23.4531 8.98438 23.7656L5.70312 26.4023L2.79297 22.7695L11.9922 15.4453H16.9531V44ZM43.7305 21.832C43.7305 23.6159 43.1901 25.1328 42.1094 26.3828C41.0286 27.6328 39.5117 28.4922 37.5586 28.9609V29.0781C39.8633 29.3646 41.6081 30.0677 42.793 31.1875C43.9779 32.2943 44.5703 33.7917 44.5703 35.6797C44.5703 38.4271 43.5742 40.569 41.582 42.1055C39.5898 43.6289 36.7448 44.3906 33.0469 44.3906C29.9479 44.3906 27.2005 43.8763 24.8047 42.8477V37.7109C25.9115 38.2708 27.1289 38.7266 28.457 39.0781C29.7852 39.4297 31.1003 39.6055 32.4023 39.6055C34.3945 39.6055 35.8659 39.2669 36.8164 38.5898C37.7669 37.9128 38.2422 36.8255 38.2422 35.3281C38.2422 33.987 37.6953 33.0365 36.6016 32.4766C35.5078 31.9167 33.763 31.6367 31.3672 31.6367H29.1992V27.0078H31.4062C33.6198 27.0078 35.2344 26.7214 36.25 26.1484C37.2786 25.5625 37.793 24.5664 37.793 23.1602C37.793 20.9987 36.4388 19.918 33.7305 19.918C32.793 19.918 31.8359 20.0742 30.8594 20.3867C29.8958 20.6992 28.8216 21.2396 27.6367 22.0078L24.8438 17.8477C27.4479 15.9727 30.5534 15.0352 34.1602 15.0352C37.1159 15.0352 39.4466 15.6341 41.1523 16.832C42.8711 18.0299 43.7305 19.6966 43.7305 21.832ZM47.5391 31.8711C47.5391 26.2201 48.7305 22.0143 51.1133 19.2539C53.5091 16.4935 57.0898 15.1133 61.8555 15.1133C63.4831 15.1133 64.7591 15.2109 65.6836 15.4062V20.2305C64.5247 19.9701 63.3789 19.8398 62.2461 19.8398C60.1758 19.8398 58.4831 20.1523 57.168 20.7773C55.8659 21.4023 54.8893 22.3268 54.2383 23.5508C53.5872 24.7747 53.2031 26.513 53.0859 28.7656H53.3398C54.6289 26.5521 56.6927 25.4453 59.5312 25.4453C62.0833 25.4453 64.082 26.2461 65.5273 27.8477C66.9727 29.4492 67.6953 31.6628 67.6953 34.4883C67.6953 37.5352 66.8359 39.9505 65.1172 41.7344C63.3984 43.5052 61.0156 44.3906 57.9688 44.3906C55.8594 44.3906 54.0169 43.9023 52.4414 42.9258C50.8789 41.9492 49.668 40.5234 48.8086 38.6484C47.9622 36.7734 47.5391 34.5143 47.5391 31.8711ZM57.8516 39.5664C59.1406 39.5664 60.1302 39.1367 60.8203 38.2773C61.5104 37.4049 61.8555 36.168 61.8555 34.5664C61.8555 33.1732 61.5299 32.0794 60.8789 31.2852C60.2409 30.4779 59.2708 30.0742 57.9688 30.0742C56.7448 30.0742 55.6966 30.4714 54.8242 31.2656C53.9648 32.0599 53.5352 32.9844 53.5352 34.0391C53.5352 35.5885 53.9388 36.8971 54.7461 37.9648C55.5664 39.0326 56.6016 39.5664 57.8516 39.5664ZM84.668 44L77.793 21.5977H77.6172C77.8646 26.1549 77.9883 29.1953 77.9883 30.7188V44H72.5781V15.4453H80.8203L87.5781 37.2812H87.6953L94.8633 15.4453H103.105V44H97.4609V30.4844C97.4609 29.8464 97.4674 29.1107 97.4805 28.2773C97.5065 27.444 97.5977 25.2305 97.7539 21.6367H97.5781L90.2148 44H84.668ZM115.996 32.0469H108.438V27.7695H115.996V20.1523H120.273V27.7695H127.832V32.0469H120.273V39.5664H115.996V32.0469Z"
+                                        fill="black" />
+                                    <path
+                                        d="M21.8398 83H18.2656V75.3477C18.2656 74.4023 18.1055 73.6953 17.7852 73.2266C17.4727 72.75 16.9766 72.5117 16.2969 72.5117C15.3828 72.5117 14.7188 72.8477 14.3047 73.5195C13.8906 74.1914 13.6836 75.2969 13.6836 76.8359V83H10.1094V69.8984H12.8398L13.3203 71.5742H13.5195C13.8711 70.9727 14.3789 70.5039 15.043 70.168C15.707 69.8242 16.4688 69.6523 17.3281 69.6523C19.2891 69.6523 20.6172 70.293 21.3125 71.5742H21.6289C21.9805 70.9648 22.4961 70.4922 23.1758 70.1562C23.8633 69.8203 24.6367 69.6523 25.4961 69.6523C26.9805 69.6523 28.1016 70.0352 28.8594 70.8008C29.625 71.5586 30.0078 72.7773 30.0078 74.457V83H26.4219V75.3477C26.4219 74.4023 26.2617 73.6953 25.9414 73.2266C25.6289 72.75 25.1328 72.5117 24.4531 72.5117C23.5781 72.5117 22.9219 72.8242 22.4844 73.4492C22.0547 74.0742 21.8398 75.0664 21.8398 76.4258V83ZM39.1133 72.1953C38.3555 72.1953 37.7617 72.4375 37.332 72.9219C36.9023 73.3984 36.6562 74.0781 36.5938 74.9609H41.6094C41.5938 74.0781 41.3633 73.3984 40.918 72.9219C40.4727 72.4375 39.8711 72.1953 39.1133 72.1953ZM39.6172 83.2344C37.5078 83.2344 35.8594 82.6523 34.6719 81.4883C33.4844 80.3242 32.8906 78.6758 32.8906 76.543C32.8906 74.3477 33.4375 72.6523 34.5312 71.457C35.6328 70.2539 37.1523 69.6523 39.0898 69.6523C40.9414 69.6523 42.3828 70.1797 43.4141 71.2344C44.4453 72.2891 44.9609 73.7461 44.9609 75.6055V77.3398H36.5117C36.5508 78.3555 36.8516 79.1484 37.4141 79.7188C37.9766 80.2891 38.7656 80.5742 39.7812 80.5742C40.5703 80.5742 41.3164 80.4922 42.0195 80.3281C42.7227 80.1641 43.457 79.9023 44.2227 79.543V82.3086C43.5977 82.6211 42.9297 82.8516 42.2188 83C41.5078 83.1562 40.6406 83.2344 39.6172 83.2344ZM59.5977 83H56.0234V75.3477C56.0234 74.4023 55.8633 73.6953 55.543 73.2266C55.2305 72.75 54.7344 72.5117 54.0547 72.5117C53.1406 72.5117 52.4766 72.8477 52.0625 73.5195C51.6484 74.1914 51.4414 75.2969 51.4414 76.8359V83H47.8672V69.8984H50.5977L51.0781 71.5742H51.2773C51.6289 70.9727 52.1367 70.5039 52.8008 70.168C53.4648 69.8242 54.2266 69.6523 55.0859 69.6523C57.0469 69.6523 58.375 70.293 59.0703 71.5742H59.3867C59.7383 70.9648 60.2539 70.4922 60.9336 70.1562C61.6211 69.8203 62.3945 69.6523 63.2539 69.6523C64.7383 69.6523 65.8594 70.0352 66.6172 70.8008C67.3828 71.5586 67.7656 72.7773 67.7656 74.457V83H64.1797V75.3477C64.1797 74.4023 64.0195 73.6953 63.6992 73.2266C63.3867 72.75 62.8906 72.5117 62.2109 72.5117C61.3359 72.5117 60.6797 72.8242 60.2422 73.4492C59.8125 74.0742 59.5977 75.0664 59.5977 76.4258V83ZM78.7344 69.6523C80.2812 69.6523 81.4922 70.2578 82.3672 71.4688C83.2422 72.6719 83.6797 74.3242 83.6797 76.4258C83.6797 78.5898 83.2266 80.2656 82.3203 81.4531C81.4219 82.6406 80.1953 83.2344 78.6406 83.2344C77.1016 83.2344 75.8945 82.6758 75.0195 81.5586H74.7734L74.1758 83H71.4453V64.7656H75.0195V69.0078C75.0195 69.5469 74.9727 70.4102 74.8789 71.5977H75.0195C75.8555 70.3008 77.0938 69.6523 78.7344 69.6523ZM77.5859 72.5117C76.7031 72.5117 76.0586 72.7852 75.6523 73.332C75.2461 73.8711 75.0352 74.7656 75.0195 76.0156V76.4023C75.0195 77.8086 75.2266 78.8164 75.6406 79.4258C76.0625 80.0352 76.7266 80.3398 77.6328 80.3398C78.3672 80.3398 78.9492 80.0039 79.3789 79.332C79.8164 78.6523 80.0352 77.668 80.0352 76.3789C80.0352 75.0898 79.8164 74.125 79.3789 73.4844C78.9414 72.8359 78.3438 72.5117 77.5859 72.5117ZM92.0586 72.1953C91.3008 72.1953 90.707 72.4375 90.2773 72.9219C89.8477 73.3984 89.6016 74.0781 89.5391 74.9609H94.5547C94.5391 74.0781 94.3086 73.3984 93.8633 72.9219C93.418 72.4375 92.8164 72.1953 92.0586 72.1953ZM92.5625 83.2344C90.4531 83.2344 88.8047 82.6523 87.6172 81.4883C86.4297 80.3242 85.8359 78.6758 85.8359 76.543C85.8359 74.3477 86.3828 72.6523 87.4766 71.457C88.5781 70.2539 90.0977 69.6523 92.0352 69.6523C93.8867 69.6523 95.3281 70.1797 96.3594 71.2344C97.3906 72.2891 97.9062 73.7461 97.9062 75.6055V77.3398H89.457C89.4961 78.3555 89.7969 79.1484 90.3594 79.7188C90.9219 80.2891 91.7109 80.5742 92.7266 80.5742C93.5156 80.5742 94.2617 80.4922 94.9648 80.3281C95.668 80.1641 96.4023 79.9023 97.168 79.543V82.3086C96.543 82.6211 95.875 82.8516 95.1641 83C94.4531 83.1562 93.5859 83.2344 92.5625 83.2344ZM108.125 69.6523C108.609 69.6523 109.012 69.6875 109.332 69.7578L109.062 73.1094C108.773 73.0312 108.422 72.9922 108.008 72.9922C106.867 72.9922 105.977 73.2852 105.336 73.8711C104.703 74.457 104.387 75.2773 104.387 76.332V83H100.812V69.8984H103.52L104.047 72.1016H104.223C104.629 71.3672 105.176 70.7773 105.863 70.332C106.559 69.8789 107.312 69.6523 108.125 69.6523ZM120.852 79.1094C120.852 80.4531 120.383 81.4766 119.445 82.1797C118.516 82.8828 117.121 83.2344 115.262 83.2344C114.309 83.2344 113.496 83.168 112.824 83.0352C112.152 82.9102 111.523 82.7227 110.938 82.4727V79.5195C111.602 79.832 112.348 80.0938 113.176 80.3047C114.012 80.5156 114.746 80.6211 115.379 80.6211C116.676 80.6211 117.324 80.2461 117.324 79.4961C117.324 79.2148 117.238 78.9883 117.066 78.8164C116.895 78.6367 116.598 78.4375 116.176 78.2188C115.754 77.9922 115.191 77.7305 114.488 77.4336C113.48 77.0117 112.738 76.6211 112.262 76.2617C111.793 75.9023 111.449 75.4922 111.23 75.0312C111.02 74.5625 110.914 73.9883 110.914 73.3086C110.914 72.1445 111.363 71.2461 112.262 70.6133C113.168 69.9727 114.449 69.6523 116.105 69.6523C117.684 69.6523 119.219 69.9961 120.711 70.6836L119.633 73.2617C118.977 72.9805 118.363 72.75 117.793 72.5703C117.223 72.3906 116.641 72.3008 116.047 72.3008C114.992 72.3008 114.465 72.5859 114.465 73.1562C114.465 73.4766 114.633 73.7539 114.969 73.9883C115.312 74.2227 116.059 74.5703 117.207 75.0312C118.23 75.4453 118.98 75.832 119.457 76.1914C119.934 76.5508 120.285 76.9648 120.512 77.4336C120.738 77.9023 120.852 78.4609 120.852 79.1094Z"
+                                        fill="black" />
+                                </svg>
+                            </div>
+                            <p class="description">
+                                ID.me Wallet enables access to critical government services
+                            </p>
+                        </div>
+
+                        <div class="cardStyle">
+                            <!-- SVG Icon -->
+                            <div class="title">
+                                <svg width="92" height="128" viewBox="0 0 92 128" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1.70312 31.8711C1.70312 26.2201 2.89453 22.0143 5.27734 19.2539C7.67318 16.4935 11.2539 15.1133 16.0195 15.1133C17.6471 15.1133 18.9232 15.2109 19.8477 15.4062V20.2305C18.6888 19.9701 17.543 19.8398 16.4102 19.8398C14.3398 19.8398 12.6471 20.1523 11.332 20.7773C10.0299 21.4023 9.05339 22.3268 8.40234 23.5508C7.7513 24.7747 7.36719 26.513 7.25 28.7656H7.50391C8.79297 26.5521 10.8568 25.4453 13.6953 25.4453C16.2474 25.4453 18.2461 26.2461 19.6914 27.8477C21.1367 29.4492 21.8594 31.6628 21.8594 34.4883C21.8594 37.5352 21 39.9505 19.2812 41.7344C17.5625 43.5052 15.1797 44.3906 12.1328 44.3906C10.0234 44.3906 8.18099 43.9023 6.60547 42.9258C5.04297 41.9492 3.83203 40.5234 2.97266 38.6484C2.1263 36.7734 1.70312 34.5143 1.70312 31.8711ZM12.0156 39.5664C13.3047 39.5664 14.2943 39.1367 14.9844 38.2773C15.6745 37.4049 16.0195 36.168 16.0195 34.5664C16.0195 33.1732 15.694 32.0794 15.043 31.2852C14.4049 30.4779 13.4349 30.0742 12.1328 30.0742C10.9089 30.0742 9.86068 30.4714 8.98828 31.2656C8.12891 32.0599 7.69922 32.9844 7.69922 34.0391C7.69922 35.5885 8.10286 36.8971 8.91016 37.9648C9.73047 39.0326 10.7656 39.5664 12.0156 39.5664ZM44.5547 29.7227C44.5547 34.7096 43.7344 38.401 42.0938 40.7969C40.4661 43.1927 37.9531 44.3906 34.5547 44.3906C31.2604 44.3906 28.7734 43.1536 27.0938 40.6797C25.4271 38.2057 24.5938 34.5534 24.5938 29.7227C24.5938 24.6836 25.4076 20.9727 27.0352 18.5898C28.6628 16.194 31.1693 14.9961 34.5547 14.9961C37.849 14.9961 40.3359 16.2461 42.0156 18.7461C43.7083 21.2461 44.5547 24.9049 44.5547 29.7227ZM30.5898 29.7227C30.5898 33.2253 30.8893 35.7383 31.4883 37.2617C32.1003 38.7721 33.1224 39.5273 34.5547 39.5273C35.9609 39.5273 36.9766 38.7591 37.6016 37.2227C38.2266 35.6862 38.5391 33.1862 38.5391 29.7227C38.5391 26.2201 38.2201 23.707 37.582 22.1836C36.957 20.6471 35.9479 19.8789 34.5547 19.8789C33.1354 19.8789 32.1198 20.6471 31.5078 22.1836C30.8958 23.707 30.5898 26.2201 30.5898 29.7227ZM67.4062 29.7227C67.4062 34.7096 66.5859 38.401 64.9453 40.7969C63.3177 43.1927 60.8047 44.3906 57.4062 44.3906C54.112 44.3906 51.625 43.1536 49.9453 40.6797C48.2786 38.2057 47.4453 34.5534 47.4453 29.7227C47.4453 24.6836 48.2591 20.9727 49.8867 18.5898C51.5143 16.194 54.0208 14.9961 57.4062 14.9961C60.7005 14.9961 63.1875 16.2461 64.8672 18.7461C66.5599 21.2461 67.4062 24.9049 67.4062 29.7227ZM53.4414 29.7227C53.4414 33.2253 53.7409 35.7383 54.3398 37.2617C54.9518 38.7721 55.974 39.5273 57.4062 39.5273C58.8125 39.5273 59.8281 38.7591 60.4531 37.2227C61.0781 35.6862 61.3906 33.1862 61.3906 29.7227C61.3906 26.2201 61.0716 23.707 60.4336 22.1836C59.8086 20.6471 58.7995 19.8789 57.4062 19.8789C55.987 19.8789 54.9714 20.6471 54.3594 22.1836C53.7474 23.707 53.4414 26.2201 53.4414 29.7227ZM78.1289 32.0469H70.5703V27.7695H78.1289V20.1523H82.4062V27.7695H89.9648V32.0469H82.4062V39.5664H78.1289V32.0469Z"
+                                        fill="black" />
+                                    <path
+                                        d="M19.9023 79.1094C19.9023 80.4531 19.4336 81.4766 18.4961 82.1797C17.5664 82.8828 16.1719 83.2344 14.3125 83.2344C13.3594 83.2344 12.5469 83.168 11.875 83.0352C11.2031 82.9102 10.5742 82.7227 9.98828 82.4727V79.5195C10.6523 79.832 11.3984 80.0938 12.2266 80.3047C13.0625 80.5156 13.7969 80.6211 14.4297 80.6211C15.7266 80.6211 16.375 80.2461 16.375 79.4961C16.375 79.2148 16.2891 78.9883 16.1172 78.8164C15.9453 78.6367 15.6484 78.4375 15.2266 78.2188C14.8047 77.9922 14.2422 77.7305 13.5391 77.4336C12.5312 77.0117 11.7891 76.6211 11.3125 76.2617C10.8438 75.9023 10.5 75.4922 10.2812 75.0312C10.0703 74.5625 9.96484 73.9883 9.96484 73.3086C9.96484 72.1445 10.4141 71.2461 11.3125 70.6133C12.2188 69.9727 13.5 69.6523 15.1562 69.6523C16.7344 69.6523 18.2695 69.9961 19.7617 70.6836L18.6836 73.2617C18.0273 72.9805 17.4141 72.75 16.8438 72.5703C16.2734 72.3906 15.6914 72.3008 15.0977 72.3008C14.043 72.3008 13.5156 72.5859 13.5156 73.1562C13.5156 73.4766 13.6836 73.7539 14.0195 73.9883C14.3633 74.2227 15.1094 74.5703 16.2578 75.0312C17.2812 75.4453 18.0312 75.832 18.5078 76.1914C18.9844 76.5508 19.3359 76.9648 19.5625 77.4336C19.7891 77.9023 19.9023 78.4609 19.9023 79.1094ZM28.2109 80.3867C28.8359 80.3867 29.5859 80.25 30.4609 79.9766V82.6367C29.5703 83.0352 28.4766 83.2344 27.1797 83.2344C25.75 83.2344 24.707 82.875 24.0508 82.1562C23.4023 81.4297 23.0781 80.3438 23.0781 78.8984V72.582H21.3672V71.0703L23.3359 69.875L24.3672 67.1094H26.6523V69.8984H30.3203V72.582H26.6523V78.8984C26.6523 79.4062 26.793 79.7812 27.0742 80.0234C27.3633 80.2656 27.7422 80.3867 28.2109 80.3867ZM35.9688 76.4258C35.9688 77.7227 36.1797 78.7031 36.6016 79.3672C37.0312 80.0312 37.7266 80.3633 38.6875 80.3633C39.6406 80.3633 40.3242 80.0352 40.7383 79.3789C41.1602 78.7148 41.3711 77.7305 41.3711 76.4258C41.3711 75.1289 41.1602 74.1562 40.7383 73.5078C40.3164 72.8594 39.625 72.5352 38.6641 72.5352C37.7109 72.5352 37.0234 72.8594 36.6016 73.5078C36.1797 74.1484 35.9688 75.1211 35.9688 76.4258ZM45.0273 76.4258C45.0273 78.5586 44.4648 80.2266 43.3398 81.4297C42.2148 82.6328 40.6484 83.2344 38.6406 83.2344C37.3828 83.2344 36.2734 82.9609 35.3125 82.4141C34.3516 81.8594 33.6133 81.0664 33.0977 80.0352C32.582 79.0039 32.3242 77.8008 32.3242 76.4258C32.3242 74.2852 32.8828 72.6211 34 71.4336C35.1172 70.2461 36.6875 69.6523 38.7109 69.6523C39.9688 69.6523 41.0781 69.9258 42.0391 70.4727C43 71.0195 43.7383 71.8047 44.2539 72.8281C44.7695 73.8516 45.0273 75.0508 45.0273 76.4258ZM55.293 69.6523C55.7773 69.6523 56.1797 69.6875 56.5 69.7578L56.2305 73.1094C55.9414 73.0312 55.5898 72.9922 55.1758 72.9922C54.0352 72.9922 53.1445 73.2852 52.5039 73.8711C51.8711 74.457 51.5547 75.2773 51.5547 76.332V83H47.9805V69.8984H50.6875L51.2148 72.1016H51.3906C51.7969 71.3672 52.3438 70.7773 53.0312 70.332C53.7266 69.8789 54.4805 69.6523 55.293 69.6523ZM64.3047 72.1953C63.5469 72.1953 62.9531 72.4375 62.5234 72.9219C62.0938 73.3984 61.8477 74.0781 61.7852 74.9609H66.8008C66.7852 74.0781 66.5547 73.3984 66.1094 72.9219C65.6641 72.4375 65.0625 72.1953 64.3047 72.1953ZM64.8086 83.2344C62.6992 83.2344 61.0508 82.6523 59.8633 81.4883C58.6758 80.3242 58.082 78.6758 58.082 76.543C58.082 74.3477 58.6289 72.6523 59.7227 71.457C60.8242 70.2539 62.3438 69.6523 64.2812 69.6523C66.1328 69.6523 67.5742 70.1797 68.6055 71.2344C69.6367 72.2891 70.1523 73.7461 70.1523 75.6055V77.3398H61.7031C61.7422 78.3555 62.043 79.1484 62.6055 79.7188C63.168 80.2891 63.957 80.5742 64.9727 80.5742C65.7617 80.5742 66.5078 80.4922 67.2109 80.3281C67.9141 80.1641 68.6484 79.9023 69.4141 79.543V82.3086C68.7891 82.6211 68.1211 82.8516 67.4102 83C66.6992 83.1562 65.832 83.2344 64.8086 83.2344ZM82.1992 79.1094C82.1992 80.4531 81.7305 81.4766 80.793 82.1797C79.8633 82.8828 78.4688 83.2344 76.6094 83.2344C75.6562 83.2344 74.8438 83.168 74.1719 83.0352C73.5 82.9102 72.8711 82.7227 72.2852 82.4727V79.5195C72.9492 79.832 73.6953 80.0938 74.5234 80.3047C75.3594 80.5156 76.0938 80.6211 76.7266 80.6211C78.0234 80.6211 78.6719 80.2461 78.6719 79.4961C78.6719 79.2148 78.5859 78.9883 78.4141 78.8164C78.2422 78.6367 77.9453 78.4375 77.5234 78.2188C77.1016 77.9922 76.5391 77.7305 75.8359 77.4336C74.8281 77.0117 74.0859 76.6211 73.6094 76.2617C73.1406 75.9023 72.7969 75.4922 72.5781 75.0312C72.3672 74.5625 72.2617 73.9883 72.2617 73.3086C72.2617 72.1445 72.7109 71.2461 73.6094 70.6133C74.5156 69.9727 75.7969 69.6523 77.4531 69.6523C79.0312 69.6523 80.5664 69.9961 82.0586 70.6836L80.9805 73.2617C80.3242 72.9805 79.7109 72.75 79.1406 72.5703C78.5703 72.3906 77.9883 72.3008 77.3945 72.3008C76.3398 72.3008 75.8125 72.5859 75.8125 73.1562C75.8125 73.4766 75.9805 73.7539 76.3164 73.9883C76.6602 74.2227 77.4062 74.5703 78.5547 75.0312C79.5781 75.4453 80.3281 75.832 80.8047 76.1914C81.2812 76.5508 81.6328 76.9648 81.8594 77.4336C82.0859 77.9023 82.1992 78.4609 82.1992 79.1094Z"
+                                        fill="black" />
+                                </svg>
+
+                            </div>
+                            <!-- Description -->
+                            <p class="description">
+                                accept community cards in ID.me Wallet
+                            </p>
+                        </div>
+                        <div class="cardStyle">
+                            <!-- SVG Icon -->
+                            <div class="title">
+                                <svg width="164" height="128" viewBox="0 0 164 128" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M60.5547 31.8711C60.5547 26.2201 61.7461 22.0143 64.1289 19.2539C66.5247 16.4935 70.1055 15.1133 74.8711 15.1133C76.4987 15.1133 77.7747 15.2109 78.6992 15.4062V20.2305C77.5404 19.9701 76.3945 19.8398 75.2617 19.8398C73.1914 19.8398 71.4987 20.1523 70.1836 20.7773C68.8815 21.4023 67.9049 22.3268 67.2539 23.5508C66.6029 24.7747 66.2188 26.513 66.1016 28.7656H66.3555C67.6445 26.5521 69.7083 25.4453 72.5469 25.4453C75.099 25.4453 77.0977 26.2461 78.543 27.8477C79.9883 29.4492 80.7109 31.6628 80.7109 34.4883C80.7109 37.5352 79.8516 39.9505 78.1328 41.7344C76.4141 43.5052 74.0312 44.3906 70.9844 44.3906C68.875 44.3906 67.0326 43.9023 65.457 42.9258C63.8945 41.9492 62.6836 40.5234 61.8242 38.6484C60.9779 36.7734 60.5547 34.5143 60.5547 31.8711ZM70.8672 39.5664C72.1562 39.5664 73.1458 39.1367 73.8359 38.2773C74.526 37.4049 74.8711 36.168 74.8711 34.5664C74.8711 33.1732 74.5456 32.0794 73.8945 31.2852C73.2565 30.4779 72.2865 30.0742 70.9844 30.0742C69.7604 30.0742 68.7122 30.4714 67.8398 31.2656C66.9805 32.0599 66.5508 32.9844 66.5508 34.0391C66.5508 35.5885 66.9544 36.8971 67.7617 37.9648C68.582 39.0326 69.6172 39.5664 70.8672 39.5664ZM93.9922 25.7578C96.7526 25.7578 98.9466 26.5326 100.574 28.082C102.215 29.6315 103.035 31.7539 103.035 34.4492C103.035 37.6393 102.052 40.0938 100.086 41.8125C98.1198 43.5312 95.3073 44.3906 91.6484 44.3906C88.4714 44.3906 85.9062 43.8763 83.9531 42.8477V37.6328C84.9818 38.1797 86.1797 38.6289 87.5469 38.9805C88.9141 39.319 90.2096 39.4883 91.4336 39.4883C95.1185 39.4883 96.9609 37.9779 96.9609 34.957C96.9609 32.0794 95.0534 30.6406 91.2383 30.6406C90.5482 30.6406 89.7865 30.7122 88.9531 30.8555C88.1198 30.9857 87.4427 31.1289 86.9219 31.2852L84.5195 29.9961L85.5938 15.4453H101.082V20.5625H90.8867L90.3594 26.168L91.043 26.0312C91.8372 25.849 92.8203 25.7578 93.9922 25.7578Z"
+                                        fill="black" />
+                                    <path
+                                        d="M27.8828 83H24.3086V75.3477C24.3086 73.457 23.6055 72.5117 22.1992 72.5117C21.1992 72.5117 20.4766 72.8516 20.0312 73.5312C19.5859 74.2109 19.3633 75.3125 19.3633 76.8359V83H15.7891V64.7656H19.3633V68.4805C19.3633 68.7695 19.3359 69.4492 19.2812 70.5195L19.1992 71.5742H19.3867C20.1836 70.293 21.4492 69.6523 23.1836 69.6523C24.7227 69.6523 25.8906 70.0664 26.6875 70.8945C27.4844 71.7227 27.8828 72.9102 27.8828 74.457V83ZM36.9883 72.1953C36.2305 72.1953 35.6367 72.4375 35.207 72.9219C34.7773 73.3984 34.5312 74.0781 34.4688 74.9609H39.4844C39.4688 74.0781 39.2383 73.3984 38.793 72.9219C38.3477 72.4375 37.7461 72.1953 36.9883 72.1953ZM37.4922 83.2344C35.3828 83.2344 33.7344 82.6523 32.5469 81.4883C31.3594 80.3242 30.7656 78.6758 30.7656 76.543C30.7656 74.3477 31.3125 72.6523 32.4062 71.457C33.5078 70.2539 35.0273 69.6523 36.9648 69.6523C38.8164 69.6523 40.2578 70.1797 41.2891 71.2344C42.3203 72.2891 42.8359 73.7461 42.8359 75.6055V77.3398H34.3867C34.4258 78.3555 34.7266 79.1484 35.2891 79.7188C35.8516 80.2891 36.6406 80.5742 37.6562 80.5742C38.4453 80.5742 39.1914 80.4922 39.8945 80.3281C40.5977 80.1641 41.332 79.9023 42.0977 79.543V82.3086C41.4727 82.6211 40.8047 82.8516 40.0938 83C39.3828 83.1562 38.5156 83.2344 37.4922 83.2344ZM54.0625 83L53.3711 81.2188H53.2773C52.6758 81.9766 52.0547 82.5039 51.4141 82.8008C50.7812 83.0898 49.9531 83.2344 48.9297 83.2344C47.6719 83.2344 46.6797 82.875 45.9531 82.1562C45.2344 81.4375 44.875 80.4141 44.875 79.0859C44.875 77.6953 45.3594 76.6719 46.3281 76.0156C47.3047 75.3516 48.7734 74.9844 50.7344 74.9141L53.0078 74.8438V74.2695C53.0078 72.9414 52.3281 72.2773 50.9688 72.2773C49.9219 72.2773 48.6914 72.5938 47.2773 73.2266L46.0938 70.8125C47.6016 70.0234 49.2734 69.6289 51.1094 69.6289C52.8672 69.6289 54.2148 70.0117 55.1523 70.7773C56.0898 71.543 56.5586 72.707 56.5586 74.2695V83H54.0625ZM53.0078 76.9297L51.625 76.9766C50.5859 77.0078 49.8125 77.1953 49.3047 77.5391C48.7969 77.8828 48.543 78.4062 48.543 79.1094C48.543 80.1172 49.1211 80.6211 50.2773 80.6211C51.1055 80.6211 51.7656 80.3828 52.2578 79.9062C52.7578 79.4297 53.0078 78.7969 53.0078 78.0078V76.9297ZM63.8242 83H60.25V64.7656H63.8242V83ZM73.1055 80.3867C73.7305 80.3867 74.4805 80.25 75.3555 79.9766V82.6367C74.4648 83.0352 73.3711 83.2344 72.0742 83.2344C70.6445 83.2344 69.6016 82.875 68.9453 82.1562C68.2969 81.4297 67.9727 80.3438 67.9727 78.8984V72.582H66.2617V71.0703L68.2305 69.875L69.2617 67.1094H71.5469V69.8984H75.2148V72.582H71.5469V78.8984C71.5469 79.4062 71.6875 79.7812 71.9688 80.0234C72.2578 80.2656 72.6367 80.3867 73.1055 80.3867ZM90.1094 83H86.5352V75.3477C86.5352 73.457 85.832 72.5117 84.4258 72.5117C83.4258 72.5117 82.7031 72.8516 82.2578 73.5312C81.8125 74.2109 81.5898 75.3125 81.5898 76.8359V83H78.0156V64.7656H81.5898V68.4805C81.5898 68.7695 81.5625 69.4492 81.5078 70.5195L81.4258 71.5742H81.6133C82.4102 70.293 83.6758 69.6523 85.4102 69.6523C86.9492 69.6523 88.1172 70.0664 88.9141 70.8945C89.7109 71.7227 90.1094 72.9102 90.1094 74.457V83ZM99.1094 83.2344C95.0312 83.2344 92.9922 80.9961 92.9922 76.5195C92.9922 74.293 93.5469 72.5938 94.6562 71.4219C95.7656 70.2422 97.3555 69.6523 99.4258 69.6523C100.941 69.6523 102.301 69.9492 103.504 70.543L102.449 73.3086C101.887 73.082 101.363 72.8984 100.879 72.7578C100.395 72.6094 99.9102 72.5352 99.4258 72.5352C97.5664 72.5352 96.6367 73.8555 96.6367 76.4961C96.6367 79.0586 97.5664 80.3398 99.4258 80.3398C100.113 80.3398 100.75 80.25 101.336 80.0703C101.922 79.8828 102.508 79.5938 103.094 79.2031V82.2617C102.516 82.6289 101.93 82.8828 101.336 83.0234C100.75 83.1641 100.008 83.2344 99.1094 83.2344ZM114.461 83L113.77 81.2188H113.676C113.074 81.9766 112.453 82.5039 111.812 82.8008C111.18 83.0898 110.352 83.2344 109.328 83.2344C108.07 83.2344 107.078 82.875 106.352 82.1562C105.633 81.4375 105.273 80.4141 105.273 79.0859C105.273 77.6953 105.758 76.6719 106.727 76.0156C107.703 75.3516 109.172 74.9844 111.133 74.9141L113.406 74.8438V74.2695C113.406 72.9414 112.727 72.2773 111.367 72.2773C110.32 72.2773 109.09 72.5938 107.676 73.2266L106.492 70.8125C108 70.0234 109.672 69.6289 111.508 69.6289C113.266 69.6289 114.613 70.0117 115.551 70.7773C116.488 71.543 116.957 72.707 116.957 74.2695V83H114.461ZM113.406 76.9297L112.023 76.9766C110.984 77.0078 110.211 77.1953 109.703 77.5391C109.195 77.8828 108.941 78.4062 108.941 79.1094C108.941 80.1172 109.52 80.6211 110.676 80.6211C111.504 80.6211 112.164 80.3828 112.656 79.9062C113.156 79.4297 113.406 78.7969 113.406 78.0078V76.9297ZM127.961 69.6523C128.445 69.6523 128.848 69.6875 129.168 69.7578L128.898 73.1094C128.609 73.0312 128.258 72.9922 127.844 72.9922C126.703 72.9922 125.812 73.2852 125.172 73.8711C124.539 74.457 124.223 75.2773 124.223 76.332V83H120.648V69.8984H123.355L123.883 72.1016H124.059C124.465 71.3672 125.012 70.7773 125.699 70.332C126.395 69.8789 127.148 69.6523 127.961 69.6523ZM136.973 72.1953C136.215 72.1953 135.621 72.4375 135.191 72.9219C134.762 73.3984 134.516 74.0781 134.453 74.9609H139.469C139.453 74.0781 139.223 73.3984 138.777 72.9219C138.332 72.4375 137.73 72.1953 136.973 72.1953ZM137.477 83.2344C135.367 83.2344 133.719 82.6523 132.531 81.4883C131.344 80.3242 130.75 78.6758 130.75 76.543C130.75 74.3477 131.297 72.6523 132.391 71.457C133.492 70.2539 135.012 69.6523 136.949 69.6523C138.801 69.6523 140.242 70.1797 141.273 71.2344C142.305 72.2891 142.82 73.7461 142.82 75.6055V77.3398H134.371C134.41 78.3555 134.711 79.1484 135.273 79.7188C135.836 80.2891 136.625 80.5742 137.641 80.5742C138.43 80.5742 139.176 80.4922 139.879 80.3281C140.582 80.1641 141.316 79.9023 142.082 79.543V82.3086C141.457 82.6211 140.789 82.8516 140.078 83C139.367 83.1562 138.5 83.2344 137.477 83.2344ZM4.97266 112.426C4.97266 113.723 5.18359 114.703 5.60547 115.367C6.03516 116.031 6.73047 116.363 7.69141 116.363C8.64453 116.363 9.32812 116.035 9.74219 115.379C10.1641 114.715 10.375 113.73 10.375 112.426C10.375 111.129 10.1641 110.156 9.74219 109.508C9.32031 108.859 8.62891 108.535 7.66797 108.535C6.71484 108.535 6.02734 108.859 5.60547 109.508C5.18359 110.148 4.97266 111.121 4.97266 112.426ZM14.0312 112.426C14.0312 114.559 13.4688 116.227 12.3438 117.43C11.2188 118.633 9.65234 119.234 7.64453 119.234C6.38672 119.234 5.27734 118.961 4.31641 118.414C3.35547 117.859 2.61719 117.066 2.10156 116.035C1.58594 115.004 1.32812 113.801 1.32812 112.426C1.32812 110.285 1.88672 108.621 3.00391 107.434C4.12109 106.246 5.69141 105.652 7.71484 105.652C8.97266 105.652 10.082 105.926 11.043 106.473C12.0039 107.02 12.7422 107.805 13.2578 108.828C13.7734 109.852 14.0312 111.051 14.0312 112.426ZM24.2969 105.652C24.7812 105.652 25.1836 105.688 25.5039 105.758L25.2344 109.109C24.9453 109.031 24.5938 108.992 24.1797 108.992C23.0391 108.992 22.1484 109.285 21.5078 109.871C20.875 110.457 20.5586 111.277 20.5586 112.332V119H16.9844V105.898H19.6914L20.2188 108.102H20.3945C20.8008 107.367 21.3477 106.777 22.0352 106.332C22.7305 105.879 23.4844 105.652 24.2969 105.652ZM39.2852 105.898V107.715L37.2344 108.242C37.6094 108.828 37.7969 109.484 37.7969 110.211C37.7969 111.617 37.3047 112.715 36.3203 113.504C35.3438 114.285 33.9844 114.676 32.2422 114.676L31.5977 114.641L31.0703 114.582C30.7031 114.863 30.5195 115.176 30.5195 115.52C30.5195 116.035 31.1758 116.293 32.4883 116.293H34.7148C36.1523 116.293 37.2461 116.602 37.9961 117.219C38.7539 117.836 39.1328 118.742 39.1328 119.938C39.1328 121.469 38.4922 122.656 37.2109 123.5C35.9375 124.344 34.1055 124.766 31.7148 124.766C29.8867 124.766 28.4883 124.445 27.5195 123.805C26.5586 123.172 26.0781 122.281 26.0781 121.133C26.0781 120.344 26.3242 119.684 26.8164 119.152C27.3086 118.621 28.0312 118.242 28.9844 118.016C28.6172 117.859 28.2969 117.605 28.0234 117.254C27.75 116.895 27.6133 116.516 27.6133 116.117C27.6133 115.617 27.7578 115.203 28.0469 114.875C28.3359 114.539 28.7539 114.211 29.3008 113.891C28.6133 113.594 28.0664 113.117 27.6602 112.461C27.2617 111.805 27.0625 111.031 27.0625 110.141C27.0625 108.711 27.5273 107.605 28.457 106.824C29.3867 106.043 30.7148 105.652 32.4414 105.652C32.8086 105.652 33.2422 105.688 33.7422 105.758C34.25 105.82 34.5742 105.867 34.7148 105.898H39.2852ZM29.1719 120.852C29.1719 121.344 29.4062 121.73 29.875 122.012C30.3516 122.293 31.0156 122.434 31.8672 122.434C33.1484 122.434 34.1523 122.258 34.8789 121.906C35.6055 121.555 35.9688 121.074 35.9688 120.465C35.9688 119.973 35.7539 119.633 35.3242 119.445C34.8945 119.258 34.2305 119.164 33.332 119.164H31.4805C30.8242 119.164 30.2734 119.316 29.8281 119.621C29.3906 119.934 29.1719 120.344 29.1719 120.852ZM30.4727 110.188C30.4727 110.898 30.6328 111.461 30.9531 111.875C31.2812 112.289 31.7773 112.496 32.4414 112.496C33.1133 112.496 33.6055 112.289 33.918 111.875C34.2305 111.461 34.3867 110.898 34.3867 110.188C34.3867 108.609 33.7383 107.82 32.4414 107.82C31.1289 107.82 30.4727 108.609 30.4727 110.188ZM49.7734 119L49.082 117.219H48.9883C48.3867 117.977 47.7656 118.504 47.125 118.801C46.4922 119.09 45.6641 119.234 44.6406 119.234C43.3828 119.234 42.3906 118.875 41.6641 118.156C40.9453 117.438 40.5859 116.414 40.5859 115.086C40.5859 113.695 41.0703 112.672 42.0391 112.016C43.0156 111.352 44.4844 110.984 46.4453 110.914L48.7188 110.844V110.27C48.7188 108.941 48.0391 108.277 46.6797 108.277C45.6328 108.277 44.4023 108.594 42.9883 109.227L41.8047 106.812C43.3125 106.023 44.9844 105.629 46.8203 105.629C48.5781 105.629 49.9258 106.012 50.8633 106.777C51.8008 107.543 52.2695 108.707 52.2695 110.27V119H49.7734ZM48.7188 112.93L47.3359 112.977C46.2969 113.008 45.5234 113.195 45.0156 113.539C44.5078 113.883 44.2539 114.406 44.2539 115.109C44.2539 116.117 44.832 116.621 45.9883 116.621C46.8164 116.621 47.4766 116.383 47.9688 115.906C48.4688 115.43 48.7188 114.797 48.7188 114.008V112.93ZM68.0547 119H64.4805V111.348C64.4805 110.402 64.3125 109.695 63.9766 109.227C63.6406 108.75 63.1055 108.512 62.3711 108.512C61.3711 108.512 60.6484 108.848 60.2031 109.52C59.7578 110.184 59.5352 111.289 59.5352 112.836V119H55.9609V105.898H58.6914L59.1719 107.574H59.3711C59.7695 106.941 60.3164 106.465 61.0117 106.145C61.7148 105.816 62.5117 105.652 63.4023 105.652C64.9258 105.652 66.082 106.066 66.8711 106.895C67.6602 107.715 68.0547 108.902 68.0547 110.457V119ZM71.582 102.512C71.582 101.348 72.2305 100.766 73.5273 100.766C74.8242 100.766 75.4727 101.348 75.4727 102.512C75.4727 103.066 75.3086 103.5 74.9805 103.812C74.6602 104.117 74.1758 104.27 73.5273 104.27C72.2305 104.27 71.582 103.684 71.582 102.512ZM75.3086 119H71.7344V105.898H75.3086V119ZM88.1875 119H77.8398V116.891L83.9102 108.629H78.2031V105.898H87.9766V108.219L82.0703 116.27H88.1875V119ZM99.1094 119L98.418 117.219H98.3242C97.7227 117.977 97.1016 118.504 96.4609 118.801C95.8281 119.09 95 119.234 93.9766 119.234C92.7188 119.234 91.7266 118.875 91 118.156C90.2812 117.438 89.9219 116.414 89.9219 115.086C89.9219 113.695 90.4062 112.672 91.375 112.016C92.3516 111.352 93.8203 110.984 95.7812 110.914L98.0547 110.844V110.27C98.0547 108.941 97.375 108.277 96.0156 108.277C94.9688 108.277 93.7383 108.594 92.3242 109.227L91.1406 106.812C92.6484 106.023 94.3203 105.629 96.1562 105.629C97.9141 105.629 99.2617 106.012 100.199 106.777C101.137 107.543 101.605 108.707 101.605 110.27V119H99.1094ZM98.0547 112.93L96.6719 112.977C95.6328 113.008 94.8594 113.195 94.3516 113.539C93.8438 113.883 93.5898 114.406 93.5898 115.109C93.5898 116.117 94.168 116.621 95.3242 116.621C96.1523 116.621 96.8125 116.383 97.3047 115.906C97.8047 115.43 98.0547 114.797 98.0547 114.008V112.93ZM110.816 116.387C111.441 116.387 112.191 116.25 113.066 115.977V118.637C112.176 119.035 111.082 119.234 109.785 119.234C108.355 119.234 107.312 118.875 106.656 118.156C106.008 117.43 105.684 116.344 105.684 114.898V108.582H103.973V107.07L105.941 105.875L106.973 103.109H109.258V105.898H112.926V108.582H109.258V114.898C109.258 115.406 109.398 115.781 109.68 116.023C109.969 116.266 110.348 116.387 110.816 116.387ZM115.574 102.512C115.574 101.348 116.223 100.766 117.52 100.766C118.816 100.766 119.465 101.348 119.465 102.512C119.465 103.066 119.301 103.5 118.973 103.812C118.652 104.117 118.168 104.27 117.52 104.27C116.223 104.27 115.574 103.684 115.574 102.512ZM119.301 119H115.727V105.898H119.301V119ZM125.91 112.426C125.91 113.723 126.121 114.703 126.543 115.367C126.973 116.031 127.668 116.363 128.629 116.363C129.582 116.363 130.266 116.035 130.68 115.379C131.102 114.715 131.312 113.73 131.312 112.426C131.312 111.129 131.102 110.156 130.68 109.508C130.258 108.859 129.566 108.535 128.605 108.535C127.652 108.535 126.965 108.859 126.543 109.508C126.121 110.148 125.91 111.121 125.91 112.426ZM134.969 112.426C134.969 114.559 134.406 116.227 133.281 117.43C132.156 118.633 130.59 119.234 128.582 119.234C127.324 119.234 126.215 118.961 125.254 118.414C124.293 117.859 123.555 117.066 123.039 116.035C122.523 115.004 122.266 113.801 122.266 112.426C122.266 110.285 122.824 108.621 123.941 107.434C125.059 106.246 126.629 105.652 128.652 105.652C129.91 105.652 131.02 105.926 131.98 106.473C132.941 107.02 133.68 107.805 134.195 108.828C134.711 109.852 134.969 111.051 134.969 112.426ZM150.016 119H146.441V111.348C146.441 110.402 146.273 109.695 145.938 109.227C145.602 108.75 145.066 108.512 144.332 108.512C143.332 108.512 142.609 108.848 142.164 109.52C141.719 110.184 141.496 111.289 141.496 112.836V119H137.922V105.898H140.652L141.133 107.574H141.332C141.73 106.941 142.277 106.465 142.973 106.145C143.676 105.816 144.473 105.652 145.363 105.652C146.887 105.652 148.043 106.066 148.832 106.895C149.621 107.715 150.016 108.902 150.016 110.457V119ZM162.836 115.109C162.836 116.453 162.367 117.477 161.43 118.18C160.5 118.883 159.105 119.234 157.246 119.234C156.293 119.234 155.48 119.168 154.809 119.035C154.137 118.91 153.508 118.723 152.922 118.473V115.52C153.586 115.832 154.332 116.094 155.16 116.305C155.996 116.516 156.73 116.621 157.363 116.621C158.66 116.621 159.309 116.246 159.309 115.496C159.309 115.215 159.223 114.988 159.051 114.816C158.879 114.637 158.582 114.438 158.16 114.219C157.738 113.992 157.176 113.73 156.473 113.434C155.465 113.012 154.723 112.621 154.246 112.262C153.777 111.902 153.434 111.492 153.215 111.031C153.004 110.562 152.898 109.988 152.898 109.309C152.898 108.145 153.348 107.246 154.246 106.613C155.152 105.973 156.434 105.652 158.09 105.652C159.668 105.652 161.203 105.996 162.695 106.684L161.617 109.262C160.961 108.98 160.348 108.75 159.777 108.57C159.207 108.391 158.625 108.301 158.031 108.301C156.977 108.301 156.449 108.586 156.449 109.156C156.449 109.477 156.617 109.754 156.953 109.988C157.297 110.223 158.043 110.57 159.191 111.031C160.215 111.445 160.965 111.832 161.441 112.191C161.918 112.551 162.27 112.965 162.496 113.434C162.723 113.902 162.836 114.461 162.836 115.109Z"
+                                        fill="black" />
+                                </svg>
+                            </div>
+                            <!-- Description -->
+                            <p class="description">
+                                use ID.me to empower medical providers across the US
+                            </p>
+                        </div>
+                        <div class="cardStyle">
+                            <!-- SVG Icon -->
+                            <div class="title">
+                                <svg width="104" height="128" viewBox="0 0 104 128" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M45.6719 44H39.6367V27.4766L39.6953 24.7617L39.793 21.793C38.7904 22.7956 38.0938 23.4531 37.7031 23.7656L34.4219 26.4023L31.5117 22.7695L40.7109 15.4453H45.6719V44ZM73.4453 27.6328C73.4453 33.2578 72.2604 37.457 69.8906 40.2305C67.5208 43.0039 63.9336 44.3906 59.1289 44.3906C57.4362 44.3906 56.1536 44.2995 55.2812 44.1172V39.2734C56.375 39.5469 57.5208 39.6836 58.7188 39.6836C60.737 39.6836 62.3971 39.3906 63.6992 38.8047C65.0013 38.2057 65.9974 37.2747 66.6875 36.0117C67.3776 34.7357 67.7747 32.9844 67.8789 30.7578H67.6445C66.8893 31.9818 66.0169 32.8411 65.0273 33.3359C64.0378 33.8307 62.8008 34.0781 61.3164 34.0781C58.8294 34.0781 56.8698 33.2839 55.4375 31.6953C54.0052 30.0938 53.2891 27.8737 53.2891 25.0352C53.2891 21.9753 54.1549 19.5599 55.8867 17.7891C57.6315 16.0052 60.0013 15.1133 62.9961 15.1133C65.1055 15.1133 66.9479 15.6081 68.5234 16.5977C70.112 17.5872 71.3294 19.026 72.1758 20.9141C73.0221 22.7891 73.4453 25.0286 73.4453 27.6328ZM63.1133 19.957C61.8633 19.957 60.8867 20.3867 60.1836 21.2461C59.4805 22.1055 59.1289 23.3424 59.1289 24.957C59.1289 26.3372 59.4479 27.431 60.0859 28.2383C60.724 29.0456 61.694 29.4492 62.9961 29.4492C64.2201 29.4492 65.2682 29.0521 66.1406 28.2578C67.013 27.4505 67.4492 26.526 67.4492 25.4844C67.4492 23.9349 67.0391 22.6263 66.2188 21.5586C65.4115 20.4909 64.3763 19.957 63.1133 19.957Z"
+                                        fill="black" />
+                                    <path
+                                        d="M15.2031 72.582H12.1094V83H8.53516V72.582H6.56641V70.8594L8.53516 69.8984V68.9375C8.53516 67.4453 8.90234 66.3555 9.63672 65.668C10.3711 64.9805 11.5469 64.6367 13.1641 64.6367C14.3984 64.6367 15.4961 64.8203 16.457 65.1875L15.543 67.8125C14.8242 67.5859 14.1602 67.4727 13.5508 67.4727C13.043 67.4727 12.6758 67.625 12.4492 67.9297C12.2227 68.2266 12.1094 68.6094 12.1094 69.0781V69.8984H15.2031V72.582ZM22.6914 72.1953C21.9336 72.1953 21.3398 72.4375 20.9102 72.9219C20.4805 73.3984 20.2344 74.0781 20.1719 74.9609H25.1875C25.1719 74.0781 24.9414 73.3984 24.4961 72.9219C24.0508 72.4375 23.4492 72.1953 22.6914 72.1953ZM23.1953 83.2344C21.0859 83.2344 19.4375 82.6523 18.25 81.4883C17.0625 80.3242 16.4688 78.6758 16.4688 76.543C16.4688 74.3477 17.0156 72.6523 18.1094 71.457C19.2109 70.2539 20.7305 69.6523 22.668 69.6523C24.5195 69.6523 25.9609 70.1797 26.9922 71.2344C28.0234 72.2891 28.5391 73.7461 28.5391 75.6055V77.3398H20.0898C20.1289 78.3555 20.4297 79.1484 20.9922 79.7188C21.5547 80.2891 22.3438 80.5742 23.3594 80.5742C24.1484 80.5742 24.8945 80.4922 25.5977 80.3281C26.3008 80.1641 27.0352 79.9023 27.8008 79.543V82.3086C27.1758 82.6211 26.5078 82.8516 25.7969 83C25.0859 83.1562 24.2188 83.2344 23.1953 83.2344ZM35.5938 83.2344C34.0547 83.2344 32.8438 82.6367 31.9609 81.4414C31.0859 80.2461 30.6484 78.5898 30.6484 76.4727C30.6484 74.3242 31.0938 72.6523 31.9844 71.457C32.8828 70.2539 34.1172 69.6523 35.6875 69.6523C37.3359 69.6523 38.5938 70.293 39.4609 71.5742H39.5781C39.3984 70.5977 39.3086 69.7266 39.3086 68.9609V64.7656H42.8945V83H40.1523L39.4609 81.3008H39.3086C38.4961 82.5898 37.2578 83.2344 35.5938 83.2344ZM36.8477 80.3867C37.7617 80.3867 38.4297 80.1211 38.8516 79.5898C39.2812 79.0586 39.5156 78.1562 39.5547 76.8828V76.4961C39.5547 75.0898 39.3359 74.082 38.8984 73.4727C38.4688 72.8633 37.7656 72.5586 36.7891 72.5586C35.9922 72.5586 35.3711 72.8984 34.9258 73.5781C34.4883 74.25 34.2695 75.2305 34.2695 76.5195C34.2695 77.8086 34.4922 78.7773 34.9375 79.4258C35.3828 80.0664 36.0195 80.3867 36.8477 80.3867ZM52.0586 72.1953C51.3008 72.1953 50.707 72.4375 50.2773 72.9219C49.8477 73.3984 49.6016 74.0781 49.5391 74.9609H54.5547C54.5391 74.0781 54.3086 73.3984 53.8633 72.9219C53.418 72.4375 52.8164 72.1953 52.0586 72.1953ZM52.5625 83.2344C50.4531 83.2344 48.8047 82.6523 47.6172 81.4883C46.4297 80.3242 45.8359 78.6758 45.8359 76.543C45.8359 74.3477 46.3828 72.6523 47.4766 71.457C48.5781 70.2539 50.0977 69.6523 52.0352 69.6523C53.8867 69.6523 55.3281 70.1797 56.3594 71.2344C57.3906 72.2891 57.9062 73.7461 57.9062 75.6055V77.3398H49.457C49.4961 78.3555 49.7969 79.1484 50.3594 79.7188C50.9219 80.2891 51.7109 80.5742 52.7266 80.5742C53.5156 80.5742 54.2617 80.4922 54.9648 80.3281C55.668 80.1641 56.4023 79.9023 57.168 79.543V82.3086C56.543 82.6211 55.875 82.8516 55.1641 83C54.4531 83.1562 53.5859 83.2344 52.5625 83.2344ZM68.125 69.6523C68.6094 69.6523 69.0117 69.6875 69.332 69.7578L69.0625 73.1094C68.7734 73.0312 68.4219 72.9922 68.0078 72.9922C66.8672 72.9922 65.9766 73.2852 65.3359 73.8711C64.7031 74.457 64.3867 75.2773 64.3867 76.332V83H60.8125V69.8984H63.5195L64.0469 72.1016H64.2227C64.6289 71.3672 65.1758 70.7773 65.8633 70.332C66.5586 69.8789 67.3125 69.6523 68.125 69.6523ZM80.0312 83L79.3398 81.2188H79.2461C78.6445 81.9766 78.0234 82.5039 77.3828 82.8008C76.75 83.0898 75.9219 83.2344 74.8984 83.2344C73.6406 83.2344 72.6484 82.875 71.9219 82.1562C71.2031 81.4375 70.8438 80.4141 70.8438 79.0859C70.8438 77.6953 71.3281 76.6719 72.2969 76.0156C73.2734 75.3516 74.7422 74.9844 76.7031 74.9141L78.9766 74.8438V74.2695C78.9766 72.9414 78.2969 72.2773 76.9375 72.2773C75.8906 72.2773 74.6602 72.5938 73.2461 73.2266L72.0625 70.8125C73.5703 70.0234 75.2422 69.6289 77.0781 69.6289C78.8359 69.6289 80.1836 70.0117 81.1211 70.7773C82.0586 71.543 82.5273 72.707 82.5273 74.2695V83H80.0312ZM78.9766 76.9297L77.5938 76.9766C76.5547 77.0078 75.7812 77.1953 75.2734 77.5391C74.7656 77.8828 74.5117 78.4062 74.5117 79.1094C74.5117 80.1172 75.0898 80.6211 76.2461 80.6211C77.0742 80.6211 77.7344 80.3828 78.2266 79.9062C78.7266 79.4297 78.9766 78.7969 78.9766 78.0078V76.9297ZM89.793 83H86.2188V64.7656H89.793V83ZM10.2812 119L9.58984 117.219H9.49609C8.89453 117.977 8.27344 118.504 7.63281 118.801C7 119.09 6.17188 119.234 5.14844 119.234C3.89062 119.234 2.89844 118.875 2.17188 118.156C1.45312 117.438 1.09375 116.414 1.09375 115.086C1.09375 113.695 1.57812 112.672 2.54688 112.016C3.52344 111.352 4.99219 110.984 6.95312 110.914L9.22656 110.844V110.27C9.22656 108.941 8.54688 108.277 7.1875 108.277C6.14062 108.277 4.91016 108.594 3.49609 109.227L2.3125 106.812C3.82031 106.023 5.49219 105.629 7.32812 105.629C9.08594 105.629 10.4336 106.012 11.3711 106.777C12.3086 107.543 12.7773 108.707 12.7773 110.27V119H10.2812ZM9.22656 112.93L7.84375 112.977C6.80469 113.008 6.03125 113.195 5.52344 113.539C5.01562 113.883 4.76172 114.406 4.76172 115.109C4.76172 116.117 5.33984 116.621 6.49609 116.621C7.32422 116.621 7.98438 116.383 8.47656 115.906C8.97656 115.43 9.22656 114.797 9.22656 114.008V112.93ZM27.8711 105.898V107.715L25.8203 108.242C26.1953 108.828 26.3828 109.484 26.3828 110.211C26.3828 111.617 25.8906 112.715 24.9062 113.504C23.9297 114.285 22.5703 114.676 20.8281 114.676L20.1836 114.641L19.6562 114.582C19.2891 114.863 19.1055 115.176 19.1055 115.52C19.1055 116.035 19.7617 116.293 21.0742 116.293H23.3008C24.7383 116.293 25.832 116.602 26.582 117.219C27.3398 117.836 27.7188 118.742 27.7188 119.938C27.7188 121.469 27.0781 122.656 25.7969 123.5C24.5234 124.344 22.6914 124.766 20.3008 124.766C18.4727 124.766 17.0742 124.445 16.1055 123.805C15.1445 123.172 14.6641 122.281 14.6641 121.133C14.6641 120.344 14.9102 119.684 15.4023 119.152C15.8945 118.621 16.6172 118.242 17.5703 118.016C17.2031 117.859 16.8828 117.605 16.6094 117.254C16.3359 116.895 16.1992 116.516 16.1992 116.117C16.1992 115.617 16.3438 115.203 16.6328 114.875C16.9219 114.539 17.3398 114.211 17.8867 113.891C17.1992 113.594 16.6523 113.117 16.2461 112.461C15.8477 111.805 15.6484 111.031 15.6484 110.141C15.6484 108.711 16.1133 107.605 17.043 106.824C17.9727 106.043 19.3008 105.652 21.0273 105.652C21.3945 105.652 21.8281 105.688 22.3281 105.758C22.8359 105.82 23.1602 105.867 23.3008 105.898H27.8711ZM17.7578 120.852C17.7578 121.344 17.9922 121.73 18.4609 122.012C18.9375 122.293 19.6016 122.434 20.4531 122.434C21.7344 122.434 22.7383 122.258 23.4648 121.906C24.1914 121.555 24.5547 121.074 24.5547 120.465C24.5547 119.973 24.3398 119.633 23.9102 119.445C23.4805 119.258 22.8164 119.164 21.918 119.164H20.0664C19.4102 119.164 18.8594 119.316 18.4141 119.621C17.9766 119.934 17.7578 120.344 17.7578 120.852ZM19.0586 110.188C19.0586 110.898 19.2188 111.461 19.5391 111.875C19.8672 112.289 20.3633 112.496 21.0273 112.496C21.6992 112.496 22.1914 112.289 22.5039 111.875C22.8164 111.461 22.9727 110.898 22.9727 110.188C22.9727 108.609 22.3242 107.82 21.0273 107.82C19.7148 107.82 19.0586 108.609 19.0586 110.188ZM35.4648 108.195C34.707 108.195 34.1133 108.438 33.6836 108.922C33.2539 109.398 33.0078 110.078 32.9453 110.961H37.9609C37.9453 110.078 37.7148 109.398 37.2695 108.922C36.8242 108.438 36.2227 108.195 35.4648 108.195ZM35.9688 119.234C33.8594 119.234 32.2109 118.652 31.0234 117.488C29.8359 116.324 29.2422 114.676 29.2422 112.543C29.2422 110.348 29.7891 108.652 30.8828 107.457C31.9844 106.254 33.5039 105.652 35.4414 105.652C37.293 105.652 38.7344 106.18 39.7656 107.234C40.7969 108.289 41.3125 109.746 41.3125 111.605V113.34H32.8633C32.9023 114.355 33.2031 115.148 33.7656 115.719C34.3281 116.289 35.1172 116.574 36.1328 116.574C36.9219 116.574 37.668 116.492 38.3711 116.328C39.0742 116.164 39.8086 115.902 40.5742 115.543V118.309C39.9492 118.621 39.2812 118.852 38.5703 119C37.8594 119.156 36.9922 119.234 35.9688 119.234ZM56.3125 119H52.7383V111.348C52.7383 110.402 52.5703 109.695 52.2344 109.227C51.8984 108.75 51.3633 108.512 50.6289 108.512C49.6289 108.512 48.9062 108.848 48.4609 109.52C48.0156 110.184 47.793 111.289 47.793 112.836V119H44.2188V105.898H46.9492L47.4297 107.574H47.6289C48.0273 106.941 48.5742 106.465 49.2695 106.145C49.9727 105.816 50.7695 105.652 51.6602 105.652C53.1836 105.652 54.3398 106.066 55.1289 106.895C55.918 107.715 56.3125 108.902 56.3125 110.457V119ZM65.3125 119.234C61.2344 119.234 59.1953 116.996 59.1953 112.52C59.1953 110.293 59.75 108.594 60.8594 107.422C61.9688 106.242 63.5586 105.652 65.6289 105.652C67.1445 105.652 68.5039 105.949 69.707 106.543L68.6523 109.309C68.0898 109.082 67.5664 108.898 67.082 108.758C66.5977 108.609 66.1133 108.535 65.6289 108.535C63.7695 108.535 62.8398 109.855 62.8398 112.496C62.8398 115.059 63.7695 116.34 65.6289 116.34C66.3164 116.34 66.9531 116.25 67.5391 116.07C68.125 115.883 68.7109 115.594 69.2969 115.203V118.262C68.7188 118.629 68.1328 118.883 67.5391 119.023C66.9531 119.164 66.2109 119.234 65.3125 119.234ZM72.1914 102.512C72.1914 101.348 72.8398 100.766 74.1367 100.766C75.4336 100.766 76.082 101.348 76.082 102.512C76.082 103.066 75.918 103.5 75.5898 103.812C75.2695 104.117 74.7852 104.27 74.1367 104.27C72.8398 104.27 72.1914 103.684 72.1914 102.512ZM75.918 119H72.3438V105.898H75.918V119ZM85.1055 108.195C84.3477 108.195 83.7539 108.438 83.3242 108.922C82.8945 109.398 82.6484 110.078 82.5859 110.961H87.6016C87.5859 110.078 87.3555 109.398 86.9102 108.922C86.4648 108.438 85.8633 108.195 85.1055 108.195ZM85.6094 119.234C83.5 119.234 81.8516 118.652 80.6641 117.488C79.4766 116.324 78.8828 114.676 78.8828 112.543C78.8828 110.348 79.4297 108.652 80.5234 107.457C81.625 106.254 83.1445 105.652 85.082 105.652C86.9336 105.652 88.375 106.18 89.4062 107.234C90.4375 108.289 90.9531 109.746 90.9531 111.605V113.34H82.5039C82.543 114.355 82.8438 115.148 83.4062 115.719C83.9688 116.289 84.7578 116.574 85.7734 116.574C86.5625 116.574 87.3086 116.492 88.0117 116.328C88.7148 116.164 89.4492 115.902 90.2148 115.543V118.309C89.5898 118.621 88.9219 118.852 88.2109 119C87.5 119.156 86.6328 119.234 85.6094 119.234ZM103 115.109C103 116.453 102.531 117.477 101.594 118.18C100.664 118.883 99.2695 119.234 97.4102 119.234C96.457 119.234 95.6445 119.168 94.9727 119.035C94.3008 118.91 93.6719 118.723 93.0859 118.473V115.52C93.75 115.832 94.4961 116.094 95.3242 116.305C96.1602 116.516 96.8945 116.621 97.5273 116.621C98.8242 116.621 99.4727 116.246 99.4727 115.496C99.4727 115.215 99.3867 114.988 99.2148 114.816C99.043 114.637 98.7461 114.438 98.3242 114.219C97.9023 113.992 97.3398 113.73 96.6367 113.434C95.6289 113.012 94.8867 112.621 94.4102 112.262C93.9414 111.902 93.5977 111.492 93.3789 111.031C93.168 110.562 93.0625 109.988 93.0625 109.309C93.0625 108.145 93.5117 107.246 94.4102 106.613C95.3164 105.973 96.5977 105.652 98.2539 105.652C99.832 105.652 101.367 105.996 102.859 106.684L101.781 109.262C101.125 108.98 100.512 108.75 99.9414 108.57C99.3711 108.391 98.7891 108.301 98.1953 108.301C97.1406 108.301 96.6133 108.586 96.6133 109.156C96.6133 109.477 96.7812 109.754 97.1172 109.988C97.4609 110.223 98.207 110.57 99.3555 111.031C100.379 111.445 101.129 111.832 101.605 112.191C102.082 112.551 102.434 112.965 102.66 113.434C102.887 113.902 103 114.461 103 115.109Z"
+                                        fill="black" />
+                                </svg>
+                            </div>
+                            <!-- Description -->
+                            <p class="description">
+                                trust ID.me for secure identity verification
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="progress-bar-container hide-desktop">
+                        <div id="progressBar" class="progress-bar-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="epp-faqs" class="block-body px-0 px-md-4 mx-auto">
+            <h2 class="text-center">Frequently Asked Questions</h2>
+            <dl id="faq-list" class="mb-0" data-analytics_available_call="0">
+
+                <dt class="accordion-title accordion-answer" style="border-top: 0;">
+                    <div><a href="javascript: void();" class="decoration-none" aria-controls="sect-1"
+                            data-element-id="EPP_link" aria-expanded="false"><b>Lorem ipsum dolor sit amet?</b></a>
+                    </div>
+                </dt>
+                <dd id="sect-1" class="accordion-content" style="display: none;">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
+                </dd>
+
+                <dt class="accordion-title accordion-answer">
+                    <div><a href="javascript: void();" class="decoration-none" aria-controls="sect-2"
+                            data-element-id="EPP_link" aria-expanded="false"><b>Lorem ipsum dolor sit amet?</b></a>
+                    </div>
+                </dt>
+                <dd id="sect-2" class="accordion-content" style="display: none;">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
+                </dd>
+
+                <dt class="accordion-title accordion-answer">
+                    <div><a href="javascript: void();" class="decoration-none" aria-controls="sect-3"
+                            data-element-id="EPP_link" aria-expanded="false"><b>Lorem ipsum dolor sit amet?</b></a>
+                    </div>
+                </dt>
+                <dd id="sect-3" class="accordion-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
+                </dd>
+
+                <dt class="accordion-title accordion-answer">
+                    <div><a href="javascript: void();" class="decoration-none" aria-controls="sect-4"
+                            data-element-id="EPP_link" aria-expanded="false"><b>Lorem ipsum dolor sit amet?</b></a>
+                    </div>
+                </dt>
+                <dd id="sect-4" class="accordion-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
+                </dd>
+
+                <dt class="accordion-title accordion-answer">
+                    <div><a href="javascript: void();" class="decoration-none" aria-controls="sect-5"
+                            data-element-id="EPP_link" aria-expanded="false"><b>Lorem ipsum dolor sit amet?</b></a>
+                    </div>
+                </dt>
+                <dd id="sect-5" class="accordion-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
+                </dd>
+
+                <dt class="accordion-title accordion-answer">
+                    <div><a href="javascript: void();" class="decoration-none" aria-controls="sect-6"
+                            data-element-id="EPP_link" aria-expanded="false"><b>Lorem ipsum dolor sit amet?</b></a>
+                    </div>
+                </dt>
+                <dd id="sect-6" class="accordion-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
+                </dd>
+
+                <dt class="accordion-title accordion-answer">
+                    <div><a href="javascript: void();" class="decoration-none" aria-controls="sect-7"
+                            data-element-id="EPP_link" aria-expanded="false"><b>Lorem ipsum dolor sit amet?</b></a>
+                    </div>
+                </dt>
+                <dd id="sect-7" class="accordion-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
+                </dd>
+
+                <dt class="accordion-title accordion-answer">
+                    <div><a href="javascript: void();" class="decoration-none" aria-controls="sect-8"
+                            data-element-id="EPP_link" aria-expanded="false"><b>Lorem ipsum dolor sit amet?</b></a>
+                    </div>
+                </dt>
+                <dd id="sect-8" class="accordion-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
+                </dd>
+
+            </dl>
+
+            <div class="text-center mb-5">
+                <a href="/eyeglasses/" class="btn btn-primary btn-shop" data-element-id="content8"
+                    data-description="SHOP EYEGLASSES">SHOP EYEGLASSES</a>
+                <a href="/prescription-sunglasses/" class="btn btn-secondary btn-shop" data-element-id="content9"
+                    data-description="SHOP PRESCRIPTION
+                        SUNGLASSES">SHOP PRESCRIPTION
+                    SUNGLASSES</a>
+                <a href="/sunglasses/" class="btn btn-secondary btn-shop" data-element-id="content9" data-description="SHOP PRESCRIPTION
+                        SUNGLASSES">SHOP
+                    SUNGLASSES</a>
+            </div>
+        </div>
+
+
+        <!-- Optional Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3MIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    </body>
+
+</html>

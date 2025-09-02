@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap 4.1.3 -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="styles.css">
+        <title>Asymmetrical Grid (Bootstrap 4.1.3)</title>
+        <style>
+            /* Equal working height for all three columns on desktop */
+            .lp-col {
+                height: 660px;
+            }
+
+            /* adjust to taste */
+
+            /* Custom height utility for 33.333% (Bootstrap has h-25, h-50, h-75 only) */
+            .h-33 {
+                height: 33.3333%;
+            }
+
+            /* Cards fill their parent slice fully */
+            .lp-col .card {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* Images cover space uniformly */
+            .card img {
+                flex: 1;
+                object-fit: cover;
+                width: 100%;
+            }
+
+            /* On mobile, reset to natural stacking */
+            @media (max-width: 767.98px) {
+                .lp-col {
+                    height: auto;
+                }
+
+                .h-25,
+                .h-33,
+                .h-50,
+                .h-75 {
+                    height: auto;
+                }
+
+                .card img {
+                    height: 220px;
+                }
+
+                /* or auto; tweak to your mobile look */
+            }
+        </style>
+    </head>
+
+    <body class="bg-light">
+
+        <div class="container py-5">
+            <h2 class="text-center mb-4">Your role comes with rewards</h2>
+
+            <!-- ========= DESKTOP/TABLET (≥ md) ========= -->
+            <div class="row d-none d-md-flex">
+                <!-- Col 1: 50/50 -->
+                <div class="col-md-4 d-flex flex-column lp-col">
+                    <div class="card border-0 shadow-sm mb-3 h-50">
+                        <img class="w-100 h-100 object-cover"
+                            src="https://images.framesdirect.com/image/upload/v1756717743/id-me/military.png"
+                            alt=" Military">
+                        <div class="card-body text-center py-2"><strong>Military</strong></div>
+                    </div>
+                    <div class="card border-0 shadow-sm h-50">
+                        <img class="w-100 h-100 object-cover"
+                            src="https://images.framesdirect.com/image/upload/v1756717745/id-me/teachers.png"
+                            alt="Nurses">
+                        <div class="card-body text-center py-2"><strong>Nurses</strong></div>
+                    </div>
+                </div>
+
+                <!-- Col 2: 33/33/33 -->
+                <div class="col-md-4 d-flex flex-column lp-col">
+                    <div class="card border-0 shadow-sm mb-3 h-33">
+                        <img class="w-100 h-100 object-cover"
+                            src="https://images.framesdirect.com/image/upload/v1756717743/id-me/nurse.png"
+                            alt="First Responders">
+                        <div class="card-body text-center py-2"><strong>First Responders</strong></div>
+                    </div>
+                    <div class="card border-0 shadow-sm mb-3 h-33">
+                        <img class="w-100 h-100 object-cover"
+                            src="https://images.framesdirect.com/image/upload/v1756717741/id-me/government-employees.png"
+                            alt="Government Employees">
+                        <div class="card-body text-center py-2"><strong>Government Employees</strong></div>
+                    </div>
+                    <div class="card border-0 shadow-sm h-33">
+                        <img class="w-100 h-100 object-cover"
+                            src="https://images.framesdirect.com/image/upload/v1756717740/id-me/medical-professionals.png"
+                            alt="Medical Professionals">
+                        <div class="card-body text-center py-2"><strong>Medical Professionals</strong></div>
+                    </div>
+                </div>
+
+                <!-- Col 3: 25/75 -->
+                <div class="col-md-4 d-flex flex-column lp-col">
+                    <div class="card border-0 shadow-sm mb-3 h-25">
+                        <img class="w-100 h-100 object-cover"
+                            src="https://images.framesdirect.com/image/upload/v1756717740/id-me/first-responders.png"
+                            alt=" Teachers">
+                        <div class="card-body text-center py-2"><strong>Teachers</strong></div>
+                    </div>
+                    <div class="card border-0 shadow-sm h-75">
+                        <img class="w-100 h-100 object-cover"
+                            src="https://images.framesdirect.com/image/upload/v1756717746/id-me/students.png"
+                            alt="Students">
+                        <div class="card-body text-center py-2"><strong>Students</strong></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========= MOBILE (< md) ========= -->
+            <div class="d-block d-md-none">
+                <div class="row">
+                    <!-- First card full width -->
+                    <div class="col-12 mb-3">
+                        <div class="card border-0 shadow-sm">
+                            <img class="w-100 object-cover-mobile"
+                                src="https://images.framesdirect.com/image/upload/v1756717743/id-me/military.png"
+                                alt="Military">
+                            <div class="card-body text-center py-2"><strong>Military</strong></div>
+                        </div>
+                    </div>
+
+                    <!-- Rest: two per row -->
+                    <div class="col-6 mb-3">
+                        <div class="card border-0 shadow-sm h-100">
+                            <img class="w-100 object-cover-mobile" src="https://picsum.photos/900/600?random=11"
+                                alt="Nurses">
+                            <div class="card-body text-center py-2"><strong>Nurses</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 mb-3">
+                        <div class="card border-0 shadow-sm h-100">
+                            <img class="w-100 object-cover-mobile" src="https://picsum.photos/900/600?random=12"
+                                alt="First Responders">
+                            <div class="card-body text-center py-2"><strong>First Responders</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 mb-3">
+                        <div class="card border-0 shadow-sm h-100">
+                            <img class="w-100 object-cover-mobile" src="https://picsum.photos/900/600?random=13"
+                                alt="Government Employees">
+                            <div class="card-body text-center py-2"><strong>Government Employees</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 mb-3">
+                        <div class="card border-0 shadow-sm h-100">
+                            <img class="w-100 object-cover-mobile" src="https://picsum.photos/900/600?random=14"
+                                alt="Medical Professionals">
+                            <div class="card-body text-center py-2"><strong>Medical Professionals</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 mb-3">
+                        <div class="card border-0 shadow-sm h-100">
+                            <img class="w-100 object-cover-mobile" src="https://picsum.photos/900/600?random=15"
+                                alt="Teachers">
+                            <div class="card-body text-center py-2"><strong>Teachers</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 mb-3">
+                        <div class="card border-0 shadow-sm h-100">
+                            <img class="w-100 object-cover-mobile" src="https://picsum.photos/900/600?random=16"
+                                alt="Students">
+                            <div class="card-body text-center py-2"><strong>Students</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Optional Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3MIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    </body>
+
+</html>

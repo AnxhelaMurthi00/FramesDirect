@@ -1,8 +1,6 @@
 <script>
 
 
-
-
     let lastScrollTop = 0;
     let isFixed = false;
 
@@ -23,7 +21,6 @@
         const lensesTop = lensesDiv.offsetTop;
         const hasReachedLenses = currentScroll >= lensesTop + 300;
         const lastSection = sections[sections.length - 1];
-        const scrollingDown = currentScroll > lastScrollTop;
 
         if (hasReachedLenses && !isFixed) {
             target.classList.remove("ct_display_hide");
@@ -58,7 +55,19 @@
             const rect = element.getBoundingClientRect();
             if (rect.top <= 100 && rect.bottom > 100) {
                 pills.forEach(p => {
-                    p.classList.toggle("active", p.getAttribute("data-section") === id);
+                    const isActive = p.getAttribute("data-section") === id;
+                    p.classList.toggle("active", isActive);
+
+                    if (isActive) {
+                        const pill = document.querySelector(`.lens-pill[data-section="${id}"]`);
+                        if (pill) {
+                            pill.scrollIntoView({
+                                behavior: "smooth",
+                                block: "nearest",
+                                inline: "start"
+                            });
+                        }
+                    }
                 });
             }
         });
@@ -67,13 +76,33 @@
     });
 
 
+
+
+
     const track = document.getElementById('carouselTrackcard');
     const nextBtn = document.getElementById('nextBtn');
     const prevBtn = document.getElementById('prevBtn');
     const progressBar = document.getElementById('progressBar');
-
+    const stepsProgressBar = document.getElementById('stepsProgressBar');
     const cardWidth = 275 + 20;
     const totalCards = track.children.length;
+    const cdTrack = document.getElementById('cdTrack');
+
+    function updateStepsProgressBar() {
+        const scrollLeft = cdTrack.scrollLeft;
+        const maxScroll = cdTrack.scrollWidth - cdTrack.clientWidth;
+
+        if (maxScroll <= 0) {
+            stepsProgressBar.style.width = '33%'; // base width
+            return;
+        }
+
+        const percent = (scrollLeft / maxScroll) * 67; // so it goes 33% → 100%
+        stepsProgressBar.style.width = `${33 + percent}%`;
+    }
+
+    cdTrack.addEventListener('scroll', updateStepsProgressBar);
+    updateStepsProgressBar();
 
     function updateProgressBar() {
         const scrollLeft = track.scrollLeft;
@@ -97,8 +126,9 @@
     });
 
     track.addEventListener('scroll', updateProgressBar);
-
+    track.addEventListener('scroll', updateStepsProgressBar);
     updateProgressBar();
+    updateStepsProgressBar();
 
 
     $(document).ready(function () {

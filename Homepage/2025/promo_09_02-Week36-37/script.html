@@ -1,65 +1,64 @@
 <script>
   const updateHeroBanner = () => {
     if (
-      (checkDate >= "250902" && checkDate <= "250914") ||
-      (fdFncs.vars.isTest >= "250902" && fdFncs.vars.isTest <= "250914")
+      (checkDate >= "250825" && checkDate <= "250915") ||
+      (fdFncs.vars.isTest >= "250825" && fdFncs.vars.isTest <= "250915")
     ) {
       //hero slider promotion
       $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
       $("#hero-slider").append(
 
+
         `
+
         <li>
+          <style>
+@media (min-width: 1200px) {
+  #text_overlay {
+    left: 50%;
+  }
+}
+</style>
 <div class="ct_space">
     <div class="ct_banner ct_hero">
-      <a href="/email/auth-lenses-dp" aria-label="sale">
+      <a href="/email/auth-lenses-dp" aria-label="sale" data-element-id="MainNav_Promo">
         <div class="ct_assets__container">
             <picture class="ct_skeleton">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjnLtxx38GHIARnyQA9v4GDXdfGIkAAAAASUVORK5CYII="
-                    alt="structure image">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjnLtxx38GHIARnyQA9v4GDXdfGIkAAAAASUVORK5CYII=" alt="structure image">
             </picture>
             <picture class="ct_img">
-                <img src="https://images.framesdirect.com/image/upload/v1753370133/homePage/HP_AUTH_D.png"  fetchpriority="
-                    high" alt="The Man on the left is wearing Mauji Jim Castles Prescription Sunglasses and on the right is wearing Oakley Holbrook Sunglasses" width="3840"
-                    height="1108"  usemap="#image-map6" />
+                <img src="https://images.framesdirect.com/image/upload/v1753370133/homePage/HP_AUTH_D.png" "="" fetchpriority="
+                    high" alt="The Man on the left is wearing Mauji Jim Castles Prescription Sunglasses and on the right is wearing Oakley Holbrook Sunglasses" width="3840" height="1108" usemap="#image-map2">
             </picture>
-           <map name="image-map6" class="map-slider">
-                        <area target="" alt="Mauji Jim Castles Prescription Sunglasses"
-                            title="Mauji Jim Castles Prescription Sunglasses"
-                            href="/maui-jim-castles-728-prescription-sunglasses" coords="313,232,1048,503" shape="rect">
-                        <area target="" alt="Oakley Holbrook Sunglasses" title="Oakley Holbrook Sunglasses"
-                            href="/oakley-holbrook-mix-sunglasses" coords="2431,255,3073,557" shape="rect">
+           <map name="image-map2" class="map-slider">
+                        <area target="" alt="Mauji Jim Castles Prescription Sunglasses" title="Mauji Jim Castles Prescription Sunglasses" href="/maui-jim-castles-728-prescription-sunglasses" coords="213,132,580,253" shape="rect">
+                        <area target="" alt="Oakley Holbrook Sunglasses" title="Oakley Holbrook Sunglasses" href="/oakley-holbrook-mix-sunglasses" coords="1300,146,1700,267" shape="rect">
 
                     </map>
         </div>
-       <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pb__mob__30 "
-            style="background: #AAB9C0; width: 0%; left:50%">
-            <div class="ct_text__black size-26 mt-lg-3 ct_lh__sm ct_mt__mob__50 weight-bold">
-                40% off <br class="d-lg-none d-block"> prescription <br class="d-none d-lg-block"> <span
-                    class="d-none d-lg-inline">sun</span> lenses
+       </a><div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pb__mob__30 " style="background: #AAB9C0;width: 0;" id="text_overlay"><a href="/email/auth-lenses-dp" aria-label="sale" data-element-id="MainNav_Promo">
+            <div class="ct_text__black size-26 mt-lg-0 ct_lh__sm ct_mt__mob__20 weight-bold">
+                40% off <br class=" d-lg-none d-block"> prescription <br class="ct_mob__hide">
+     <span class=" d-lg-inline">sun</span><br class="ct_desk__hide d-lg-block"> lenses
             </div>
-            <div class="ct_font__18 pt-3">from Top Brands</div>
-            <div class="logos ct_mob__hide d-flex justify-content-around align-items-center w-100"
-                style="height: 110px;  padding: 0px 15px; gap:20px">
+            <div class="ct_font__18 pt-1 pb-3 weight-bold">From Top Brands</div>
+            <div class="logos ct_mob__hide d-flex justify-content-around align-items-center w-100" style="height: 70px;padding: 0px 15px;gap:20px">
                 <img src="https://images.framesdirect.com/image/upload/v1748853576/logos/oakley-logo_1.png">
                 <img src="https://images.framesdirect.com/image/upload/v1748853577/logos/maui-jim-blk-logo_1.png">
                 <img src="https://images.framesdirect.com/image/upload/v1748854123/logos/costa-logo_M.png">
             </div>
-            <div class="logos ct_desk__hide d-flex justify-content-between align-items-center w-100 "
-                style="height: 110px;  padding: 0px 5px; gap:10px">
+            <div class="logos ct_desk__hide d-flex justify-content-between align-items-center w-100 " style="height: 110px;  padding: 0px 5px; gap:10px">
                 <img src="https://images.framesdirect.com/image/upload/v1748854124/logos/oakley-logo_M.png">
                 <img src="https://images.framesdirect.com/image/upload/v1748854124/logos/maui-jim-blk-logo_M.png">
                 <img src="https://images.framesdirect.com/image/upload/v1748853577/logos/costa-logo_1.png">
             </div>
             <div class="ct_text__black ct_font__18">
-                <p class="mt-4 mt-lg-0">
+                <p class="mt-1 mt-lg-0 mb-lg-2">
                     Code: <b>SPECIAL40</b>
                 </p>
             </div>
-            <div class="text-center ml-2 d-flex flex-column flex-lg-row ct_mb__mob__30 mb-4">
-                <a href="/email/auth-lenses-dp" class="btn-cta nowrap mt-2"
-                    style="background:#AB2317; color: #fff !important; border: 0" data-element-id="1Hero_Banner2_CTA"
-                    data-description="shopTheDeal">SAVE NOW</a>
+            </a><div class="text-center ml-2 d-flex flex-column flex-lg-row ct_mb__mob__30 mb-5"><a href="/email/auth-lenses-dp" aria-label="sale" data-element-id="MainNav_Promo">
+                </a><a href="/email/auth-lenses-dp" class="btn-cta nowrap mt-2" style="background:#AB2317; color: #fff !important; border: 0" data-element-id="1Hero_Banner3_CTA" data-description="shopTheDeal">SAVE NOW</a>
             </div>
         </div>
     </div>
