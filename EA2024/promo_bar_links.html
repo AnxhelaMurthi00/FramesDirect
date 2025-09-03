@@ -1,0 +1,59 @@
+<script>
+    $('#promo-bnr li').each(function() {
+      var $this = $(this);
+    
+      //Mention Me - Refer a Friend
+      if ($this.is(':contains("Refer a friend and get $20 off!")')) {
+        $this.wrapInner('<a href="/promotions/refer-a-friend"></a>');
+      }
+      
+      //Sign Up Now for Exclusive Savings!
+      if ($this.is(':contains("Sign Up Now for Exclusive Savings!")')) {
+        $this.wrapInner('<a href="#" class="sitewide-signup"></a>');
+        $('.sitewide-signup').on('click', function(e) {
+          e.preventDefault();
+          $('#footer-newsletter-submit').click();
+        });
+      }
+      
+      //Cyber Weekend Sale
+      if ($this.is(':contains("Cyber Weekend")')) {
+        $this.wrapInner('<a href="/email/black-friday-dp"></a>');
+      }
+      
+      //Presidents' Day Sale
+      if ($this.is(':contains("Presidents\' Day Sale")')) {
+        $this.wrapInner('<a href="/email/presidents-dp"></a>');
+      }
+      
+      //Oakley Snow Goggles
+      if ($this.is(':contains("Discover 20% Off Oakley Snow Goggles")')) {
+        $this.wrapInner('<a href="/sunglasses/oakley-goggles"></a>');
+      }
+      
+      //Up to 30% Off Top Brands
+      if ($this.is(':contains("Up to 30% Off Top Brands")')) {
+        $this.wrapInner('<a href="/email/labor-day-dp"></a>');
+      }
+      
+      //20% Off Top Brand Sunglasses
+      if ($this.is(':contains("20% Off Top Brand Sunglasses")')) {
+        $this.wrapInner('<a href="/email/sunglasses-sale-dp"></a>');
+      }
+      
+      //Polarized Lenses
+      if ($this.is(':contains("Polarized Lenses")')) {
+        $this.wrapInner('<a href="/sale/polarized-dp"></a>');
+      }
+      
+      //We Accept FSA/HSA Dollars
+      if ($this.is(':contains("We Accept FSA")')) {
+        $this.wrapInner('<a href="/collections/fsa-hsa-eligible-eyewear-dp"></a>');
+      }
+    
+      //Designer Eyewear Outlet
+      if ($this.is(':contains("Designer Outlet Deals")')) {
+        $this.wrapInner('<a href="/sale/designer-eyewear-outlet-dp"></a>');
+      }
+    });
+  </script>

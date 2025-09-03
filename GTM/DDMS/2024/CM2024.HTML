@@ -1,0 +1,189 @@
+<script>
+    var lensDisc = fdFncs.vars.lensPrices.discoPercent,
+      promoMsg =
+        '<div class="weight-bold size-22">20%-50% Off</div><div class="size-15">80+ Top Brands</div>';
+  
+    $("#site-nav .promo-bottom").each(function () {
+      var $this = $(this),
+        isRecognized = getCookie("fdRecognized") !== undefined;
+      if ($this.is(":empty")) {
+        if (
+          (checkDate >= "240912" &&
+            checkDate < "241230" &&
+            $this.parents(".top-items").hasClass("top-eg")) ||
+          $this.parents(".top-items").hasClass("top-sg") ||
+          $this.parents(".top-items").hasClass("top-ps")
+        ) {
+          $this.attr("style", "cursor: pointer");
+          //EYEGLASSES
+          if (checkDate >= "240912" && checkDate < "241230") {
+            if ($this.parents(".top-items").hasClass("top-eg")) {
+              promoMsg =
+                '<div><div>Up to</div> <span class="weight-bold size-20">50% OFF FRAMES </span></div><span class="weight-bold size-20">+</span><div><div>Up to</div><span class="weight-bold size-20">60% OFF LENSES </span></div><p class="size-12">EXTRA <strong>5% OFF SELECTED <br> BRANDS</strong> TODAY ONLY</p>';
+                $this.css("background", "linear-gradient(to left, #E1CFE3, #D0B5D3)");
+              $this.on("click", function () {
+                window.location.href = "email/halloween-dp";
+              });
+            } else {
+              promoMsg =
+                '<div class="weight-bold size-22"> Off</div><div class="size-15">80+ Top Brands</div>';
+            }
+          }
+          //SUNGLASSES
+          if (
+            checkDate >= "240912" &&
+            checkDate < "241230" &&
+            $this.parents(".top-items").hasClass("top-sg")
+          ) {
+            promoMsg =
+            '<div><p>Up to</p> <span class="weight-bold size-20">50% OFF FRAMES </span></div><p class="size-12">EXTRA <strong>5% OFF SELECTED <br> BRANDS</strong> TODAY ONLY</p>';
+            $this.css("background", "linear-gradient(to left, #E1CFE3, #D0B5D3)");
+            $this.on("click", function () {
+              window.location.href = "/email/halloween-dp";
+            });
+          }
+          //PRESCRIPTION GLASSES
+          if (
+            checkDate >= "240912" &&
+            checkDate < "241230" &&
+            $this.parents(".top-items").hasClass("top-ps")
+          ) {
+            promoMsg =
+            '<div><div>Up to</div> <span class="weight-bold size-20">50% OFF FRAMES </span></div><span class="weight-bold size-20">+</span><div><div>Up to</div><span class="weight-bold size-20">60% OFF LENSES </span></div><p class="size-12">EXTRA <strong>5% OFF SELECTED <br> BRANDS</strong> TODAY ONLY</p>';
+            $this.css("background", "linear-gradient(to left, #E1CFE3, #D0B5D3)");
+            $this.on("click", function () {
+              window.location.href = "/email/halloween-dp";
+            });
+          }
+          $this.append(promoMsg);
+        } else if (
+          checkDate >= "240404" &&
+          checkDate <= "240414" &&
+          ($this.parents(".top-items").hasClass("top-men") ||
+            $this.parents(".top-items").hasClass("top-women") ||
+            $this.parents(".top-items").hasClass("top-eg") ||
+            $this.parents(".top-items").hasClass("top-sg") ||
+            $this.parents(".top-items").hasClass("top-ps"))
+        ) {
+          $this.attr("style", "cursor: pointer");
+          $this.addClass("background-black");
+          if (isRecognized) {
+            var isRx = "",
+              hasOakley = "Oakley";
+            if (
+              $this.parents(".top-items").hasClass("top-men") ||
+              $this.parents(".top-items").hasClass("top-women") ||
+              $this.parents(".top-items").hasClass("top-eg") ||
+              $this.parents(".top-items").hasClass("top-ps")
+            ) {
+              isRx =
+                '<div class="size-21 weight-bold color-white" style="line-height: 1">+</div><div class="weight-bold size-18 color-white">';
+              if ($this.parents(".top-items").hasClass("top-ps")) {
+                hasOakley = "Versace";
+                isRx += "Up to ";
+              }
+              isRx +=
+                lensDisc +
+                '% Off</div><div class="color-white size-12">lenses</div>';
+            }
+            var discAmt = "25";
+            if (
+              checkDate >= "240413" ||
+              (checkDate >= "240409" && location.hostname === "fd.fdwork.com")
+            ) {
+              discAmt = "30";
+            }
+            $this.append(
+              '<div class="weight-bold size-18 color-white">' +
+                discAmt +
+                '% Off</div><div class="color-white size-12">Ray-Ban, ' +
+                hasOakley +
+                ", and more</div>" +
+                isRx
+            );
+            $this.on("click", function () {
+              window.location.href = "/email/customer-appreciation-dp";
+            });
+          } //Customer Appreciation Sale with Sign Up / Sign In.  If recognized, Customer Appreciation Sale with Save Now
+          else {
+            $this.append(
+              '<div class="size-20 color-white mb-2"><a class="d-inline-block signUp weight-bold color-white" href="javascript:addWelcomeLayer();fdFncs.vars.allowEmPop = false;">Sign Up</a> or <a class="d-inline-block signIn color-white weight-bold" href="#">Sign In</a></div><div class="weight-normal size-16 mb-2 color-white">Private Week is live</div>'
+            );
+          }
+        } else if ($this.parents(".top-items").hasClass("top-sg")) {
+          $this.append(promoMsg);
+          $this.on("click", function () {
+            window.location.href = "/sale/top-brands-discounted-dp";
+          });
+          $this.attr("style", "cursor: pointer");
+        } else if ($this.parents(".top-items").hasClass("top-cl")) {
+          $this
+            .append(
+              '<div class="weight-bold size-22 mb-3">Free Shipping</div><div class="size-15">On Contact Lens<br>Orders over $175</div>'
+            )
+            .attr("style", "cursor: pointer");
+          $this.on("click", function () {
+            window.location.href = "/contact-lenses/";
+          });
+        } else if ($this.parents(".top-items").hasClass("top-sale")) {
+          $this.append(
+            '<div class="size-14">Outlet Deals</div><div class="size-17 pt-2 mt-2" style="line-height: 1; border-top: 1px #fff solid;">Save Up To</div><div class="size-50" style="line-height: 1;">50%</div>'
+          );
+          $this
+            .addClass(
+              "background-red color-white weight-bold transform-uppercase"
+            )
+            .attr("style", "cursor: pointer");
+          $this.on("click", function () {
+            window.location.href = "/sale/designer-eyewear-outlet-dp";
+          });
+        } else {
+          var rxPromo = promoMsg;
+          if (
+            fdFncs.custType !== undefined &&
+            (fdFncs.custType === "preferred" || fdFncs.custType === "vip")
+          ) {
+            lensDisc = lensDisc + 5;
+          }
+          rxPromo +=
+            '<div class="weight-bold size-20">+</div><div class="weight-bold size-22">' +
+            lensDisc +
+            '% Off</div><div class="size-15">Rx Lenses</div>';
+  
+          //Set FSA/HSA banner instead of lens discount in mega menu
+          if (
+            (checkDate >= "211226" && checkDate <= "211231") ||
+            (checkDate >= "220229" && checkDate <= "220315")
+          ) {
+            rxPromo =
+              '<div class="my-auto"><a href="/collections/fsa-hsa-eligible-eyewear-dp"><div class="weight-bold size-16 mb-2">Use your FSA dollars<br>before they expire!</div></a></div><div class="size-13 bg-almost-black mt-auto"><a class="d-inline-block" href="/knowledge-center/do-you-have-flex-spending-dollars">FSA/HSA</a> | <a class="d-inline-block" href="/knowledge-center/vision-insurance-fsa-eligibility">Insurance</a></div>';
+            $this.addClass("pb-0 px-0");
+          }
+          $this.attr("style", "cursor: pointer");
+          if (checkDate >= "211121" && checkDate <= "211126") {
+            $this.on("click", function () {
+              window.location.href = "/emails/black-friday-deals-dp";
+            });
+          }
+          if (checkDate >= "211127" && checkDate <= "211129") {
+            $this.on("click", function () {
+              window.location.href = "/emails/cyber-monday-deals-dp";
+            });
+          } else {
+            $this.on("click", function () {
+              window.location.href = "/sale/top-brands-discounted-dp";
+            });
+          }
+          $this.append(rxPromo);
+        }
+      }
+    });
+    $(document).on("click", "#site-nav .promo-bottom a.signUp", function (e) {
+      addWelcomeLayer();
+      fdFncs.vars.allowEmPop = false;
+    });
+    $(document).on("click", "#site-nav .promo-bottom a.signIn", function (e) {
+      $("#ctl01_lnkNewLogin a").click();
+    });
+  </script>
+  

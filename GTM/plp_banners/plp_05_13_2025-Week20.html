@@ -1,0 +1,32 @@
+<script>
+  if (
+    (checkDate >= "250513" && checkDate <= "250818") ||
+    (fdFncs.vars.isTest >= "250513" && fdFncs.vars.isTest <= "250818")
+  ) {
+    var locName = ['/eyeglasses/', '/sunglasses/', '/prescription-sunglasses/'],
+      imgPath = '';
+    for (x = 0, y = locName.length; x < y; ++x) {
+      if (location.pathname === locName[x]) {
+        $("#bnr-dyn-holder").html(
+          '<a href="/email/designer-brands-dp"><img alt="Designer brands" src="https://images.framesdirect.com/image/upload/v1746989672/landing-pages/PLP_EYE_week20.png" width="1440" height="100" title="Designer Brands"></a>'
+        );
+      }
+      //Specific sale landing page
+      if (pgURLPath("/wiley-x/brand")) {
+        $("#bnr-dyn-holder").html(
+          '<img alt="WILIEY X" src="https://images.framesdirect.com/image/upload/v1746701695/landing-pages/PLP_WILEY_X.png" width="2100" height="431" title="Wiliey X">'
+        );
+        $("h1").html("Wiley X: Free hat with purchase!  ");
+        $("#cata_desc").html(
+          '<p>Wherever your adventures take you, your sight is safe and sound with our highest rated safety eyewear. Discover your complete pair of durable frames and lenses by Wiley X and receive a free hat. <a id="flash-disc-link" href="#">Details <i></i></a></p><p id="flash-disclaimer" style="display:none">Get a free gift with the purchase of a prescription glasses from Wiley X. Offer valid until stocks last.</p>'
+        );
+      } else if (pgURLPath("/email/designer-brands-dp")) {
+        $("h1").html("40% off select frames + 60% off lenses");
+        $("#cata_desc").html(
+          '<p>Shop our selection of designer frames and lenses. From classic styles to cutting edge trends, find your complete pair and save 40% on frames and 60% on lenses. Discount directly applied at checkout. Select styles only. <a id="flash-disc-link" href="#">Details <i></i></a></p><p id="flash-disclaimer" style="display:none">Get a 40% off the purchase of full-priced Eyeglasses and Prescription Sunglass frames from designer brands. Combinable with 60% off prescription lenses. Frame purchase required. Offer may not be used on any other products. Does not apply to products that have already been discounted. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee. Free Shipping on domestic orders only. Offer ends May 18, 2025. </p>'
+        );
+      }
+    }
+
+  }
+</script>

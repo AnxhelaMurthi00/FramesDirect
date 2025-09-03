@@ -1,0 +1,83 @@
+<script>
+  //Winter Sale
+  if (
+    (checkDate >= "250320" && checkDate <= "250330") ||
+    (fdFncs.vars.isTest >= "250320" && fdFncs.vars.isTest <= "250330")
+  ) {
+    //For Product PLPs not specific to the Sale Landing Page
+    var locName = [
+        "/eyeglasses/",
+        "/sunglasses/",
+        "/prescription-sunglasses/",
+        "/men/eyewear-dp",
+        "/women/eyewear-dp",
+        "/eyeglasses/mens",
+        "/eyeglasses/womens",
+        "/sunglasses/mens",
+        "/sunglasses/womens",
+        "/prescription-sunglasses/mens",
+        "/prescription-sunglasses/womens",
+      ],
+      imgPath = "";
+    for (x = 0, y = locName.length; x < y; ++x) {
+      if (location.pathname === locName[x]) {
+        imgPath = "v1741341375/landing-pages/FD_PLP_SPRING_PROMO_GENERAL.png";
+        $("#bnr-dyn-holder").html(
+          '<a href="/email/spring-sale-dp"><img alt="Spring into Savings: Up to 50% off Ray-Ban, Oakley, Michael Kors & more, plus 65% off lenses with code EXTRA5" src="https://images.framesdirect.com/image/upload/' +
+            imgPath +
+            '" width="2100" height="431" title="Spring into Savings: Up to 50% off Ray-Ban, Oakley, Michael Kors & more, plus 65% off lenses with code EXTRA5"></a>'
+        );
+        break;
+      }
+    }
+    //Specific sale landing page
+    if (pgURLPath("/email/spring-sale-dp")) {
+      $("h1").html(
+        "Spring into Savings: Up to 50% off Ray-Ban, Oakley, Michael Kors & more, plus 65% off lenses with code EXTRA5 "
+      );
+      $("#cata_desc").html(
+        '<p>It`s time to get ready for spring with a new look. We`ll help! Save on luxury frames from top brands, and the best lenses to suit your vision needs. <a id="flash-disc-link" href="#">Details <i></i></a></p><p id="flash-disclaimer" style="display:none">Get 30% off the purchase of full-priced Eyeglasses from Ray-Ban, Ray-Ban Junior, Oakley, Oakley Youth, Costa, Armani Exchange, Arnette, Brooks Brothers, Burberry, Coach, Dolce & Gabbana, Dolce & Gabbana Kids, Emporio Armani, Emporio Armani Kids, Giorgio Armani, Polo, Polo Kids, Ralph Lauren, RALPH, Sferoflex, Swarovski, Tory Burch, Versace, Versace Kids, Vogue, Vogue Junior. Does not apply to products that have already been discounted. Other exclusions may apply. Frame purchase required. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee. Free Shipping on domestic orders only. Offer ends March 30th, 2025. <br><br>Get 30% off the purchase of full-priced Sunglasses and Prescription Sunglasses from Armani Exchange, Arnette, Brooks Brothers, Burberry, Coach, Dolce & Gabbana, Dolce & Gabbana Kids, Emporio Armani, Emporio Armani Kids, Giorgio Armani, Polo, Polo Kids, Ralph Lauren, RALPH, Sferoflex, Swarovski, Tory Burch, Versace, Versace Kids, Vogue, Vogue Junior. Does not apply to products that have already been discounted. Other exclusions may apply. Frame purchase required. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee. Free Shipping on domestic orders only. Offer ends March 30th, 2025. </p>'
+      );
+    }
+  } else if (
+    (checkDate >= "250313" && checkDate <= "250319") ||
+    (fdFncs.vars.isTest >= "250312" && fdFncs.vars.isTest <= "250319")
+  ) {
+    //For Product PLPs not specific to the Sale Landing Page
+    var locName = [
+        "/eyeglasses/",
+        "/sunglasses/",
+        "/prescription-sunglasses/",
+        "/men/eyewear-dp",
+        "/women/eyewear-dp",
+        "/eyeglasses/mens",
+        "/eyeglasses/womens",
+        "/sunglasses/mens",
+        "/sunglasses/womens",
+        "/prescription-sunglasses/mens",
+        "/prescription-sunglasses/womens",
+      ],
+      imgPath = "";
+    for (x = 0, y = locName.length; x < y; ++x) {
+      if (location.pathname === locName[x]) {
+        imgPath =
+          "v1741340801/landing-pages/FD_PLP_EARLY_SPRING_PROMO_GENERAL.png";
+        $("#bnr-dyn-holder").html(
+          '<a href="/email/spring-sale-dp"><img alt="Ready for Spring: Up to 50% off Versace, Burberry & more, plus 65% off lenses " src="https://images.framesdirect.com/image/upload/' +
+            imgPath +
+            '" width="2100" height="431" title="Ready for Spring: Up to 50% off Versace, Burberry & more, plus 65% off lenses"></a>'
+        );
+        break;
+      }
+    }
+    //Specific sale landing page
+    if (pgURLPath("/email/spring-sale-dp")) {
+      $("h1").html(
+        "Ready for Spring: Up to 50% off Versace, Burberry & more, plus 65% off lenses "
+      );
+      $("#cata_desc").html(
+        '<p>It`s time to get ready for spring with a new look. We`ll help! Save on luxury frames from top brands, and the best lenses to suit your vision needs. <a id="flash-disc-link" href="#">Details <i></i></a></p><p id="flash-disclaimer" style="display:none">Get 30% off the purchase price of full-priced Eyeglasses, Sunglasses and Prescription Sunglasses products, from Armani Exchange, Arnette, Brooks Brothers, Burberry, Coach, Dolce&Gabbana, Dolce&Gabbana Kids, Emporio Armani, Emporio Armani Kids, Giorgio Armani, Polo, Polo Kids, Ralph Lauren, RALPH, Sferoflex, Swarovski, Tory Burch, Versace, Versace Kids, Vogue, Vogue Junior. Does not apply to products that have already been discounted. Other exclusions may apply. Frame purchase required. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee. Free Shipping on domestic orders only. Offer ends March 19th, 2025. </p>'
+      );
+    }
+  }
+</script>

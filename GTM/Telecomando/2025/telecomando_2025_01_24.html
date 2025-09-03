@@ -1,0 +1,13 @@
+<script>
+    if (fdFncs.vars.fdRecognized) {
+      if ((checkDate >= '250124' && checkDate <= '250125') || (fdFncs.vars.isTest >= '250124' && fdFncs.vars.isTest <= '250125')) {
+        $('#discountBar #exclusiveToggle').html($('#discountBar #exclusiveToggle').html().replace('See Exclusive Savings!', 'Anniversary Sale').replace('Exclusive Savings', 'Anniversary Sale'));
+        $('#exclusiveSavings #discountBar > .blue-bg').css({ 'background': 'linear-gradient(to right, #ECDC66, #D5BB66, #BD9761)' });
+      }
+    }else if ((checkDate >= '250116' && checkDate <= '250117') || (fdFncs.vars.isTest >= '250116' && fdFncs.vars.isTest <= '250117')) {
+        $('#discountBar #exclusiveToggle').html($('#discountBar #exclusiveToggle').html().replace('See Exclusive Savings!', 'Winter Sale Savings').replace('Exclusive Savings', 'Winter Sale Savings'));
+        $('#exclusiveSavings #discountBar > .blue-bg').css({ 'background': '#87C2CC' });
+      }
+  </script>
+
+

@@ -1,0 +1,259 @@
+<script>
+  fdFncs.vars = fdFncs.vars || {};
+  fdFncs.vars.discNoBrands = "80";
+  fdFncs.vars.add50 = "50";
+  fdFncs.vars.setLuxMSRP = "";
+
+  // Get the current date in the format "YYMMDD"
+  var currentDate = new Date();
+  var year = currentDate.getFullYear().toString().slice(-2);
+  var month = ("0" + (currentDate.getMonth() + 1)).slice(-2);
+  var day = ("0" + currentDate.getDate()).slice(-2);
+  var checkDate = year + month + day;
+
+  // Define the messages for the carousel based on date and device type
+  var messages = [];
+  if (
+    (checkDate >= "250411" && checkDate <= "250416") ||
+    (fdFncs.vars.isTest >= "250411" && fdFncs.vars.isTest <= "250416")
+  ) {
+    messages =
+      $(window).width() <= 768
+        ? [
+          "CLEARANCE: Up to 50% off + 65% off lenses  ",
+          "EASTER SAVINGS: Save $50 on frames",
+        ]
+        : [
+          "CLEARANCE: Up to 50% off clearance & sale frames. Explore 350+ newly added styles + 65% off lenses ",
+          "EASTER SAVINGS: Save $50 on frames priced $200+",
+        ];
+  } else if (
+    (checkDate >= "250407" && checkDate <= "250410") ||
+    (fdFncs.vars.isTest >= "250407" && fdFncs.vars.isTest <= "250410")
+  ) {
+    messages =
+      $(window).width() <= 768
+        ? ["FLASH SALE: Up to 50% off frames & 60% off lenses  "]
+        : ["FLASH SALE: Up to 50% off frames & 60% off lenses until April 10 "];
+  } else if (
+    (checkDate >= "250331" && checkDate <= "250406") ||
+    (fdFncs.vars.isTest >= "250331" && fdFncs.vars.isTest <= "250406")
+  ) {
+    messages =
+      $(window).width() <= 768
+        ? [
+          "FLASH SALE: Up to 50% off frames & 60% off lenses ",
+          "Get 25% off Michael Kors frames ",
+        ]
+        : [
+          "FLASH SALE: Up to 50% off frames & 60% off lenses until April 10 ",
+          "Get 25% off Michael Kors frames ",
+        ];
+  } else if (
+    (checkDate >= "250320" && checkDate <= "250330") ||
+    (fdFncs.vars.isTest >= "250320" && fdFncs.vars.isTest <= "250330")
+  ) {
+    messages =
+      $(window).width() <= 768
+        ? [
+          "Up to 50% off frames & 65% off lenses",
+          "New Arrivals for Spring Are Here!",
+        ]
+        : [
+          "Spring Savings: Up to 50% off frames & 65% off lenses",
+          "New Arrivals for Spring Are Here!",
+        ];
+  } else if (
+    (checkDate >= "250316" && checkDate <= "250319") ||
+    (fdFncs.vars.isTest >= "250316" && fdFncs.vars.isTest <= "250319")
+  ) {
+    messages =
+      $(window).width() <= 768
+        ? [
+          "Up to 50% off frames + 65% off lenses",
+          "Save 40% on Wiley X, Maui Jim, Costa & Oakley",
+        ]
+        : [
+          "Early Spring Savings: Up to 50% off selected frames + 65% off lenses",
+          "Save 40% on prescription lenses from Wiley X, Maui Jim, Costa & Oakley",
+        ];
+  } else if (
+    (checkDate >= "250313" && checkDate <= "250315") ||
+    (fdFncs.vars.isTest >= "250313" && fdFncs.vars.isTest <= "250315")
+  ) {
+    messages =
+      $(window).width() <= 768
+        ? [
+          "Up to 50% off frames + 65% off lenses",
+          "Save 40% on Wiley X, Maui Jim, Costa & Oakley",
+          "FSA  expire on March 15!",
+        ]
+        : [
+          "Early Spring Savings: Up to 50% off selected frames + 65% off lenses",
+          "Save 40% on prescription lenses from Wiley X, Maui Jim, Costa & Oakley",
+          "Use your insurance, including FSA benefits before they expire on March 15!",
+        ];
+  } else {
+    messages =
+      $(window).width() <= 768
+        ? ["Up to 50% off frames + 65% off lenses"]
+        : [
+          "Early Spring Savings: Up to 50% off selected frames + 65% off lenses",
+        ];
+  }
+  var currentMessageIndex = 0;
+
+  // Function to update the banner message
+  function updateBannerMessage() {
+    var countBnrMsg = messages[currentMessageIndex];
+
+    // Add countdown only for the specific message
+    if (messages[currentMessageIndex].includes("EASTER SAVINGS")) {
+      countBnrMsg +=
+        '<div id="countdown" class="d-flex justify-content-end pr-2 size-6 ml-3"><div id="countdown-clockworks-holder" class="d-flex"></div></div>';
+    }
+
+    $("#count-bnr-inner").html(countBnrMsg);
+
+    // Initialize the countdown if the specific message is active
+    if (
+      (messages[currentMessageIndex].includes("EASTER SAVINGS") &&
+        checkDate === "250421") ||
+      fdFncs.vars.isTest === "250421"
+    ) {
+      initializeCountdown();
+    }
+  }
+
+  // Function to initialize the countdown
+  function initializeCountdown() {
+    var endDateLong = "04/22/2025"; // Set the end date for the countdown
+    var digitBg = " white";
+
+    $("#countdown-clockworks-holder").countdown(endDateLong, function (event) {
+      var $this = $(this),
+        totalHours = event.offset.totalDays * 24 + event.offset.hours;
+      //This is for Hours only
+      $this.html(
+        event.strftime(
+          '<div class="dash hours_dash"> <div class="countdown-digit-wrapper' +
+          digitBg +
+          '"> <div class="digit">' +
+          totalHours +
+          '</div> <div class="time-label">hours</div> </div> <div class="colon">:</div></div><div class="dash minutes_dash"> <div class="countdown-digit-wrapper' +
+          digitBg +
+          '"> <div class="digit">%M</div> <div class="time-label">min</div> </div> <div class="colon">:</div></div><div class="dash seconds_dash"> <div class="countdown-digit-wrapper' +
+          digitBg +
+          '"> <div class="digit">%S</div> <div class="time-label">sec</div> </div></div>'
+        )
+      );
+    });
+  }
+
+  // Function to handle the carousel navigation
+  function navigateCarousel() {
+    currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+    updateBannerMessage();
+  }
+
+  // Automatically cycle through messages every 3 seconds
+  setInterval(navigateCarousel, 4000);
+
+  fdFncs.countBnr = function () {
+    var endDateLong = "01/01/1900",
+      winURL = window.location.href.toLowerCase(),
+      showCountdown = false,
+      isRecognized = getCookie("fdRecognized") !== undefined ? true : false,
+      loggedIn = "",
+      countHTML = "",
+      countBnrMsg = "",
+      bgColor = "black",
+      lnkStart = "",
+      lnkEnd = "",
+      digitBg = "",
+      showBanner =
+        window.location.href.indexOf("shopping") === -1 && //Shopping
+        window.location.href.indexOf("password_email.aspx") === -1 && //Password
+        window.location.href.indexOf("login.aspx") === -1 && //Login
+        window.location.href.indexOf("checkout.aspx") === -1 && //Checkout
+        window.location.href.indexOf("lens_selection") === -1 && //Lens Configurator
+        window.location.href.indexOf("eyewear-lens-selector") === -1; //Lens Configurator
+
+    // Create the carousel HTML structure without carousel-message div
+    countBnr = (function () {
+      return (
+        lnkStart +
+        '<div id="count-bnr-inner" style="height: 37px; color:white;" class="background-black ' +
+        bgColor +
+        ' d-flex justify-content-center align-items-center weight-bold">' +
+        messages[currentMessageIndex] +
+        "</div>" +
+        lnkEnd
+      );
+    })();
+
+    if (
+      (showBanner && checkDate >= "250224" && checkDate <= "251231") ||
+      (fdFncs.vars.isTest >= "250224" && fdFncs.vars.isTest <= "251231")
+    ) {
+      //Add CSS header padding when banner is running
+      var css =
+        "#header-top { padding-top: 37px; } .scrollingHeader #header, .scrollingHeader #header-in { height: 133px; } .scrollingHeader #header-in.hide { transform : translateY(-133px); }",
+        head = document.head || document.getElementsByTagName("head")[0],
+        style = document.createElement("style");
+      head.appendChild(style);
+      style.type = "text/css";
+      style.appendChild(document.createTextNode(css));
+      //End CSS Addition
+      $("#count-bnr-inner").remove();
+      if ($("#countdown").length === 0 && $(window).width() > 1300) {
+        $(countBnr).insertBefore("#header");
+        $("#header-top").css("padding-top", 0);
+        $("body").addClass("changeSticky");
+      } else if ($("#countdown").length === 0) {
+        $(countBnr).prependTo("#header-in");
+        $("#header-top").css("padding-top", 0);
+      } else {
+        $(countBnr).prependTo("#header-in");
+      }
+      $("#count-bnr-inner").on("click", function () {
+        var $this = $(this);
+        if ($this.find("a").length === 1) {
+          var linkLoc = $this.find("a").attr("href");
+          window.location.href = linkLoc;
+        }
+      });
+      if (endDateLong === "01/01/1900") {
+        $("#count-bnr-inner > div:first-child")
+          .removeClass("col-lg-6 justify-content-lg-start m-0")
+          .addClass("m-auto");
+      }
+    }
+    if ($("#countdown").length > 0) {
+      $("#countdown-clockworks-holder").countdown(
+        endDateLong,
+        function (event) {
+          var $this = $(this),
+            totalHours = event.offset.totalDays * 24 + event.offset.hours;
+          //This is for Hours only
+          $this.html(
+            event.strftime(
+              '<div class="dash hours_dash"> <div class="countdown-digit-wrapper' +
+              digitBg +
+              '"> <div class="digit">' +
+              totalHours +
+              '</div> <div class="time-label">hours</div> </div> <div class="colon">:</div></div><div class="dash minutes_dash"> <div class="countdown-digit-wrapper' +
+              digitBg +
+              '"> <div class="digit">%M</div> <div class="time-label">min</div> </div> <div class="colon">:</div></div><div class="dash seconds_dash"> <div class="countdown-digit-wrapper' +
+              digitBg +
+              '"> <div class="digit">%S</div> <div class="time-label">sec</div> </div></div>'
+            )
+          );
+        }
+      );
+    }
+  };
+
+  // Initialize the banner
+  fdFncs.countBnr();
+</script>

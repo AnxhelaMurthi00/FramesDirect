@@ -1,0 +1,25 @@
+<script>
+  if (
+    (checkDate >= "250519" && checkDate <= "250526") ||
+    (fdFncs.vars.isTest >= "250519" && fdFncs.vars.isTest <= "250526")
+  ) {
+    var locName = ['/eyeglasses/', '/sunglasses/', '/prescription-sunglasses/'],
+      imgPath = '';
+    for (x = 0, y = locName.length; x < y; ++x) {
+      if (location.pathname === locName[x]) {
+        $("#bnr-dyn-holder").html(
+          '<a href="/email/memorial-day-dp"><img alt="Designer brands" src="https://images.framesdirect.com/image/upload/v1746795438/landing-pages/PLP_D_WEEK21.png" width="1440" height="100" title="Memorial Day"></a>'
+        );
+      }
+      //Specific sale landing page
+      if (pgURLPath("/email/memorial-day-dp")) {
+        $("h1").html("Memorial Day Savings: Up to 40% off frames & 60% off lenses");
+        $("#cata_desc").html(
+          '<p>We’re celebrating Memorial Day with deep discounts on designer styles. Now save up to 40% on frames and 60% on lenses. <a id="flash-disc-link" href="#">Details <i></i></a></p><p id="flash-disclaimer" style="display:none">Get up to 40% off the purchase of full-priced Sunglasses, Prescription Sunglasses and Eyeglasses from Armani Exchange, Arnette, Brooks Brothers, Burberry, Coach, Dolce & Gabbana, Dolce & Gabbana Kids, Emporio Armani, Emporio Armani Kids, Giorgio Armani, Jimmy Choo, Polo, Polo Kids, Ralph Lauren, RALPH, Scuderia Ferrari, Sferoflex, Swarovski, Tory Burch, Versace, Versace Kids, Vogue, Vogue Junior. Other exclusions may apply. Does not apply to products that have already been discounted. Frame purchase required. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee. Free Shipping on domestic orders only. Offer ends May 26, 2025.</p>'
+        );
+      }
+    }
+
+  }
+
+</script>

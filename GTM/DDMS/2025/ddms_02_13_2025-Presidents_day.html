@@ -1,0 +1,255 @@
+<script>
+  $('#site-nav .promo-bottom').each(function () {
+    var $this = $(this), 
+        isRecognized = getCookie('fdRecognized') !== undefined,
+        setPg = '',
+        clMsg = '<div class="weight-bold size-18 mb-3">Free Shipping</div><div class="size-15">On Contact Lens<br>Orders over $175</div>';
+
+    $this.css('backgroundColor', '#fff');
+    $this.attr('style', 'cursor: pointer');
+    
+
+
+        
+    if (
+      !$this.parents('.top-items').hasClass('top-sale') && 
+      (
+        (checkDate >= '250214' && checkDate <= '250217') ||
+        (fdFncs.vars.isTest >= '250214' && checkDate <= '250217')
+      )
+    )
+    { 
+      $this.css('backgroundColor', '#98B8CDFF');
+      setPg = '/sale/top-brands-discounted-dp';
+      if ($this.parents('.top-items').hasClass('top-cl')) {
+        $this.append(
+          clMsg
+        )
+        setPg = '/contact-lenses/';
+      } else if ($this.parents('.top-items').hasClass('top-sale')) {
+        $this.append(
+          '<div class="size-14">Outlet Deals</div><div class="size-18 pt-2 mt-2" style="line-height: 1; border-top: 1px #fff solid;">Save Up To</div><div class="size-40" style="line-height: 1;">50%</div>'
+        );
+        $this.addClass(
+          'background-red color-white weight-bold transform-uppercase'
+        )
+      } else if ($this.parents('.top-items').hasClass('top-sg')) {
+        $this.append(
+          '<div><div>Up to</div><span class="weight-bold size-18"> 30% OFF<br> FRAMES</span><div class="lh-1 pt-2" style="line-height: 1.5;">Limited time only deal:<br><strong> Extra $20 off </strong>at cart* </div></div>'
+        );
+        setPg = '/email/presidents-dp';
+      } else {
+        $this.append(
+          '<div>Up to</div><div class="weight-bold size-18"> 30% OFF FRAMES<br></div><div class="weight-bold size-18">+</div><div class="weight-bold size-18">65% OFF LENSES</div><div class="lh-1 pt-2" style="line-height: 1.5;">Limited time only deal:<br><strong> Extra $20 off </strong>at cart* </div>'
+          );
+          setPg = '/email/presidents-dp';
+      }
+    }else if (
+      !$this.parents('.top-items').hasClass('top-sale') && 
+      (
+        (checkDate >= '250213' && checkDate <= '250213') ||
+        (fdFncs.vars.isTest >= '250213' && checkDate <= '250213')
+      )
+    )
+    { 
+      $this.css('backgroundColor', '#98B8CDFF');
+      setPg = '/sale/top-brands-discounted-dp';
+      if ($this.parents('.top-items').hasClass('top-cl')) {
+        $this.append(
+          clMsg
+        )
+        setPg = '/contact-lenses/';
+      } else if ($this.parents('.top-items').hasClass('top-sale')) {
+        $this.append(
+          '<div class="size-14">Outlet Deals</div><div class="size-18 pt-2 mt-2" style="line-height: 1; border-top: 1px #fff solid;">Save Up To</div><div class="size-40" style="line-height: 1;">50%</div>'
+        );
+        $this.addClass(
+          'background-red color-white weight-bold transform-uppercase'
+        )
+      } else if ($this.parents('.top-items').hasClass('top-sg')) {
+        $this.append(
+          '<div><div>Up to</div><span class="weight-bold size-18"> 30% OFF<br> FRAMES</span></div>'
+        );
+        setPg = '/email/presidents-dp';
+      } else {
+        $this.append(
+          '<div>Up to</div><div class="weight-bold size-18"> 30% OFF <br>FRAMES<br></div><div class="weight-bold size-18">+</div><div class="weight-bold size-18">65% OFF<br> LENSES</div>'
+          );
+          setPg = '/email/presidents-dp';
+      }
+    }else if (
+      !$this.parents('.top-items').hasClass('top-sale') && 
+      (
+        (checkDate >= '250206' && checkDate <= '250212') ||
+        (fdFncs.vars.isTest >= '250206' && checkDate <= '250212')
+      )
+    )
+    { 
+      $this.css('backgroundColor', '#E7C2B2');
+      setPg = '/email/valentine-day-dp';
+      if ($this.parents('.top-items').hasClass('top-cl')) {
+        $this.append(
+          clMsg
+        )
+        setPg = '/contact-lenses/';
+      } else if ($this.parents('.top-items').hasClass('top-sale')) {
+        $this.append(
+          '<div class="size-14">Outlet Deals</div><div class="size-18 pt-2 mt-2" style="line-height: 1; border-top: 1px #fff solid;">Save Up To</div><div class="size-40" style="line-height: 1;">50%</div>'
+        );
+        $this.addClass(
+          'background-red color-white weight-bold transform-uppercase'
+        )
+      } else if ($this.parents('.top-items').hasClass('top-sg')) {
+        $this.append(
+          '<div><span class="weight-bold size-18">20% OFF<br> SUNGLASSES</span><div class="weight-normal">from Ray-Ban, Oakley & more</div></div>'
+        );
+      } else {
+        $this.append(
+          '<div class="weight-bold size-18">20% OFF <br>SUNGLASSES</div><div>from Ray-Ban, Oakley & more</div><div class="weight-bold size-18">+</div><div class="weight-bold size-18">65% OFF LENSES</div><div>Code: <b>EXTRA5</b></div>'
+          );
+      }
+    }else if (
+      !$this.parents('.top-items').hasClass('top-sale') &&
+      (
+        (checkDate >= '250203' && checkDate <= '250205') ||
+        (fdFncs.vars.isTest >= '250203' && checkDate <= '250205')
+      )
+    )
+    { 
+      $this.css('backgroundColor', '#E7C2B2');
+      if ($this.parents('.top-items').hasClass('top-cl')) {
+        $this.append(
+          clMsg
+        )
+        setPg = '/contact-lenses/';
+      } else if ($this.parents('.top-items').hasClass('top-sale')) {
+        $this.append(
+          '<div class="size-14">Outlet Deals</div><div class="size-18 pt-2 mt-2" style="line-height: 1; border-top: 1px #fff solid;">Save Up To</div><div class="size-40" style="line-height: 1;">50%</div>'
+        );
+        $this.addClass(
+          'background-red color-white weight-bold transform-uppercase'
+        )
+      } else if ($this.parents('.top-items').hasClass('top-sg')) {
+        if (isRecognized) {
+          $this.append(
+            '<div class="weight-bold size-18">20% OFF FRAMES</div><div>from Burberry, Versace, &amp; more</div>'
+          );
+          setPg = '/email/valentine-day-dp';
+        } else {
+          $this.append(
+            '<div class="weight-bold size-21 pb-2"><a href="#" class="emailSignUp weight-bold">Sign up</a><br>or <a href="#" class="siteSignIn weight-bold">Log In</a></div><div>for Valentine’s Day savings</div>'
+          );
+        }
+      } else {
+        if (isRecognized) {
+          $this.append(
+            '<div class="weight-bold size-18">20% OFF FRAMES</div><div>from Burberry, Versace, &amp; more</div><div class="weight-bold size-18">+</div><div class="weight-bold size-18">65% OFF LENSES</div><div>Code: <b>EXTRA5</b></div>'
+          );
+          setPg = '/email/valentine-day-dp';
+        } else {
+          $this.append(
+            '<div class="weight-bold size-21 pb-2"><a href="#" class="emailSignUp weight-bold">Sign up</a><br>or <a href="#" class="siteSignIn weight-bold">Log In</a></div><div>for Valentine’s Day savings</div>'
+          );
+        }
+      }
+    } else if (
+      !$this.parents('.top-items').hasClass('top-sale') && 
+      (
+        (checkDate >= '250101' && checkDate <= '250112') ||
+        (fdFncs.vars.isTest >= '250101' && checkDate <= '250112')
+      )
+    )
+    { 
+      $this.css('backgroundColor', '#c7caaf');
+      setPg = '/sale/top-brands-discounted-dp';
+      if ($this.parents('.top-items').hasClass('top-cl')) {
+        $this.append(
+          clMsg
+        )
+        setPg = '/contact-lenses/';
+      } else if ($this.parents('.top-items').hasClass('top-sale')) {
+        $this.append(
+          '<div class="size-14">Outlet Deals</div><div class="size-18 pt-2 mt-2" style="line-height: 1; border-top: 1px #fff solid;">Save Up To</div><div class="size-40" style="line-height: 1;">50%</div>'
+        );
+        $this.addClass(
+          'background-red color-white weight-bold transform-uppercase'
+        )
+      } else if ($this.parents('.top-items').hasClass('top-sg')) {
+        $this.append(
+          '<div><p class="mt-0">Up to</p> <span class="weight-bold size-18">50% OFF<br>FRAMES</span></div>'
+        );
+      } else {
+        $this.append(
+          '<div>Up to</div><div class="weight-bold size-18">50% OFF FRAMES</div><div class="weight-bold size-18">+</div><div>Up to</div><div class="weight-bold size-18">60% OFF LENSES</div>'
+        );
+      }
+    } else if (
+      !$this.parents('.top-items').hasClass('top-sale') && 
+      (
+        (checkDate >= '241212' && checkDate <= '241229') ||
+        (fdFncs.vars.isTest >= '241212' && fdFncs.vars.isTest <= '241229')
+      )
+    )
+    {
+      //style
+      if ($this.parents('.top-items').hasClass('top-sg') || $this.parents('.top-items').hasClass('top-ps')) {
+        $this.css('background','#AAB9C0');
+      } else {
+        $this.css('background','#CBDFE8');
+      }
+      //structure
+      if ($this.parents('.top-items').hasClass('top-cl')) {
+        $this.append(
+          clMsg
+        )
+        setPg = '/contact-lenses/';
+      } else {
+        setPg = '/email/holiday-deals-dp';
+        if ($this.parents('.top-items').hasClass('top-sg') || $this.parents('.top-items').hasClass('top-ps')) {
+          $this.append(
+            '<div>From</div><div class="weight-bold size-18">$40 OFF<br>SUNGLASSES</div>'
+          );
+          if ($this.parents('.top-items').hasClass('top-ps')) {
+            $this.append('<div class="weight-bold size-18">+</div><div>Up to</div><div class="weight-bold size-18">60% OFF LENSES</div>');
+          }
+        } else {
+          setPg = '/email/holiday-deals-eye-dp';
+          $this.append(
+            '<div>Up to</div><div class="weight-bold size-18">50% OFF FRAMES</div><div class="weight-bold size-18">+</div><div>Up to</div><div class="weight-bold size-18">60% OFF LENSES</div>'
+          );
+        }
+      }
+    } else {
+      $this.css('backgroundColor', '#C7C9AF');
+      setPg = '/sale/top-brands-discounted-dp';
+      //$this.css("backgroundColor", "#A7E5DA");
+      if ($this.parents('.top-items').hasClass('top-cl')) {
+        $this.append(
+          clMsg
+        )
+        setPg = '/contact-lenses/';
+      } else if ($this.parents('.top-items').hasClass('top-sale')) {
+        $this.append(
+          '<div class="size-14">Outlet Deals</div><div class="size-18 pt-2 mt-2" style="line-height: 1; border-top: 1px #fff solid;">Save Up To</div><div class="size-40" style="line-height: 1;">50%</div>'
+        );
+        $this.addClass(
+          'background-red color-white weight-bold transform-uppercase'
+        );
+        setPg = '/sale/designer-eyewear-outlet-dp';
+      } else if ($this.parents('.top-items').hasClass('top-sg')) {
+        $this.append(
+          '<div><p class="mt-0">Up to</p> <span class="weight-bold size-18">50% OFF<br>FRAMES</span></div>'
+        );
+      } else {
+        $this.append(
+          '<div>Up to</div><div class="weight-bold size-18">50% OFF FRAMES</div><div class="weight-bold size-18">+</div><div>Up to</div><div class="weight-bold size-18">60% OFF LENSES</div>'
+        );
+      }
+    }
+    if (setPg !== '') {
+      $this.on('click', function () {
+        window.location.href = setPg;
+      });
+    }
+  });
+</script>

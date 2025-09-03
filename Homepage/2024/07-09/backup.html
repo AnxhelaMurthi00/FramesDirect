@@ -1,0 +1,424 @@
+<script>
+    const rbBannerDefault = () => {
+      let rayBanBanner =
+        /* HTML */
+        `
+          <div class="rbBanner d-flex flex-wrap mb-4 mx-3">
+            <div class="img-block">&nbsp;</div>
+            <div
+              class="copy-block d-flex flex-wrap text-center justify-content-center col-lg-5 weight-medium py-3"
+            >
+              <p
+                class="col-12 size-21 weight-extra-bold my-2 my-xl-1"
+                style="line-height: 1"
+              >
+                Find Your<br />Genuine Style
+              </p>
+              <div class="col-12 size-12 my-xl-1">
+                Discover the Ray-Ban collection<br />and make a statement in
+                iconic<br />eyeglasses and sunglasses
+              </div>
+              <a
+                href="/ray-ban/brand"
+                class="btn-cta nowrap mt-4"
+                style="background: #cd0000; color: #fff !important; border: 0"
+                >Shop Ray-Ban Collection</a
+              >
+            </div>
+          </div>
+        `;
+  
+      $(".rbBanner").replaceWith(rayBanBanner);
+  
+      $(".rbBanner").css(
+        "background",
+        "url('https://images.framesdirect.com/image/upload/v1714725178/homePage/FD_promo_Ray-Ban__tightly_cropped.png') no-repeat center right / auto 100%"
+      );
+  
+      $(".rbBanner .img-block").css(
+        "background",
+        "url('https://images.framesdirect.com/image/upload/v1714725178/homePage/FD_promo_Ray-Ban__tightly_cropped.png') no-repeat center center/auto 100%"
+      );
+    };
+  
+    var bannerSlider = "";
+    function initBannerSlider() {
+      if (
+        bannerSlider.lightSlider &&
+        typeof bannerSlider.destroy === "function"
+      ) {
+        bannerSlider.destroy();
+      }
+      bannerSlider = $("#light-slider").lightSlider({
+        item: 9,
+        auto: true,
+        slideMove: 3,
+        loop: true,
+        autoWidth: false,
+        pauseOnHover: true,
+        easing: "cubic-bezier(0.25, 0, 0.25, 1)",
+        speed: 1000,
+        pause: 3000,
+        slideMargin: 5,
+        responsive: [
+          {
+            breakpoint: 1400,
+            settings: {
+              item: 6,
+            },
+          },
+          {
+            breakpoint: 1080,
+            settings: {
+              item: 4,
+            },
+          },
+          {
+            breakpoint: 500,
+            settings: {
+              item: 3,
+            },
+          },
+        ],
+        onSliderLoad: function (el) {
+          $("#light-slider").css("opacity", 1);
+        },
+      });
+    }
+    var heroSlider = "";
+    function initHeroSlider() {
+      if (heroSlider.lightSlider && typeof heroSlider.destroy === "function") {
+        heroSlider.destroy();
+      }
+      heroSlider = $("#hero-slider").lightSlider({
+        item: 1,
+        loop: true,
+        auto: true,
+        autoWidth: false,
+        easing: "cubic-bezier(0.25, 0, 0.25, 1)",
+        speed: 1000,
+        pauseOnHover: true,
+        pager: false,
+        pause: 8000,
+        onSliderLoad: function (el) {
+          $("#hero-slider").css("opacity", 1);
+        },
+        onBeforeSlide: function (el) {
+          let videos = document.querySelectorAll("#hero-slider video");
+          videos.forEach((video) => {
+            video.pause();
+            video.currentTime = 0;
+          });
+        },
+  
+        onAfterSlide: function (el) {
+          let videos = document.querySelectorAll("#hero-slider video");
+          videos.forEach((video) => {
+            video.play();
+            video.currentTime = 0;
+          });
+        },
+      });
+    }
+  
+    $(function () {
+      if (
+        ((checkDate >= "2400703" && fdFncs.svrTm.hr >= "02") ||
+          checkDate >= "240704") &&
+        checkDate < "240708"
+      ) {
+        let July4thHeroBanner =
+          /* HTML */
+          `
+            <div
+              style="background: #EEEFEA;"
+              class="heroBanner position-relative extended transparent d-flex img-flex"
+            >
+              <a href="/email/fourth-of-july-dp"
+                ><img
+                  id="heroImg"
+                  src="https://images.framesdirect.com/image/upload/v1718891131/homePage/FD_promo_4TH_JULY_RB4181_RB3030_BE4160.png"
+                  alt="The left is wearing Gucci gg0200s sunglasses, other is wearing Dolce & Gabbana DG4437 Sunglasses"
+                  width="1920"
+                  height="554"
+                  usemap="#image-map"
+              /></a>
+              <map name="image-map">
+                <area
+                  target=""
+                  alt="Ray-Ban rb4181 Sunglasses"
+                  title="Ray-Ban rb4181 Sunglasses"
+                  href="/ray-ban-rb4181-sunglasses"
+                  coords="780, 180,1070,280"
+                  shape="rect"
+                />
+                <area
+                  target=""
+                  alt="Ray-Ban rb3030 Sunglasses"
+                  title="Ray-Ban rb3030 Sunglasses"
+                  href="/ray-ban-rb3030-outdoorsman-aviator-with-cable-temples-sunglasses"
+                  coords="1100, 180, 1450, 280"
+                  shape="rect"
+                />
+                <area
+                  target=""
+                  alt="Burberry be4160 Sunglasses"
+                  title="Burberry be4160 Sunglasses"
+                  href="/burberry-be4160-sunglasses"
+                  coords="1500, 180, 1850, 280"
+                  shape="rect"
+                />
+              </map>
+              <div class="text-overlay col-12 col-xl-3 d-flex">
+                <div
+                  class="home-promo col-12 d-flex flex-column align-items-center justify-content-center"
+                >
+                  <div class="img-flex weight-bold size-18 text-blue mb-2">
+                    CELEBRATE THE 4TH OF JULY <br />
+                    IN A NEW PAIR OF SHADES
+                  </div>
+                  <div class="d-flex align-items-center my-xl-4">
+                    <div
+                      class="px-2 px-md-3 px-lg-4"
+                      style="border-right: 3px solid #204379;"
+                    >
+                      <h2
+                        class="weight-extra-bold transform-uppercase size-30 text-blue"
+                      >
+                        15% OFF
+                      </h2>
+                      <p
+                        class="hp-promo-sm weight-normal transform-none size-16 text-blue m-0"
+                      >
+                        Sunglasses<br />
+                        from
+                        <b
+                          >Ray-Ban,<br />
+                          Oakley & Costa</b
+                        >
+                      </p>
+                    </div>
+                    <div class="px-2 px-md-3 px-lg-4">
+                      <h2
+                        class="weight-extra-bold transform-uppercase size-30 text-blue"
+                      >
+                        20% OFF
+                      </h2>
+                      <p
+                        class="hp-promo-sm weight-normal transform-none size-16 text-blue m-0"
+                      >
+                        Sunglasses<br />
+                        from
+                        <b
+                          >Versace,<br />
+                          Burberry & more</b
+                        >
+                      </p>
+                    </div>
+                  </div>
+                  <p
+                    class="hp-promo-sm weight-normal transform-none size-16 text-blue mb-2"
+                  >
+                    Combinable with <b>60% off Sun Prescription Lenses*</b>
+                  </p>
+  
+                  <a
+                    href="/email/fourth-of-july-dp"
+                    class="btn-cta color-white px-4 d-block py-2 d-inline-block"
+                    style="background: #cd0000"
+                    >SAVE NOW</a
+                  >
+                </div>
+              </div>
+            </div>
+          `;
+  
+        $(".heroBanner").replaceWith(July4thHeroBanner);
+      }
+  
+    
+      if (checkDate > "240508" && checkDate < "240514") {
+        $("#promoSale").removeClass("d-none").addClass("d-flex");
+      }
+      if (
+        checkDate > "240403" &&
+        checkDate < "240415" &&
+        getCookie("fdRecognized") !== undefined
+      ) {
+        var discAmt = "25";
+        if (checkDate > "240412") {
+          discAmt = "30";
+        }
+        $(".heroBanner").replaceWith(
+          '<div class="heroBanner position-relative img-flex extended d-flex"><a href="/email/customer-appreciation-dp" class="d-block"><video autoplay muted loop playsinline disablePictureInPicture width="100%" class="d-block"><source src="https://images.framesdirect.com/video/upload/v1711381956/homePage/FD_HP_CUW.mp4" type="video/mp4" /></video></a><div class="text-overlay col-12 col-xl-3 d-flex"><div class="home-promo col-12 d-flex flex-column align-items-center justify-content-center"><div class="size-16 color-white">Private Week is live<div class="weight-bold">Offer ends April 14th</div></div><div class="align-items-center pt-xl-3 pb-xl-5 py-4"><h1 class="size-50 mb-0">' +
+            discAmt +
+            '% OFF</h1><div class="size-18 weight-bold transform-none mt-0">Ray-Ban, Oakley, and more</div><div class="size-14 weight-normal transform-none mt-3">Combinable with 60% off lenses.<br class="d-none d-sm-block"> Enjoy your exclusive savings at checkout.</div></div><a href="/email/customer-appreciation-dp" class="btn-cta mx-5 px-5 py-2 d-inline-block" style="background: #bd0000; color: #fff !important;">Save Now</a></div></div></div>'
+        );
+      } else if (checkDate > "240403" && checkDate < "240415") {
+        $(".heroBanner").replaceWith(
+          '<div class="heroBanner position-relative img-flex extended d-flex"><a href="#" class="d-block"><video autoplay muted loop playsinline disablePictureInPicture width="100%" class="d-block"><source src="https://images.framesdirect.com/video/upload/v1711381956/homePage/FD_HP_CUW.mp4" type="video/mp4" /></video></a><div class="text-overlay col-12 col-xl-3 d-flex"><div class="home-promo col-12 d-flex flex-column align-items-center justify-content-center"><div class="img-flex mt-2" style="margin-bottom: 30px;"><img src="https://images.framesdirect.com/image/upload/v1711633428/homePage/FD_CUW_Herobanner_Mobile.png" width="581" height="437" alt="Private Week is Live" style="max-width: 200px;"></div><div class="color-white size-16">Sign up or sign in to access<br class="d-none d-sm-block"> your exclusive offer ending April 14th.</div><div class="align-items-center justify-content-center pt-4"><a href="#" id="btn-sign-up" class="btn-cta mx-5 ml-md-0 mr-md-5 px-5 py-2 d-inline-block" style="background: #bd0000; color: #fff !important;">SIGN UP</a> <a href="#" id="btn-sign-in" class="btn-cta signIn mx-5 mr-md-0 ml-md-5 px-5 py-2 d-inline-block" style="background: #fff; color: #000 !important;">SIGN IN</a></div></div></div>'
+        );
+        $("#btn-sign-up").on("click", function () {
+          $("#footer-newsletter-submit").click();
+        });
+        $(document).on("click", "a.signIn", function (e) {
+          e.preventDefault();
+          $("#ctl01_lnkNewLogin a").click();
+        });
+      }
+      if (checkDate > "240430" && checkDate < "240508") {
+        $("#promoSale").removeClass("display-none");
+      }
+      if (checkDate > "231108" && checkDate < "231116") {
+        $("#email-signup").removeClass("display-none");
+      }
+      $("#polarizedSale").on("click", function () {
+        window.location.href = "/sale/polarized-dp";
+      });
+      $(
+        "#saleBlock > div, #brand-callout, #text-overlay, #promoSale, #cyberSale"
+      ).on("click", function () {
+        let $this = $(this),
+          linkLoc = $this.find("a").attr("href");
+        window.location.href = linkLoc;
+      });
+      $("#email-signup").on("click", function () {
+        $("#footer-newsletter-submit").click();
+      });
+      if (checkDate > "230109") {
+        $("#saleBlock").removeClass("d-flex").addClass("d-none");
+      }
+      if (checkDate > "231130" && checkDate < "240101") {
+        $("#FSABar h2").html(
+          "Use Your FSA Dollars<br>Before They Expire December 31st"
+        );
+        $("#FSABar p").html(
+          "Many Flexible Spending Accounts expire on December 31st, but yours don't have to go to waste. Get new eyeglasses, prescription sunglasses, readers, or contact lenses before the new year."
+        );
+        $("#FSABar").insertBefore("#rfk-hp-custFaves");
+      } else if (checkDate > "231231" && checkDate < "240201") {
+        $("#FSABar h2").html("New Year, New FSA Dollars to Use!");
+        $("#FSABar p").html(
+          "Many Flexible Spending Accounts renewed January 1st. It's the perfect time to get new eyeglasses, prescription sunglasses, readers, or contact lenses."
+        );
+        $("#FSABar a.btn-cta")
+          .clone()
+          .text("FIND OUT MORE")
+          .attr(
+            "href",
+            "https://www.framesdirect.com/knowledge-center/do-you-have-flex-spending-dollars"
+          )
+          .attr(
+            "style",
+            "background: #000 !important; color: #fff !important; margin-left: 20px !important;"
+          )
+          .insertAfter("#FSABar a.btn-cta");
+      } else if (checkDate > "240304" && checkDate < "240316") {
+        $("#FSABar h2").html("Your FSA Dollars deadline is approaching!");
+        $("#FSABar p").html(
+          "With many Flexible Spending Accounts expiring on March 15th, it's the perfect time to get new prescription eyeglasses, sunglasses, readers, or contacts lenses."
+        );
+      } else {
+        $("#FSABar h2").html("We Accept FSA &amp; HSA");
+        $("#FSABar p").html(
+          "Did you know that you can use your flexible spending account (FSA) or health savings account (HSA) dollars to purchase prescription eyeglasses, prescription sunglasses, and prescription contact lenses? These funds can be used whether you have vision insurance or not. And if you use your flex spending or HSA debit card, you won't have to submit a reimbursement form to your insurance provider!"
+        );
+      }
+      $(".heroBanner").css("opacity", 1);
+      if (checkDate > "221205" && checkDate < "221209") {
+        $("#home-promo > a").attr("href", "/email/holiday-deals-dp");
+      }
+      $("#TransitionsBar").on("click", function () {
+        window.location.href = "/eyeglasses";
+      });
+      $("#FSABar").on("click", function () {
+        window.location.href = "/collections/fsa-hsa-eligible-eyewear-dp";
+      });
+  
+      $("#klarna").on("click", function () {
+        window.location.href = "/knowledge-center/shopping-with-Klarna";
+      });
+      $("#promoBanner").show();
+  
+      if (checkDate > "240205" && checkDate < "240215") {
+        $("#cyberSale").removeClass("display-none");
+      }
+      if (checkDate > "240311" && checkDate < "240315") {
+        $("#cyberSale").replaceWith(
+          '<div id="cyberSale" class="d-flex flex-wrap px-0 mb-4 weight-medium order" style="background: #D1D7D0; color: #535752;"><div class="col-12 col-xl-4 text-center d-flex flex-column align-items-center justify-content-center pt-0 py-2 px-0 img-flex"><p class="size-20 my-1 mt-0 mt-xl-0 weight-bold" style="line-height: 1.3;">Spring Break Sale</p><p class="size-40 weight-extra-bold my-xl-0 mt-2 mb-0">20% OFF</p><p class="size-20 my-1 mt-0 mt-xl-0 weight-bold" style="line-height: 1.3;">Frames from Versace,<br>Burberry, & more</p></div><div class="col-12 col-xl-4 text-center d-flex flex-column align-items-center justify-content-center pt-0 py-0 px-0 img-flex"><div class="my-0 my-lg-4 my-xl-0 px-2" style="max-width: 100%; width: 100%;"><img src="https://images.framesdirect.com/image/upload/v1709886560/homePage/FD_promo_Homepage_Spring_Break_Photo.png" alt="Spring Break Savings"></div><a href="/email/spring-break-sun-dp" class="btn-cta" style="background: #cd0000; border: 0; color: #fff !important;">SAVE NOW</a></div><div class="col-12 col-xl-4 d-flex flex-column justify-content-center align-items-center pb-4 pt-0 py-xl-5"><div class="size-20 pt-xl-0">Combinable with</div><p class="size-20 weight-extra-bold my-xl-2 mt-4 mb-0">60% OFF LENSES</p><a class="btn-cta py-2 px-5 transform-uppercase mt-3" href="/email/spring-break-sun-dp" style="background:#000; color: #fff !important; border: 0 !important; min-width: 250px;">SAVE NOW</a></div></div>'
+        );
+      }
+      initHeroSlider();
+      if (fdFncs.custType !== undefined) {
+        if (fdFncs.custType === "preferred" || fdFncs.custType === "vip") {
+          $(".home-promo > h2").html(
+            $(".home-promo > h2").html().replace("60", "65")
+          );
+        }
+      }
+      if (window.location.href.toLowerCase().includes("upto50")) {
+        $(".home-promo h1").replaceWith(
+          '<h1>Up to 50% Off<div class="hp-promo-sm weight-normal transform-none">80+ Designer Brands</div></h1>'
+        );
+      }
+    });
+  
+    function hpHero() {
+      if ($(".heroBanner > a img").length < 1) {
+        $(".heroImg").on("load", function () {
+          $(".heroBanner").css("min-height", "inherit");
+          $(".heroImg").rwdImageMaps();
+        });
+      }
+      $(".text-overlay").css("opacity", 1);
+    }
+    $(window)
+      .on("load", function () {
+        initHeroSlider();
+        $(".heroBanner").css("min-height", "inherit");
+        $(
+          '<li class="larger-brand"><a href="/dolce-gabbana/brand"><img src="https://images.framesdirect.com/image/upload/h_40,c_fit/v1531418607/logos/dolce-gabbana-logo.svg" width="300" height="29" alt="Dolce &amp; Gabbana Eyewear"></a></li><li><a href="/coach/brand"><img src="/images/customerimages/global/logos/coach-logo.svg" width="300" height="121" alt="Coach"></a></li><li class="larger-brand"><a href="/giorgio-armani/brand"><img src="https://images.framesdirect.com/image/upload/h_40,c_fit/v1626742482/logos/giorgio-armani-logo.svg" width="300" height="29" alt="Giorgio Armani"></a></li><li><a href="/wiley-x/brand"><img src="https://images.framesdirect.com/image/upload/v1707250152/logos/WX_logo_stacked_black.svg" width="110" height="70" alt="Wiley X Eyewear"></a></li><li class="larger-brand"><a href="/michael-kors/brand"><img src="/images/customerimages/global/logos/michael-kors-logo.svg" width="300" height="28" alt="Michael Kors"></a></li><li class="larger-brand"><a href="/tory-burch/brand"><img src="/images/customerimages/global/logos/tory-burch-logo.png" width="200" height="70" alt="Tory Burch"></a></li><li><a href="/hugo-boss/brand"><img src="/images/customerimages/global/logos/hugo-boss-logo.svg" width="300" height="110" alt="Hugo Boss"></a></li><li><a href="/polo/brand"><img src="https://images.framesdirect.com/image/upload/h_33/v1542731790/logos/polo-logo.svg" width="300" height="117" alt="Polo"></a></li><li><a href="/nike/brand"><img src="https://images.framesdirect.com/image/upload/h_33/v1591982175/logos/nike-logo.svg" width="300" height="105" alt="Nike"></a></li>   <li><a href="/shuron/brand"><img src="https://images.framesdirect.com/image/upload/w_103/v1630593191/logos/shuron-logo.png" width="103" height="24" alt="Shuron"></a></li><li><a href="/carrera/brand"><img src="https://images.framesdirect.com/image/upload/h_33/v1591982126/logos/carrera-logo.svg" width="300" height="60" alt="Carrera"></a></li><li><a href="/guess/brand"><img src="https://images.framesdirect.com/image/upload/h_33/v1591982146/logos/guess-logo.svg" width="300" height="53" alt="Guess"></a></li><li class="larger-brand"><a href="/ralph-lauren/brand"><img src="https://images.framesdirect.com/image/upload/h_40/v1531417371/logos/ralph-lauren-logo.svg" width="300" height="22" alt="Ralph Lauren"></a></li>'
+        ).appendTo("#light-slider");
+  
+        if ($(window).width() < 1300) {
+          var array = $("#brand-showcase #light-slider li:not(.clone) a");
+  
+          for (var i = array.length; i >= 0; i--) {
+            if (i % 2 == 0) {
+              $(array[i - 1])
+                .addClass("mb-auto")
+                .insertAfter(array[i - 2]);
+              $(array[i - 1])
+                .parent("li")
+                .addClass("keep");
+            }
+          }
+          $("#brand-showcase #light-slider li:not(.keep)").remove();
+          $("#brand-showcase #light-slider").addClass("d-flex");
+        }
+        $("#light-slider .lslide")
+          .removeAttr("style")
+          .prop("style", "min-height:1px;");
+        initBannerSlider();
+      })
+      .on("resize orientationchange", function () {
+        if ($(window).width() < 550) {
+          var array = $("#brand-showcase #light-slider li:not(.clone) a");
+  
+          for (var i = array.length; i >= 0; i--) {
+            if (i % 2 == 0) {
+              $(array[i - 1])
+                .addClass("mb-auto")
+                .insertAfter(array[i - 2]);
+              $(array[i - 1])
+                .parent("li")
+                .addClass("keep");
+            }
+          }
+          $("#brand-showcase #light-slider li:not(.keep)").remove();
+          $("#brand-showcase #light-slider").addClass("d-flex");
+        }
+        initBannerSlider();
+      });
+  </script>
+  

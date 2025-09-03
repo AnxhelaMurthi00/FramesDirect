@@ -1,0 +1,29 @@
+<script>
+  if (
+    pgURLPath("/cart_summary.aspx") &&
+    !!!$("#ctl00_ContentPlaceHolderProductDisplay_pnlEmptyCart").length
+  ) {
+    if ((checkDate >= "250417" && checkDate <= "250427") ||
+      (fdFncs.vars.isTest >= "250417" && fdFncs.vars.isTest <= "250427")) {
+      if (getCookie("fdRecognized") !== undefined) {
+        $(
+          '<div id="cartPromoMsg" class="py-1 px-3" style="background:#D1595A; border-radius: 5px; color: black; font-weight: normal;">Extra 5% off 60% off lenses with code <b>EXTRA5</b><br>40% off sun lenses from Oakley, Costa, Maui Jim. Code: <b>SPECIAL40</b></div>'
+        ).insertAfter($("h1"));
+      } else {
+
+        $(
+          '<div id="cartPromoMsg" class="py-1 px-3" style="background:#D1595A; border-radius: 5px; color: black; font-weight: normal;"><a href="javascript:addWelcomeLayer();fdFncs.vars.allowEmPop = false;" class="weight-bold">Sign up</a> or <a href="#" class="siteSignIn weight-bold">sign in </a>to unlock up to 30% off top brands and 65% off lenses</div>'
+        ).insertAfter($("h1"));
+      }
+    }
+
+    else if (
+      (checkDate >= "250411" && checkDate <= "250416") ||
+      (fdFncs.vars.isTest >= "250411" && fdFncs.vars.isTest <= "250416")
+    ) {
+      $(
+        '<div id="cartPromoMsg" class="py-1 px-3" style="background:#FFEFC0; border-radius: 5px; color: black; font-weight: normal;">Your exclusive <b>Easter Savings</b> have been applied!</div>'
+      ).insertAfter($("h1"));
+    }
+  }
+</script>

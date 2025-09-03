@@ -1,0 +1,35 @@
+<script>
+
+
+
+  if (
+    (checkDate >= "250708" && checkDate <= "250711") ||
+    (fdFncs.vars.isTest >= "250708" && fdFncs.vars.isTest <= "250711")
+  ) {
+    var locName = ['/eyeglasses/', '/sunglasses/', '/prescription-sunglasses/', '/men/eyewear-dp', '/women/eyewear-dp', '/eyeglasses/mens', '/eyeglasses/womens', '/sunglasses/mens', '/sunglasses/womens', '/prescription-sunglasses/mens', '/prescription-sunglasses/womens'],
+      imgPath = '';
+    for (x = 0, y = locName.length; x < y; ++x) {
+      if (location.pathname === locName[x]) {
+        $("#bnr-dyn-holder").html(
+          '<a href=" /email/flash-sale-dp"><img alt="Clearance Sale" src="https://images.framesdirect.com/image/upload/v1751887015/landing-pages/plp_week28_d.png" width="1440" height="100" title="Clearance Sale"></a>'
+        );
+      }
+      //Specific sale landing page
+      if (pgURLPath(" /email/flash-sale-dp")) {
+        $("h1").html("Up To 50% Off Frames + 60% Off Lenses <i class='arrow2'></i>");
+        $("#cata_desc").html(
+          '<p>Shop our clearance eyewear collection packed with designer looks and athletic styles—now at can’t-miss prices.Find bold designs, throwback favorites, and high-performance picks before they’re gone.<a id="flash-disc-link" href="#">Details <i></i></a></p><p id="flash-disclaimer" style="display:none">Get 25% off full-priced Eyeglasses, Sunglasses and Prescription Sunglasses from Armani Exchange, Arnette, Brooks Brothers, Burberry, Coach, Dolce & Gabbana, Dolce & Gabbana Kids, Emporio Armani, Emporio Armani Kids, Giorgio Armani, Jimmy Choo, Polo, Polo Kids, Ralph Lauren, RALPH, Scuderia Ferrari, Sferoflex, Swarovski, Tory Burch, Versace, Versace Kids, Vogue, Vogue Junior. Does not apply to products that have already been discounted. Frame purchase required. Offer may not be used on Oakley Goggles, Oakley Replacement Lenses, Ray-Ban Meta. Other exclusions may apply. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee or insurance benefits. Free Shipping on domestic orders only. Offer ends July 27, 2025.</p>'
+        );
+      }
+      if (pgURLPath("/email/wiley-x/brand")) {
+        $("h1").html("Wiley X: Free hat with purchase! <i class='arrow2'></i>");
+        $("#cata_desc").html(
+          '<p>Wherever your adventures take you, your sight is safe and sound with our highest rated safety eyewear. Discover your complete pair of durable frames and lenses by Wiley X and receive a free hat. Details <a id="flash-disc-link" href="#">Details <i></i></a></p><p id="flash-disclaimer" style="display:none">Get a free gift with the purchase of a prescription glasses from Wiley X. Offer valid until stocks last</p>'
+        );
+      }
+    }
+  }
+
+
+
+</script>

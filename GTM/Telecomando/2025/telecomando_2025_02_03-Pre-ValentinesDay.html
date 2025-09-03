@@ -1,0 +1,13 @@
+<script>
+  if (fdFncs.vars.fdRecognized) {
+    if ((checkDate >= '250203' && checkDate <= '250205') || (fdFncs.vars.isTest >= '250203' && fdFncs.vars.isTest <= '250205')) {
+      $('#discountBar #exclusiveToggle').html($('#discountBar #exclusiveToggle').html().replace('See Exclusive Savings!', 'Valentine’s Day Savings').replace('Exclusive Savings', 'Valentine’s Day Savings'));
+      $('#exclusiveSavings #discountBar > .blue-bg').css({ 'background': '#E7C2B3' });
+    }
+    else if ((checkDate >= '250127' && checkDate <= '250202') || (fdFncs.vars.isTest >= '250127' && fdFncs.vars.isTest <= '250202')) {
+      $('#exclusiveSavings #discountBar > .blue-bg').css({ 'background': '#C7CAAF' });
+    }
+  }
+</script>
+
+

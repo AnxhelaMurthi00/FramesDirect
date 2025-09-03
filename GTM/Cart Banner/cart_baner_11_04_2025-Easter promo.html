@@ -1,0 +1,15 @@
+<script>
+  if (
+    pgURLPath("/cart_summary.aspx") &&
+    !!!$("#ctl00_ContentPlaceHolderProductDisplay_pnlEmptyCart").length
+  ) {
+    if (
+      (checkDate >= "250411" && checkDate <= "250416") ||
+      (fdFncs.vars.isTest >= "250411" && fdFncs.vars.isTest <= "250416")
+    ) {
+      $(
+        '<div id="cartPromoMsg" class="py-1 px-3" style="background:#FFEFC0; border-radius: 5px; color: black; font-weight: normal;">Your exclusive <b>Easter Savings</b> have been applied!</div>'
+      ).insertAfter($("h1"));
+    }
+  }
+</script>

@@ -1,0 +1,1323 @@
+<script>
+    const updateHeroBanner = () => {
+      let heroBanner;
+      /* HP HERO BANNER */
+      if (
+        (((checkDate >= "240926" && fdFncs.svrTm.hr >= "02") ||
+          checkDate >= "240913") &&
+          checkDate < "240930") 
+      ) {
+        
+        let banner = `
+<div class="ct_space">
+    <div class="ct_banner ct_hero ct_mb__10">
+      <a
+        href="/email/flash-sale-dp"
+        aria-label="email-flash-sale"
+      >
+        <div class="ct_assets__container">
+          <picture class="ct_skeleton">
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAAD5JREFUGFdjvHL9wX8GBgYGtu9vGO6d2sbA8fcnw5p9pxniKvsYGGGSnx9eY/hy/RDD5uMXGGy0ZBk0g0oYACh9GelNnnoZAAAAAElFTkSuQmCC"
+              alt="structure image"
+            />
+          </picture>
+          <picture class="ct_img">
+            <img
+              src="https://images.framesdirect.com/image/upload/v1725889020/homePage/FD_HP_Promo_Weekend_Savings_0VE3242A_0VE2199.png"
+              fetchpriority="high"
+              alt="The left is wearing Gucci gg0200s sunglasses, other is wearing Dolce & Gabbana DG4437 Sunglasses"
+              width="1920"
+              height="554"
+              usemap="#image-map"
+            />
+          </picture>
+          <map name="image-map">
+            <area
+              target=""
+              alt="Eyeglasses Versace VE3242A"
+              title="Eyeglasses Versace VE3242A"
+              href="/versace-ve3242a-eyeglasses"
+              coords="750,180,1150,280"
+              shape="rect"
+            />
+            <area
+              target=""
+              alt="Eyeglasses Versace VE2199"
+              title="Eyeglasses Versace VE2199"
+              href="/versace-ve2199-sunglasses"
+              coords="1200, 200, 1650, 300"
+              shape="rect"
+            />
+          </map>
+        </div>
+        <div
+          class="ct_text__overlay ct_text__center ct_w__40 ct_w__mob__100 ct_pt__40 ct_pb__40"
+          style="background-color: #EEEFEA"
+        >
+          <h2 class="ct_font__28 ct_font__mob_26 " style="font-weight: 700;">
+            WEEKEND POWER DEALS
+          </h2>
+          <div class="ct_text__black">
+            <h2
+              class="transform-uppercase ct_font__64 ct_font__desk__64 ct_text__black ct_lh__sm ct_m__0"
+            >
+              <span class="weight-bold ct_font__big ct_m__160 ct_text__black ">20% OFF</span>
+            </h2>
+        <p class="ct_font__28 ct_font__desk__32  ct_lh__sm ct_m__0">
+    <span class="weight-bold">EYEGLASSES & SUNGLASSES</span><br>
+    <span class="weight-normal ">by Versace, Burberry
+         <br class="br_display_none">  & more</span>
+</p>
+
+            <p
+              class="weight-normal transform-none ct_font__24 ct_font__desk__24"
+            >
+             Combinable with </br><span class="weight-bold"> 60% off Lenses & Add-Ons
+            </p>
+          </div>
+          <a
+            href="/email/flash-sale-dp"
+            class="ct_cta ct_cta__red "
+            style="background: #cd0000"
+            >SHOP NOW</a
+          >
+        </div>
+      </a>
+    </div>
+  </div>
+   `
+   $(".ct_space").replaceWith(banner);
+      } else if (
+        (((checkDate >= "240826" && fdFncs.svrTm.hr >= "02") ||
+          checkDate >= "240827") &&
+          checkDate < "240902") ||
+        isTestingParameter(240826)
+      ) {
+        heroBanner =
+          /* HTML */
+        `  <div class="ct_space">
+              <div class="ct_banner ct_hero ct_mb__10">
+                <a href="/email/labor-day-dp" aria-label="labor-day-dp">
+                  <div class="ct_assets__container">
+                    <picture class="ct_skeleton">
+                      <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAAD5JREFUGFdjvHL9wX8GBgYGzr+fGU7tXMnw5P4DBktdCQYpMX4GRpgky7fXDOsWTGR4/OApQ0R6KsPpLUsYAM4LGE+LZJ4eAAAAAElFTkSuQmCC"
+                        alt="structure image"
+                      />
+                    </picture>
+                    <picture class="ct_img">
+                      <img
+                        src="https://images.framesdirect.com/image/upload/v1722261643/homePage/FD_promo_HEROBANNER_LABOR_DAY_EYE.png"
+                        fetchpriority="high"
+                        alt="Hero Banner Day Eyeglasses"
+                        width="1920"
+                        height="554"
+                        usemap="#image-map"
+                      />
+                    </picture>
+                    <map name="image-map">
+                      <area
+                        target=""
+                        alt="Ray-Ban rb3625v Eyeglasses"
+                        title="Ray-Ban rb3625v Eyeglasses"
+                        href="/ray-ban-rb3625v-eyeglasses?color=3"
+                        coords="400, 100,700,200"
+                        shape="rect"
+                      />
+                      <area
+                        target=""
+                        alt="Versace ve3345 eyeglasses"
+                        title="Versace ve3345 eyeglasses"
+                        href="/versace-ve3345-eyeglasses?color=1"
+                        coords="750, 100, 1000, 250"
+                        shape="rect"
+                      />
+                      <area
+                        target=""
+                        alt="Oakley Fuller Eyeglasses"
+                        title="Oakley Fuller Eyeglasses"
+                        href="/oakley-fuller-eyeglasses"
+                        coords="1050, 100, 1300, 200"
+                        shape="rect"
+                      />
+                    </map>
+                  </div>
+                  <div
+                    class="ct_text__overlay ct_text__center ct_w__33 ct_w__mob__100 ct_pt__40 ct_pb__40"
+                    style="background-color: #D3D7E0;"
+                  >
+                    <h2
+                      class="ct_text__black ct_font__26 ct_font__desk__30 ct_lh__1 ct_mb__mob__0 ct_mb__30"
+                    >
+                      SEE CLEARLY<br />
+                      THIS LABOR DAY
+                    </h2>
+                    <div class="ct_text__black">
+                      <p class="ct_m__0 ct_font__18">Up to</p>
+                      <h2
+                        class="transform-uppercase ct_font__36 ct_font__desk__48 ct_text__black ct_lh__sm ct_mb__0"
+                      >
+                        <span class="weight-extra-bold">30% OFF</span>
+                        <span class="weight-normal">FRAMES</span>
+                      </h2>
+                      <p
+                        class="hp-promo-sm weight-normal transform-none ct_font__16 ct_font__desk__20 ct_mt__0"
+                      >
+                        From <b>Ray-Ban, Oakley, Versace & more</b>
+                      </p>
+                    </div>
+                    <p
+                      class="hp-promo-sm weight-normal transform-none ct_font__16 ct_font__desk__20"
+                    >
+                      Combine with <b>60% Off Lenses & Add-Ons</b><br />
+                      including Transitions<sup>®</sup> & more
+                    </p>
+                    <a
+                      href="/email/labor-day-dp"
+                      class="ct_cta ct_cta__red"
+                      style="background: #cd0000"
+                      >SAVE NOW</a
+                    >
+                  </div>
+                </a>
+              </div>
+              </div>  `
+               $(".ct_space").replaceWith(heroBanner);
+      } else if (
+        (((checkDate >= "240801" && fdFncs.svrTm.hr >= "02") ||
+          checkDate >= "240802") &&
+          checkDate < "240826") ||
+        isTestingParameter(240801)
+      ) {
+        heroBanner = /* HTML */ `
+          <div class="ct_space">
+            <div
+              class="ct_banner ct_hero ct_mb__10"
+              data-element-id="shoppableBanner"
+            >
+              <a
+                href="/sale/designer-eyewear-outlet-dp"
+                aria-label="designer-eyewear-outlet"
+              >
+                <div class="ct_assets__container">
+                  <picture class="ct_skeleton">
+                    <img
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAAD5JREFUGFdjvHL9wX8GBgYGtu9vGO6d2sbA8fcnw5p9pxniKvsYGGGSnx9eY/hy/RDD5uMXGGy0ZBk0g0oYACh9GelNnnoZAAAAAElFTkSuQmCC"
+                      alt="structure image"
+                    />
+                  </picture>
+                  <picture class="ct_img">
+                    <img
+                      src="https://images.framesdirect.com/image/upload/v1721729166/homePage/FD_HP_BACK_TO_OFFICE_0AX1009_0RX5283.png"
+                      fetchpriority="high"
+                      alt="The left is wearing Gucci gg0200s sunglasses, other is wearing Dolce & Gabbana DG4437 Sunglasses"
+                      width="1920"
+                      height="554"
+                      usemap="#image-map"
+                    />
+                  </picture>
+                  <map name="image-map">
+                    <area
+                      target=""
+                      alt="Eyeglasses Armani Exchange"
+                      title="Eyeglasses Armani Exchange"
+                      href="/eyeglasses/armani-exchange"
+                      coords="750,180,1150,280"
+                      shape="rect"
+                    />
+                    <area
+                      target=""
+                      alt="Eyeglasses Ray-ban"
+                      title="Eyeglasses Ray-ban"
+                      href="/eyeglasses/ray-ban"
+                      coords="1200, 200, 1650, 300"
+                      shape="rect"
+                    />
+                  </map>
+                </div>
+                <div
+                  class="ct_text__overlay ct_text__center ct_w__40 ct_w__mob__100 ct_pt__40 ct_pb__40"
+                  style="background-color: #D3D7E0;"
+                >
+                  <h2 class="ct_text__black ct_font__26 ct_font__desk__30">
+                    FRESH FOCUS, FRESH FRAMES
+                  </h2>
+                  <div class="ct_text__black">
+                    <p class="ct_m__0 ct_font__18">Up to</p>
+                    <h2
+                      class="transform-uppercase ct_font__36 ct_font__desk__48 ct_text__black ct_lh__sm ct_m__0"
+                    >
+                      <span class="weight-extra-bold">50% OFF</span>
+                      <span class="weight-normal">FRAMES</span>
+                    </h2>
+                    <h2
+                      class="ct_font__48 ct_font__desk__48 ct_text__black ct_lh__1 ct_m__0 weight-normal"
+                    >
+                      +
+                    </h2>
+                    <h2
+                      class="transform-uppercase ct_font__36 ct_font__desk__48 ct_text__black ct_lh__sm ct_m__0"
+                    >
+                      <span class="weight-extra-bold">60% OFF</span>
+                      <span class="weight-normal">LENSES</span>
+                    </h2>
+                    <p
+                      class="hp-promo-sm weight-normal transform-none ct_font__16 ct_font__desk__20"
+                    >
+                      Protect your eyes this back-to-work season <br />
+                      with blue-violet filtering & Transitions<sup>®</sup>
+                      lenses
+                    </p>
+                  </div>
+                  <a
+                    href="/sale/designer-eyewear-outlet-dp"
+                    class="ct_cta ct_cta__red"
+                    style="background: #cd0000"
+                    >SAVE NOW</a
+                  >
+                </div>
+              </a>
+            </div>
+          </div>
+        `;
+  
+        $(".ct_space").replaceWith(heroBanner);
+      } else if (
+        (((checkDate >= "240725" && fdFncs.svrTm.hr >= "02") ||
+          checkDate >= "240726") &&
+          checkDate < "240801") ||
+        isTestingParameter(240725)
+      ) {
+        heroBanner =
+          /* HTML */
+          `
+            <div class="ct_space">
+              <div class="ct_banner ct_hero">
+                <a href="/email/end-of-summer-dp" aria-label="flash-sale">
+                  <div class="ct_assets__container">
+                    <video
+                      loop
+                      autoplay
+                      muted
+                      playsinline
+                      disablePictureInPicture
+                      width="100%"
+                      class="d-block"
+                    >
+                      <source
+                        src="https://images.framesdirect.com/video/upload/v1721225987/homePage/FD_promo_HP_SUNGLASSES_SALE.mp4"
+                        type="video/mp4"
+                      />
+                    </video>
+                  </div>
+                  <div
+                    class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pt__40 ct_pb__40 ct_p__mob__0"
+                    style="background-color: #D87F66; width: 36%"
+                  >
+                    <h1
+                      class="transform-uppercase ct_font__26 ct_font__desk__32 ct_text__black ct_lh__sm ct_mb__mob__0 ct_mb__40"
+                    >
+                      <span class="weight-bold"
+                        >OUR SUNGLASSES SALE IS HERE!
+                      </span>
+                      <br />
+                      <span class="weight-normal"
+                        >READY FOR A SUMMER REVAMP?</span
+                      >
+                    </h1>
+                    <div
+                      class="d-flex flex-row justify-content-center align-items-end"
+                    >
+                      <div class="ct_text__black">
+                        <h1
+                          class="transform-uppercase ct_font__36 ct_font__desk__48 ct_text__black ct_lh__sm ct_m__0"
+                        >
+                          <span class="weight-bold">20% OFF</span>
+                        </h1>
+                        <p
+                          class="hp-promo-sm weight-normal transform-none ct_font__16 ct_font__desk__20 ct_m__0"
+                        >
+                          Sunglasses from<br />
+                          <b
+                            >Versace, Coach,<br class="d-none d-md-block" />
+                            Burberry</b
+                          >
+                          & more
+                        </p>
+                      </div>
+                      <div
+                        class="ct_font__48 ct_font__desk__68 ct_text__black align-self-center ct_p__10"
+                      >
+                        +
+                      </div>
+                      <div>
+                        <h1
+                          class="transform-uppercase ct_font__36 ct_font__desk__48 ct_lh__sm ct_text__black ct_m__0"
+                        >
+                          <span class="weight-bold">60% OFF</span> <br />
+                        </h1>
+                        <p
+                          class="hp-promo-sm weight-normal transform-none ct_font__16 ct_font__desk__20 ct_m__0"
+                        >
+                          <b>Lenses</b> like<br />
+                          Sun Prescription,<br class="d-none d-md-block" />
+                          Transitions<sup>®</sup> & more
+                        </p>
+                      </div>
+                    </div>
+                    <p
+                      class="ct_text__black ct_font__16 ct_font__desk__20 weight-bold"
+                    >
+                      Promo ends July 31st
+                    </p>
+                    <a
+                      href="/email/end-of-summer-dp"
+                      class="ct_cta ct_cta__black ct_m__mob__10"
+                      >SAVE NOW</a
+                    >
+                  </div>
+                </a>
+              </div>
+            </div>
+          `;
+        $(".heroBanner").replaceWith(heroBanner);
+      } else {
+        /* DEFAULT BANNER IS STATIC IN HTML */
+      }
+    };
+  
+    const updateRayBanBanner = () => {
+      let rayBanBanner;
+      if (
+        (((checkDate >= "240618" && fdFncs.svrTm.hr >= "02") ||
+          checkDate >= "240619") &&
+          checkDate < "240801") ||
+        isTestingParameter(240618)
+      ) {
+        rayBanBanner =
+          /* HTML */
+          `
+            <div class="rbBanner d-flex flex-wrap mb-4 mx-3">
+              <div class="img-block">&nbsp;</div>
+              <div
+                class="copy-block d-flex flex-wrap text-center justify-content-center col-lg-5 weight-medium py-3"
+              >
+                <p class="col-12 size-21 my-2 my-xl-1" style="line-height: 1">
+                  FIND YOUR <span class="weight-extra-bold">STYLE</span>
+                </p>
+                <div class="col-12 size-12 my-xl-1 weight-normal">
+                  Discover the Ray-Ban collection and make a
+                  <br class="d-none d-md-block" />
+                  statement in iconic eyeglasses and sunglasses
+                </div>
+                <div class="d-flex flex-column">
+                  <a
+                    href="/ray-ban/brand"
+                    class="btn-cta nowrap mt-4"
+                    style="min-width: 290px; background: #cd0000; color: #fff !important; border: 0"
+                    >Shop Ray-Ban Collection</a
+                  >
+                  <a
+                    href="/sunglasses/ray-ban-meta"
+                    class="btn-cta nowrap mt-4"
+                    style="min-width: 290px; background: #000; color: #fff !important; border: 0"
+                    >DISCOVER RAY-BAN META</a
+                  >
+                </div>
+              </div>
+            </div>
+          `;
+        $(".rbBanner").replaceWith(rayBanBanner);
+  
+        $(".rbBanner").css(
+          "background",
+          "url('https://images.framesdirect.com/image/upload/v1718629642/homePage/FD_promo_Ray-Ban__tightly_cropped_SUN.png') no-repeat center right / auto 100%"
+        );
+  
+        $(".rbBanner .img-block").css(
+          "background",
+          "url('https://images.framesdirect.com/image/upload/v1718629642/homePage/FD_promo_Ray-Ban__tightly_cropped_SUN.png') no-repeat center center/auto 100%"
+        );
+      } else {
+        /* BANNER DEFAULT */
+        rayBanBanner =
+          /* HTML */
+          `
+            <div class="rbBanner d-flex flex-wrap mb-4 mx-3">
+              <div class="img-block">&nbsp;</div>
+              <div
+                class="copy-block d-flex flex-wrap text-center justify-content-center col-lg-5 weight-medium py-3"
+              >
+                <p
+                  class="col-12 size-21 weight-extra-bold my-2 my-xl-1"
+                  style="line-height: 1"
+                >
+                  Find Your<br />Genuine Style
+                </p>
+                <div class="col-12 size-12 my-xl-1">
+                  Discover the Ray-Ban collection<br />and make a statement in
+                  iconic<br />eyeglasses and sunglasses
+                </div>
+                <a
+                  href="/ray-ban/brand"
+                  class="btn-cta nowrap mt-4"
+                  style="background: #cd0000; color: #fff !important; border: 0"
+                  >Shop Ray-Ban Collection</a
+                >
+              </div>
+            </div>
+          `;
+  
+        $(".rbBanner").replaceWith(rayBanBanner);
+  
+        $(".rbBanner").css(
+          "background",
+          "url('https://images.framesdirect.com/image/upload/v1714725178/homePage/FD_promo_Ray-Ban__tightly_cropped.png') no-repeat center right / auto 100%"
+        );
+  
+        $(".rbBanner .img-block").css(
+          "background",
+          "url('https://images.framesdirect.com/image/upload/v1714725178/homePage/FD_promo_Ray-Ban__tightly_cropped.png') no-repeat center center/auto 100%"
+        );
+      }
+    };
+  
+    const updateSecondaryBanner = () => {
+      if (
+        (((checkDate >= "240829" && fdFncs.svrTm.hr >= "02") ||
+          checkDate >= "240830") &&
+          checkDate < "240902") ||
+        isTestingParameter(240829)
+      ) {
+        let wileyXBanner = /* HTML */ `
+          <div
+            id="promoSale"
+            class="d-none flex-wrap px-0 mb-4 weight-medium order"
+            style="
+        min-height: 200px;
+        background: #D4D8D3
+          url('https://images.framesdirect.com/image/upload/v1722253629/homePage/FD_promo_Secondary_HP_Wiley_X.png')
+          no-repeat top center/auto 200px;
+        color: #D4D8D3;
+      "
+          >
+            <div
+              class="d-block d-xl-none col-xl-4 d-flex flex-column justify-content-center align-items-center pb-0 pb-xl-4 pt-0 py-xl-5"
+            >
+              <img
+                class="mt-5"
+                src="https://images.framesdirect.com/image/upload/v1722253629/homePage/FD_promo_Secondary_HP_Wiley_X.png"
+                alt="Wiley X"
+                width="300"
+              />
+            </div>
+            <div
+              class="col-12 col-xl-4 d-flex flex-column justify-content-center align-items-center pb-0 pb-xl-4 pt-0 py-xl-5"
+            >
+              <p
+                class="size-30 text-center color-black my-0 my-md-5"
+                style="line-height: 2.5rem"
+              >
+                <span class="weight-bold">20% OFF</span><br />
+                <span class="weight-normal">Wiley X</span>
+              </p>
+            </div>
+            <div
+              class="col-12 col-xl-4 text-center d-flex flex-column align-items-center justify-content-center pt-0 py-0 px-0"
+            >
+              <a
+                href="/wiley-x/brand"
+                class="btn-cta first-btn"
+                style="background: #cd0000; border: 0; color: #fff !important"
+                >SAVE NOW</a
+              >
+            </div>
+            <div
+              class="col-12 col-xl-4 text-center d-flex flex-column align-items-center justify-content-center pt-0 py-2 px-0 img-flex"
+            >
+              <p
+                class="size-18 my-1 mt-0 mt-xl-0 color-black weight-normal"
+                style="line-height: 1.3"
+              >
+                Combine <b>60% off lenses</b><br />
+                with our <b>Wiley X</b> frames:<br />
+                superior eye protection<br />
+                meets cutting-edge style
+              </p>
+              <a
+                class="btn-cta second-btn py-2 px-5 transform-uppercase mt-3"
+                href="/wiley-x/brand"
+                style="
+            background: #cd0000;
+            color: #fff !important;
+            border: 0 !important;
+            min-width: 250px;
+          "
+                >SAVE NOW</a
+              >
+            </div>
+          </div>
+        `;
+        $("#promoSale").replaceWith(wileyXBanner);
+        $("#promoSale").removeClass("d-none").addClass("d-flex");
+      }
+    };
+    var bannerSlider = "";
+    function initBannerSlider() {
+      if (
+        bannerSlider.lightSlider &&
+        typeof bannerSlider.destroy === "function"
+      ) {
+        bannerSlider.destroy();
+      }
+      bannerSlider = $("#light-slider").lightSlider({
+        item: 9,
+        auto: true,
+        slideMove: 3,
+        loop: true,
+        autoWidth: false,
+        pauseOnHover: true,
+        easing: "cubic-bezier(0.25, 0, 0.25, 1)",
+        speed: 1000,
+        pause: 3000,
+        slideMargin: 5,
+        responsive: [
+          {
+            breakpoint: 1400,
+            settings: {
+              item: 6,
+            },
+          },
+          {
+            breakpoint: 1080,
+            settings: {
+              item: 4,
+            },
+          },
+          {
+            breakpoint: 500,
+            settings: {
+              item: 3,
+            },
+          },
+        ],
+        onSliderLoad: function (el) {
+          $("#light-slider").css("opacity", 1);
+        },
+      });
+    }
+    var heroSlider = "";
+    function initHeroSlider() {
+      if (heroSlider.lightSlider && typeof heroSlider.destroy === "function") {
+        heroSlider.destroy();
+      }
+      heroSlider = $("#hero-slider").lightSlider({
+        item: 1,
+        loop: true,
+        auto: true,
+        autoWidth: false,
+        easing: "cubic-bezier(0.25, 0, 0.25, 1)",
+        speed: 1000,
+        pauseOnHover: true,
+        pager: false,
+        pause: 8000,
+        onSliderLoad: function (el) {
+          $("#hero-slider").css("opacity", 1);
+        },
+        onBeforeSlide: function (el) {
+          let videos = document.querySelectorAll("#hero-slider video");
+          videos.forEach((video) => {
+            video.pause();
+            video.currentTime = 0;
+          });
+        },
+  
+        onAfterSlide: function (el) {
+          let videos = document.querySelectorAll("#hero-slider video");
+          videos.forEach((video) => {
+            video.play();
+            video.currentTime = 0;
+          });
+        },
+      });
+    }
+  
+    $(function () {
+      updateHeroBanner();
+      updateRayBanBanner();
+      updateSecondaryBanner();
+  
+      if (checkDate > "240508" && checkDate < "240514") {
+        $("#promoSale").removeClass("d-none").addClass("d-flex");
+      }
+      if (
+        checkDate > "240403" &&
+        checkDate < "240415" &&
+        getCookie("fdRecognized") !== undefined
+      ) {
+        var discAmt = "25";
+        if (checkDate > "240412") {
+          discAmt = "30";
+        }
+        $(".heroBanner").replaceWith(
+          '<div class="heroBanner position-relative img-flex extended d-flex"><a href="/email/customer-appreciation-dp" class="d-block"><video autoplay muted loop playsinline disablePictureInPicture width="100%" class="d-block"><source src="https://images.framesdirect.com/video/upload/v1711381956/homePage/FD_HP_CUW.mp4" type="video/mp4" /></video></a><div class="text-overlay col-12 col-xl-3 d-flex"><div class="home-promo col-12 d-flex flex-column align-items-center justify-content-center"><div class="size-16 color-white">Private Week is live<div class="weight-bold">Offer ends April 14th</div></div><div class="align-items-center pt-xl-3 pb-xl-5 py-4"><h1 class="size-50 mb-0">' +
+            discAmt +
+            '% OFF</h1><div class="size-18 weight-bold transform-none mt-0">Ray-Ban, Oakley, and more</div><div class="size-14 weight-normal transform-none mt-3">Combinable with 60% off lenses.<br class="d-none d-sm-block"> Enjoy your exclusive savings at checkout.</div></div><a href="/email/customer-appreciation-dp" class="btn-cta mx-5 px-5 py-2 d-inline-block" style="background: #bd0000; color: #fff !important;">Save Now</a></div></div></div>'
+        );
+      } else if (checkDate > "240403" && checkDate < "240415") {
+        $(".heroBanner").replaceWith(
+          '<div class="heroBanner position-relative img-flex extended d-flex"><a href="#" class="d-block"><video autoplay muted loop playsinline disablePictureInPicture width="100%" class="d-block"><source src="https://images.framesdirect.com/video/upload/v1711381956/homePage/FD_HP_CUW.mp4" type="video/mp4" /></video></a><div class="text-overlay col-12 col-xl-3 d-flex"><div class="home-promo col-12 d-flex flex-column align-items-center justify-content-center"><div class="img-flex mt-2" style="margin-bottom: 30px;"><img src="https://images.framesdirect.com/image/upload/v1711633428/homePage/FD_CUW_Herobanner_Mobile.png" width="581" height="437" alt="Private Week is Live" style="max-width: 200px;"></div><div class="color-white size-16">Sign up or sign in to access<br class="d-none d-sm-block"> your exclusive offer ending April 14th.</div><div class="align-items-center justify-content-center pt-4"><a href="#" id="btn-sign-up" class="btn-cta mx-5 ml-md-0 mr-md-5 px-5 py-2 d-inline-block" style="background: #bd0000; color: #fff !important;">SIGN UP</a> <a href="#" id="btn-sign-in" class="btn-cta signIn mx-5 mr-md-0 ml-md-5 px-5 py-2 d-inline-block" style="background: #fff; color: #000 !important;">SIGN IN</a></div></div></div>'
+        );
+        $("#btn-sign-up").on("click", function () {
+          $("#footer-newsletter-submit").click();
+        });
+        $(document).on("click", "a.signIn", function (e) {
+          e.preventDefault();
+          $("#ctl01_lnkNewLogin a").click();
+        });
+      }
+      if (checkDate > "240430" && checkDate < "240508") {
+        $("#promoSale").removeClass("display-none");
+      }
+      if (checkDate > "231108" && checkDate < "231116") {
+        $("#email-signup").removeClass("display-none");
+      }
+      $("#polarizedSale").on("click", function () {
+        window.location.href = "/sale/polarized-dp";
+      });
+      $(
+        "#saleBlock > div, #brand-callout, #text-overlay, #promoSale, #cyberSale"
+      ).on("click", function () {
+        let $this = $(this),
+          linkLoc = $this.find("a").attr("href");
+        window.location.href = linkLoc;
+      });
+      $("#email-signup").on("click", function () {
+        $("#footer-newsletter-submit").click();
+      });
+      if (checkDate > "230109") {
+        $("#saleBlock").removeClass("d-flex").addClass("d-none");
+      }
+      if (checkDate > "231130" && checkDate < "240101") {
+        $("#FSABar h2").html(
+          "Use Your FSA Dollars<br>Before They Expire December 31st"
+        );
+        $("#FSABar p").html(
+          "Many Flexible Spending Accounts expire on December 31st, but yours don't have to go to waste. Get new eyeglasses, prescription sunglasses, readers, or contact lenses before the new year."
+        );
+        $("#FSABar").insertBefore("#rfk-hp-custFaves");
+      } else if (checkDate > "231231" && checkDate < "240201") {
+        $("#FSABar h2").html("New Year, New FSA Dollars to Use!");
+        $("#FSABar p").html(
+          "Many Flexible Spending Accounts renewed January 1st. It's the perfect time to get new eyeglasses, prescription sunglasses, readers, or contact lenses."
+        );
+        $("#FSABar a.btn-cta")
+          .clone()
+          .text("FIND OUT MORE")
+          .attr(
+            "href",
+            "https://www.framesdirect.com/knowledge-center/do-you-have-flex-spending-dollars"
+          )
+          .attr(
+            "style",
+            "background: #000 !important; color: #fff !important; margin-left: 20px !important;"
+          )
+          .insertAfter("#FSABar a.btn-cta");
+      } else if (checkDate > "240304" && checkDate < "240316") {
+        $("#FSABar h2").html("Your FSA Dollars deadline is approaching!");
+        $("#FSABar p").html(
+          "With many Flexible Spending Accounts expiring on March 15th, it's the perfect time to get new prescription eyeglasses, sunglasses, readers, or contacts lenses."
+        );
+      } else {
+        $("#FSABar h2").html("We Accept FSA &amp; HSA");
+        $("#FSABar p").html(
+          "Did you know that you can use your flexible spending account (FSA) or health savings account (HSA) dollars to purchase prescription eyeglasses, prescription sunglasses, and prescription contact lenses? These funds can be used whether you have vision insurance or not. And if you use your flex spending or HSA debit card, you won't have to submit a reimbursement form to your insurance provider!"
+        );
+      }
+      $(".heroBanner").css("opacity", 1);
+      if (checkDate > "221205" && checkDate < "221209") {
+        $("#home-promo > a").attr("href", "/email/holiday-deals-dp");
+      }
+      $("#TransitionsBar").on("click", function () {
+        window.location.href = "/eyeglasses";
+      });
+      $("#FSABar").on("click", function () {
+        window.location.href = "/collections/fsa-hsa-eligible-eyewear-dp";
+      });
+  
+      $("#klarna").on("click", function () {
+        window.location.href = "/knowledge-center/shopping-with-Klarna";
+      });
+      $("#promoBanner").show();
+  
+      if (checkDate > "240205" && checkDate < "240215") {
+        $("#cyberSale").removeClass("display-none");
+      }
+      if (checkDate > "240311" && checkDate < "240315") {
+        $("#cyberSale").replaceWith(
+          '<div id="cyberSale" class="d-flex flex-wrap px-0 mb-4 weight-medium order" style="background: #D1D7D0; color: #535752;"><div class="col-12 col-xl-4 text-center d-flex flex-column align-items-center justify-content-center pt-0 py-2 px-0 img-flex"><p class="size-20 my-1 mt-0 mt-xl-0 weight-bold" style="line-height: 1.3;">Spring Break Sale</p><p class="size-40 weight-extra-bold my-xl-0 mt-2 mb-0">20% OFF</p><p class="size-20 my-1 mt-0 mt-xl-0 weight-bold" style="line-height: 1.3;">Frames from Versace,<br>Burberry, & more</p></div><div class="col-12 col-xl-4 text-center d-flex flex-column align-items-center justify-content-center pt-0 py-0 px-0 img-flex"><div class="my-0 my-lg-4 my-xl-0 px-2" style="max-width: 100%; width: 100%;"><img src="https://images.framesdirect.com/image/upload/v1709886560/homePage/FD_promo_Homepage_Spring_Break_Photo.png" alt="Spring Break Savings"></div><a href="/email/spring-break-sun-dp" class="btn-cta" style="background: #cd0000; border: 0; color: #fff !important;">SAVE NOW</a></div><div class="col-12 col-xl-4 d-flex flex-column justify-content-center align-items-center pb-4 pt-0 py-xl-5"><div class="size-20 pt-xl-0">Combinable with</div><p class="size-20 weight-extra-bold my-xl-2 mt-4 mb-0">60% OFF LENSES</p><a class="btn-cta py-2 px-5 transform-uppercase mt-3" href="/email/spring-break-sun-dp" style="background:#000; color: #fff !important; border: 0 !important; min-width: 250px;">SAVE NOW</a></div></div>'
+        );
+      }
+      initHeroSlider();
+      if (fdFncs.custType !== undefined) {
+        if (fdFncs.custType === "preferred" || fdFncs.custType === "vip") {
+          $(".ct_hero").html($(".ct_hero").html().replace("60", "65"));
+        }
+      }
+      if (window.location.href.toLowerCase().includes("upto50")) {
+        $(".home-promo h1").replaceWith(
+          '<h1>Up to 50% Off<div class="hp-promo-sm weight-normal transform-none">80+ Designer Brands</div></h1>'
+        );
+      }
+    });
+  
+    function hpHero() {
+      if ($(".heroBanner > a img").length < 1) {
+        $(".heroImg").on("load", function () {
+          $(".heroBanner").css("min-height", "inherit");
+          $(".heroImg").rwdImageMaps();
+        });
+      }
+      $(".text-overlay").css("opacity", 1);
+    }
+    $(window)
+      .on("load", function () {
+        initHeroSlider();
+        $(".heroBanner").css("min-height", "auto");
+        $(
+          '<li class="larger-brand"><a href="/dolce-gabbana/brand"><img src="https://images.framesdirect.com/image/upload/h_40,c_fit/v1531418607/logos/dolce-gabbana-logo.svg" width="300" height="29" alt="Dolce &amp; Gabbana Eyewear"></a></li><li><a href="/coach/brand"><img src="/images/customerimages/global/logos/coach-logo.svg" width="300" height="121" alt="Coach"></a></li><li class="larger-brand"><a href="/giorgio-armani/brand"><img src="https://images.framesdirect.com/image/upload/h_40,c_fit/v1626742482/logos/giorgio-armani-logo.svg" width="300" height="29" alt="Giorgio Armani"></a></li><li><a href="/wiley-x/brand"><img src="https://images.framesdirect.com/image/upload/v1707250152/logos/WX_logo_stacked_black.svg" width="110" height="70" alt="Wiley X Eyewear"></a></li><li class="larger-brand"><a href="/michael-kors/brand"><img src="/images/customerimages/global/logos/michael-kors-logo.svg" width="300" height="28" alt="Michael Kors"></a></li><li class="larger-brand"><a href="/tory-burch/brand"><img src="/images/customerimages/global/logos/tory-burch-logo.png" width="200" height="70" alt="Tory Burch"></a></li><li><a href="/hugo-boss/brand"><img src="/images/customerimages/global/logos/hugo-boss-logo.svg" width="300" height="110" alt="Hugo Boss"></a></li><li><a href="/polo/brand"><img src="https://images.framesdirect.com/image/upload/h_33/v1542731790/logos/polo-logo.svg" width="300" height="117" alt="Polo"></a></li><li><a href="/nike/brand"><img src="https://images.framesdirect.com/image/upload/h_33/v1591982175/logos/nike-logo.svg" width="300" height="105" alt="Nike"></a></li>   <li><a href="/shuron/brand"><img src="https://images.framesdirect.com/image/upload/w_103/v1630593191/logos/shuron-logo.png" width="103" height="24" alt="Shuron"></a></li><li><a href="/carrera/brand"><img src="https://images.framesdirect.com/image/upload/h_33/v1591982126/logos/carrera-logo.svg" width="300" height="60" alt="Carrera"></a></li><li><a href="/guess/brand"><img src="https://images.framesdirect.com/image/upload/h_33/v1591982146/logos/guess-logo.svg" width="300" height="53" alt="Guess"></a></li><li class="larger-brand"><a href="/ralph-lauren/brand"><img src="https://images.framesdirect.com/image/upload/h_40/v1531417371/logos/ralph-lauren-logo.svg" width="300" height="22" alt="Ralph Lauren"></a></li>'
+        ).appendTo("#light-slider");
+  
+        if ($(window).width() < 1300) {
+          var array = $("#brand-showcase #light-slider li:not(.clone) a");
+  
+          for (var i = array.length; i >= 0; i--) {
+            if (i % 2 == 0) {
+              $(array[i - 1])
+                .addClass("mb-auto")
+                .insertAfter(array[i - 2]);
+              $(array[i - 1])
+                .parent("li")
+                .addClass("keep");
+            }
+          }
+          $("#brand-showcase #light-slider li:not(.keep)").remove();
+          $("#brand-showcase #light-slider").addClass("d-flex");
+        }
+        $("#light-slider .lslide")
+          .removeAttr("style")
+          .prop("style", "min-height:1px;");
+        initBannerSlider();
+      })
+      .on("resize orientationchange", function () {
+        if ($(window).width() < 550) {
+          var array = $("#brand-showcase #light-slider li:not(.clone) a");
+  
+          for (var i = array.length; i >= 0; i--) {
+            if (i % 2 == 0) {
+              $(array[i - 1])
+                .addClass("mb-auto")
+                .insertAfter(array[i - 2]);
+              $(array[i - 1])
+                .parent("li")
+                .addClass("keep");
+            }
+          }
+          $("#brand-showcase #light-slider li:not(.keep)").remove();
+          $("#brand-showcase #light-slider").addClass("d-flex");
+        }
+        initBannerSlider();
+  
+    
+  
+        const ct_printProducts = function (products) {
+          // Shopping bag icon print
+          for (let element in ct_page__products.elements) {
+            let shoppingBag;
+            if ($(window).width() > 1199) {
+              shoppingBag = `<span class="ct_shopping-bag-icon icon-shopping-cart-o ${
+                shoppingBagPosition[
+                  ct_page__products.elements[element][0].shop_icon_position.desk
+                ]
+              }"></span>`;
+            }
+  
+            // Banner type structure control
+            const dataElementId = `[data-element-id="${element}"]`;
+  
+            $(dataElementId).append(shoppingBag);
+  
+            const bannerElementIdSelector = $(dataElementId)
+              .children()
+              .hasClass("cm-hero__media-wrapper")
+              ? `${dataElementId} .cm-hero__media-wrapper`
+              : `${dataElementId} > a > div`;
+            if (
+              !$(bannerElementIdSelector).find(".ct_shopping-bag-icon").length
+            ) {
+              $(bannerElementIdSelector).append(shoppingBag);
+            }
+  
+            // Desktop and mobile different behaviour
+            if ($(window).width() < 768) {
+              // ctas always clickables
+              $(dataElementId + " a").css("pointerEvents", "auto");
+              // Mobile pin show on scroll
+              const banners = document.querySelectorAll(dataElementId);
+              const observer = new IntersectionObserver(
+                (entries) => {
+                  entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                      entry.target.classList.add("ct_show-pin");
+                    }
+                  });
+                },
+  
+                { threshold: 0.2 }
+              );
+  
+              banners.forEach((pin) => {
+                observer.observe(pin);
+              });
+  
+              // Desktop pin show on hover
+            } else {
+              $(dataElementId).addClass("ct_show-pin");
+            }
+  
+            // Cycle on products inside each banner (we can have multiple products inside a single banner)
+  
+            for (let productIndex in ct_page__products.elements[element]) {
+              const ct_productInfo =
+                ct_page__products.elements[element][productIndex];
+  
+              // Check if an element/product already exist in the banner
+              if (
+                !$(
+                  `${bannerElementIdSelector} a[data-element-id="${element}-PIN${productIndex}"]`
+                ).length
+              ) {
+                const ct_shopPin = ct_printPin(
+                  ct_productInfo,
+                  element,
+                  productIndex,
+                  products
+                );
+  
+                $(bannerElementIdSelector).append(ct_shopPin);
+              }
+            }
+          }
+        };
+  
+        // Pin print and positioning inside banner
+  
+        const ct_printPin = (pinInfo, dataElementId, productIndex, products) => {
+          let pinStyleTop;
+          let pinStyleLeft;
+          let panelPosition;
+  
+          if ($(window).width() < 768) {
+            pinStyleTop = pinInfo.top.mob;
+            pinStyleLeft = pinInfo.left.mob;
+            panelPosition = infoPanelPosition[pinInfo.panel_position.mob];
+          } else {
+            pinStyleTop = pinInfo.top.desk;
+            pinStyleLeft = pinInfo.left.desk;
+            panelPosition = infoPanelPosition[pinInfo.panel_position.desk];
+          }
+  
+          const pinStyle = `top:${pinStyleTop + "%"};left:${pinStyleLeft + "%"};`;
+  
+          // Filtering JSON products <-> Products in page
+  
+          const productFilter = $(products.products).filter(function (index) {
+            return pinInfo.upc === products.products[index].UPC;
+          });
+  
+          if (productFilter[0] === undefined) return;
+  
+          const skuType = productFilter[0].skuType;
+  
+          let modelImage = productFilter[0].qtImage;
+  
+          const offerPrice = parseFloat(productFilter[0].offerPrice);
+  
+          const listPrice = parseFloat(productFilter[0].listPrice);
+  
+          const modelName = productFilter[0].modelName;
+  
+          const pdpURL = productFilter[0].pdpURL;
+  
+          const stock = productFilter[0].stock;
+  
+          let imageUrl = modelImage;
+  
+          const activePreviewDesktop = pinInfo.preview.desk;
+  
+          const activePreviewMobile = pinInfo.preview.mob;
+  
+          let previewClass;
+  
+          if (activePreviewMobile && activePreviewDesktop) {
+            previewClass = "d-block";
+          } else if (activePreviewMobile && !activePreviewDesktop) {
+            previewClass = "d-block d-md-none";
+          } else if (!activePreviewMobile && activePreviewDesktop) {
+            previewClass = "d-none d-md-block";
+          }
+  
+          // Currency
+  
+          const currency = "$";
+  
+          if (skuType === "AFA Accessories" || skuType === "AFA Apparel") {
+            modelImage = productFilter[0].frontImage;
+  
+            imageUrl = modelImage
+  
+              .replace("CostaDelMar", "CDMAFA")
+  
+              .replace("__", "_main_");
+          } else if (skuType === "Accessory") {
+            imageUrl = modelImage
+  
+              .replace("CostaDelMar", "CDMACC")
+  
+              .replace("__", "_main_");
+          }
+  
+          // Has offer price?
+  
+          const hasOfferPrice = listPrice !== offerPrice;
+  
+          // Is out of stock?
+  
+          const isOutOfStock = stock == "0";
+  
+          // Render based on different conditions (normal price | offer price | out of stock)
+  
+          const printPrice =
+            hasOfferPrice && !isOutOfStock
+              ? `<p class="ct_infoPanel_productPrice">${currency}<del style="font-size: 11px">${listPrice.toFixed(
+                  2
+                )}</del> <span>${currency}${offerPrice.toFixed(2)}</span></p>`
+              : `<p class="ct_infoPanel_productPrice">${currency}${listPrice.toFixed(
+                  2
+                )}</p>`;
+  
+          if (isOutOfStock) {
+            return `
+    
+            <div class="ct_pin-container ct_pin-container-not-clickable" style=${pinStyle}>
+    
+            <div class="ct_pin ct_pin-icon ct_pin-icon-light">
+    
+            </div>
+    
+            <div class="ct_infoPanel ${panelPosition}">
+    
+            <p class="ct_infoPanel_productName">${modelName}</p>
+    
+            <p class="ct_infoPanel_productPrice">Is Out of Stock</p>
+    
+            <img src="${imageUrl}?imwidth=220" alt="${modelName}" class="${previewClass}" />
+    
+            </div>
+    
+            </div>`;
+          } else {
+            return `
+    
+            <div class="ct_pin-container" style=${pinStyle}>
+    
+            <div class="ct_pin ct_pin-icon ct_pin-icon-light">
+    
+            </div>
+    
+            <a data-description="${modelName}" data-element-id="${dataElementId}-PIN${productIndex}" href="${pdpURL}" class="ct_infoPanel ${panelPosition} ct_infoPanel-hidden">
+    
+            <div>
+    
+            <p class="ct_infoPanel_productName">${modelName}</p>
+    
+            ${printPrice}
+    
+            </div>
+    
+            <img src="${imageUrl}?imwidth=220" alt="${modelName}" class="${previewClass}" />
+    
+            </a>
+    
+            </div>`;
+          }
+        };
+  
+        const ct_HandleOnClickEvents = () => {
+          const infoPanels = document.querySelectorAll(".ct_infoPanel");
+  
+          const pins = document.querySelectorAll(".ct_pin");
+  
+          const shoppingBags = document.querySelectorAll(".ct_shopping-bag-icon");
+  
+          // Banner behavior -> Click on image with panels closed redirect
+  
+          if (banner_behavior !== "custom") {
+            $(document).on("click", function (e) {
+              pins.forEach((el) => {
+                el.classList.add("ct_pin-icon-light");
+                el.classList.remove("ct_pin-icon-dark");
+              });
+  
+              infoPanels.forEach((el) => {
+                el.classList.add("ct_infoPanel-hidden");
+                el.classList.remove("ct_infoPanel-visible");
+              });
+  
+              for (let element in ct_page__products.elements) {
+                const dataElementId = `[data-element-id="${element}"]`;
+  
+                const banners = document.querySelectorAll(dataElementId);
+  
+                banners.forEach((el) => {
+                  el.classList.remove("ct_preventBannerClick");
+                });
+              }
+            });
+          }
+  
+          const ct_PanelOpeningLogic = (e, target) => {
+            const targetElement = target[0];
+  
+            let IsVisible = $(targetElement).hasClass("ct_infoPanel-visible")
+              ? true
+              : false;
+  
+            if (!IsVisible) {
+              targetElement.classList.remove("ct_infoPanel-hidden");
+              targetElement.classList.add("ct_infoPanel-visible");
+            } else {
+              targetElement.classList.remove("ct_infoPanel-visible");
+              targetElement.classList.add("ct_infoPanel-hidden");
+            }
+  
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+          };
+  
+          infoPanels.forEach((el) => {
+            $(`.ct_infoPanel`).click((e) => {
+              e.stopPropagation();
+  
+              e.stopImmediatePropagation();
+            });
+  
+            if ($(window).width() > 767) {
+              $(`.ct_infoPanel`).mouseenter((e) => {
+                const ct_infoPanels = $(e.currentTarget);
+  
+                ct_infoPanels[0].classList.add("ct_infoPanel-visible");
+  
+                ct_infoPanels[0].classList.remove("ct_infoPanel-hidden");
+  
+                const pin = ct_infoPanels[0].previousElementSibling;
+  
+                pin.classList.add("ct_pin-icon-dark");
+  
+                pin.classList.remove("ct_pin-icon-light");
+              });
+  
+              $(`.ct_infoPanel`).mouseleave((e) => {
+                const ct_infoPanels = $(e.currentTarget);
+  
+                ct_infoPanels[0].classList.remove("ct_infoPanel-visible");
+  
+                ct_infoPanels[0].classList.add("ct_infoPanel-hidden");
+  
+                const pin = ct_infoPanels[0].previousElementSibling;
+  
+                pin.classList.add("ct_pin-icon-light");
+  
+                pin.classList.remove("ct_pin-icon-dark");
+              });
+  
+              $(`.ct_show-pin`).mouseleave((e) => {
+                el.classList.remove("ct_infoPanel-visible");
+  
+                el.classList.add("ct_infoPanel-hidden");
+  
+                const pin = el.previousElementSibling;
+  
+                pin.classList.remove("ct_pin-icon-dark");
+  
+                pin.classList.add("ct_pin-icon-light");
+              });
+  
+              $(`.ct_pin`).mouseenter((e) => {
+                const ct_pin = $(e.currentTarget);
+  
+                ct_pin[0].classList.add("ct_pin-icon-dark");
+  
+                ct_pin[0].classList.remove("ct_pin-icon-light");
+              });
+  
+              $(`.ct_pin`).mouseleave((e) => {
+                const ct_pin = $(e.currentTarget);
+  
+                ct_pin[0].classList.add("ct_pin-icon-light");
+  
+                ct_pin[0].classList.remove("ct_pin-icon-dark");
+              });
+            }
+          });
+  
+          pins.forEach((pin) => {
+            if ($(window).width() > 767) {
+              $(pin).click((e) => {
+                e.stopPropagation();
+  
+                e.stopImmediatePropagation();
+              });
+  
+              $(pin).mouseenter((e) => {
+                const ct_infoPanels = $(e.currentTarget)
+                  .next()
+                  .addClass("ct_infoPanel-visible")
+                  .removeClass("ct_infoPanel-hidden");
+              });
+  
+              $(pin).mouseleave((e) => {
+                const ct_infoPanels = $(e.currentTarget)
+                  .next()
+                  .addClass("ct_infoPanel-hidden")
+                  .removeClass("ct_infoPanel-visible");
+              });
+            } else if ($(window).width() < 768) {
+              $(pin).click((e) => {
+                let banner = $(e.target).closest("[data-element-id]");
+  
+                console.log("banner", banner);
+  
+                let IsVisible = $(e.target).hasClass("ct_pin-icon-dark")
+                  ? true
+                  : false;
+  
+                if (IsVisible) {
+                  $(e.target)
+                    .addClass("ct_pin-icon-light")
+  
+                    .removeClass("ct_pin-icon-dark");
+                } else {
+                  $(e.target)
+                    .addClass("ct_pin-icon-dark")
+  
+                    .removeClass("ct_pin-icon-light");
+                }
+  
+                const ct_infoPanels = $(e.target).next();
+  
+                ct_PanelOpeningLogic(e, ct_infoPanels);
+  
+                // Banner behavior -> Click on image with panels closed redirect
+  
+                if (banner_behavior !== "custom") {
+                  const ct_infoPanelsActive = banner[0].querySelectorAll(
+                    ".ct_infoPanel.ct_infoPanel-visible"
+                  );
+  
+                  const ct_infoPanelsHidden = banner[0].querySelectorAll(
+                    ".ct_infoPanel.ct_infoPanel-hidden"
+                  );
+  
+                  if (ct_infoPanelsActive.length > 0) {
+                    $(banner[0]).addClass("ct_preventBannerClick");
+                  } else {
+                    $(banner[0]).removeClass("ct_preventBannerClick");
+                  }
+                }
+              });
+            }
+          });
+  
+          shoppingBags.forEach((shoppingBag) => {
+            // Banner behavior -> Click on image with panels closed redirect
+            let bannerSelector;
+  
+            if (banner_behavior !== "custom") {
+              bannerSelector = shoppingBag;
+            } else {
+              bannerSelector = $(shoppingBag).parent();
+            }
+  
+            $(bannerSelector).click((e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              e.stopImmediatePropagation();
+  
+              let ct_pinContainers;
+  
+              let banner;
+  
+              if (banner_behavior !== "custom") {
+                ct_pinContainers = $(e.target).parent();
+  
+                banner = $(e.target).closest("[data-element-id]");
+              } else {
+                ct_pinContainers = bannerSelector;
+  
+                banner = $(e.target).closest("[data-element-id]");
+              }
+  
+              const ct_infoPanelsActive = ct_pinContainers[0].querySelectorAll(
+                ".ct_infoPanel.ct_infoPanel-visible"
+              );
+  
+              const ct_infoPanelsHidden = ct_pinContainers[0].querySelectorAll(
+                ".ct_infoPanel.ct_infoPanel-hidden"
+              );
+  
+              const ct_infoPanels =
+                ct_infoPanelsActive.length === 0 ||
+                ct_infoPanelsHidden.length === 0
+                  ? ct_pinContainers[0].querySelectorAll(".ct_infoPanel")
+                  : ct_infoPanelsHidden;
+  
+              for (let i = 0; i < ct_infoPanels.length; i++) {
+                ct_infoPanels[i].classList.toggle("ct_infoPanel-hidden");
+  
+                ct_infoPanels[i].classList.toggle("ct_infoPanel-visible");
+              }
+  
+              const ct_pinActive = ct_pinContainers[0].querySelectorAll(
+                ".ct_pin.ct_pin-icon-dark"
+              );
+  
+              const ct_pinHidden = ct_pinContainers[0].querySelectorAll(
+                ".ct_pin.ct_pin-icon-light"
+              );
+  
+              const ct_pinIcons =
+                ct_pinActive.length === 0 || ct_pinHidden.length === 0
+                  ? ct_pinContainers[0].querySelectorAll(".ct_pin")
+                  : ct_pinHidden;
+  
+              for (let i = 0; i < ct_pinIcons.length; i++) {
+                ct_pinIcons[i].classList.toggle("ct_pin-icon-light");
+  
+                ct_pinIcons[i].classList.toggle("ct_pin-icon-dark");
+              }
+            });
+          });
+        };
+  
+      });
+  
+    /* UTILS */
+    function isTestingParameter(date) {
+      const url = window.location.href;
+      return url.includes(`?test=true&date=${date}`);
+    }
+    /* END UTILS*/
+  </script>
+  
