@@ -1,4 +1,102 @@
 <style>
+    #content-main a.btn-cta {
+        background-color: #333333;
+        color: white !important;
+    }
+
+    @media (max-width: 1023px) {
+        .ct__mob__hide {
+            display: none !important;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .ct__desk__hide {
+            display: none !important;
+        }
+    }
+
+    .companion-btn {
+        color: #fff !important;
+    }
+
+    .video-wrapper {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .custom-video {
+        width: 100%;
+        display: block;
+        border-radius: 12px;
+    }
+
+    .video-controls {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        gap: 10px;
+        background: #00000080;
+        padding: 6px 12px;
+        border-radius: 25px;
+        align-items: center;
+    }
+
+    .video-controls button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    /* Base layout */
+    #jupiter {
+        width: 100%;
+    }
+
+    .jupiter-track {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 10px;
+    }
+
+    .jupiter-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+        scroll-snap-align: start;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Desktop: show 4 in a row, no horizontal scroll */
+    @media (min-width: 992px) {
+        .jupiter-track {
+            overflow-x: hidden;
+            flex-wrap: wrap;
+        }
+
+        .jupiter-card {
+            flex: 1 1 calc(25% - 20px);
+            max-width: calc(25% - 20px);
+        }
+    }
+
+
+    #promoMetaCarousel .lSSlideOuter .lSSlideWrapper {
+        padding: 0 15%;
+        /* adjust until both sides peek equally */
+    }
+
     .absolute-center img:first-child {
         display: none;
     }
@@ -64,7 +162,7 @@
     }
 
     .base-gray {
-        background: #F6F6F6;
+        background: #E7E7E7;
     }
 
     #promoMetaCarousel p {
@@ -84,10 +182,7 @@
         /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
     }
 
-    #content-main a.btn-cta {
-        background: #f6f6f6 !important;
-        color: #333 !important;
-    }
+
 
     .container.one {
         padding-top: 100%;

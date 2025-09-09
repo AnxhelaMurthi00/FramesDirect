@@ -1,0 +1,26 @@
+<script>
+  var hasIns = setInterval(checkIns, 360);
+  function checkIns() {
+    if (
+      !!!$("#ctl00_ContentPlaceHolderProductDisplay_pnlEmptyCart").length
+    ) {
+      if ($('.cart-item.insurance-selected').length > 0) {
+        clearInterval(hasIns);
+        hasIns = null;
+      } else {
+        if (
+          (checkDate >= "250915" && checkDate <= "250929") ||
+          (fdFncs.vars.isTest >= "250915" && fdFncs.vars.isTest <= "250929")
+        ) {
+          var $promoWrapper = $('<div id="cartPromoMsg" class="mb-2"></div>');
+          $promoWrapper.append(
+            $('<div id="cartPromoMsg" class="mb-3 py-1 px-3 weight-normal color-black" style="background:#CBC4BA; border-radius: 5px; ">Get your complete pair: <b>40% off select frames </b> at checkout +<b> 60% of lenses</b></div>')
+          );
+          $promoWrapper.insertAfter($("h1"));
+        }
+        clearInterval(hasIns);
+        hasIns = null;
+      }
+    }
+  }
+</script>

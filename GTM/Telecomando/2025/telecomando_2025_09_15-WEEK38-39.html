@@ -1,0 +1,73 @@
+<script>
+  if (
+    (checkDate >= "250915" && checkDate <= "250929") ||
+    (fdFncs.vars.isTest >= "250915" && fdFncs.vars.isTest <= "250929")
+  ) {
+    $("#discountBar #exclusiveToggle").html(
+      $("#discountBar #exclusiveToggle")
+        .html()
+        .replace("See Exclusive Savings!", "Complete Pair Savings")
+        .replace("Exclusive Savings", "Complete Pair Savings")
+    );
+    $("#exclusiveSavings #discountBar > .blue-bg").css({
+      background: "#D8CDB8",
+    });
+  } else
+    if (
+      (checkDate >= "250902" && checkDate <= "250914") ||
+      (fdFncs.vars.isTest >= "250902" && fdFncs.vars.isTest <= "250914")
+    ) {
+      $("#discountBar #exclusiveToggle").html(
+        $("#discountBar #exclusiveToggle")
+          .html()
+          .replace("See Exclusive Savings!", "Back To Office Savings")
+          .replace("Exclusive Savings", "Back To Office Savings")
+      );
+      $("#exclusiveSavings #discountBar > .blue-bg").css({
+        background: "#D8CDB8",
+      });
+    } else
+      if (
+        (checkDate >= "250825" && checkDate <= "250901") ||
+        (fdFncs.vars.isTest >= "250825" && fdFncs.vars.isTest <= "250901")
+      ) {
+        $("#discountBar #exclusiveToggle").html(
+          $("#discountBar #exclusiveToggle")
+            .html()
+            .replace("See Exclusive Savings!", "Labor Day offers")
+            .replace("Exclusive Savings", "Labor Day offers")
+        );
+        $("#exclusiveSavings #discountBar > .blue-bg").css({
+          background: "#D8CDB8",
+        });
+      } else
+        if (
+          (checkDate >= "250728" && checkDate <= "250824") ||
+          (fdFncs.vars.isTest >= "250728" && fdFncs.vars.isTest <= "250824")
+        ) {
+          $("#discountBar #exclusiveToggle").html(
+            $("#discountBar #exclusiveToggle")
+              .html()
+              .replace("See Exclusive Savings!", "Exclusive offers")
+              .replace("Exclusive Savings", "Exclusive offers")
+          );
+          $("#exclusiveSavings #discountBar > .blue-bg").css({
+            background: "#D8CDB8",
+          });
+        } else
+          if (
+            (checkDate >= "250712" && checkDate <= "250727") ||
+            (fdFncs.vars.isTest >= "250712" && fdFncs.vars.isTest <= "250727")
+          ) {
+            $("#discountBar #exclusiveToggle").html(
+              $("#discountBar #exclusiveToggle")
+                .html()
+                .replace("See Exclusive Savings!", "Sizzling Summer Savings")
+                .replace("Exclusive Savings", "Sizzling Summer Savings")
+            );
+            $("#exclusiveSavings #discountBar > .blue-bg").css({
+              background: "#B7C4B3",
+            });
+          }
+
+</script>
