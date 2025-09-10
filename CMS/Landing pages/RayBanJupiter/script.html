@@ -173,4 +173,26 @@
         });
     });
 
+    const cdTrack = document.querySelector('.jupiter-track');
+      const jupiter = document.getElementById('jupiter');
+      const stepsProgressBar1 = document.getElementById('stepsProgressBar1');
+
+    function updateStepsProgressBar1() {
+        const scrollLeft = cdTrack.scrollLeft;
+        const maxScroll = cdTrack.scrollWidth - cdTrack.clientWidth;
+
+        if (maxScroll <= 0) {
+            stepsProgressBar1.style.width = '33%'; // base width
+            return;
+        }
+
+        const percent = (scrollLeft / maxScroll) * 67; // so it goes 33% → 100%
+        stepsProgressBar1.style.width = `${33 + percent}%`;
+    }
+
+    cdTrack.addEventListener('scroll', updateStepsProgressBar1);
+    updateStepsProgressBar1();
+    track.addEventListener('scroll', updateStepsProgressBar1);
+
+
 </script>
