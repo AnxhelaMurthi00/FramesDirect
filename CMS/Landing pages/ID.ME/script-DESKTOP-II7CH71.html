@@ -1,0 +1,201 @@
+<script>
+
+    if (pgURLPath('promotions/afe-membership-for-military-discount-eyewear') || pgURLPath('landing_verified')) {
+        $(function () {
+            $(".id-me-verify").on("click", function (e) {
+                e.preventDefault();
+                var top = ($(document).height() - 780) / 4;
+                var left = ($(document).width() - 750) / 2;
+                var sIDmeURL = "https://groups.id.me/?scopes=government,medical,military,nurse,responder,teacher,student,senior&redirect_uri=https://"
+                    + window.location.hostname + "/id_me_landing.aspx&client_id=bbc75aae998b74e07b07648ce5e67dcd&response_type=token&display=popup";
+                window.open(sIDmeURL, "", "scrollbars=yes,menubar=no,status=no,location=no,toolbar=no,width=750,height=780,top=" + top + ",left=" + left);
+            });
+        });
+    }
+
+    let lastScrollTop = 0;
+    let isFixed = false;
+
+    const target = document.getElementById("sticky");
+    const lensesDiv = document.querySelector(".prescription-lens");
+    const pills = document.querySelectorAll('.lens-pill');
+
+    const sections = Array.from(pills).map(pill => {
+        const sectionId = pill.getAttribute("data-section");
+        const element = document.getElementById(sectionId);
+        return element ? { id: sectionId, element } : null;
+    }).filter(Boolean);
+
+    window.addEventListener("scroll", () => {
+        if (!target || !lensesDiv) return;
+
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        const lensesTop = lensesDiv.offsetTop;
+        const hasReachedLenses = currentScroll >= lensesTop + 300;
+        const lastSection = sections[sections.length - 1];
+
+        if (hasReachedLenses && !isFixed) {
+            target.classList.remove("ct_display_hide");
+            target.classList.add("fixed-position");
+            isFixed = true;
+        }
+
+        if (lastSection) {
+            const lastRect = lastSection.element.getBoundingClientRect();
+            const isPastLast = lastRect.top < 0 && lastRect.bottom < 0;
+
+            if (isPastLast && isFixed) {
+                target.classList.add("ct_display_hide");
+                target.classList.remove("fixed-position");
+                isFixed = false;
+            }
+
+            if (!isFixed && lastRect.bottom > 0 && hasReachedLenses) {
+                target.classList.remove("ct_display_hide");
+                target.classList.add("fixed-position");
+                isFixed = true;
+            }
+        }
+
+        if (!hasReachedLenses && isFixed) {
+            target.classList.add("ct_display_hide");
+            target.classList.remove("fixed-position");
+            isFixed = false;
+        }
+
+        sections.forEach(({ id, element }) => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top <= 100 && rect.bottom > 100) {
+                pills.forEach(p => {
+                    const isActive = p.getAttribute("data-section") === id;
+                    p.classList.toggle("active", isActive);
+
+                    if (isActive) {
+                        const pill = document.querySelector(`.lens-pill[data-section="${id}"]`);
+                        if (pill) {
+                            pill.scrollIntoView({
+                                behavior: "smooth",
+                                block: "nearest",
+                                inline: "start"
+                            });
+                        }
+                    }
+                });
+            }
+        });
+
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+
+
+
+
+
+    const track = document.getElementById('carouselTrackcard');
+    const progressBar = document.getElementById('progressBar');
+    const stepsProgressBar = document.getElementById('stepsProgressBar');
+    const cdTrack = document.getElementById('cdTrack');
+
+    function updateStepsProgressBar() {
+        const scrollLeft = cdTrack.scrollLeft;
+        const maxScroll = cdTrack.scrollWidth - cdTrack.clientWidth;
+
+        if (maxScroll <= 0) {
+            stepsProgressBar.style.width = '33%'; // base width
+            return;
+        }
+
+        const percent = (scrollLeft / maxScroll) * 67; // so it goes 33% → 100%
+        stepsProgressBar.style.width = `${33 + percent}%`;
+    }
+
+    cdTrack.addEventListener('scroll', updateStepsProgressBar);
+    updateStepsProgressBar();
+
+    function updateProgressBar1() {
+        const scrollLeft = track.scrollLeft;
+        const maxScroll = track.scrollWidth - track.clientWidth;
+
+        if (maxScroll <= 0) {
+            progressBar.style.width = '33%'; // base width
+            return;
+        }
+
+        const percent1 = (scrollLeft / maxScroll) * 67;
+        progressBar.style.width = `${33 + percent1}%`;
+    }
+
+    track.addEventListener('scroll', updateProgressBar1);
+    updateProgressBar1();
+
+
+
+    $(document).ready(function () {
+        $(".ct_range_slider .ct_range-slider__range").on("input", function () {
+            let ct_range_value = $(this)[0].valueAsNumber / 100;
+
+            $(".ct_sunglasses_container.ct_lens_change > img.ct_hover").css("opacity", "" + ct_range_value + "");
+        });
+    });
+
+
+    const visionCards = document.querySelector('.vision-cards');
+    const progressBarSlider = document.getElementById('progressBarSlider');
+
+    function updateSlider() {
+        const scrollLeft = visionCards.scrollLeft;
+        const maxScrollLeft = visionCards.scrollWidth - visionCards.clientWidth;
+
+        if (maxScrollLeft <= 0) {
+            progressBarSlider.style.width = '25%';
+            return;
+        }
+
+        const progress = (scrollLeft / maxScrollLeft) * 75;
+        progressBarSlider.style.width = `${25 + progress}%`;
+    }
+
+    visionCards.addEventListener('scroll', updateSlider);
+    updateSlider();
+
+
+
+    document.querySelectorAll(".lens-card").forEach((card) => {
+        const video = card.querySelector("video");
+
+        card.addEventListener("mouseenter", () => {
+            video.play();
+        });
+
+        card.addEventListener("mouseleave", () => {
+            video.pause();
+            video.currentTime = 0;
+        });
+    });
+
+    const lazyVideos = document.querySelectorAll('.lazy-video');
+
+    const handleVideoPlayback = (entries) => {
+        entries.forEach(entry => {
+            const video = entry.target;
+
+            if (entry.isIntersecting) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(handleVideoPlayback, {
+        threshold: 0.5
+    });
+
+    lazyVideos.forEach(video => {
+        observer.observe(video);
+    });
+
+
+
+
+</script>

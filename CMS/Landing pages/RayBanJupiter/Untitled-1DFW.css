@@ -1,0 +1,11 @@
+    .lSAction>.lSNext:before {
+        margin-left: -10px !important;
+    }
+
+    #promoMetaCarouselSmall .lSAction .lSNext,
+    .lSAction .lSPrev {
+        position: absolute;
+        top: 32%;
+        height: 40px;
+        width: 24px;
+    }
