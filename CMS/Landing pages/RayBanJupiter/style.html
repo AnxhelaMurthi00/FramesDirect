@@ -1,13 +1,67 @@
 <style>
+    .banner-container {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .banner-content {
+        position: absolute;
+        top: 45%;
+        left: 8%;
+        transform: translateY(-50%);
+        color: black;
+        width: 50%;
+    }
+
+    .mx-64 {
+        margin-left: 64px;
+        margin-right: 64px;
+    }
+
+    @media (max-width: 765px) {
+
+        #promoMetaCarouselSmall .lSAction .lSNext,
+        .lSAction .lSPrev {
+            position: absolute;
+            height: 40px;
+            width: 24px;
+        }
+
+        .lSAction .lSNext,
+        .lSAction .lSPrev {
+            font-size: 40px;
+        }
+
+        #promoMetaCarouselSmall .lSAction>a {
+            top: 40%;
+        }
+    }
+
     #content-main a.btn-cta {
         background-color: #333333;
         color: white !important;
+    }
+
+    #products .lSAction {
+        display: none !important;
     }
 
     @media (max-width: 1023px) {
         .ct__mob__hide {
             display: none !important;
         }
+    }
+
+    @media (max-width: 765px) {
+
+
+        .size-16 {
+            font-size: 16px;
+        }
+            .mx-64 {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
     }
 
     @media (min-width: 1024px) {
@@ -67,6 +121,7 @@
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         padding-bottom: 10px;
+        scrollbar-width: none;
     }
 
     .jupiter-card {
@@ -156,6 +211,7 @@
         font-size: 100%;
     }
 
+
     .product-name,
     .price {
         font-size: 12px;
@@ -239,8 +295,26 @@
             display: block;
         }
 
+
         #promoMetaCarousel {
             display: none;
         }
+    }
+
+
+
+    .steps-progress-container {
+        width: 60%;
+        height: 6px;
+        background: #eee;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-left: 20%;
+    }
+
+    #stepsProgressBar1 {
+        height: 100%;
+        background: #6B777B;
+        transition: width 0.2s linear;
     }
 </style>

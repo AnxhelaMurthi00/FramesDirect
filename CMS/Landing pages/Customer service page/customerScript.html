@@ -1,0 +1,26 @@
+<script>
+
+    const form = document.getElementById("contact_form");
+    const arrowIcon = document.getElementById("arrow");
+  function toggleForm() {
+
+
+    const isHidden = form.style.display === "none" || form.style.display === "";
+
+    form.style.display = isHidden ? "block" : "none";
+
+    if (arrowIcon) {
+      arrowIcon.classList.toggle("arrow-rotated", isHidden);
+    }
+
+
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    if (window.location.hash === "#toggle-cs-contact") {
+      toggleForm(); // simulate clicking the button
+    }
+  });
+
+
+</script>
