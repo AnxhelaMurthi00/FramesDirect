@@ -72,11 +72,17 @@
                 // --- START OF MODIFICATION ---
                 // For the main card view: add the onclick event to the div
                 ctaHTML = `
-            <div id="idme-btn" class="login-trigger id-me-verify col-6 col-md-12 btn ${specialButtonClass}" onclick="location.href='${promo.ctaLink}'">${promo.ctaText}</div>`;
+            <div id="idme-btn" style="color: #6B777B !important" class="login-trigger id-me-verify col-6 col-md-12 p-0" onclick="location.href='${promo.ctaLink}'">
+                <img src="https://s3.amazonaws.com/idme/developer/idme-buttons/assets/img/verify.svg" class="cursor-pointer d-md-none" alt="Verify with ID.me" height="30">
+                <img src="https://s3.amazonaws.com/idme/developer/idme-buttons/assets/img/verify.svg" class="cursor-pointer d-none d-md-block" alt="Verify with ID.me" height="44">
+            </div>`;
 
                 // For the details overlay: also add the onclick event to this div
                 overlayCtaHTML = `
-            <div id="idme-btn" class="login-trigger id-me-verify w-100 btn ${specialButtonClass}" onclick="location.href='${promo.ctaLink}'">${promo.ctaText}</div>`;
+            <div id="idme-btn" style="color: #6B777B !important" class="login-trigger id-me-verify w-100" onclick="location.href='${promo.ctaLink}'">
+                <img src="https://s3.amazonaws.com/idme/developer/idme-buttons/assets/img/verify.svg" class="cursor-pointer d-md-none" alt="Verify with ID.me" height="30">
+                <img src="https://s3.amazonaws.com/idme/developer/idme-buttons/assets/img/verify.svg" class="cursor-pointer d-none d-md-block" alt="Verify with ID.me" height="44">
+            </div>`;
                 // --- END OF MODIFICATION ---
             } else {
                 ctaHTML = `<button type="button" class="btn ${specialButtonClass}" onclick="location.href='${promo.ctaLink}'">${promo.ctaText || 'Shop Now'}</button>`;

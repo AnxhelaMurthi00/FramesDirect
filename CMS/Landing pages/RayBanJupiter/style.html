@@ -1,6 +1,30 @@
 <style>
+<<<<<<< HEAD
     @media (max-width: 765px) {
    
+=======
+    .banner-container {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .banner-content {
+        position: absolute;
+        top: 45%;
+        left: 8%;
+        transform: translateY(-50%);
+        color: black;
+        width: 50%;
+    }
+
+    .mx-64 {
+        margin-left: 64px;
+        margin-right: 64px;
+    }
+
+    @media (max-width: 765px) {
+
+>>>>>>> 43a4976eb3346e35090a21be07a4d6382a75bc9e
         #promoMetaCarouselSmall .lSAction .lSNext,
         .lSAction .lSPrev {
             position: absolute;
@@ -23,10 +47,26 @@
         color: white !important;
     }
 
+    #products .lSAction {
+        display: none !important;
+    }
+
     @media (max-width: 1023px) {
         .ct__mob__hide {
             display: none !important;
         }
+    }
+
+    @media (max-width: 765px) {
+
+
+        .size-16 {
+            font-size: 16px;
+        }
+            .mx-64 {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
     }
 
     @media (min-width: 1024px) {
@@ -175,6 +215,7 @@
         width: 95%;
         font-size: 100%;
     }
+
 
     .product-name,
     .price {
