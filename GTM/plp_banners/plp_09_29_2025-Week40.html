@@ -1,0 +1,32 @@
+<script>
+  if (
+    (checkDate >= "250929" && checkDate <= "251007") ||
+    (fdFncs.vars.isTest >= "250929" && fdFncs.vars.isTest <= "251007")
+  ) {
+    var locName = [
+      "/eyeglasses/",
+      "/sunglasses/",
+      "/prescription-sunglasses/",
+      "/men/eyewear-dp",
+      "/women/eyewear-dp",
+      "/eyeglasses/mens",
+      "/eyeglasses/womens",
+      "/sunglasses/mens",
+      "/sunglasses/womens",
+      "/prescription-sunglasses/mens",
+      "/prescription-sunglasses/womens"
+    ];
+
+    // Specific sale landing page
+    if (pgURLPath("/email/designer-brands-dp")) {
+      var selectedCrumb = "Complete Pair";
+      var topText = "Fall deals: up to 50% off select frames + 60% off lenses";
+      var bottomText = "Fall deals: up to 50% off select frames + 60% off lenses";
+      $("#top-content-box h2").html(bottomText);
+      $("#selected-crumb").text(selectedCrumb);
+      $("#cata_hdr").text(topText);
+
+
+    }
+  }
+</script>
