@@ -22,11 +22,14 @@
       var selectedCrumb = "Complete Pair";
       var topText = "Fall deals: up to 50% off select frames + 60% off lenses";
       var bottomText = "Fall deals: up to 50% off select frames + 60% off lenses";
+
       $("#top-content-box h2").html(bottomText);
       $("#selected-crumb").text(selectedCrumb);
       $("#cata_hdr").text(topText);
 
-
+      if ($("#cata_hdr").next("p#hdr-subtext").length === 0) { 
+        $("#cata_hdr").after('<p id="hdr-subtext">Directly applied at checkout. Includes designer brands.</p>');
+      }
     }
   }
 </script>

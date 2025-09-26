@@ -1,0 +1,40 @@
+<script>
+    if (
+        (checkDate >= "250914" && checkDate <= "250929") ||
+        (fdFncs.vars.isTest >= "250914" && fdFncs.vars.isTest <= "250929")
+    ) {
+        var locName = [
+            "/eyeglasses/",
+            "/sunglasses/",
+            "/prescription-sunglasses/",
+            "/men/eyewear-dp",
+            "/women/eyewear-dp",
+            "/eyeglasses/mens",
+            "/eyeglasses/womens",
+            "/sunglasses/mens",
+            "/sunglasses/womens",
+            "/prescription-sunglasses/mens",
+            "/prescription-sunglasses/womens"
+        ];
+
+        for (var x = 0, y = locName.length; x < y; ++x) {
+            if (location.pathname === locName[x]) {
+                $("#bnr-dyn-holder").html(
+                    '<a href="/email/flash-sale-dp"><img alt="Complete Pair" src="https://images.framesdirect.com/image/upload/v1752162222/plp-banners/plp_week31.png" width="1440" height="100" title="Complete Pair"></a>'
+                );
+            }
+        }
+
+        // Specific sale landing page
+        if (pgURLPath("/email/designer-brands-dp")) {
+            var selectedCrumb = "Complete Pair";
+            var topText = "";
+            var bottomText = "40% off select frames + 60% off lenses";
+            $("#top-content-box h2").html(bottomText);
+            $("#selected-crumb").text(selectedCrumb);
+            $("#cata_hdr").text(topText);
+
+
+        }
+    }
+</script>
