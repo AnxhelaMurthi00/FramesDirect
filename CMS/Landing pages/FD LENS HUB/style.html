@@ -3,6 +3,10 @@
         scroll-behavior: smooth;
     }
 
+    .lens-disclaimer {
+        font-size: 14px;
+    }
+
     .hero-content {
         position: absolute;
         left: 5%;
@@ -76,14 +80,14 @@
             text-align: center;
             color: #000;
             z-index: 2;
-            /* above the image */
+
         }
 
         .slider-progress {
             width: calc(50% - 40px) !important;
         }
 
-        h2 {
+        .quality-lenses h2 {
             font-size: 24px;
         }
 
@@ -220,6 +224,7 @@
     }
 
     @media (max-width: 575px) {
+
         .vision-cards {
             margin-left: 0px !important;
             margin-right: 0px !important;
@@ -274,9 +279,9 @@
     .vision-cards {
         overflow-x: auto;
         white-space: nowrap;
-        scroll-behavior: smooth;
         gap: 1rem;
-        scrollbar-width: none
+        scrollbar-width: none;
+        cursor: grab;
     }
 
     .vision-cards>div {
