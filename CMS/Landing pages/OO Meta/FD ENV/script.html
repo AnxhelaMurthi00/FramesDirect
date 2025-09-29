@@ -1,0 +1,285 @@
+<script>
+    (function () {
+        // Get all toggle buttons
+        const toggleButtons = document.querySelectorAll('.toggle-btn');
+
+        // Add click event to each button
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', function (e) {
+                e.preventDefault();
+                const version = this.getAttribute('data-version');
+                const parentSection = this.closest('.cb_py-6, .cb_py-lg-16'); // Adjust to your section wrapper
+
+                // Update button styles ONLY within this section
+                parentSection.querySelectorAll('.toggle-btn').forEach(btn => {
+                    if (btn.getAttribute('data-version') === version) {
+                        btn.classList.add('active');
+                        btn.style.color = 'white';
+                    } else {
+                        btn.classList.remove('active');
+                        btn.style.color = 'inherit';
+                    }
+                });
+
+                // Toggle video/image content ONLY within this section
+                const videoContainer = parentSection.querySelector('.video-container');
+                if (videoContainer) {
+                    videoContainer.querySelectorAll('[data-version]').forEach(content => {
+                        if (content.getAttribute('data-version') === version) {
+                            content.style.display = 'block';
+                        } else {
+                            content.style.display = 'none';
+                        }
+                    });
+                }
+
+                // Toggle text content ONLY within this section
+                parentSection.querySelectorAll('[data-version].feature-text').forEach(text => {
+                    if (text.getAttribute('data-version') === version) {
+                        text.classList.remove('d-none');
+                    } else {
+                        text.classList.add('d-none');
+                    }
+                });
+
+                // Update image if exists
+                const livestreamImg = parentSection.querySelector('#livestream-img');
+                if (livestreamImg) {
+                    livestreamImg.src = livestreamImg.dataset[version];
+                }
+
+                // Pause all videos in the section
+                parentSection.querySelectorAll('video').forEach(video => {
+                    if (!video.paused) {
+                        video.pause();
+                    }
+                });
+            });
+        });
+
+        // Video play/pause controls
+        document.querySelectorAll('.play-pause').forEach(button => {
+            button.addEventListener('click', function (e) {
+                e.preventDefault();
+                const container = this.closest('.video-container');
+                const activeContent = container.querySelector('[data-version]:not([style*="none"])');
+                const video = activeContent.querySelector('video');
+                const cover = activeContent.querySelector('.video-cover');
+                const playIcon = this.querySelector('.play');
+                const pauseIcon = this.querySelector('.pause');
+
+                if (video.paused) {
+                    video.play();
+                    video.classList.remove('cb_d-none');
+                    if (cover) cover.classList.add('cb_d-none');
+                    if (playIcon) playIcon.classList.add('cb_d-none');
+                    if (pauseIcon) pauseIcon.classList.remove('cb_d-none');
+                } else {
+                    video.pause();
+                    video.classList.add('cb_d-none');
+                    if (cover) cover.classList.remove('cb_d-none');
+                    if (playIcon) playIcon.classList.remove('cb_d-none');
+                    if (pauseIcon) pauseIcon.classList.add('cb_d-none');
+                }
+            });
+        });
+
+        // Volume toggle
+        document.querySelectorAll('.volume-on-off').forEach(button => {
+            button.addEventListener('click', function (e) {
+                e.preventDefault();
+                const container = this.closest('.video-container');
+                const activeContent = container.querySelector('[data-version]:not([style*="none"])');
+                const video = activeContent.querySelector('video');
+                const volumeOn = this.querySelector('.volume-on');
+                const volumeOff = this.querySelector('.volume-off');
+
+                video.muted = !video.muted;
+                if (volumeOn) volumeOn.classList.toggle('cb_d-none');
+                if (volumeOff) volumeOff.classList.toggle('cb_d-none');
+            });
+        });
+
+        // ✅ On page load: trigger click on all active toggle buttons
+        document.querySelectorAll('.toggle-btn.active').forEach(button => {
+            button.click();
+        });
+
+    })();
+</script>
+
+
+<!-- <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const toggleButtons = document.querySelectorAll('.toggle-btn');
+
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', function (e) {
+                e.preventDefault();
+                const version = this.getAttribute('data-version');
+
+                // Update button styles
+                toggleButtons.forEach(btn => {
+                    if (btn === this) {
+                        btn.style.background = 'rgb(92, 74, 255)';
+                        btn.style.color = 'white';
+                    } else {
+                        btn.style.background = 'rgb(224, 224, 224)';
+                        btn.style.color = 'inherit';
+                    }
+                });
+
+                // Toggle video containers
+                if (version === 'paloma') {
+                    document.querySelector('.spritz1-content').style.display = 'block';
+                    document.querySelector('.paloma-content').style.display = 'none';
+                } else {
+                    document.querySelector('.spritz1-content').style.display = 'none';
+                    document.querySelector('.paloma-content').style.display = 'block';
+                }
+
+                // Toggle text content
+                document.querySelectorAll('.feature-text').forEach(text => {
+                    if (text.getAttribute('data-version') === version) {
+                        text.classList.remove('d-none');
+                    } else {
+                        text.classList.add('d-none');
+                    }
+                });
+            });
+        });
+    });
+</script> -->
+
+<script>
+    (function () {
+        const toggleButtons = document.querySelectorAll('.toggle-btn');
+
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', function (e) {
+                e.preventDefault();
+                const version = this.getAttribute('data-version');
+                const parentSection = this.closest('.cb_py-6, .cb_py-lg-16');
+
+                // Update button styles
+                parentSection.querySelectorAll('.toggle-btn').forEach(btn => {
+                    if (btn.getAttribute('data-version') === version) {
+                        btn.classList.add('active');
+                        btn.style.color = 'white';
+                    } else {
+                        btn.classList.remove('active');
+                        btn.style.color = 'inherit';
+                    }
+                });
+
+                // Toggle video/image containers
+                const videoContainer = parentSection.querySelector('.video-container');
+                if (videoContainer) {
+                    videoContainer.querySelectorAll('[data-version]').forEach(content => {
+                        const isMatch = content.getAttribute('data-version') === version;
+                        content.style.display = isMatch ? 'block' : 'none';
+
+                        const video = content.querySelector('video');
+                        const cover = content.querySelector('.video-cover');
+                        const playIcon = content.querySelector('.play');
+                        const pauseIcon = content.querySelector('.pause');
+
+                        if (video) {
+                            video.pause();
+                            video.classList.add('cb_d-none');
+                        }
+                        if (cover) cover.classList.remove('cb_d-none');
+                        if (playIcon) playIcon.classList.remove('cb_d-none');
+                        if (pauseIcon) pauseIcon.classList.add('cb_d-none');
+                    });
+                }
+
+                // Toggle text
+                parentSection.querySelectorAll('[data-version].feature-text').forEach(text => {
+                    if (text.getAttribute('data-version') === version) {
+                        text.classList.remove('d-none');
+                    } else {
+                        text.classList.add('d-none');
+                    }
+                });
+
+                // Update image if any
+                const livestreamImg = parentSection.querySelector('#livestream-img');
+                if (livestreamImg) {
+                    livestreamImg.src = livestreamImg.dataset[version];
+                }
+
+                // Pause all videos
+                parentSection.querySelectorAll('video').forEach(video => video.pause());
+            });
+        });
+
+        // Play/pause control
+        document.querySelectorAll('.play-pause').forEach(button => {
+            button.addEventListener('click', function (e) {
+                e.preventDefault();
+                const container = this.closest('.video-container');
+                const activeContent = container.querySelector('[data-version]:not([style*="none"])');
+                const video = activeContent.querySelector('video');
+                const cover = activeContent.querySelector('.video-cover');
+                const playIcon = this.querySelector('.play');
+                const pauseIcon = this.querySelector('.pause');
+
+                if (video.paused) {
+                    video.play();
+                    video.classList.remove('cb_d-none');
+                    if (cover) cover.classList.add('cb_d-none');
+                    if (playIcon) playIcon.classList.add('cb_d-none');
+                    if (pauseIcon) pauseIcon.classList.remove('cb_d-none');
+                } else {
+                    video.pause();
+                    video.classList.add('cb_d-none');
+                    if (cover) cover.classList.remove('cb_d-none');
+                    if (playIcon) playIcon.classList.remove('cb_d-none');
+                    if (pauseIcon) pauseIcon.classList.add('cb_d-none');
+                }
+            });
+        });
+
+        // Volume toggle
+        document.querySelectorAll('.volume-on-off').forEach(button => {
+            button.addEventListener('click', function (e) {
+                e.preventDefault();
+                const container = this.closest('.video-container');
+                const activeContent = container.querySelector('[data-version]:not([style*="none"])');
+                const video = activeContent.querySelector('video');
+                const volumeOn = this.querySelector('.volume-on');
+                const volumeOff = this.querySelector('.volume-off');
+
+                video.muted = !video.muted;
+                if (volumeOn) volumeOn.classList.toggle('cb_d-none');
+                if (volumeOff) volumeOff.classList.toggle('cb_d-none');
+            });
+        });
+
+        // Initial load: simulate click but keep videos paused and UI correct
+        document.querySelectorAll('.toggle-btn.active').forEach(button => {
+            button.click();
+        });
+
+    })();
+</script>
+
+
+
+<script>
+    // Loop over each toggle container
+    document.querySelectorAll('.toggle-container').forEach(container => {
+        const buttons = container.querySelectorAll('.toggle-btn');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from siblings within this container only
+                buttons.forEach(b => b.classList.remove('active'));
+
+                // Add active to clicked one
+                button.classList.add('active');
+            });
+        });
+    });
+</script>
