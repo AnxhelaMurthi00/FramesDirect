@@ -1,0 +1,102 @@
+<script>
+  if (
+    (checkDate >= "251027" && checkDate <= "251031") ||
+    (fdFncs.vars.isTest >= "251027" && fdFncs.vars.isTest <= "251031")
+  ) {
+    $("#discountBar #exclusiveToggle").html(
+      $("#discountBar #exclusiveToggle")
+        .html()
+        .replace("See Exclusive Savings!", " Don’t Ghost These Deals")
+        .replace("Exclusive Savings", " Don’t Ghost These Deals")
+    );
+    $("#exclusiveSavings #discountBar > .blue-bg").css({
+      background: "#9BA7BA",
+    });
+  } else
+      if (
+    (checkDate >= "251009" && checkDate <= "251026") ||
+    (fdFncs.vars.isTest >= "251009" && fdFncs.vars.isTest <= "251026")
+  ) {
+    $("#discountBar #exclusiveToggle").html(
+      $("#discountBar #exclusiveToggle")
+        .html()
+        .replace("See Exclusive Savings!", " Complete Pair Savings")
+        .replace("Exclusive Savings", " Complete Pair Savings")
+    );
+    $("#exclusiveSavings #discountBar > .blue-bg").css({
+      background: "#CBC4BA",
+    });
+  } else
+    if (
+    (checkDate >= "251007" && checkDate <= "251008") ||
+    (fdFncs.vars.isTest >= "251007" && fdFncs.vars.isTest <= "251008")
+  ) {
+    $("#discountBar #exclusiveToggle").html(
+      $("#discountBar #exclusiveToggle")
+        .html()
+        .replace("See Exclusive Savings!", " Prime Days offers")
+        .replace("Exclusive Savings", " Prime Days offers")
+    );
+    $("#exclusiveSavings #discountBar > .blue-bg").css({
+      background: "#9BA7BA",
+    });
+  } else
+  if (
+    (checkDate >= "250929" && checkDate <= "251007") ||
+    (fdFncs.vars.isTest >= "250929" && fdFncs.vars.isTest <= "251007")
+  ) {
+    $("#discountBar #exclusiveToggle").html(
+      $("#discountBar #exclusiveToggle")
+        .html()
+        .replace("See Exclusive Savings!", "Fall offers")
+        .replace("Exclusive Savings", "Fall offers")
+    );
+    $("#exclusiveSavings #discountBar > .blue-bg").css({
+      background: "#C9A3A0",
+    });
+  } else
+    if (
+      (checkDate >= "250915" && checkDate <= "250928") ||
+      (fdFncs.vars.isTest >= "250915" && fdFncs.vars.isTest <= "250928")
+    ) {
+      $("#discountBar #exclusiveToggle").html(
+        $("#discountBar #exclusiveToggle")
+          .html()
+          .replace("See Exclusive Savings!", "Complete Pair Savings")
+          .replace("Exclusive Savings", "Complete Pair Savings")
+      );
+      $("#exclusiveSavings #discountBar > .blue-bg").css({
+        background: "#D8CDB8",
+      });
+    } else
+      if (
+        (checkDate >= "250902" && checkDate <= "250914") ||
+        (fdFncs.vars.isTest >= "250902" && fdFncs.vars.isTest <= "250914")
+      ) {
+        $("#discountBar #exclusiveToggle").html(
+          $("#discountBar #exclusiveToggle")
+            .html()
+            .replace("See Exclusive Savings!", "Back To Office Savings")
+            .replace("Exclusive Savings", "Back To Office Savings")
+        );
+        $("#exclusiveSavings #discountBar > .blue-bg").css({
+          background: "#D8CDB8",
+        });
+      } else
+
+        if (
+          (checkDate >= "250712" && checkDate <= "250727") ||
+          (fdFncs.vars.isTest >= "250712" && fdFncs.vars.isTest <= "250727")
+        ) {
+          $("#discountBar #exclusiveToggle").html(
+            $("#discountBar #exclusiveToggle")
+              .html()
+              .replace("See Exclusive Savings!", "Sizzling Summer Savings")
+              .replace("Exclusive Savings", "Sizzling Summer Savings")
+          );
+          $("#exclusiveSavings #discountBar > .blue-bg").css({
+            background: "#B7C4B3",
+          });
+        }
+
+</script>
