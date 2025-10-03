@@ -90,27 +90,29 @@
   function updateBannerMessage() {
     var countBnrMsg = messages[currentMessageIndex];
 
-    // Add countdown only for the specific message
-    if (messages[currentMessageIndex].includes("Sign up")) {
+
+    if (
+      currentMessageIndex === 0 &&
+      (checkDate === "251008" || fdFncs.vars.isTest === "251009")
+    ) {
       countBnrMsg +=
-        '<div id="countdown" class="d-flex justify-content-end pr-2 size-6 ml-3"><div id="countdown-clockworks-holder" class="d-flex"></div></div>';
+        '<div id="countdown" class="d-flex justify-content-end pr-2 size-6 ml-3">' +
+        '<div id="countdown-clockworks-holder" class="d-flex"></div></div>';
     }
 
     $("#count-bnr-inner").html(countBnrMsg);
 
-    // Initialize the countdown if the specific message is active
-    if (
-      (messages[currentMessageIndex].includes("Sign up") &&
-        checkDate === "250426") ||
-      fdFncs.vars.isTest === "250426"
-    ) {
+    // Initialize the countdown only when the div exists
+    if ($("#countdown").length > 0) {
       initializeCountdown();
     }
   }
 
+
+
   // Function to initialize the countdown
   function initializeCountdown() {
-    var endDateLong = "04/27/2025"; // Set the end date for the countdown
+    var endDateLong = "10/09/2025"; // Set the end date for the countdown
     var digitBg = " white";
 
     $("#countdown-clockworks-holder").countdown(endDateLong, function (event) {
