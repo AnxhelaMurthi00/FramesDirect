@@ -13,24 +13,47 @@
 
   // Define the messages for the carousel based on date and device type
   var messages = [];
-    if (
-    (checkDate >= "250929" && checkDate <= "251007") ||
-    (fdFncs.vars.isTest >= "250929" && fdFncs.vars.isTest <= "251007")
-  ) {
-    messages =
-      $(window).width() <= 768
-        ? [
-          " <b>&nbsp;Up to 50% off select frames + 60% off lenses </b>",
-          "<b>Use your insurance on new arrivals.&nbsp;",
-          "<b>&nbsp;Get a free hat &nbsp;</b> with every Wiley X purchase",
-        ]
-        : [
-          " <b>FAll DEALS: &nbsp;</b>up to <b>&nbsp;50% off select frames + 60% off lenses.</b> Includes designer brands. ",
-          "<b>Use your insurance on new arrivals.&nbsp; </b>Shop our new collection now.",
-          "<b>&nbsp;Get a free hat &nbsp;</b> with every Wiley X purchase",
-        ];
+   if (
+        (checkDate >= "251103" && checkDate <= "251109") ||
+        (fdFncs.vars.isTest >= "251103" && fdFncs.vars.isTest <= "251109")
+      ) {
+        messages =
+          $(window).width() <= 768
+            ? [
+              " <b>&nbsp;25% off select frames + up to 60% off lenses</b>",
+              "<b>Use your insurance on new arrivals.&nbsp;",
+              " <b>&nbsp;MEET THE NEW AI GLASSES</b>",
 
-  } else
+            ]
+            : [
+              "<b>Early Holiday Savings: 25% off select frames + 60% off lenses with frame purchase. </b> ",
+              "<b>Use your insurance on new arrivals.&nbsp; </b>Shop our new collection now.",
+              " <b>MEET THE NEW AI GLASSES:&nbsp;</b>Advanced AI. Enhanced Capture. More Battery. ",
+            ];
+
+
+      } else
+
+    if (
+        (checkDate >= "251101" && checkDate <= "251102") ||
+        (fdFncs.vars.isTest >= "251101" && fdFncs.vars.isTest <= "251102")
+      ) {
+        messages =
+          $(window).width() <= 768
+            ? [
+              " <b>&nbsp;25% off select frames + up to 60% off lenses</b>",
+              "<b>Use your insurance on new arrivals.&nbsp;",
+              " <b>&nbsp;MEET THE NEW AI GLASSES</b>",
+
+            ]
+            : [
+              "<b>Early Holiday Weekend: 25% off select frames + 60% off lenses with frame purchase. </b> ",
+              "<b>Use your insurance on new arrivals.&nbsp; </b>Shop our new collection now.",
+              " <b>MEET THE NEW AI GLASSES:&nbsp;</b>Advanced AI. Enhanced Capture. More Battery. ",
+            ];
+
+
+      } else
 
   if (
         (checkDate >= "251027" && checkDate <= "251031") ||
@@ -140,8 +163,6 @@
             ];
 
       }
-
-
   var currentMessageIndex = 0;
 
   // Function to update the banner message
