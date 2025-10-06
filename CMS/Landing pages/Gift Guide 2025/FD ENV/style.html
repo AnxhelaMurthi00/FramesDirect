@@ -27,10 +27,17 @@ body{
     max-width: 1088px;
     margin: 0 auto;
 }
-.container-1312 {
+/* .container {
     max-width: 1312px;
     margin: 0 auto;
+} */
+
+.container{
+    max-width: none !important; /* This is the key to removing the width limit */
+    padding-left: 24px;         /* Use a smaller padding for mobile */
+    padding-right: 24px;        /* Use a smaller padding for mobile */
 }
+
 
 .hero-section h1{
     color: #ffffff !important;
@@ -43,15 +50,45 @@ body{
 }
 
 /* --- Hero Section --- */
-.hero-section {
-    /* IMPORTANT: Replace this placeholder with your actual background image path */
+/* .hero-section {
     background: url('https://images.framesdirect.com/image/upload/v1759398483/Gift-guide/GIFT_GUIDE_HEADER_DESK.jpg');
     background-repeat: no-repeat;
     background-position: top center;
-    /* Set the height of the hero section */
     height: 100vh; 
-    min-height: 810px; /* Ensures a minimum height on all screens */
+    min-height: 810px;
     color: white;
+} */
+
+/* --- Hero Section --- */
+.hero-section {
+    position: relative; /* This is crucial for positioning the image */
+    overflow: hidden;   /* Ensures the image doesn't spill out */
+
+    /* REMOVE the old background properties from here */
+    /* background: url(...); */
+    /* background-repeat: no-repeat; */
+    /* background-position: top center; */
+
+    /* Your existing height, min-height, and color rules stay the same */
+    height: 100vh; 
+    min-height: 810px;
+    color: white;
+}
+
+/* ADD THIS NEW RULE FOR THE IMAGE */
+.hero-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* This makes the image cover the area without distortion */
+    object-fit: cover; 
+    
+    /* THIS IS THE FIX FOR YOUR RESIZING PROBLEM! */
+    /* Adjust this percentage to keep your focal point in view. */
+    object-position: top center; 
 }
 
 .hero-content h1 {
@@ -367,6 +404,17 @@ p.text-muted{
 
 /* --- Carousel Pagination Styles (for Mobile) --- */
 @media (max-width: 768px) {
+
+    .hero-background-image{
+        object-position: 75% center; 
+    }
+
+    .mobile-carousel {
+    /* These negative margins pull the carousel out to the screen edges,
+       counteracting the 24px padding from the .container */
+    margin-left: -16px;
+    margin-right: -16px;
+}
     .mob_hide{
         display: none;
     }
@@ -388,7 +436,7 @@ p.text-muted{
         background: url('https://images.framesdirect.com/image/upload/v1759398479/Gift-guide/FD_GG_JUPITER_SHOPOFFERS_M.png');
     }
 
-    .container-1312 p.text-muted{
+    .container p.text-muted{
          max-width: 90% ;
          margin: 0 auto;
     }
@@ -444,9 +492,9 @@ p.text-muted{
         padding-bottom: 10px;
     }
     /* 1. Make the container full-width on mobile to remove side spacing */
-    .ai-banner-section .container-1312,
-    .delivery-banner-section .container-1312,
-    .offers-banner-section .container-1312 {
+    .ai-banner-section .container,
+    .delivery-banner-section .container,
+    .offers-banner-section .container {
         max-width: 100%;
         padding-left: 16px;
         padding-right: 16px;
@@ -487,7 +535,10 @@ p.text-muted{
 /* --- Styles for ALL screens 768px and wider --- */
 @media (min-width: 768px) {
     /* Add this inside your @media (min-width: 768px) block */
-
+    .container {
+        padding-left: 64px !important;
+        padding-right: 64px !important;
+    }
 
     /* --- Carousel Grid Layout & Button Alignment --- */
     .mobile-carousel .swiper-wrapper {
@@ -516,6 +567,8 @@ p.text-muted{
 
     .category-card .btn {
         margin-top: auto !important;
+        max-width: fit-content;
+        margin: 0 auto;
     }
 
     /* --- Base Promo Banner Styles for Tablet & Desktop --- */
