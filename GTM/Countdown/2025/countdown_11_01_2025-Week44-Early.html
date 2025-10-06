@@ -13,6 +13,26 @@
 
   // Define the messages for the carousel based on date and device type
   var messages = [];
+    if (
+        (checkDate >= "251101" && checkDate <= "251102") ||
+        (fdFncs.vars.isTest >= "251101" && fdFncs.vars.isTest <= "251102")
+      ) {
+        messages =
+          $(window).width() <= 768
+            ? [
+              " <b>&nbsp;25% off select frames + up to 60% off lenses</b>",
+              "<b>Use your insurance on new arrivals.&nbsp;",
+              " <b>&nbsp;MEET THE NEW AI GLASSES</b>",
+
+            ]
+            : [
+              "<b>Early Holiday Weekend: 25% off select frames + 60% off lenses with frame purchase. </b> ",
+              "<b>Use your insurance on new arrivals.&nbsp; </b>Shop our new collection now.",
+              " <b>MEET THE NEW AI GLASSES:&nbsp;</b>Advanced AI. Enhanced Capture. More Battery. ",
+            ];
+
+
+      } else
 
   if (
         (checkDate >= "251027" && checkDate <= "251031") ||
@@ -129,7 +149,7 @@
     var countBnrMsg = messages[currentMessageIndex];
 
     // Add countdown only for the specific message
-    if (messages[currentMessageIndex].includes("select frames")) {
+    if (messages[currentMessageIndex].includes("Sign up")) {
       countBnrMsg +=
         '<div id="countdown" class="d-flex justify-content-end pr-2 size-6 ml-3"><div id="countdown-clockworks-holder" class="d-flex"></div></div>';
     }
@@ -138,9 +158,9 @@
 
     // Initialize the countdown if the specific message is active
     if (
-      (messages[currentMessageIndex].includes("select frames") &&
-        checkDate === "251030") ||
-      fdFncs.vars.isTest === "251030"
+      (messages[currentMessageIndex].includes("Sign up") &&
+        checkDate === "250426") ||
+      fdFncs.vars.isTest === "250426"
     ) {
       initializeCountdown();
     }
@@ -148,7 +168,7 @@
 
   // Function to initialize the countdown
   function initializeCountdown() {
-    var endDateLong = "10/31/2025"; // Set the end date for the countdown
+    var endDateLong = "04/27/2025"; // Set the end date for the countdown
     var digitBg = " white";
 
     $("#countdown-clockworks-holder").countdown(endDateLong, function (event) {

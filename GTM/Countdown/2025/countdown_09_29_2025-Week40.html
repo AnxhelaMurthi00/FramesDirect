@@ -13,7 +13,7 @@
 
   // Define the messages for the carousel based on date and device type
   var messages = [];
-  if (
+    if (
     (checkDate >= "250929" && checkDate <= "251007") ||
     (fdFncs.vars.isTest >= "250929" && fdFncs.vars.isTest <= "251007")
   ) {
@@ -31,39 +31,117 @@
         ];
 
   } else
+
+  if (
+        (checkDate >= "251027" && checkDate <= "251031") ||
+        (fdFncs.vars.isTest >= "251027" && fdFncs.vars.isTest <= "251031")
+      ) {
+        messages =
+          $(window).width() <= 768
+            ? [
+              " <b>&nbsp;25% off select frames + up to 60% off lenses</b>",
+              "<b>Use your insurance on new arrivals.&nbsp;",
+              " <b>&nbsp;MEET THE NEW AI GLASSES</b>",
+
+            ]
+            : [
+              "<b>HALLOWEEN DEALS: 25% off select frames + 60% off lenses with frame purchase. </b> ",
+              "<b>Use your insurance on new arrivals.&nbsp; </b>Shop our new collection now.",
+              " <b>MEET THE NEW AI GLASSES:&nbsp;</b>Advanced AI. Enhanced Capture. More Battery. ",
+            ];
+
+
+      } else
+        if (
+        (checkDate >= "251009" && checkDate <= "251026") ||
+        (fdFncs.vars.isTest >= "251009" && fdFncs.vars.isTest <= "251026")
+      ) {
+        messages =
+          $(window).width() <= 768
+            ? [
+              " <b>&nbsp;40% off select frames + 60% off lenses</b>",
+              "<b>Use your insurance on new arrivals.&nbsp;",
+            ]
+            : [
+              "Get your complete Pair: <b>&nbsp;40% off select frames + 60% off lenses. </b>&nbsp;Includes designer brands. ",
+              "<b>Use your insurance on new arrivals.&nbsp; </b>Shop our new collection now.",
+            ];
+
+
+      } else
+  if (
+    (checkDate >= "251007" && checkDate <= "251008") ||
+    (fdFncs.vars.isTest >= "251007" && fdFncs.vars.isTest <= "251008")
+  ) {
+    messages =
+      $(window).width() <= 768
+        ? [
+          "<b>Up to 25% off select frames + 60% off lenses</b>",
+          "<b>Use your insurance on new arrivals.&nbsp;",
+          " <b>&nbsp;MEET THE NEW AI GLASSES</b>",
+          "<b>&nbsp;40% off prescription sun lenses. &nbsp;</b>  Code: SPECIAL40",
+        ]
+        : [
+          "<b>Prime days: up to 25% off select frames + 60% off lenses with frame purchase.&nbsp;</b>Includes designer brands.",
+          "<b>Use your insurance on new arrivals.&nbsp; </b>Shop our new collection now.",
+          " <b>MEET THE NEW AI GLASSES:&nbsp;</b>Advanced AI. Enhanced Capture. More Battery. ",
+          "<b>&nbsp;40% off prescription sun lenses. &nbsp;</b>  Use code SPECIAL40",
+        ];
+
+  } else
     if (
-      (checkDate >= "250915" && checkDate <= "250928") ||
-      (fdFncs.vars.isTest >= "250915" && fdFncs.vars.isTest <= "250928")
+      (checkDate >= "250929" && checkDate <= "251007") ||
+      (fdFncs.vars.isTest >= "250929" && fdFncs.vars.isTest <= "251007")
     ) {
       messages =
         $(window).width() <= 768
           ? [
-            " <b>&nbsp;40% off select frames + 60% off lenses </b>",
+            " <b>&nbsp;Up to 50% off select frames + 60% off lenses </b>",
+            "<b>Use your insurance on new arrivals.&nbsp;",
             "<b>&nbsp;Get a free hat &nbsp;</b> with every Wiley X purchase",
           ]
           : [
-            "Get your complete Pair: <b>&nbsp;40% off select frames + 60% off lenses. </b>&nbsp;Includes designer brands. ",
+            " <b>FAll DEALS: &nbsp;</b>up to <b>&nbsp;50% off select frames + 60% off lenses.</b> Includes designer brands. ",
+            "<b>Use your insurance on new arrivals.&nbsp; </b>Shop our new collection now.",
             "<b>&nbsp;Get a free hat &nbsp;</b> with every Wiley X purchase",
           ];
 
+    } else
+      if (
+        (checkDate >= "250915" && checkDate <= "250928") ||
+        (fdFncs.vars.isTest >= "250915" && fdFncs.vars.isTest <= "250928")
+      ) {
+        messages =
+          $(window).width() <= 768
+            ? [
+              " <b>&nbsp;40% off select frames + 60% off lenses </b>",
+              "<b>&nbsp;Get a free hat &nbsp;</b> with every Wiley X purchase",
+            ]
+            : [
+              "Get your complete Pair: <b>&nbsp;40% off select frames + 60% off lenses. </b>&nbsp;Includes designer brands. ",
+              "<b>&nbsp;Get a free hat &nbsp;</b> with every Wiley X purchase",
+            ];
 
-    } else {
-      messages =
-        $(window).width() <= 768
-          ? [
-            " <b>Up to 50% off select frames + 60% off lenses</b>",
-            " <b>&nbsp;Get a free hat &nbsp;</b> with every Wiley X purchase",
-            "Now pay with insurance, including FSA/HSA benefits ",
 
-          ]
-          : [
-            "Clearance Deals: up to <b>&nbsp;50% off frames + 60% off lenses. &nbsp;</b> Includes designer brands. ",
-            "<b>&nbsp;Get a free hat &nbsp;</b> with every Wiley X purchase",
-            '<svg width="18" height="21" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle; margin-right:4px;"><path d="M5.24316 10.6129L8.33233 13.7025L13.0882 8.94624L11.9098 7.7679L8.33233 11.345L6.4215 9.43457L5.24316 10.6129Z" fill="#D6F3E9"/><path d="M16.9098 4.8512C15.929 4.8512 13.1919 3.40203 9.9365 1.15995C9.36358 0.765368 8.62275 0.765368 8.05025 1.15995C4.79441 3.40203 2.05733 4.8512 1.0765 4.8512H0.243164V5.68453C0.243164 20.06 8.594 20.6645 8.94941 20.6833L8.99316 20.6858L9.03691 20.6833C9.39233 20.6645 17.7432 20.06 17.7432 5.68453V4.8512H16.9098ZM8.99441 19.0154C8.41483 18.9541 2.16191 18.0125 1.91691 6.3937C3.93941 5.87162 7.12108 3.82328 8.99066 2.53287C10.864 3.82328 14.0461 5.87162 16.069 6.39412C15.8277 18.0395 9.64066 18.952 8.99441 19.0154Z" fill="#D6F3E9"/></svg><b class="ml-2">BIG NEWS:</b>&nbsp; Now you can pay with insurance, including FSA/HSA benefits',
+      } else {
+        messages =
+          $(window).width() <= 768
+            ? [
+              " <b>Up to 50% off select frames + 60% off lenses</b>",
+              " <b>&nbsp;Get a free hat &nbsp;</b> with every Wiley X purchase",
+              "Now pay with insurance, including FSA/HSA benefits ",
 
-          ];
+            ]
+            : [
+              "Clearance Deals: up to <b>&nbsp;50% off frames + 60% off lenses. &nbsp;</b> Includes designer brands. ",
+              "<b>&nbsp;Get a free hat &nbsp;</b> with every Wiley X purchase",
+              '<svg width="18" height="21" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle; margin-right:4px;"><path d="M5.24316 10.6129L8.33233 13.7025L13.0882 8.94624L11.9098 7.7679L8.33233 11.345L6.4215 9.43457L5.24316 10.6129Z" fill="#D6F3E9"/><path d="M16.9098 4.8512C15.929 4.8512 13.1919 3.40203 9.9365 1.15995C9.36358 0.765368 8.62275 0.765368 8.05025 1.15995C4.79441 3.40203 2.05733 4.8512 1.0765 4.8512H0.243164V5.68453C0.243164 20.06 8.594 20.6645 8.94941 20.6833L8.99316 20.6858L9.03691 20.6833C9.39233 20.6645 17.7432 20.06 17.7432 5.68453V4.8512H16.9098ZM8.99441 19.0154C8.41483 18.9541 2.16191 18.0125 1.91691 6.3937C3.93941 5.87162 7.12108 3.82328 8.99066 2.53287C10.864 3.82328 14.0461 5.87162 16.069 6.39412C15.8277 18.0395 9.64066 18.952 8.99441 19.0154Z" fill="#D6F3E9"/></svg><b class="ml-2">BIG NEWS:</b>&nbsp; Now you can pay with insurance, including FSA/HSA benefits',
 
-    }
+            ];
+
+      }
+
+
   var currentMessageIndex = 0;
 
   // Function to update the banner message
