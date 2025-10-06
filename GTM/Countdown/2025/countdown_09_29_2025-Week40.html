@@ -25,7 +25,7 @@
           "<b>&nbsp;Get a free hat &nbsp;</b> with every Wiley X purchase",
         ]
         : [
-          " <b>FAll DEALS: &nbsp;</b>up to <b>&nbsp;50% off select frames + 60% off lenses.</b> Includes designer brands. ",
+          " <b>FALL DEALS: &nbsp;</b>up to <b>&nbsp;50% off select frames + 60% off lenses.</b> Includes designer brands. ",
           "<b>Use your insurance on new arrivals.&nbsp; </b>Shop our new collection now.",
           "<b>&nbsp;Get a free hat &nbsp;</b> with every Wiley X purchase",
         ];
@@ -71,7 +71,7 @@
     var countBnrMsg = messages[currentMessageIndex];
 
     // Add countdown only for the specific message
-    if (messages[currentMessageIndex].includes("Sign up")) {
+    if (messages[currentMessageIndex].includes("FALL DEALS")) {
       countBnrMsg +=
         '<div id="countdown" class="d-flex justify-content-end pr-2 size-6 ml-3"><div id="countdown-clockworks-holder" class="d-flex"></div></div>';
     }
@@ -80,9 +80,9 @@
 
     // Initialize the countdown if the specific message is active
     if (
-      (messages[currentMessageIndex].includes("Sign up") &&
-        checkDate === "250426") ||
-      fdFncs.vars.isTest === "250426"
+      (messages[currentMessageIndex].includes("FALL DEALS") &&
+        checkDate === "251006") ||
+      fdFncs.vars.isTest === "251006"
     ) {
       initializeCountdown();
     }
@@ -90,7 +90,7 @@
 
   // Function to initialize the countdown
   function initializeCountdown() {
-    var endDateLong = "04/27/2025"; // Set the end date for the countdown
+    var endDateLong = "10/07/2025"; // Set the end date for the countdown
     var digitBg = " white";
 
     $("#countdown-clockworks-holder").countdown(endDateLong, function (event) {
@@ -103,9 +103,9 @@
           digitBg +
           '"> <div class="digit">' +
           totalHours +
-          '</div> <div class="time-label">hours</div> </div> <div class="colon">:</div></div><div class="dash minutes_dash"> <div class="countdown-digit-wrapper' +
+          '</div> <div class="time-label">hours</div> </div> <div class="colon" style="margin-top:5px;">:</div></div><div class="dash minutes_dash"> <div class="countdown-digit-wrapper' +
           digitBg +
-          '"> <div class="digit">%M</div> <div class="time-label">min</div> </div> <div class="colon">:</div></div><div class="dash seconds_dash"> <div class="countdown-digit-wrapper' +
+          '"> <div class="digit">%M</div> <div class="time-label">min</div> </div> <div class="colon" style="margin-top:5px">:</div></div><div class="dash seconds_dash"> <div class="countdown-digit-wrapper' +
           digitBg +
           '"> <div class="digit">%S</div> <div class="time-label">sec</div> </div></div>'
         )

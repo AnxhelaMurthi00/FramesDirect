@@ -14,119 +14,98 @@
   // Define the messages for the carousel based on date and device type
   var messages = [];
   if (
-    (checkDate >= "250427" && checkDate <= "250428") ||
-    (fdFncs.vars.isTest >= "250427" && fdFncs.vars.isTest <= "250428")
+    (checkDate >= "250929" && checkDate <= "251007") ||
+    (fdFncs.vars.isTest >= "250929" && fdFncs.vars.isTest <= "251007")
   ) {
-    if (getCookie("fdRecognized") !== undefined) {
-      // User is recognized
-      messages =
-        $(window).width() <= 768
-          ? [
-            "<b>30% off frames + 65% off lenses</b>",
-          ]
-          : [
-            "Members Week: Up to <b>&nbsp; 30% off frames + 65% off lenses</b>",
-          ];
-    } else {
-      // User is not recognized
-      messages =
-        $(window).width() <= 768
-          ? [
-            '<a href="javascript:addWelcomeLayer();" id="recSignUp" class="color-white weight-bold mx-1">Sign up</a>&nbsp;or&nbsp;<a href="#" id="recSignIn" class="siteSignIn color-white weight-bold mx-1">sign in</a>&nbsp;now',
-          ]
-          : [
-            '20% off selected luxury brands or sign up to unlock 30% off top brands + 65% off lenses:&nbsp;<a href="javascript:addWelcomeLayer();" id="recSignUp" class="color-white weight-bold mx-1">Sign up</a>&nbsp;or&nbsp;<a href="#" id="recSignIn" class="siteSignIn color-white weight-bold mx-1">sign in</a>&nbsp;now',
-          ];
-    }
+    messages =
+      $(window).width() <= 768
+        ? [
+          " <b>&nbsp;Up to 50% off select frames + 60% off lenses </b>",
+          "<b>Use your insurance on new arrivals.&nbsp;",
+          "<b>&nbsp;Get a free hat &nbsp;</b> with every Wiley X purchase",
+        ]
+        : [
+          " <b>FALL DEALS: &nbsp;</b>up to <b>&nbsp;50% off select frames + 60% off lenses.</b> Includes designer brands. ",
+          "<b>Use your insurance on new arrivals.&nbsp; </b>Shop our new collection now.",
+          "<b>&nbsp;Get a free hat &nbsp;</b> with every Wiley X purchase",
+        ];
+
   } else
     if (
-      (checkDate >= "250417" && checkDate <= "250426") ||
-      (fdFncs.vars.isTest >= "250417" && fdFncs.vars.isTest <= "250426")
-    ) {
-      if (getCookie("fdRecognized") !== undefined) {
-        // User is recognized
-        messages =
-          $(window).width() <= 768
-            ? [
-              "Up to <b>&nbsp; 30% off frames + 65% off lenses</b>",
-            ]
-            : [
-              "Members Week: Up to <b>&nbsp; 30% off frames + 65% off lenses</b>",
-            ];
-      } else {
-        // User is not recognized
-        messages =
-          $(window).width() <= 768
-            ? [
-              '30% lenses:&nbsp;<a href="javascript:addWelcomeLayer();" id="recSignUp" class="color-white weight-bold mx-1">Sign up</a>&nbsp;or&nbsp;<a href="#" id="recSignIn" class="siteSignIn color-white weight-bold mx-1">sign in</a>&nbsp;now',
-            ]
-            : [
-              '20% off selected luxury brands or sign up to unlock 30% off top brands + 65% off lenses:&nbsp;<a href="javascript:addWelcomeLayer();" id="recSignUp" class="color-white weight-bold mx-1">Sign up</a>&nbsp;or&nbsp;<a href="#" id="recSignIn" class="siteSignIn color-white weight-bold mx-1">sign in</a>&nbsp;now',
-            ];
-      }
-    } else if (
-      (checkDate >= "250411" && checkDate <= "250416") ||
-      (fdFncs.vars.isTest >= "250411" && fdFncs.vars.isTest <= "250416")
+      (checkDate >= "250915" && checkDate <= "250928") ||
+      (fdFncs.vars.isTest >= "250915" && fdFncs.vars.isTest <= "250928")
     ) {
       messages =
         $(window).width() <= 768
           ? [
-            "CLEARANCE: Up to 50% off + 65% off lenses  ",
-            "EASTER SAVINGS: Save $50 on frames",
+            " <b>&nbsp;40% off select frames + 60% off lenses </b>",
+            "<b>&nbsp;Get a free hat &nbsp;</b> with every Wiley X purchase",
           ]
           : [
-            "CLEARANCE: Up to 50% off clearance & sale frames. Explore 350+ newly added styles + 65% off lenses ",
-            "EASTER SAVINGS: Save $50 on frames priced $200+",
+            "Get your complete Pair: <b>&nbsp;40% off select frames + 60% off lenses. </b>&nbsp;Includes designer brands. ",
+            "<b>&nbsp;Get a free hat &nbsp;</b> with every Wiley X purchase",
           ];
+
+
     } else {
       messages =
         $(window).width() <= 768
-          ? ["Up to 50% off frames + 65% off lenses"]
-          : [
-            "Up to 50% off selected frames + 65% off lenses",
-          ];
-    }
+          ? [
+            " <b>Up to 50% off select frames + 60% off lenses</b>",
+            " <b>&nbsp;Get a free hat &nbsp;</b> with every Wiley X purchase",
+            "Now pay with insurance, including FSA/HSA benefits ",
 
+          ]
+          : [
+            "Clearance Deals: up to <b>&nbsp;50% off frames + 60% off lenses. &nbsp;</b> Includes designer brands. ",
+            "<b>&nbsp;Get a free hat &nbsp;</b> with every Wiley X purchase",
+            '<svg width="18" height="21" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle; margin-right:4px;"><path d="M5.24316 10.6129L8.33233 13.7025L13.0882 8.94624L11.9098 7.7679L8.33233 11.345L6.4215 9.43457L5.24316 10.6129Z" fill="#D6F3E9"/><path d="M16.9098 4.8512C15.929 4.8512 13.1919 3.40203 9.9365 1.15995C9.36358 0.765368 8.62275 0.765368 8.05025 1.15995C4.79441 3.40203 2.05733 4.8512 1.0765 4.8512H0.243164V5.68453C0.243164 20.06 8.594 20.6645 8.94941 20.6833L8.99316 20.6858L9.03691 20.6833C9.39233 20.6645 17.7432 20.06 17.7432 5.68453V4.8512H16.9098ZM8.99441 19.0154C8.41483 18.9541 2.16191 18.0125 1.91691 6.3937C3.93941 5.87162 7.12108 3.82328 8.99066 2.53287C10.864 3.82328 14.0461 5.87162 16.069 6.39412C15.8277 18.0395 9.64066 18.952 8.99441 19.0154Z" fill="#D6F3E9"/></svg><b class="ml-2">BIG NEWS:</b>&nbsp; Now you can pay with insurance, including FSA/HSA benefits',
+
+          ];
+
+    }
   var currentMessageIndex = 0;
 
+  // Function to update the banner message
   function updateBannerMessage() {
     var countBnrMsg = messages[currentMessageIndex];
-    if (
-      messages[currentMessageIndex].includes("Sign up") ||
-      messages[currentMessageIndex].includes("30%")
-    ) {
+
+    // Add countdown only for the specific message
+    if (messages[currentMessageIndex].includes("FALL DEALS")) {
       countBnrMsg +=
-        '<div id="countdown" class="d-flex justify-content-center align-items-center pr-2 size-6 ml-3"><div id="countdown-clockworks-holder" class="d-flex"></div></div>';
+        '<div id="countdown" class="d-flex justify-content-end pr-2 size-6 ml-3"><div id="countdown-clockworks-holder" class="d-flex"></div></div>';
     }
 
     $("#count-bnr-inner").html(countBnrMsg);
 
+    // Initialize the countdown if the specific message is active
     if (
-      (messages[currentMessageIndex].includes("Sign up") ||
-        messages[currentMessageIndex].includes("30%") &&
-        checkDate === "250427") ||
-      fdFncs.vars.isTest === "250427"
+      (messages[currentMessageIndex].includes("FALL DEALS") &&
+        checkDate === "251006") ||
+      fdFncs.vars.isTest === "251006"
     ) {
       initializeCountdown();
     }
   }
 
+  // Function to initialize the countdown
   function initializeCountdown() {
-    var endDateLong = "04/28/2025";
+    var endDateLong = "10/07/2025"; // Set the end date for the countdown
     var digitBg = " white";
 
     $("#countdown-clockworks-holder").countdown(endDateLong, function (event) {
       var $this = $(this),
         totalHours = event.offset.totalDays * 24 + event.offset.hours;
+      //This is for Hours only
       $this.html(
         event.strftime(
           '<div class="dash hours_dash"> <div class="countdown-digit-wrapper' +
           digitBg +
           '"> <div class="digit">' +
           totalHours +
-          '</div> <div class="time-label">hours</div> </div> <div class="colon">:</div></div><div class="dash minutes_dash"> <div class="countdown-digit-wrapper' +
+          '</div> <div class="time-label">hours</div> </div> <div class="colon" style="margin-top:5px;">:</div></div><div class="dash minutes_dash"> <div class="countdown-digit-wrapper' +
           digitBg +
-          '"> <div class="digit">%M</div> <div class="time-label">min</div> </div> <div class="colon">:</div></div><div class="dash seconds_dash"> <div class="countdown-digit-wrapper' +
+          '"> <div class="digit">%M</div> <div class="time-label">min</div> </div> <div class="colon" style="margin-top:5px">:</div></div><div class="dash seconds_dash"> <div class="countdown-digit-wrapper' +
           digitBg +
           '"> <div class="digit">%S</div> <div class="time-label">sec</div> </div></div>'
         )
@@ -134,26 +113,39 @@
     });
   }
 
+  // Function to handle the carousel navigation
   function navigateCarousel() {
     currentMessageIndex = (currentMessageIndex + 1) % messages.length;
     updateBannerMessage();
   }
 
+  // Automatically cycle through messages every 3 seconds
   setInterval(navigateCarousel, 4000);
 
   fdFncs.countBnr = function () {
     var endDateLong = "01/01/1900",
+      winURL = window.location.href.toLowerCase(),
+      showCountdown = false,
+      isRecognized = getCookie("fdRecognized") !== undefined ? true : false,
+      loggedIn = "",
+      countHTML = "",
+      countBnrMsg = "",
+      bgColor = "",
+      digitBg = "",
       showBanner =
-        window.location.href.indexOf("shopping") === -1 &&
-        window.location.href.indexOf("password_email.aspx") === -1 &&
-        window.location.href.indexOf("login.aspx") === -1 &&
-        window.location.href.indexOf("checkout.aspx") === -1 &&
-        window.location.href.indexOf("lens_selection") === -1 &&
-        window.location.href.indexOf("eyewear-lens-selector") === -1;
+        window.location.href.indexOf("shopping") === -1 && //Shopping
+        window.location.href.indexOf("password_email.aspx") === -1 && //Password
+        window.location.href.indexOf("login.aspx") === -1 && //Login
+        window.location.href.indexOf("checkout.aspx") === -1 && //Checkout
+        window.location.href.indexOf("lens_selection") === -1 && //Lens Configurator
+        window.location.href.indexOf("eyewear-lens-selector") === -1; //Lens Configurator
 
-    var countBnr = (function () {
+    // Create the carousel HTML structure without carousel-message div
+    countBnr = (function () {
       return (
-        '<div id="count-bnr-inner" style="height: 37px; color:white;" class="background-black black d-flex justify-content-center align-items-center">' +
+        '<div id="count-bnr-inner" class="d-flex justify-content-center align-items-center ' +
+        bgColor +
+        '">' +
         messages[currentMessageIndex] +
         "</div>"
       );
@@ -163,28 +155,13 @@
       (showBanner && checkDate >= "250224" && checkDate <= "251231") ||
       (fdFncs.vars.isTest >= "250224" && fdFncs.vars.isTest <= "251231")
     ) {
-      var css =
-        "#header-top { padding-top: 37px; }" +
-        ".scrollingHeader #header, .scrollingHeader #header-in { height: 133px; }" +
-        ".scrollingHeader #header-in.hide { transform : translateY(-133px); }" +
-        ".colon { display: flex; align-items: center; justify-content: center; margin-top:10px; font-size: 30px; line-height: 1; padding: 0 5px; }";
-
-      var head = document.head || document.getElementsByTagName("head")[0];
-      var style = document.createElement("style");
-      style.type = "text/css";
-      style.appendChild(document.createTextNode(css));
-      head.appendChild(style);
-
       $("#count-bnr-inner").remove();
-      if ($("#countdown").length === 0 && $(window).width() > 1300) {
-        $(countBnr).insertBefore("#header");
-        $("#header-top").css("padding-top", 0);
+      if ($(window).width() > 1300) {
         $("body").addClass("changeSticky");
-      } else {
-        $(countBnr).prependTo("#header-in");
-        $("#header-top").css("padding-top", 0);
       }
-
+      if ($("#countdown").length === 0) {
+        $(countBnr).prependTo("#count-bnr");
+      }
       $("#count-bnr-inner").on("click", function () {
         var $this = $(this);
         if ($this.find("a").length === 1) {
@@ -192,25 +169,30 @@
           window.location.href = linkLoc;
         }
       });
-
       if (endDateLong === "01/01/1900") {
         $("#count-bnr-inner > div:first-child")
           .removeClass("col-lg-6 justify-content-lg-start m-0")
           .addClass("m-auto");
       }
     }
-
     if ($("#countdown").length > 0) {
       $("#countdown-clockworks-holder").countdown(
         endDateLong,
         function (event) {
           var $this = $(this),
             totalHours = event.offset.totalDays * 24 + event.offset.hours;
+          //This is for Hours only
           $this.html(
             event.strftime(
-              '<div class="dash hours_dash"> <div class="countdown-digit-wrapper white"> <div class="digit">' +
+              '<div class="dash hours_dash"> <div class="countdown-digit-wrapper' +
+              digitBg +
+              '"> <div class="digit">' +
               totalHours +
-              '</div> <div class="time-label">hours</div> </div> <div class="colon">:</div></div><div class="dash minutes_dash"> <div class="countdown-digit-wrapper white"> <div class="digit">%M</div> <div class="time-label">min</div> </div> <div class="colon">:</div></div><div class="dash seconds_dash"> <div class="countdown-digit-wrapper white"> <div class="digit">%S</div> <div class="time-label">sec</div> </div></div>'
+              '</div> <div class="time-label">hours</div> </div> <div class="colon">:</div></div><div class="dash minutes_dash"> <div class="countdown-digit-wrapper' +
+              digitBg +
+              '"> <div class="digit">%M</div> <div class="time-label">min</div> </div> <div class="colon">:</div></div><div class="dash seconds_dash"> <div class="countdown-digit-wrapper' +
+              digitBg +
+              '"> <div class="digit">%S</div> <div class="time-label">sec</div> </div></div>'
             )
           );
         }
@@ -218,5 +200,6 @@
     }
   };
 
+  // Initialize the banner
   fdFncs.countBnr();
 </script>
