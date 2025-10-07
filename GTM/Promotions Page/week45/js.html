@@ -78,7 +78,12 @@
                 overlayCtaHTML = `
             <div id="idme-btn" class="login-trigger id-me-verify w-100 btn ${specialButtonClass}" onclick="location.href='${promo.ctaLink}'">${promo.ctaText}</div>`;
                 // --- END OF MODIFICATION ---
-            } else {
+            } else if( promo.SignUp){
+                ctaHTML = `
+            <div href="#" id="btn-sign-up" class="emailSignUp btn btn-shop-now" data-element-id="content11" data-description="SIGN UP
+                                            NOW"}" onclick="location.href='${promo.ctaLink}'">${promo.ctaText}</div>`;
+
+            }else {
                 ctaHTML = `<button type="button" class="btn ${specialButtonClass}" onclick="location.href='${promo.ctaLink}'">${promo.ctaText || 'Shop Now'}</button>`;
                 overlayCtaHTML = ctaHTML;
             }
