@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Promo Offers with Signup Popup</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body {
+                background-color: #f8f9fa;
+                padding: 40px;
+                font-family: Arial, sans-serif;
+            }
+
+            .promo-card {
+                position: relative;
+                overflow: hidden;
+                border-radius: 16px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s;
+                cursor: pointer;
+            }
+
+            .promo-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .promo-badge {
+                position: absolute;
+                top: 12px;
+                left: 12px;
+                background: #fff;
+                padding: 5px 12px;
+                border-radius: 12px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                color: #222;
+            }
+
+            .promo-details {
+                padding: 16px;
+            }
+
+            .promo-details h5 {
+                font-weight: 600;
+                font-size: 1.1rem;
+            }
+
+            .promo-details p {
+                font-size: 0.9rem;
+                color: #555;
+            }
+
+            .promo-details a {
+                text-decoration: none;
+                color: #fff;
+                background: #007bff;
+                padding: 6px 12px;
+                border-radius: 6px;
+                font-size: 0.85rem;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <h2 class="mb-4 text-center">Promo Offers</h2>
+        <div class="container">
+            <div id="promoGrid" class="row g-4"></div>
+        </div>
+
+        <!-- Signup Modal -->
+        <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content p-4">
+                    <h5 id="signupModalLabel" class="mb-3 text-center">Sign Up for Exclusive Offers</h5>
+                    <form>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" id="email" class="form-control" placeholder="you@example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Your name" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // Example promo data
+            const promoData = [
+                {
+                    title: "Exclusive Member Offer",
+                    description: "Join now and unlock members-only discounts!",
+                    image: "https://via.placeholder.com/400x250/87CEFA/fff?text=Join+Now",
+                    link: "#"
+                },
+                {
+                    title: "Summer Sale 30% Off",
+                    description: "Grab your summer favorites at discounted prices.",
+                    image: "https://via.placeholder.com/400x250/ffa07a/fff?text=Summer+Sale",
+                    link: "https://example.com/summer-sale"
+                },
+                {
+                    title: "New Arrivals",
+                    description: "Check out the latest trends for the season.",
+                    image: "https://via.placeholder.com/400x250/20b2aa/fff?text=New+Arrivals",
+                    link: "https://example.com/new-arrivals"
+                }
+            ];
+
+            const grid = document.getElementById("promoGrid");
+
+            promoData.forEach((promo, index) => {
+                const col = document.createElement("div");
+                col.className = "col-md-4";
+
+                const card = document.createElement("div");
+                card.className = "promo-card";
+
+                card.innerHTML = `
+        <img src="${promo.image}" class="w-100" alt="${promo.title}">
+        <div class="promo-badge">${index === 0 ? 'Sign Up' : 'Promo'}</div>
+        <div class="promo-details">
+          <h5>${promo.title}</h5>
+          <p>${promo.description}</p>
+          <a href="${promo.link}" ${index === 0 ? 'class="disabled-link"' : ''}>Learn More</a>
+        </div>
+      `;
+
+                if (index === 0) {
+                    // Instead of link, open the signup modal
+                    card.addEventListener("click", () => {
+                        const signupModal = new bootstrap.Modal(document.getElementById('signupModal'));
+                        signupModal.show();
+                    });
+                } else {
+                    // Normal link behavior for other cards
+                    card.addEventListener("click", () => {
+                        window.open(promo.link, "_blank");
+                    });
+                }
+
+                col.appendChild(card);
+                grid.appendChild(col);
+            });
+        </script>
+    </body>
+
+</html>

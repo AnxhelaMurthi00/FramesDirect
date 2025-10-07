@@ -31,10 +31,8 @@
       if (
         $('h1:contains("Costa")').length > 0 ||
         $('h1:contains("Oakley")').length > 0 ||
-        $('h1:contains("Maui Jim")').length > 0 ||
-        $('h1:contains("Prescription")').length > 0 ||
-        $('h1:contains("Sunglasses")').length > 0);
-      {
+        $('h1:contains("Maui Jim")').length > 0
+      ) {
         $('<div class="lens-bar-holder mx-0 mb-3 mt-4"><div class="lens-bar d-block color-black px-2 size-12 text-left" style="background:#AAB9C0; border-radius: 5px;"><b>40% off sun lenses</b> by Oakley, Costa & Maui Jim with code <b>SPECIAL40</b> </div></div>')
           .prependTo("#prod-header-right");
       }
