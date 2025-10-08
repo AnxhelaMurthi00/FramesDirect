@@ -60,35 +60,56 @@ body{
 } */
 
 /* --- Hero Section --- */
-.hero-section {
-    position: relative; /* This is crucial for positioning the image */
-    overflow: hidden;   /* Ensures the image doesn't spill out */
-
-    /* REMOVE the old background properties from here */
-    /* background: url(...); */
-    /* background-repeat: no-repeat; */
-    /* background-position: top center; */
-
-    /* Your existing height, min-height, and color rules stay the same */
+/* .hero-section {
+    position: relative; 
     height: 100vh; 
     min-height: 810px;
     color: white;
-}
+} */
 
 /* ADD THIS NEW RULE FOR THE IMAGE */
-.hero-background-image {
+/* .hero-background-image {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-
-    /* This makes the image cover the area without distortion */
     object-fit: cover; 
-    
-    /* THIS IS THE FIX FOR YOUR RESIZING PROBLEM! */
-    /* Adjust this percentage to keep your focal point in view. */
     object-position: top center; 
+} */
+
+/* ============================================= */
+/* === NEW HERO SECTION STYLES === */
+/* ============================================= */
+
+/* 1. The main section is now just a positioning container for the text overlay. */
+/* Its height will be determined by the image inside it. */
+.hero-section {
+    position: relative;
+}
+
+/* 2. The image is now a normal, responsive element in the document flow. */
+/* We remove all the positioning rules from it. */
+.hero-background-image {
+    width: 100%;
+    height: auto;
+    display: block; /* This removes any extra space below the image */
+}
+
+/* 3. The container for your text content is now an absolutely positioned overlay. */
+/* This places it on top of the image. */
+.hero-section > .h-100 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* We also need to make sure the text content is visible (white) */
+.hero-content h1,
+.hero-content p {
+    color: #fff;
 }
 
 .hero-content h1 {
@@ -126,15 +147,15 @@ body{
 /* --- Responsive Adjustments for Mobile --- */
 @media (max-width: 768px) {
     
+    
     /* START: Updated Hero Section Rules */
-    .hero-section {
-        /* Use the mobile-specific background image */
+    /* .hero-section {
         background: url('https://images.framesdirect.com/image/upload/v1759398483/Gift-guide/GIFT_GUIDE_HEADER_MOBILE.jpg') no-repeat center center;
         background-size: cover;
-        height: auto; /* Let content define the height */
-        min-height: 600px; /* Adjust as needed */
-        color: #000; /* Change text color to black */
-    }
+        height: auto; 
+        min-height: 600px;
+        color: #000; 
+    } */
 
     /* Position the content at the top */
     .hero-section .row {
@@ -170,6 +191,7 @@ body{
         line-height: 20px;
         letter-spacing: 0.07px;
         margin-top: 4px;
+        color: #000 !important;
     }
     /* END: Updated Hero Section Rules */
 
@@ -202,6 +224,7 @@ body{
         margin-top: 0;
         font-size: 24px;
     }
+    
 }
 /* --- NEW: Bestsellers Section --- */
 .bestsellers-section, .budget-section, .vibe-section, .special-collections-section, .sustainable-frames-section, .lenses-section, .special-details-section  {
@@ -254,6 +277,7 @@ p.text-muted{
     font-weight: 700 !important;
     line-height: 150%; /* 36px */
     margin-top: 0 !important;
+    margin-bottom: 8px !important;
 }
 .category-card .btn-dark{
     background-color: #333 !important;
@@ -295,6 +319,7 @@ p.text-muted{
     border-radius: 16px; /* Large rounded corners */
     min-height: 360px;
     color: white;
+    padding: 120px 75px;
 }
 
 .ai-banner {
@@ -322,8 +347,8 @@ p.text-muted{
 .ai-banner-section .promo-content h2 {
     color: var(--Base-Text-Light, #FFF) !important;
     /* Heading 3/Desktop */
-    font-family: "Open Sans";
-    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px !important;
     font-style: normal;
     line-height: 150%; /* 24px */
     margin-bottom: 0 !important;
@@ -342,7 +367,7 @@ p.text-muted{
 .delivery-banner-section .promo-content h2, .offers-banner-section .promo-content h2{
     color: var(--Base-Black, #000) !important;
     font-family: "Open Sans", sans-serif;
-    font-size: 16px;
+    font-size: 16px !important;
     font-style: normal;
     font-weight: 700;
     line-height: 150%; /* 36px */
@@ -377,7 +402,8 @@ p.text-muted{
 @media (max-width: 991.98px) {
     /* Add space between cards when they stack on tablet/mobile */
     .category-card {
-        margin-bottom: 3rem;
+        padding-bottom: 3rem;
+        margin-bottom: 24px;
     }
     
     /* Remove bottom margin from the very last card to avoid extra space */
@@ -457,7 +483,6 @@ p.text-muted{
         /* If you already have overflow:hidden here, just add the padding */
         position: relative;
         overflow: hidden;
-        padding-bottom: 40px; 
     }
 
     /* Position the pagination bar at the very bottom of the carousel container */
@@ -489,7 +514,7 @@ p.text-muted{
     .ai-banner-section,
     .delivery-banner-section,
     .offers-banner-section{
-        padding-bottom: 10px;
+        padding-bottom: 16px;
     }
     /* 1. Make the container full-width on mobile to remove side spacing */
     .ai-banner-section .container,
@@ -512,14 +537,14 @@ p.text-muted{
     /* 3. Change vertical alignment from center to top */
     .ai-banner.d-flex, .delivery-banner.d-flex, .offers-banner.d-flex {
         align-items: flex-start !important;
+        padding: 90px 30px 0 30px;
+;
     }
 
     /* 4. Fix the text content area */
     .promo-content {
         max-width: 100%;      /* Allow content to use the full width */
         text-align: center;   /* Center the text and button */
-        margin: 50px auto 0 auto;       /* Ensure the content block itself is centered */
-        padding-top: 3rem !important; /* Add some space from the top */
     }
 }
 
