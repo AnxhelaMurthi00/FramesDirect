@@ -151,11 +151,8 @@
             "startDate": "2025-06-01",
             "endDate": ""
         },
-<<<<<<< HEAD
-        {
-=======
 
-           {
+        {
             "id": "earlyHolidayPromo",
             "imageSrc": "https://images.framesdirect.com/image/upload/v1759740140/Offers%20Page/sign_up.png",
             "imageAlt": "Email Sign up",
@@ -171,15 +168,14 @@
             "endDate": "",
             "SignUp": true
         },
-                {
->>>>>>> 5c93ff78ed21d986fb2c3602312e5caa98389ee7
+        {
             "imageSrc": "https://images.framesdirect.com/image/upload/v1759506527/Offers%20Page/OfferPage_REFERAFRIEND.png",
             "imageAlt": "Refer A Friend",
             "badgeDesktop": "Refer A Friend",
             "badgeMobile": "Refer A Friend",
             "title": "Treat a friend to 20% off and get 20% off for yourself.",
             "details": "Your promo code will arrive straight to your inbox. ",
-            "overlayDetails": "Get 15% off the purchase price of a Gucci Eyeglasses, Sunglasses, and Prescription Sunglasses. Frame purchase required. Offer may not be used on eyeglasses without lenses and is valid for Gucci purchases only. Promo code valid before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee or insurance benefits. Offer may change at any time.",
+            "overlayDetails": "<p>Terms and Conditions of the program are available <strong><a href=\"https://framesdirect.mention-me.com/me/terms/160149/yddpzpof\">here</a></strong></p>",
             "detailsLink": "#",
             "ctaText": "Shop Now",
             "ctaLink": "https://www.framesdirect.com/gucci/brand",
@@ -216,17 +212,17 @@
             "isSpecial": true
         },
     ];
-        const loggedInPromoData = {
-        imageSrc: "https://images.framesdirect.com/image/upload/v1753947618/Offers%20Page/9.jpg",
-        imageAlt: "testtt",
-        badgeDesktop: "testtt",
-        badgeMobile: "testtt",
-        title: "testtt",
-        details: "testtt",
-        overlayDetails: "",
+    const loggedInPromoData = {
+        imageSrc: "https://images.framesdirect.com/image/upload/v1759740140/Offers%20Page/sign_up.png",
+        imageAlt: "Email Sign up",
+        badgeDesktop: "Email Sign up",
+        badgeMobile: "Email Sign up",
+        title: "20% off frames + 60% off lenses",
+        details: "Your personal promo code will be sent to you via email after you join the program.",
+        overlayDetails: "Get 20% discount off the purchase of full-priced Eyeglasses, Sunglasses and Prescription Sunglass frames from Ray-Ban, Oakley, Costa, Armani Exchange, Arnette, Brooks Brothers, Burberry, Coach, Dolce & Gabbana, Dolce & Gabbana Kids, Emporio Armani, Emporio Armani Kids, Giorgio Armani, Jimmy Choo, Polo, Polo Kids, Ralph Lauren, RALPH, Scuderia Ferrari, Sferoflex, Swarovski, Tory Burch, Versace, Versace Kids, Vogue, Vogue Junior. Offers do not apply to products that have already been discounted. Frame purchase required. Offers may not be used on Oakley Goggles, Oakley Replacement Lenses, Ray-Ban Meta. Other exclusions may apply. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee or vision insurance benefits. Free Shipping on domestic orders only. Offer may end at any time.Get a 60% discount on the price of lenses and add-ons with the purchase of an Eyeglass frame or a pair of Prescription Sunglasses. Frame purchase required. Offer may not be used on contact lenses or Gunnar, Maui Jim, Rec Specs Liberty Sport, Ray-Ban Meta, or VirtuClear products. Costa, Kaenon, Randolph Engineering, Oakley, and Zeal prescription sunglasses are also excluded. Promo valid before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with other offers, price match guarantees and vision insurance benefits. Offer can end anytime",
         detailsLink: "#",
         ctaText: "SHOP NOW",
-        ctaLink: "javascript:;",
+        ctaLink: "/eyeglasses",
         startDate: "2025-06-01",
         endDate: "",
         SignUp: true
@@ -235,36 +231,38 @@
 
     document.addEventListener('DOMContentLoaded', () => {
 
-    const offersRow = document.getElementById('featured-offers-row');
+        const offersRow = document.getElementById('featured-offers-row');
+
+        // New promo data for logged-in users
 
 
-    // Function to get a cookie
-    function getCookie(name) {
-        const nameEQ = name + "=";
-        const ca = document.cookie.split(';');
-        for (let i = 0; i < ca.length; i++) {
-            let c = ca[i];
-            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+        // Function to get a cookie
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
         }
-        return null;
-    }
 
-    // Function to update a specific promo card by ID
-    function updatePromoCardIfLoggedIn(promoArray, promoId, newData) {
-        if (getCookie('fdRecognized') !== undefined && getCookie('fdRecognized') !== null) {
-            const index = promoArray.findIndex(p => p.id === promoId);
-            if (index !== -1) {
-                promoArray[index] = { ...promoArray[index], ...newData, id: promoId };
+        // Function to update a specific promo card by ID
+        function updatePromoCardIfLoggedIn(promoArray, promoId, newData) {
+            if (getCookie('fdRecognized') !== undefined && getCookie('fdRecognized') !== null) {
+                const index = promoArray.findIndex(p => p.id === promoId);
+                if (index !== -1) {
+                    promoArray[index] = { ...promoArray[index], ...newData, id: promoId };
+                }
             }
         }
-    }
 
-    // Update the promo if user is logged in
-    updatePromoCardIfLoggedIn(promoData, "earlyHolidayPromo", loggedInPromoData);
+        // Update the promo if user is logged in
+        updatePromoCardIfLoggedIn(promoData, "earlyHolidayPromo", loggedInPromoData);
 
 
-});
+    });
 
 </script>
 
@@ -292,7 +290,7 @@
             <div class="row" id="featured-offers-row"></div>
         </div>
     </section>
-
+    <!-- 
     <section class="other-offers-section">
         <div class="container-1440">
             <h2 class="mb-4">Special Offers</h2>
@@ -422,13 +420,13 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 </main>
 <footer class="additional-services text-white py-5">
     <div class="container-1440">
         <h2 class="text-center mb-4">Other offers our <br class="mobileOnly"> customers love</h2>
         <div class="row">
-            <div class="col-md-6 mb-4 d-flex align-items-stretch">
+            <div class="col-md-4 mb-4 d-flex align-items-stretch">
                 <div class="card service-card h-100 w-100">
                     <div class="card-body text-dark d-flex flex-column">
                         <div>
@@ -454,7 +452,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 mb-4 d-flex align-items-stretch">
+            <div class="col-md-4 mb-4 d-flex align-items-stretch">
                 <div class="card service-card h-100 w-100">
                     <div class="card-body text-dark d-flex flex-column">
                         <div>
@@ -476,6 +474,34 @@
                         <div class="mt-auto">
                             <a href="https://www.framesdirect.com/include/information/shipping_options.aspx"
                                 class="d-block small footer-shop-now-link">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 d-flex align-items-stretch">
+                <div class="card service-card h-100 w-100">
+                    <div class="card-body text-dark d-flex flex-column">
+                        <div>
+                            <div class="d-flex d-md-block align-items-center mb-3">
+                                <svg width="49" height="49" viewBox="0 0 49 49" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M46.4287 0.5H28.5437C27.9917 0.5 27.4617 0.72 27.0707 1.111L1.12171 27.113C0.308713 27.928 0.308713 29.25 1.12171 30.065L18.9077 47.888C19.3147 48.296 19.8477 48.5 20.3807 48.5C20.9117 48.5 21.4417 48.298 21.8477 47.894L47.8947 21.986C48.2897 21.595 48.5117 21.061 48.5117 20.505V2.587C48.5117 1.435 47.5787 0.5 46.4287 0.5ZM46.5117 20.505C46.5117 20.529 46.5027 20.552 46.4857 20.569L20.4387 46.476C20.4307 46.484 20.4137 46.5 20.3807 46.5C20.3477 46.5 20.3317 46.484 20.3237 46.476L2.53771 28.653C2.50371 28.619 2.50371 28.561 2.53771 28.526L28.4857 2.524C28.5017 2.509 28.5217 2.5 28.5437 2.5H46.4287C46.4747 2.5 46.5117 2.539 46.5117 2.587V20.505Z"
+                                        fill="#6B777B" />
+                                    <path
+                                        d="M38.5117 6.5C36.3057 6.5 34.5117 8.294 34.5117 10.5C34.5117 12.706 36.3057 14.5 38.5117 14.5C40.7177 14.5 42.5117 12.706 42.5117 10.5C42.5117 8.294 40.7177 6.5 38.5117 6.5ZM38.5117 12.5C37.4087 12.5 36.5117 11.603 36.5117 10.5C36.5117 9.397 37.4087 8.5 38.5117 8.5C39.6147 8.5 40.5117 9.397 40.5117 10.5C40.5117 11.603 39.6147 12.5 38.5117 12.5Z"
+                                        fill="#6B777B" />
+                                </svg>
+
+                                <h3 class="card-title h5 mb-0 ml-2 ml-md-0">Black Friday & Cyber Monday</h3>
+                            </div>
+                            <p class="card-text small">Looking for an occasion to celebrate?</p>
+                        </div>
+                        <div class="mt-auto">
+                            <a href="/email/black-friday-dp" class="d-block small footer-shop-now-link">Discover Black
+                                Friday</a>
+                            <a href="/email/cyber-monday-dp" class="d-block small footer-shop-now-link">Discover Cyber
+                                Monday</a>
                         </div>
                     </div>
                 </div>
