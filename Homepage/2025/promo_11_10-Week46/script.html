@@ -1,13 +1,140 @@
 <script>
   const updateHeroBanner = () => {
-     if (
-              (checkDate >= "251109" && checkDate <= "251117") ||
-              (fdFncs.vars.isTest >= "251109" && fdFncs.vars.isTest <= "251117")
-            ) {
-              //hero slider promotion
-              $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-              $("#hero-slider").append(
-                `
+    if (
+      (checkDate >= "251109" && checkDate <= "251117") ||
+      (fdFncs.vars.isTest >= "251109" && fdFncs.vars.isTest <= "251117")
+    ) {
+      //hero slider promotion
+      $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+      $("#hero-slider").append(
+        `
+        <li>
+          <style>
+    @media (max-width: 1200px) {
+        #secondHeroImg {
+            background-image: url('https://images.framesdirect.com/image/upload/v1759502525/homePage/HPW45_GIFTGUIDE_M.png') !important;
+
+        }
+
+    }
+</style>
+<div class="ct_space">
+    <div class="ct_banner ct_hero">
+        <a href="/collections/holiday-gift-guide" aria-label="sale">
+            <div class="ct_assets__container">
+                <picture class="ct_skeleton">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAH0lEQVR4AXzDAQkAAAwCsGP/CI9iCRNpAh0M4rvFDQEAAP//deMs0wAAAAZJREFUAwDAthYdfmLexAAAAABJRU5ErkJggg=="
+                        alt="structure image">
+                </picture>
+                <picture class="ct_img">
+                    <img src="https://images.framesdirect.com/image/upload/v1759502527/homePage/HP_w45_GIFTGUIDE_D.png" "="" fetchpriority="
+                        high" alt="Gift Guide" width="3840"
+                        height="1108">
+                </picture>
+                
+            </div>
+        </a>
+        <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pb__mob__30 pb-4" id="secondHeroImg"
+            style="background: #F0ECE1; width: 45%"><a href="/collections/holiday-gift-guide" aria-label="sale">
+                <div class="ct_text__black ct_font__36  ct_lh__sm ct_mt__mob__20 weight-bold">
+                    Reframe<br class="ct_desk__hide"> your Gifting
+                </div>
+                <div class="ct_font__18 pt-3 "><b>Be your own Secret Santa, and<br class="ct_desk__hide"> score <br class="ct_mob__hide">
+                        major savings on frames<br class="ct_desk__hide"> &amp; lenses. </b></div>
+
+                <div class="ct_font__mob_18 ct_font__18 ct_m__20 ct_font__desk__18 mt-3">
+                    From AI Glasses to prescription lenses and iconic styles<br class="ct_mob__hide"> find the perfect pair for you or someone
+                    you love.</div>
+
+            </a>
+            <div class="text-center ml-2 d-flex flex-column flex-lg-row ct_mb__mob__30 mb-4"><a
+                    href="/collections/holiday-gift-guide" aria-label="sale">
+                </a><a href="/collections/holiday-gift-guide" class="btn-cta nowrap mt-2"
+                    style="background:#AB2317; color: #fff !important; border: 0" data-element-id="1Hero_Banner2_CTA"
+                    data-description="shopTheDeal">SHOP NOW</a>
+            </div>
+        </div>
+    </div>
+</div>
+   </li>` )
+      $("#hero-slider").append(
+        `
+     <li>
+<style>
+    @media (min-width: 1200px) and  (max-width: 1400px){
+           #thirdHero{
+        width: 44% !important;
+        left: 4%;
+    }
+    .hide{
+        display: none;
+    }
+    }
+        @media (min-width: 1440px){
+    #thirdHero{
+        width: 36%;
+        left: 2%;
+    }}
+    .insurnace_brands {
+        width: 424px;
+        height: 42px;
+    }
+</style>
+<div class="ct_space">
+    <div class="ct_banner ct_hero">
+            <div class="ct_assets__container">
+                <picture class="ct_skeleton">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjnLtxx38GHIARnyQA9v4GDXdfGIkAAAAASUVORK5CYII="
+                        alt="structure image">
+                </picture>
+                <picture class="ct_img">
+                    <img src="https://images.framesdirect.com/image/upload/v1758546735/homePage/HP_INSURANCE_D_40.png" "="" fetchpriority="
+                        high" alt="The Man is wearing Maui Jim Hookipa 907 Prescription Sunglasses" width="3840"
+                        height="1108" usemap="#image-map5">
+                </picture>
+            </div>
+        <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pb__mob__30 pb-5"  id="thirdHero"
+            style="background: #D6F3E9; width: 42%"><a href="/email/auth-lenses-dp" aria-label="sale">
+                <div class="ct_text__black ct_font__36  ct_lh__sm ct_mt__mob__20 weight-bold ct_font__mob_28">
+                   Last Chance To Apply <br class="ct_desk__hide"> Your <br class="ct_mob__hide">
+ Insurance Benefits
+                </div>
+                <div class="ct_font__18 pt-3 "><b>Hurry! Sync your insurance</b><br class="ct_desk__hide"> including FSA/HSA before they <br class="ct_mob__hide">expire<br class="ct_desk__hide"> and<b>  unlock a special promo code<br class="ct_desk__hide"> just for you.</b> </div>
+                <div class="logos ct_mob__hide d-flex justify-content-around align-items-center w-100 pt-2 ">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/EYEMED_logo-color.png">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/aetna-logo.png">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502287/logos/humana-logo.png">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502287/logos/cigna-logo.png">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/many-more-logo.png">
+                </div>
+                <div class="logos ct_desk__hide d-flex justify-content-between align-items-center w-100 pl-3 pr-3 mt-3" style="gap:7px;">
+                      <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/EYEMED_logo-color.png">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/aetna-logo.png">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502287/logos/humana-logo.png">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/many-more-logo.png">
+                </div>
+            </a>
+            <div class="text-center ml-2 d-flex flex-column flex-lg-row ct_mb__mob__30 pb-2" >
+                <a href="/knowledge-center/vision-insurance-fsa-eligibility" class="btn-cta nowrap mt-4"
+                    style="background:  #000; color: #fff !important; border: 0">LEARN MORE
+                </a>
+                <a href="/email/vision-insurance-dp" class="btn-cta nowrap mt-2 mt-lg-4 ml-lg-5"
+                    style="background:#AB2317; color: #fff !important; border: 0">Sync Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+   </li>`
+      );
+    } else
+      if (
+        (checkDate >= "251103" && checkDate <= "251109") ||
+        (fdFncs.vars.isTest >= "251103" && fdFncs.vars.isTest <= "251109")
+      ) {
+        //hero slider promotion
+        $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+        $("#hero-slider").append(
+          `
         <li>
           <style>
     @media (max-width: 1200px) {
@@ -57,8 +184,8 @@
     </div>
 </div>
    </li>` )
-              $("#hero-slider").append(
-                `
+        $("#hero-slider").append(
+          `
      <li>
 <style>
     @media (min-width: 1200px) and  (max-width: 1400px){
@@ -125,145 +252,18 @@
     </div>
 </div>
    </li>`
-              );
-            } else
-     if (
-              (checkDate >= "251103" && checkDate <= "251109") ||
-              (fdFncs.vars.isTest >= "251103" && fdFncs.vars.isTest <= "251109")
-            ) {
-              //hero slider promotion
-              $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-              $("#hero-slider").append(
-                `
-        <li>
-          <style>
-    @media (max-width: 1200px) {
-        #secondHeroImg {
-            background-image: url('https://images.framesdirect.com/image/upload/v1759502525/homePage/HPW45_GIFTGUIDE_M.png') !important;
-
-        }
-
-    }
-</style>
-<div class="ct_space">
-    <div class="ct_banner ct_hero">
-        <a href="/collections/holiday-gift-guide" aria-label="sale">
-            <div class="ct_assets__container">
-                <picture class="ct_skeleton">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAH0lEQVR4AXzDAQkAAAwCsGP/CI9iCRNpAh0M4rvFDQEAAP//deMs0wAAAAZJREFUAwDAthYdfmLexAAAAABJRU5ErkJggg=="
-                        alt="structure image">
-                </picture>
-                <picture class="ct_img">
-                    <img src="https://images.framesdirect.com/image/upload/v1759502527/homePage/HP_w45_GIFTGUIDE_D.png" "="" fetchpriority="
-                        high" alt="The Man is wearing Maui Jim Hookipa 907 Prescription Sunglasses" width="3840"
-                        height="1108">
-                </picture>
-                
-            </div>
-        </a>
-        <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pb__mob__30 pb-4" id="secondHeroImg"
-            style="background: #F0ECE1; width: 45%"><a href="/collections/holiday-gift-guide" aria-label="sale">
-                <div class="ct_text__black ct_font__36  ct_lh__sm ct_mt__mob__20 weight-bold">
-                    Reframe<br class="ct_desk__hide"> your Gifting
-                </div>
-                <div class="ct_font__18 pt-3 "><b>Be your own Secret Santa, and<br class="ct_desk__hide"> score <br class="ct_mob__hide">
-                        major savings on frames<br class="ct_desk__hide"> &amp; lenses. </b></div>
-
-                <div class="ct_font__mob_18 ct_font__18 ct_m__20 ct_font__desk__18 mt-3">
-                    From AI Glasses to prescription lenses and iconic styles<br class="ct_mob__hide"> find the perfect pair for you or someone
-                    you love.</div>
-
-            </a>
-            <div class="text-center ml-2 d-flex flex-column flex-lg-row ct_mb__mob__30 mb-4"><a
-                    href="/collections/holiday-gift-guide" aria-label="sale">
-                </a><a href="/collections/holiday-gift-guide" class="btn-cta nowrap mt-2"
-                    style="background:#AB2317; color: #fff !important; border: 0" data-element-id="1Hero_Banner2_CTA"
-                    data-description="shopTheDeal">SAVE NOW</a>
-            </div>
-        </div>
-    </div>
-</div>
-   </li>` )
-              $("#hero-slider").append(
-                `
-     <li>
-<style>
-    @media (min-width: 1200px) and  (max-width: 1400px){
-           #thirdHero{
-        width: 44% !important;
-        left: 4%;
-    }
-    .hide{
-        display: none;
-    }
-    }
-        @media (min-width: 1440px){
-    #thirdHero{
-        width: 36%;
-        left: 2%;
-    }}
-    .insurnace_brands {
-        width: 424px;
-        height: 42px;
-    }
-</style>
-<div class="ct_space">
-    <div class="ct_banner ct_hero">
-            <div class="ct_assets__container">
-                <picture class="ct_skeleton">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjnLtxx38GHIARnyQA9v4GDXdfGIkAAAAASUVORK5CYII="
-                        alt="structure image">
-                </picture>
-                <picture class="ct_img">
-                    <img src="https://images.framesdirect.com/image/upload/v1758546735/homePage/HP_INSURANCE_D_40.png" "="" fetchpriority="
-                        high" alt="The Man is wearing Maui Jim Hookipa 907 Prescription Sunglasses" width="3840"
-                        height="1108" usemap="#image-map5">
-                </picture>
-            </div>
-        <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pb__mob__30 pb-5"  id="thirdHero"
-            style="background: #D6F3E9; width: 42%"><a href="/email/auth-lenses-dp" aria-label="sale">
-                <div class="ct_text__black ct_font__36  ct_lh__sm ct_mt__mob__20 weight-bold">
-                    Apply Your <br>
-                    Insurance Benefits
-                </div>
-                <div class="ct_font__18 pt-3 "><b>Hurry! Sync your insurance</b><br class="ct_desk__hide"> including FSA/HSA before they <br class="ct_mob__hide">expire<br class="ct_desk__hide"> and<b>  unlock a special promo code<br class="ct_desk__hide"> just for you.</b> </div>
-                <div class="logos ct_mob__hide d-flex justify-content-around align-items-center w-100 pt-2 ">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/EYEMED_logo-color.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/aetna-logo.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502287/logos/humana-logo.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502287/logos/cigna-logo.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/many-more-logo.png">
-                </div>
-                <div class="logos ct_desk__hide d-flex justify-content-between align-items-center w-100 pl-3 pr-3 mt-3" style="gap:7px;">
-                      <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/EYEMED_logo-color.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/aetna-logo.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502287/logos/humana-logo.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/many-more-logo.png">
-                </div>
-            </a>
-            <div class="text-center ml-2 d-flex flex-column flex-lg-row ct_mb__mob__30 pb-2" >
-                <a href="/knowledge-center/vision-insurance-fsa-eligibility" class="btn-cta nowrap mt-4"
-                    style="background:  #000; color: #fff !important; border: 0">LEARN MORE
-                </a>
-                <a href="/email/vision-insurance-dp" class="btn-cta nowrap mt-2 mt-lg-4 ml-lg-5"
-                    style="background:#AB2317; color: #fff !important; border: 0">Sync Now</a>
-            </div>
-        </div>
-    </div>
-</div>
-   </li>`
-              );
-            } else
+        );
+      } else
 
 
-       if (
-            (checkDate >= "251101" && checkDate <= "251102") ||
-            (fdFncs.vars.isTest >= "251101" && fdFncs.vars.isTest <= "251102")
-          ) {
-            //hero slider promotion
-            $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-            $("#hero-slider").append(
-              `
+        if (
+          (checkDate >= "251101" && checkDate <= "251102") ||
+          (fdFncs.vars.isTest >= "251101" && fdFncs.vars.isTest <= "251102")
+        ) {
+          //hero slider promotion
+          $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+          $("#hero-slider").append(
+            `
         <li>
 <style>
     @media (min-width: 1200px) and  (max-width: 1400px){
@@ -330,8 +330,8 @@
     </div>
 </div>
    </li>` );
-          } else
-        if (
+        } else
+          if (
             (checkDate >= "251027" && checkDate <= "251116") ||
             (fdFncs.vars.isTest >= "251027" && fdFncs.vars.isTest <= "251116")
           ) {
@@ -408,14 +408,14 @@
    </li>` );
           } else
 
-    if (
-            (checkDate >= "251009" && checkDate <= "251026") ||
-            (fdFncs.vars.isTest >= "251009" && fdFncs.vars.isTest <= "251026")
-          ) {
-            //hero slider promotion
-            $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-            $("#hero-slider").append(
-              `
+            if (
+              (checkDate >= "251009" && checkDate <= "251026") ||
+              (fdFncs.vars.isTest >= "251009" && fdFncs.vars.isTest <= "251026")
+            ) {
+              //hero slider promotion
+              $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+              $("#hero-slider").append(
+                `
         <li>
 <style>
     @media (min-width: 1200px) and  (max-width: 1400px){
@@ -483,16 +483,16 @@
     </div>
 </div>
    </li>` );
-          } else
+            } else
 
-    if (
-      (checkDate >= "251007" && checkDate <= "251008") ||
-      (fdFncs.vars.isTest >= "251007" && fdFncs.vars.isTest <= "251008")
-    ) {
-      //hero slider promotion
-      $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-      $("#hero-slider").append(
-        `
+              if (
+                (checkDate >= "251007" && checkDate <= "251008") ||
+                (fdFncs.vars.isTest >= "251007" && fdFncs.vars.isTest <= "251008")
+              ) {
+                //hero slider promotion
+                $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                $("#hero-slider").append(
+                  `
         <li>
 <style>
   @media (max-width: 1200px) {
@@ -558,7 +558,7 @@ width: 30%;
     </div>
 </div>
    </li>`)
-      $("#hero-slider").append(`
+                $("#hero-slider").append(`
         <li>
 <style>
     @media (min-width: 1200px) and  (max-width: 1400px){
@@ -627,15 +627,15 @@ width: 30%;
 </div>
    </li>` );
 
-    } else
-      if (
-        (checkDate >= "250915" && checkDate <= "251007") ||
-        (fdFncs.vars.isTest >= "250915" && fdFncs.vars.isTest <= "251007")
-      ) {
-        //hero slider promotion
-        $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-        $("#hero-slider").append(
-          `
+              } else
+                if (
+                  (checkDate >= "250915" && checkDate <= "251007") ||
+                  (fdFncs.vars.isTest >= "250915" && fdFncs.vars.isTest <= "251007")
+                ) {
+                  //hero slider promotion
+                  $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                  $("#hero-slider").append(
+                    `
         <li>
 <style>
   #pb_200{
@@ -732,7 +732,7 @@ width: 30%;
 </div>
 </div>
    </li>`)
-        $("#hero-slider").append(`
+                  $("#hero-slider").append(`
         <li>
 <style>
     @media (min-width: 1200px) and  (max-width: 1400px){
@@ -801,17 +801,17 @@ width: 30%;
 </div>
    </li>` );
 
-      } else
-        if (
-          (checkDate >= "250825" && checkDate <= "250914") ||
-          (fdFncs.vars.isTest >= "250825" && fdFncs.vars.isTest <= "250914")
-        ) {
-          //hero slider promotion
-          $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-          $("#hero-slider").append(
+                } else
+                  if (
+                    (checkDate >= "250825" && checkDate <= "250914") ||
+                    (fdFncs.vars.isTest >= "250825" && fdFncs.vars.isTest <= "250914")
+                  ) {
+                    //hero slider promotion
+                    $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                    $("#hero-slider").append(
 
 
-            `
+                      `
 
         <li>
           <style>
@@ -867,7 +867,7 @@ width: 30%;
 </div>
 
    </li>` )
-          $("#hero-slider").append(`
+                    $("#hero-slider").append(`
         <li>
 <style>
     @media (min-width: 1200px) and  (max-width: 1400px){
@@ -935,15 +935,15 @@ width: 30%;
     </div>
 </div>
    </li>` );
-        } else
-          if (
-            (checkDate >= "250714" && checkDate <= "250727") ||
-            (fdFncs.vars.isTest >= "250714" && fdFncs.vars.isTest <= "250727")
-          ) {
-            //hero slider promotion
-            $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-            $("#hero-slider").append(
-              `
+                  } else
+                    if (
+                      (checkDate >= "250714" && checkDate <= "250727") ||
+                      (fdFncs.vars.isTest >= "250714" && fdFncs.vars.isTest <= "250727")
+                    ) {
+                      //hero slider promotion
+                      $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                      $("#hero-slider").append(
+                        `
         <li>
 <div class="ct_space">
     <div class="ct_banner ct_hero">
@@ -987,14 +987,14 @@ width: 30%;
     </div>
 </div>
    </li>` );
-          } else if (
-            (checkDate >= "250728" && checkDate <= "250824") ||
-            (fdFncs.vars.isTest >= "250728" && fdFncs.vars.isTest <= "250824")
-          ) {
-            //hero slider promotion
-            $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-            $("#hero-slider").append(
-              `
+                    } else if (
+                      (checkDate >= "250728" && checkDate <= "250824") ||
+                      (fdFncs.vars.isTest >= "250728" && fdFncs.vars.isTest <= "250824")
+                    ) {
+                      //hero slider promotion
+                      $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                      $("#hero-slider").append(
+                        `
         <li>
 <style>
     @media (min-width: 1200px) and  (max-width: 1400px){
@@ -1062,15 +1062,15 @@ width: 30%;
     </div>
 </div>
    </li>` );
-          } else
-            if (
-              (checkDate >= "250714" && checkDate <= "250727") ||
-              (fdFncs.vars.isTest >= "250714" && fdFncs.vars.isTest <= "250727")
-            ) {
-              //hero slider promotion
-              $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-              $("#hero-slider").append(
-                `
+                    } else
+                      if (
+                        (checkDate >= "250714" && checkDate <= "250727") ||
+                        (fdFncs.vars.isTest >= "250714" && fdFncs.vars.isTest <= "250727")
+                      ) {
+                        //hero slider promotion
+                        $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                        $("#hero-slider").append(
+                          `
         <li>
 <div class="ct_space">
     <div class="ct_banner ct_hero">
@@ -1114,8 +1114,8 @@ width: 30%;
     </div>
 </div>
    </li>` )
-              $("#hero-slider").append(
-                `
+                        $("#hero-slider").append(
+                          `
      <li>
       <style>
          @media (max-width: 1200px) {
@@ -1202,16 +1202,16 @@ width: 30%;
 </div>
 </div>
    </li>`
-              );
-            } else
-              if (
-                (checkDate >= "250704" && checkDate <= "250713") ||
-                (fdFncs.vars.isTest >= "250704" && fdFncs.vars.isTest <= "250713")
-              ) {
-                //hero slider promotion
-                $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-                $("#hero-slider").append(
-                  `
+                        );
+                      } else
+                        if (
+                          (checkDate >= "250704" && checkDate <= "250713") ||
+                          (fdFncs.vars.isTest >= "250704" && fdFncs.vars.isTest <= "250713")
+                        ) {
+                          //hero slider promotion
+                          $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                          $("#hero-slider").append(
+                            `
         <li>
 <style>
   #pb_200{
@@ -1308,8 +1308,8 @@ width: 30%;
 </div>
 </div>
    </li>`)
-                $("#hero-slider").append(
-                  `
+                          $("#hero-slider").append(
+                            `
         <li>
 <div class="ct_space">
     <div class="ct_banner ct_hero">
@@ -1353,8 +1353,8 @@ width: 30%;
     </div>
 </div>
    </li>` )
-                $("#hero-slider").append(
-                  `
+                          $("#hero-slider").append(
+                            `
      <li>
       <style>
          @media (max-width: 1200px) {
@@ -1441,16 +1441,16 @@ width: 30%;
 </div>
 </div>
    </li>`
-                );
-              } else
+                          );
+                        } else
 
-                if (
-                  (checkDate >= "250616" && checkDate <= "250703") ||
-                  (fdFncs.vars.isTest >= "250616" && fdFncs.vars.isTest <= "250703")
-                ) {
-                  //hero slider promotion
-                  $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-                  $("#hero-slider").append(`
+                          if (
+                            (checkDate >= "250616" && checkDate <= "250703") ||
+                            (fdFncs.vars.isTest >= "250616" && fdFncs.vars.isTest <= "250703")
+                          ) {
+                            //hero slider promotion
+                            $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                            $("#hero-slider").append(`
    <li>
 <div class="ct_space">
     <div class="ct_banner ct_hero">
@@ -1504,17 +1504,17 @@ width: 30%;
 </div>
    </li>
 `
-                  );
+                            );
 
-                } else
-                  if (
-                    (checkDate >= "250612" && checkDate <= "250615") ||
-                    (fdFncs.vars.isTest >= "250612" && fdFncs.vars.isTest <= "250615")
-                  ) {
-                    //hero slider promotion
-                    $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-                    $("#hero-slider").append(
-                      `
+                          } else
+                            if (
+                              (checkDate >= "250612" && checkDate <= "250615") ||
+                              (fdFncs.vars.isTest >= "250612" && fdFncs.vars.isTest <= "250615")
+                            ) {
+                              //hero slider promotion
+                              $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                              $("#hero-slider").append(
+                                `
      <li>
 <div class="ct_space">
   <div class="ct_banner ct_hero">
@@ -1567,15 +1567,15 @@ width: 30%;
   </div>
 </div>
    </li>`
-                    );
-                  } else
-                    if (
-                      (checkDate >= "250529" && checkDate <= "250611") ||
-                      (fdFncs.vars.isTest >= "250529" && fdFncs.vars.isTest <= "250611")
-                    ) {
-                      //hero slider promotion
-                      $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-                      $("#hero-slider").append(`
+                              );
+                            } else
+                              if (
+                                (checkDate >= "250529" && checkDate <= "250611") ||
+                                (fdFncs.vars.isTest >= "250529" && fdFncs.vars.isTest <= "250611")
+                              ) {
+                                //hero slider promotion
+                                $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                                $("#hero-slider").append(`
    <li>
 
 <div class="ct_space">
@@ -1629,9 +1629,9 @@ width: 30%;
   </div>
 </div>
    </li>`
-                      )
-                      $("#hero-slider").append(
-                        `
+                                )
+                                $("#hero-slider").append(
+                                  `
      <li>
    <style>
 
@@ -1704,16 +1704,16 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
 </div>
 </div>
    </li>`
-                      );
-                    } else
-                      if (
-                        (checkDate >= "250527" && checkDate <= "250528") ||
-                        (fdFncs.vars.isTest >= "250527" && fdFncs.vars.isTest <= "250528")
-                      ) {
-                        //hero slider promotion
-                        $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-                        $("#hero-slider").append(
-                          `   
+                                );
+                              } else
+                                if (
+                                  (checkDate >= "250527" && checkDate <= "250528") ||
+                                  (fdFncs.vars.isTest >= "250527" && fdFncs.vars.isTest <= "250528")
+                                ) {
+                                  //hero slider promotion
+                                  $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                                  $("#hero-slider").append(
+                                    `   
      <li>
    <style>
 
@@ -1786,16 +1786,16 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
 </div>
 </div>
    </li>`
-                        );
-                      } else
-                        if (
-                          (checkDate >= "250519" && checkDate <= "250526") ||
-                          (fdFncs.vars.isTest >= "250519" && fdFncs.vars.isTest <= "250526")
-                        ) {
-                          //hero slider promotion
-                          $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-                          $("#hero-slider").append(
-                            `<div class="ct_space">
+                                  );
+                                } else
+                                  if (
+                                    (checkDate >= "250519" && checkDate <= "250526") ||
+                                    (fdFncs.vars.isTest >= "250519" && fdFncs.vars.isTest <= "250526")
+                                  ) {
+                                    //hero slider promotion
+                                    $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                                    $("#hero-slider").append(
+                                      `<div class="ct_space">
   <div class="ct_banner ct_hero">
   <a  href="/email/customer-appreciation-dp" aria-label="customer week sale" class="w-100">
   <div class="ct_assets__container">
@@ -1887,16 +1887,16 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
   </div>
   </div>
   </div>`
-                          );
-                        } else
-                          if (
-                            (checkDate >= "250508" && checkDate <= "250511") ||
-                            (fdFncs.vars.isTest >= "250508" && fdFncs.vars.isTest <= "250511")
-                          ) {
-                            //hero slider promotion
-                            $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-                            $("#hero-slider").append(
-                              `<li>
+                                    );
+                                  } else
+                                    if (
+                                      (checkDate >= "250508" && checkDate <= "250511") ||
+                                      (fdFncs.vars.isTest >= "250508" && fdFncs.vars.isTest <= "250511")
+                                    ) {
+                                      //hero slider promotion
+                                      $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                                      $("#hero-slider").append(
+                                        `<li>
    <style>
 
   #clearance_btn{
@@ -1968,15 +1968,15 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
 </div>
 </div>
    </li>`
-                            );
-                          } else if (
-                            (checkDate >= "250501" && checkDate <= "250507") ||
-                            (fdFncs.vars.isTest >= "250501" && fdFncs.vars.isTest <= "250507")
-                          ) {
-                            //hero slider promotion
-                            $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-                            $("#hero-slider").append(
-                              `<li>
+                                      );
+                                    } else if (
+                                      (checkDate >= "250501" && checkDate <= "250507") ||
+                                      (fdFncs.vars.isTest >= "250501" && fdFncs.vars.isTest <= "250507")
+                                    ) {
+                                      //hero slider promotion
+                                      $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                                      $("#hero-slider").append(
+                                        `<li>
           <style>
   @media (min-width: 1400px) {
 #secondHeroImg {
@@ -2167,15 +2167,15 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
 </div>
 </div>
    </li>`
-                            );
-                          } else if (
-                            (checkDate >= "250428" && checkDate <= "250507") ||
-                            (fdFncs.vars.isTest >= "250428" && fdFncs.vars.isTest <= "250507")
-                          ) {
-                            //hero slider promotion
-                            $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-                            $("#hero-slider").append(
-                              `<li>
+                                      );
+                                    } else if (
+                                      (checkDate >= "250428" && checkDate <= "250507") ||
+                                      (fdFncs.vars.isTest >= "250428" && fdFncs.vars.isTest <= "250507")
+                                    ) {
+                                      //hero slider promotion
+                                      $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                                      $("#hero-slider").append(
+                                        `<li>
    <style>
 
   #clearance_btn{
@@ -2247,13 +2247,13 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
 </div>
 </div>
    </li>`
-                            );
-                          } else if (
-                            getCookie("fdRecognized") !== undefined &&
-                            ((checkDate >= "250417" && checkDate <= "250427") ||
-                              (fdFncs.vars.isTest >= "250417" && fdFncs.vars.isTest <= "250427"))
-                          ) {
-                            let heroBanner = `
+                                      );
+                                    } else if (
+                                      getCookie("fdRecognized") !== undefined &&
+                                      ((checkDate >= "250417" && checkDate <= "250427") ||
+                                        (fdFncs.vars.isTest >= "250417" && fdFncs.vars.isTest <= "250427"))
+                                    ) {
+                                      let heroBanner = `
 
 
 <div class="ct_space">
@@ -2354,12 +2354,12 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
   </div>
   </div>
      `;
-                            $(".heroBanner").replaceWith(heroBanner);
-                          } else if (
-                            (checkDate >= "250417" && checkDate <= "250427") ||
-                            (fdFncs.vars.isTest >= "250417" && fdFncs.vars.isTest <= "250427")
-                          ) {
-                            let heroBanner = `
+                                      $(".heroBanner").replaceWith(heroBanner);
+                                    } else if (
+                                      (checkDate >= "250417" && checkDate <= "250427") ||
+                                      (fdFncs.vars.isTest >= "250417" && fdFncs.vars.isTest <= "250427")
+                                    ) {
+                                      let heroBanner = `
 <div class="ct_space">
   <div class="ct_banner ct_hero">
     <a href="/email/customer-promo-dp" aria-label="customer week sale" class="w-100">
@@ -2412,15 +2412,15 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
   </div>
 </div>
       `;
-                            $(".heroBanner").replaceWith(heroBanner);
-                          } else if (
-                            (checkDate >= "250411" && checkDate <= "250416") ||
-                            (fdFncs.vars.isTest >= "250411" && fdFncs.vars.isTest <= "250416")
-                          ) {
-                            //hero slider promotion
-                            $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-                            $("#hero-slider").append(
-                              `<li>
+                                      $(".heroBanner").replaceWith(heroBanner);
+                                    } else if (
+                                      (checkDate >= "250411" && checkDate <= "250416") ||
+                                      (fdFncs.vars.isTest >= "250411" && fdFncs.vars.isTest <= "250416")
+                                    ) {
+                                      //hero slider promotion
+                                      $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                                      $("#hero-slider").append(
+                                        `<li>
        <style>
           @media (min-width: 1200px) {
           #secondHeroImg{
@@ -2491,12 +2491,12 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
     </div>
   </div>
       </li>`
-                            );
-                          } else if (
-                            (checkDate >= "250407" && checkDate <= "250410") ||
-                            (fdFncs.vars.isTest >= "250407" && fdFncs.vars.isTest <= "250410")
-                          ) {
-                            let heroBanner = `
+                                      );
+                                    } else if (
+                                      (checkDate >= "250407" && checkDate <= "250410") ||
+                                      (fdFncs.vars.isTest >= "250407" && fdFncs.vars.isTest <= "250410")
+                                    ) {
+                                      let heroBanner = `
       <style>
   @media (max-width: 768px) {
     #firstHeroImg{
@@ -2571,16 +2571,16 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
       </a>
     </div>
   </div>`;
-                            $(".heroBanner").replaceWith(heroBanner);
-                          } else if (
-                            (checkDate >= "250331" && checkDate <= "250406") ||
-                            (fdFncs.vars.isTest >= "250320" && fdFncs.vars.isTest <= "250406")
-                          ) {
-                            //hero slider promotion
-                            $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>'); //Required to wrap around the existing heroBanner class for the first slide.
-                            $("#hero-slider").append(
-                              //This appends the second slide in the hero slider (second list item)
-                              `<li>
+                                      $(".heroBanner").replaceWith(heroBanner);
+                                    } else if (
+                                      (checkDate >= "250331" && checkDate <= "250406") ||
+                                      (fdFncs.vars.isTest >= "250320" && fdFncs.vars.isTest <= "250406")
+                                    ) {
+                                      //hero slider promotion
+                                      $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>'); //Required to wrap around the existing heroBanner class for the first slide.
+                                      $("#hero-slider").append(
+                                        //This appends the second slide in the hero slider (second list item)
+                                        `<li>
       <style>
   @media (min-width: 1200px) {
    .second_banner{
@@ -2695,12 +2695,12 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
 </div>
 
       </li>`
-                            );
-                          } else if (
-                            (checkDate >= "250320" && checkDate <= "250330") ||
-                            (fdFncs.vars.isTest >= "250320" && fdFncs.vars.isTest <= "250330")
-                          ) {
-                            let heroBanner = `
+                                      );
+                                    } else if (
+                                      (checkDate >= "250320" && checkDate <= "250330") ||
+                                      (fdFncs.vars.isTest >= "250320" && fdFncs.vars.isTest <= "250330")
+                                    ) {
+                                      let heroBanner = `
 <style>
   .ct_text__overlay {
     background: #E3DAC9;
@@ -2802,12 +2802,12 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
   </div>
 </div>
 `;
-                            $(".heroBanner").replaceWith(heroBanner);
-                          } else if (
-                            (checkDate >= "250313" && checkDate <= "250319") ||
-                            (fdFncs.vars.isTest >= "250313" && fdFncs.vars.isTest <= "250319")
-                          ) {
-                            let heroBanner = `
+                                      $(".heroBanner").replaceWith(heroBanner);
+                                    } else if (
+                                      (checkDate >= "250313" && checkDate <= "250319") ||
+                                      (fdFncs.vars.isTest >= "250313" && fdFncs.vars.isTest <= "250319")
+                                    ) {
+                                      let heroBanner = `
   <style>
       .ct_text__overlay {
     background: #C7D7D6;
@@ -2922,12 +2922,12 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
             </a>
           </div>
         </div>`;
-                            $(".heroBanner").replaceWith(heroBanner);
-                          } else if (
-                            (checkDate >= "250224" && checkDate <= "250312") ||
-                            (fdFncs.vars.isTest >= "250224" && fdFncs.vars.isTest <= "250312")
-                          ) {
-                            let heroBanner = `
+                                      $(".heroBanner").replaceWith(heroBanner);
+                                    } else if (
+                                      (checkDate >= "250224" && checkDate <= "250312") ||
+                                      (fdFncs.vars.isTest >= "250224" && fdFncs.vars.isTest <= "250312")
+                                    ) {
+                                      let heroBanner = `
 
           <div class="ct_space">
             <div class="ct_banner ct_hero ct_mb__10">
@@ -3020,9 +3020,9 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
       </div>
     </div>
        `;
-                            $(".heroBanner").replaceWith(heroBanner);
-                          } else {
-                          }
+                                      $(".heroBanner").replaceWith(heroBanner);
+                                    } else {
+                                    }
   };
 
   const updateSecondBanner = () => {
