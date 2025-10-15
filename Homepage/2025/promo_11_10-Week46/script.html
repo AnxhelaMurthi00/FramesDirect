@@ -3462,7 +3462,7 @@ style="min-height: 176px; background: #C5CEC1 !important; color: #2d3547;"
       pager: false,
       pause: 8000,
       onSliderLoad: function (el) {
-        $("#hero-slider").css("opacity", 1);
+        $("#hero-slider").addClass("loaded");
       },
       onBeforeSlide: function (el) {
         let videos = document.querySelectorAll("#hero-slider video");
