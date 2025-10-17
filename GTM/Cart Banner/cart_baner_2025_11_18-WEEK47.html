@@ -1,0 +1,31 @@
+<script>
+  var hasIns = setInterval(checkIns, 360);
+  function checkIns() {
+    if (
+      !!!$("#ctl00_ContentPlaceHolderProductDisplay_pnlEmptyCart").length
+    ) {
+      if ($('.cart-item.insurance-selected').length > 0) {
+        clearInterval(hasIns);
+        hasIns = null;
+      } else {
+        if ((checkDate >= "251118" && checkDate <= "251120") ||
+          (fdFncs.vars.isTest >= "251118" && fdFncs.vars.isTest <= "251120")) {
+          if (getCookie("fdRecognized") !== undefined) {
+           var $promoWrapper = $('<div id="cartPromoMsg" class="mb-2"></div>');
+          $promoWrapper.append(
+            $('<div id="cartPromoMsg" class="mb-3 py-1 px-3 weight-normal color-black" style="background: linear-gradient(90deg,rgba(255, 224, 180, 1) 0%, rgba(198, 101, 22, 1) 100%); border-radius: 5px; ">Last Chance: <b> up to 50% off select frames + 60% off lenses with frame purchase</b></div>')
+          );
+          $promoWrapper.insertAfter($("h1"));
+          } else {
+
+            var $promoWrapper = $('<div id="cartPromoMsg" class="mb-2"></div>');
+          $promoWrapper.append(
+            $('<div id="cartPromoMsg" class="mb-3 py-1 px-3 weight-normal color-black" style="background: linear-gradient(90deg,rgba(255, 224, 180, 1) 0%, rgba(198, 101, 22, 1) 100%); border-radius: 5px; ">Last Chance: <b> up to 50% off select frames + 60% off lenses with frame purchase</b></div>')
+          );
+          $promoWrapper.insertAfter($("h1"));
+          }
+        }
+      }
+    }
+  }
+</script>

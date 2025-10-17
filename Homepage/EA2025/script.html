@@ -2,254 +2,207 @@
   const updateHeroBanner = () => {
     if (getCookie('fdRecognized') !== undefined &&
       (
-        (checkDate >= "251007" && checkDate <= "251008") ||
-        (fdFncs.vars.isTest >= "251007" && fdFncs.vars.isTest <= "251008")
+        (checkDate >= "251118" && checkDate <= "251120") ||
+        (fdFncs.vars.isTest >= "251118" && fdFncs.vars.isTest <= "251120")
       )
     ) {
       let heroBanner =
         `
         <li>
 <style>
-  @media (max-width: 1200px) {
-    #authentication-second {
-         background-position: center;
-         background-repeat: no-repeat;
-                  background-size:cover;
-      padding: 0px !important;
-      background-image: url("https://images.framesdirect.com/image/upload/v1758874350/homePage/HP_AUTHENTICLENSES_W41_M.png") !important;
-
+  @media (min-width: 1200px) and (max-width: 1400px) {
+    #text-image-bf {
+      width: 180px !important;
+      height: 110px;
+      margin-right: 20px !important;
     }
   }
 
-  
-@media (min-width: 1200px) {
-#authentication-second {
-left:2%;
-width: 30%;
-}
-}
+  @media (max-width: 400px) {
+    #text-image-bf {
+      width: 180px !important;
+      height: auto;
+    }
+  }
 
- </style>
-<div class="ct_space">
-    <div class="ct_banner ct_hero">
-      <a href="/email/auth-lenses-dp" aria-label="sale">
-        <div class="ct_assets__container">
-            <picture class="ct_skeleton">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjnLtxx38GHIARnyQA9v4GDXdfGIkAAAAASUVORK5CYII=" alt="structure image">
-            </picture>
-            <picture class="ct_img">
-                <img src="https://images.framesdirect.com/image/upload/v1758874351/homePage/HP_AUTH_W41_D.png" "="" fetchpriority="
-                    high" alt="The Man is wearing Maui Jim Hookipa 907 Prescription Sunglasses" width="3840" height="1108" usemap="#image-map5">
-            </picture>
-            <map name="image-map5" class="map-slider">
-                     <area target="" alt="Maui Jim Hookipa 907 Prescription Sunglasses" title="Maui Jim Hookipa 907 Prescription Sunglasses" href="/maui-jim-castles-728-sunglasses" coords="595,103,1359,351" shape="rect">
-                </map>
+  #text-image-bf {
+    width: 240px;
+  }
+
+  @media (max-width: 1200px) {
+    #firstHero {
+      background-image: url('https://images.framesdirect.com/image/upload/v1760688071/homePage/HP_EA2025_hero_M.png') !important;
+
+    }
+
+  }
+</style>
+
+<div class="ct_space" id="hero-static">
+  <div class="ct_banner ct_hero">
+    <a href="/email/valentine-day-dp" aria-label="winter sale" class="w-100 ct_pt__mob__20">
+      <div class="ct_assets__container">
+        <picture class="ct_skeleton">
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAHklEQVR4AXzDMQ0AAAwCsIVdGMG/Q1AATQo93eKGAAAA///IBPOjAAAABklEQVQDAGLECFwb7/2tAAAAAElFTkSuQmCC"
+            alt="structure image">
+        </picture>
+        <picture class="ct_img">
+          <img src="https://images.framesdirect.com/image/upload/v1760688062/homePage/FD_HP_EA2025_hero_D.png"
+            fetchpriority="high" alt="" width="3840" height="1108">
+        </picture>
+      </div>
+    </a>
+    <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0" style="width: 36%; left: 6%;"
+      id="firstHero"><a href="/email/valentine-day-dp" aria-label="winter sale" class="w-100 ct_pt__mob__0">
+        <span class="ct_img d-flex align-items-center d-flex flex-column flex-lg-row ">
+          <img
+            src="https://images.framesdirect.com/image/upload/v1760688060/homePage/EA2025_POPUP_VERSION_IMAGE_ONLY.png"
+            fetchpriority="high" class="img-fluid d-block mx-auto " id="text-image-bf">
+          <span class="ct_text__white  ct_font__mob_32 ct_font__38 ct_font__desk__32">BLACK FRIDAY</span>
+        </span>
+        <div class="d-flex flex-wrap  mx-auto ct_text__white align-items-center justify-content-center">
+
+          <div class="col-4 mb-3 px-0">
+            <p class="ct_m__0 ct_font__mob_14 ct_font__14 ct_font__desk__14 weight-normal">
+              Up to
+            </p>
+            <div
+              class="transform-uppercase ct_font__mob_32 ct_font__32 ct_font__desk__32 weight-bold ct_lh__sm ct_m__0 ">
+              50% Off<br><span class="weight-normal">Frames</span>
+            </div>
+
+          </div>
+          <div class="col-1 ct_font__70 ct_font__mob_60 ct_font__desk__70 align-self-center ct_p__0 px-0"
+            style="line-height:1">
+            +
+          </div>
+          <span class="col-4 px-0">
+            <span
+              class="transform-uppercase ct_font__mob_32 ct_font__32 ct_font__desk__32 ct_lh__sm weight-bold ct_m__0 ct_w-0"
+              style="width: 62%;">
+              60% Off<br><span class="weight-normal">Lenses</span>
+            </span>
+
+          </span>
         </div>
-       </a><div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pb__mob__30 pb-4" id="authentication-second">
-        <a href="/email/auth-lenses-dp" aria-label="sale">
-            <div class="ct_text__black ct_font__36  ct_lh__sm ct_mt__mob__30 weight-bold">
-                40% off <br class="ct_desk__hide">  prescription <br class="ct_mob__hide"> sun<br class="ct_desk__hide"> lenses
-            </div>
-            <div class="ct_font__18 weight-bold">From Top Brands</div>
-            <div class="logos ct_mob__hide d-flex justify-content-around align-items-center w-100" style="height: 70px;padding: 0px 15px;gap:20px">
-                <img src="https://images.framesdirect.com/image/upload/v1748853576/logos/oakley-logo_1.png">
-                <img src="https://images.framesdirect.com/image/upload/v1748853577/logos/maui-jim-blk-logo_1.png">
-                <img src="https://images.framesdirect.com/image/upload/v1748854123/logos/costa-logo_M.png">
-            </div>
-            <div class="logos ct_desk__hide d-flex justify-content-between align-items-center w-100 " style="height: 90px;  padding: 0px 5px; gap:10px">
-                <img src="https://images.framesdirect.com/image/upload/v1748854124/logos/oakley-logo_M.png">
-                <img src="https://images.framesdirect.com/image/upload/v1748854124/logos/maui-jim-blk-logo_M.png">
-                <img src="https://images.framesdirect.com/image/upload/v1748853577/logos/costa-logo_1.png">
-            </div>
-            <div class="ct_text__black ct_font__18">
-                <p class="mt-4 mt-lg-0">
-                    Code: <b>SPECIAL40   </b>
-                </p>
-            </div>
-            </a><div class="text-center ml-2 d-flex flex-column flex-lg-row ct_mb__mob__30 mb-4"><a href="/email/auth-lenses-dp" aria-label="sale">
-                </a><a href="/email/auth-lenses-dp" class="btn-cta nowrap mt-2" style="background:#AB2317; color: #fff !important; border: 0" data-element-id="1Hero_Banner2_CTA" data-description="shopTheDeal">SAVE NOW</a>
-            </div>
-        </div>
+        <p class="ct_text__white mb-md-2 mt-0" style="
+    font-size: 14px;
+">Don’t miss these exclusive holiday deals on <br class="ct_desk__hide"> Ray-Ban, Oakley, and more </p>
+
+      </a>
+      <div class="align-items-center justify-content-center pt-2 ct_mb__50 d-flex flex-column flex-lg-row ">
+        <a href="#" class="btn-cta siteSignIn mx-2 mr-md-0 d-inline-block "
+          style="background: #AB2317; color: #fff !important;">Shop Early deals</a>
+      </div>
     </div>
+
+  </div>
 </div>
    </li>
     `;
       $(".heroBanner").replaceWith(heroBanner);
-    } else
-      if (
-        (checkDate >= "251007" && checkDate <= "251008") ||
-        (fdFncs.vars.isTest >= "251007" && fdFncs.vars.isTest <= "251008")
-      ) {
-        //hero slider promotion
-        $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-        $("#hero-slider").append(
-          `
-        <li>
-<style>
-  #pb_200{
-    padding-bottom: 200px;
-  }
+//     } else
+//       if (
+//         (checkDate >= "251118" && checkDate <= "251120") ||
+//         (fdFncs.vars.isTest >= "251118" && fdFncs.vars.isTest <= "251120")
+//       ) {
+//         //hero slider promotion
+//         $(".heroBanner").wrap('<div id="hero-slider"></div>');
+//         $("#hero-slider").append(
+//           `
+        
+// <style>
+//   @media (min-width: 1200px) and (max-width: 1400px) {
+//     #text-image-bf {
+//       width: 180px !important;
+//       height: 110px;
+//       margin-right: 20px !important;
+//     }
+//   }
 
-    @media (min-width: 1500px)  {
-        #pb_200{
-        padding-bottom: 220px;
-        }
+//   @media (max-width: 400px) {
+//     #text-image-bf {
+//       width: 180px !important;
+//       height: auto;
+//     }
+//   }
 
- 
-    }
+//   #text-image-bf {
+//     width: 240px;
+//   }
 
-    
-  @media (min-width: 1400px) {
-    #willieXImg {
-      width: auto;
-      left: 70%;
-      height: 90%;
-      margin-left: 3%;
-    }
-      
-  }
-  @media (min-width: 1200px) and (max-width: 1439px) {
-    #willieXImg { 
-      width: auto;
-      left: 70%;
-      height: 90%;
-      margin-left: 20px;
-    }
-      #pb_200{
-    padding-bottom: 140px !important;
-  }
-  }
-  @media (max-width: 1200px) {
-    #willieXImg  {
-         background-position: center;
-         background-repeat: no-repeat;
-                  background-size:cover;
-      padding: 0px !important;
-      background-image: url("https://images.framesdirect.com/image/upload/v1757424670/homePage/HP_WILEYX_mob.png") !important;
-    }
-  }
+//   @media (max-width: 1200px) {
+//     #firstHero {
+//       background-image: url('https://images.framesdirect.com/image/upload/v1760688071/homePage/HP_EA2025_hero_M.png') !important;
 
-    @media (min-width: 1400px) and (max-width: 1499px) {
-         #pb_200{
-    padding-bottom: 180px !important;
-  }
-    }
+//     }
 
-        @media (min-width: 390px) and (max-width: 768px) {
+//   }
+// </style>
 
-              #willieXImg  {
-              background-size:cover;
-      padding: 0px !important;
-      background-image: url("https://images.framesdirect.com/image/upload/v1757424670/homePage/HP_WILEYX_mob.png") !important;
+// <div class="ct_space">
+//   <div class="ct_banner ct_hero">
+//     <a href="/email/valentine-day-dp" aria-label="winter sale" class="w-100 ct_pt__mob__20">
+//       <div class="ct_assets__container">
+//         <picture class="ct_skeleton">
+//           <img
+//             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAHklEQVR4AXzDMQ0AAAwCsIVdGMG/Q1AATQo93eKGAAAA///IBPOjAAAABklEQVQDAGLECFwb7/2tAAAAAElFTkSuQmCC"
+//             alt="structure image">
+//         </picture>
+//         <picture class="ct_img">
+//           <img src="https://images.framesdirect.com/image/upload/v1760688062/homePage/FD_HP_EA2025_hero_D.png"
+//             fetchpriority="high" alt="" width="3840" height="1108">
+//         </picture>
+//       </div>
+//     </a>
+//     <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0" style="width: 36%; left: 5%;"
+//       id="firstHero"><a href="/email/valentine-day-dp" aria-label="winter sale" class="w-100 ct_pt__mob__0">
+//         <span class="ct_img d-flex align-items-center d-flex flex-column flex-lg-row ">
+//           <img
+//             src="https://images.framesdirect.com/image/upload/v1760688060/homePage/EA2025_POPUP_VERSION_IMAGE_ONLY.png"
+//             fetchpriority="high" class="img-fluid d-block mx-auto " id="text-image-bf">
+//           <span class="ct_text__white  ct_font__mob_32 ct_font__38 ct_font__desk__32">BLACK FRIDAY</span>
+//         </span>
+//         <p class="ct_text__white mb-md-2 mt-0">Sign up or log in to unlock up to </p>
+//         <div class="d-flex flex-wrap  mx-auto ct_text__white align-items-center justify-content-center">
 
-    }
+//           <div class="col-4 mb-3 px-0">
+//             <div
+//               class="transform-uppercase ct_font__mob_32 ct_font__32 ct_font__desk__32 weight-bold ct_lh__sm ct_m__0 ">
+//               50% Off<br><span class="weight-normal">Frames</span>
+//             </div>
 
-    }
- </style>
-<div class="ct_space">
-<div class="ct_banner ct_hero">
- <a href="/wiley-x/brand" aria-label="sale">
-   <div class="ct_assets__container">
-     <picture class="ct_skeleton">
-       <img
-         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdj/Pzu8X8GHIARnyQANP0HiSbhWk8AAAAASUVORK5CYII="
-         alt="structure image" />
-     </picture>
-     <picture class="ct_img">
-       <img src="https://images.framesdirect.com/image/upload/v1757196154/homePage/HP_WILEYX_v2.png"
-         fetchpriority="high"
-         alt=""
-         height="1108"/>
-     </picture>
-   </div>
-   <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0" id="willieXImg">
-     <h1
-       class="ct_font__26 ct_font__desk__26 ct_font__mob_32 weight-bold ct_lh__sm ct_mb__mob__20 ct_mt__mob__30 m-0" id="pb_200">
-     Get A Free Hat
-     </h1>
-     <p class="ct_font__mob_20 ct_font__20 ct_font__desk__20 ct_mt__0 ct_mb__10 ct_pt__20">
-           with every <b class="weight-bold">WILEY X</b> purchase
-         </p>
-       <a href="/wiley-x/brand" class="ct_cta ct_cta__red ct_m__mob__10 ct_mb__mob__40 ct_mb__20"
-         style="background-color: #ab2317; font-size: 16px">
-         SHOP THE DEAL
-       </a>
-     </div>
-   </div>
- </a>
-</div>
-</div>
-   </li>`)
-        $("#hero-slider").append(`
-        <li>
-<style>
-    @media (min-width: 1200px) and  (max-width: 1400px){
-           #secondHero{
-        width: 44% !important;
-        left: 4%;
-    }
-    .hide{
-        display: none;
-    }
-    }
-        @media (min-width: 1440px){
-    #secondHero{
-        width: 36%;
-        left: 2%;
-    }}
-    .insurnace_brands {
-        width: 424px;
-        height: 42px;
-    }
-</style>
-<div class="ct_space">
-    <div class="ct_banner ct_hero">
-            <div class="ct_assets__container">
-                <picture class="ct_skeleton">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjnLtxx38GHIARnyQA9v4GDXdfGIkAAAAASUVORK5CYII="
-                        alt="structure image">
-                </picture>
-                <picture class="ct_img">
-                    <img src="https://images.framesdirect.com/image/upload/v1758546735/homePage/HP_INSURANCE_D_40.png" "="" fetchpriority="
-                        high" alt="The Man is wearing Maui Jim Hookipa 907 Prescription Sunglasses" width="3840"
-                        height="1108" usemap="#image-map5">
-                </picture>
-            </div>
-        <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pb__mob__30 pb-5"  id="secondHero"
-            style="background: #D6F3E9; width: 42%"><a href="/email/auth-lenses-dp" aria-label="sale">
-                <div class="ct_text__black ct_font__36  ct_lh__sm ct_mt__mob__40 weight-bold">
-                    Apply Your <br>
-                    Insurance Benefits
-                </div>
-                <div class="ct_font__18 pt-3 ">We accept most vision plans.<br class="ct_desk__hide"> Sync your insurance and<br class="ct_mob__hide"><b> unlock an exclusive
-                    promo code just for you.</b> </div>
-                <div class="logos ct_mob__hide d-flex justify-content-around align-items-center w-100 pt-2 ">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/EYEMED_logo-color.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/aetna-logo.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502287/logos/humana-logo.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502287/logos/cigna-logo.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/many-more-logo.png">
-                </div>
-                <div class="logos ct_desk__hide d-flex justify-content-between align-items-center w-100 pl-3 pr-3 mt-3" style="gap:7px;">
-                      <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/EYEMED_logo-color.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/aetna-logo.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502287/logos/humana-logo.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/many-more-logo.png">
-                </div>
-            </a>
-            <div class="text-center ml-2 d-flex flex-column flex-lg-row ct_mb__mob__30 pb-2" >
-                <a href="/knowledge-center/vision-insurance-fsa-eligibility" class="btn-cta nowrap mt-4"
-                    style="background:  #000; color: #fff !important; border: 0">LEARN MORE
-                </a>
-                <a href="/email/vision-insurance-dp" class="btn-cta nowrap mt-2 mt-lg-4 ml-lg-5"
-                    style="background:#AB2317; color: #fff !important; border: 0">Sync Now</a>
-            </div>
-        </div>
-    </div>
-</div>
-   </li>` );
+//           </div>
+//           <div class="col-1 ct_font__70 ct_font__mob_60 ct_font__desk__70 align-self-center ct_p__0 px-0"
+//             style="line-height:1">
+//             +
+//           </div>
+//           <span class="col-4 px-0">
+//             <span
+//               class="transform-uppercase ct_font__mob_32 ct_font__32 ct_font__desk__32 ct_lh__sm weight-bold ct_m__0 ct_w-0"
+//               style="width: 62%;">
+//               60% Off<br><span class="weight-normal">Lenses</span>
+//             </span>
 
-      } else
+//           </span>
+//         </div>
+//       </a>
+//       <div class="align-items-center justify-content-center pt-2 ct_mb__50 d-flex flex-column flex-lg-row "><a href="#"
+//           id="btn-sign-up" class="emailSignUp btn-cta ml-md-0 mx-2 d-inline-block mb-md-0 mb-2 ct_w__mob__90"
+//           style="background: #AB2317; color: #fff !important;">SIGN UP</a>
+//         <a href="#" class="btn-cta siteSignIn mx-2 mr-md-0 d-inline-block "
+//           style="background: transparent;color: #fff !important;border: 1px solid white !important;">SHOP NOW</a>
+//       </div>
+//     </div>
+
+//   </div>
+// </div>
+//    ` );
+
+//       }
+    }
+else
         if (
           (checkDate >= "250825" && checkDate <= "250914") ||
           (fdFncs.vars.isTest >= "250825" && fdFncs.vars.isTest <= "250914")
@@ -2901,7 +2854,7 @@ style="min-height: 176px; background: #C5CEC1 !important; color: #2d3547;"
     }
     heroSlider = $("#hero-slider").lightSlider({
       item: 1,
-      loop: true,
+      loop: false,
       auto: true,
       autoWidth: false,
       easing: "cubic-bezier(0.25, 0, 0.25, 1)",
@@ -3593,43 +3546,43 @@ style="min-height: 176px; background: #C5CEC1 !important; color: #2d3547;"
         });
       };
     });
-  setTimeout(() => {
-    (function () {
-      function checkElements() {
-        const heroSlider = document.getElementById('hero-slider');
-        const prevArrow = document.querySelector('.lSPrev');
-        const nextArrow = document.querySelector('.lSNext');
+  // setTimeout(() => {
+  //   (function () {
+  //     function checkElements() {
+  //       const heroSlider = document.getElementById('hero-slider');
+  //       const prevArrow = document.querySelector('.lSPrev');
+  //       const nextArrow = document.querySelector('.lSNext');
 
-        if (!heroSlider || !prevArrow || !nextArrow) {
-          setTimeout(checkElements, 100);
-          return;
-        }
+  //       if (!heroSlider || !prevArrow || !nextArrow) {
+  //         setTimeout(checkElements, 100);
+  //         return;
+  //       }
 
-        function updateArrowVisibility() {
-          const slides = document.querySelectorAll('#hero-slider .lslide');
-          const activeSlide = document.querySelector('#hero-slider .lslide.active');
+  //       function updateArrowVisibility() {
+  //         const slides = document.querySelectorAll('#hero-slider .lslide');
+  //         const activeSlide = document.querySelector('#hero-slider .lslide.active');
 
-          if (!slides.length || !activeSlide) return;
+  //         if (!slides.length || !activeSlide) return;
 
-          prevArrow.style.display = slides[0] === activeSlide ? 'none' : 'flex';
-          nextArrow.style.display = slides[slides.length - 1] === activeSlide ? 'none' : 'flex';
-        }
+  //         prevArrow.style.display = slides[0] === activeSlide ? 'none' : 'flex';
+  //         nextArrow.style.display = slides[slides.length - 1] === activeSlide ? 'none' : 'flex';
+  //       }
 
-        updateArrowVisibility();
+  //       updateArrowVisibility();
 
-        const observer = new MutationObserver(updateArrowVisibility);
-        observer.observe(heroSlider, {
-          attributes: true,
-          childList: true,
-          subtree: true
-        });
+  //       const observer = new MutationObserver(updateArrowVisibility);
+  //       observer.observe(heroSlider, {
+  //         attributes: true,
+  //         childList: true,
+  //         subtree: true
+  //       });
 
-        heroSlider.addEventListener('transitionend', updateArrowVisibility);
-      }
+  //       heroSlider.addEventListener('transitionend', updateArrowVisibility);
+  //     }
 
-      checkElements();
-    })();
-  }, 800);
+  //     checkElements();
+  //   })();
+  // }, 800);
 
   /* UTILS */
   function isTestingParameter(date) {

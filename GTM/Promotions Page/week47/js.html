@@ -1,0 +1,331 @@
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const offersRow = document.getElementById('featured-offers-row');
+        function loadPromotions() {
+            try {
+                const promos = promoData;
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+
+                // --- START OF FIX: Updated filtering logic ---
+                const activePromos = promos.filter(promo => {
+                    // If startDate or endDate is missing or empty, consider it always active.
+                    if (!promo.startDate || !promo.endDate) {
+                        return true;
+                    }
+
+                    // If dates ARE present, perform the normal date comparison.
+                    const startDate = new Date(promo.startDate);
+                    const endDate = new Date(promo.endDate);
+
+                    // Also check if the created dates are valid before comparing
+                    if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
+                        return false; // Exclude if dates are in an invalid format
+                    }
+
+                    return today >= startDate && today <= endDate;
+                });
+                // --- END OF FIX ---
+
+                if (activePromos.length === 0) {
+                    offersRow.innerHTML = '<div class="col"><p>Check back soon for new offers!</p></div>';
+                    return;
+                }
+
+                offersRow.innerHTML = activePromos.map(promo => createPromoCardHTML(promo)).join('');
+
+            } catch (error) {
+                console.error("Could not load promotions:", error);
+                offersRow.innerHTML = '<div class="col"><p>Sorry, we could not load our offers at this time.</p></div>';
+            }
+        }
+
+
+        function createPromoCardHTML(promo) {
+            const imageColumnHTML = promo.imageSrc ?
+                `<div class="col-md-6">
+             <img src="${promo.imageSrc}" class="card-img-feature" alt="${promo.imageAlt}">
+           </div>` :
+                '';
+            const contentColumnClass = promo.imageSrc ? 'col-md-6' : 'col-md-12';
+            const specialButtonClass = promo.isSpecial ? 'btn-shop-now-light' : 'btn-shop-now';
+
+            let badgeHTML = '';
+            if (promo.badgeDesktop || promo.badgeMobile) {
+                const desktopBadge = promo.badgeDesktop || '';
+                const mobileBadge = promo.badgeMobile || desktopBadge;
+
+                badgeHTML = `
+            <div class="offer-badge responsive-badge">
+                <div class="d-none d-md-block">${desktopBadge}</div>
+                <div class="d-block d-md-none">${mobileBadge}</div>
+            </div>
+        `;
+            } else if (promo.badge) {
+                badgeHTML = `<div class="offer-badge">${promo.badge}</div>`;
+            }
+
+            let ctaHTML = '';
+            let overlayCtaHTML = '';
+
+            if (promo.isSpecial) {
+                // --- START OF MODIFICATION ---
+                // For the main card view: add the onclick event to the div
+                ctaHTML = `
+            <div id="idme-btn" class="login-trigger id-me-verify col-6 col-md-12 btn ${specialButtonClass}" onclick="location.href='${promo.ctaLink}'">${promo.ctaText}</div>`;
+
+                // For the details overlay: also add the onclick event to this div
+                overlayCtaHTML = `
+            <div id="idme-btn" class="login-trigger id-me-verify w-100 btn ${specialButtonClass}" onclick="location.href='${promo.ctaLink}'">${promo.ctaText}</div>`;
+                // --- END OF MODIFICATION ---
+            } else if( promo.SignUp){
+                ctaHTML = `
+            <div href="#" id="btn-sign-up" class="emailSignUp btn btn-shop-now" data-element-id="content11" data-description="SIGN UP
+                                            NOW"}" onclick="location.href='${promo.ctaLink}'">${promo.ctaText}</div>`;
+
+            }else {
+                ctaHTML = `<button type="button" class="btn ${specialButtonClass}" onclick="location.href='${promo.ctaLink}'">${promo.ctaText || 'Shop Now'}</button>`;
+                overlayCtaHTML = ctaHTML;
+            }
+
+            return `
+        <div class="col-lg-6 mb-4 d-flex align-items-stretch">
+            <div class="card offer-card featured-offer-card w-100">
+
+                <div class="row no-gutters h-100 w-100">
+                
+                    ${imageColumnHTML} 
+                    
+                    <div class="${contentColumnClass} d-flex flex-column">
+                        <div class="card-body d-flex flex-column flex-grow-1">
+                            <div class="card-front d-flex flex-column flex-grow-1">
+
+                                    ${badgeHTML}
+                                    <h3 class="card-title">${promo.title}</h3>
+                                    <p class="card-text offer-details">${promo.details}</p>
+                                
+                                <div class="useful-links align-items-end mt-auto">
+                                    <a href="#" class="details-link small">See details</a>
+                                    ${ctaHTML}
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details-overlay">
+                    <button class="close-overlay" aria-label="Close details">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16" fill="none">
+                            <g clip-path="url(#clip0_8086_1830)">
+                                <path d="M15.8002 1.13335L14.8669 0.200012L8.0002 7.06668L1.13353 0.200012L0.200195 1.13335L7.06686 8.00001L0.200195 14.8667L1.13353 15.8L8.0002 8.93335L14.8669 15.8L15.8002 14.8667L8.93353 8.00001L15.8002 1.13335Z" fill="currentColor"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_8086_1830">
+                                    <rect width="16" height="16" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </button>
+                    <div class="overlay-content">
+                        <p>${promo.overlayDetails || `Details for ${promo.title}.`}</p>
+                    </div>
+                    ${overlayCtaHTML}
+                </div>
+
+            </div>
+        </div>
+    `;
+        }
+        // HELPER FUNCTION to read a specific cookie by its name
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+
+        function setupOtherOffersToggle() {
+            const toggleButton = document.getElementById('toggle-other-offers');
+            const allCards = document.querySelectorAll('.other-offers-section .row > .col-md-4');
+            const initialVisibleCount = 3;
+
+            // Exit if there's nothing to toggle
+            if (allCards.length <= initialVisibleCount) {
+                return;
+            }
+
+            // --- Initial Setup ---
+            // Hide the extra cards by default using our new animation class
+            for (let i = initialVisibleCount; i < allCards.length; i++) {
+                allCards[i].classList.add('is-hidden');
+            }
+            // Show the button
+            toggleButton.classList.remove('d-none');
+
+
+            // --- Event Listener ---
+            toggleButton.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                // Check the state by looking at the first extra card
+                const isHidden = allCards[initialVisibleCount].classList.contains('is-hidden');
+
+                // Toggle the .is-hidden class on all extra cards
+                for (let i = initialVisibleCount; i < allCards.length; i++) {
+                    allCards[i].classList.toggle('is-hidden');
+                }
+
+                // Update the button text and icons
+                const arrowDown = toggleButton.querySelector('.arrow-down');
+                const arrowUp = toggleButton.querySelector('.arrow-up');
+
+                if (isHidden) { // If they WERE hidden, they are now shown
+                    toggleButton.firstChild.textContent = 'show less ';
+                    arrowDown.classList.add('d-none');
+                    arrowUp.classList.remove('d-none');
+                } else { // If they WERE shown, they are now hidden
+                    toggleButton.firstChild.textContent = 'and more ';
+                    arrowDown.classList.remove('d-none');
+                    arrowUp.classList.add('d-none');
+                }
+            });
+        }
+
+
+        function setupDetailsToggle() {
+            // Listen for clicks on the entire document
+            document.addEventListener('click', function (event) {
+
+                // Case 1: A "see details" link was clicked
+                if (event.target.matches('.details-link')) {
+                    event.preventDefault();
+                    const card = event.target.closest('.card');
+                    if (card) {
+                        card.classList.toggle('details-visible');
+                    }
+                }
+
+                // --- THIS IS THE UPDATED LOGIC FOR THE CLOSE BUTTON ---
+                // Case 2: A "close" button (or the SVG inside it) was clicked
+                const closeButton = event.target.closest('.close-overlay');
+                if (closeButton) {
+                    const card = closeButton.closest('.card');
+                    if (card) {
+                        card.classList.remove('details-visible');
+                    }
+                }
+            });
+        }
+
+        function initCarouselScrollbar(carouselSelector) {
+            const carousel = document.querySelector(carouselSelector);
+            if (!carousel) {
+                return; // Exit if the carousel element doesn't exist
+            }
+
+            // Instead of looking for the next sibling, find the parent section/footer...
+            const parentContainer = carousel.closest('section, footer');
+            // ...and then find the scrollbar container within that parent.
+            const scrollbarContainer = parentContainer ? parentContainer.querySelector('.carousel-scrollbar-container') : null;
+
+            if (!scrollbarContainer) {
+                return; // Exit if the scrollbar container is not found
+            }
+
+            const thumb = scrollbarContainer.querySelector('.scrollbar-thumb');
+
+            function updateThumbPosition() {
+                if (window.innerWidth >= 768) {
+                    // On desktop, the carousel is not active, so reset styles
+                    thumb.style.width = '0%';
+                    thumb.style.left = '0%'; // Also reset left position
+                    return;
+                }
+
+                const scrollWidth = carousel.scrollWidth;
+                const clientWidth = carousel.clientWidth;
+                const thumbWidth = (clientWidth / scrollWidth) * 100;
+
+                thumb.style.width = `${thumbWidth}%`;
+
+                const scrollableDist = scrollWidth - clientWidth;
+                if (scrollableDist <= 0) {
+                    thumb.style.left = '0%';
+                    thumb.style.opacity = '0';
+                    return;
+                }
+
+                thumb.style.opacity = '1';
+                const scrollPercent = (carousel.scrollLeft / scrollableDist);
+                const thumbTravelDist = 100 - thumbWidth;
+                thumb.style.left = `${scrollPercent * thumbTravelDist}%`;
+            }
+
+            carousel.addEventListener('scroll', updateThumbPosition);
+            window.addEventListener('resize', updateThumbPosition);
+            setTimeout(updateThumbPosition, 100);
+        }
+
+
+        function syncSignupCardState() {
+            // 1. Select all the elements we need
+            const footerWrapper = document.getElementById('footer-newsletter-wrapper');
+            const cardPreSignup = document.querySelector('.sign-up .pre-signup-action');
+            const cardPostSignup = document.querySelector('.sign-up .post-signup-actions');
+
+            // Exit if any essential elements are missing
+            if (!footerWrapper || !cardPreSignup || !cardPostSignup) {
+                return;
+            }
+
+            // 2. Check for the original "Sign Up" button in the footer
+            const originalSignUpButton = footerWrapper.querySelector('#footer-newsletter-submit');
+
+            // 3. THE CRITICAL CHECK:
+            // The button must exist AND be visible on the page.
+            // Elements with display:none have an offsetParent of null.
+            const showPreSignupState = originalSignUpButton && originalSignUpButton.offsetParent !== null;
+
+            // 4. Update the card based on the visibility of the original button
+            if (showPreSignupState) {
+                // If the original button is visible, show our card's "SIGN UP NOW" button
+                cardPreSignup.classList.add('d-flex');
+                cardPreSignup.classList.remove('d-none');
+
+                cardPostSignup.classList.remove('d-flex');
+                cardPostSignup.classList.add('d-none');
+            } else {
+                // If the original button is hidden or gone, show our "SHOP MEN / WOMEN" buttons
+                cardPreSignup.classList.add('d-none');
+                cardPreSignup.classList.remove('d-flex');
+
+                cardPostSignup.classList.add('d-flex');
+                cardPostSignup.classList.remove('d-none');
+
+            }
+        }
+
+
+
+        // Initial load of the promotions
+        loadPromotions();
+
+        // Setup the "Other Offers" toggle functionality
+        setupOtherOffersToggle();
+
+        // Initialize the scrollbar for BOTH carausels
+        initCarouselScrollbar('.other-offers-section .row');
+        initCarouselScrollbar('.additional-services .row');
+
+        setupDetailsToggle();
+
+        setTimeout(syncSignupCardState, 500);
+
+    });
+</script>
