@@ -8,16 +8,12 @@
         padding: 0;
     }
 
-    /* ===== LAYOUT ===== */
     .hero {
         display: flex;
         min-height: 100svh;
-        /* fills full mobile height incl. URL bar */
         align-items: center;
         justify-content: center;
         padding: 24px 18px 88px;
-        /* bottom space for sticky bar */
-
     }
 
     .hero-inner {
@@ -78,12 +74,9 @@
         display: none;
         margin-top: 10px;
         font-weight: 700;
+        font-size: 11px;
     }
 
-    /* Optional header image (hidden on mobile) */
-
-
-    /* Sticky bottom signup bar */
     .sticky {
         position: fixed;
         left: 0;
@@ -211,7 +204,6 @@
     #subscription-shop {
         display: none !important;
     }
-    
 </style>
 
 
@@ -227,14 +219,14 @@
             <h1 id="subscription-title">Early Black Friday</h1>
             <p class="sub" id="subscription-paragh">
                 Get exclusive early access to our Black Friday <br class="ct_desk__hide"> sale! Shop best sellers now
-                and <br class="ct_mob__hide">
-                <strong>save up to <br class="ct_desk__hide"> 50% on frames + 60% on lenses.</strong>
+                and <br>save
+                <strong> up to <br class="ct_desk__hide"> 50% on frames + 60% on lenses.</strong>
             </p>
 
             <div class="d-flex flex-column justify-content-between input align-items-center w-100"
                 id="subscription-placeholder">
                 <input id="email" type="email" placeholder="Email address" autocomplete="email" required="true">
-                <a href="#" class="btn btn-primary btn-shop mt-2" type="submit" id="subscription-submit">SIGN UP</a>
+                <a href="#" class="btn btn-primary btn-shop mt-4" type="submit" id="subscription-submit">SIGN UP</a>
 
             </div>
             <div id="subscription-shop" class="d-flex justify-content-center align-items-center">
@@ -243,14 +235,17 @@
             </div>
 
 
-            <div id="signed-in" class="signed-in weight-normal mt-4">*By clicking sign up, I confirm that I am over 16 years
-                old and agree that Luxottica S.p.A. can use my email address to send exclusive offers, content, news,
-                and other marketing communication. For information on our privacy practices, please visit our <a
-                    class="decoration-underline weight-bold" 
-                    href="/customer-service/privacy-policy">Privacy Policy.</a> For more details see our <a
-                    class="decoration-underline weight-bold"  id="privacy-link"
+            <div id="signed-in" class="signed-in weight-normal mt-4">*By clicking sign up, I confirm that I am over 16
+                years
+                old and agree that Luxottica S.p.A. can use my email address to <br class="ct_mob__hide">send exclusive
+                offers, content, news,
+                and other marketing communication. For information on our privacy practices, <br
+                    class="ct_mob__hide">please visit our <a class="decoration-underline weight-bold"
+                    href="/customer-service/privacy-policy">Privacy Policy.</a><br>
+                For more details see our <a class="decoration-underline weight-bold" id="privacy-link"
                     aria-label="Open a Popup to Read Privacy Policy"
-                    href="/customer-service/privacy-policy#pp-financial-incentive">Notice of Financial Incentive</a>.</div>
+                    href="/customer-service/privacy-policy#pp-financial-incentive">Notice of Financial Incentive</a>.
+            </div>
         </div>
     </main>
 </div>
@@ -272,7 +267,7 @@
             }
 
             if (paragh) {
-                paragh.innerHTML = 'Great news, enjoy early access to<br class="ct_desk__hide"> our Black Friday Sale now with <br > <b>up to 50% off frames + 60% off  lenses,<br class="ct_desk__hide"></b> only until 11/23.';
+                paragh.innerHTML = 'Great news, enjoy early access to<br class="ct_desk__hide"> our Black Friday Sale now with <br > <b>up to 50% off frames + 60% off  lenses,<br class="ct_desk__hide"></b> only until 11/20.';
             }
 
             if (placeholder) {
@@ -299,9 +294,9 @@
         $("p.error").remove();
         var Email = document.getElementById("email"),
             EmailVal = Email.value.toLowerCase().replace(/\s/g, "");
-                if (EmailVal == '') {
-      EmailVal = getCookie("emlCust").replace(/\s/g, "");
-    }
+        if (EmailVal == '') {
+            EmailVal = getCookie("emlCust").replace(/\s/g, "");
+        }
 
         if (Email !== null && Email.value != "") {
             if (echeck(EmailVal)) {
@@ -342,7 +337,6 @@
                 return false;
             }
         } else {
-            //user entered nothing
             return false;
         }
     });
