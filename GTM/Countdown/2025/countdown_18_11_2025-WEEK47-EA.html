@@ -32,10 +32,10 @@
       messages =
         $(window).width() <= 768
           ? [
-            '<a href="javascript:addWelcomeLayer();" id="recSignUp" class="color-white weight-bold mx-1">Sign up </a>to get <b>up to 50% off frames + 60% off lenses</b>',
+            '<a href="javascript:addWelcomeLayer();" id="recSignUp" class="color-white weight-bold mx-1">Sign up </a>to get <b>&nbsp; up to 50% off frames + 60% off lenses</b>',
           ]
           : [
-            '<a href="javascript:addWelcomeLayer();" id="recSignUp" class="color-white weight-bold mx-1">Sign up </a>  for Black Friday Early Access and get <b>up to 50% off frames + 60% off lenses</b>',
+            '<a href="javascript:addWelcomeLayer();" id="recSignUp" class="color-white weight-bold mx-1">Sign up </a>  for Black Friday Early Access and get <b>&nbsp; up to 50% off frames + 60% off lenses</b>',
           ];
     }
   }
@@ -218,7 +218,7 @@
     var countBnrMsg = messages[currentMessageIndex];
 
     // Add countdown only for the specific message
-    if (messages[currentMessageIndex].includes("Sign up")) {
+    if (messages[currentMessageIndex].includes("50% off frames")) {
       countBnrMsg +=
         '<div id="countdown" class="d-flex justify-content-end pr-2 size-6 ml-3"><div id="countdown-clockworks-holder" class="d-flex"></div></div>';
     }
@@ -227,9 +227,9 @@
 
     // Initialize the countdown if the specific message is active
     if (
-      (messages[currentMessageIndex].includes("Sign up") &&
-        checkDate === "250426") ||
-      fdFncs.vars.isTest === "250426"
+      (messages[currentMessageIndex].includes("50% off frames") &&
+        checkDate === "251119") ||
+      fdFncs.vars.isTest === "251119"
     ) {
       initializeCountdown();
     }
@@ -237,7 +237,7 @@
 
   // Function to initialize the countdown
   function initializeCountdown() {
-    var endDateLong = "04/27/2025"; // Set the end date for the countdown
+    var endDateLong = "11/20/2025"; // Set the end date for the countdown
     var digitBg = " white";
 
     $("#countdown-clockworks-holder").countdown(endDateLong, function (event) {
@@ -246,13 +246,13 @@
       //This is for Hours only
       $this.html(
         event.strftime(
-          '<div class="dash hours_dash"> <div class="countdown-digit-wrapper' +
+          '<div class="dash hours_dash" > <div class="countdown-digit-wrapper' +
           digitBg +
           '"> <div class="digit">' +
           totalHours +
-          '</div> <div class="time-label">hours</div> </div> <div class="colon">:</div></div><div class="dash minutes_dash"> <div class="countdown-digit-wrapper' +
+          '</div> <div class="time-label">hours</div> </div> <div class="colon" style="margin-top:5px>:</div></div><div class="dash minutes_dash"> <div class="countdown-digit-wrapper' +
           digitBg +
-          '"> <div class="digit">%M</div> <div class="time-label">min</div> </div> <div class="colon">:</div></div><div class="dash seconds_dash"> <div class="countdown-digit-wrapper' +
+          '"> <div class="digit">%M</div> <div class="time-label">min</div> </div> <div class="colon" style="margin-top:5px>:</div></div><div class="dash seconds_dash"> <div class="countdown-digit-wrapper' +
           digitBg +
           '"> <div class="digit">%S</div> <div class="time-label">sec</div> </div></div>'
         )

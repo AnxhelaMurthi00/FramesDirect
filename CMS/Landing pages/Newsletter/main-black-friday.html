@@ -1,18 +1,161 @@
 <style>
-    .input {
-        gap: 30px;
+    #content-main {
+        padding: 0;
     }
 
-    .btn-shop {
-        margin: 15px 5px 0 5px;
-        background-color: #6B777B;
-        font-weight: bold !important;
-        color: white !important;
-        border: none;
+    #landing-content {
+        max-width: 100%;
+        padding: 0;
     }
 
-    .ct_font__24 {
+    /* ===== LAYOUT ===== */
+    .hero {
+        display: flex;
+        min-height: 100svh;
+        /* fills full mobile height incl. URL bar */
+        align-items: center;
+        justify-content: center;
+        padding: 24px 18px 88px;
+        /* bottom space for sticky bar */
+
+    }
+
+    .hero-inner {
+        width: 100%;
+        text-align: center;
+    }
+
+    h1 {
+        margin: 0 0 10px;
         font-size: 24px;
+        line-height: 1.1;
+        letter-spacing: .2px;
+        font-weight: 800;
+        text-transform: none;
+    }
+
+    .sub {
+        margin: 0 0 22px;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .sub strong {
+        font-weight: 800
+    }
+
+    /* Form */
+    .field {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .field input[type="email"] {
+        flex: 1;
+        height: 48px;
+        padding: 0 14px;
+        font-size: 16px;
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, .12);
+        border-radius: var(--radius);
+        outline: none;
+    }
+
+    .cta {
+        height: 48px;
+        padding: 0 18px;
+        border: 0;
+        border-radius: var(--radius);
+        background: var(--btn);
+        color: var(--btn-text);
+        font-weight: 800;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .signed-in {
+        display: none;
+        margin-top: 10px;
+        font-weight: 700;
+    }
+
+    /* Optional header image (hidden on mobile) */
+
+
+    /* Sticky bottom signup bar */
+    .sticky {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 12px 14px;
+        background: #2c3947;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .sticky .copy {
+        font-size: 13px;
+        line-height: 1.25;
+        opacity: .9;
+    }
+
+    .sticky .small-btn {
+        white-space: nowrap;
+        background: #fff;
+        color: #111;
+        border: 0;
+        border-radius: 10px;
+        padding: 10px 16px;
+        font-weight: 800;
+        cursor: pointer;
+    }
+
+    @media (max-width: 769px) {
+
+        .hero {
+            background: radial-gradient(70% 70% at 50% 30%, var(--bg1) 0%, var(--bg2) 70%);
+        }
+
+        .image-section {
+            display: none !important;
+        }
+    }
+
+    /* ===== Desktop ===== */
+    @media (min-width: 769px) {
+        .image-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+        }
+
+
+
+        .image-section img {
+            width: min(80%, 680px);
+            height: auto;
+            display: block;
+        }
+
+        .hero {
+            min-height: 100vh;
+            padding: 40px;
+
+        }
+
+        .sticky {
+            display: none
+        }
+
+        .ct_desk__hide {
+            display: none;
+        }
     }
 
     .input>input {
@@ -27,11 +170,19 @@
             min-width: 90%;
         }
 
+        .ct_mob__hide {
+            display: none;
+        }
+
         .newsletter-section {
             background: linear-gradient(90deg, rgba(255, 224, 180, 1) 0%, rgba(244, 146, 60, 1) 40%, rgba(244, 146, 60, 1) 60%, rgba(255, 224, 180, 1) 100%);
             min-height: 70vh;
         }
 
+        .subscription-page {
+            background: linear-gradient(90deg, rgba(255, 224, 180, 1) 0%, rgba(244, 146, 60, 1) 40%, rgba(244, 146, 60, 1) 60%, rgba(255, 224, 180, 1) 100%);
+            min-height: 70vh;
+        }
 
     }
 
@@ -48,73 +199,151 @@
     input {
         font-size: 16px;
     }
+
+    .btn-shop {
+        margin: 15px 5px 0 5px;
+        background-color: #6B777B;
+        font-weight: bold !important;
+        color: white !important;
+        border: none;
+    }
+
+    #subscription-shop {
+        display: none !important;
+    }
+    
 </style>
 
-<section class="newsletter-section d-flex">
-    <div class="newsletter-image col-0 d-none d-md-flex col-md-6 p-0 left">
+
+<div class="subscription-page col-md-12 p-0 d-flex w-100">
+    <div class="image-section  d-flex justify-content-center w-100 p-0">
         <img src="https://images.framesdirect.com/image/upload/v1759846371/subscription-page/FD_SUBSCRIPTION-PAGE_D.png"
-            alt="Sunglasses" class="w-100">
+            alt="
+                    Glasses " class="col-12 p-0">
     </div>
 
-    <div class="d-flex flex-column newsletter-form p-0 col-12 col-md-6 justify-content-center align-items-center">
-        <h2 class="d-flex justify-content-center ct_font__24 mb-0 pb-0" id="subscription-title">Early Black Friday Sale
-        </h2>
+    <main class="d-flex align-items-center col-md-6 justify-content-center" role="main">
+        <div class="hero-inner">
+            <h1 id="subscription-title">Early Black Friday</h1>
+            <p class="sub" id="subscription-paragh">
+                Get exclusive early access to our Black Friday <br class="ct_desk__hide"> sale! Shop best sellers now
+                and <br class="ct_mob__hide">
+                <strong>save up to <br class="ct_desk__hide"> 50% on frames + 60% on lenses.</strong>
+            </p>
 
-        <p class="text-center mb-4 px-3" id="subscription-paragh">Sign in today to discover a special surprise
-            exclusively for our members.
-            <br>Only until 11/23.&nbsp;
-        </p>
-        <div class="d-flex flex-column justify-content-between input align-items-center w-100"
-            id="subscription-placeholder">
-            <input type="email" placeholder="Email address" required="" class="m-0">
+            <div class="d-flex flex-column justify-content-between input align-items-center w-100"
+                id="subscription-placeholder">
+                <input id="email" type="email" placeholder="Email address" autocomplete="email" required="true">
+                <a href="#" class="btn btn-primary btn-shop mt-2" type="submit" id="subscription-submit">SIGN UP</a>
+
+            </div>
+            <div id="subscription-shop" class="d-flex justify-content-center align-items-center">
+                <a href="/promotions/black-friday-dp" class="btn btn-primary btn-shop mt-2 w-60%" type="submit">Shop
+                    Early deals</a>
+            </div>
+
+
+            <div id="signed-in" class="signed-in weight-normal mt-4">*By clicking sign up, I confirm that I am over 16 years
+                old and agree that Luxottica S.p.A. can use my email address to send exclusive offers, content, news,
+                and other marketing communication. For information on our privacy practices, please visit our <a
+                    class="decoration-underline weight-bold" 
+                    href="/customer-service/privacy-policy">Privacy Policy.</a> For more details see our <a
+                    class="decoration-underline weight-bold"  id="privacy-link"
+                    aria-label="Open a Popup to Read Privacy Policy"
+                    href="/customer-service/privacy-policy#pp-financial-incentive">Notice of Financial Incentive</a>.</div>
         </div>
-
-        <div class="text-center  pb-1 mt-3">
-
-            <a href="#" class="emailSignUp btn btn-primary btn-shop mt-2" data-description="SHOP NOW"
-                id="footer-newsletter-submit">SHOP NOW</a>
-        </div>
-    </div>
-</section>
+    </main>
+</div>
 
 <script>
 
+    function updateSubscription() {
+        var title = document.getElementById('subscription-title');
+        var paragh = document.getElementById('subscription-paragh');
+        var placeholder = document.getElementById('subscription-placeholder');
+        var button = document.getElementById('footer-newsletter-submit');
+        var signed = document.getElementById('signed-in')
+        var btnShop = document.getElementById('subscription-shop');
 
-
-    document.addEventListener('DOMContentLoaded', () => {
-
-        const title = document.getElementById('subscription-title');
-        const paragh = document.getElementById('subscription-paragh');
-        const placeholder = document.getElementById('subscription-placeholder');
-        const button = document.getElementById('footer-newsletter-submit');
-
-
-
-
-        function getCookie(name) {
-            const nameEQ = name + "=";
-            const ca = document.cookie.split(';');
-            for (let i = 0; i < ca.length; i++) {
-                let c = ca[i];
-                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-            }
-            return null;
-        }
-
-
-        function updateSubscription() {
-            if (getCookie('fdRecognized') !== undefined && getCookie('fdRecognized') !== null) {
-                // User already recognized (e.g. logged in)
+        var cookie = getCookie('fdRecognized');
+        if (cookie !== undefined && cookie !== null) {
+            if (title) {
                 title.textContent = "Thanks for signing up!";
-                text.innerHTML = "Great news, enjoy early access to our Black Friday Sale now with <b>up to 50% off frames & lenses</b>only until 11/23.";
-                placeholder.style.display = "none"; // hide email input
-                button.innerHTML = `
-        <a href="" class="btn btn-primary btn-shop mt-2" data-description="SHOP NOW">
-          SHOP NOW
-        </a>
-      `;
             }
+
+            if (paragh) {
+                paragh.innerHTML = 'Great news, enjoy early access to<br class="ct_desk__hide"> our Black Friday Sale now with <br > <b>up to 50% off frames + 60% off  lenses,<br class="ct_desk__hide"></b> only until 11/23.';
+            }
+
+            if (placeholder) {
+                placeholder.style.setProperty("display", "none", "important");
+            }
+
+            if (button) {
+                button.outerHTML = '<a href="/" class="btn btn-primary btn-shop mt-2" data-description="SHOP NOW">SHOP NOW</a>';
+            }
+            if (signed) {
+                signed.style.setProperty("display", "block");
+            }
+            if (btnShop) {
+                btnShop.style.setProperty("display", "block", "important");
+            }
+        }
+    }
+
+    updateSubscription();
+
+    $(document).on("click", "#subscription-submit", function (e) {
+        e.preventDefault();
+        var $this = $(this);
+        $("p.error").remove();
+        var Email = document.getElementById("email"),
+            EmailVal = Email.value.toLowerCase().replace(/\s/g, "");
+                if (EmailVal == '') {
+      EmailVal = getCookie("emlCust").replace(/\s/g, "");
+    }
+
+        if (Email !== null && Email.value != "") {
+            if (echeck(EmailVal)) {
+
+                $('<div id="promo-result" class="py-4" style="display:none; background: #260309"></div')
+                    .insertAfter("body")
+                    .load("/customer/thanks.aspx?i=" + EmailVal + " form", textChange);
+                try {
+                    setCookie("User_Email_MD5", md5(EmailVal));
+                    setCookie("User_Email_SHA256", sha256(EmailVal));
+                    obj = {
+                        id: "Event",
+                        Events_UserEmailSub: "1",
+                        User_Email_MD5: md5(EmailVal),
+                        User_Email_SHA256: sha256(EmailVal),
+                    };
+                } catch (err) {
+                    obj = {
+                        id: "Event",
+                        Events_Error: "1",
+                        Error_Source: "Server",
+                        Error_Code: "utag_data object",
+                        Error_Detail: "*ERROR_EMAIL_SUB*" + err,
+                    };
+                } finally {
+                    tealium_data2track.push(obj);
+                    location.reload();
+                }
+                setCookie("emlCust", EmailVal);
+                setCookie("optInToEmails", "getEmail", 30);
+                Email.value = "";
+                return false;
+            } else {
+                $(
+                    '<p class="color-red mt-2 mb-1 error text-left">Please enter a valid email address.</p>'
+                ).insertBefore("#subscription-submit");
+                Email.focus();
+                return false;
+            }
+        } else {
+            //user entered nothing
+            return false;
         }
     });
 

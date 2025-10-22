@@ -1,0 +1,50 @@
+<script>
+    var isRecognized = getCookie('fdRecognized') !== undefined;
+
+
+  if (isRecognized && ((checkDate >= '251118' && checkDate <= '251120') || (fdFncs.vars.isTest >= '251118' && fdFncs.vars.isTest <= '251120'))) {
+    var locName = [
+      "/eyeglasses/",
+      "/sunglasses/",
+      "/prescription-sunglasses/",
+      "/men/eyewear-dp",
+      "/women/eyewear-dp",
+      "/eyeglasses/mens",
+      "/eyeglasses/womens",
+      "/sunglasses/mens",
+      "/sunglasses/womens",
+      "/prescription-sunglasses/mens",
+      "/prescription-sunglasses/womens"
+    ];
+
+    // Specific sale landing page
+    if (pgURLPath("/promotions/black-friday-dp")) {
+      var selectedCrumb = "Early Black Friday savings";
+      var topText = "Early Black Friday savings";
+      var bottomText = "Early Black Friday savings";
+      var bottomTextParagraph = "Save up to 50% on Ray-Ban, Oakley, Costa, and more right now. And, you can multiply your savings with 60% off lenses on the same order!";
+
+      $("#top-content-box h2").html(bottomText);
+      $("#top-content-box p").html(bottomTextParagraph);
+
+      $("#selected-crumb").text(selectedCrumb);
+      $("#cata_hdr").text(topText);
+
+    }
+  }
+  else if (!isRecognized && ((checkDate >= '251118' && checkDate <= '251120') || (fdFncs.vars.isTest >= '251118' && fdFncs.vars.isTest <= '251120'))) {
+    if (pgURLPath("/promotions/black-friday-dp")) {
+      var selectedCrumb = "Early Black Friday savings";
+      var topText = "Early Black Friday savings";
+      var bottomText = "Early Black Friday deals are here!";
+      var bottomTextParagraph = "Sign up to unlock our Early Black Friday deals and save up to 50% off frames + 60% off lenses with frame purchase.";
+
+      $("#top-content-box h2").html(bottomText);
+      $("#top-content-box p").html(bottomTextParagraph);
+      $("#selected-crumb").text(selectedCrumb);
+      $("#cata_hdr").text(topText);
+
+    }
+  }
+
+</script>
