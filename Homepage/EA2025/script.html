@@ -14,7 +14,7 @@
     #text-image-bf {
       width: 180px !important;
       height: 110px;
-      margin-right: 20px !important;
+      margin-left: 20px !important;
     }
   }
 
@@ -65,17 +65,17 @@
         <span class="ct_img d-flex align-items-center d-flex flex-column flex-lg-row ">
           <img
             src="https://images.framesdirect.com/image/upload/v1760688060/homePage/EA2025_POPUP_VERSION_IMAGE_ONLY.png"
-            fetchpriority="high" class="img-fluid d-block mx-auto " id="text-image-bf">
+            fetchpriority="high" class="img-fluid d-block  " id="text-image-bf">
           <span class="ct_text__white  ct_font__mob_32 ct_font__38 ct_font__desk__32">BLACK FRIDAY</span>
         </span>
         <div class="d-flex flex-wrap  mx-auto ct_text__white align-items-center justify-content-center">
 
           <div class="col-4 mb-3 px-0">
-            <p class="ct_m__0 ct_font__mob_14 ct_font__14 ct_font__desk__14 weight-normal">
-              Up to
+            <p class="ct_m__0 ct_font__mob_14 ct_font__18 ct_font__desk__18 weight-normal">
+              UP TO
             </p>
             <div
-              class="transform-uppercase ct_font__mob_32 ct_font__32 ct_font__desk__32 weight-bold ct_lh__sm ct_m__0 ">
+              class="transform-uppercase ct_font__mob_32 ct_font__34 ct_font__desk__34 weight-bold ct_lh__sm ct_m__0 ">
               50% Off<br><span class="weight-normal">Frames</span>
             </div>
 
@@ -86,7 +86,7 @@
           </div>
           <span class="col-4 px-0">
             <span
-              class="transform-uppercase ct_font__mob_32 ct_font__32 ct_font__desk__32 ct_lh__sm weight-bold ct_m__0 ct_w-0"
+              class="transform-uppercase ct_font__mob_32 ct_font__34 ct_font__desk__34 ct_lh__sm weight-bold ct_m__0 ct_w-0 mb-3"
               style="width: 62%;">
               60% Off<br><span class="weight-normal">Lenses</span>
             </span>
@@ -210,8 +210,8 @@
     }
     else
       if (
-        (checkDate >= "250825" && checkDate <= "250914") ||
-        (fdFncs.vars.isTest >= "250825" && fdFncs.vars.isTest <= "250914")
+        (checkDate >= "250714" && checkDate <= "250727") ||
+        (fdFncs.vars.isTest >= "250714" && fdFncs.vars.isTest <= "250727")
       ) {
         //hero slider promotion
         $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
@@ -220,128 +220,101 @@
 
           `
 
-        <li>
           <style>
-@media (min-width: 1200px) {
-  #text_overlay {
-    left: 50%;
-  }
-}
-</style>
-<div class="ct_space">
-    <div class="ct_banner ct_hero">
-      <a href="/email/auth-lenses-dp" aria-label="sale" data-element-id="MainNav_Promo">
-        <div class="ct_assets__container">
-            <picture class="ct_skeleton">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjnLtxx38GHIARnyQA9v4GDXdfGIkAAAAASUVORK5CYII=" alt="structure image">
-            </picture>
-            <picture class="ct_img">
-                <img src="https://images.framesdirect.com/image/upload/v1753370133/homePage/HP_AUTH_D.png" "="" fetchpriority="
-                    high" alt="The Man on the left is wearing Mauji Jim Castles Prescription Sunglasses and on the right is wearing Oakley Holbrook Sunglasses" width="3840" height="1108" usemap="#image-map2">
-            </picture>
-           <map name="image-map2" class="map-slider">
-                        <area target="" alt="Mauji Jim Castles Prescription Sunglasses" title="Mauji Jim Castles Prescription Sunglasses" href="/maui-jim-castles-728-prescription-sunglasses" coords="213,132,580,253" shape="rect">
-                        <area target="" alt="Oakley Holbrook Sunglasses" title="Oakley Holbrook Sunglasses" href="/oakley-holbrook-mix-sunglasses" coords="1300,146,1700,267" shape="rect">
+        @media (min-width: 1200px) and (max-width: 1400px) {
+            #text-image-bf {
+                width: 180px !important;
+                height: 110px;
+                margin-left: 20px !important;
+            }
+        }
+
+        @media (max-width: 400px) {
+            #text-image-bf {
+                width: 180px !important;
+                height: auto;
+            }
+        }
+
+        #text-image-bf {
+            width: 240px;
+        }
+
+        @media (max-width: 1200px) {
+            #firstHero {
+                background-image: url('https://images.framesdirect.com/image/upload/v1760688071/homePage/HP_EA2025_hero_M.png') !important;
+
+            }
+
+        }
+    </style>
+
+    <div class="ct_space" id="hero-static">
+        <div class="ct_banner ct_hero">
+            <a href="/promotions/black-friday-dp" aria-label="winter sale" class="w-100 ct_pt__mob__20">
+                <div class="ct_assets__container">
+                    <picture class="ct_skeleton">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAHklEQVR4AXzDMQ0AAAwCsIVdGMG/Q1AATQo93eKGAAAA///IBPOjAAAABklEQVQDAGLECFwb7/2tAAAAAElFTkSuQmCC"
+                            alt="structure image">
+                    </picture>
+                    <picture class="ct_img">
+                        <img src="https://images.framesdirect.com/image/upload/v1760688062/homePage/FD_HP_EA2025_hero_D.png"
+                            fetchpriority="high" alt="" width="3840" height="1108" usemap="#image-map">
+                    </picture>
+                    <map name="image-map" class="map-slider">
+                        <area target="" alt="Oakley socket Eyeglasses" title="Oakley socket Eyeglasses"
+                            href="/oakley-socket-5.5-eyeglasses?color=1" coords="1986,786,2552,271" shape="rect">
+                        <area target="" alt="Ray Ban Sunglasses" title="Ray Ban Sunglasses"
+                            href="/ray-ban-rb3636-sunglasses?color=2" coords="2593,736,3392,461" shape="rect">
 
                     </map>
-        </div>
-       </a><div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pb__mob__30 " style="background: #AAB9C0;width: 0;" id="text_overlay"><a href="/email/auth-lenses-dp" aria-label="sale" data-element-id="MainNav_Promo">
-            <div class="ct_text__black size-26 mt-lg-0 ct_lh__sm ct_mt__mob__20 weight-bold">
-                40% off <br class=" d-lg-none d-block"> prescription <br class="ct_mob__hide">
-     <span class=" d-lg-inline">sun</span><br class="ct_desk__hide d-lg-block"> lenses
-            </div>
-            <div class="ct_font__18 pt-1 pb-3 weight-bold">From Top Brands</div>
-            <div class="logos ct_mob__hide d-flex justify-content-around align-items-center w-100" style="height: 70px;padding: 0px 15px;gap:20px">
-                <img src="https://images.framesdirect.com/image/upload/v1748853576/logos/oakley-logo_1.png">
-                <img src="https://images.framesdirect.com/image/upload/v1748853577/logos/maui-jim-blk-logo_1.png">
-                <img src="https://images.framesdirect.com/image/upload/v1748854123/logos/costa-logo_M.png">
-            </div>
-            <div class="logos ct_desk__hide d-flex justify-content-between align-items-center w-100 " style="height: 110px;  padding: 0px 5px; gap:10px">
-                <img src="https://images.framesdirect.com/image/upload/v1748854124/logos/oakley-logo_M.png">
-                <img src="https://images.framesdirect.com/image/upload/v1748854124/logos/maui-jim-blk-logo_M.png">
-                <img src="https://images.framesdirect.com/image/upload/v1748853577/logos/costa-logo_1.png">
-            </div>
-            <div class="ct_text__black ct_font__18">
-                <p class="mt-1 mt-lg-0 mb-lg-2">
-                    Code: <b>SPECIAL40</b>
-                </p>
-            </div>
-            </a><div class="text-center ml-2 d-flex flex-column flex-lg-row ct_mb__mob__30 mb-5"><a href="/email/auth-lenses-dp" aria-label="sale" data-element-id="MainNav_Promo">
-                </a><a href="/email/auth-lenses-dp" class="btn-cta nowrap mt-2" style="background:#AB2317; color: #fff !important; border: 0" data-element-id="1Hero_Banner3_CTA" data-description="shopTheDeal">SAVE NOW</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-   </li>` )
-        $("#hero-slider").append(`
-        <li>
-<style>
-    @media (min-width: 1200px) and  (max-width: 1400px){
-           #secondHero{
-        width: 44% !important;
-        left: 4%;
-    }
-    .hide{
-        display: none;
-    }
-    }
-        @media (min-width: 1440px){
-    #secondHero{
-        width: 36%;
-        left: 2%;
-    }}
-    .insurnace_brands {
-        width: 424px;
-        height: 42px;
-    }
-</style>
-<div class="ct_space">
-    <div class="ct_banner ct_hero">
-            <div class="ct_assets__container">
-                <picture class="ct_skeleton">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjnLtxx38GHIARnyQA9v4GDXdfGIkAAAAASUVORK5CYII="
-                        alt="structure image">
-                </picture>
-                <picture class="ct_img">
-                    <img src="https://images.framesdirect.com/image/upload/v1752162125/homePage/HP_INSURANCE_D_week31.png" "="" fetchpriority="
-                        high" alt="The Man is wearing Maui Jim Hookipa 907 Prescription Sunglasses" width="3840"
-                        height="1108" usemap="#image-map5">
-                </picture>
-            </div>
-        <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pb__mob__30 pb-5"  id="secondHero"
-            style="background: #D6F3E9; width: 42%"><a href="/email/auth-lenses-dp" aria-label="sale">
-                <div class="ct_text__black ct_font__36  ct_lh__sm ct_mt__mob__40 weight-bold">
-                    Apply Your <br>
-                    Insurance Benefits
-                </div>
-                <div class="ct_font__18 pt-3 ">We accept most vision plans.<br class="ct_desk__hide"> Sync your insurance and<br class="ct_mob__hide"><b> unlock an exclusive
-                    promo code just for you.</b> </div>
-                <div class="logos ct_mob__hide d-flex justify-content-around align-items-center w-100 pt-2 ">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/EYEMED_logo-color.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/aetna-logo.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502287/logos/humana-logo.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502287/logos/cigna-logo.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/many-more-logo.png">
-                </div>
-                <div class="logos ct_desk__hide d-flex justify-content-between align-items-center w-100 pl-3 pr-3 mt-3" style="gap:7px;">
-                      <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/EYEMED_logo-color.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/aetna-logo.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502287/logos/humana-logo.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/many-more-logo.png">
                 </div>
             </a>
-            <div class="text-center ml-2 d-flex flex-column flex-lg-row ct_mb__mob__30 pb-2" >
-                <a href="/knowledge-center/vision-insurance-fsa-eligibility" class="btn-cta nowrap mt-4"
-                    style="background:  #000; color: #fff !important; border: 0">LEARN MORE
+            <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0" style="width: 36%; left: 5%;"
+                id="firstHero"><a href="/promotions/black-friday-dp" aria-label="winter sale"
+                    class="w-100 ct_pt__mob__0">
+                    <span class="ct_img d-flex align-items-center d-flex flex-column flex-lg-row ">
+                        <img src="https://images.framesdirect.com/image/upload/v1760688060/homePage/EA2025_POPUP_VERSION_IMAGE_ONLY.png"
+                            fetchpriority="high" class="img-fluid d-block mx-auto " id="text-image-bf">
+                        <span class="ct_text__white  ct_font__mob_32 ct_font__38 ct_font__desk__32">BLACK FRIDAY</span>
+                    </span>
+                    <p class="ct_text__white mb-md-2 mt-0">Sign up or log in to unlock up to </p>
+                    <div class="d-flex flex-wrap  mx-auto ct_text__white align-items-center justify-content-center">
+
+                        <div class="col-4 mb-3 px-0">
+                            <div
+                                class="transform-uppercase ct_font__mob_32 ct_font__32 ct_font__desk__32 weight-bold ct_lh__sm ct_m__0 ">
+                                50% Off<br><span class="weight-normal">Frames</span>
+                            </div>
+
+                        </div>
+                        <div class="col-1 ct_font__70 ct_font__mob_60 ct_font__desk__70 align-self-center ct_p__0 px-0"
+                            style="line-height:1">
+                            +
+                        </div>
+                        <span class="col-4 px-0">
+                            <span
+                                class="transform-uppercase ct_font__mob_32 ct_font__32 ct_font__desk__32 ct_lh__sm weight-bold ct_m__0 ct_w-0"
+                                style="width: 62%;">
+                                60% Off<br><span class="weight-normal">Lenses</span>
+                            </span>
+
+                        </span>
+                    </div>
                 </a>
-                <a href="/email/vision-insurance-dp" class="btn-cta nowrap mt-2 mt-lg-4 ml-lg-5"
-                    style="background:#AB2317; color: #fff !important; border: 0">Sync Now</a>
+                <div class="align-items-center justify-content-center pt-2 ct_mb__50 d-flex flex-column flex-lg-row "><a
+                        href="#" id="btn-sign-up"
+                        class="emailSignUp btn-cta ml-md-0 mx-2 d-inline-block mb-md-0 mb-2 ct_w__mob__90"
+                        style="background: #AB2317; color: #fff !important;">SIGN UP</a>
+                    <a href="/promotions/black-friday-dp" class="btn-cta  mx-2 mr-md-0 d-inline-block "
+                        style="background: transparent;color: #fff !important;border: 1px solid white !important;">SHOP
+                        NOW</a>
+                </div>
             </div>
+
         </div>
     </div>
-</div>
-   </li>` );
+    ` );
       } else
         if (
           (checkDate >= "250714" && checkDate <= "250727") ||

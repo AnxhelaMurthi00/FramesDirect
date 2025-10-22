@@ -16,6 +16,20 @@
       }
     });
   });
+  function getAmountSavings(product) {
+    var retail = parseFloat(product.frameRetailPrice);
+    if (isNaN(retail) || retail <= 0) return 0;
+
+    var discounted = parseFloat(product.price);
+    if (isNaN(discounted) || discounted <= 0) {
+      discounted = parseFloat(product.frameSalePrice);
+    }
+    if (isNaN(discounted) || discounted <= 0) return 0;
+
+    var savings = retail - discounted;
+    return savings > 0 ? savings : 0;
+  }
+
   function prodDiscoBanner() {
     if (
       (checkDate >= "251118" && checkDate <= "251120") ||
@@ -31,39 +45,37 @@
       if ($(".lens-bar-holder").length > 0) {
         $(".lens-bar-holder").remove();
       }
-      if (($('h1:contains("Prescription")').length > 0 || $('h1:contains("Eyeglasses")').length > 0 || $('h1:contains("Sunglasses")').length > 0) && excludePgs) {
+
+      if (
+        ($('h1:contains("Prescription")').length > 0 ||
+          $('h1:contains("Eyeglasses")').length > 0 ||
+          $('h1:contains("Sunglasses")').length > 0) &&
+        excludePgs
+      ) {
         if (getCookie("fdRecognized") !== undefined) {
           // Calculate savings
-          var retail = parseFloat(fdFncs.currentProduct.frameRetailPrice || 0);
-          var discounted = parseFloat(fdFncs.currentProduct.price || 0);
-          var amountSavings = retail - discounted;
+          var amountSavings = getAmountSavings(fdFncs.currentProduct);
 
-          // Only show if both prices are valid
           var savingsText = "";
-          if ( amountSavings > 0 && discounted > 0 && retail > 0) {
+          if (amountSavings > 0) {
             console.log(amountSavings);
             savingsText =
               '<span style="float:right; font-weight:600; color:black; width: auto;">-$' +
               amountSavings.toFixed(2) +
               "</span>";
-          } else{
-            savingsText = '<span style="display: none;">'
+          } else {
+            savingsText = '<span style="display: none;"></span>';
           }
 
           $('<div class="lens-bar-holder mx-0 mb-3"><div class="lens-bar d-flex color-black px-2 size-12 text-left " style="justify-content: space-around;  background: linear-gradient(90deg,rgba(255, 224, 180, 1) 0%, rgba(198, 101, 22, 1) 100%); border-radius: 5px;"><div><b> You’ve unlocked Early Black Friday Savings</b></div> <div id="discountPdp" style="display: inline-flex;justify-content: end;align-items: center;"></div>' +
             savingsText +
-            "</div>" +
-            "</div>"
+            "</div></div>"
           ).prependTo("#prod-header-right");
         } else {
-          $('<div class="lens-bar d-flex align-items-center color-black px-2 size-12 text-left" style="background: linear-gradient(90deg,rgba(255, 224, 180, 1) 0%, rgba(198, 101, 22, 1) 100%); border-radius: 5px;"><div>Black Friday Early Access:<br>Unlock <b> up to 50% off frames + 60% off lenses</b></div><a href="javascript:addWelcomeLayer();fdFncs.vars.allowEmPop = false;" class="weight-bold" data-element-id="content3" data-description="Sign up" style="display: inline-flex;justify-content: end;align-items: center;min-height: 100%;min-width: 20%;">Sign up</a></div > '
-          ).prependTo("#prod-header-right");
+          $('<div class="lens-bar d-flex align-items-center color-black px-2 size-12 text-left" style="background: linear-gradient(90deg,rgba(255, 224, 180, 1) 0%, rgba(198, 101, 22, 1) 100%); border-radius: 5px;"><div>Black Friday Early Access:<br>Unlock <b> up to 50% off frames + 60% off lenses</b></div><a href="javascript:addWelcomeLayer();fdFncs.vars.allowEmPop = false;" class="weight-bold" data-element-id="content3" data-description="Sign up" style="display: inline-flex;justify-content: end;align-items: center;min-height: 100%;min-width: 20%;">Sign up</a></div>').prependTo("#prod-header-right");
         }
-
       }
     }
-
-
     else
       if (
         (checkDate >= "251109" && checkDate <= "251117") ||
