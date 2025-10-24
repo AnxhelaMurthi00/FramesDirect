@@ -47,7 +47,7 @@
       (fdFncs.vars.isTest >= "251118" && fdFncs.vars.isTest <= "251120")
     ) {
       $(
-        '<div class="px-2"><div id="welcome-msg" class="text-center my-4"><img src="https://images.framesdirect.com/image/upload/v1760688058/homePage/EA2025_POPUP_VERSION_IMAGE_TEXT.png" alt="Frames Direct Premium Eyewear" width="350" height="150"><div class="weight-normal pt-5 pb-3 ct_font__20 color-white" style="line-height: 1"><span class="weight-bold">Thank you for signing up!</span> <div class=" my-2 weight-normal" style=""> Enjoy up to <span class="weight-bold"> 50% OFF FRAMES</span> from Ray-Ban, Gucci, Oakley, Versace & more <span class="weight-bold"> + 60% OFF LENSES.</span>Until 11/20 </div> <a href="#" id="closeSignUp" class="btn-cta mt-3 p-2" style="background: #AB2317; color: #fff !important; width: 60%; font-size: 20px ">Shop Early deals</a></div></div>'
+        '<div class="px-2"><div id="welcome-msg" class="text-center my-4"><img src="https://images.framesdirect.com/image/upload/v1760688058/homePage/EA2025_POPUP_VERSION_IMAGE_TEXT.png" alt="Frames Direct Premium Eyewear" width="350" height="150"><div class="weight-normal pt-5 pb-3 ct_font__20 color-white" style="line-height: 1.2"><span class="weight-bold">Thank you for signing up!</span> <div class=" my-2 weight-normal" style=""> Enjoy up to <span class="weight-bold"> 50% OFF FRAMES</span> from Ray-Ban, Gucci, Oakley, Versace & more <span class="weight-bold"> + 60% OFF LENSES.</span>Until 11/20 </div> <a href="#" id="closeSignUp" class="btn-cta mt-3 p-2" style="background: #AB2317; color: #fff !important; width: 60%; font-size: 20px ">Shop Early deals</a></div></div>'
       ).insertAfter("#ctl00_ContentPlaceHolderBody_divThanks > h1");
       $(
         "#email-code-outter,#email-code-outter + p,#ctl00_ContentPlaceHolderBody_divThanks > h1,#ctl00_ContentPlaceHolderBody_divThanks > p"
@@ -413,7 +413,10 @@
     });
   }
 
-
+ 
+if ($('.fancybox-outer div#email-thanks').length > 0) {
+    $('style').append('.fancybox-close.icon-x-thin:before,.fancybox-close.icon-x-thin:after {background-color: #fff;}');
+}
   function initializeLB() {
     var allowWelcome =
       (fdFncs.vars.noLB === undefined || fdFncs.vars.noLB !== true) &&
