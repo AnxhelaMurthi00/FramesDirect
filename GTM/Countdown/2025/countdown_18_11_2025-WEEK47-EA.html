@@ -13,16 +13,43 @@
 
   // Define the messages for the carousel based on date and device type
   var messages = [];
-    if (
-    (checkDate >= "251118" && checkDate <= "251120") ||
-    (fdFncs.vars.isTest >= "251118" && fdFncs.vars.isTest <= "251120")
+   if (
+    (checkDate >= "251119" && checkDate <= "251120") ||
+    (fdFncs.vars.isTest >= "251119" && fdFncs.vars.isTest <= "251120")
   ) {
     var messages;
     if (getCookie("fdRecognized") !== undefined) {
       messages =
         $(window).width() <= 768
           ? [
-            "Up to <b>&nbsp; 50% off frames + 60% off lenses</b>",
+            "Enjoy <b>&nbsp; up to 50% off frames + 60% off lenses</b>",
+          ]
+          : [
+            "Early Access unlocked: enjoy<b>&nbsp; up to 50% off frames + 60% off lenses</b>&nbsp;, today only",
+          ];
+    } else {
+      //user not logged
+      messages =
+        $(window).width() <= 768
+          ? [
+            'Up to 50% off frames + 60% off lenses:<b>&nbsp; <a href="javascript:addWelcomeLayer();" id="recSignUp" class="color-white weight-bold mx-1">Sign up </a></b>',
+          ]
+          : [
+            '<a href="javascript:addWelcomeLayer();" id="recSignUp" class="color-white weight-bold mx-1">Sign up </a>  for Black Friday Early Access and get <b>&nbsp; up to 50% off frames + 60% off lenses</b>&nbsp;, today only ',
+          ];
+    }
+  }
+  else
+    if (
+    (checkDate >= "251118" && checkDate <= "251119") ||
+    (fdFncs.vars.isTest >= "251118" && fdFncs.vars.isTest <= "251119")
+  ) {
+    var messages;
+    if (getCookie("fdRecognized") !== undefined) {
+      messages =
+        $(window).width() <= 768
+          ? [
+            "Enjoy <b>&nbsp; up to 50% off frames + 60% off lenses</b>",
           ]
           : [
             "Early Access unlocked: enjoy<b>&nbsp; up to 50% off frames + 60% off lenses</b>&nbsp; now",
@@ -32,10 +59,10 @@
       messages =
         $(window).width() <= 768
           ? [
-            '<a href="javascript:addWelcomeLayer();" id="recSignUp" class="color-white weight-bold mx-1">Sign up </a>to get <b>&nbsp; up to 50% off frames + 60% off lenses</b>',
+            'Up to 50% off frames + 60% off lenses:<b>&nbsp; <a href="javascript:addWelcomeLayer();" id="recSignUp" class="color-white weight-bold mx-1">Sign up </a></b>',
           ]
           : [
-            '<a href="javascript:addWelcomeLayer();" id="recSignUp" class="color-white weight-bold mx-1">Sign up </a>  for Black Friday Early Access and get <b>&nbsp; up to 50% off frames + 60% off lenses</b>',
+            '<a href="javascript:addWelcomeLayer();" id="recSignUp" class="color-white weight-bold mx-1">Sign up </a>  for Black Friday Early Access and get <b>&nbsp; up to 50% off frames + 60% off lenses</b> ',
           ];
     }
   }
@@ -218,7 +245,7 @@
     var countBnrMsg = messages[currentMessageIndex];
 
     // Add countdown only for the specific message
-    if (messages[currentMessageIndex].includes("50% off frames")) {
+    if (messages[currentMessageIndex].includes("Early")) {
       countBnrMsg +=
         '<div id="countdown" class="d-flex justify-content-end pr-2 size-6 ml-3"><div id="countdown-clockworks-holder" class="d-flex"></div></div>';
     }
@@ -227,7 +254,7 @@
 
     // Initialize the countdown if the specific message is active
     if (
-      (messages[currentMessageIndex].includes("50% off frames") &&
+      (messages[currentMessageIndex].includes("Early") &&
         checkDate === "251119") ||
       fdFncs.vars.isTest === "251119"
     ) {

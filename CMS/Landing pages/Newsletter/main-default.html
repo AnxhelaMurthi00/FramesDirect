@@ -1,18 +1,83 @@
 <style>
-    .input {
-        gap: 30px;
+    #content-main {
+        padding: 0;
     }
 
-    .btn-shop {
-        margin: 15px 5px 0 5px;
-        background-color: #6B777B;
-        font-weight: bold !important;
-        color: white !important;
-        border: none;
+    #landing-content {
+        max-width: 100%;
+        padding: 0;
     }
 
-    .ct_font__24 {
+
+    .hero-inner {
+        width: 100%;
+        text-align: center;
+    }
+
+    h1 {
+        margin: 0 0 10px;
         font-size: 24px;
+        line-height: 1.1;
+        letter-spacing: .2px;
+        font-weight: 800;
+        text-transform: none;
+    }
+
+    .sub {
+        margin: 0 0 22px;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .sub strong {
+        font-weight: 800
+    }
+
+    .cta {
+        height: 48px;
+        padding: 0 18px;
+        border: 0;
+        border-radius: var(--radius);
+        background: var(--btn);
+        color: var(--btn-text);
+        font-weight: 800;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .signed-in {
+        margin-top: 10px;
+        font-weight: 700;
+        font-size: 11px;
+    }
+
+
+    @media (max-width: 769px) {
+
+        .image-section {
+            display: none !important;
+        }
+    }
+
+    @media (min-width: 769px) {
+        .image-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+        }
+
+
+
+        .image-section img {
+            width: min(80%, 680px);
+            height: auto;
+            display: block;
+        }
+
+        .ct_desk__hide {
+            display: none;
+        }
     }
 
     .input>input {
@@ -27,44 +92,243 @@
             min-width: 90%;
         }
 
-        .newsletter-section {
-            background: linear-gradient(90deg, rgba(255, 224, 180, 1) 0%, rgba(244, 146, 60, 1) 40%, rgba(244, 146, 60, 1) 60%, rgba(255, 224, 180, 1) 100%);
+        .ct_mob__hide {
+            display: none;
         }
+
+        .subscription-page-unlogged,
+        .subscription-page-logged {
+            background: linear-gradient(90deg, rgba(255, 224, 180, 1) 0%, rgba(244, 146, 60, 1) 40%, rgba(244, 146, 60, 1) 60%, rgba(255, 224, 180, 1) 100%);
+            min-height: 70vh;
+        }
+
+        #subscription-title {
+            font-size: 20px !important;
+        }
+
+    }
+
+    input::-webkit-input-placeholder {
+        position: absolute;
+        left: 15px;
+        font-size: 16px;
+    }
+
+    input:focus::placeholder {
+        color: transparent;
+    }
+
+    input {
+        font-size: 16px;
+    }
+
+    .btn-shop {
+        margin: 15px 5px 0 5px;
+        background-color: #6B777B;
+        font-weight: bold !important;
+        color: white !important;
+        border: none;
+    }
+
+
+    #subscription-placeholder {
+        gap: 20px;
+    }
+
+    #subscription-page-logged {
+        display: none;
+    }
+
+    .hide {
+        display: none !important;
+    }
+
+    .show {
+        display: flex !important;
     }
 </style>
 
-<section class="newsletter-section d-flex">
-    <div class="newsletter-image col-0 d-none d-md-flex col-md-6 p-0 left">
+
+<div class="subscription-page-unlogged d-flex col-md-12 p-0  w-100">
+    <div class="image-section  d-flex justify-content-center w-100 p-0">
         <img src="https://images.framesdirect.com/image/upload/v1759846371/subscription-page/FD_SUBSCRIPTION-PAGE_D.png"
-            alt="Sunglasses" class="w-100">
+            alt="
+                    Glasses " class="col-12 p-0">
     </div>
 
-    <div class="d-flex flex-column newsletter-form p-0 col-12 col-md-6 justify-content-center align-items-center">
-        <h2 class="d-flex justify-content-center ct_font__24 mb-4">Join our newsletter</h2>
-        <div class="d-flex flex-column justify-content-between input align-items-center w-100">
+    <div class="d-flex align-items-center col-md-6 justify-content-center">
+        <div class="hero-inner">
+            <h1 id="subscription-title">Join our newsletter</h1>
 
-            <input type="text" placeholder="Title*" required="">
-            <input type="text" placeholder="Title*" required="">
-            <input type="text" placeholder="Title*" required="">
-            <input type="text" placeholder="Title*" required="">
+            <div class="d-flex flex-column justify-content-between input align-items-center w-100"
+                id="subscription-placeholder">
+                <input id="email" type="email" placeholder="Email address" autocomplete="email" aria-required="true">
+
+                <input id="name" type="text" placeholder="First name" aria-required="true">
+
+                <input id="lastname" type="text" placeholder="Last name" aria-required="true">
+
+                <input id="dob" type="text" placeholder="Date of birth" maxlength="10">
+
+                <p class="weight-bold  m-0">We will send you a special gift on your birthday</p>
+
+                <a href="#" class="btn btn-primary btn-shop mt-0" id="subscription-submit">SIGN UP</a>
+
+            </div>
+            <div id="signed-in" class="signed-in weight-normal mt-4">By clicking sign up, I confirm that I am over 18
+                years old and I agree that my email address can be used by <br class="ct_mob__hide">send exclusive
+                Luxottica S.p.A. to send me exclusive offers, contents, news and other marketing communication <br
+                    class="ct_mob__hide">(visit our <a class="decoration-underline weight-bold"
+                    href="/customer-service/privacy-policy">Privacy Policy </a>for further information).<br>
+                For more details see our <a class="decoration-underline weight-bold" id="privacy-link"
+                    aria-label="Open a Popup to Read Privacy Policy"
+                    href="/customer-service/privacy-policy#pp-financial-incentive">Notice of Financial Incentive</a>.
+            </div>
         </div>
-        <p class="d-flex justify-content-center weight-bold">
-            We will send you a special gift on your birthday
-        </p>
-        <div class="text-center  pb-1">
+    </div>
+</div>
 
-            <a href="#" class="btn btn-primary btn-shop mt-2" data-description="SHOP NOW">SHOP NOW</a>
-        </div>
 
-        <div class="d-flex justify-content-center px-3">
-            <p class="text-center">
-                By clicking Sign in, I confirm that I am over 18 years old and I agree that my email address can be used
-                by
-                Luxottica S.p.A. to send me exclusive offers, contents, news and other marketing communication (visit <a
-                    href="#">Privacy Policy</a> for further information). <br>
-                For more details see our <a href="#">Notice of Financial Incentive</a>.
+<div class="subscription-page-logged hide d-flex col-md-12 p-0  w-100">
+    <div class="image-section  d-flex justify-content-center w-100 p-0">
+        <img src="https://images.framesdirect.com/image/upload/v1759846371/subscription-page/FD_SUBSCRIPTION-PAGE_D.png"
+            alt="
+                    Glasses " class="col-12 p-0">
+    </div>
+
+    <div class="d-flex align-items-center col-md-6 justify-content-center">
+        <div class="hero-inner">
+            <h1 id="subscription-title">Thanks for signing up! </h1>
+            <p class="sub" id="subscription-paragh">
+                Start browsing your favorite eyewear.
             </p>
-        </div>
 
+            <div id="subscription-shop" class="d-flex justify-content-center align-items-center flex-column">
+                <div class="d-flex flex-column">
+                    <a href="/eyeglasses" class="btn btn-primary btn-shop mt-2 w-60%" type="submit">SHOP EYEGLASSES</a>
+                    <a href="/prescription-sunglasses/" class="btn btn-primary btn-shop mt-2 w-60%" type="submit">SHOP
+                        PRESCRIPTION SUNGLASSES</a>
+                    <a href="/sunglasses" class="btn btn-primary btn-shop mt-2 w-60%" type="submit">SHOP SUNGLASSES</a>
+                </div>
+            </div>
+        </div>
     </div>
-</section>
+</div>
+
+<script>
+
+    const dobInput = document.getElementById('dob');
+
+    dobInput.addEventListener('input', function (e) {
+        let value = dobInput.value.replace(/\D/g, '');
+
+        if (value.length > 2 && value.length <= 4) {
+            value = value.slice(0, 2) + '/' + value.slice(2);
+        } else if (value.length > 4) {
+            value = value.slice(0, 2) + '/' + value.slice(2, 4) + '/' + value.slice(4, 8);
+        }
+
+        dobInput.value = value;
+    });
+
+    function updateSubscription() {
+        const sub_logged = document.querySelector('.subscription-page-logged');
+        const sub_unlogged = document.querySelector('.subscription-page-unlogged');
+        const cookie = getCookie('fdRecognized');
+
+        if (!sub_logged || !sub_unlogged) return;
+
+        if (cookie !== undefined && cookie !== null) {
+            sub_logged.classList.add('show');
+            sub_unlogged.classList.add('hide');
+        }
+    }
+
+    updateSubscription();
+
+    $(document).on("click", "#subscription-submit", function (e) {
+        e.preventDefault();
+        var $this = $(this);
+        $("p.error").remove();
+        var Email = document.getElementById("email"),
+            Name = document.getElementById("name"),
+            LastName = document.getElementById("lastname"),
+            DOB = document.getElementById("dob"),
+            EmailVal = Email.value.toLowerCase().replace(/\s/g, "");
+
+
+        if (EmailVal == '') {
+            EmailVal = getCookie("emlCust").replace(/\s/g, "");
+        }
+
+        if (Email !== null && Email.value != "") {
+            if (!EmailVal) {
+                $('<p class="color-red mt-2 mb-1 error text-left">Please enter your email address.</p>').insertBefore("#subscription-submit");
+                Email.focus();
+                return false;
+            }
+            if (!echeck(EmailVal)) {
+                $('<p class="color-red mt-2 mb-1 error text-left">Please enter a valid email address.</p>').insertBefore("#subscription-submit");
+                Email.focus();
+                return false;
+            }
+            if (!Name.value.trim()) {
+                $('<p class="color-red mt-2 mb-1 error text-left">Please enter your first name.</p>').insertBefore("#subscription-submit");
+                Name.focus();
+                return false;
+            }
+            if (!LastName.value.trim()) {
+                $('<p class="color-red mt-2 mb-1 error text-left">Please enter your last name.</p>').insertBefore("#subscription-submit");
+                LastName.focus();
+                return false;
+            }
+            if (!DOB.value.trim()) {
+                $('<p class="color-red mt-2 mb-1 error text-left">Please enter your date of birth.</p>').insertBefore("#subscription-submit");
+                DOB.focus();
+                return false;
+            }
+            if (echeck(EmailVal)) {
+
+                $('<div id="promo-result" class="py-4" style="display:none; background: #260309"></div')
+                    .insertAfter("body")
+                    .load("/customer/thanks.aspx?i=" + EmailVal + " form", textChange);
+                try {
+                    setCookie("User_Email_MD5", md5(EmailVal));
+                    setCookie("User_Email_SHA256", sha256(EmailVal));
+                    obj = {
+                        id: "Event",
+                        Events_UserEmailSub: "1",
+                        User_Email_MD5: md5(EmailVal),
+                        User_Email_SHA256: sha256(EmailVal),
+                    };
+                } catch (err) {
+                    obj = {
+                        id: "Event",
+                        Events_Error: "1",
+                        Error_Source: "Server",
+                        Error_Code: "utag_data object",
+                        Error_Detail: "*ERROR_EMAIL_SUB*" + err,
+                    };
+                } finally {
+                    tealium_data2track.push(obj);
+                    location.reload();
+                }
+                setCookie("emlCust", EmailVal);
+                setCookie("optInToEmails", "getEmail", 30);
+                Email.value = "";
+                return false;
+            }
+            else {
+                $(
+                    '<p class="color-red mt-2 mb-1 error text-left">Please enter a valid email address.</p>'
+                ).insertBefore("#subscription-submit");
+                Email.focus();
+                return false;
+            }
+
+        } else {
+            return false;
+        }
+    });
+
+</script>

@@ -18,16 +18,20 @@
     }
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 470px) {
     #text-image-bf {
       width: 180px !important;
       height: auto;
     }
+                  span.ct_img.d-flex.align-items-center.d-flex.flex-column.flex-lg-row >span{
+            margin-top: -15px;
+        }
   }
 
   #text-image-bf {
     width: 240px;
   }
+
 
   @media (max-width: 1200px) {
     #firstHero {
@@ -66,11 +70,11 @@
           <img
             src="https://images.framesdirect.com/image/upload/v1760688060/homePage/EA2025_POPUP_VERSION_IMAGE_ONLY.png"
             fetchpriority="high" class="img-fluid d-block  " id="text-image-bf">
-          <span class="ct_text__white  ct_font__mob_32 ct_font__38 ct_font__desk__32">BLACK FRIDAY</span>
+          <span class="ct_text__white  ct_font__mob_38 ct_font__38 ct_font__desk__32">BLACK FRIDAY</span>
         </span>
         <div class="d-flex flex-wrap  mx-auto ct_text__white align-items-center justify-content-center">
 
-          <div class="col-4 mb-3 px-0">
+          <div class="col-5 col-md-4 mb-3 px-0">
             <p class="ct_m__0 ct_font__mob_14 ct_font__18 ct_font__desk__18 weight-normal">
               UP TO
             </p>
@@ -84,7 +88,7 @@
             style="line-height:1">
             +
           </div>
-          <span class="col-4 px-0">
+          <span class="col-5 col-md-4  px-0 mt-md-2">
             <span
               class="transform-uppercase ct_font__mob_32 ct_font__34 ct_font__desk__34 ct_lh__sm weight-bold ct_m__0 ct_w-0 mb-3"
               style="width: 62%;">
@@ -210,8 +214,8 @@
     }
     else
       if (
-        (checkDate >= "250714" && checkDate <= "250727") ||
-        (fdFncs.vars.isTest >= "250714" && fdFncs.vars.isTest <= "250727")
+          (checkDate >= "250714" && checkDate <= "250727") ||
+          (fdFncs.vars.isTest >= "250714" && fdFncs.vars.isTest <= "250727")
       ) {
         //hero slider promotion
         $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
