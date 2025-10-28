@@ -1,0 +1,55 @@
+      <script>
+                                                document.addEventListener("DOMContentLoaded", function() {
+                                                    const allowedPaths = ['/eyeglasses/', '/sunglasses/', '/prescription-sunglasses/', '/men/eyewear-dp', '/women/eyewear-dp', '/eyeglasses/mens', '/eyeglasses/womens', '/sunglasses/mens', '/sunglasses/womens', '/prescription-sunglasses/mens', '/prescription-sunglasses/womens', '/promotions/black-friday-dp', '/sale/', '/eyeglasses/sale/', '/prescription-sunglasses/sale/', '/sunglasses/sale/'];
+
+                                                    const sCurrentPath = window.location.pathname;
+                                                    const dvPromoBanner = document.getElementById('dvPLPPromoBanner');
+                                                    if (dvPromoBanner) {
+                                                        if (allowedPaths.includes(sCurrentPath)) {
+                                                            if (fdFncs.vars.fdRecognized !== undefined && fdFncs.vars.fdRecognized !== false) {
+                                                                fetch('/theme/PLP-Banner-With-Login.html').then(res => res.text()).then(html => {
+                                                                    const oParser = new DOMParser();
+                                                                    const oHtmlDoc = oParser.parseFromString(html, 'text/html');
+                                                                    if (sCurrentPath.toLowerCase().indexOf("/sale") !== -1) {
+                                                                        const dvSelected = oHtmlDoc.querySelector('#dvSalePLPPromoWithLogin');
+                                                                        if (dvSelected) {
+                                                                            document.getElementById("dvPLPPromoBanner").outerHTML = dvSelected.outerHTML;
+                                                                        }
+                                                                    } else {
+                                                                        const dvSelected = oHtmlDoc.querySelector('#dvGenricPLPPromoWithLogin');
+                                                                        if (dvSelected) {
+                                                                            document.getElementById("dvPLPPromoBanner").outerHTML = dvSelected.outerHTML;
+                                                                        }
+                                                                    }
+                                                                }
+                                                                ).catch(err => {
+                                                                    console.log("Failed to load banner");
+                                                                }
+                                                                );
+                                                            } else {
+                                                                fetch('/theme/PLP-Banner-Without-Login.html').then(res => res.text()).then(html => {
+                                                                    const oParser = new DOMParser();
+                                                                    const oHtmlDoc = oParser.parseFromString(html, 'text/html');
+                                                                    if (sCurrentPath.toLowerCase().indexOf("/sale") !== -1) {
+                                                                        const dvSelected = oHtmlDoc.querySelector('#dvSalePLPPromoWithoutLogin');
+                                                                        if (dvSelected) {
+                                                                            document.getElementById("dvPLPPromoBanner").outerHTML = dvSelected.outerHTML;
+                                                                        }
+                                                                    } else {
+                                                                        const dvSelected = oHtmlDoc.querySelector('#dvGenricPLPPromoWithoutLogin');
+                                                                        if (dvSelected) {
+                                                                            document.getElementById("dvPLPPromoBanner").outerHTML = dvSelected.outerHTML;
+                                                                        }
+                                                                    }
+                                                                }
+                                                                ).catch(err => {
+                                                                    console.log("Failed to load banner");
+                                                                }
+                                                                );
+                                                            }
+                                                        } else {
+                                                            dvPromoBanner.style.display = 'none';
+                                                        }
+                                                    }
+                                                });
+                                            </script>
