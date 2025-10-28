@@ -40,67 +40,46 @@
       }
     }
   });
-  function textChange() {
-    $('#popup-holder-inner:contains("Thank You")').removeAttr("style");
+
+
+  function showPromotionalMessage(EmailVal) {
+    var promoHTML = '';
+
+
     if (
       (checkDate >= "251118" && checkDate <= "251120") ||
       (fdFncs.vars.isTest >= "251118" && fdFncs.vars.isTest <= "251120")
     ) {
-      $(
-        '<div class="px-2"><div id="welcome-msg" class="text-center my-4"><img src="https://images.framesdirect.com/image/upload/v1761318298/homePage/EARLY_BLACK_FRIDAY_BLACK.png" alt="Frames Direct Premium Eyewear" width="350" height="150"><div class="weight-normal pt-5 pb-3 ct_font__20 color-black" style="line-height: 1.2"><span class="weight-bold">Thank you for signing up!</span> <div class=" my-2 weight-normal" style=""> Enjoy up to <span class="weight-bold"> 50% OFF FRAMES</span> from Ray-Ban, Gucci, Oakley, Versace & more <span class="weight-bold"> + 60% OFF LENSES.</span>Until 11/20 </div> <a href="#" id="closeSignUp" class="btn-cta mt-3 p-2" style="background: #AB2317; color: #fff !important; width: 60%; font-size: 20px ">Shop Early deals</a></div></div>'
-      ).insertAfter("#ctl00_ContentPlaceHolderBody_divThanks > h1");
-      $(
-        "#email-code-outter,#email-code-outter + p,#ctl00_ContentPlaceHolderBody_divThanks > h1,#ctl00_ContentPlaceHolderBody_divThanks > p"
-      ).remove();
-    } else
-      if (
-        (checkDate >= "250124" && checkDate <= "250125") ||
-        (fdFncs.vars.isTest >= "250124" && fdFncs.vars.isTest <= "250125")
-      ) {
-        $(
-          '<div class="text-center"><img src="https://images.framesdirect.com/image/upload/w_300,f_auto,q_auto/v1664555372/logos/2022-FD-logo-mobile.svg" alt="Frames Direct Premium Eyewear" width="250" height="25"><div class="weight-bold mt-4">Over 100,000 Products and 300 Brands<div class="size-25 mb-3">Enjoy 29% Off Frames<div class="py-1">+</div>65% Off<div class="weight-normal size-8 mt-0">Lenses &amp; Add-ons<div class=" weight-normal">with code:<b>EXTRA5</b></div></div></div><a href="#" id="closeSignUp" class="btn-cta mt-3">Save Now</a></div></div>'
-        ).insertAfter("#ctl00_ContentPlaceHolderBody_divThanks > h1");
-        $(
-          "#email-code-outter,#email-code-outter + p,#ctl00_ContentPlaceHolderBody_divThanks > h1,#ctl00_ContentPlaceHolderBody_divThanks > p"
-        ).remove();
-      } else if (
-        (checkDate >= "250113" && checkDate <= "250115") ||
-        (fdFncs.vars.isTest >= "250113" && fdFncs.vars.isTest <= "250115")
-      ) {
-        $(
-          '<div class="text-center"><img src="https://images.framesdirect.com/image/upload/w_300,f_auto,q_auto/v1664555372/logos/2022-FD-logo-mobile.svg" alt="Frames Direct Premium Eyewear" width="250" height="25"><div class="weight-bold mt-4">Over 100,000 Products and 300 Brands<div class="size-25 mb-3">Enjoy 25% Off Frames<div class="py-1">+</div>65% Off<div class="weight-normal size-8 mt-0">Lenses &amp; Add-ons<div class=" weight-normal">with code:<b>EXTRA5</b></div></div></div><a href="#" id="closeSignUp" class="btn-cta mt-3">Save Now</a></div></div>'
-        ).insertAfter("#ctl00_ContentPlaceHolderBody_divThanks > h1");
-        $(
-          "#email-code-outter,#email-code-outter + p,#ctl00_ContentPlaceHolderBody_divThanks > h1,#ctl00_ContentPlaceHolderBody_divThanks > p"
-        ).remove();
-      } else {
-        $(
-          '<div class="text-center"><img src="https://images.framesdirect.com/image/upload/w_300,f_auto,q_auto/v1664555372/logos/2022-FD-logo-mobile.svg" alt="Frames Direct Premium Eyewear" width="250" height="25"><div class="weight-bold mt-4">Over 100,000 Products and 300 Brands<div class="size-25 mb-3">Enjoy 20% Off Frames<div class="size-7 weight-normal">with code:<div class="weight-bold size-15">FDFAMILY</div></div><div class="py-1">+</div>60% Off<div class="weight-normal size-8 mt-0">Lenses &amp; Add-ons<div class="size-10">will be applied at checkout automatically</div></div></div><a href="#" id="closeSignUp" class="btn-cta mt-3">Save Now</a></div></div>'
-        ).insertAfter("#ctl00_ContentPlaceHolderBody_divThanks > h1");
-        $(
-          "#email-code-outter,#email-code-outter + p,#ctl00_ContentPlaceHolderBody_divThanks > h1,#ctl00_ContentPlaceHolderBody_divThanks > p"
-        ).remove();
-      }
-    $("#ctl00_ContentPlaceHolderBody_divThanks .msg-disc:last-child")
-      .addClass("px-5 size-10")
-      .removeClass("size-11")
-      .html(
-        '<div class="align-left"><strong>Disclaimer:</strong> ' +
-        fdFncs.vars.emDetails +
-        "</div>"
-      );
-    if (typeof fdFncs.vars.testWelcome != "undefined") {
-      $("#ctl00_ContentPlaceHolderBody_divThanks").addClass("width-60");
-      $("#ctl00_ContentPlaceHolderBody_divThanks")
-        .parent()
-        .addClass("m-auto my-0");
+      promoHTML = '<div class="px-2"><div id="welcome-msg" class="text-center my-4"><img src="https://images.framesdirect.com/image/upload/v1761318298/homePage/EARLY_BLACK_FRIDAY_BLACK.png" alt="Frames Direct Premium Eyewear" width="350" height="150"><div class="weight-normal pt-5 pb-3 ct_font__20 color-black" style="line-height: 1.2"><span class="weight-bold">Thank you for signing up!</span> <div class=" my-2 weight-normal" style=""> Enjoy up to <span class="weight-bold"> 50% OFF FRAMES</span> from Ray-Ban, Gucci, Oakley, Versace & more <span class="weight-bold"> + 60% OFF LENSES.</span> Until 11/20 </div> <a href="#" id="closeSignUp" class="btn-cta mt-3 p-2" style="background: #AB2317; color: #fff !important; width: 60%; font-size: 20px ">Shop Early deals</a></div></div>';
+    } else if (
+      (checkDate >= "250124" && checkDate <= "250125") ||
+      (fdFncs.vars.isTest >= "250124" && fdFncs.vars.isTest <= "250125")
+    ) {
+      promoHTML = '<div class="text-center"><img src="https://images.framesdirect.com/image/upload/w_300,f_auto,q_auto/v1664555372/logos/2022-FD-logo-mobile.svg" alt="Frames Direct Premium Eyewear" width="250" height="25"><div class="weight-bold mt-4">Over 100,000 Products and 300 Brands<div class="size-25 mb-3">Enjoy 29% Off Frames<div class="py-1">+</div>65% Off<div class="weight-normal size-8 mt-0">Lenses &amp; Add-ons<div class=" weight-normal">with code:<b>EXTRA5</b></div></div></div><a href="#" id="closeSignUp" class="btn-cta mt-3">Save Now</a></div></div>';
+    } else if (
+      (checkDate >= "250113" && checkDate <= "250115") ||
+      (fdFncs.vars.isTest >= "250113" && fdFncs.vars.isTest <= "250115")
+    ) {
+      promoHTML = '<div class="text-center"><img src="https://images.framesdirect.com/image/upload/w_300,f_auto,q_auto/v1664555372/logos/2022-FD-logo-mobile.svg" alt="Frames Direct Premium Eyewear" width="250" height="25"><div class="weight-bold mt-4">Over 100,000 Products and 300 Brands<div class="size-25 mb-3">Enjoy 25% Off Frames<div class="py-1">+</div>65% Off<div class="weight-normal size-8 mt-0">Lenses &amp; Add-ons<div class=" weight-normal">with code:<b>EXTRA5</b></div></div></div><a href="#" id="closeSignUp" class="btn-cta mt-3">Save Now</a></div></div>';
+    } else {
+      promoHTML = '<div class="text-center"><img src="https://images.framesdirect.com/image/upload/w_300,f_auto,q_auto/v1664555372/logos/2022-FD-logo-mobile.svg" alt="Frames Direct Premium Eyewear" width="250" height="25"><div class="weight-bold mt-4">Over 100,000 Products and 300 Brands<div class="size-25 mb-3">Enjoy 20% Off Frames<div class="size-7 weight-normal">with code:<div class="weight-bold size-15">FDFAMILY</div></div><div class="py-1">+</div>60% Off<div class="weight-normal size-8 mt-0">Lenses &amp; Add-ons<div class="size-10">will be applied at checkout automatically</div></div></div><a href="#" id="closeSignUp" class="btn-cta mt-3">Save Now</a></div></div>';
     }
-    $("#ctl00_ContentPlaceHolderBody_divThanks h1")
-      .removeClass("size-jumbo")
-      .addClass("size-40 weight-medium");
-    $("#ctl00_ContentPlaceHolderBody_divThanks h1+p").remove();
-    $("#email-code-outter").remove();
+    if ($("#promo-result").length) {
+      $("#promo-result").remove();
+    }
+
+    $("body").append('<div id="promo-result" class="py-4" style="background: linear-gradient(90deg, #FFE0B4 0%, #C66516 100%);">' + promoHTML + '</div>');
+
+
+    triggerPromo();
+
+
+    setTimeout(function () {
+      $("body").append('<div id="email-thanks" style="display:none;"></div>');
+      $("#email-thanks").load("/customer/thanks.aspx?i=" + EmailVal + " form");
+    }, 100);
   }
+
   function addWelcomeLayer() {
     var message = "",
       offerEnds = "",
@@ -112,35 +91,34 @@
     ) {
       message =
         '<div class="px-2"><div id="welcome-msg" class="text-center my-4"><img src="https://images.framesdirect.com/image/upload/v1761318298/homePage/EARLY_BLACK_FRIDAY_BLACK.png" alt="Frames Direct Premium Eyewear" width="350" height="150"><div class="weight-normal pt-5 pb-3 ct_font__20 color-black" style="line-height: 1">Sign up now to unlock <div class=" my-2 weight-bold">up to 50% off frames + 60% off lenses</div></div></div>';
-    } else
-      if (
-        (checkDate >= "250124" && checkDate <= "250125") ||
-        (fdFncs.vars.isTest >= "250124" && fdFncs.vars.isTest <= "250125")
-      ) {
-        message =
-          '<div class="px-2"><div id="welcome-msg" class="text-center my-4"><img src="https://images.framesdirect.com/image/upload/w_300,f_auto,q_auto/v1664555372/logos/2022-FD-logo-mobile.svg" alt="Frames Direct Premium Eyewear" width="250" height="25"><div class="weight-medium pt-5 pb-3" style="line-height: 1">Anniversary Sale <div class="size-25 my-3 weight-bold">29% Off Frames<div class="py-3">+</div>65% Off<div class="weight-normal size-8 mt-3">Lenses & Add-ons </div></div></div>';
-      } else if (
-        (checkDate >= "250113" && checkDate <= "250115") ||
-        (fdFncs.vars.isTest >= "250113" && fdFncs.vars.isTest <= "250115")
-      ) {
-        message =
-          '<div class="px-2"><div id="welcome-msg" class="text-center my-4"><img src="https://images.framesdirect.com/image/upload/w_300,f_auto,q_auto/v1664555372/logos/2022-FD-logo-mobile.svg" alt="Frames Direct Premium Eyewear" width="250" height="25"><div class="weight-medium pt-5 pb-3" style="line-height: 1">Early Winter Sale<div class="size-25 my-3 weight-bold">25% Off Frames<div class="py-3">+</div>65% Off<div class="weight-normal size-8 mt-3">Lenses & Add-ons </div></div></div>';
-      } else if (
-        (checkDate >= "241203" && checkDate <= "241206") ||
-        (fdFncs.vars.isTest >= "241203" && fdFncs.vars.isTest <= "241206")
-      ) {
-        message =
-          '<div class="px-2"><img src="https://images.framesdirect.com/image/upload/v1732030602/homePage/FD_HP_CYBERSALE_text.png" alt="Cyber Sale" style="width: 100%; height: auto; max-height: 200px;" fetchpriority="high" usemap="#image-map"><div id="welcome-msg" class="text-center my-4"><div class="py-2" style="line-height: 1.3">Sign up now for access to our Cyber ' +
-          setSale +
-          " Sale*</div>";
-        offerEnds = "*Offer ends 12/06";
-      } else {
-        message =
-          '<div class="px-2"><div id="welcome-msg" class="text-center my-4"><img src="https://images.framesdirect.com/image/upload/w_300,f_auto,q_auto/v1664555372/logos/2022-FD-logo-mobile.svg" alt="Frames Direct Premium Eyewear" width="250" height="25"><div class="weight-medium pt-5 pb-3" style="line-height: 1">First things first, take<div class="size-25 my-3 weight-bold">20% Off Frames<div class="py-3">+</div>60% Off<div class="weight-normal size-8 mt-3">Lenses &amp; Add-ons</div></div></div>';
-      }
+    } else if (
+      (checkDate >= "250124" && checkDate <= "250125") ||
+      (fdFncs.vars.isTest >= "250124" && fdFncs.vars.isTest <= "250125")
+    ) {
+      message =
+        '<div class="px-2"><div id="welcome-msg" class="text-center my-4"><img src="https://images.framesdirect.com/image/upload/w_300,f_auto,q_auto/v1664555372/logos/2022-FD-logo-mobile.svg" alt="Frames Direct Premium Eyewear" width="250" height="25"><div class="weight-medium pt-5 pb-3" style="line-height: 1">Anniversary Sale <div class="size-25 my-3 weight-bold">29% Off Frames<div class="py-3">+</div>65% Off<div class="weight-normal size-8 mt-3">Lenses & Add-ons </div></div></div>';
+    } else if (
+      (checkDate >= "250113" && checkDate <= "250115") ||
+      (fdFncs.vars.isTest >= "250113" && fdFncs.vars.isTest <= "250115")
+    ) {
+      message =
+        '<div class="px-2"><div id="welcome-msg" class="text-center my-4"><img src="https://images.framesdirect.com/image/upload/w_300,f_auto,q_auto/v1664555372/logos/2022-FD-logo-mobile.svg" alt="Frames Direct Premium Eyewear" width="250" height="25"><div class="weight-medium pt-5 pb-3" style="line-height: 1">Early Winter Sale<div class="size-25 my-3 weight-bold">25% Off Frames<div class="py-3">+</div>65% Off<div class="weight-normal size-8 mt-3">Lenses & Add-ons </div></div></div>';
+    } else if (
+      (checkDate >= "241203" && checkDate <= "241206") ||
+      (fdFncs.vars.isTest >= "241203" && fdFncs.vars.isTest <= "241206")
+    ) {
+      message =
+        '<div class="px-2"><img src="https://images.framesdirect.com/image/upload/v1732030602/homePage/FD_HP_CYBERSALE_text.png" alt="Cyber Sale" style="width: 100%; height: auto; max-height: 200px;" fetchpriority="high" usemap="#image-map"><div id="welcome-msg" class="text-center my-4"><div class="py-2" style="line-height: 1.3">Sign up now for access to our Cyber ' +
+        setSale +
+        " Sale*</div>";
+      offerEnds = "*Offer ends 12/06";
+    } else {
+      message =
+        '<div class="px-2"><div id="welcome-msg" class="text-center my-4"><img src="https://images.framesdirect.com/image/upload/w_300,f_auto,q_auto/v1664555372/logos/2022-FD-logo-mobile.svg" alt="Frames Direct Premium Eyewear" width="250" height="25"><div class="weight-medium pt-5 pb-3" style="line-height: 1">First things first, take<div class="size-25 my-3 weight-bold">20% Off Frames<div class="py-3">+</div>60% Off<div class="weight-normal size-8 mt-3">Lenses &amp; Add-ons</div></div></div>';
+    }
     var welcomeLayer =
       message +
-      '<div class="email-newsletter-form position-relative"><input id="email-newsletter-popup-input" placeholder="Enter your email" name="newsemail" type="email" class="my-2"><a href="#" id="email-newsletter-submit" class="btn-cta " style="background: #AB2317; color: #fff !important; width: 40%;">Sign Up</a><a href="#" id="email-newsletter-nothanks" data-ol-has-click-handler="" class="d-inline-block weight-bold color-black">No thanks</a></div><div class="sms-newsletter-form position-relative" style="display:none"><input id="sms-newsletter-popup-input" placeholder="Mobile Number" name="newssms" type="text" class="mt-3"><a href="#" id="sms-newsletter-submit" class="btn-cta mt-3" style="background: #AB2317; color: #fff !important;">Sign Up for Text</a><a href="#" id="sms-newsletter-nothanks" class="d-inline-block weight-bold color-black">Decline</span></a><div class="text-left size-8 mt-3 color-black">By signing up I provide my signature expressly consenting to contact from FramesDirect at the number and email I provided regarding products or services, including marketing and promotions, via email, live or automated text. I understand that I am not required to enter into this agreement as a condition of any purchase. I can revoke this consent by replying STOP or by unsubscribing from email. I understand that message frequency varies and that message and data rates may apply. I also agree to the information provided at the following links. <a class="decoration-underline color-black" target="_blank" href="/theme/fd-steel/popup/popup-privacy-policy.html">Terms</a> & <a class="decoration-underline color-black" target="_blank" id="privacy-link" aria-label="Open a Popup to Read Privacy Policy" href="/theme/fd-steel/popup/popup-privacy-policy.html">Privacy</a>.</div></div><p class="size-10 mt-4 mb-0">' +
+      '<div class="email-newsletter-form position-relative"><input id="email-newsletter-popup-input" placeholder="Enter your email" name="newsemail" type="email" class="my-2"><a href="#" id="email-newsletter-submit" class="btn-cta " style="background: #AB2317; color: #fff !important; width: 40%;">Sign Up</a><a href="#" id="email-newsletter-nothanks" data-ol-has-click-handler="" class="d-inline-block weight-bold color-black">No thanks</a></div><p class="size-10 mt-4 mb-0">' +
       offerEnds +
       "</p>";
     if ($("#email-welcome").length) {
@@ -159,53 +137,47 @@
       "email-newsletter-popup-input",
       "email-newsletter-submit"
     );
-    addEnterClickHandler("sms-newsletter-popup-input", "sms-newsletter-submit");
-    phoneNumberValidator("sms-newsletter-popup-input");
     checkDevice();
   }
+
   function FooterMailPopup(inputid) {
     var Email = document.getElementById(inputid),
       EmailVal = Email.value.toLowerCase().replace(/\s/g, "");
     if (Email !== null && echeck(EmailVal)) {
-      setTimeout(function () {
-        $("body").append('<div id="email-thanks"></div>');
-        $("#email-thanks").load(
-          "/customer/thanks.aspx?i=" + EmailVal + " form",
-          textChange
-        );
-        setCookie("emlCust", EmailVal);
-        setCookie("optInToEmails", "getEmail", 30);
-        Email.value = "";
-        try {
-          setCookie("User_Email_MD5", md5(EmailVal));
-          setCookie("User_Email_SHA256", sha256(EmailVal));
-          obj = {
-            id: "Event",
-            Events_UserEmailSub: "1",
-            User_Email_MD5: md5(EmailVal),
-            User_Email_SHA256: sha256(EmailVal),
-          };
-        } catch (err) {
-          obj = {
-            id: "Event",
-            Events_Error: "1",
-            Error_Source: "Server",
-            Error_Code: "utag_data object",
-            Error_Detail: "*ERROR_EMAIL_SUB*" + err,
-          };
-        } finally {
-          tealium_data2track.push(obj);
-        }
-        return true;
-      }, 360);
+      // Use the new immediate promotional message function
+      showPromotionalMessage(EmailVal);
+      setCookie("emlCust", EmailVal);
+      setCookie("optInToEmails", "getEmail", 30);
+      Email.value = "";
+      try {
+        setCookie("User_Email_MD5", md5(EmailVal));
+        setCookie("User_Email_SHA256", sha256(EmailVal));
+        obj = {
+          id: "Event",
+          Events_UserEmailSub: "1",
+          User_Email_MD5: md5(EmailVal),
+          User_Email_SHA256: sha256(EmailVal),
+        };
+      } catch (err) {
+        obj = {
+          id: "Event",
+          Events_Error: "1",
+          Error_Source: "Server",
+          Error_Code: "utag_data object",
+          Error_Detail: "*ERROR_EMAIL_SUB*" + err,
+        };
+      } finally {
+        tealium_data2track.push(obj);
+      }
+      return true;
     } else {
       Email.focus();
       return false;
     }
   }
+
   $(document).on("click", "#email-newsletter-submit", function (e) {
     e.preventDefault();
-    $(".sms-newsletter-form").show();
     var $this = $(this);
     $("p.error").remove();
     var Email = document.getElementById("email-newsletter-popup-input"),
@@ -213,20 +185,9 @@
 
     if (Email !== null && Email.value != "") {
       if (echeck(EmailVal)) {
-        $(".email-newsletter-form").hide();
-        $(".sms-newsletter-form").show();
-        if (checkDate > "240403" && checkDate < "240415") {
-          $("#welcome-msg > div:first-child > div:first-child").text(
-            "Sign up now for access to our member only Private Week Sale. Offer Ends April 14th*"
-          );
-        } else {
-          $("#welcome-msg > div:first-child > div:first-child").text(
-            "Sign up for texts to get"
-          );
-        }
-        $('<div id="promo-result" class="py-4" style="display:none; background: linear-gradient(90deg, #FFE0B4 0%, #C66516 100%);"></div')
-          .insertAfter("body")
-          .load("/customer/thanks.aspx?i=" + EmailVal + " form", textChange);
+
+        showPromotionalMessage(EmailVal);
+
         try {
           setCookie("User_Email_MD5", md5(EmailVal));
           setCookie("User_Email_SHA256", sha256(EmailVal));
@@ -263,109 +224,12 @@
       return false;
     }
   });
+
+
   $(document).on("click", "#sms-newsletter-submit", function (e) {
     e.preventDefault();
-    $("p.error").remove();
-    var $this = $(this),
-      Email = document.getElementById("email-newsletter-popup-input"),
-      EmailVal = Email.value.toLowerCase().replace(/\s/g, "");
-    if (EmailVal == '') {
-      EmailVal = getCookie("emlCust").replace(/\s/g, "");
-    }
-    if ($(window).width() < 993) {
-      if (Email !== null && Email.value != "") {
-        if (echeck(EmailVal)) {
-          $('<div id="promo-result" class="py-4" style="display:none;"></div')
-            .insertAfter("body")
-            .load("/customer/thanks.aspx?i=" + EmailVal + " form", textChange);
-          try {
-            setCookie("User_Email_MD5", md5(EmailVal));
-            setCookie("User_Email_SHA256", sha256(EmailVal));
-            obj = {
-              id: "Event",
-              Events_UserEmailSub: "1",
-              User_Email_MD5: md5(EmailVal),
-              User_Email_SHA256: sha256(EmailVal),
-            };
-          } catch (err) {
-            obj = {
-              id: "Event",
-              Events_Error: "1",
-              Error_Source: "Server",
-              Error_Code: "utag_data object",
-              Error_Detail: "*ERROR_EMAIL_SUB*" + err,
-            };
-          } finally {
-            tealium_data2track.push(obj);
-          }
-          //return false;
-        } else {
-          $(
-            '<p class="color-red mt-2 mb-1 error text-left">Please enter a valid 10-digit phone number.</p>'
-          ).insertBefore("#sms-newsletter-popup-input");
-          $("#sms-newsletter-popup-input").focus();
-          return false;
-        }
-        setCookie("emlCust", EmailVal);
-        setCookie("optInToEmails", "getEmail", 30);
-        Email.value = "";
-      } else {
-        //user entered nothing
-        return false;
-      }
-    }
-    var number = $("#sms-newsletter-popup-input")
-      .val()
-      .replace(/\D/g, "")
-      .substring(0, 10);
-    $("p.error").remove();
-    if (number.length > 0) {
-      if (number.length === 10) {
-        ResponsysSMSSubscribe(number, EmailVal);
-        setCookie("User_Email_MD5", md5(EmailVal));
-        setCookie("User_Email_SHA256", sha256(EmailVal));
-        setCookie("User_Phone_MD5", md5(number));
-        setCookie("User_Phone_SHA256", sha256(number));
-        try {
-          obj = {
-            id: "Event",
-            Events_UserPhoneSub: "1",
-            User_Email_MD5: md5(EmailVal),
-            User_Email_SHA256: sha256(EmailVal),
-            User_Phone_MD5: md5(number),
-            User_Phone_SHA256: sha256(number),
-          };
-        } catch (err) {
-          obj = {
-            id: "Event",
-            Events_Error: "1",
-            Error_Source: "Server",
-            Error_Code: "utag_data object",
-            Error_Detail: "*ERROR_MOBILE_SUB*" + err,
-          };
-        } finally {
-          tealium_data2track.push(obj);
-        }
-        $this.addClass("disabled");
-        $(
-          '<div class="text-center"><div class="size-20">Check your texts</div></div>'
-        ).insertAfter("#promo-result h1");
-        triggerPromo();
-        setCookie("emlCust", EmailVal);
-        setCookie("optInToEmails", "getEmail", 30);
-        Email.value = "";
-        return true;
-      } else {
-        $(
-          '<p class="color-red mt-0 mb-1 error text-left">Please enter a valid 10-digit phone number.</p>'
-        ).insertBefore("#sms-newsletter-popup-input");
-        $("#sms-newsletter-popup-input").focus();
-        return false;
-      }
-    } else {
-      //user entered nothing
-      return false;
-    }
+    triggerPromo();
+    return true;
   });
   $(document).on(
     "click",
@@ -413,7 +277,6 @@
     });
   }
 
-
   function initializeLB() {
     var allowWelcome =
       (fdFncs.vars.noLB === undefined || fdFncs.vars.noLB !== true) &&
@@ -449,7 +312,6 @@
       }
     }
   }
-
   $(function () {
     fdFncs.vars.fdRecognized =
       fdFncs.vars.fdRecognized || getCookie("fdRecognized");
