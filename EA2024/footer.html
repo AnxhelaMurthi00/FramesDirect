@@ -20,7 +20,7 @@
       $(e.target).is("#closeSignUp") ||
       ($(e.target).is(".fancybox-overlay") &&
         $(e.target).has("#ctl00_ContentPlaceHolderBody_divThanks").length >
-          0) ||
+        0) ||
       ($(e.target).is(".fancybox-close") &&
         $("#ctl00_ContentPlaceHolderBody_divThanks").length > 0)
     ) {
@@ -75,10 +75,10 @@
       }
       $(
         '<video loop autoplay muted playsinline disablePictureInPicture width="100%" class="d-block" style="max-height: 200px"><source src="https://images.framesdirect.com/video/upload/' +
-          setVid +
-          '" /></video><div class="size-14 weight-bold text-center">Thank you for signing up!<div class="weight-normal transform-none size-10">Enjoy up to <b>50% Off FRAMES</b> from<br>Ray-Ban, Gucci, Oakley, Versace, &amp; more*<br>+ <b>60% OFF LENSES</b> starting at $25.99.<br>' +
-          setEnd +
-          '</div><a href="#" id="closeSignUp" class="btn-cta mt-3">Save Now</a><div class="size-7 weight-normal transform-none text-center mt-3">*Some Exclusions Apply</div></div>'
+        setVid +
+        '" /></video><div class="size-14 weight-bold text-center">Thank you for signing up!<div class="weight-normal transform-none size-10">Enjoy up to <b>50% Off FRAMES</b> from<br>Ray-Ban, Gucci, Oakley, Versace, &amp; more*<br>+ <b>60% OFF LENSES</b> starting at $25.99.<br>' +
+        setEnd +
+        '</div><a href="#" id="closeSignUp" class="btn-cta mt-3">Save Now</a><div class="size-7 weight-normal transform-none text-center mt-3">*Some Exclusions Apply</div></div>'
       ).insertAfter("#ctl00_ContentPlaceHolderBody_divThanks > h1");
       $(
         "#email-code-outter,#email-code-outter + p,#ctl00_ContentPlaceHolderBody_divThanks > h1,#ctl00_ContentPlaceHolderBody_divThanks > p"
@@ -96,8 +96,8 @@
       .removeClass("size-11")
       .html(
         '<div class="align-left"><strong>Disclaimer:</strong> ' +
-          fdFncs.vars.emDetails +
-          "</div>"
+        fdFncs.vars.emDetails +
+        "</div>"
       );
     if (typeof fdFncs.vars.testWelcome != "undefined") {
       $("#ctl00_ContentPlaceHolderBody_divThanks").addClass("width-60");
@@ -155,8 +155,8 @@
       message =
         '<div class="px-2"><video loop autoplay muted playsinline disablePictureInPicture width="100%" class="d-block" style="max-height: 200px"><source src="https://images.framesdirect.com/video/upload/' +
         setVid +
-        '" /></video><div id="welcome-msg" class="text-center my-4"><div class="py-2" style="line-height: 1.3">Sign up now for access to our Black Friday ' +
-        setSale +
+        '" /></video><div id="welcome-msg" class="text-center my-4"><div class="py-2" style="line-height: 1.3">Sign up now for access to our Black Friday ' + z
+      setSale +
         " Sale*</div>";
       offerEnds = "*Offer ends 11/29";
     } else if (
@@ -181,8 +181,8 @@
     if ($("#email-thanks").length == 0) {
       $("body").append(
         '<div id="email-thanks" class="text-center p-3 p-md-5 color-black">' +
-          welcomeLayer +
-          "</div>"
+        welcomeLayer +
+        "</div>"
       );
     } else {
       $("#email-thanks").html(welcomeLayer);
@@ -466,9 +466,9 @@
       fdFncs.vars.signedIn =
         document.getElementById("ctl00_lbLogin") !== null
           ? document
-              .getElementById("ctl00_lbLogin")
-              .innerText.toLowerCase()
-              .includes("account")
+            .getElementById("ctl00_lbLogin")
+            .innerText.toLowerCase()
+            .includes("account")
           : false;
       if (fdFncs.vars.emailCampaigns || fdFncs.vars.signedIn) {
         setCookie("optInToEmails", "getEmail", 30);

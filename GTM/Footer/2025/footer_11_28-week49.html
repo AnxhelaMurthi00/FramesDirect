@@ -50,7 +50,7 @@
       (checkDate >= "251118" && checkDate <= "251120") ||
       (fdFncs.vars.isTest >= "251118" && fdFncs.vars.isTest <= "251120")
     ) {
-      promoHTML = '<div class="px-2"><div id="welcome-msg" class="text-center my-4"><img src="https://images.framesdirect.com/image/upload/v1761318298/homePage/EARLY_BLACK_FRIDAY_BLACK.png" alt="Frames Direct Premium Eyewear" style="width: 100%; max-width: 350px; height: auto;"><div class="weight-normal pt-5 pb-3 ct_font__20 color-black" style="line-height: 1.2"><span class="weight-bold size-15">Thank you for signing up!</span> <br><br><div class=" my-2 weight-normal size-12" > Enjoy up to <span class="weight-bold"> 50% OFF FRAMES</span> from Ray-Ban, Gucci, Oakley, Versace & more <span class="weight-bold"> + 60% OFF LENSES.</span> Until 11/20 </div> <a href="#" id="closeSignUp" class="btn-cta mt-3 p-2" style="background: #AB2317; color: #fff !important; width: 60%; font-size: 20px ">Shop Early deals</a></div></div>';
+      promoHTML = '<div class="px-2"><div id="welcome-msg" class="text-center my-4"><img src="https://images.framesdirect.com/image/upload/v1761318298/homePage/EARLY_BLACK_FRIDAY_BLACK.png" alt="Frames Direct Premium Eyewear" width="350" height="150"><div class="weight-normal pt-5 pb-3 ct_font__20 color-black" style="line-height: 1.2"><span class="weight-bold">Thank you for signing up!</span> <div class=" my-2 weight-normal" style=""> Enjoy up to <span class="weight-bold"> 50% OFF FRAMES</span> from Ray-Ban, Gucci, Oakley, Versace & more <span class="weight-bold"> + 60% OFF LENSES.</span> Until 11/20 </div> <a href="#" id="closeSignUp" class="btn-cta mt-3 p-2" style="background: #AB2317; color: #fff !important; width: 60%; font-size: 20px ">Shop Early deals</a></div></div>';
     } else if (
       (checkDate >= "250124" && checkDate <= "250125") ||
       (fdFncs.vars.isTest >= "250124" && fdFncs.vars.isTest <= "250125")
@@ -90,7 +90,7 @@
       (fdFncs.vars.isTest >= "251025" && fdFncs.vars.isTest <= "251120")
     ) {
       message =
-        '<div class="px-2"><div id="welcome-msg" class="text-center my-4"><img src="https://images.framesdirect.com/image/upload/v1761318298/homePage/EARLY_BLACK_FRIDAY_BLACK.png" alt="Frames Direct Premium Eyewear" style="width: 100%; max-width: 350px; height: auto;"><div class="weight-normal pt-5 pb-3 size-16 color-black" style="line-height: 1">Sign up now to unlock <div class=" my-2 weight-bold">up to 50% off frames + 60% off lenses</div></div></div>';
+        '<div class="px-2"><div id="welcome-msg" class="text-center my-4"><img src="https://images.framesdirect.com/image/upload/v1761318298/homePage/EARLY_BLACK_FRIDAY_BLACK.png" alt="Frames Direct Premium Eyewear" width="350" height="150"><div class="weight-normal pt-5 pb-3 ct_font__20 color-black" style="line-height: 1">Sign up now to unlock <div class=" my-2 weight-bold">up to 50% off frames + 60% off lenses</div></div></div>';
     } else if (
       (checkDate >= "250124" && checkDate <= "250125") ||
       (fdFncs.vars.isTest >= "250124" && fdFncs.vars.isTest <= "250125")
@@ -318,6 +318,24 @@
     fdFncs.vars.ref = document.referrer;
     //Update Footer Email Sign-up Title
     if (
+      (checkDate >= '251128' && checkDate <= '251129') ||
+      (fdFncs.vars.isTest >= '251128' && fdFncs.vars.isTest <= '251129')
+    ) {
+      // Recognized user logic
+      if (fdFncs.vars.fdRecognized !== undefined) {
+        $('#footer-newsletter').addClass("d-md-block d-flex justify-content-around")
+        $('#footer-newsletter').html(
+          '<div class="size-14 weight-normal text-left"><span class="weight-bold"> Up to 50% off frames <br class="d-md-none">  + 60% off lenses </span> Plus <span class="weight-bold"> extra 5%! </span></div><div id="footer-newsletter-wrapper"><a href="/promotions/black-friday-dp" class="btn-cta  background-white color-black weight-bold d-inline-block py-2 px-3" style="font-size: 12px !important">Shop Deals</a></div>'
+        );
+      } else {
+        // Unrecognized user logic
+        $('#footer-newsletter').addClass("d-md-block d-flex justify-content-around")
+        $('#footer-newsletter').html(
+          '<div class="size-14 weight-normal text-left">Want access to <br class="d-md-none"> Early Black Friday?</div><div id="footer-newsletter-wrapper"><a href="#" id="footer-newsletter-submit" class="btn-cta background-white color-black weight-bold d-inline-block py-2 px-3" style="font-size: 12px !important">Sign up Now</a></div>'
+        );
+      }
+    } else
+    if (
       (checkDate >= '251118' && checkDate <= '251120') ||
       (fdFncs.vars.isTest >= '251118' && fdFncs.vars.isTest <= '251120')
     ) {
@@ -331,7 +349,7 @@
         // Unrecognized user logic
         $('#footer-newsletter').addClass("d-md-block d-flex justify-content-around")
         $('#footer-newsletter').html(
-          '<div class="size-14 weight-normal text-left">Want access to <br class="d-md-none"> Early Black Friday?</div><div id="footer-newsletter-wrapper"><a href="#" id="footer-newsletter-submit" class="btn-cta background-white color-black weight-bold d-inline-block py-2 px-3" style="font-size: 12px !important;     color: black !important;">Sign up Now</a></div>'
+          '<div class="size-14 weight-normal text-left">Want access to <br class="d-md-none"> Early Black Friday?</div><div id="footer-newsletter-wrapper"><a href="#" id="footer-newsletter-submit" class="btn-cta background-white color-black weight-bold d-inline-block py-2 px-3" style="font-size: 12px !important">Sign up Now</a></div>'
         );
       }
     } else
@@ -348,7 +366,7 @@
         } else {
           // Unrecognized user logic
           $('#footer-newsletter').html(
-            '<div class="size-14 weight-normal">Members Week Deals</div><div id="footer-newsletter-wrapper"><a href="#" id="footer-newsletter-submit" class="btn-cta btn-small background-white color-black weight-bold d-inline-block py-2 px-3" style="font-size: 12px !important;     color: black !important;">Sign Up</a></div>'
+            '<div class="size-14 weight-normal">Members Week Deals</div><div id="footer-newsletter-wrapper"><a href="#" id="footer-newsletter-submit" class="btn-cta btn-small background-white color-black weight-bold d-inline-block py-2 px-3">Sign Up</a></div>'
           );
         }
       } else if (
@@ -382,7 +400,7 @@
         );
       } else {
         $("#footer-newsletter").html(
-          '<div class="size-14 weight-normal">Join our mailing list for exclusive offers</div><div id="footer-newsletter-wrapper"><a href="#" id="footer-newsletter-submit" class="btn-cta btn-small background-white color-black weight-bold d-inline-block py-2 px-3" style="font-size: 12px !important;     color: black !important;">Sign Up</a></div>'
+          '<div class="size-14 weight-normal">Join our mailing list for exclusive offers</div><div id="footer-newsletter-wrapper"><a href="#" id="footer-newsletter-submit" class="btn-cta btn-small background-white color-black weight-bold d-inline-block py-2 px-3">Sign Up</a></div>'
         );
       }
     // Email Sign-up Popup with Cookie

@@ -3,81 +3,109 @@
 </h1>
 
 
+<!-- HERO BANNER -->
+
 <style>
+    @media (min-width: 1200px) and (max-width: 1400px) {
+        #text-image-bf {
+            width: 350px !important;
+            height: 110px;
+            margin-left: 20px !important;
+        }
+    }
+
+    @media (max-width: 470px) {
+        #text-image-bf {
+            width: 390px !important;
+            height: auto;
+        }
+
+        span.ct_text__white.ct_font__mob_38.ct_font__38.ct_font__desk__32 {
+            margin-top: -35px;
+        }
+    }
+
+    #text-image-bf {
+        width: 400px;
+    }
+
+
     @media (max-width: 1200px) {
-        #firstHeroImg {
-            background-image: url('https://images.framesdirect.com/image/upload/v1759502525/homePage/HP_WK45_EARLYHOLIDAYSAVINGS_hero_M.png') !important;
+        #firstHero {
+            background-color: #061519 !important;
 
         }
 
     }
 </style>
+<div class="ct_space" id="hero-static">
+    <div class="ct_banner ct_hero">
+        <a href="/promotions/black-friday-dp" aria-label="winter sale" class="w-100 ct_pt__mob__20">
+            <div class="ct_assets__container">
+                <picture class="ct_skeleton">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAAKElEQVR4AeyQMQ0AAAjDyARggQP/GkHEeq5J3x5Vzx6pCiZBfyj+8AEAAP//Er68yAAAAAZJREFUAwDOIho7Gh9zKgAAAABJRU5ErkJggg=="
+                        alt="structure image">
+                </picture>
+                <picture class="ct_img">
+                    <img src="https://images.framesdirect.com/image/upload/v1761564342/homePage/HP_BFWEEK2025_hero_D.png"
+                        fetchpriority="high" alt="" width="3840" height="1108" usemap="#image-map">
+                </picture>
+                <map name="image-map" class="map-slider">
+                    <area target="" alt="Ray ban rb8725" title="Ray ban rb8725 Eyeglasses"
+                        href="/ray-ban-rb8725-eyeglasses?color=10004579" coords="1719,802,2377,417" shape="rect">
+                    <area target="" alt="burberry be4181 Sunglasses" title="Burberry Sunglasses"
+                        href="/burberry-be4181-sunglasses" coords="2368,452,3061,70" shape="rect">
 
-<!-- HERO BANNER -->
+                </map>
+            </div>
+        </a>
+        <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0" style="width: 36%; left: 6%;"
+            id="firstHero"><a href="/promotions/black-friday-dp" aria-label="winter sale" class="w-100 ct_pt__mob__0">
+                <span class="ct_img d-flex align-items-center d-flex flex-column flex-xl-row justify-content-center">
+                    <img src="https://images.framesdirect.com/image/upload/v1761564340/homePage/BLACK_FRIDAY.png"
+                        fetchpriority="high" class="img-fluid d-block  " id="text-image-bf">
+                    <span class="ct_text__white  ct_font__mob_38 ct_font__38 ct_font__desk__32">WEEK</span>
+                </span>
+                <div class="d-flex flex-wrap  mx-auto ct_text__white align-items-center justify-content-center">
 
-<div class="heroBanner">
-    <div class="ct_space">
-        <div class="ct_banner ct_hero">
-            <a href="/email/flash-sale-dp" aria-label="sale" data-element-id="MainNav_Promo">
-                <div class="ct_assets__container">
-                    <picture class="ct_skeleton">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARUAAABhCAYAAAD4KjWBAAADr0lEQVR4AezaQW4iMRAFUJT7X2EOMbu53YyYBSIBhLpdNlWuF4mIENouv9/6Qkq+fv3+89eDgXvAPRB1D3xdfBEgQCBQQKkEYlqKAIHLRam4C1oLOHy8gFKJN7UigdYCSqV1/A5PIF5AqcSbWpFAawGlUih+oxKoIKBUKqRkRgKFBJRKobCMSqCCgFKpkJIZCRQSmFYqhQyMSoBAoIBSCcS0FAEC/qPWPUCAQLCATyrBoJYj8F+g8Tel0jh8RycwQ0CpzFC1JoHGAkqlcfiOTmCGgFKZoVptTfMSCBRQKoGYliJAwJ+U3QMECAQL+KQSDGo5At0F6pVK98Scn0ByAaWSPCDjEagmoFSqJWZeAskFlErygIxH4LtA/p+USv6MTEiglIBSKRWXYQnkF1Aq+TMyIYFSAkqlVFzVhjVvRwGl0jF1ZyYwUUCpTMS1NIGOAkqlY+rOTGCigFK54XpCgECEgFKJULQGAQI3AaVyo/CEAIEIAaUSoWgNAvUFwk6gVMIoLUSAwFVAqVwVPAgQCBNQKmGUFiJA4CqgVK4KHtUEzJtYQKkkDsdoBCoKKJWKqZmZQGIBpZI4HKMRqCigVOanZgcCrQSUSqu4HZbAfAGlMt/YDgRaCSiVVnE7LIH5Aj9LZf6OdiBAYGsBpbJ1vA5HYL2AUllvbkcCWwsola3jdbijAt4/LqBUxg2tQIDAnYBSucPwlACBcQGlMm5oBQIE7gSUyh1GtafmJZBRQKlkTMVMBAoLKJXC4RmdQEYBpZIxFTMRKCywrFQKGxmdAIEDAkrlAJa3EiDwXkCpvDfyDgIEDggolQNY3krgtECjC5VKo7AdlcAKAaWyQtkeBBoJKJVGYTsqgRUCSmWFcrU9zEtgQECpDOC5lACBRwGl8mjiFQIEBgSUygCeSwkQeBSoXyqPZ/IKAQIfFFAqH8S3NYEdBZTKjqk6E4EPCiiVD+LbmsC4QL4VlEq+TExEoLSAUikdn+EJ5BNQKvkyMRGB0gJKpXR81YY3bwcBpdIhZWcksFBAqSzEthWBDgJKpUPKzkhgoYBSeYntFwQInBFQKmfUXEOAwEsBpfKSxi8IEDgjoFTOqLmGwP4Cp0+oVE7TuZAAgWcCSuWZitcIEDgtoFRO07mQAIFnAkrlmYrXqgmYN5GAUkkUhlEI7CCgVHZI0RkIJBJQKonCMAqBHQSUyvoU7UhgawGlsnW8DkdgvYBSWW9uRwJbCyiVreN1OALrBd6VyvqJ7EiAQGmBfwAAAP//rQQqbQAAAAZJREFUAwCznkVZ0ZFN8AAAAABJRU5ErkJggg=="
-                            alt="structure image">
-                    </picture>
-                    <picture class="ct_img">
-                        <img src="https://images.framesdirect.com/image/upload/v1759502527/homePage/HP_WK45_EARLYHOLIDAYSAVINGS_hero_D.png"
-                            fetchpriority="high"
-                            alt="The left is wearing Armani Exchange ax3053 Eyeglasses, other is Versace ve2264 Sunglasses"
-                            width="3840" height="1108" usemap="#image-map">
-                    </picture>
-                    <map name="image-map" class="map-slider">
-                        <area target="" alt="Armani Exchange ax3053 Eyeglasses"
-                            title="Armani Exchange ax3053 Eyeglasses"
-                            href="/armani-exchange-ax3053-eyeglasses?color=10043590" coords="322,298,946,484"
-                            shape="rect">
-                        <area target="" alt="Versace ve2264 Sunglasses" title="Versace ve2264 Sunglasses"
-                            href="/versace-ve2264-sunglasses" coords="2487,234,3111,420" shape="rect">
+                    <div class="col-5 col-md-4 mb-3 px-0">
+                        <p class="ct_m__0 ct_font__mob_14 ct_font__18 ct_font__desk__18 weight-normal">
+                            UP TO
+                        </p>
+                        <div
+                            class="transform-uppercase ct_font__mob_32 ct_font__34 ct_font__desk__34 weight-bold ct_lh__sm ct_m__0 ">
+                            50% Off<br><span class="weight-normal">Frames</span>
+                        </div>
 
-                    </map>
+                    </div>
+                    <div class="col-1 ct_font__70 ct_font__mob_60 ct_font__desk__70 align-self-center ct_p__0 px-0"
+                        style="line-height:1">
+                        +
+                    </div>
+                    <span class="col-5 col-md-4 px-0 mt-0 mt-md-2">
+                        <span
+                            class="transform-uppercase ct_font__mob_32 ct_font__34 ct_font__desk__34 ct_lh__sm weight-bold ct_m__0 ct_w-0 mb-3"
+                            style="width: 62%;">
+                            60% Off<br><span class="weight-normal">Lenses</span>
+                        </span>
+
+                    </span>
                 </div>
+                <p class="ct_text__white mb-md-2 mt-0" style="
+    font-size: 14px;
+">Get exclusive holiday deals on Ray-Ban,<br class="ct_desk__hide"> Oakley, and more</p>
 
             </a>
-            <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0" id="firstHeroImg">
-                <h1
-                    class="ct_font__26 ct_font__desk__26 ct_font__mob_24 weight-bold ct_lh__sm ct_mb__mob__15 ct_mt__mob__30 mb-4">
-                    Holiday Savings Start Now
-
-                </h1>
-
-                <div class="mt-lg-0 mb-5"><a href="/email/flash-sale-dp" aria-label="sale"
-                        data-element-id="MainNav_Promo">
-                        <h1 class="ct_font__mob_34 ct_font__38 ct_font__desk__34 weight-bold ct_lh__sm ct_m__0 ">
-                            25% off <br class="ct_desk__hide">select frames
-                        </h1>
-                        <span class="ct_font__mob_18 ct_font__18 ct_m__10 ct_font__desk__18">
-                            From <span class="weight-bold"> Versace, Burberry &amp; more</span>
-                        </span>
-                        <div>
-                            <div class="col-12 ct_font__50 ct_font__mob_45 ct_font__desk__430 align-self-center ct_p__0 px-0 ct_desk__hide"
-                                style="line-height:1">
-                                + <br>
-                            </div>
-                            <h1
-                                class="ct_font__mob_34 ct_font__38 ct_font__desk__34 ct_lh__sm weight-bold ct_m__0 ct_mb__mob__10">
-                                <span class="ct_mob__hide">+<br></span> 60% off lenses<sup class="ct_font__20">*</sup>
-                            </h1>
-                        </div>
-                    </a><a href="/email/flash-sale-dp" class="ct_cta ct_cta__red ct_m__mob__10 ct_mb__mob__50 mt-4"
-                        style="background-color: #AB2317; font-size: 16px" data-element-id="1Hero_Banner2_CTA"
-                        data-description="shopTHEDEAL">
-                        SHOP THE DEAL
-                    </a>
-                </div>
+            <div class="align-items-center justify-content-center pt-2 ct_mb__50 d-flex flex-column flex-lg-row ">
+                <a href="/promotions/black-friday-dp" class="btn-cta mx-2 mr-md-0 d-inline-block "
+                    style="background: #AB2317; color: #fff !important;">Shop Black friday deals</a>
             </div>
-
         </div>
+
     </div>
 </div>
+
+
 <div class="info-boxes-wrapper">
     <div class="info-boxes-container">
         <div class="info-box text-center">
@@ -196,39 +224,44 @@
 <div id="homepage-content">
 
 
-    <div class="banner-container mb-4 mt-5 mx-64" style="border-radius: 32px; color:white;">
+    <div class="banner-container mb-4 mt-5 mx-64" style="border-radius: 32px; color:black;">
         <!-- Desktop Image (hidden on mobile) -->
-        <img src="https://images.framesdirect.com/image/upload/v1757332667/ray-ban-jupiter/HP_JUPITER_SECONDARY_BANNER_D.png"
+        <img src="https://images.framesdirect.com/image/upload/v1761564342/homePage/HP_Secondary_Banner_PROMOMETA_D.png"
             alt="Ray-Ban Meta Collection" class="img-fluid d-none d-md-block w-100">
 
         <!-- Mobile Image (hidden on desktop) -->
-        <img src="https://images.framesdirect.com/image/upload/v1757332664/ray-ban-jupiter/HP_JUPITER_SECONDARY_BANNER_M.png"
+        <img src="https://images.framesdirect.com/image/upload/v1761564340/homePage/HP_Secondary_Banner_PROMOMETA_M.png"
             alt="Ray-Ban Meta Collection" class="img-fluid d-block d-md-none w-100">
 
         <!-- Banner Content -->
         <div class="banner-content">
-            <img src="https://images.framesdirect.com/image/upload/v1757344029/ray-ban-jupiter/ray-ban-white-logo.svg"
+            <img src="https://images.framesdirect.com/image/upload/v1761565365/ray-ban-jupiter/ray-ban-black-logo.svg"
                 width="200" height="66" alt="Ray-Ban logo">
-            <h2 class="size-14 mt-4 mb-0" style="color:white !important">MEET THE NEW AI GLASSES
+            <h2 class="size-14 mt-4 mb-0" style="color:black !important">20% Off Ray-Ban Meta (Gen 1)
             </h2>
-            <p class="mb-4 ct_text__white mt-0">Advanced AI. Enhanced Capture. <br class="ct_desk__hide"> More Battery
+            <p class="mb-4 ct_text__black mt-0">Ray-Ban Meta AI glasses now available with<br class="ct_desk__hide"> exclusive Black Friday Week savings. 
             </p>
 
             <div class="d-flex flex-column flex-md-row" style="gap:20px">
-                <a href="/ray-ban-meta-gen-2/brand
+                <a href="/ray-ban-meta-gen-1/brand
                 " class=" btn-cta ct_m__mob__10 ct_mb__mob__50 ct_mt__30 " id="rayban_meta_btn"
                     data-element-id="1Hero_Banner1_CTA" data-description="shop ray-ban meta"
                     style="font-weight:400 !important; align-content: center; font-size: 17px;">
-                    Shop NOW
+                    Shop RAY-BAN | META AI GLASSES
                 </a>
-                <a href="/collections/discover-ray-ban-meta-ai-glasses" class="btn-cta background-clear ml-lg-2"
-                    data-element-id="5Placement_Banner1_CTA" data-description="learnMore"
-                    style="color: white !important;border: 1px solid white !important; margin: auto;">DISCOVER MORE</a>
             </div>
         </div>
     </div>
 
 
+    <div id="rfk-hp-custFaves">
+        <h2 class="weight-bold transform-uppercase mt-5 text-center">
+            Customer Favorites
+        </h2>
+        <div data-rfkid="rfkid_34" class="mb-4" aria-label="Recommendations"></div>
+    </div>
+
+    
     <section class="mx-64">
         <div class="container-fluid text-center">
             <h4 class="mb-4 weight-bold ct_font__24" style="color: #333333;">Our selection for you</h4>
@@ -236,51 +269,52 @@
             <div id="unifiedSlider" class="slider-wrapper">
                 <div class="d-flex w-100 justify-content-between selection">
                     <div class="card h-100 border-0 slider-item">
-                        <a href="/ea7/brand">
-                            <img src="https://images.framesdirect.com/image/upload/v1759832743/homePage/FD_HP_W44_EARLYHOLIDAYWEEKEND_1.png"
+                        <a href="/collections/holiday-gift-guide">
+                            <img src="https://images.framesdirect.com/image/upload/v1761564341/homePage/HP_BFWEEK2025_OFFERSHUB_1.png"
                                 class="card-img-top img-radius" alt="Brand Push">
                         </a>
                         <div class="card-body text-center px-0">
-                            <p class="weight-bold ct_font__16" style="color: #333333;">EA7
+                            <p class="weight-bold ct_font__16" style="color: #333333;">Gift Guide
                             </p>
-                            <p class="ct_font__14 pb-3">High-performance frames built for active days and bold looks.
+                            <p class="ct_font__14 pb-3">Discover our Gift Guide packed with our<br> limited-time Cyber savings.
                             </p>
-                            <a href="/ea7/brand" class="btn btn-outline-dark weight-bold btn-sm text-secondary mb-4"
-                                style="color: #6B777B !important;">SHOP NOW</a>
+                            <a href="/collections/holiday-gift-guide" class="btn btn-outline-dark weight-bold btn-sm text-secondary mb-4"
+                                style="color: #6B777B !important;">discover NOW</a>
                         </div>
                     </div>
 
                     <div class="card h-100 border-0 slider-item">
-                        <a href="/native/brand">
-                            <img src="https://images.framesdirect.com/image/upload/v1759832744/homePage/FD_HP_W44_EARLYHOLIDAYWEEKEND_2.png"
+                        <a href="/wiley-x/brand">
+                            <img src="https://images.framesdirect.com/image/upload/v1761564341/homePage/HP_BFWEEK2025_OFFERSHUB_2.png"
                                 class="card-img-top img-radius" alt="Extra Promotion">
                         </a>
                         <div class="card-body text-center px-0">
-                            <p class="weight-bold ct_font__16" style="color: #333333;">Native Eyewear</p>
-                            <p class="ct_font__14">Native keeps your vision clear. Push boundaries with gear that’s
-                                built to perform. </p>
-                            <a href="/native/brand" class="btn btn-outline-dark weight-bold btn-sm mb-4"
+                            <p class="weight-bold ct_font__16" style="color: #333333;">Wiley X | 20% Off</p>
+                            <p class="ct_font__14">Shop Wiley X frames with exclusive limited-time discounts.</p>
+                            <a href="/wiley-x/brand" class="btn btn-outline-dark weight-bold btn-sm mb-4"
                                 style="color: #6B777B !important;">SHOP
                                 NOW</a>
                         </div>
                     </div>
 
                     <div class="card h-100 border-0 slider-item">
-                        <a href="/gucci/brand">
-                            <img src="https://images.framesdirect.com/image/upload/v1759497194/homePage/FD_HP_W44_EARLYHOLIDAYWEEKEND_OFFERSHUB_3.png"
+                        <a href="/michael-kors/brand">
+                            <img src="https://images.framesdirect.com/image/upload/v1761564341/homePage/HP_BFWEEK2025_OFFERSHUB_3.png"
                                 class="card-img-top img-radius" alt="Brand Push">
                         </a>
                         <div class="card-body text-center px-0">
-                            <p class="weight-bold ct_font__16" style="color: #333333;">Gucci
+                            <p class="weight-bold ct_font__16" style="color: #333333;">Michael Kors | 25% Off
                             </p>
-                            <p class="ct_font__14 pb-3">Explore the artistry of Gucci frames built to turn heads.</p>
-                            <a href="/gucci/brand" class="btn btn-outline-dark weight-bold btn-sm text-secondary mb-4"
+                            <p class="ct_font__14 pb-3">Shop iconic Michael Kors eyewear and save big this shopping week.</p>
+                            <a href="/michael-kors/brand"
+                                class="btn btn-outline-dark weight-bold btn-sm text-secondary mb-4"
                                 style="color: #6B777B !important;">SHOP NOW</a>
                         </div>
                     </div>
+
                     <div class="card h-100 border-0 slider-item">
                         <a href="/promotions">
-                            <img src="https://images.framesdirect.com/image/upload/v1759832744/homePage/FD_HP_W44_EARLYHOLIDAYWEEKEND_4.png"
+                            <img src="https://images.framesdirect.com/image/upload/v1761564341/homePage/HP_BFWEEK2025_OFFERSHUB_4.png"
                                 class="card-img-top img-radius" alt="Transitions Lenses">
                         </a>
                         <div class="card-body text-center px-0">
@@ -296,7 +330,6 @@
 
         </div>
     </section>
-
 
 
     <div class="container py-5 ct_desk__hide" id="eyewear-prices">
@@ -681,34 +714,6 @@
     </div>
 
 
-    <div class="banner-container mb-4 mt-5 mx-64" style="border-radius: 32px; color:white;">
-        <!-- Desktop Image (hidden on mobile) -->
-        <img src="https://images.framesdirect.com/image/upload/v1757332668/ray-ban-jupiter/HP_Secondary_banner_meta_collection_D.png"
-            alt="Ray-Ban Meta Collection" class="img-fluid d-none d-md-block w-100">
-
-        <!-- Mobile Image (hidden on desktop) -->
-        <img src="https://images.framesdirect.com/image/upload/v1757332668/ray-ban-jupiter/HP_Secondary_banner_meta_collection_M.png"
-            alt="Ray-Ban Meta Collection" class="img-fluid d-block d-md-none w-100">
-
-        <!-- Banner Content -->
-        <div class="banner-content">
-            <img src="https://images.framesdirect.com/image/upload/v1757344029/ray-ban-jupiter/ray-ban-white-logo.svg"
-                width="200" height="66" alt="Ray-Ban logo">
-            <h2 class="size-14 mt-4 mb-0" style="color:white !important">Ray-Ban Meta collection</h2>
-            <p class="mb-4 ct_text__white mt-0">Integrated with AI-enhanced technology,
-                Ray-Ban Meta AI Glasses enable you to
-                call, listen, capture and livestream - all with
-                your phone in your pocket.</p>
-
-            <div class="d-flex flex-column flex-md-row">
-                <a href="/ray-ban-meta-gen-1/brand" class=" btn-cta ct_m__mob__10 ct_mb__mob__50 ct_mt__30 "
-                    id="rayban_meta_btn" data-element-id="1Hero_Banner1_CTA" data-description="shop ray-ban meta"
-                    style="font-weight:400 !important;">
-                    Shop RAY-BAN <br class="ct_desk__hide">| META Ai GLASSES
-                </a>
-            </div>
-        </div>
-    </div>
 
 
 
@@ -761,8 +766,7 @@ More">Learn
 
             <div class="product-info">
                 <div>Versace VE1274</div>
-
-                <div><del class="mr-1">$316.00</del><strong>$237.00</strong></div>
+                <div><del class="mr-1"></del> <strong>$316.00</strong></div>
                 <div class="buttonsLens d-flex justify-content-center mt-4 ">
                     <a href="https://www.framesdirect.com//versace-ve1274-eyeglasses" type="button"
                         class="btn weight-bold color-blue-gray p-2 pr-3 pl-3 btn-w-50">SHOP
