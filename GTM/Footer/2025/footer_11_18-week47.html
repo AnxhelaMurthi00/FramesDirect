@@ -50,7 +50,7 @@
       (checkDate >= "251118" && checkDate <= "251120") ||
       (fdFncs.vars.isTest >= "251118" && fdFncs.vars.isTest <= "251120")
     ) {
-      promoHTML = '<div class="px-2"><div id="welcome-msg" class="text-center my-4"><img src="https://images.framesdirect.com/image/upload/v1761318298/homePage/EARLY_BLACK_FRIDAY_BLACK.png" alt="Frames Direct Premium Eyewear" style="width: 100%; max-width: 350px; height: auto;"><div class="weight-normal pt-5 pb-3 ct_font__20 color-black" style="line-height: 1.2"><span class="weight-bold size-15">Thank you for signing up!</span> <br><br><div class=" my-2 weight-normal size-12" > Enjoy up to <span class="weight-bold"> 50% OFF FRAMES</span> from Ray-Ban, Gucci, Oakley, Versace & more <span class="weight-bold"> + 60% OFF LENSES.</span> Until 11/20 </div> <a href="#" id="closeSignUp" class="btn-cta mt-3 p-2" style="background: #AB2317; color: #fff !important; width: 60%; font-size: 20px ">Shop Early deals</a></div></div>';
+      promoHTML = '<div class="px-2"><div id="welcome-msg" class="text-center" style="max-width:450px"><img src="https://images.framesdirect.com/image/upload/v1761318298/homePage/EARLY_BLACK_FRIDAY_BLACK.png" alt="Frames Direct Premium Eyewear" style="width: 100%; max-width: 350px; height: auto;"><div class="weight-normal pt-5 pb-3 ct_font__20 color-black" style="line-height: 1.2"><span class="weight-bold size-15">Thank you for signing up!</span> <br><br><div class=" my-2 weight-normal size-12" > Enjoy up to <span class="weight-bold"> 50% OFF FRAMES</span> from Ray-Ban, Gucci, Oakley, Versace & more <span class="weight-bold"> + 60% OFF LENSES.</span> Until 11/20 </div> <a href="#" id="closeSignUp" class="btn-cta mt-3 p-2" style="background: #AB2317; color: #fff !important; width: 60%; font-size: 20px ">Shop Early deals</a></div></div>';
     } else if (
       (checkDate >= "250124" && checkDate <= "250125") ||
       (fdFncs.vars.isTest >= "250124" && fdFncs.vars.isTest <= "250125")
@@ -82,7 +82,7 @@
 
   function addWelcomeLayer() {
     var message = "",
-      offerEnds = "",
+      offerEnds = "*By clicking 'Sign Up' you confirm that you are over 18 years old and you agree that your Personal Data can be used by Luxottica Group S.p.A to send you news, special offers and other marketing communication and agree to our <a href='/customer-service/terms-of-use'>Terms of Use</a> and acknowledge that you have reviewed our <a href='/customer-service/privacy-policy'>Privacy Policy</a>.",
       setVid = "",
       setSale = "";
     if (
@@ -90,7 +90,7 @@
       (fdFncs.vars.isTest >= "251025" && fdFncs.vars.isTest <= "251120")
     ) {
       message =
-        '<div class="px-2"><div id="welcome-msg" class="text-center my-4"><img src="https://images.framesdirect.com/image/upload/v1761318298/homePage/EARLY_BLACK_FRIDAY_BLACK.png" alt="Frames Direct Premium Eyewear" style="width: 100%; max-width: 350px; height: auto;"><div class="weight-normal pt-5 pb-3 size-16 color-black" style="line-height: 1">Sign up now to unlock <div class=" my-2 weight-bold">up to 50% off frames + 60% off lenses</div></div></div>';
+        '<div class="px-2"><div id="welcome-msg" class="text-center " style="max-width:450px"><img src="https://images.framesdirect.com/image/upload/v1761318298/homePage/EARLY_BLACK_FRIDAY_BLACK.png" alt="Frames Direct Premium Eyewear" style="width: 100%; max-width: 350px; height: auto;"><div class="weight-normal pt-5 pb-3 size-16 color-black" style="line-height: 1">Sign up now to unlock <div class=" my-2 weight-bold">up to 50% off frames + 60% off lenses</div></div></div>';
     } else if (
       (checkDate >= "250124" && checkDate <= "250125") ||
       (fdFncs.vars.isTest >= "250124" && fdFncs.vars.isTest <= "250125")
@@ -114,11 +114,11 @@
       offerEnds = "*Offer ends 12/06";
     } else {
       message =
-        '<div class="px-2"><div id="welcome-msg" class="text-center my-4"><img src="https://images.framesdirect.com/image/upload/w_300,f_auto,q_auto/v1664555372/logos/2022-FD-logo-mobile.svg" alt="Frames Direct Premium Eyewear" width="250" height="25"><div class="weight-medium pt-5 pb-3" style="line-height: 1">First things first, take<div class="size-25 my-3 weight-bold">20% Off Frames<div class="py-3">+</div>60% Off<div class="weight-normal size-8 mt-3">Lenses &amp; Add-ons</div></div></div>';
+        '<div class="px-2"><div id="welcome-msg" class="text-center my-4" style="max-width:450px"><img src="https://images.framesdirect.com/image/upload/w_300,f_auto,q_auto/v1664555372/logos/2022-FD-logo-mobile.svg" alt="Frames Direct Premium Eyewear" width="250" height="25"><div class="weight-medium pt-5 pb-3" style="line-height: 1">First things first, take<div class="size-25 my-3 weight-bold">20% Off Frames<div class="py-3">+</div>60% Off<div class="weight-normal size-8 mt-3">Lenses &amp; Add-ons</div></div></div>';
     }
     var welcomeLayer =
       message +
-      '<div class="email-newsletter-form position-relative"><input id="email-newsletter-popup-input" placeholder="Enter your email" name="newsemail" type="email" class="my-2"><a href="#" id="email-newsletter-submit" class="btn-cta " style="background: #AB2317; color: #fff !important; width: 40%;">Sign Up</a><a href="#" id="email-newsletter-nothanks" data-ol-has-click-handler="" class="d-inline-block weight-bold color-black">No thanks</a></div><p class="size-10 mt-4 mb-0">' +
+      '<div class="email-newsletter-form position-relative"><input id="email-newsletter-popup-input" placeholder="Enter your email" name="newsemail" type="email" class="my-2"><a href="#" id="email-newsletter-submit" class="btn-cta " style="background: #AB2317; color: #fff !important; width: 40%;">Sign Up</a><a href="#" id="email-newsletter-nothanks" data-ol-has-click-handler="" class="d-inline-block weight-bold color-black">No thanks</a></div><p class="size-9 mt-4 mb-0 color-black">' +
       offerEnds +
       "</p>";
     if ($("#email-welcome").length) {
@@ -331,7 +331,7 @@
         // Unrecognized user logic
         $('#footer-newsletter').addClass("d-md-block d-flex justify-content-around")
         $('#footer-newsletter').html(
-          '<div class="size-14 weight-normal text-left">Want access to <br class="d-md-none"> Early Black Friday?</div><div id="footer-newsletter-wrapper"><a href="#" id="footer-newsletter-submit" class="btn-cta background-white color-black weight-bold d-inline-block py-2 px-3" style="font-size: 12px !important">Sign up Now</a></div>'
+          '<div class="size-14 weight-normal text-left">Want access to <br class="d-md-none"> Early Black Friday?</div><div id="footer-newsletter-wrapper"><a href="#" id="footer-newsletter-submit" class="btn-cta background-white color-black weight-bold d-inline-block py-2 px-3" style="font-size: 12px !important;     color: black !important;">Sign up Now</a></div>'
         );
       }
     } else
@@ -348,7 +348,7 @@
         } else {
           // Unrecognized user logic
           $('#footer-newsletter').html(
-            '<div class="size-14 weight-normal">Members Week Deals</div><div id="footer-newsletter-wrapper"><a href="#" id="footer-newsletter-submit" class="btn-cta btn-small background-white color-black weight-bold d-inline-block py-2 px-3">Sign Up</a></div>'
+            '<div class="size-14 weight-normal">Members Week Deals</div><div id="footer-newsletter-wrapper"><a href="#" id="footer-newsletter-submit" class="btn-cta btn-small background-white color-black weight-bold d-inline-block py-2 px-3" style="font-size: 12px !important;     color: black !important;">Sign Up</a></div>'
           );
         }
       } else if (
@@ -382,7 +382,7 @@
         );
       } else {
         $("#footer-newsletter").html(
-          '<div class="size-14 weight-normal">Join our mailing list for exclusive offers</div><div id="footer-newsletter-wrapper"><a href="#" id="footer-newsletter-submit" class="btn-cta btn-small background-white color-black weight-bold d-inline-block py-2 px-3">Sign Up</a></div>'
+          '<div class="size-14 weight-normal">Join our mailing list for exclusive offers</div><div id="footer-newsletter-wrapper"><a href="#" id="footer-newsletter-submit" class="btn-cta btn-small background-white color-black weight-bold d-inline-block py-2 px-3" style="font-size: 12px !important;     color: black !important;">Sign Up</a></div>'
         );
       }
     // Email Sign-up Popup with Cookie

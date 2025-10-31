@@ -136,19 +136,12 @@
 
     $("#count-bnr-inner").html(countBnrMsg);
 
-    // Initialize the countdown if the specific message is active
-    if (
-      (messages[currentMessageIndex].includes("select frames") &&
-        checkDate === "251030") ||
-      fdFncs.vars.isTest === "251030"
-    ) {
-      initializeCountdown();
-    }
+
   }
 
   // Function to initialize the countdown
   function initializeCountdown() {
-    var endDateLong = "10/31/2025"; // Set the end date for the countdown
+    var endDateLong = "11/01/2025"; // Set the end date for the countdown
     var digitBg = " white";
 
     $("#countdown-clockworks-holder").countdown(endDateLong, function (event) {
@@ -161,9 +154,9 @@
           digitBg +
           '"> <div class="digit">' +
           totalHours +
-          '</div> <div class="time-label">hours</div> </div> <div class="colon">:</div></div><div class="dash minutes_dash"> <div class="countdown-digit-wrapper' +
+          '</div> <div class="time-label">hours</div> </div> <div class="colon" style="margin-top:5px;">:</div></div><div class="dash minutes_dash"> <div class="countdown-digit-wrapper' +
           digitBg +
-          '"> <div class="digit">%M</div> <div class="time-label">min</div> </div> <div class="colon">:</div></div><div class="dash seconds_dash"> <div class="countdown-digit-wrapper' +
+          '"> <div class="digit">%M</div> <div class="time-label">min</div> </div> <div class="colon" style="margin-top:5px">:</div></div><div class="dash seconds_dash"> <div class="countdown-digit-wrapper' +
           digitBg +
           '"> <div class="digit">%S</div> <div class="time-label">sec</div> </div></div>'
         )
