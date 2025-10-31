@@ -1,82 +1,5 @@
 <script>
   const updateHeroBanner = () => {
-
-
-       if (
-            (checkDate >= "251101" && checkDate <= "251102") ||
-            (fdFncs.vars.isTest >= "251101" && fdFncs.vars.isTest <= "251102")
-          ) {
-            //hero slider promotion
-            $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-            $("#hero-slider").append(
-              `
-        <li>
-<style>
-    @media (min-width: 1200px) and  (max-width: 1400px){
-           #secondHero{
-        width: 44% !important;
-        left: 4%;
-    }
-    .hide{
-        display: none;
-    }
-    }
-        @media (min-width: 1440px){
-    #secondHero{
-        width: 36%;
-        left: 2%;
-    }}
-    .insurnace_brands {
-        width: 424px;
-        height: 42px;
-    }
-</style>
-<div class="ct_space">
-    <div class="ct_banner ct_hero">
-            <div class="ct_assets__container">
-                <picture class="ct_skeleton">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjnLtxx38GHIARnyQA9v4GDXdfGIkAAAAASUVORK5CYII="
-                        alt="structure image">
-                </picture>
-                <picture class="ct_img">
-                    <img src="https://images.framesdirect.com/image/upload/v1758546735/homePage/HP_INSURANCE_D_40.png" "="" fetchpriority="
-                        high" alt="The Man is wearing Maui Jim Hookipa 907 Prescription Sunglasses" width="3840"
-                        height="1108" usemap="#image-map5">
-                </picture>
-            </div>
-        <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pb__mob__30 pb-0"  id="secondHero"
-            style="background: #D6F3E9; width: 42%"><a href="/email/auth-lenses-dp" aria-label="sale">
-                <div class="ct_text__black ct_font__36  ct_lh__sm ct_mt__mob__20 weight-bold">
-                    Apply Your <br>
-                    Insurance Benefits
-                </div>
-                <div class="ct_font__18 pt-3 "><b>Hurry! Sync your insurance</b><br class="ct_desk__hide"> including FSA/HSA before they <br class="ct_mob__hide">expire<br class="ct_desk__hide"> and<b>  unlock a special promo code<br class="ct_desk__hide"> just for you.</b> </div>
-                <div class="logos ct_mob__hide d-flex justify-content-around align-items-center w-100 pt-2 ">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/EYEMED_logo-color.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/aetna-logo.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502287/logos/humana-logo.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502287/logos/cigna-logo.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/many-more-logo.png">
-                </div>
-                <div class="logos ct_desk__hide d-flex justify-content-between align-items-center w-100 pl-3 pr-3 mt-3" style="gap:7px;">
-                      <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/EYEMED_logo-color.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/aetna-logo.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502287/logos/humana-logo.png">
-                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/many-more-logo.png">
-                </div>
-            </a>
-            <div class="text-center ml-2 d-flex flex-column flex-lg-row ct_mb__mob__30 pb-2" >
-                <a href="/knowledge-center/vision-insurance-fsa-eligibility" class="btn-cta nowrap mt-4"
-                    style="background:  #000; color: #fff !important; border: 0">LEARN MORE
-                </a>
-                <a href="/email/vision-insurance-dp" class="btn-cta nowrap mt-2 mt-lg-4 ml-lg-5"
-                    style="background:#AB2317; color: #fff !important; border: 0">Sync Now</a>
-            </div>
-        </div>
-    </div>
-</div>
-   </li>` );
-          } else
         if (
             (checkDate >= "251027" && checkDate <= "251116") ||
             (fdFncs.vars.isTest >= "251027" && fdFncs.vars.isTest <= "251116")
@@ -119,7 +42,7 @@
                         height="1108" usemap="#image-map5">
                 </picture>
             </div>
-        <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pb__mob__30 pb-5"  id="secondHero"
+        <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pb__mob__30 pb-0"  id="secondHero"
             style="background: #D6F3E9; width: 42%"><a href="/email/auth-lenses-dp" aria-label="sale">
                 <div class="ct_text__black ct_font__36  ct_lh__sm ct_mt__mob__40 weight-bold">
                     Apply Your <br>
@@ -196,7 +119,7 @@
                         height="1108" usemap="#image-map5">
                 </picture>
             </div>
-        <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pb__mob__30 pb-5"  id="secondHero"
+        <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pb__mob__30 pb-0"  id="secondHero"
             style="background: #D6F3E9; width: 42%"><a href="/email/auth-lenses-dp" aria-label="sale">
                 <div class="ct_text__black ct_font__36  ct_lh__sm ct_mt__mob__40 weight-bold">
                     Apply Your <br>
@@ -2244,12 +2167,7 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
                           ) {
                             let heroBanner = `
       <style>
-  @media (max-width: 768px) {
-    #firstHeroImg{
-      padding: 0px !important;
-      background-image: url('https://images.framesdirect.com/image/upload/v1742376979/homePage/FD_HP_FLASH_SALE_W14_M.jpg') !important;
-    }
-  }
+
       @media (min-width: 1200px) {
    .ct_text__overlay{
     width: auto;
@@ -3359,7 +3277,7 @@ style="min-height: 176px; background: #C5CEC1 !important; color: #2d3547;"
   function hpHero() {
     if ($(".heroBanner > a img").length < 1) {
       $(".heroImg").on("load", function () {
-        $(".heroBanner").css("opacity", "1");
+        $(".heroBanner").css("min-height", "inherit");
         $(".heroImg").rwdImageMaps();
       });
     }

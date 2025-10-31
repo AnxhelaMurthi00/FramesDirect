@@ -1,7 +1,7 @@
 <meta name="facebook-domain-verification" content="qfib3oxbcbjqlv91mhkge7wngvey6t" />
 <link rel="preload" as="image"
-  href="https://images.framesdirect.com/image/upload/v1759502527/homePage/HP_WK45_EARLYHOLIDAYSAVINGS_hero_D.png"
-  fetchpriority="high" media="(min-width: 1200px)">
+  href="https://images.framesdirect.com/image/upload/v1760688062/homePage/FD_HP_EA2025_hero_D.png" fetchpriority="high"
+  media="(min-width: 1200px)">
 
 
 <style type="text/css">
@@ -10,7 +10,7 @@
     overflow: hidden;
   }
 
-  .newArrivals-content {
+  img.card-img-top.img-radius .newArrivals-content {
     position: absolute;
     top: 45%;
     left: 45%;
@@ -34,7 +34,9 @@
     }
   }
 
-
+  #hero-slider {
+    height: 505px;
+  }
 
   .see-brands-btn {
     position: absolute;
@@ -49,9 +51,6 @@
   }
 
 
-  .lSSlideWrapper.usingCss.ls-hover {
-    min-height: 505px;
-  }
 
   .lSAction>a {
     justify-content: center;
@@ -143,6 +142,9 @@
       margin-top: 10px;
     }
 
+    #hero-slider .lslide {
+      height: 635px;
+    }
 
     .buttonsLens>a {
       width: 75%;
@@ -182,7 +184,7 @@
   #dbFSA-Benefits .btn-cta {
     width: 305px;
   }
-  
+
 
   @media screen and (max-width: 580px) {
     #dbFSA-Benefits>div>div {
@@ -521,7 +523,7 @@
   }
 
   .heroBanner {
-    opacity: 1;
+    opacity: 0;
     -moz-transition: opacity 0.1s ease-in-out;
     -webkit-transition: opacity 0.1s ease-in-out;
     transition: opacity 0.1s ease-in-out;
@@ -1049,6 +1051,10 @@
     #rfk-hp-custFaves {
       min-height: 303px;
     }
+
+    img.card-img-top.img-radius {
+      width: 310px;
+    }
   }
 
   #rfk-hp-custFaves .rfk_product {
@@ -1224,6 +1230,14 @@
   }
 
 
+  @media screen and (max-width: 1570px) {
+    #brand-showcase {
+      padding: 0 30px;
+    }
+
+
+  }
+
   @media screen and (max-width: 1800px) and (min-width: 1500px) {
 
     .home-promo h1,
@@ -1308,6 +1322,7 @@
     }
 
 
+
     .text-overlay {
       max-width: 100%;
       flex: 0 0 100%;
@@ -1323,7 +1338,7 @@
     }
 
     .heroBanner {
-      background: #AEB0C0;
+      background: #F0ECE1;
     }
 
     .home-promo {
@@ -1619,6 +1634,10 @@
 
     .ct_space .ct_w__mob__90 {
       width: 90% !important;
+    }
+
+    .ct_space .ct_w__mob__150 {
+      width: 150% !important;
     }
 
     .ct_space .ct_w__mob__100 {
@@ -2616,6 +2635,41 @@
 
 
 
+  /* From 1200px to 1500px */
+  @media (min-width: 1200px) and (max-width: 1400px) {
+    #hero-slider {
+      height: 434px !important;
+    }
+  }
+
+  /* From 1200px to 1500px */
+  @media (min-width: 1401px) and (max-width: 1500px) {
+    #hero-slider {
+      height: 504px !important;
+    }
+  }
+
+  /* From 1501px to 1800px */
+  @media (min-width: 1501px) and (max-width: 1650px) {
+    #hero-slider {
+      height: 530px !important;
+    }
+  }
+
+  /* From 1501px to 1800px */
+  @media (min-width: 1651px) and (max-width: 1800px) {
+    #hero-slider {
+      height: 580px !important;
+    }
+  }
+
+  /* From 1801px and above */
+  /* @media (min-width: 1801px) {
+    #hero-slider {
+      height: 550px !important;
+    }
+  } */
+
   .ct_img img {
     height: auto !important;
   }
@@ -2753,7 +2807,7 @@
   }
 
   /* ===== MOBILE SLIDER WITH PROGRESS INDICATOR ===== */
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     .info-boxes-wrapper {
       padding: 0 0 30px;
       background-color: #F1EDE3;
@@ -2769,7 +2823,6 @@
       gap: 15px;
       padding: 0 15px 15px;
     }
-
 
     .info-boxes-container::-webkit-scrollbar {
       display: none;
@@ -3344,7 +3397,7 @@
   }
 
   /* ===== Mobile Responsiveness ===== */
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     .ct_banner {
       padding-bottom: 0 !important;
     }
@@ -3566,16 +3619,16 @@
     }
 
     .banner-content {
-      color: white;
+      color: black;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 80%;
       text-align: center;
-      top: 20%;
+      top: 24%;
     }
 
     .banner-content h2 {
-      color: white;
+      color: black;
     }
   }
 
@@ -3587,4 +3640,6 @@
   .btn-white-outline:hover {
     background-color: #f8f9fa !important;
   }
+
+  
 </style>

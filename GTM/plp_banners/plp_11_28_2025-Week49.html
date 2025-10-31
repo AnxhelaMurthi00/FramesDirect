@@ -1,0 +1,34 @@
+<script>
+
+
+  if (((checkDate >= '251128' && checkDate <= '251128') || (fdFncs.vars.isTest >= '251129' && fdFncs.vars.isTest <= '251129'))) {
+    var locName = [
+      "/eyeglasses/",
+      "/sunglasses/",
+      "/prescription-sunglasses/",
+      "/men/eyewear-dp",
+      "/women/eyewear-dp",
+      "/eyeglasses/mens",
+      "/eyeglasses/womens",
+      "/sunglasses/mens",
+      "/sunglasses/womens",
+      "/prescription-sunglasses/mens",
+      "/prescription-sunglasses/womens"
+    ];
+
+    // Specific sale landing page
+    if (pgURLPath("/promotions/black-friday-dp")) {
+      var selectedCrumb = "Black Friday 2025 Eyewear Sale: Biggest Savings on Top Brands";
+      var topText = "Black Friday 2025 Eyewear Sale: Biggest Savings on Top Brands";
+      var bottomText = "Last Chance Black Friday Savings – Shop Top Eyewear Brands Before They’re Gone";
+      var bottomTextParagraph = "Black Friday 2025 is here—don’t wait to unlock the year’s lowest prices on premium eyewear! For a limited time claim extraordinary discounts on best-selling eyeglasses, prescription sunglasses, and iconic designer frames from Oakley, Ray-Ban, Versace, Prada, Burberry, Tory Burch, Maui Jim, Oliver Peoples, Vogue Eyewear, Alain Mikli, Arnette, Costa, and many more. With limited-time doorbusters and exclusive Black Friday deals, FramesDirect delivers the best value, guaranteed authenticity, and impeccable customer support. Act fast—these offers end at midnight, and popular styles always move quickly. Secure your new frames, enjoy free shipping, and elevate your style before these Black Friday deals disappear! Discover exclusive Black Friday offers and limited-time promotions designed to maximize your savings this holiday season. Shop now to enjoy unbeatable discounts on your favorite frames, lenses, and designer collections. Whether you're looking for top-rated eyeglasses deals or special prescription sunglasses discounts, our best Black Friday eyewear promotions ensure you find the perfect fit and price. Don’t miss out—take advantage of the ultimate Black Friday sale and elevate your style with the season’s top eyewear savings and holiday bargains.";
+
+      $("#top-content-box h2").html(bottomText);
+      $("#top-content-box p").html(bottomTextParagraph);
+      $("#selected-crumb").text(selectedCrumb);
+      $("#cata_hdr").text(topText);
+
+    }
+  }
+
+</script>
