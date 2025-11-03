@@ -1,70 +1,51 @@
 <script>
   const updateHeroBanner = () => {
+    const heroBanner = $(".heroBanner");
+
+    // Placeholder: only if the <ul> doesn't exist yet
+    if ($("#hero-slider").length === 0) {
+      heroBanner.wrap('<ul id="hero-slider"><li></li></ul>');
+    }
+
+    // Schedule condition example
     if (
       (checkDate >= "251103" && checkDate <= "251109") ||
       (fdFncs.vars.isTest >= "251103" && fdFncs.vars.isTest <= "251109")
     ) {
-      //hero slider promotion
-      $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-      $("#hero-slider").append(
-        `
-        <li>
-          <style>
-    @media (max-width: 1200px) {
-        #secondHeroImg {
-            background-image: url('https://images.framesdirect.com/image/upload/v1759502525/homePage/HPW45_GIFTGUIDE_M.png') !important;
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        background-position: center !important;
-
-        }
-
-    }
-</style>
-<div class="ct_space">
-    <div class="ct_banner ct_hero">
-        <a href="/collections/holiday-gift-guide" aria-label="sale">
-            <div class="ct_assets__container">
+      // Inject your scheduled banner content into the placeholder <li>
+      $("#hero-slider li").html(`
+      <div class="heroBanner">
+        <div class="ct_space">
+          <div class="ct_banner ct_hero">
+            <a href="/email/flash-sale-dp" aria-label="sale" data-element-id="MainNav_Promo">
+              <div class="ct_assets__container">
                 <picture class="ct_skeleton">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARUAAABhCAYAAAD4KjWBAAADr0lEQVR4AezaYW4aMRAFYJT7n6F36SV6nVb0ByIBhHY9NjOeLxIRIaw9/t7qCSn5+vP7118PBu4B90DUPfB18UWAAIFAAaUSiGkpAgQuF6XiLmgt4PDxAkol3tSKBFoLKJXW8Ts8gXgBpRJvakUCrQWUSqH4jUqggoBSqZCSGQkUElAqhcIyKoEKAkqlQkpmJFBIYFqpFDIwKgECgQJKJRDTUgQI+I9a9wABAsECPqkEg1qOwH+Bxt+USuPwHZ3ADAGlMkPVmgQaCyiVxuE7OoEZAkplhmq1Nc1LIFBAqQRiWooAAX9Sdg8QIBAs4JNKMKjlCHQXqFcq3RNzfgLJBZRK8oCMR6CagFKplph5CSQXUCrJAzIege8C+X9SKvkzMiGBUgJKpVRchiWQX0Cp5M/IhARKCSiVUnFVG9a8HQWUSsfUnZnARAGlMhHX0gQ6CiiVjqk7M4GJAkrlhusJAQIRAkolQtEaBAjcBJTKjcITAgQiBJRKhKI1CNQXCDuBUgmjtBABAlcBpXJV8CBAIExAqYRRWogAgauAUrkqeFQTMG9iAaWSOByjEagooFQqpmZmAokFlEricIxGoKKAUpmfmh0ItBJQKq3idlgC8wWUynxjOxBoJaBUWsXtsATmC/wslfk72oEAga0FlMrW8TocgfUCSmW9uR0JbC2gVLaO1+GOCnj/uIBSGTe0AgECdwJK5Q7DUwIExgWUyrihFQgQuBNQKncY1Z6al0BGAaWSMRUzESgsoFQKh2d0AhkFlErGVMxEoLDAslIpbGR0AgQOCCiVA1jeSoDAewGl8t7IOwgQOCCgVA5geSuB0wKNLlQqjcJ2VAIrBJTKCmV7EGgkoFQahe2oBFYIKJUVytX2MC+BAQGlMoDnUgIEHgWUyqOJVwgQGBBQKgN4LiVA4FGgfqk8nskrBAh8UECpfBDf1gR2FFAqO6bqTAQ+KKBUPohvawLjAvlWUCr5MjERgdICSqV0fIYnkE9AqeTLxEQESgsoldLxVRvevB0ElEqHlJ2RwEIBpbIQ21YEOggolQ4pOyOBhQJK5SW2XxAgcEZAqZxRcw0BAi8FlMpLGr8gQOCMgFI5o+YaAvsLnD6hUjlN50ICBJ4JKJVnKl4jQOC0gFI5TedCAgSeCSiVZypeqyZg3kQCSiVRGEYhsIOAUtkhRWcgkEhAqSQKwygEdhBQKutTtCOBrQWUytbxOhyB9QJKZb25HQlsLaBUto7X4QisF3hXKusnsiMBAqUF/gEAAP//0lNaCwAAAAZJREFUAwCw1Xg05gDVZAAAAABJRU5ErkJggg=="
-                        alt="structure image">
+                  <img src="data:image/png;base64,...placeholder..." alt="structure image">
                 </picture>
                 <picture class="ct_img">
-                    <img src="https://images.framesdirect.com/image/upload/v1759502527/homePage/HP_w45_GIFTGUIDE_D.png" "="" fetchpriority="
-                        high" alt="The Man is wearing Maui Jim Hookipa 907 Prescription Sunglasses" width="3840"
-                        height="1108">
+                  <img src="https://images.framesdirect.com/image/upload/v1759502527/homePage/HP_WK45_EARLYHOLIDAYSAVINGS_hero_D.png"
+                    fetchpriority="high"
+                    alt="Holiday Sale Banner"
+                    width="3840" height="1108">
                 </picture>
-                
-            </div>
-        </a>
-        <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pb__mob__40 pb-0" id="secondHeroImg"
-            style="background: #F0ECE1; width: 45%"><a href="/collections/holiday-gift-guide" aria-label="sale">
-                <div class="ct_text__black ct_font__36  ct_lh__sm ct_mt__mob__20 weight-bold">
-                    Reframe<br class="ct_desk__hide"> your Gifting
-                </div>
-                <div class="ct_font__18 pt-3 "><b>Be your own Secret Santa, and<br class="ct_desk__hide"> score <br class="ct_mob__hide">
-                        major savings on frames<br class="ct_desk__hide"> &amp; lenses. </b></div>
-
-                <div class="ct_font__mob_18 ct_font__18 ct_m__20 ct_font__desk__18 mt-3">
-                    From AI Glasses to prescription lenses and iconic styles<br class="ct_mob__hide"> find the perfect pair for you or someone
-                    you love.</div>
-
+              </div>
             </a>
-            <div class="text-center ml-2 d-flex flex-column flex-lg-row ct_mb__mob__30 mb-4">
-              <a href="/collections/holiday-gift-guide" class="btn-cta nowrap mt-2"
-                    style="background:#AB2317; color: #fff !important; border: 0" data-element-id="1Hero_Banner2_CTA"
-                    data-description="shopTheDeal">SHOP NOW</a>
+            <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0">
+              <h1>Holiday Savings Start Now</h1>
+              <div>
+                <a href="/email/flash-sale-dp" class="ct_cta ct_cta__red">SHOP THE DEAL</a>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</div>
-   </li>` )
+      </div>
+    `);
       $("#hero-slider").append(
         `
-           <li>
+     <li>
 <style>
     @media (min-width: 1200px) and  (max-width: 1400px){
-           #secondHero{
+           #thirdHero{
         width: 44% !important;
         left: 4%;
     }
@@ -73,7 +54,7 @@
     }
     }
         @media (min-width: 1440px){
-    #secondHero{
+    #thirdHero{
         width: 36%;
         left: 2%;
     }}
@@ -86,7 +67,7 @@
     <div class="ct_banner ct_hero">
             <div class="ct_assets__container">
                 <picture class="ct_skeleton">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjnLtxx38GHIARnyQA9v4GDXdfGIkAAAAASUVORK5CYII="
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARUAAABhCAYAAAD4KjWBAAADr0lEQVR4AezaYW4aMRAFYJT7X6tH6AV6kVb0ByIBhHY9NjOeLxIRIaw9/t7qCSn5+vXn918PBu4B90DUPfB18UWAAIFAAaUSiGkpAgQuF6XiLmgt4PDxAkol3tSKBFoLKJXW8Ts8gXgBpRJvakUCrQWUSqH4jUqggoBSqZCSGQkUElAqhcIyKoEKAkqlQkpmJFBIYFqpFDIwKgECgQJKJRDTUgQI+I9a9wABAsECPqkEg1qOwH+Bxt+USuPwHZ3ADAGlMkPVmgQaCyiVxuE7OoEZAkplhmq1Nc1LIFBAqQRiWooAAX9Sdg8QIBAs4JNKMKjlCHQXqFcq3RNzfgLJBZRK8oCMR6CagFKplph5CSQXUCrJAzIege8C+X9SKvkzMiGBUgJKpVRchiWQX0Cp5M/IhARKCSiVUnFVG9a8HQWUSsfUnZnARAGlMhHX0gQ6CiiVjqk7M4GJAkrlhusJAQIRAkolQtEaBAjcBJTKjcITAgQiBJRKhKI1CNQXCDuBUgmjtBABAlcBpXJV8CBAIExAqYRRWogAgauAUrkqeFQTMG9iAaWSOByjEagooFQqpmZmAokFlEricIxGoKKAUpmfmh0ItBJQKq3idlgC8wWUynxjOxBoJaBUWsXtsATmC/wslfk72oEAga0FlMrW8TocgfUCSmW9uR0JbC2gVLaO1+GOCnj/uIBSGTe0AgECdwJK5Q7DUwIExgWUyrihFQgQuBNQKncY1Z6al0BGAaWSMRUzESgsoFQKh2d0AhkFlErGVMxEoLDAslIpbGR0AgQOCCiVA1jeSoDAewGl8t7IOwgQOCCgVA5geSuB0wKNLlQqjcJ2VAIrBJTKCmV7EGgkoFQahe2oBFYIKJUVytX2MC+BAQGlMoDnUgIEHgWUyqOJVwgQGBBQKgN4LiVA4FGgfqk8nskrBAh8UECpfBDf1gR2FFAqO6bqTAQ+KKBUPohvawLjAvlWUCr5MjERgdICSqV0fIYnkE9AqeTLxEQESgsoldLxVRvevB0ElEqHlJ2RwEIBpbIQ21YEOggolQ4pOyOBhQJK5SW2XxAgcEZAqZxRcw0BAi8FlMpLGr8gQOCMgFI5o+YaAvsLnD6hUjlN50ICBJ4JKJVnKl4jQOC0gFI5TedCAgSeCSiVZypeqyZg3kQCSiVRGEYhsIOAUtkhRWcgkEhAqSQKwygEdhBQKutTtCOBrQWUytbxOhyB9QJKZb25HQlsLaBUto7X4QisF3hXKusnsiMBAqUF/gEAAP//3glMDgAAAAZJREFUAwCQM8UHBeZnqwAAAABJRU5ErkJggg=="
                         alt="structure image">
                 </picture>
                 <picture class="ct_img">
@@ -95,15 +76,13 @@
                         height="1108" usemap="#image-map5">
                 </picture>
             </div>
-        <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pb__mob__30"  id="secondHero"
+        <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pb__mob__30 pb-0"  id="thirdHero"
             style="background: #D6F3E9; width: 42%"><a href="/email/auth-lenses-dp" aria-label="sale">
-                <div class="ct_text__black ct_font__36  ct_lh__sm ct_mt__mob__40 weight-bold ct_font__mob_24 ">
-                 Insurance Exclusive Deal
+                <div class="ct_text__black ct_font__36  ct_lh__sm ct_mt__mob__20 weight-bold">
+                    Apply Your <br>
+                    Insurance Benefits
                 </div>
-                <div class="ct_font__18 ct_font__mob_20 pt-lg-2 pt-4">
-                  <b>Get $50 off</b> Progressive, Blue Light <br> or Transitions® lenses with code <br>
-<b>NEWVISION</b> at checkout.<br class="ct_desk__hide"> Minimum order-value: $250</b>
-</div>
+                <div class="ct_font__18 pt-3 "><b>Hurry! Sync your insurance</b><br class="ct_desk__hide"> including FSA/HSA before they <br class="ct_mob__hide">expire<br class="ct_desk__hide"> and<b>  unlock a special promo code<br class="ct_desk__hide"> just for you.</b> </div>
                 <div class="logos ct_mob__hide d-flex justify-content-around align-items-center w-100 pt-2 ">
                     <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/EYEMED_logo-color.png">
                     <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/aetna-logo.png">
