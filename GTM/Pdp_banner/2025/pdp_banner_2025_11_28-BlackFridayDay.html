@@ -16,19 +16,20 @@
       }
     });
   });
-   function getAmountSavings(product) {
-  var retail = parseFloat(product.frameRetailPrice);
-  if (isNaN(retail) || retail <= 0) return 0;
+  function getAmountSavings(product) {
 
-  var discounted = parseFloat(product.price);
-  if (isNaN(discounted) || discounted <= 0) {
-    discounted = parseFloat(product.frameSalePrice);
+            var retailStr = document.getElementById("spanRetailPrice").innerHTML;
+        var saleStr = document.getElementById("spanOurPrice").innerHTML;
+    if (!product) return 0;
+    var retail =  parseFloat(retailStr.replace("$", ""));
+    if (isNaN(retail) || retail <= 0) return 0;
+
+    var discounted =parseFloat(saleStr.replace("$", ""));
+    if (isNaN(discounted) || discounted <= 0) return 0;
+
+    var savings = retail - discounted;
+    return savings > 0 ? savings : 0;
   }
-  if (isNaN(discounted) || discounted <= 0) return 0;
-
-  var savings = retail - discounted;
-  return savings > 0 ? savings : 0;
-}
   function prodDiscoBanner() {
      if (
         (checkDate >= "251128" && checkDate <= "251128") ||

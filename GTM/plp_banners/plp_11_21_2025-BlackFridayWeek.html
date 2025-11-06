@@ -18,8 +18,8 @@
 
     // Specific sale landing page
     if (pgURLPath("/promotions/black-friday-dp")) {
-      var selectedCrumb = "Black Friday 2025 Sale: Unmissable Deals on Sunglasses & Prescription Glasses";
-      var topText = "Black Friday 2025 Sale: Unmissable Deals on Sunglasses & Prescription Glasses";
+      var selectedCrumb = "Black Friday 2025 Sale";
+      var topText = "";
       var bottomText = "Shop Week-Long Black Friday Bargains on Designer Frames";
       var bottomTextParagraph = "Kick off Black Friday Week at FramesDirect with up to 50% off a vast assortment of eyeglasses, prescription sunglasses, and luxury frames. Frames Direct offers an extensive range of top brands such as Oakley, Ray-Ban, Versace, Persol, Dolce & Gabbana, Prada, Burberry, Tory Burch, Maui Jim, Oliver Peoples, Vogue Eyewear, Alain Mikli, Arnette, and Costa, ensuring there is something for every style, gender, and age group. Discover exclusive Black Friday offers and limited-time promotions designed to maximize your savings this holiday season. Shop now to enjoy unbeatable discounts on your favorite frames, lenses, and designer collections. Whether you're looking for top-rated eyeglasses deals or special prescription sunglasses discounts, our best Black Friday eyewear promotions ensure you find the perfect fit and price. Don’t miss out—take advantage of the ultimate Black Friday sale and elevate your style with the season’s top eyewear savings and holiday bargains.";
 
@@ -27,6 +27,7 @@
       $("#top-content-box p").html(bottomTextParagraph);
       $("#selected-crumb").text(selectedCrumb);
       $("#cata_hdr").text(topText);
+      $("#bnr-seo-info").addClass("d-none");
 
     }
   }
