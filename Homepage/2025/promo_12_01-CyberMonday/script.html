@@ -2,17 +2,18 @@
   const updateHeroBanner = () => {
     if (getCookie('fdRecognized') !== undefined &&
       (
-        (checkDate >= "251121" && checkDate <= "251127") ||
-        (fdFncs.vars.isTest >= "251121" && fdFncs.vars.isTest <= "251127")
+        (checkDate >= "251121" && checkDate <= "251131") ||
+        (fdFncs.vars.isTest >= "251121" && fdFncs.vars.isTest <= "251131")
       )
     ) {
       let heroBanner =
         `
         
+
 <style>
     @media (min-width: 1200px) and (max-width: 1400px) {
         #text-image-bf {
-            width: 350px !important;
+            width: 170px !important;
             height: 110px;
             margin-left: 20px !important;
         }
@@ -20,23 +21,25 @@
 
     @media (max-width: 470px) {
         #text-image-bf {
-            width: 390px !important;
+            width: 250px !important;
             height: auto;
         }
 
-        span.ct_text__white.ct_font__mob_38.ct_font__38.ct_font__desk__32 {
-            margin-top: -35px;
+        span.ct_text__white.ct_font__mob_38.ct_font__36.ct_font__desk__32.flex-column.flex-xl-row {
+            margin-top: -20px;
+            margin-bottom: 30px;
+
         }
     }
 
     #text-image-bf {
-        width: 400px;
+        width: 240px;
     }
 
 
     @media (max-width: 1200px) {
         #firstHero {
-            background-color: #061519 !important;
+            background-color: #132413 !important;
 
         }
 
@@ -44,31 +47,36 @@
 </style>
 <div class="ct_space" id="hero-static">
     <div class="ct_banner ct_hero">
-        <a href="/promotions/black-friday-dp" aria-label="winter sale" class="w-100 ct_pt__mob__20">
+        <a href="/promotions/cyber-monday-dp" aria-label="winter sale" class="w-100 ct_pt__mob__20">
             <div class="ct_assets__container">
                 <picture class="ct_skeleton">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAAKElEQVR4AeyQMQ0AAAjDyARggQP/GkHEeq5J3x5Vzx6pCiZBfyj+8AEAAP//Er68yAAAAAZJREFUAwDOIho7Gh9zKgAAAABJRU5ErkJggg=="
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAAKElEQVR4AeyQMQ0AAAjDyFxgggT/4kDEeq5J3x7V9B6pCiZBfyj+8AEAAP//ykQudAAAAAZJREFUAwA+0x1bKoyL9QAAAABJRU5ErkJggg=="
                         alt="structure image">
                 </picture>
                 <picture class="ct_img">
-                    <img src="https://images.framesdirect.com/image/upload/v1761564342/homePage/HP_BFWEEK2025_hero_D.png"
+                    <img src="https://images.framesdirect.com/image/upload/v1762180280/homePage/HP_CYBERMONDAY2025_hero_D.png"
                         fetchpriority="high" alt="" width="3840" height="1108" usemap="#image-map">
                 </picture>
                 <map name="image-map" class="map-slider">
-                    <area target="" alt="Ray ban rb8725" title="Ray ban rb8725 Eyeglasses"
-                        href="/ray-ban-rb8725-eyeglasses?color=10004579" coords="1719,802,2377,417" shape="rect">
-                    <area target="" alt="burberry be4181 Sunglasses" title="Burberry Sunglasses"
-                        href="/burberry-be4181-sunglasses" coords="2368,452,3061,70" shape="rect">
+                    <area target="" alt="Ray ban rb3689" title="Ray ban rb3689 sunglasses"
+                        href="/ray-ban-rb3689-sunglasses" coords="2037,130,2752,391" shape="rect">
+                    <area target="" alt="Coaach hc6065 Eyeglasses" title="Coaach hc6065 Eyeglasses"
+                        href="/coach-hc6065-eyeglasses" coords="2670,522,3395,856" shape="rect">
+
 
                 </map>
             </div>
         </a>
         <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0" style="width: 36%; left: 6%;"
-            id="firstHero"><a href="/promotions/black-friday-dp" aria-label="winter sale" class="w-100 ct_pt__mob__0">
-                <span class="ct_img d-flex align-items-center d-flex flex-column flex-xl-row ">
-                    <img src="https://images.framesdirect.com/image/upload/v1761564340/homePage/BLACK_FRIDAY.png"
+            id="firstHero"><a href="/promotions/cyber-monday-dp" aria-label="winter sale" class="w-100 ct_pt__mob__0">
+                <span class="ct_img d-flex align-items-center d-flex flex-column flex-xl-row justify-content-center">
+                     <span
+                        class="ct_text__white  ct_font__mob_38 ct_font__36 ct_font__desk__32 flex-column flex-xl-row">SIP INTO CYBER MONDAY </span>
+
+                    <img src="https://images.framesdirect.com/image/upload/v1762180484/homePage/MONDAY.png"
                         fetchpriority="high" class="img-fluid d-block  " id="text-image-bf">
-                    <span class="ct_text__white  ct_font__mob_38 ct_font__38 ct_font__desk__32">WEEK</span>
+                   
+
                 </span>
                 <div class="d-flex flex-wrap  mx-auto ct_text__white align-items-center justify-content-center">
 
@@ -95,19 +103,21 @@
 
                     </span>
                 </div>
-                <p class="ct_text__white mb-md-2 mt-0" style="
-    font-size: 14px;
-">Get exclusive holiday deals on Ray-Ban,<br class="ct_desk__hide"> Oakley, and more</p>
+                <p class="ct_text__white weight-bold mb-md-2 mt-0 transform-uppercase" style="font-size: 20px;">Today only: extra 5% off at <br class="ct_desk__hide"> checkout!</p>
+
+                <p class="ct_text__white mb-md-2 mt-0" style="font-size: 14px;">Get exclusive holiday deals<br
+                        class="ct_desk__hide"> on Ray-Ban, Oakley, and more</p>
 
             </a>
             <div class="align-items-center justify-content-center pt-2 ct_mb__50 d-flex flex-column flex-lg-row ">
-                <a href="/promotions/black-friday-dp" class="btn-cta mx-2 mr-md-0 d-inline-block "
-                    style="background: #AB2317; color: #fff !important;">Shop Black friday deals</a>
+                <a href="/promotions/cyber-monday-dp" class="btn-cta mx-2 mr-md-0 d-inline-block "
+                    style="background: #AB2317; color: #fff !important;">Shop cyber monday deals</a>
             </div>
         </div>
 
     </div>
 </div>
+
 
     `;
       $(".heroBanner").replaceWith(heroBanner);

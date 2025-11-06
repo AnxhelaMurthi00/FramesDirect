@@ -1,0 +1,26 @@
+<script>
+  var hasIns = setInterval(checkIns, 360);
+  function checkIns() {
+    if (
+      !!!$("#ctl00_ContentPlaceHolderProductDisplay_pnlEmptyCart").length
+    ) {
+      if ($('.cart-item.insurance-selected').length > 0) {
+        clearInterval(hasIns);
+        hasIns = null;
+      } else {
+        if (
+          (checkDate >= "251201" && checkDate <= "251202") ||
+          (fdFncs.vars.isTest >= "251201" && fdFncs.vars.isTest <= "251202")
+        ) {
+          var $promoWrapper = $('<div id="cartPromoMsg" class="mb-2"></div>');
+          $promoWrapper.append(
+            $('<div id="cartPromoMsg" class="mb-3 py-1 px-3 weight-normal color-black" style="background: linear-gradient(90deg,rgba(225, 207, 227, 1) 0%, rgba(165, 118, 169, 1) 100%); border-radius: 5px; ">Your exclusive <b>  Cyber Monday savings </b> have been applied!</div>')
+          );
+          $promoWrapper.insertAfter($("h1"));
+        }
+        clearInterval(hasIns);
+        hasIns = null;
+      }
+    }
+  }
+</script>
