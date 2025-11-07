@@ -18,15 +18,96 @@
   });
   function prodDiscoBanner() {
     if (
-      (checkDate >= "251103" && checkDate <= "251109") ||
-      (fdFncs.vars.isTest >= "251103" && fdFncs.vars.isTest <= "251109")
+      (checkDate >= "251103" && checkDate <= "251110") ||
+      (fdFncs.vars.isTest >= "251103" && fdFncs.vars.isTest <= "251110")
     ) {
       var excludePgs =
+        $('h1:contains("Adensco")').length === 0 &&
+        $('h1:contains("Alain Mikli")').length === 0 &&
+        $('h1:contains("Alexander McQueen")').length === 0 &&
+        $('h1:contains("Argyleculture")').length === 0 &&
+        $('h1:contains("Badgley Mischka")').length === 0 &&
+        $('h1:contains("Black Flys")').length === 0 &&
+        $('h1:contains("Bliz")').length === 0 &&
+        $('h1:contains("Bottega Veneta")').length === 0 &&
+        $('h1:contains("Carrera")').length === 0 &&
+        $('h1:contains("Caviar")').length === 0 &&
+        $('h1:contains("Cazal")').length === 0 &&
+        $('h1:contains("Chloe")').length === 0 &&
+        $('h1:contains("Christian Siriano")').length === 0 &&
+        $('h1:contains("Costa")').length === 0 &&
+        $('h1:contains("Costa C-Mates Bifocal Readers")').length === 0 &&
+        $('h1:contains("EA7")').length === 0 &&
+        $('h1:contains("ECO")').length === 0 &&
+        $('h1:contains("ED Ellen Degeneres")').length === 0 &&
+        $('h1:contains("Electric")').length === 0 &&
+        $('h1:contains("Emilio Pucci")').length === 0 &&
+        $('h1:contains("Ermenegildo Zegna")').length === 0 &&
+        $('h1:contains("Ferrari")').length === 0 &&
+        $('h1:contains("Fila")').length === 0 &&
+        $('h1:contains("Goliath")').length === 0 &&
+        $('h1:contains("Guardian Safety")').length === 0 &&
         $('h1:contains("Gunnar")').length === 0 &&
+        $('h1:contains("GX by Gwen Stefani")').length === 0 &&
+        $('h1:contains("GX by Gwen Stefani Kids")').length === 0 &&
+        $('h1:contains("Hobie")').length === 0 &&
+        $('h1:contains("John Raymond")').length === 0 &&
         $('h1:contains("Kaenon")').length === 0 &&
-        $('h1:contains("Randolph")').length === 0 &&
-        $('h1:contains("Rec Specs")').length === 0 &&
-        $('h1:contains("Zeal")').length === 0;
+        $('h1:contains("Kate Spade")').length === 0 &&
+        $('h1:contains("L.A.M.B.")').length === 0 &&
+        $('h1:contains("Lafont")').length === 0 &&
+        $('h1:contains("Lafont Issy & La")').length === 0 &&
+        $('h1:contains("Lafont Kids")').length === 0 &&
+        $('h1:contains("Maui Jim")').length === 0 &&
+        $('h1:contains("Maui Jim Readers")').length === 0 &&
+        $('h1:contains("Modo")').length === 0 &&
+        $('h1:contains("Moncler")').length === 0 &&
+        $('h1:contains("Mont Blanc")').length === 0 &&
+        $('h1:contains("Native")').length === 0 &&
+        $('h1:contains("Oakley")').length === 0 &&
+        $('h1:contains("Oakley Goggles")').length === 0 &&
+        $('h1:contains("Oakley Meta")').length === 0 &&
+        $('h1:contains("Oakley Youth")').length === 0 &&
+        $('h1:contains("On Guard Safety")').length === 0 &&
+        $('h1:contains("O\'Neill")').length === 0 &&
+        $('h1:contains("Patient Own Frame")').length === 0 &&
+        $('h1:contains("Persol")').length === 0 &&
+        $('h1:contains("Polinelli Milano Readers")').length === 0 &&
+        $('h1:contains("Puma")').length === 0 &&
+        $('h1:contains("Radley")').length === 0 &&
+        $('h1:contains("Ralph Lauren")').length === 0 &&
+        $('h1:contains("Randolph Engineering")').length === 0 &&
+        $('h1:contains("Ranger Performance Eyewear")').length === 0 &&
+        $('h1:contains("Ray-Ban")').length === 0 &&
+        $('h1:contains("Ray-Ban Junior")').length === 0 &&
+        $('h1:contains("Ray-Ban Meta Gen 1")').length === 0 &&
+        $('h1:contains("Ray-Ban Meta Gen 2")').length === 0 &&
+        $('h1:contains("Revo")').length === 0 &&
+        $('h1:contains("Saint Laurent")').length === 0 &&
+        $('h1:contains("Salvatore Ferragamo")').length === 0 &&
+        $('h1:contains("Savile Row Titanium")').length === 0 &&
+        $('h1:contains("Scuderia Ferrari")').length === 0 &&
+        $('h1:contains("Skechers Kids")').length === 0 &&
+        $('h1:contains("Smith")').length === 0 &&
+        $('h1:contains("Sperry Kids")').length === 0 &&
+        $('h1:contains("Spy")').length === 0 &&
+        $('h1:contains("Starck")').length === 0 &&
+        $('h1:contains("Tiffany & Co.")').length === 0 &&
+        $('h1:contains("Titmus RX Safety Glasses")').length === 0 &&
+        $('h1:contains("Tom Ford")').length === 0 &&
+        $('h1:contains("Tom Ford Blue Light Collection")').length === 0 &&
+        $('h1:contains("Totally Rimless")').length === 0 &&
+        $('h1:contains("Trina Turk")').length === 0 &&
+        $('h1:contains("Under Armour")').length === 0 &&
+        $('h1:contains("Vera Bradley")').length === 0 &&
+        $('h1:contains("Vera Bradley Kids")').length === 0 &&
+        $('h1:contains("VirtuClear")').length === 0 &&
+        $('h1:contains("Wiley X")').length === 0 &&
+        $('h1:contains("Wiley X Goggles")').length === 0 &&
+        $('h1:contains("Wiley X WorkSight")').length === 0 &&
+        $('h1:contains("Wiley X Youth Force")').length === 0 &&
+        $('h1:contains("Zeal Optics")').length === 0;
+
 
       if ($(".lens-bar-holder").length > 0) {
         $(".lens-bar-holder").remove();
