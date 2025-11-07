@@ -188,7 +188,7 @@
     var countBnrMsg = messages[currentMessageIndex];
 
     // Add countdown only for the specific message
-    if (messages[currentMessageIndex].includes("Sign up")) {
+    if (messages[currentMessageIndex].includes("Black")) {
       countBnrMsg +=
         '<div id="countdown" class="d-flex justify-content-end pr-2 size-6 ml-3"><div id="countdown-clockworks-holder" class="d-flex"></div></div>';
     }
@@ -197,9 +197,9 @@
 
     // Initialize the countdown if the specific message is active
     if (
-      (messages[currentMessageIndex].includes("Sign up") &&
-        checkDate === "250426") ||
-      fdFncs.vars.isTest === "250426"
+      (messages[currentMessageIndex].includes("Black") &&
+        checkDate === "251128") ||
+      fdFncs.vars.isTest === "251128"
     ) {
       initializeCountdown();
     }
@@ -207,7 +207,7 @@
 
   // Function to initialize the countdown
   function initializeCountdown() {
-    var endDateLong = "04/27/2025"; // Set the end date for the countdown
+    var endDateLong = "11/28/2025"; // Set the end date for the countdown
     var digitBg = " white";
 
     $("#countdown-clockworks-holder").countdown(endDateLong, function (event) {
