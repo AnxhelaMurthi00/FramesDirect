@@ -18,7 +18,7 @@
   });
   function prodDiscoBanner() {
     if (
-      (checkDate >= "251109" && checkDate <= "251117") ||
+      (checkDate >= "251109" && checkDate <= "251118") ||
       (fdFncs.vars.isTest >= "251109" && fdFncs.vars.isTest <= "251117")
     ) {
       var excludePgs =
@@ -28,11 +28,12 @@
         $('h1:contains("Rec Specs")').length === 0 &&
         $('h1:contains("Zeal")').length === 0;
 
-      if ($(".lens-bar-holder").length > 0) {
-        $(".lens-bar-holder").remove();
-      }
-      if (($('h1:contains("Prescription")').length > 0 || $('h1:contains("Eyeglasses")').length > 0 || $('h1:contains("Sunglasses")').length > 0) && excludePgs) {
-        $('<div class="lens-bar-holder mx-0 mb-3"><div class="lens-bar d-block color-black px-2 size-12 text-left" style="background:#C9A3A0; border-radius: 5px;">Last Chance:<b> up to 50% off select frames + 60% off lenses with frame purchase</b></div></div>')
+      if (
+        $('h1:contains("Ray Ban")').length > 0 ||
+        $('h1:contains("Oakley")').length > 0 ||
+        $('h1:contains("Costa")').length > 0
+      ) {
+        $('<div class="lens-bar-holder mx-0 mb-3 mt-4"><div class="lens-bar d-block color-black px-2 size-12 text-left" style="background:rgba(201, 163, 160, 1); border-radius: 5px;"><b>Get 15% off select brands, directly applied at checkout</b></div></div>')
           .prependTo("#prod-header-right");
       }
     }
