@@ -1,56 +1,60 @@
 <style>
-/* --- Global & Font Styles --- */
-body{
-    font-family: 'Opens Sans', sans-serif !important;
-}
+    /* --- Global & Font Styles --- */
+    body {
+        font-family: 'Opens Sans', sans-serif !important;
+    }
 
-#bnr-holder{
-    display: none;
-}
-
-.mob_show{
+    #bnr-holder {
         display: none;
     }
 
-#content-main{
-    padding: 0;
-}
+    .mob_show {
+        display: none;
+    }
 
-#landing-content{
-    max-width: 100%;
-    margin: 0;
-}
+    #content-main {
+        padding: 0;
+    }
 
-/* --- Custom Container Width --- */
+    #landing-content {
+        max-width: 100%;
+        margin: 0;
+    }
 
-.container-1088{
-    max-width: 1088px;
-    margin: 0 auto;
-}
-/* .container {
+    /* --- Custom Container Width --- */
+
+    .container-1088 {
+        max-width: 1088px;
+        margin: 0 auto;
+    }
+
+    /* .container {
     max-width: 1312px;
     margin: 0 auto;
 } */
 
-.container{
-    max-width: none !important; /* This is the key to removing the width limit */
-    padding-left: 24px;         /* Use a smaller padding for mobile */
-    padding-right: 24px;        /* Use a smaller padding for mobile */
-}
+    .container {
+        max-width: none !important;
+        /* This is the key to removing the width limit */
+        padding-left: 24px;
+        /* Use a smaller padding for mobile */
+        padding-right: 24px;
+        /* Use a smaller padding for mobile */
+    }
 
 
-.hero-section h1{
-    color: #ffffff !important;
-    text-align: center;
-}
+    .hero-section h1 {
+        color: #ffffff !important;
+        text-align: center;
+    }
 
-.col-lg-4{
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-}
+    .col-lg-4 {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
 
-/* --- Hero Section --- */
-/* .hero-section {
+    /* --- Hero Section --- */
+    /* .hero-section {
     background: url('https://images.framesdirect.com/image/upload/v1759398483/Gift-guide/GIFT_GUIDE_HEADER_DESK.jpg');
     background-repeat: no-repeat;
     background-position: top center;
@@ -59,16 +63,16 @@ body{
     color: white;
 } */
 
-/* --- Hero Section --- */
-/* .hero-section {
+    /* --- Hero Section --- */
+    /* .hero-section {
     position: relative; 
     height: 100vh; 
     min-height: 810px;
     color: white;
 } */
 
-/* ADD THIS NEW RULE FOR THE IMAGE */
-/* .hero-background-image {
+    /* ADD THIS NEW RULE FOR THE IMAGE */
+    /* .hero-background-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -78,88 +82,89 @@ body{
     object-position: top center; 
 } */
 
-/* ============================================= */
-/* === NEW HERO SECTION STYLES === */
-/* ============================================= */
+    /* ============================================= */
+    /* === NEW HERO SECTION STYLES === */
+    /* ============================================= */
 
-/* 1. The main section is now just a positioning container for the text overlay. */
-/* Its height will be determined by the image inside it. */
-.hero-section {
-    position: relative;
-}
+    /* 1. The main section is now just a positioning container for the text overlay. */
+    /* Its height will be determined by the image inside it. */
+    .hero-section {
+        position: relative;
+    }
 
-/* 2. The image is now a normal, responsive element in the document flow. */
-/* We remove all the positioning rules from it. */
-.hero-background-image {
-    width: 100%;
-    height: auto;
-    display: block; /* This removes any extra space below the image */
-}
+    /* 2. The image is now a normal, responsive element in the document flow. */
+    /* We remove all the positioning rules from it. */
+    .hero-background-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        /* This removes any extra space below the image */
+    }
 
-/* 3. The container for your text content is now an absolutely positioned overlay. */
-/* This places it on top of the image. */
-.hero-section > .h-100 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
+    /* 3. The container for your text content is now an absolutely positioned overlay. */
+    /* This places it on top of the image. */
+    .hero-section>.h-100 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 
-/* We also need to make sure the text content is visible (white) */
-.hero-content h1,
-.hero-content p {
-    color: #fff;
-}
+    /* We also need to make sure the text content is visible (white) */
+    .hero-content h1,
+    .hero-content p {
+        color: #fff;
+    }
 
-.hero-content h1 {
-    font-size: 32px;
-    font-weight: 700 !important;
-    line-height: 42px !important;
-    margin: 0 !important;
-}
+    .hero-content h1 {
+        font-size: 32px;
+        font-weight: 700 !important;
+        line-height: 42px !important;
+        margin: 0 !important;
+    }
 
-.hero-content p {
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 24px;
-    text-align: center; 
-    margin: 0;
-}
+    .hero-content p {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: center;
+        margin: 0;
+    }
 
-/* --- Info Bar Section --- */
-.info-bar {
-    /* This is the slate gray color from your screenshot */
-    background-color: #5B6870; 
-    color: white;
-    padding: 2rem 0;
-    text-align: center;
-}
+    /* --- Info Bar Section --- */
+    .info-bar {
+        /* This is the slate gray color from your screenshot */
+        background-color: #5B6870;
+        color: white;
+        padding: 2rem 0;
+        text-align: center;
+    }
 
-.info-bar p {
-    font-size: 32px;
-    font-weight: 400;
-    line-height: 40px;
-}
+    .info-bar p {
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 40px;
+    }
 
-#landing-content h2 a{
-    text-transform: capitalize;
-    font-size: 2rem;
-    font-weight: 700;
-    color: #000;
-    padding: 0;
-    margin:0;
-    text-decoration: none;
-}
+    #landing-content h2 a {
+        text-transform: capitalize;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #000;
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+    }
 
 
-/* --- Responsive Adjustments for Mobile --- */
-/* --- Responsive Adjustments for Mobile --- */
-@media (max-width: 768px) {
-    
-    
-    /* START: Updated Hero Section Rules */
-    /* .hero-section {
+    /* --- Responsive Adjustments for Mobile --- */
+    /* --- Responsive Adjustments for Mobile --- */
+    @media (max-width: 768px) {
+
+
+        /* START: Updated Hero Section Rules */
+        /* .hero-section {
         background: url('https://images.framesdirect.com/image/upload/v1759398483/Gift-guide/GIFT_GUIDE_HEADER_MOBILE.jpg') no-repeat center center;
         background-size: cover;
         height: auto; 
@@ -167,503 +172,582 @@ body{
         color: #000; 
     } */
 
-    /* Position the content at the top */
-    .hero-section .row {
-        align-items: flex-start !important; 
-        justify-content: center;
+        /* Position the content at the top */
+        .hero-section .row {
+            align-items: flex-start !important;
+            justify-content: center;
+        }
+
+        .hero-content {
+            /* Remove the dark overlay and padding */
+            background-color: transparent;
+            padding-top: 2rem;
+            /* Add padding to the top */
+            padding-bottom: 2rem;
+            border-radius: 0;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-family: "Open Sans", sans-serif;
+            font-size: 24px;
+            font-style: normal;
+            line-height: 28.8px !important;
+            letter-spacing: 0.12px;
+            color: #000 !important;
+        }
+
+        .hero-content p {
+            margin-left: 16px;
+            margin-right: 16px;
+            font-family: "Open Sans", sans-serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px;
+            letter-spacing: 0.07px;
+            margin-top: 4px;
+            color: #000 !important;
+        }
+
+        /* END: Updated Hero Section Rules */
+
+        .info-bar p {
+            font-family: "Open Sans", sans-serif;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 28px;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .bestsellers-section,
+        .budget-section,
+        .vibe-section,
+        .special-collections-section,
+        .sustainable-frames-section,
+        .lenses-section,
+        .special-details-section {
+            padding-top: 40px !important;
+            padding-bottom: 40px !important;
+        }
+
+        .mobile-carousel {
+            overflow: hidden;
+        }
+
+        #landing-content h2 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+
     }
 
-    .hero-content {
-        /* Remove the dark overlay and padding */
-        background-color: transparent; 
-        padding-top: 2rem; /* Add padding to the top */
-        padding-bottom: 2rem;
-        border-radius: 0;
-        text-align: center;
-    }
-
-    .hero-content h1 {
-        font-family: "Open Sans", sans-serif;
-        font-size: 24px;
-        font-style: normal;
-        line-height: 28.8px !important;
-        letter-spacing: 0.12px;
-        color: #000 !important;
-    }
-
-    .hero-content p {
-        margin-left: 16px;
-        margin-right: 16px;
-        font-family: "Open Sans", sans-serif;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 20px;
-        letter-spacing: 0.07px;
-        margin-top: 4px;
-        color: #000 !important;
-    }
-    /* END: Updated Hero Section Rules */
-
-    .info-bar p {
-        font-family: "Open Sans", sans-serif;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 28px;
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    .bestsellers-section, 
-    .budget-section, 
-    .vibe-section, 
-    .special-collections-section, 
-    .sustainable-frames-section, 
-    .lenses-section, 
+    /* --- NEW: Bestsellers Section --- */
+    .bestsellers-section,
+    .budget-section,
+    .vibe-section,
+    .special-collections-section,
+    .sustainable-frames-section,
+    .lenses-section,
     .special-details-section {
-        padding-top: 40px !important;
-        padding-bottom: 40px !important;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
     }
 
-    .mobile-carousel {
-        overflow: hidden;
+    .bestsellers-section,
+    .vibe-section,
+    .sustainable-frames-section,
+    .special-details-section {
+        background-color: #fff;
     }
 
-    #landing-content h2{
-        margin-top: 0;
-        font-size: 24px;
-    }
-    
-}
-/* --- NEW: Bestsellers Section --- */
-.bestsellers-section, .budget-section, .vibe-section, .special-collections-section, .sustainable-frames-section, .lenses-section, .special-details-section  {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-}
-
-.bestsellers-section, .vibe-section, .sustainable-frames-section, .special-details-section{
-    background-color: #fff; 
-}
-
-.budget-section, .lenses-section{
-    background-color: #FFF7E9; 
-}
-
-.special-collections-section{
-    background-color: #E2DFD9; 
-}
-
-
-.rounded-custom{
-    border-radius: 16px;
-}
-
-.bestsellers-section h2 {
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 36px;
-    margin-bottom: 16px !important;
-}
-
-p.text-muted{
-    color: var(--Base-Text-Dark, #222) !important;
-    text-align: center;
-    font-family: "DM Sans", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px; /* 150% */
-    letter-spacing: 0.08px;
-}
-
-.category-card h3 {
-    color: var(--Base-Text-Dark, #000) !important;
-    text-align: center;
-    /* Heading 2/Desktop */
-    font-family: "Open Sans";
-    font-size: 24px !important;
-    font-style: normal;
-    font-weight: 700 !important;
-    line-height: 150%; /* 36px */
-    margin-top: 0 !important;
-    margin-bottom: 8px !important;
-}
-.category-card .btn-dark{
-    background-color: #333 !important;
-    border-radius: 4px;
-}
-
-.btn-dark{
-    color: var(--Base-Text-Light, #FFF) !important;
-    font-size: 16px !important;
-    font-style: normal;
-    font-weight: 700 !important;
-    line-height: 20px !important; /* 125% */
-    padding: 10px 24px !important;
-}
-
-.category-card .btn-dark, .offers-banner-section .promo-content .btn-dark{
-    background-color: #333 !important;
-    border-radius: 4px;
-}
-
-
-
-.delivery-banner-section .promo-content .btn-dark{
-    font-weight: 400 !important;
-    background-color: #000 !important;
-}
-
-.btn-dark.focus, .btn-dark:focus{
-    border: none !important;
-    box-shadow: none !important;
-}
-.btn-dark:not(:disabled):not(.disabled).active, .btn-dark:not(:disabled):not(.disabled):active, .show>.btn-dark.dropdown-toggle{
-    border: none !important ;
-}
-
-
-.category-card p {
-    font-size: 1rem;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-.ai-banner, .delivery-banner, .offers-banner,.blackfriday-banner{
-    background-color: #fff;
-    border-radius: 16px; /* Large rounded corners */
-    min-height: 360px;
-    color: white;
-    padding: 120px 75px;
-}
-
-
-
-
-.blackfriday-banner{
-    background: url('https://images.framesdirect.com/image/upload/v1762168819/Gift-guide/LP_GIFTGUIDE_SECONDARY_BANNER_CYBERWEEKEND_D.png');
-    background-repeat: no-repeat !important;
-    background-size: contain !important;
-}
-
-.ai-banner{
-    background: url('https://images.framesdirect.com/image/upload/v1759398489/Gift-guide/FD_GG_JUPITER_SECONDARY_BANNER_D.png');
-    background-repeat: no-repeat !important;
-    background-size: contain !important;
-}
-
-.delivery-banner{
-    background: url('https://images.framesdirect.com/image/upload/v1759398488/Gift-guide/FD_GG_FREESHIPPING_SECONDARY_BANNER_D.png');
-    background-repeat: no-repeat !important;
-    background-size: contain !important;
-}
-
-.offers-banner{
-    background: url('https://images.framesdirect.com/image/upload/v1759398487/Gift-guide/FD_GG_JUPITER_SHOPOFFERS_D.png');
-    background-repeat: no-repeat !important;
-    background-size: contain !important;
-}
-
-.promo-content {
-    max-width: 45%; /* Restricts content to the left side */
-}
-
-.ai-banner-section .promo-content h2 ,
- .blackfriday-banner h2 {
-    color: var(--Base-Text-Light, #FFF) !important;
-    /* Heading 3/Desktop */
-    font-family: "Open Sans", sans-serif;
-    font-size: 16px !important;
-    font-style: normal;
-    line-height: 150%; /* 24px */
-    margin-bottom: 0 !important;
-}
-
-.ai-banner-section .promo-content p {
-    color: var(--Base-Text-Light, #FFF);
-    /* Heading 3/Desktop */
-    font-family: "Open Sans";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-}
-
-.delivery-banner-section .promo-content h2, .offers-banner-section .promo-content h2{
-    color: var(--Base-Black, #000) !important;
-    font-family: "Open Sans", sans-serif;
-    font-size: 16px !important;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 150%; /* 36px */
-     margin-bottom: 0 !important;
-} 
-
-.delivery-banner-section .promo-content p, .offers-banner-section .promo-content p{
-    color: var(--Base-Black, #000) !important;
-    font-family: "Open Sans", sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-} 
-
-/* Custom Button Style */
-.btn-light {
-    background-color: #fff !important;
-    color: var(--Base-Text-Dark, #222) !important;
-    border: none !important;
-    border-radius: 4px !important;
-    padding: 10px 24px !important;
-    font-family: "DM Sans", sans-serif;
-    font-size: 16px !important;
-    font-style: normal;
-    font-weight: 400 !important;
-    line-height: 20px !important; /* 125% */
-    letter-spacing: 0.08px;
-}
-
-/* --- Responsive Adjustments for Bestsellers Section --- */
-@media (max-width: 991.98px) {
-    /* Add space between cards when they stack on tablet/mobile */
-    .category-card {
-        padding-bottom: 3rem;
-        margin-bottom: 24px;
-    }
-    
-    /* Remove bottom margin from the very last card to avoid extra space */
-    .col-lg-4:last-child .category-card {
-        margin-bottom: 0;
-    }
-}
-
-/* --- Carousel Styles --- */
-
-/* On desktop, make the swiper behave like a Bootstrap row */
-@media (min-width: 768px) {
-    .mobile-carousel .swiper-wrapper {
-        display: flex;
-        justify-content: space-between;
-    }
-    .mobile-carousel .swiper-slide {
-        width: 32% !important; /* Emulates a 3-column layout */
-    }
-    .mobile-carousel .swiper-pagination {
-        display: none; /* Hide pagination on desktop */
-    }
-}
-
-/* --- Carousel Pagination Styles (for Mobile) --- */
-@media (max-width: 768px) {
-
-    .hero-background-image{
-        object-position: 75% center; 
+    .budget-section,
+    .lenses-section {
+        background-color: #FFF7E9;
     }
 
-    .mobile-carousel {
-    /* These negative margins pull the carousel out to the screen edges,
-       counteracting the 24px padding from the .container */
-    margin-left: -16px;
-    margin-right: -16px;
-}
-    .mob_hide{
-        display: none;
-    }
-
-    .mob_show{
-        display: block;
-    }
-
-    .ai-banner {
-        background: url('https://images.framesdirect.com/image/upload/v1759398285/Gift-guide/FD_GG_JUPITER_SECONDARY_BANNER_M.png');
-    }
-
-    .blackfriday-banner{
-        background: url('https://images.framesdirect.com/image/upload/v1762168819/Gift-guide/LP_GIFTGUIDE_SECONDARY_BANNER_CYBERWEEKEND_M.png');
-    }
-
-    .delivery-banner{
-        background: url('https://images.framesdirect.com/image/upload/v1759398263/Gift-guide/FD_GG_FREESHIPPING_SECONDARY_BANNER_M.png');
- 
-    }
-
-    .offers-banner{
-        background: url('https://images.framesdirect.com/image/upload/v1759398479/Gift-guide/FD_GG_JUPITER_SHOPOFFERS_M.png');
+    .special-collections-section {
+        background-color: #E2DFD9;
     }
 
 
-    .container p.text-muted{
-         max-width: 90% ;
-         margin: 0 auto;
-    }
-    
-    .category-card p.text-muted{
-        max-width: 95%;
-        margin: 0 auto;
-    }
-
-    
-
-    .category-card .btn-dark{
-        margin-top: 24px !important;
-    }
-
-    /* Add some bottom padding to the carousel to make space for the progress bar */
-    .mobile-carousel {
-        /* If you already have overflow:hidden here, just add the padding */
-        position: relative;
-        overflow: hidden;
-    }
-
-    /* Position the pagination bar at the very bottom of the carousel container */
-    .swiper-pagination {
-        bottom: 0 !important;
-        top: auto !important;
-        position: relative !important;
-    }
-
-    /* Style the progress bar's track (the light-colored background) */
-    .swiper-pagination-progressbar {
-        height: 5px !important;
-        background: #CABEA5 !important;
-        width: 200px !important;
-        margin: 0 auto;
-        border-radius: 100px;
-    }
-    /* Style the progress bar's fill (the part that moves) */
-    .swiper-pagination-progressbar-fill {
-        background: #6B777B !important; /* Dark slate gray from your screenshot */
-        height: 5px !important;;
-        border-radius: 100px;
-        width: 33.33% !important;      /* Fix the width to 1/3 of the bar */
-        left: 0;                       /* Set the initial position to the far left */
-        transform: none !important;    /* IMPORTANT: Override Swiper's default scaling animation */
-        transition: left 0.3s ease;    /* Animate the 'left' property smoothly */
-    }
-    /* --- Mobile Styles for Promo Banners --- */
-    .ai-banner-section,
-    .delivery-banner-section,
-    .offers-banner-section,
-    .blackfriday-banner{
-        padding-bottom: 16px;
-    }
-    /* 1. Make the container full-width on mobile to remove side spacing */
-    .ai-banner-section .container,
-    .delivery-banner-section .container,
-    .offers-banner-section .container,
-    .blackfriday-banner .container {
-        max-width: 100%;
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-
-    /* 2. Adjust the banners themselves */
-    .ai-banner, .delivery-banner, .offers-banner, .blackfriday-banner {
-        border-radius: 0;           /* Banners are often edge-to-edge on mobile */
-        min-height: 688px;          /* Give it enough height for the vertical image */
-        background-size: cover !important; /* Ensure the image covers the new taller area */
-        background-position: center !important; /* Center the image */
+    .rounded-custom {
         border-radius: 16px;
     }
 
-    /* 3. Change vertical alignment from center to top */
-    .ai-banner.d-flex, .delivery-banner.d-flex, .offers-banner.d-flex, .blackfriday-banner.d-flex {
-        align-items: flex-start !important;
-        padding: 90px 30px 0 30px;
-;
+    .bestsellers-section h2 {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 36px;
+        margin-bottom: 16px !important;
     }
 
-    /* 4. Fix the text content area */
-    .promo-content {
-        max-width: 100%;      /* Allow content to use the full width */
-        text-align: center;   /* Center the text and button */
-    }
-}
-
-@media (max-width: 1104px) {
-    .tablet_hide{
-        display: none;
-    }
-}
-/* =================================================================== */
-/* === FINAL CONSOLIDATED TABLET & DESKTOP STYLES (768px and wider) === */
-/* =================================================================== */
-
-/* --- Styles for ALL screens 768px and wider --- */
-@media (min-width: 768px) {
-    /* Add this inside your @media (min-width: 768px) block */
-    .container {
-        padding-left: 64px !important;
-        padding-right: 64px !important;
+    p.text-muted {
+        color: var(--Base-Text-Dark, #222) !important;
+        text-align: center;
+        font-family: "DM Sans", sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        /* 150% */
+        letter-spacing: 0.08px;
     }
 
-    /* --- Carousel Grid Layout & Button Alignment --- */
-    .mobile-carousel .swiper-wrapper {
-        display: flex !important;
-        align-items: stretch !important; /* This is the key for equal height columns */
-        justify-content: space-between;
+    .category-card h3 {
+        color: var(--Base-Text-Dark, #000) !important;
+        text-align: center;
+        /* Heading 2/Desktop */
+        font-family: "Open Sans";
+        font-size: 24px !important;
+        font-style: normal;
+        font-weight: 700 !important;
+        line-height: 150%;
+        /* 36px */
+        margin-top: 0 !important;
+        margin-bottom: 8px !important;
     }
 
-    .mobile-carousel .swiper-slide {
-        width: 32% !important; /* This creates the 3-column grid */
-        display: flex !important;
-        flex-direction: column !important;
-        height: auto !important; 
+    .category-card .btn-dark {
+        background-color: #333 !important;
+        border-radius: 4px;
     }
 
-    .mobile-carousel .swiper-pagination {
-        display: none;
+    .btn-dark {
+        color: var(--Base-Text-Light, #FFF) !important;
+        font-size: 16px !important;
+        font-style: normal;
+        font-weight: 700 !important;
+        line-height: 20px !important;
+        /* 125% */
+        padding: 10px 24px !important;
     }
 
-    .category-card {
-        display: flex !important;
-        flex-direction: column !important;
-        flex-grow: 1 !important; /* This makes the card grow to fill the column's height */
-        height: 100%;
-    }
-
-    .category-card .btn {
-        margin-top: auto !important;
-        max-width: fit-content;
-        margin: 0 auto;
-    }
-
-    /* --- Base Promo Banner Styles for Tablet & Desktop --- */
-    .ai-banner, .delivery-banner, .offers-banner, .blackfriday-banner {
-        background-size: cover !important;
-        background-position: center !important;
-    }
-}
-
-/* --- Tablet-Only Overrides (768px to 991.98px) --- */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    /* This gives the banner text more space on medium screens */
-    .promo-content {
-        max-width: 70%;
+    .category-card .btn-dark,
+    .offers-banner-section .promo-content .btn-dark {
+        background-color: #333 !important;
+        border-radius: 4px;
     }
 
 
-.category-card h3 {
-    /* Set a minimum height tall enough for 2 lines of your 36px line-height text */
-    min-height: 72px; 
 
-    /* These optional lines vertically center the text within the 72px box,
-       which looks much nicer for single-line titles. */
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-}
-}
+    .delivery-banner-section .promo-content .btn-dark {
+        font-weight: 400 !important;
+        background-color: #000 !important;
+    }
 
-/* --- Large Desktop Overrides (992px and wider) --- */
-/* This restores the original desktop design for the banner text */
-@media (min-width: 992px) {
+    .btn-dark.focus,
+    .btn-dark:focus {
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .btn-dark:not(:disabled):not(.disabled).active,
+    .btn-dark:not(:disabled):not(.disabled):active,
+    .show>.btn-dark.dropdown-toggle {
+        border: none !important;
+    }
+
+
+    .category-card p {
+        font-size: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .ai-banner,
+    .delivery-banner,
+    .offers-banner,
+    .blackfriday-banner {
+        background-color: #fff;
+        border-radius: 16px;
+        /* Large rounded corners */
+        min-height: 360px;
+        color: white;
+        padding: 120px 75px;
+    }
+
+
+
+
+    .blackfriday-banner {
+        background: url('https://images.framesdirect.com/image/upload/v1762168819/Gift-guide/LP_GIFTGUIDE_SECONDARY_BANNER_CYBERWEEKEND_D.png');
+        background-repeat: no-repeat !important;
+        background-size: contain !important;
+    }
+
+    .ai-banner {
+        background: url('https://images.framesdirect.com/image/upload/v1759398489/Gift-guide/FD_GG_JUPITER_SECONDARY_BANNER_D.png');
+        background-repeat: no-repeat !important;
+        background-size: contain !important;
+    }
+
+    .delivery-banner {
+        background: url('https://images.framesdirect.com/image/upload/v1759398488/Gift-guide/FD_GG_FREESHIPPING_SECONDARY_BANNER_D.png');
+        background-repeat: no-repeat !important;
+        background-size: contain !important;
+    }
+
+    .offers-banner {
+        background: url('https://images.framesdirect.com/image/upload/v1759398487/Gift-guide/FD_GG_JUPITER_SHOPOFFERS_D.png');
+        background-repeat: no-repeat !important;
+        background-size: contain !important;
+    }
+
     .promo-content {
         max-width: 45%;
+        /* Restricts content to the left side */
     }
-}
+
+    .ai-banner-section .promo-content h2,
+    .blackfriday-banner h2 {
+        color: var(--Base-Text-Light, #FFF) !important;
+        /* Heading 3/Desktop */
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px !important;
+        font-style: normal;
+        line-height: 150%;
+        /* 24px */
+        margin-bottom: 0 !important;
+    }
+
+    .ai-banner-section .promo-content p {
+        color: var(--Base-Text-Light, #FFF);
+        /* Heading 3/Desktop */
+        font-family: "Open Sans";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+    }
+
+    .delivery-banner-section .promo-content h2,
+    .offers-banner-section .promo-content h2 {
+        color: var(--Base-Black, #000) !important;
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px !important;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 150%;
+        /* 36px */
+        margin-bottom: 0 !important;
+    }
+
+    .delivery-banner-section .promo-content p,
+    .offers-banner-section .promo-content p {
+        color: var(--Base-Black, #000) !important;
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+    }
+
+    /* Custom Button Style */
+    .btn-light {
+        background-color: #fff !important;
+        color: var(--Base-Text-Dark, #222) !important;
+        border: none !important;
+        border-radius: 4px !important;
+        padding: 10px 24px !important;
+        font-family: "DM Sans", sans-serif;
+        font-size: 16px !important;
+        font-style: normal;
+        font-weight: 400 !important;
+        line-height: 20px !important;
+        /* 125% */
+        letter-spacing: 0.08px;
+    }
+
+    /* --- Responsive Adjustments for Bestsellers Section --- */
+    @media (max-width: 991.98px) {
+
+        /* Add space between cards when they stack on tablet/mobile */
+        .category-card {
+            padding-bottom: 3rem;
+            margin-bottom: 24px;
+        }
+
+        /* Remove bottom margin from the very last card to avoid extra space */
+        .col-lg-4:last-child .category-card {
+            margin-bottom: 0;
+        }
+    }
+
+    /* --- Carousel Styles --- */
+
+    /* On desktop, make the swiper behave like a Bootstrap row */
+    @media (min-width: 768px) {
+        .mobile-carousel .swiper-wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .mobile-carousel .swiper-slide {
+            width: 32% !important;
+            /* Emulates a 3-column layout */
+        }
+
+        .mobile-carousel .swiper-pagination {
+            display: none;
+            /* Hide pagination on desktop */
+        }
+    }
+
+    /* --- Carousel Pagination Styles (for Mobile) --- */
+    @media (max-width: 768px) {
+
+        .hero-background-image {
+            object-position: 75% center;
+        }
+                
+        .ct__desk__hide {
+            display: block !important;
+        }
+
+        .mobile-carousel {
+            /* These negative margins pull the carousel out to the screen edges,
+       counteracting the 24px padding from the .container */
+            margin-left: -16px;
+            margin-right: -16px;
+        }
+
+        .mob_hide {
+            display: none;
+        }
+
+        .mob_show {
+            display: block;
+        }
+
+        .ai-banner {
+            background: url('https://images.framesdirect.com/image/upload/v1759398285/Gift-guide/FD_GG_JUPITER_SECONDARY_BANNER_M.png');
+        }
+
+        .blackfriday-banner {
+            background: url('https://images.framesdirect.com/image/upload/v1762168819/Gift-guide/LP_GIFTGUIDE_SECONDARY_BANNER_CYBERWEEKEND_M.png');
+        }
+
+        .delivery-banner {
+            background: url('https://images.framesdirect.com/image/upload/v1759398263/Gift-guide/FD_GG_FREESHIPPING_SECONDARY_BANNER_M.png');
+
+        }
+
+        .offers-banner {
+            background: url('https://images.framesdirect.com/image/upload/v1759398479/Gift-guide/FD_GG_JUPITER_SHOPOFFERS_M.png');
+        }
+
+
+        .container p.text-muted {
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        .category-card p.text-muted {
+            max-width: 95%;
+            margin: 0 auto;
+        }
+
+
+
+        .category-card .btn-dark {
+            margin-top: 24px !important;
+        }
+
+        /* Add some bottom padding to the carousel to make space for the progress bar */
+        .mobile-carousel {
+            /* If you already have overflow:hidden here, just add the padding */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Position the pagination bar at the very bottom of the carousel container */
+        .swiper-pagination {
+            bottom: 0 !important;
+            top: auto !important;
+            position: relative !important;
+        }
+
+        /* Style the progress bar's track (the light-colored background) */
+        .swiper-pagination-progressbar {
+            height: 5px !important;
+            background: #CABEA5 !important;
+            width: 200px !important;
+            margin: 0 auto;
+            border-radius: 100px;
+        }
+
+        /* Style the progress bar's fill (the part that moves) */
+        .swiper-pagination-progressbar-fill {
+            background: #6B777B !important;
+            /* Dark slate gray from your screenshot */
+            height: 5px !important;
+            ;
+            border-radius: 100px;
+            width: 33.33% !important;
+            /* Fix the width to 1/3 of the bar */
+            left: 0;
+            /* Set the initial position to the far left */
+            transform: none !important;
+            /* IMPORTANT: Override Swiper's default scaling animation */
+            transition: left 0.3s ease;
+            /* Animate the 'left' property smoothly */
+        }
+
+        /* --- Mobile Styles for Promo Banners --- */
+        .ai-banner-section,
+        .delivery-banner-section,
+        .offers-banner-section,
+        .blackfriday-banner {
+            padding-bottom: 16px;
+        }
+
+        /* 1. Make the container full-width on mobile to remove side spacing */
+        .ai-banner-section .container,
+        .delivery-banner-section .container,
+        .offers-banner-section .container,
+        .blackfriday-banner .container {
+            max-width: 100%;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        /* 2. Adjust the banners themselves */
+        .ai-banner,
+        .delivery-banner,
+        .offers-banner,
+        .blackfriday-banner {
+            border-radius: 0;
+            /* Banners are often edge-to-edge on mobile */
+            min-height: 688px;
+            /* Give it enough height for the vertical image */
+            background-size: cover !important;
+            /* Ensure the image covers the new taller area */
+            background-position: center !important;
+            /* Center the image */
+            border-radius: 16px;
+        }
+
+        /* 3. Change vertical alignment from center to top */
+        .ai-banner.d-flex,
+        .delivery-banner.d-flex,
+        .offers-banner.d-flex,
+        .blackfriday-banner.d-flex {
+            align-items: flex-start !important;
+            padding: 90px 30px 0 30px;
+            ;
+        }
+
+        /* 4. Fix the text content area */
+        .promo-content {
+            max-width: 100%;
+            /* Allow content to use the full width */
+            text-align: center;
+            /* Center the text and button */
+        }
+    }
+
+    @media (max-width: 1104px) {
+        .tablet_hide {
+            display: none;
+        }
+
+    }
+
+    /* =================================================================== */
+    /* === FINAL CONSOLIDATED TABLET & DESKTOP STYLES (768px and wider) === */
+    /* =================================================================== */
+
+    /* --- Styles for ALL screens 768px and wider --- */
+    @media (min-width: 768px) {
+
+        /* Add this inside your @media (min-width: 768px) block */
+        .container {
+            padding-left: 64px !important;
+            padding-right: 64px !important;
+        }
+
+        /* --- Carousel Grid Layout & Button Alignment --- */
+        .mobile-carousel .swiper-wrapper {
+            display: flex !important;
+            align-items: stretch !important;
+            /* This is the key for equal height columns */
+            justify-content: space-between;
+        }
+
+        .mobile-carousel .swiper-slide {
+            width: 32% !important;
+            /* This creates the 3-column grid */
+            display: flex !important;
+            flex-direction: column !important;
+            height: auto !important;
+        }
+
+        .mobile-carousel .swiper-pagination {
+            display: none;
+        }
+
+        .category-card {
+            display: flex !important;
+            flex-direction: column !important;
+            flex-grow: 1 !important;
+            /* This makes the card grow to fill the column's height */
+            height: 100%;
+        }
+
+        .category-card .btn {
+            margin-top: auto !important;
+            max-width: fit-content;
+            margin: 0 auto;
+        }
+
+        /* --- Base Promo Banner Styles for Tablet & Desktop --- */
+        .ai-banner,
+        .delivery-banner,
+        .offers-banner,
+        .blackfriday-banner {
+            background-size: cover !important;
+            background-position: center !important;
+        }
+    }
+
+    /* --- Tablet-Only Overrides (768px to 991.98px) --- */
+    @media (min-width: 768px) and (max-width: 991.98px) {
+
+        /* This gives the banner text more space on medium screens */
+        .promo-content {
+            max-width: 70%;
+        }
+
+
+        .category-card h3 {
+            /* Set a minimum height tall enough for 2 lines of your 36px line-height text */
+            min-height: 72px;
+
+            /* These optional lines vertically center the text within the 72px box,
+       which looks much nicer for single-line titles. */
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+    }
+
+    /* --- Large Desktop Overrides (992px and wider) --- */
+    /* This restores the original desktop design for the banner text */
+    @media (min-width: 992px) {
+        .promo-content {
+            max-width: 45%;
+        }
+
+            .ct__desk__hide {
+        display: none !important;
+    }
+
+
+    }
 
 
 
