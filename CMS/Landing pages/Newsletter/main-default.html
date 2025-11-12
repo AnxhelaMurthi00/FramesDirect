@@ -216,20 +216,45 @@
 </div>
 
 <script>
+const dobInput = document.getElementById('dob');
+let prevValue = '';
 
-    const dobInput = document.getElementById('dob');
+dobInput.addEventListener('input', function () {
+    let value = dobInput.value;
+    let cursorPos = dobInput.selectionStart;
 
-    dobInput.addEventListener('input', function (e) {
-        let value = dobInput.value.replace(/\D/g, '');
+    const isDeleting = value.length < prevValue.length;
 
-        if (value.length > 2 && value.length <= 4) {
-            value = value.slice(0, 2) + '/' + value.slice(2);
-        } else if (value.length > 4) {
-            value = value.slice(0, 2) + '/' + value.slice(2, 4) + '/' + value.slice(4, 8);
+    value = value.replace(/[^\d/]/g, '');
+
+    let parts = value.split('/');
+
+    if (parts[0]) parts[0] = parts[0].slice(0, 2);
+    if (parts[1]) parts[1] = parts[1].slice(0, 2);
+    if (parts[2]) parts[2] = parts[2].slice(0, 4);
+
+    if (!isDeleting) {
+        if (parts.length === 1 && parts[0].length === 2 && value[cursorPos - 1] !== '/') {
+            parts = [parts[0], ''];
+            if (cursorPos === 2) cursorPos += 1;
+        } else if (parts.length === 2 && parts[1].length === 2 && value[cursorPos - 1] !== '/') {
+            parts = [parts[0], parts[1], ''];
+            if (cursorPos === 5) cursorPos += 1;
         }
+    }
 
-        dobInput.value = value;
-    });
+    value = parts.filter(p => p !== undefined).join('/');
+
+    if (value.length > 10) value = value.slice(0, 10);
+
+    dobInput.value = value;
+    dobInput.setSelectionRange(cursorPos, cursorPos);
+
+    prevValue = value;
+});
+
+
+
 
     function updateSubscription() {
         const sub_logged = document.querySelector('.subscription-page-logged');
