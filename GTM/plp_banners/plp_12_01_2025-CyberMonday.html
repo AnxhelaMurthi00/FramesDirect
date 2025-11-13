@@ -1,0 +1,35 @@
+<script>
+
+
+  if (((checkDate >= '251201' && checkDate <= '251201') || (fdFncs.vars.isTest >= '251201' && fdFncs.vars.isTest <= '251201'))) {
+    var locName = [
+      "/eyeglasses/",
+      "/sunglasses/",
+      "/prescription-sunglasses/",
+      "/men/eyewear-dp",
+      "/women/eyewear-dp",
+      "/eyeglasses/mens",
+      "/eyeglasses/womens",
+      "/sunglasses/mens",
+      "/sunglasses/womens",
+      "/prescription-sunglasses/mens",
+      "/prescription-sunglasses/womens"
+    ];
+
+    // Specific sale landing page
+    if (pgURLPath("/promotions/cyber-monday-dp")) {
+      var selectedCrumb = "Cyber Monday Eyeywear Deals  ";
+      var topText = "";
+      var bottomText = "Shop Exclusive Cyber Monday Offers - Save on Top Eyewear Brands";
+      var bottomTextParagraph = "Unlock the best Cyber Monday deals at Frames Direct, your online destination for premium eyewear. Discover unbeatable savings on a huge selection of eyeglasses, sunglasses, and prescription sunglasses from the world's top brands. Choose from iconic names like Ray-Ban, Oakley, Prada, Versace, Gucci, Dolce & Gabbana, Burberry, Persol, Maui Jim, Costa, Wiley X, Vogue Eyewear, Armani Exchange, Tory Burch, and Kate Spade, plus hundreds more from our catalog of over 500 designer brands and 100,000+ products. Our Cyber Monday sale is the perfect opportunity to shop for every style, age, and taste—whether you’re updating your look, searching for performance eyewear, or picking out gifts for family and friends. Take advantage of our exclusive Cyber Monday offers, limited-time promotions, and deep discounts to maximize your savings on frames, lenses, and luxury collections. At Frames Direct, you'll always find genuine, high-quality eyewear and a massive range of options for every need and preference. Don't miss out: discover the biggest Cyber Monday eyewear deals of the year and elevate your style with authentic designer frames at unbeatable prices.";
+
+      $("#top-content-box h2").html(bottomText);
+      $("#top-content-box p").html(bottomTextParagraph);
+      $("#selected-crumb").text(selectedCrumb);
+      $("#cata_hdr").text(topText);
+      $("#bnr-seo-info").addClass("d-none");
+
+    }
+  }
+
+</script>

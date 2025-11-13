@@ -16,66 +16,59 @@
       }
     });
   });
- function getAmountSavings(product) {
-  var retail = parseFloat(product.frameRetailPrice);
-  if (isNaN(retail) || retail <= 0) return 0;
+  function getAmountSavings(product) {
 
-  var discounted = parseFloat(product.price);
-  if (isNaN(discounted) || discounted <= 0) {
-    discounted = parseFloat(product.frameSalePrice);
+            var retailStr = document.getElementById("spanRetailPrice").innerHTML;
+        var saleStr = document.getElementById("spanOurPrice").innerHTML;
+    if (!product) return 0;
+    var retail =  parseFloat(retailStr.replace("$", ""));
+    if (isNaN(retail) || retail <= 0) return 0;
+
+    var discounted =parseFloat(saleStr.replace("$", ""));
+    if (isNaN(discounted) || discounted <= 0) return 0;
+
+    var savings = retail - discounted;
+    return savings > 0 ? savings : 0;
   }
-  if (isNaN(discounted) || discounted <= 0) return 0;
-
-  var savings = retail - discounted;
-  return savings > 0 ? savings : 0;
-}
-
-function prodDiscoBanner() {
-  if (
-    (checkDate >= "251118" && checkDate <= "251120") ||
-    (fdFncs.vars.isTest >= "251118" && fdFncs.vars.isTest <= "251120")
-  ) {
-    var excludePgs =
-      $('h1:contains("Gunnar")').length === 0 &&
-      $('h1:contains("Kaenon")').length === 0 &&
-      $('h1:contains("Randolph")').length === 0 &&
-      $('h1:contains("Rec Specs")').length === 0 &&
-      $('h1:contains("Zeal")').length === 0;
-
-    if ($(".lens-bar-holder").length > 0) {
-      $(".lens-bar-holder").remove();
-    }
-
+  function prodDiscoBanner() {
     if (
-      ($('h1:contains("Prescription")').length > 0 ||
-        $('h1:contains("Eyeglasses")').length > 0 ||
-        $('h1:contains("Sunglasses")').length > 0) &&
-      excludePgs
+      (checkDate >= "251121" && checkDate <= "251127") ||
+      (fdFncs.vars.isTest >= "251121" && fdFncs.vars.isTest <= "251127")
     ) {
-      if (getCookie("fdRecognized") !== undefined) {
-        // Calculate savings
-        var amountSavings = getAmountSavings(fdFncs.currentProduct);
 
-        var savingsText = "";
-        if (amountSavings > 0) {
-          console.log(amountSavings);
-          savingsText =
-            '<span style="float:right; font-weight:700; color:black; width: auto;">-$' +
-            amountSavings.toFixed(2) +
-            "</span>";
+      if ($(".lens-bar-holder").length > 0) {
+        $(".lens-bar-holder").remove();
+      }
+
+      if (
+        ($('h1:contains("Prescription")').length > 0 ||
+          $('h1:contains("Eyeglasses")').length > 0 ||
+          $('h1:contains("Sunglasses")').length > 0)
+      ) {
+        if (getCookie("fdRecognized") !== undefined) {
+          // Calculate savings
+          var amountSavings = getAmountSavings(fdFncs.currentProduct);
+
+          var savingsText = "";
+          if (amountSavings > 0) {
+            console.log(amountSavings);
+            savingsText =
+              '<span style="float:right; font-weight:700; color:black; width: auto;">-$' +
+              amountSavings.toFixed(2) +
+              "</span>";
+          } else {
+            savingsText = '<span style="display: none;"></span>';
+          }
+
+          $('<div class="lens-bar-holder mx-0 mb-3"><div class="lens-bar d-flex color-black px-2 size-12 text-left " style="justify-content: space-around;  background: linear-gradient(90deg,rgba(255, 224, 180, 1) 0%, rgba(198, 101, 22, 1) 100%); border-radius: 5px;"><div><b> You’ve unlocked Early Black Friday Savings</b></div> <div id="discountPdp" style="display: inline-flex;justify-content: end;align-items: center;"></div>' +
+            savingsText +
+            "</div></div>"
+          ).prependTo("#prod-header-right");
         } else {
-          savingsText = '<span style="display: none;"></span>';
+          $('<div class="lens-bar mb-2 d-flex align-items-center color-black px-2 size-12 text-left" style="background: linear-gradient(90deg,rgba(255, 224, 180, 1) 0%, rgba(198, 101, 22, 1) 100%); border-radius: 5px;"><div>Black Friday Early Access:<br>Unlock <b> up to 50% off frames + 60% off lenses</b></div><a href="javascript:addWelcomeLayer();fdFncs.vars.allowEmPop = false;" class="weight-bold" data-element-id="content3" data-description="Sign up" style="display: inline-flex;justify-content: end;align-items: center;min-height: 100%;min-width: 20%;">Sign up</a></div>').prependTo("#prod-header-right");
         }
-
-        $('<div class="lens-bar-holder mx-0 mb-3"><div class="lens-bar d-flex color-black px-2 size-12 text-left " style="justify-content: space-between;  background: linear-gradient(90deg,rgba(255, 224, 180, 1) 0%, rgba(198, 101, 22, 1) 100%); border-radius: 5px;"><div><b> You’ve unlocked Early Black Friday Savings</b></div> <div id="discountPdp" style="display: inline-flex;justify-content: end;align-items: center;"></div>' +
-          savingsText +
-          "</div></div>"
-        ).prependTo("#prod-header-right");
-      } else {
-        $('<div class="lens-bar d-flex align-items-center color-black px-2 size-12 text-left" style="background: linear-gradient(90deg,rgba(255, 224, 180, 1) 0%, rgba(198, 101, 22, 1) 100%); border-radius: 5px;"><div>Black Friday Early Access:<br>Unlock <b> up to 50% off frames + 60% off lenses</b></div><a href="javascript:addWelcomeLayer();fdFncs.vars.allowEmPop = false;" class="weight-bold" data-element-id="content3" data-description="Sign up" style="display: inline-flex;justify-content: end;align-items: center;min-height: 100%;min-width: 20%;">Sign up</a></div>').prependTo("#prod-header-right");
       }
     }
-  }
     else
       if (
         (checkDate >= "251109" && checkDate <= "251117") ||
@@ -276,36 +269,6 @@ function prodDiscoBanner() {
                         if ($('h1:contains("Wiley X")').length > 0) {
                           $('<div class="lens-bar-holder mx-0 mb-3 mt-4"><div class="lens-bar d-block color-black px-2 size-12 text-left" style="background:#EDE9DE; border-radius: 5px;"><b>Get a free hat</b> with every Wiley X prescription glasses purchase. While supplies last. Directly applied at checkout.</div></div>')
                             .prependTo("#prod-header-right");
-                        }
-                      }
-
-                      else {
-                        if (
-                          $("body").hasClass("fd-eye") &&
-                          fdFncs.pageType === "Product" &&
-                          !pgURLPath("/gunnar") &&
-                          !pgURLPath("/rec-specs") &&
-                          !pgURLPath("/ray-ban-stories") &&
-                          !pgURLPath("/ray-ban-meta")
-                        ) {
-                          addLensDiscountToRxEye(fdFncs.vars.discAmt, true);
-                          $("#ctl00_ContentPlaceHolderProductDisplay_hdnNewLensSelector").val(
-                            "true"
-                          );
-                        }
-                        if (
-                          $("body").hasClass("fd-eye") &&
-                          (pgURLPath("ray-ban-stories") || pgURLPath("ray-ban-meta")) &&
-                          fdFncs.vars.rbStoryDiscount !== undefined &&
-                          fdFncs.vars.rbStoryDiscount !== "" &&
-                          fdFncs.vars.rbStoryPromo !== undefined &&
-                          fdFncs.vars.rbStoryPromo !== ""
-                        ) {
-                          addLensDiscountToRxEye(
-                            fdFncs.vars.rbStoryDiscount,
-                            true,
-                            fdFncs.vars.rbStoryPromo
-                          );
                         }
                       }
   }

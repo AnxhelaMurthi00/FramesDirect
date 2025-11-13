@@ -17,29 +17,29 @@
     });
   });
   function prodDiscoBanner() {
-      if (
-        (checkDate >= "251101" && checkDate <= "251102") ||
-        (fdFncs.vars.isTest >= "251101" && fdFncs.vars.isTest <= "251102")
-      ) {
-        var excludePgs =
-          $('h1:contains("Gunnar")').length === 0 &&
-          $('h1:contains("Kaenon")').length === 0 &&
-          $('h1:contains("Randolph")').length === 0 &&
-          $('h1:contains("Rec Specs")').length === 0 &&
-          $('h1:contains("Zeal")').length === 0;
+    if (
+      (checkDate >= "251101" && checkDate <= "251102") ||
+      (fdFncs.vars.isTest >= "251101" && fdFncs.vars.isTest <= "251102")
+    ) {
+      var excludePgs =
+        $('h1:contains("Gunnar")').length === 0 &&
+        $('h1:contains("Kaenon")').length === 0 &&
+        $('h1:contains("Randolph")').length === 0 &&
+        $('h1:contains("Rec Specs")').length === 0 &&
+        $('h1:contains("Zeal")').length === 0;
 
-        if ($(".lens-bar-holder").length > 0) {
-          $(".lens-bar-holder").remove();
-        }
-        if (($('h1:contains("Prescription")').length > 0 || $('h1:contains("Eyeglasses")').length > 0 || $('h1:contains("Sunglasses")').length > 0) && excludePgs) {
-          $('<div class="lens-bar-holder mx-0 mb-3"><div class="lens-bar d-block color-black px-2 size-12 text-left" style="background:#B7C4B3; border-radius: 5px;">Early Holiday Weekend:<b> 25% off select frames + 60% off lenses with frame purchase</b></div></div>')
-            .prependTo("#prod-header-right");
-        }
+      if ($(".lens-bar-holder").length > 0) {
+        $(".lens-bar-holder").remove();
       }
+      if (($('h1:contains("Prescription")').length > 0 || $('h1:contains("Eyeglasses")').length > 0 || $('h1:contains("Sunglasses")').length > 0) && excludePgs) {
+        $('<div class="lens-bar-holder mx-0 mb-3"><div class="lens-bar d-block color-black px-2 size-12 text-left" style="background:#B7C4B3; border-radius: 5px;">Early Holiday Weekend:<b> 25% off select frames + 60% off lenses with frame purchase</b></div></div>')
+          .prependTo("#prod-header-right");
+      }
+    }
 
-      else
+    else
 
-     if (
+      if (
         (checkDate >= "251009" && checkDate <= "251026") ||
         (fdFncs.vars.isTest >= "251009" && fdFncs.vars.isTest <= "251026")
       ) {
@@ -60,53 +60,9 @@
       }
 
       else
-    if (
-      (checkDate >= "251007" && checkDate <= "251008") ||
-      (fdFncs.vars.isTest >= "251007" && fdFncs.vars.isTest <= "251008")
-    ) {
-      var excludePgs =
-        $('h1:contains("Gunnar")').length === 0 &&
-        $('h1:contains("Kaenon")').length === 0 &&
-        $('h1:contains("Randolph")').length === 0 &&
-        $('h1:contains("Rec Specs")').length === 0 &&
-        $('h1:contains("Zeal")').length === 0;
-
-      if (
-        $('h1:contains("Costa")').length > 0 ||
-        $('h1:contains("Oakley")').length > 0 ||
-        $('h1:contains("Maui Jim")').length > 0 ||
-        $('h1:contains("Prescription")').length > 0 ||
-        $('h1:contains("Sunglasses")').length > 0);
-      {
-        $('<div class="lens-bar-holder mx-0 mb-3 mt-4"><div class="lens-bar d-block color-black px-2 size-12 text-left" style="background:#AAB9C0; border-radius: 5px;"><b>40% off sun lenses</b> by Oakley, Costa & Maui Jim with code <b>SPECIAL40</b> </div></div>')
-          .prependTo("#prod-header-right");
-      }
-    }
-    else
-      if (
-        (checkDate >= "250929" && checkDate <= "251007") ||
-        (fdFncs.vars.isTest >= "250929" && fdFncs.vars.isTest <= "251007")
-      ) {
-        var excludePgs =
-          $('h1:contains("Gunnar")').length === 0 &&
-          $('h1:contains("Kaenon")').length === 0 &&
-          $('h1:contains("Randolph")').length === 0 &&
-          $('h1:contains("Rec Specs")').length === 0 &&
-          $('h1:contains("Zeal")').length === 0;
-
-        if ($(".lens-bar-holder").length > 0) {
-          $(".lens-bar-holder").remove();
-        }
-        if (($('h1:contains("Prescription")').length > 0 || $('h1:contains("Eyeglasses")').length > 0 || $('h1:contains("Sunglasses")').length > 0) && excludePgs) {
-          $('<div class="lens-bar-holder mx-0 mb-3 mt-4"><div class="lens-bar d-block color-black px-2 size-12 text-left" style="background:#C9A3A0; border-radius: 5px;">Fall deals: up to <b>50% off select frames + 60% off lenses</b> </div></div>')
-            .prependTo("#prod-header-right");
-        }
-      }
-
-      else
         if (
-          (checkDate >= "250915" && checkDate <= "250928") ||
-          (fdFncs.vars.isTest >= "250915" && fdFncs.vars.isTest <= "250928")
+          (checkDate >= "251007" && checkDate <= "251008") ||
+          (fdFncs.vars.isTest >= "251007" && fdFncs.vars.isTest <= "251008")
         ) {
           var excludePgs =
             $('h1:contains("Gunnar")').length === 0 &&
@@ -115,51 +71,42 @@
             $('h1:contains("Rec Specs")').length === 0 &&
             $('h1:contains("Zeal")').length === 0;
 
-          if ($(".lens-bar-holder").length > 0) {
-            $(".lens-bar-holder").remove();
-          }
-          if ($('h1:contains("Wiley X")').length > 0) {
-            $(
-              '<div class="lens-bar-holder mx-0 mb-3"><div class="lens-bar d-block color-black px-2 size-12 text-left" style="background:#fff; border-radius: 5px;">Get your complete pair:<b> 40% off select frames</b> at checkout <b>+ 60% off lenses</b></div></div>'
-            ).prependTo("#prod-header-right");
-            $('<div class="lens-bar-holder mx-0 mb-3 mt-4"><div class="lens-bar d-block color-black px-2 size-12 text-left" style="background:#CBC4BA; border-radius: 5px;"><b>Get a free hat</b> with every Wiley X prescription glasses purchase. While supplies last. Directly applied at checkout.</div></div>')
-              .prependTo("#prod-header-right");
-
-          }
-          else if (($('h1:contains("Prescription")').length > 0 || $('h1:contains("Eyeglasses")').length > 0 || $('h1:contains("Sunglasses")').length > 0) && excludePgs) {
-            $(
-              '<div class="lens-bar-holder mx-0 mb-3"><div class="lens-bar d-block color-black px-2 size-12 text-left" style="background:#fff; border-radius: 5px;">Get your complete pair:<b> 40% off select frames</b> at checkout <b>+ 60% off lenses</b></div></div>'
-            ).prependTo("#prod-header-right");
-          }
-        } else
           if (
-            (checkDate >= "250902" && checkDate <= "250914") ||
-            (fdFncs.vars.isTest >= "250902" && fdFncs.vars.isTest <= "250914")
+            $('h1:contains("Costa")').length > 0 ||
+            $('h1:contains("Oakley")').length > 0 ||
+            $('h1:contains("Maui Jim")').length > 0 ||
+            $('h1:contains("Prescription")').length > 0 ||
+            $('h1:contains("Sunglasses")').length > 0);
+          {
+            $('<div class="lens-bar-holder mx-0 mb-3 mt-4"><div class="lens-bar d-block color-black px-2 size-12 text-left" style="background:#AAB9C0; border-radius: 5px;"><b>40% off sun lenses</b> by Oakley, Costa & Maui Jim with code <b>SPECIAL40</b> </div></div>')
+              .prependTo("#prod-header-right");
+          }
+        }
+        else
+          if (
+            (checkDate >= "250929" && checkDate <= "251007") ||
+            (fdFncs.vars.isTest >= "250929" && fdFncs.vars.isTest <= "251007")
           ) {
             var excludePgs =
               $('h1:contains("Gunnar")').length === 0 &&
               $('h1:contains("Kaenon")').length === 0 &&
               $('h1:contains("Randolph")').length === 0 &&
               $('h1:contains("Rec Specs")').length === 0 &&
-              $('h1:contains("Ray-Ban Meta")').length === 0 &&
               $('h1:contains("Zeal")').length === 0;
 
             if ($(".lens-bar-holder").length > 0) {
               $(".lens-bar-holder").remove();
             }
-
-            if (
-              $('h1:contains("Costa")').length > 0 ||
-              $('h1:contains("Oakley")').length > 0 ||
-              $('h1:contains("Maui Jim")').length > 0
-            ) {
-              $('<div class="lens-bar-holder mx-0 mb-3 mt-4"><div class="lens-bar d-block color-black px-2 size-12 text-left" style="background:#AAB9C0; border-radius: 5px;"><b>40% off prescription sun lenses</b> by Oakley, Costa & Maui Jim with code <b>SPECIAL40</b></div></div>')
+            if (($('h1:contains("Prescription")').length > 0 || $('h1:contains("Eyeglasses")').length > 0 || $('h1:contains("Sunglasses")').length > 0) && excludePgs) {
+              $('<div class="lens-bar-holder mx-0 mb-3 mt-4"><div class="lens-bar d-block color-black px-2 size-12 text-left" style="background:#C9A3A0; border-radius: 5px;">Fall deals: up to <b>50% off select frames + 60% off lenses</b> </div></div>')
                 .prependTo("#prod-header-right");
             }
-          } else
+          }
+
+          else
             if (
-              (checkDate >= "250707" && checkDate <= "250711") ||
-              (fdFncs.vars.isTest >= "250707" && fdFncs.vars.isTest <= "250711")
+              (checkDate >= "250915" && checkDate <= "250928") ||
+              (fdFncs.vars.isTest >= "250915" && fdFncs.vars.isTest <= "250928")
             ) {
               var excludePgs =
                 $('h1:contains("Gunnar")').length === 0 &&
@@ -172,40 +119,63 @@
                 $(".lens-bar-holder").remove();
               }
               if ($('h1:contains("Wiley X")').length > 0) {
-                $('<div class="lens-bar-holder mx-0 mb-3 mt-4"><div class="lens-bar d-block color-black px-2 size-12 text-left" style="background:#EDE9DE; border-radius: 5px;"><b>Get a free hat</b> with every Wiley X prescription glasses purchase. While supplies last. Directly applied at checkout.</div></div>')
+                $(
+                  '<div class="lens-bar-holder mx-0 mb-3"><div class="lens-bar d-block color-black px-2 size-12 text-left" style="background:#fff; border-radius: 5px;">Get your complete pair:<b> 40% off select frames</b> at checkout <b>+ 60% off lenses</b></div></div>'
+                ).prependTo("#prod-header-right");
+                $('<div class="lens-bar-holder mx-0 mb-3 mt-4"><div class="lens-bar d-block color-black px-2 size-12 text-left" style="background:#CBC4BA; border-radius: 5px;"><b>Get a free hat</b> with every Wiley X prescription glasses purchase. While supplies last. Directly applied at checkout.</div></div>')
                   .prependTo("#prod-header-right");
-              }
-            }
 
-            else {
-              if (
-                $("body").hasClass("fd-eye") &&
-                fdFncs.pageType === "Product" &&
-                !pgURLPath("/gunnar") &&
-                !pgURLPath("/rec-specs") &&
-                !pgURLPath("/ray-ban-stories") &&
-                !pgURLPath("/ray-ban-meta")
-              ) {
-                addLensDiscountToRxEye(fdFncs.vars.discAmt, true);
-                $("#ctl00_ContentPlaceHolderProductDisplay_hdnNewLensSelector").val(
-                  "true"
-                );
               }
-              if (
-                $("body").hasClass("fd-eye") &&
-                (pgURLPath("ray-ban-stories") || pgURLPath("ray-ban-meta")) &&
-                fdFncs.vars.rbStoryDiscount !== undefined &&
-                fdFncs.vars.rbStoryDiscount !== "" &&
-                fdFncs.vars.rbStoryPromo !== undefined &&
-                fdFncs.vars.rbStoryPromo !== ""
-              ) {
-                addLensDiscountToRxEye(
-                  fdFncs.vars.rbStoryDiscount,
-                  true,
-                  fdFncs.vars.rbStoryPromo
-                );
+              else if (($('h1:contains("Prescription")').length > 0 || $('h1:contains("Eyeglasses")').length > 0 || $('h1:contains("Sunglasses")').length > 0) && excludePgs) {
+                $(
+                  '<div class="lens-bar-holder mx-0 mb-3"><div class="lens-bar d-block color-black px-2 size-12 text-left" style="background:#fff; border-radius: 5px;">Get your complete pair:<b> 40% off select frames</b> at checkout <b>+ 60% off lenses</b></div></div>'
+                ).prependTo("#prod-header-right");
               }
-            }
+            } else
+              if (
+                (checkDate >= "250902" && checkDate <= "250914") ||
+                (fdFncs.vars.isTest >= "250902" && fdFncs.vars.isTest <= "250914")
+              ) {
+                var excludePgs =
+                  $('h1:contains("Gunnar")').length === 0 &&
+                  $('h1:contains("Kaenon")').length === 0 &&
+                  $('h1:contains("Randolph")').length === 0 &&
+                  $('h1:contains("Rec Specs")').length === 0 &&
+                  $('h1:contains("Ray-Ban Meta")').length === 0 &&
+                  $('h1:contains("Zeal")').length === 0;
+
+                if ($(".lens-bar-holder").length > 0) {
+                  $(".lens-bar-holder").remove();
+                }
+
+                if (
+                  $('h1:contains("Costa")').length > 0 ||
+                  $('h1:contains("Oakley")').length > 0 ||
+                  $('h1:contains("Maui Jim")').length > 0
+                ) {
+                  $('<div class="lens-bar-holder mx-0 mb-3 mt-4"><div class="lens-bar d-block color-black px-2 size-12 text-left" style="background:#AAB9C0; border-radius: 5px;"><b>40% off prescription sun lenses</b> by Oakley, Costa & Maui Jim with code <b>SPECIAL40</b></div></div>')
+                    .prependTo("#prod-header-right");
+                }
+              } else
+                if (
+                  (checkDate >= "250707" && checkDate <= "250711") ||
+                  (fdFncs.vars.isTest >= "250707" && fdFncs.vars.isTest <= "250711")
+                ) {
+                  var excludePgs =
+                    $('h1:contains("Gunnar")').length === 0 &&
+                    $('h1:contains("Kaenon")').length === 0 &&
+                    $('h1:contains("Randolph")').length === 0 &&
+                    $('h1:contains("Rec Specs")').length === 0 &&
+                    $('h1:contains("Zeal")').length === 0;
+
+                  if ($(".lens-bar-holder").length > 0) {
+                    $(".lens-bar-holder").remove();
+                  }
+                  if ($('h1:contains("Wiley X")').length > 0) {
+                    $('<div class="lens-bar-holder mx-0 mb-3 mt-4"><div class="lens-bar d-block color-black px-2 size-12 text-left" style="background:#EDE9DE; border-radius: 5px;"><b>Get a free hat</b> with every Wiley X prescription glasses purchase. While supplies last. Directly applied at checkout.</div></div>')
+                      .prependTo("#prod-header-right");
+                  }
+                }
   }
   $(function () {
     prodDiscoBanner();

@@ -1,0 +1,355 @@
+<script>
+  fdFncs.vars = fdFncs.vars || {};
+  fdFncs.vars.discNoBrands = "80";
+  fdFncs.vars.add50 = "50";
+  fdFncs.vars.setLuxMSRP = "";
+
+  // Get the current date in the format "YYMMDD"
+  var currentDate = new Date();
+  var year = currentDate.getFullYear().toString().slice(-2);
+  var month = ("0" + (currentDate.getMonth() + 1)).slice(-2);
+  var day = ("0" + currentDate.getDate()).slice(-2);
+  var checkDate = year + month + day;
+
+  // Define the messages for the carousel based on date and device type
+  var messages = [];
+  if (
+    (checkDate >= "251201" && checkDate <= "251202") ||
+    (fdFncs.vars.isTest >= "251201" && fdFncs.vars.isTest <= "251202")
+  ) {
+    messages =
+      $(window).width() <= 768
+        ? [
+          " <b>Up to 50 off frames + 60% off lenses. Plus extra 5%! </b>",
+          'Pay over time with PayPal and Klarna.&nbsp; <a href="/knowledge-center/payment-methods" class="color-white weight-bold mx-1">Learn more</a>',
+        ]
+        : [
+          "Cyber Monday’s live: Up to <b>&nbsp; 50 off frames + 60% off lenses. Plus extra 5%!</b> ",
+          'Pay over time with PayPal and Klarna.&nbsp; <a href="/knowledge-center/payment-methods" class="color-white weight-bold mx-1">Learn more</a>',
+        ];
+
+
+  } else
+
+    if (
+      (checkDate >= "251129" && checkDate <= "251130") ||
+      (fdFncs.vars.isTest >= "251129" && fdFncs.vars.isTest <= "251130")
+    ) {
+      messages =
+        $(window).width() <= 768
+          ? [
+            " <b>Up to 50 off frames + 60% off lenses. Plus extra 5%! </b>",
+          ]
+          : [
+            "Cyber Weekend’s on: Up to <b>&nbsp; 50 off frames + 60% off lenses. Plus extra 5%!</b> ",
+          ];
+
+
+    } else
+
+      if (
+        (checkDate >= "251128" && checkDate <= "251129") ||
+        (fdFncs.vars.isTest >= "251128" && fdFncs.vars.isTest <= "251129")
+      ) {
+        messages =
+          $(window).width() <= 768
+            ? [
+              " <b>Up to 50 off frames + 60% off lenses. Plus extra 5%! </b>",
+            ]
+            : [
+              "Black Friday’s live: Up to <b>&nbsp; 50 off frames + 60% off lenses. Plus extra 5%!</b> ",
+            ];
+
+
+      } else
+
+        if (
+          (checkDate >= "251103" && checkDate <= "251109") ||
+          (fdFncs.vars.isTest >= "251103" && fdFncs.vars.isTest <= "251109")
+        ) {
+          messages =
+            $(window).width() <= 768
+              ? [
+                " <b>&nbsp;25% off select frames + up to 60% off lenses</b>",
+                "<b>Use your insurance on new arrivals.&nbsp;",
+                " <b>&nbsp;MEET THE NEW AI GLASSES</b>",
+
+              ]
+              : [
+                "<b>EARLY HOLIDAY SAVINGS: 25% off select frames + 60% off lenses with frame purchase. </b> ",
+                "<b>Use your insurance on new arrivals.&nbsp; </b>Shop our new collection now.",
+                " <b>MEET THE NEW AI GLASSES:&nbsp;</b>Advanced AI. Enhanced Capture. More Battery. ",
+              ];
+
+
+        } else
+
+          if (
+            (checkDate >= "251101" && checkDate <= "251102") ||
+            (fdFncs.vars.isTest >= "251101" && fdFncs.vars.isTest <= "251102")
+          ) {
+            messages =
+              $(window).width() <= 768
+                ? [
+                  " <b>&nbsp;25% off select frames + up to 60% off lenses</b>",
+                  "<b>Use your insurance on new arrivals.&nbsp;",
+                  " <b>&nbsp;MEET THE NEW AI GLASSES</b>",
+
+                ]
+                : [
+                  "<b>Early Holiday Weekend: 25% off select frames + 60% off lenses with frame purchase. </b> ",
+                  "<b>Use your insurance on new arrivals.&nbsp; </b>Shop our new collection now.",
+                  " <b>MEET THE NEW AI GLASSES:&nbsp;</b>Advanced AI. Enhanced Capture. More Battery. ",
+                ];
+
+
+          } else
+
+            if (
+              (checkDate >= "251027" && checkDate <= "251031") ||
+              (fdFncs.vars.isTest >= "251027" && fdFncs.vars.isTest <= "251031")
+            ) {
+              messages =
+                $(window).width() <= 768
+                  ? [
+                    " <b>&nbsp;25% off select frames + up to 60% off lenses</b>",
+                    "<b>Use your insurance on new arrivals.&nbsp;",
+                    " <b>&nbsp;MEET THE NEW AI GLASSES</b>",
+
+                  ]
+                  : [
+                    "<b>HALLOWEEN DEALS: 25% off select frames + 60% off lenses with frame purchase. </b> ",
+                    "<b>Use your insurance on new arrivals.&nbsp; </b>Shop our new collection now.",
+                    " <b>MEET THE NEW AI GLASSES:&nbsp;</b>Advanced AI. Enhanced Capture. More Battery. ",
+                  ];
+
+
+            } else
+              if (
+                (checkDate >= "251009" && checkDate <= "251026") ||
+                (fdFncs.vars.isTest >= "251009" && fdFncs.vars.isTest <= "251026")
+              ) {
+                messages =
+                  $(window).width() <= 768
+                    ? [
+                      " <b>&nbsp;40% off select frames + 60% off lenses</b>",
+                      "<b>Use your insurance on new arrivals.&nbsp;",
+                    ]
+                    : [
+                      "Get your complete Pair: <b>&nbsp;40% off select frames + 60% off lenses. </b>&nbsp;Includes designer brands. ",
+                      "<b>Use your insurance on new arrivals.&nbsp; </b>Shop our new collection now.",
+                    ];
+
+
+              } else
+                if (
+                  (checkDate >= "251007" && checkDate <= "251008") ||
+                  (fdFncs.vars.isTest >= "251007" && fdFncs.vars.isTest <= "251008")
+                ) {
+                  messages =
+                    $(window).width() <= 768
+                      ? [
+                        "<b>Up to 25% off select frames + 60% off lenses</b>",
+                        "<b>Use your insurance on new arrivals.&nbsp;",
+                        " <b>&nbsp;MEET THE NEW AI GLASSES</b>",
+                        "<b>&nbsp;40% off prescription sun lenses. &nbsp;</b>  Code: SPECIAL40",
+                      ]
+                      : [
+                        "<b>Prime days: up to 25% off select frames + 60% off lenses with frame purchase.&nbsp;</b>Includes designer brands.",
+                        "<b>Use your insurance on new arrivals.&nbsp; </b>Shop our new collection now.",
+                        " <b>MEET THE NEW AI GLASSES:&nbsp;</b>Advanced AI. Enhanced Capture. More Battery. ",
+                        "<b>&nbsp;40% off prescription sun lenses. &nbsp;</b>  Use code SPECIAL40",
+                      ];
+
+                } else
+                  if (
+                    (checkDate >= "250929" && checkDate <= "251007") ||
+                    (fdFncs.vars.isTest >= "250929" && fdFncs.vars.isTest <= "251007")
+                  ) {
+                    messages =
+                      $(window).width() <= 768
+                        ? [
+                          " <b>&nbsp;Up to 50% off select frames + 60% off lenses </b>",
+                          "<b>Use your insurance on new arrivals.&nbsp;",
+                          "<b>&nbsp;Get a free hat &nbsp;</b> with every Wiley X purchase",
+                        ]
+                        : [
+                          " <b>FAll DEALS: &nbsp;</b>up to <b>&nbsp;50% off select frames + 60% off lenses.</b> Includes designer brands. ",
+                          "<b>Use your insurance on new arrivals.&nbsp; </b>Shop our new collection now.",
+                          "<b>&nbsp;Get a free hat &nbsp;</b> with every Wiley X purchase",
+                        ];
+
+                  } else
+                    if (
+                      (checkDate >= "250915" && checkDate <= "250928") ||
+                      (fdFncs.vars.isTest >= "250915" && fdFncs.vars.isTest <= "250928")
+                    ) {
+                      messages =
+                        $(window).width() <= 768
+                          ? [
+                            " <b>&nbsp;40% off select frames + 60% off lenses </b>",
+                            "<b>&nbsp;Get a free hat &nbsp;</b> with every Wiley X purchase",
+                          ]
+                          : [
+                            "Get your complete Pair: <b>&nbsp;40% off select frames + 60% off lenses. </b>&nbsp;Includes designer brands. ",
+                            "<b>&nbsp;Get a free hat &nbsp;</b> with every Wiley X purchase",
+                          ];
+
+
+                    } else {
+                      messages =
+                        $(window).width() <= 768
+                          ? [
+                            " <b>Up to 50% off select frames + 60% off lenses</b>",
+                            " <b>&nbsp;Get a free hat &nbsp;</b> with every Wiley X purchase",
+                            "Now pay with insurance, including FSA/HSA benefits ",
+
+                          ]
+                          : [
+                            "Clearance Deals: up to <b>&nbsp;50% off frames + 60% off lenses. &nbsp;</b> Includes designer brands. ",
+                            "<b>&nbsp;Get a free hat &nbsp;</b> with every Wiley X purchase",
+                            '<svg width="18" height="21" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle; margin-right:4px;"><path d="M5.24316 10.6129L8.33233 13.7025L13.0882 8.94624L11.9098 7.7679L8.33233 11.345L6.4215 9.43457L5.24316 10.6129Z" fill="#D6F3E9"/><path d="M16.9098 4.8512C15.929 4.8512 13.1919 3.40203 9.9365 1.15995C9.36358 0.765368 8.62275 0.765368 8.05025 1.15995C4.79441 3.40203 2.05733 4.8512 1.0765 4.8512H0.243164V5.68453C0.243164 20.06 8.594 20.6645 8.94941 20.6833L8.99316 20.6858L9.03691 20.6833C9.39233 20.6645 17.7432 20.06 17.7432 5.68453V4.8512H16.9098ZM8.99441 19.0154C8.41483 18.9541 2.16191 18.0125 1.91691 6.3937C3.93941 5.87162 7.12108 3.82328 8.99066 2.53287C10.864 3.82328 14.0461 5.87162 16.069 6.39412C15.8277 18.0395 9.64066 18.952 8.99441 19.0154Z" fill="#D6F3E9"/></svg><b class="ml-2">BIG NEWS:</b>&nbsp; Now you can pay with insurance, including FSA/HSA benefits',
+
+                          ];
+
+                    }
+  var currentMessageIndex = 0;
+
+  // Function to update the banner message
+  function updateBannerMessage() {
+    var countBnrMsg = messages[currentMessageIndex];
+
+    // Add countdown only for the specific message
+    if (messages[currentMessageIndex].includes("off frames")) {
+      countBnrMsg +=
+        '<div id="countdown" class="d-flex justify-content-end pr-2 size-6 ml-3"><div id="countdown-clockworks-holder" class="d-flex"></div></div>';
+    }
+
+    $("#count-bnr-inner").html(countBnrMsg);
+
+    // Initialize the countdown if the specific message is active
+    if (
+      (messages[currentMessageIndex].includes("off frames") &&
+        checkDate === "251201") ||
+      fdFncs.vars.isTest === "251201"
+    ) {
+      initializeCountdown();
+    }
+  }
+
+  // Function to initialize the countdown
+  function initializeCountdown() {
+    var endDateLong = "12/02/2025"; // Set the end date for the countdown
+    var digitBg = " white";
+
+    $("#countdown-clockworks-holder").countdown(endDateLong, function (event) {
+      var $this = $(this),
+        totalHours = event.offset.totalDays * 24 + event.offset.hours;
+      //This is for Hours only
+      $this.html(
+        event.strftime(
+          '<div class="dash hours_dash" > <div class="countdown-digit-wrapper' +
+          digitBg +
+          '"> <div class="digit">' +
+          totalHours +
+          '</div> <div class="time-label">hours</div> </div> <div class="colon" style="margin-top:5px; margin-left:5px;">:</div></div><div class="dash minutes_dash"> <div class="countdown-digit-wrapper' +
+          digitBg +
+          '"> <div class="digit">%M</div> <div class="time-label">min</div> </div> <div class="colon" style="margin-top:5px">:</div></div><div class="dash seconds_dash"> <div class="countdown-digit-wrapper' +
+          digitBg +
+          '"> <div class="digit">%S</div> <div class="time-label">sec</div> </div></div>'
+        )
+      );
+    });
+  }
+
+
+  // Function to handle the carousel navigation
+  function navigateCarousel() {
+    currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+    updateBannerMessage();
+  }
+
+  // Automatically cycle through messages every 3 seconds
+  setInterval(navigateCarousel, 4000);
+
+  fdFncs.countBnr = function () {
+    var endDateLong = "01/01/1900",
+      winURL = window.location.href.toLowerCase(),
+      showCountdown = false,
+      isRecognized = getCookie("fdRecognized") !== undefined ? true : false,
+      loggedIn = "",
+      countHTML = "",
+      countBnrMsg = "",
+      bgColor = "",
+      digitBg = "",
+      showBanner =
+        window.location.href.indexOf("shopping") === -1 && //Shopping
+        window.location.href.indexOf("password_email.aspx") === -1 && //Password
+        window.location.href.indexOf("login.aspx") === -1 && //Login
+        window.location.href.indexOf("checkout.aspx") === -1 && //Checkout
+        window.location.href.indexOf("lens_selection") === -1 && //Lens Configurator
+        window.location.href.indexOf("eyewear-lens-selector") === -1; //Lens Configurator
+
+    // Create the carousel HTML structure without carousel-message div
+    countBnr = (function () {
+      return (
+        '<div id="count-bnr-inner" class="d-flex justify-content-center align-items-center ' +
+        bgColor +
+        '">' +
+        messages[currentMessageIndex] +
+        "</div>"
+      );
+    })();
+
+    if (
+      (showBanner && checkDate >= "250224" && checkDate <= "251231") ||
+      (fdFncs.vars.isTest >= "250224" && fdFncs.vars.isTest <= "251231")
+    ) {
+      $("#count-bnr-inner").remove();
+      if ($(window).width() > 1300) {
+        $("body").addClass("changeSticky");
+      }
+      if ($("#countdown").length === 0) {
+        $(countBnr).prependTo("#count-bnr");
+      }
+      $("#count-bnr-inner").on("click", function () {
+        var $this = $(this);
+        if ($this.find("a").length === 1) {
+          var linkLoc = $this.find("a").attr("href");
+          window.location.href = linkLoc;
+        }
+      });
+      if (endDateLong === "01/01/1900") {
+        $("#count-bnr-inner > div:first-child")
+          .removeClass("col-lg-6 justify-content-lg-start m-0")
+          .addClass("m-auto");
+      }
+    }
+    if ($("#countdown").length > 0) {
+      $("#countdown-clockworks-holder").countdown(
+        endDateLong,
+        function (event) {
+          var $this = $(this),
+            totalHours = event.offset.totalDays * 24 + event.offset.hours;
+          //This is for Hours only
+          $this.html(
+            event.strftime(
+              '<div class="dash hours_dash"> <div class="countdown-digit-wrapper' +
+              digitBg +
+              '"> <div class="digit">' +
+              totalHours +
+              '</div> <div class="time-label">hours</div> </div> <div class="colon">:</div></div><div class="dash minutes_dash"> <div class="countdown-digit-wrapper' +
+              digitBg +
+              '"> <div class="digit">%M</div> <div class="time-label">min</div> </div> <div class="colon">:</div></div><div class="dash seconds_dash"> <div class="countdown-digit-wrapper' +
+              digitBg +
+              '"> <div class="digit">%S</div> <div class="time-label">sec</div> </div></div>'
+            )
+          );
+        }
+      );
+    }
+  };
+
+  // Initialize the banner
+  fdFncs.countBnr();
+</script>
