@@ -1,7 +1,26 @@
 <script>
 
 
-  if (((checkDate >= '251201' && checkDate <= '251201') || (fdFncs.vars.isTest >= '251201' && fdFncs.vars.isTest <= '251201'))) {
+  if (window.location.href.includes("/ray-ban-meta/brand") && window.location.href.includes("collection=1492")) {
+    $("#cata_hdr").text("Ray-Ban Meta (Gen 1)");
+  }
+  if (window.location.href.includes("/ray-ban-meta/brand") && window.location.href.includes("collection=1493")) {
+    $("#cata_hdr").text("Ray-Ban Meta (Gen 2) | AI Glasses starting from $95 a month");
+  }
+  if (pgURLPath("/oakley-meta/brand")) {
+    $("#cata_hdr").text("Oakley Meta | AI Glasses starting from $100 a month");
+  }
+
+  if (pgURLPath("/gucci/brand")) {
+    $("#cata_hdr").text("Gucci | Glasses starting from $50 a month");
+  }
+  if (pgURLPath("/oakley/brand")) {
+    $("#cata_hdr").text("Oakley | Glasses starting from $36 a month");
+  }
+  if (pgURLPath("/ai-glasses/")) {
+    $("#cata_hdr").text("Oakley | Glasses starting from $60 a month");
+  }
+  if (((checkDate >= '251113' && checkDate <= '251201') || (fdFncs.vars.isTest >= '251113' && fdFncs.vars.isTest <= '251201'))) {
     var locName = [
       "/eyeglasses/",
       "/sunglasses/",
@@ -22,11 +41,10 @@
       var topText = "";
       var bottomText = "Shop Exclusive Cyber Monday Offers - Save on Top Eyewear Brands";
       var bottomTextParagraph = "Unlock the best Cyber Monday deals at Frames Direct, your online destination for premium eyewear. Discover unbeatable savings on a huge selection of eyeglasses, sunglasses, and prescription sunglasses from the world's top brands. Choose from iconic names like Ray-Ban, Oakley, Prada, Versace, Gucci, Dolce & Gabbana, Burberry, Persol, Maui Jim, Costa, Wiley X, Vogue Eyewear, Armani Exchange, Tory Burch, and Kate Spade, plus hundreds more from our catalog of over 500 designer brands and 100,000+ products. Our Cyber Monday sale is the perfect opportunity to shop for every style, age, and taste—whether you’re updating your look, searching for performance eyewear, or picking out gifts for family and friends. Take advantage of our exclusive Cyber Monday offers, limited-time promotions, and deep discounts to maximize your savings on frames, lenses, and luxury collections. At Frames Direct, you'll always find genuine, high-quality eyewear and a massive range of options for every need and preference. Don't miss out: discover the biggest Cyber Monday eyewear deals of the year and elevate your style with authentic designer frames at unbeatable prices.";
-
       $("#top-content-box h2").html(bottomText);
       $("#top-content-box p").html(bottomTextParagraph);
       $("#selected-crumb").text(selectedCrumb);
-      $("#cata_hdr").text(topText);
+      $("#cata_hdr").remove();
       $("#bnr-seo-info").addClass("d-none");
 
     }

@@ -45,5 +45,24 @@
 
     }
   }
+  if (window.location.href.includes("/ray-ban-meta/brand") && window.location.href.includes("collection=1492")) {
+    $("#cata_hdr").text("Ray-Ban Meta (Gen 1) | AI Glasses starting from $75 a month");
+  }
+  if (window.location.href.includes("/ray-ban-meta/brand") && window.location.href.includes("collection=1493")) {
+    $("#cata_hdr").text("Ray-Ban Meta (Gen 2) | AI Glasses starting from $95 a month");
+  }
+  if (pgURLPath("/oakley-meta/brand")) {
+    $("#cata_hdr").text("Oakley Meta | AI Glasses starting from $100 a month");
+  }
+
+  if (pgURLPath("/gucci/brand")) {
+    $("#cata_hdr").text("Gucci | Glasses starting from $50 a month");
+  }
+  if (pgURLPath("/oakley/brand")) {
+    $("#cata_hdr").text("Oakley | Glasses starting from $36 a month");
+  }
+  if (pgURLPath("/ai-glasses/")) {
+    $("#cata_hdr").text("Oakley | Glasses starting from $75 a month");
+  }
 
 </script>
