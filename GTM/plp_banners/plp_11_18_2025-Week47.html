@@ -19,8 +19,8 @@
 
     // Specific sale landing page
     if (pgURLPath("/promotions/black-friday-dp")) {
-      var selectedCrumb = "Early Black Friday Savings: Exclusive Discount on Eyewear";
-      var topText = "Early Black Friday Savings: Exclusive Discount on Eyewear";
+      var selectedCrumb = "Early Black Friday Savings";
+      var topText = "Early Black Friday Savings";
       var bottomText = "Unlock Early Access Black Friday Deals on Designer Frames";
       var bottomTextParagraph = "Unlock incredible Black Friday deals on the widest selection of premium eyewear, inclusing trending eyeglasses, stylish prescription sunglasses and luxury frames. Frames Direct offers an extensive range of top brands such as Oakley, Ray-Ban, Versace, Persol, Dolce & Gabbana, Prada, Burberry, Tory Burch, Maui Jim, Oliver Peoples, Vogue Eyewear, Alain Mikli, Arnette, and Costa, ensuring there is something for every style, gender, and age group. Discover exclusive Black Friday offers and limited-time promotions designed to maximize your savings this holiday season. Shop now to enjoy unbeatable discounts on your favorite frames, lenses, and designer collections. Whether you're looking for top-rated eyeglasses deals or special prescription sunglasses discounts, our best Black Friday eyewear promotions ensure you find the perfect fit and price. Don’t miss out—take advantage of the ultimate Black Friday 2025 sale and elevate your style with the season’s top eyewear savings and holiday bargains.";
 
@@ -28,13 +28,14 @@
       $("#top-content-box p").html(bottomTextParagraph);
       $("#selected-crumb").text(selectedCrumb);
       $("#cata_hdr").text(topText);
+      $("#bnr-seo-info").css("min-height", "35px");
 
     }
   }
   else if (isRecognized && ((checkDate >= '251118' && checkDate <= '251120') || (fdFncs.vars.isTest >= '251118' && fdFncs.vars.isTest <= '251120'))) {
     if (pgURLPath("/promotions/black-friday-dp")) {
-      var selectedCrumb = "Early Black Friday Eyewear Sale: Special Discounts for Subscribers";
-      var topText = "Early Black Friday Eyewear Sale: Special Discounts for Subscribers";
+      var selectedCrumb = "Early Black Friday Eyewear Sale";
+      var topText = "Early Black Friday Eyewear Sale";
       var bottomText = "You’ve Unlocked Early Black Friday Savings: Special Eyewear Discounts";
       var bottomTextParagraph = "Enjoy your exclusive early access to FramesDirect’s Black Friday 2025 eyewear sale—only for subscribers. Discover the best Black Friday deals on the widest selection of premium eyewear, inclusing trending eyeglasses, stylish prescription sunglasses and luxury frames. Frames Direct offers an extensive range of top brands such as Oakley, Ray-Ban, Versace, Persol, Dolce & Gabbana, Prada, Burberry, Tory Burch, Maui Jim, Oliver Peoples, Vogue Eyewear, Alain Mikli, Arnette, and Costa, ensuring there is something for every style, gender, and age group. Discover exclusive Black Friday offers and limited-time promotions designed to maximize your savings this holiday season. Shop now to enjoy unbeatable discounts on your favorite frames, lenses, and designer collections. Whether you're looking for top-rated eyeglasses deals or special prescription sunglasses discounts, our best Black Friday eyewear promotions ensure you find the perfect fit and price. Don’t miss out—Handpick your favorites among a broad range of styles, colors, and fits—there’s something for everyone. Don’t let these subscriber-only deals slip away. Shop now for unbeatable prices, free shipping, easy returns, and the best start to holiday gifting.";
 
@@ -42,6 +43,7 @@
       $("#top-content-box p").html(bottomTextParagraph);
       $("#selected-crumb").text(selectedCrumb);
       $("#cata_hdr").text(topText);
+      $("#bnr-seo-info").css("min-height", "35px");
 
     }
   }
@@ -62,7 +64,7 @@
     $("#cata_hdr").text("Oakley | Glasses starting from $36 a month");
   }
   if (pgURLPath("/ai-glasses/")) {
-    $("#cata_hdr").text("Oakley | Glasses starting from $75 a month");
+    $("#cata_hdr").text("AI Glasses | Starting from $75 a month");
   }
 
 </script>
