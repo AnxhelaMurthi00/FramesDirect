@@ -1,33 +1,6 @@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-   // --- NEW: Early Access Banner Logic ---
-    
-    /**
-     * Helper function to get a cookie by name
-     */
-    function getCookie(name) {
-        const value = `; ${document.cookie}`;
-        const parts = value.split(`; ${name}=`);
-        if (parts.length === 2) return parts.pop().split(';').shift();
-    }
 
-    // Get the two banner elements
-    const bannerGuest = document.querySelector('.ea-banner-guest');
-    const bannerLogged = document.querySelector('.ea-banner-logged');
-
-    // Check for the 'eaccess' cookie
-    const accessCookie = getCookie('fdRecognized');
-
-    if (accessCookie) {
-        // If cookie is 'true', show the LOGGED IN banner by adding 'd-flex'
-        if (bannerLogged) bannerLogged.classList.add('d-flex');
-    } else {
-        // Otherwise, show the GUEST banner by adding 'd-flex'
-        if (bannerGuest) bannerGuest.classList.add('d-flex');
-    }
-    
-    // --- END: New Logic ---
-    
     let swiperInstances = [];
     const breakpoint = 768; // Mobile breakpoint in pixels
         // This function will be called by the swiper events

@@ -1,12 +1,7 @@
 <style>
 /* --- Global & Font Styles --- */
-html,
-body {
-    overflow-x: hidden;
-}
 body{
     font-family: 'Opens Sans', sans-serif !important;
-    overflow-x: hidden;
 }
 
 #bnr-holder{
@@ -157,15 +152,6 @@ body{
     text-decoration: none;
 }
 
-/* --- Early Access Banner Logic --- */
-.ea-banner-guest,
-.ea-banner-logged {
-    display: none;
-}
-
-.ea-banner-guest .signUp {
-    cursor: pointer;
-}
 
 /* --- Responsive Adjustments for Mobile --- */
 /* --- Responsive Adjustments for Mobile --- */
@@ -329,11 +315,6 @@ p.text-muted{
     background-color: #000 !important;
 }
 
-.ea-banner-section .promo-content .btn-light{
-    font-weight: 700 !important;
-    color: #000 !important;
-}
-
 .btn-dark.focus, .btn-dark:focus{
     border: none !important;
     box-shadow: none !important;
@@ -350,18 +331,12 @@ p.text-muted{
 }
 
 
-.ai-banner, .delivery-banner, .offers-banner, .ea-banner-guest, .ea-banner-logged{
+.ai-banner, .delivery-banner, .offers-banner{
     background-color: #fff;
     border-radius: 16px; /* Large rounded corners */
     min-height: 360px;
     color: white;
     padding: 120px 75px;
-}
-.ea-banner-guest,
-.ea-banner-logged{
-    background: url('https://images.framesdirect.com/image/upload/v1761316754/Gift-guide/LP_GIFTGUIDE_SECONDARY_BANNER_PROMO_D.jpg');
-    background-repeat: no-repeat !important;
-    background-size: contain !important;  
 }
 
 .ai-banner {
@@ -386,8 +361,7 @@ p.text-muted{
     max-width: 45%; /* Restricts content to the left side */
 }
 
-.ai-banner-section .promo-content h2,
-.ea-banner-section .promo-content h2 {
+.ai-banner-section .promo-content h2 {
     color: var(--Base-Text-Light, #FFF) !important;
     /* Heading 3/Desktop */
     font-family: "Open Sans", sans-serif;
@@ -397,8 +371,7 @@ p.text-muted{
     margin-bottom: 0 !important;
 }
 
-.ai-banner-section .promo-content p,
-.ea-banner-section .promo-content p {
+.ai-banner-section .promo-content p {
     color: var(--Base-Text-Light, #FFF);
     /* Heading 3/Desktop */
     font-family: "Open Sans";
@@ -493,9 +466,6 @@ p.text-muted{
         display: block;
     }
 
-    .ea-banner-guest, .ea-banner-logged{
-        background: url('https://images.framesdirect.com/image/upload/v1761316753/Gift-guide/LP_GIFTGUIDE_SECONDARY_BANNER_PROMO_M.jpg');
-    }
     .ai-banner {
         background: url('https://images.framesdirect.com/image/upload/v1759398285/Gift-guide/FD_GG_JUPITER_SECONDARY_BANNER_M.png');
     }
@@ -510,7 +480,7 @@ p.text-muted{
     }
 
     .container p.text-muted{
-         max-width: 95% ;
+         max-width: 90% ;
          margin: 0 auto;
     }
     
@@ -560,23 +530,20 @@ p.text-muted{
     /* --- Mobile Styles for Promo Banners --- */
     .ai-banner-section,
     .delivery-banner-section,
-    .offers-banner-section,
-    .ea-banner-section{
+    .offers-banner-section{
         padding-bottom: 16px;
     }
     /* 1. Make the container full-width on mobile to remove side spacing */
     .ai-banner-section .container,
     .delivery-banner-section .container,
-    .offers-banner-section .container,
-    .ea-banner-guest .container
-    .ea-banner-logged .container {
+    .offers-banner-section .container {
         max-width: 100%;
         padding-left: 16px;
         padding-right: 16px;
     }
 
     /* 2. Adjust the banners themselves */
-    .ai-banner, .delivery-banner, .offers-banner, .ea-banner-guest, .ea-banner-logged {
+    .ai-banner, .delivery-banner, .offers-banner {
         border-radius: 0;           /* Banners are often edge-to-edge on mobile */
         min-height: 688px;          /* Give it enough height for the vertical image */
         background-size: cover !important; /* Ensure the image covers the new taller area */
@@ -585,9 +552,9 @@ p.text-muted{
     }
 
     /* 3. Change vertical alignment from center to top */
-    .ai-banner.d-flex, .delivery-banner.d-flex, .offers-banner.d-flex, .ea-banner-guest.d-flex, .ea-banner-logged.d-flex {
+    .ai-banner.d-flex, .delivery-banner.d-flex, .offers-banner.d-flex {
         align-items: flex-start !important;
-        padding: 90px 20px 0 20px;
+        padding: 90px 30px 0 30px;
 ;
     }
 
@@ -647,7 +614,7 @@ p.text-muted{
     }
 
     /* --- Base Promo Banner Styles for Tablet & Desktop --- */
-    .ai-banner, .delivery-banner, .offers-banner, .ea-banner-guest, .ea-banner-logged {
+    .ai-banner, .delivery-banner, .offers-banner {
         background-size: cover !important;
         background-position: center !important;
     }
@@ -677,7 +644,7 @@ p.text-muted{
 /* This restores the original desktop design for the banner text */
 @media (min-width: 992px) {
     .promo-content {
-        max-width: 50%;
+        max-width: 45%;
     }
 }
 
