@@ -435,9 +435,9 @@
       fdFncs.vars.fdRecognized || getCookie("fdRecognized");
     fdFncs.vars.ref = document.referrer;
     //Update Footer Email Sign-up Title
-        if (
-      (checkDate >= '251129' && checkDate <= '251130') ||
-      (fdFncs.vars.isTest >= '251129' && fdFncs.vars.isTest <= '251130')
+    if (
+      (checkDate >= '251129' && checkDate <= '251201') ||
+      (fdFncs.vars.isTest >= '251129' && fdFncs.vars.isTest <= '251201')
     ) {
       // Recognized user logic
       if (fdFncs.vars.fdRecognized !== undefined) {
@@ -454,33 +454,15 @@
       }
     } else
 
-    if (
-      (checkDate >= '251128' && checkDate <= '251129') ||
-      (fdFncs.vars.isTest >= '251128' && fdFncs.vars.isTest <= '251129')
-    ) {
-      // Recognized user logic
-      if (fdFncs.vars.fdRecognized !== undefined) {
-        $('#footer-newsletter').addClass("d-md-block d-flex justify-content-around")
-        $('#footer-newsletter').html(
-          '<div class="size-14 weight-normal text-left"><span class="weight-bold"> Up to 50% off frames <br class="d-md-none">  + 60% off lenses. </span> Plus <span class="weight-bold"> extra 5%! </span></div><div id="footer-newsletter-wrapper"><a href="/promotions/black-friday-dp" class="btn-cta  background-white color-black weight-bold d-inline-block py-2 px-3" style="font-size: 12px !important">Shop Deals</a></div>'
-        );
-      } else {
-        // Unrecognized user logic
-        $('#footer-newsletter').addClass("d-md-block d-flex justify-content-around")
-        $('#footer-newsletter').html(
-          '<div class="size-14 weight-normal">Join our mailing list for exclusive offers</div><div id="footer-newsletter-wrapper"><a href="#" id="footer-newsletter-submit" class="btn-cta btn-small background-white color-black weight-bold d-inline-block py-2 px-3">Sign Up</a></div>'
-        );
-      }
-    } else
       if (
-        (checkDate >= '251121' && checkDate <= '251128') ||
-        (fdFncs.vars.isTest >= '251121' && fdFncs.vars.isTest <= '251128')
+        (checkDate >= '251128' && checkDate <= '251129') ||
+        (fdFncs.vars.isTest >= '251128' && fdFncs.vars.isTest <= '251129')
       ) {
         // Recognized user logic
         if (fdFncs.vars.fdRecognized !== undefined) {
           $('#footer-newsletter').addClass("d-md-block d-flex justify-content-around")
           $('#footer-newsletter').html(
-            '<div class="size-14 weight-normal text-left">Save <span class="weight-bold"> 50% off frames <br class="d-md-none">  + 60% off lenses </span> now</div><div id="footer-newsletter-wrapper"><a href="/promotions/black-friday-dp" class="btn-cta  background-white color-black weight-bold d-inline-block py-2 px-3" style="font-size: 12px !important">Shop Deals</a></div>'
+            '<div class="size-14 weight-normal text-left"><span class="weight-bold"> Up to 50% off frames <br class="d-md-none">  + 60% off lenses. </span> Plus <span class="weight-bold"> extra 5%! </span></div><div id="footer-newsletter-wrapper"><a href="/promotions/black-friday-dp" class="btn-cta  background-white color-black weight-bold d-inline-block py-2 px-3" style="font-size: 12px !important">Shop Deals</a></div>'
           );
         } else {
           // Unrecognized user logic
@@ -490,56 +472,74 @@
           );
         }
       } else
-
         if (
-          (checkDate >= '250417' && checkDate <= '250420') ||
-          (fdFncs.vars.isTest >= '250417' && fdFncs.vars.isTest <= '250420')
+          (checkDate >= '251121' && checkDate <= '251128') ||
+          (fdFncs.vars.isTest >= '251121' && fdFncs.vars.isTest <= '251128')
         ) {
           // Recognized user logic
           if (fdFncs.vars.fdRecognized !== undefined) {
+            $('#footer-newsletter').addClass("d-md-block d-flex justify-content-around")
             $('#footer-newsletter').html(
-              '<div class="size-14 weight-normal">Members Week: Up to <span class="weight-bold">30% off top brands + 65% off lenses</span> with code <span class="weight-bold">EXTRA5</span></div><div id="footer-newsletter-wrapper"><a href="/email/customer-appreciation-dp" class="btn-cta btn-small background-white color-black weight-bold d-inline-block py-2 px-3">Save Now</a></div>'
+              '<div class="size-14 weight-normal text-left">Save <span class="weight-bold"> 50% off frames <br class="d-md-none">  + 60% off lenses </span> now</div><div id="footer-newsletter-wrapper"><a href="/promotions/black-friday-dp" class="btn-cta  background-white color-black weight-bold d-inline-block py-2 px-3" style="font-size: 12px !important">Shop Deals</a></div>'
             );
           } else {
             // Unrecognized user logic
+            $('#footer-newsletter').addClass("d-md-block d-flex justify-content-around")
             $('#footer-newsletter').html(
-              '<div class="size-14 weight-normal">Members Week Deals</div><div id="footer-newsletter-wrapper"><a href="#" id="footer-newsletter-submit" class="btn-cta btn-small background-white color-black weight-bold d-inline-block py-2 px-3">Sign Up</a></div>'
+              '<div class="size-14 weight-normal">Join our mailing list for exclusive offers</div><div id="footer-newsletter-wrapper"><a href="#" id="footer-newsletter-submit" class="btn-cta btn-small background-white color-black weight-bold d-inline-block py-2 px-3">Sign Up</a></div>'
             );
           }
-        } else if (
-          (checkDate >= "250224" && checkDate <= "250312") ||
-          (fdFncs.vars.isTest >= "250224" && fdFncs.vars.isTest <= "250312")
-        ) {
-          $("#footer-newsletter").html(
-            '<div class="size-14 weight-normal">Luxury Style at a Steal: <span class="weight-bold">Up to 50% off frames + 65% off lenses</span></div><div id="footer-newsletter-wrapper"><a href="/sale" class="btn-cta btn-small background-white color-black weight-bold d-inline-block py-2 px-3">Save Now</a></div>'
-          );
-        } else if (
-          (checkDate >= "250218" && checkDate <= "250223") ||
-          (fdFncs.vars.isTest >= "250218" && fdFncs.vars.isTest <= "250223")
-        ) {
-          $("#footer-newsletter").html(
-            '<div class="size-14 weight-normal">Save <span class="weight-bold">up to 50% off frames + up to 65% off lenses</span> now</div><div id="footer-newsletter-wrapper"><a href="/sale" class="btn-cta btn-small background-white color-black weight-bold d-inline-block py-2 px-3">Save Now</a></div>'
-          );
-        } else if (
-          (checkDate >= "250214" && checkDate <= "250217") ||
-          (fdFncs.vars.isTest >= "250214" && fdFncs.vars.isTest <= "250217")
-        ) {
-          $("#footer-newsletter").html(
-            '<div class="size-14 weight-normal">Limited time deal! Seize an <span class="weight-bold">extra $20 off at cart*</span></div><div id="footer-newsletter-wrapper"><a href="/email/presidents-dp" class="btn-cta btn-small background-white color-black weight-bold d-inline-block py-2 px-3">Save Now</a></div>'
-          );
-        } else if (
-          (fdFncs.vars.fdRecognized !== undefined && fdFncs.vars.fdRecognized !== false) &&
-          checkDate >= "250407" ||
-          fdFncs.vars.isTest >= "270101"
-        ) {
-          $("#footer-newsletter").html(
-            '<div class="size-14 weight-normal">Thank you for signing up for our newsletter!</div><div id="footer-newsletter-wrapper"><a href="/men/eyewear-dp" class="btn-cta btn-small background-white color-black weight-bold d-inline-block py-2 px-2 mr-3">Shop Men</a><a href="/women/eyewear-dp" class="btn-cta btn-small background-white color-black weight-bold d-inline-block py-2 px-2">Shop Women</a></div>'
-          );
-        } else {
-          $("#footer-newsletter").html(
-            '<div class="size-14 weight-normal">Join our mailing list for exclusive offers</div><div id="footer-newsletter-wrapper"><a href="#" id="footer-newsletter-submit" class="btn-cta btn-small background-white color-black weight-bold d-inline-block py-2 px-3">Sign Up</a></div>'
-          );
-        }
+        } else
+
+          if (
+            (checkDate >= '250417' && checkDate <= '250420') ||
+            (fdFncs.vars.isTest >= '250417' && fdFncs.vars.isTest <= '250420')
+          ) {
+            // Recognized user logic
+            if (fdFncs.vars.fdRecognized !== undefined) {
+              $('#footer-newsletter').html(
+                '<div class="size-14 weight-normal">Members Week: Up to <span class="weight-bold">30% off top brands + 65% off lenses</span> with code <span class="weight-bold">EXTRA5</span></div><div id="footer-newsletter-wrapper"><a href="/email/customer-appreciation-dp" class="btn-cta btn-small background-white color-black weight-bold d-inline-block py-2 px-3">Save Now</a></div>'
+              );
+            } else {
+              // Unrecognized user logic
+              $('#footer-newsletter').html(
+                '<div class="size-14 weight-normal">Members Week Deals</div><div id="footer-newsletter-wrapper"><a href="#" id="footer-newsletter-submit" class="btn-cta btn-small background-white color-black weight-bold d-inline-block py-2 px-3">Sign Up</a></div>'
+              );
+            }
+          } else if (
+            (checkDate >= "250224" && checkDate <= "250312") ||
+            (fdFncs.vars.isTest >= "250224" && fdFncs.vars.isTest <= "250312")
+          ) {
+            $("#footer-newsletter").html(
+              '<div class="size-14 weight-normal">Luxury Style at a Steal: <span class="weight-bold">Up to 50% off frames + 65% off lenses</span></div><div id="footer-newsletter-wrapper"><a href="/sale" class="btn-cta btn-small background-white color-black weight-bold d-inline-block py-2 px-3">Save Now</a></div>'
+            );
+          } else if (
+            (checkDate >= "250218" && checkDate <= "250223") ||
+            (fdFncs.vars.isTest >= "250218" && fdFncs.vars.isTest <= "250223")
+          ) {
+            $("#footer-newsletter").html(
+              '<div class="size-14 weight-normal">Save <span class="weight-bold">up to 50% off frames + up to 65% off lenses</span> now</div><div id="footer-newsletter-wrapper"><a href="/sale" class="btn-cta btn-small background-white color-black weight-bold d-inline-block py-2 px-3">Save Now</a></div>'
+            );
+          } else if (
+            (checkDate >= "250214" && checkDate <= "250217") ||
+            (fdFncs.vars.isTest >= "250214" && fdFncs.vars.isTest <= "250217")
+          ) {
+            $("#footer-newsletter").html(
+              '<div class="size-14 weight-normal">Limited time deal! Seize an <span class="weight-bold">extra $20 off at cart*</span></div><div id="footer-newsletter-wrapper"><a href="/email/presidents-dp" class="btn-cta btn-small background-white color-black weight-bold d-inline-block py-2 px-3">Save Now</a></div>'
+            );
+          } else if (
+            (fdFncs.vars.fdRecognized !== undefined && fdFncs.vars.fdRecognized !== false) &&
+            checkDate >= "250407" ||
+            fdFncs.vars.isTest >= "270101"
+          ) {
+            $("#footer-newsletter").html(
+              '<div class="size-14 weight-normal">Thank you for signing up for our newsletter!</div><div id="footer-newsletter-wrapper"><a href="/men/eyewear-dp" class="btn-cta btn-small background-white color-black weight-bold d-inline-block py-2 px-2 mr-3">Shop Men</a><a href="/women/eyewear-dp" class="btn-cta btn-small background-white color-black weight-bold d-inline-block py-2 px-2">Shop Women</a></div>'
+            );
+          } else {
+            $("#footer-newsletter").html(
+              '<div class="size-14 weight-normal">Join our mailing list for exclusive offers</div><div id="footer-newsletter-wrapper"><a href="#" id="footer-newsletter-submit" class="btn-cta btn-small background-white color-black weight-bold d-inline-block py-2 px-3">Sign Up</a></div>'
+            );
+          }
     // Email Sign-up Popup with Cookie
     if (
       !fdFncs.vars.fdRecognized &&

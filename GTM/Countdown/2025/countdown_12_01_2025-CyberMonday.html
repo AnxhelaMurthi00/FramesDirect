@@ -22,10 +22,12 @@
         ? [
           " <b>Up to 50 off frames + 60% off lenses. Plus extra 5%! </b>",
           'Pay over time with PayPal and Klarna.&nbsp; <a href="/knowledge-center/payment-methods" class="color-white weight-bold mx-1">Learn more</a>',
+          '20% off Ray-Ban Meta (Gen 1)',
         ]
         : [
           "Cyber Monday’s live: Up to <b>&nbsp; 50 off frames + 60% off lenses. Plus extra 5%!</b> ",
           'Pay over time with PayPal and Klarna.&nbsp; <a href="/knowledge-center/payment-methods" class="color-white weight-bold mx-1">Learn more</a>',
+          '20% off Ray-Ban Meta (Gen 1)',
         ];
 
 
@@ -220,7 +222,7 @@
     var countBnrMsg = messages[currentMessageIndex];
 
     // Add countdown only for the specific message
-    if (messages[currentMessageIndex].includes("off frames")) {
+    if (messages[currentMessageIndex].includes("Cyber")) {
       countBnrMsg +=
         '<div id="countdown" class="d-flex justify-content-end pr-2 size-6 ml-3"><div id="countdown-clockworks-holder" class="d-flex"></div></div>';
     }
@@ -229,7 +231,7 @@
 
     // Initialize the countdown if the specific message is active
     if (
-      (messages[currentMessageIndex].includes("off frames") &&
+      (messages[currentMessageIndex].includes("Cyber") &&
         checkDate === "251201") ||
       fdFncs.vars.isTest === "251201"
     ) {

@@ -1,107 +1,107 @@
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-   // --- NEW: Early Access Banner Logic ---
-    
-    /**
-     * Helper function to get a cookie by name
-     */
-    function getCookie(name) {
-        const value = `; ${document.cookie}`;
-        const parts = value.split(`; ${name}=`);
-        if (parts.length === 2) return parts.pop().split(';').shift();
-    }
+    document.addEventListener('DOMContentLoaded', function () {
+        // --- NEW: Early Access Banner Logic ---
 
-    // Get the two banner elements
-    const bannerGuest = document.querySelector('.ea-banner-guest');
-    const bannerLogged = document.querySelector('.ea-banner-logged');
+        /**
+         * Helper function to get a cookie by name
+         */
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
 
-    // Check for the 'eaccess' cookie
-    const accessCookie = getCookie('fdRecognized');
+        // Get the two banner elements
+        const bannerGuest = document.querySelector('.ea-banner-guest');
+        const bannerLogged = document.querySelector('.ea-banner-logged');
 
-    if (accessCookie) {
-        // If cookie is 'true', show the LOGGED IN banner by adding 'd-flex'
-        if (bannerLogged) bannerLogged.classList.add('d-flex');
-    } else {
-        // Otherwise, show the GUEST banner by adding 'd-flex'
-        if (bannerGuest) bannerGuest.classList.add('d-flex');
-    }
-    
-    // --- END: New Logic ---
-    
-    let swiperInstances = [];
-    const breakpoint = 768; // Mobile breakpoint in pixels
+        // Check for the 'eaccess' cookie
+        const accessCookie = getCookie('fdRecognized');
+
+        if (accessCookie) {
+            // If cookie is 'true', show the LOGGED IN banner by adding 'd-flex'
+            if (bannerLogged) bannerLogged.classList.add('d-flex');
+        } else {
+            // Otherwise, show the GUEST banner by adding 'd-flex'
+            if (bannerGuest) bannerGuest.classList.add('d-flex');
+        }
+
+        // --- END: New Logic ---
+
+        let swiperInstances = [];
+        const breakpoint = 768; // Mobile breakpoint in pixels
         // This function will be called by the swiper events
-    function updateProgressBarPosition(swiperInstance) {
-        const totalSlides = swiperInstance.slides.length;
-        // Prevent division by zero if there's only one slide
-        if (totalSlides <= 1) return;
+        function updateProgressBarPosition(swiperInstance) {
+            const totalSlides = swiperInstance.slides.length;
+            // Prevent division by zero if there's only one slide
+            if (totalSlides <= 1) return;
 
-        const activeIndex = swiperInstance.activeIndex;
+            const activeIndex = swiperInstance.activeIndex;
 
-        // Find the specific progress bar fill for THIS swiper instance
-        const progressBarFill = swiperInstance.pagination.el.querySelector('.swiper-pagination-progressbar-fill');
-        
-        if (progressBarFill) {
-            // Calculate the width of one segment
-            const puckWidthPercent = 100 / totalSlides;
-            // Calculate the new left position in percent
-            const newPositionPercent = (activeIndex / (totalSlides - 1)) * (100 - puckWidthPercent);
-            
-            progressBarFill.style.left = newPositionPercent + '%';
+            // Find the specific progress bar fill for THIS swiper instance
+            const progressBarFill = swiperInstance.pagination.el.querySelector('.swiper-pagination-progressbar-fill');
+
+            if (progressBarFill) {
+                // Calculate the width of one segment
+                const puckWidthPercent = 100 / totalSlides;
+                // Calculate the new left position in percent
+                const newPositionPercent = (activeIndex / (totalSlides - 1)) * (100 - puckWidthPercent);
+
+                progressBarFill.style.left = newPositionPercent + '%';
+            }
         }
-    }
 
-    function setupCarousels() {
-        const screenWidth = window.innerWidth;
+        function setupCarousels() {
+            const screenWidth = window.innerWidth;
 
-        // If on mobile and carousels aren't initialized yet
-        if (screenWidth < breakpoint && swiperInstances.length === 0) {
-            document.querySelectorAll('.mobile-carousel').forEach(element => {
-                const swiper = new Swiper(element, {
-                    // How many slides to show
-                    slidesPerView: 1.10,
+            // If on mobile and carousels aren't initialized yet
+            if (screenWidth < breakpoint && swiperInstances.length === 0) {
+                document.querySelectorAll('.mobile-carousel').forEach(element => {
+                    const swiper = new Swiper(element, {
+                        // How many slides to show
+                        slidesPerView: 1.10,
 
-                    // Center the active slide
-                    centeredSlides: true,
+                        // Center the active slide
+                        centeredSlides: true,
 
-                    // Space between slides
-                    spaceBetween: 8,
+                        // Space between slides
+                        spaceBetween: 8,
 
-                  
 
-                    // Pagination settings to create the progress bar
-                    pagination: {
-                        el: '.swiper-pagination',
-                        type: 'progressbar',
-                    },
-                    // --- ADD THIS 'on' EVENT LISTENER ---
-                    on: {
-                        // When the swiper is first created, set the initial position
-                        init: function () {
-                            updateProgressBarPosition(this);
+
+                        // Pagination settings to create the progress bar
+                        pagination: {
+                            el: '.swiper-pagination',
+                            type: 'progressbar',
                         },
-                        // When the slide changes, update the position
-                        slideChange: function () {
-                            updateProgressBarPosition(this);
+                        // --- ADD THIS 'on' EVENT LISTENER ---
+                        on: {
+                            // When the swiper is first created, set the initial position
+                            init: function () {
+                                updateProgressBarPosition(this);
+                            },
+                            // When the slide changes, update the position
+                            slideChange: function () {
+                                updateProgressBarPosition(this);
+                            }
                         }
-                    }
+                    });
+                    swiperInstances.push(swiper);
                 });
-                swiperInstances.push(swiper);
-            });
-        } 
-        // If on desktop and carousels are already initialized
-        else if (screenWidth > breakpoint && swiperInstances.length > 0) {
-            swiperInstances.forEach(swiper => {
-                swiper.destroy(true, true);
-            });
-            swiperInstances = []; // Clear the array
+            }
+            // If on desktop and carousels are already initialized
+            else if (screenWidth > breakpoint && swiperInstances.length > 0) {
+                swiperInstances.forEach(swiper => {
+                    swiper.destroy(true, true);
+                });
+                swiperInstances = []; // Clear the array
+            }
         }
-    }
 
-    // Run the setup function on page load
-    setupCarousels();
+        // Run the setup function on page load
+        setupCarousels();
 
-    // Re-run the setup function whenever the window is resized
-    window.addEventListener('resize', setupCarousels);
-});
+        // Re-run the setup function whenever the window is resized
+        window.addEventListener('resize', setupCarousels);
+    });
 </script>

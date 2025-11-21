@@ -1,5 +1,83 @@
 <script>
   const updateHeroBanner = () => {
+
+     if (
+            (checkDate >= "251202" && checkDate <= "251210") ||
+            (fdFncs.vars.isTest >= "251202" && fdFncs.vars.isTest <= "251210")
+          ) {
+            //hero slider promotion
+            $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+            $("#hero-slider").append(
+              `
+        <li>
+<style>
+    @media (min-width: 1200px) and  (max-width: 1400px){
+           #secondHero{
+        width: 44% !important;
+        left: 4%;
+    }
+    .hide{
+        display: none;
+    }
+    }
+        @media (min-width: 1440px){
+    #secondHero{
+        width: 36%;
+        left: 2%;
+    }}
+    .insurnace_brands {
+        width: 424px;
+        height: 42px;
+    }
+</style>
+<div class="ct_space">
+    <div class="ct_banner ct_hero">
+            <div class="ct_assets__container">
+                <picture class="ct_skeleton">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAAJ0lEQVR4AeyQMQ0AAAjDyByABfxrBBHruSZ9e1SzfaQqmAT9ofjDBwAA//8Eo/fWAAAABklEQVQDADQTGXOFR5AvAAAAAElFTkSuQmCC"
+                        alt="structure image">
+                </picture>
+                <picture class="ct_img">
+                    <img src="https://images.framesdirect.com/image/upload/v1758546735/homePage/HP_INSURANCE_D_40.png" "="" fetchpriority="
+                        high" alt="The Man is wearing Maui Jim Hookipa 907 Prescription Sunglasses" width="3840"
+                        height="1108" usemap="#image-map5">
+                </picture>
+            </div>
+        <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pb__mob__30"  id="secondHero"
+            style="background: #D6F3E9; width: 42%"><a href="/email/auth-lenses-dp" aria-label="sale">
+                <div class="ct_text__black ct_font__36  ct_lh__sm ct_mt__mob__40 weight-bold ct_font__mob_24 ">
+                 Use it before you lose it
+                </div>
+                <div class="ct_font__18 ct_font__mob_20 pt-lg-2 pt-4">
+                  <b>Get up to $60 off</b> Progressive, Blue Light <br> or Transitions® lenses with code 
+<b>NEWVISION</b> at checkout.
+</div>
+                <div class="logos ct_mob__hide d-flex justify-content-around align-items-center w-100 pt-2 ">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/EYEMED_logo-color.png">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/aetna-logo.png">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502287/logos/humana-logo.png">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502287/logos/cigna-logo.png">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/many-more-logo.png">
+                </div>
+                <div class="logos ct_desk__hide d-flex justify-content-between align-items-center w-100 pl-3 pr-3 mt-3" style="gap:7px;">
+                      <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/EYEMED_logo-color.png">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/aetna-logo.png">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502287/logos/humana-logo.png">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/many-more-logo.png">
+                </div>
+            </a>
+            <div class="text-center ml-2 d-flex flex-column flex-lg-row ct_mb__mob__30 pb-2" >
+                <a href="/knowledge-center/vision-insurance-fsa-eligibility" class="btn-cta nowrap mt-4"
+                    style="background:  #000; color: #fff !important; border: 0">LEARN MORE
+                </a>
+                <a href="/email/vision-insurance-dp" class="btn-cta nowrap mt-2 mt-lg-4 ml-lg-5"
+                    style="background:#AB2317; color: #fff !important; border: 0">Sync Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+   </li>` );
+          } else
     if (getCookie('fdRecognized') !== undefined &&
       (
         (checkDate >= "251121" && checkDate <= "251131") ||
@@ -3782,10 +3860,4 @@ style="min-height: 176px; background: #C5CEC1 !important; color: #2d3547;"
 
     return toggle;
   })();
-  document.addEventListener('DOMContentLoaded', function () {
-    const bestSeller = document.querySelector('#dvProductCarouselContainer h4');
-
-    bestSeller.textContent = "Cyber Monday picks";
-
-  });
 </script>
