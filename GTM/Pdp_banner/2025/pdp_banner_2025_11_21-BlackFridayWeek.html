@@ -1,53 +1,83 @@
 <script>
-  ////////////////////////////////////
-  //for Eyeglasses and Plano Sun PDPs
-  ////////////////////////////////////
-
-  //var hasIns = setInterval(checkIns, 360);
   $(window).on('load', function () {
     $('.insurance-app-toggle input').change(function () {
-      var $this = $(this)
-      if ($this.checked) {
-        window.console.log('toggle on');
+      if (this.checked) {
         $('.lens-bar-holder').hide();
       } else {
-        window.console.log('toggle off');
         $('.lens-bar-holder').show();
       }
     });
   });
-  function getAmountSavings(product) {
 
-            var retailStr = document.getElementById("spanRetailPrice").innerHTML;
-        var saleStr = document.getElementById("spanOurPrice").innerHTML;
+  function getAmountSavings(product) {
+    var retailStr = document.getElementById("spanRetailPrice").innerHTML;
+    var saleStr = document.getElementById("spanOurPrice").innerHTML;
     if (!product) return 0;
-    var retail =  parseFloat(retailStr.replace("$", ""));
+
+    var retail = parseFloat(retailStr.replace("$", ""));
     if (isNaN(retail) || retail <= 0) return 0;
 
-    var discounted =parseFloat(saleStr.replace("$", ""));
+    var discounted = parseFloat(saleStr.replace("$", ""));
     if (isNaN(discounted) || discounted <= 0) return 0;
 
-    var savings = retail - discounted;
-    return savings > 0 ? savings : 0;
+    return Math.max(0, retail - discounted);
   }
+
   function prodDiscoBanner() {
     if (
       (checkDate >= "251121" && checkDate <= "251127") ||
-      (fdFncs.vars.isTest >= "251121" && fdFncs.vars.isTest <= "251127")) {
+      (fdFncs.vars.isTest >= "251121" && fdFncs.vars.isTest <= "251127")
+    ) {
 
-      if ($(".lens-bar-holder").length > 0) {
-        $(".lens-bar-holder").remove();
-      }
+      $(".lens-bar-holder").remove();
 
+      // ---------- PRESCRIPTION + BRAND BANNER ----------
       if (
-        ($('h1:contains("Prescription")').length > 0 ||
-          $('h1:contains("Eyeglasses")').length > 0 ||
-          $('h1:contains("Sunglasses")').length > 0)
+        $('h1:contains("Prescription")').length > 0 && (
+          $('h1:contains("Costa")').length > 0 ||
+          $('h1:contains("Oakley")').length > 0 ||
+          $('h1:contains("Randolph")').length > 0 ||
+          $('h1:contains("Maui Jim")').length > 0
+        )
       ) {
 
-        // Calculate savings
-        var amountSavings = getAmountSavings(fdFncs.currentProduct);
+        // Brand-specific 30% off banner
+        $('<div class="lens-bar-holder mx-0 mb-3 mt-4">' +
+          '<div class="lens-bar d-block color-white px-2 size-12 text-left" ' +
+          'style="background:#6B777B; padding: 10px; border-radius: 5px;">' +
+          'Use code <b>SPECIAL30</b> to get <b>30% off branded lenses</b>' +
+          '</div>' +
+          '</div>'
+        ).prependTo("#prod-header-right");
 
+        // ---------- DISCOUNTED BADGE ----------
+        var amountSavings = getAmountSavings(fdFncs.currentProduct);
+        var savingsText = "";
+        if (amountSavings > 0) {
+          console.log(amountSavings);
+          savingsText =
+            '<span style="float:right; font-weight:700; color:black; width: auto;">-$' +
+            amountSavings.toFixed(2) +
+            "</span>";
+        } else {
+          savingsText = '<span style="display: none;"></span>';
+        }
+
+        $('<div class="lens-bar-holder mx-0 mb-3"><div class="lens-bar d-flex color-black px-2 size-12 text-left " style="justify-content: space-between;  background: linear-gradient(90deg, rgba(190,226,247,1) 0%, rgba(98,153,167,1) 100%);  border-radius: 5px;"><div><b> Your Black Friday Savings</b></div> <div id="discountPdp" style="display: inline-flex;justify-content: end;align-items: center;"></div>' +
+          savingsText +
+          "</div></div>"
+        ).prependTo("#prod-header-right");
+
+        return;
+      }
+
+      // ---------- GENERIC PRESCRIPTION / EYEGLASSES BANNER ----------
+      if (
+        $('h1:contains("Prescription")').length > 0 ||
+        $('h1:contains("Eyeglasses")').length > 0 ||
+        $('h1:contains("Sunglasses")').length > 0
+      ) {
+        var amountSavings = getAmountSavings(fdFncs.currentProduct);
         var savingsText = "";
         if (amountSavings > 0) {
           console.log(amountSavings);
