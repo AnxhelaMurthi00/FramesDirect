@@ -1,0 +1,59 @@
+<script>
+  if (
+    (checkDate >= "251211" && checkDate <= "251228") ||
+    (fdFncs.vars.isTest >= "251211" && fdFncs.vars.isTest <= "251228")
+  ) {
+    $("#discountBar #exclusiveToggle").html(
+      $("#discountBar #exclusiveToggle")
+        .html()
+        .replace("See Exclusive Savings!", " Holiday deals")
+        .replace("Exclusive Savings", " Holiday deals")
+    );
+    $("#exclusiveSavings #discountBar > .blue-bg").css({
+      background: "#D3BDAF",
+    });
+  } else
+  if (
+    (checkDate >= "251202" && checkDate <= "251210") ||
+    (fdFncs.vars.isTest >= "251202" && fdFncs.vars.isTest <= "251210")
+  ) {
+    $("#discountBar #exclusiveToggle").html(
+      $("#discountBar #exclusiveToggle")
+        .html()
+        .replace("See Exclusive Savings!", " Complete Pair Savings")
+        .replace("Exclusive Savings", " Complete Pair Savings")
+    );
+    $("#exclusiveSavings #discountBar > .blue-bg").css({
+      background: "#CBC4BA",
+    });
+  } else
+    if (
+      (checkDate >= "251201" && checkDate <= "251202") ||
+      (fdFncs.vars.isTest >= "251201" && fdFncs.vars.isTest <= "251202")
+    ) {
+      $("#discountBar #exclusiveToggle").html(
+        $("#discountBar #exclusiveToggle")
+          .html()
+          .replace("See Exclusive Savings!", " Cyber Monday")
+          .replace("Exclusive Savings", " Cyber Monday")
+      );
+      $("#exclusiveSavings #discountBar > .blue-bg").css({
+        background: "linear-gradient(90deg,rgba(225, 207, 227, 1) 0%, rgba(165, 118, 169, 1) 100%)",
+      });
+    } else
+
+      if (
+        (checkDate >= "251103" && checkDate <= "251109") ||
+        (fdFncs.vars.isTest >= "251103" && fdFncs.vars.isTest <= "251109")
+      ) {
+        $("#discountBar #exclusiveToggle").html(
+          $("#discountBar #exclusiveToggle")
+            .html()
+            .replace("See Exclusive Savings!", " Early Holiday Savings")
+            .replace("Exclusive Savings", " Early Holiday Savings")
+        );
+        $("#exclusiveSavings #discountBar > .blue-bg").css({
+          background: "#A7B8BE",
+        });
+      }
+</script>

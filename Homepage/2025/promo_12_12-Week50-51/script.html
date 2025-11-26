@@ -1,14 +1,86 @@
 <script>
   const updateHeroBanner = () => {
+    if (
+      (checkDate >= "251211" && checkDate <= "251228") ||
+      (fdFncs.vars.isTest >= "251211" && fdFncs.vars.isTest <= "251228")
+    ) {
+      //hero slider promotion
+      $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+      $("#hero-slider").append(
+        `
+        <li>
+<style>
+    @media (min-width: 1200px) and  (max-width: 1400px){
+           #secondHero{
+        width: 44% !important;
+        left: 4%;
+    }
+    .hide{
+        display: none;
+    }
+    }
+        @media (min-width: 1440px){
+    #secondHero{
+        width: 36%;
+        left: 2%;
+    }}
+    .insurnace_brands {
+        width: 424px;
+        height: 42px;
+    }
+</style>
+<div class="ct_space">
+    <div class="ct_banner ct_hero">
+            <div class="ct_assets__container">
+                <picture class="ct_skeleton">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAAKElEQVR4AeyQMQ0AAAjDyPzrwwM3AkDEeq5J3x5V7xypCiZBfyj+8AEAAP//uB89HAAAAAZJREFUAwDu4EnjMZjKSwAAAABJRU5ErkJggg==" alt="structure image">
+                </picture>
+                <picture class="ct_img">
+                    <img src="https://images.framesdirect.com/image/upload/v1758546735/homePage/HP_INSURANCE_D_40.png" "="" fetchpriority="
+                        high" alt="The Man is wearing Maui Jim Hookipa 907 Prescription Sunglasses" width="3840" height="1108" usemap="#image-map5">
+                </picture>
+            </div>
+        <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pb__mob__30" id="secondHero" style="background: #D6F3E9; width: 42%"><a href="/email/auth-lenses-dp" aria-label="sale" data-element-id="MainNav_Promo" data-description="Sale">
+                <div class="ct_text__black ct_font__36  ct_lh__sm ct_mt__mob__40 weight-bold ct_font__mob_38 ">
+                 Use it before <br class="ct_desk__hide"> you lose it
+                </div>
+                <div class="ct_font__18 ct_font__mob_20 pt-lg-2 pt-4">
+                  <b>Get up to $60 off</b> Progressive, Blue Light <br> or Transitions® lenses with code 
+<b>NEWVISION</b> at checkout.
+</div>
+                <div class="logos ct_mob__hide d-flex justify-content-around align-items-center w-100 pt-2 ">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/EYEMED_logo-color.png">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/aetna-logo.png">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502287/logos/humana-logo.png">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502287/logos/cigna-logo.png">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/many-more-logo.png">
+                </div>
+                <div class="logos ct_desk__hide d-flex justify-content-between align-items-center w-100 pl-3 pr-3 mt-3" style="gap:7px;">
+                      <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/EYEMED_logo-color.png">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/aetna-logo.png">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502287/logos/humana-logo.png">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/many-more-logo.png">
+                </div>
+            </a>
+            <div class="text-center ml-2 d-flex flex-column flex-lg-row ct_mb__mob__50 pb-5">
+                <a href="/knowledge-center/vision-insurance-fsa-eligibility" class="btn-cta nowrap mt-4" style="background:  #000; color: #fff !important; border: 0" data-element-id="MainNav_Promo" data-description="Heroctalink">LEARN MORE
+                </a>
+                <a href="/email/vision-insurance-dp" class="btn-cta nowrap mt-2 mt-lg-4 ml-lg-5" style="background:#AB2317; color: #fff !important; border: 0" data-element-id="MainNav_Promo" data-description="Heroctalink">Sync Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+   </li>` );
+    } else
 
-     if (
-            (checkDate >= "251202" && checkDate <= "251210") ||
-            (fdFncs.vars.isTest >= "251202" && fdFncs.vars.isTest <= "251210")
-          ) {
-            //hero slider promotion
-            $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-            $("#hero-slider").append(
-              `
+      if (
+        (checkDate >= "251202" && checkDate <= "251210") ||
+        (fdFncs.vars.isTest >= "251202" && fdFncs.vars.isTest <= "251210")
+      ) {
+        //hero slider promotion
+        $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+        $("#hero-slider").append(
+          `
         <li>
 <style>
     @media (min-width: 1200px) and  (max-width: 1400px){
@@ -77,15 +149,15 @@
     </div>
 </div>
    </li>` );
-          } else
-    if (getCookie('fdRecognized') !== undefined &&
-      (
-        (checkDate >= "251121" && checkDate <= "251131") ||
-        (fdFncs.vars.isTest >= "251121" && fdFncs.vars.isTest <= "251131")
-      )
-    ) {
-      let heroBanner =
-        `
+      } else
+        if (getCookie('fdRecognized') !== undefined &&
+          (
+            (checkDate >= "251121" && checkDate <= "251131") ||
+            (fdFncs.vars.isTest >= "251121" && fdFncs.vars.isTest <= "251131")
+          )
+        ) {
+          let heroBanner =
+            `
         
 
 <style>
@@ -198,118 +270,118 @@
 
 
     `;
-      $(".heroBanner").replaceWith(heroBanner);
-      //     } else
-      //       if (
-      //         (checkDate >= "251118" && checkDate <= "251120") ||
-      //         (fdFncs.vars.isTest >= "251118" && fdFncs.vars.isTest <= "251120")
-      //       ) {
-      //         //hero slider promotion
-      //         $(".heroBanner").wrap('<div id="hero-slider"></div>');
-      //         $("#hero-slider").append(
-      //           `
+          $(".heroBanner").replaceWith(heroBanner);
+          //     } else
+          //       if (
+          //         (checkDate >= "251118" && checkDate <= "251120") ||
+          //         (fdFncs.vars.isTest >= "251118" && fdFncs.vars.isTest <= "251120")
+          //       ) {
+          //         //hero slider promotion
+          //         $(".heroBanner").wrap('<div id="hero-slider"></div>');
+          //         $("#hero-slider").append(
+          //           `
 
-      // <style>
-      //   @media (min-width: 1200px) and (max-width: 1400px) {
-      //     #text-image-bf {
-      //       width: 180px !important;
-      //       height: 110px;
-      //       margin-right: 20px !important;
-      //     }
-      //   }
+          // <style>
+          //   @media (min-width: 1200px) and (max-width: 1400px) {
+          //     #text-image-bf {
+          //       width: 180px !important;
+          //       height: 110px;
+          //       margin-right: 20px !important;
+          //     }
+          //   }
 
-      //   @media (max-width: 400px) {
-      //     #text-image-bf {
-      //       width: 180px !important;
-      //       height: auto;
-      //     }
-      //   }
+          //   @media (max-width: 400px) {
+          //     #text-image-bf {
+          //       width: 180px !important;
+          //       height: auto;
+          //     }
+          //   }
 
-      //   #text-image-bf {
-      //     width: 240px;
-      //   }
+          //   #text-image-bf {
+          //     width: 240px;
+          //   }
 
-      //   @media (max-width: 1200px) {
-      //     #firstHero {
-      //       background-image: url('https://images.framesdirect.com/image/upload/v1760688071/homePage/HP_EA2025_hero_M.png') !important;
+          //   @media (max-width: 1200px) {
+          //     #firstHero {
+          //       background-image: url('https://images.framesdirect.com/image/upload/v1760688071/homePage/HP_EA2025_hero_M.png') !important;
 
-      //     }
+          //     }
 
-      //   }
-      // </style>
+          //   }
+          // </style>
 
-      // <div class="ct_space">
-      //   <div class="ct_banner ct_hero">
-      //     <a href="/email/valentine-day-dp" aria-label="winter sale" class="w-100 ct_pt__mob__20">
-      //       <div class="ct_assets__container">
-      //         <picture class="ct_skeleton">
-      //           <img
-      //             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAHklEQVR4AXzDMQ0AAAwCsIVdGMG/Q1AATQo93eKGAAAA///IBPOjAAAABklEQVQDAGLECFwb7/2tAAAAAElFTkSuQmCC"
-      //             alt="structure image">
-      //         </picture>
-      //         <picture class="ct_img">
-      //           <img src="https://images.framesdirect.com/image/upload/v1760688062/homePage/FD_HP_EA2025_hero_D.png"
-      //             fetchpriority="high" alt="" width="3840" height="1108">
-      //         </picture>
-      //       </div>
-      //     </a>
-      //     <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0" style="width: 36%; left: 5%;"
-      //       id="firstHero"><a href="/email/valentine-day-dp" aria-label="winter sale" class="w-100 ct_pt__mob__0">
-      //         <span class="ct_img d-flex align-items-center d-flex flex-column flex-lg-row ">
-      //           <img
-      //             src="https://images.framesdirect.com/image/upload/v1760688060/homePage/EA2025_POPUP_VERSION_IMAGE_ONLY.png"
-      //             fetchpriority="high" class="img-fluid d-block mx-auto " id="text-image-bf">
-      //           <span class="ct_text__white  ct_font__mob_32 ct_font__38 ct_font__desk__32">BLACK FRIDAY</span>
-      //         </span>
-      //         <p class="ct_text__white mb-md-2 mt-0">Sign up or log in to unlock up to </p>
-      //         <div class="d-flex flex-wrap  mx-auto ct_text__white align-items-center justify-content-center">
+          // <div class="ct_space">
+          //   <div class="ct_banner ct_hero">
+          //     <a href="/email/valentine-day-dp" aria-label="winter sale" class="w-100 ct_pt__mob__20">
+          //       <div class="ct_assets__container">
+          //         <picture class="ct_skeleton">
+          //           <img
+          //             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAHklEQVR4AXzDMQ0AAAwCsIVdGMG/Q1AATQo93eKGAAAA///IBPOjAAAABklEQVQDAGLECFwb7/2tAAAAAElFTkSuQmCC"
+          //             alt="structure image">
+          //         </picture>
+          //         <picture class="ct_img">
+          //           <img src="https://images.framesdirect.com/image/upload/v1760688062/homePage/FD_HP_EA2025_hero_D.png"
+          //             fetchpriority="high" alt="" width="3840" height="1108">
+          //         </picture>
+          //       </div>
+          //     </a>
+          //     <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0" style="width: 36%; left: 5%;"
+          //       id="firstHero"><a href="/email/valentine-day-dp" aria-label="winter sale" class="w-100 ct_pt__mob__0">
+          //         <span class="ct_img d-flex align-items-center d-flex flex-column flex-lg-row ">
+          //           <img
+          //             src="https://images.framesdirect.com/image/upload/v1760688060/homePage/EA2025_POPUP_VERSION_IMAGE_ONLY.png"
+          //             fetchpriority="high" class="img-fluid d-block mx-auto " id="text-image-bf">
+          //           <span class="ct_text__white  ct_font__mob_32 ct_font__38 ct_font__desk__32">BLACK FRIDAY</span>
+          //         </span>
+          //         <p class="ct_text__white mb-md-2 mt-0">Sign up or log in to unlock up to </p>
+          //         <div class="d-flex flex-wrap  mx-auto ct_text__white align-items-center justify-content-center">
 
-      //           <div class="col-4 mb-3 px-0">
-      //             <div
-      //               class="transform-uppercase ct_font__mob_32 ct_font__32 ct_font__desk__32 weight-bold ct_lh__sm ct_m__0 ">
-      //               50% Off<br><span class="weight-normal">Frames</span>
-      //             </div>
+          //           <div class="col-4 mb-3 px-0">
+          //             <div
+          //               class="transform-uppercase ct_font__mob_32 ct_font__32 ct_font__desk__32 weight-bold ct_lh__sm ct_m__0 ">
+          //               50% Off<br><span class="weight-normal">Frames</span>
+          //             </div>
 
-      //           </div>
-      //           <div class="col-1 ct_font__70 ct_font__mob_60 ct_font__desk__70 align-self-center ct_p__0 px-0"
-      //             style="line-height:1">
-      //             +
-      //           </div>
-      //           <span class="col-4 px-0">
-      //             <span
-      //               class="transform-uppercase ct_font__mob_32 ct_font__32 ct_font__desk__32 ct_lh__sm weight-bold ct_m__0 ct_w-0"
-      //               style="width: 62%;">
-      //               60% Off<br><span class="weight-normal">Lenses</span>
-      //             </span>
+          //           </div>
+          //           <div class="col-1 ct_font__70 ct_font__mob_60 ct_font__desk__70 align-self-center ct_p__0 px-0"
+          //             style="line-height:1">
+          //             +
+          //           </div>
+          //           <span class="col-4 px-0">
+          //             <span
+          //               class="transform-uppercase ct_font__mob_32 ct_font__32 ct_font__desk__32 ct_lh__sm weight-bold ct_m__0 ct_w-0"
+          //               style="width: 62%;">
+          //               60% Off<br><span class="weight-normal">Lenses</span>
+          //             </span>
 
-      //           </span>
-      //         </div>
-      //       </a>
-      //       <div class="align-items-center justify-content-center pt-2 ct_mb__50 d-flex flex-column flex-lg-row "><a href="#"
-      //           id="btn-sign-up" class="emailSignUp btn-cta ml-md-0 mx-2 d-inline-block mb-md-0 mb-2 ct_w__mob__90"
-      //           style="background: #AB2317; color: #fff !important;">SIGN UP</a>
-      //         <a href="#" class="btn-cta siteSignIn mx-2 mr-md-0 d-inline-block "
-      //           style="background: transparent;color: #fff !important;border: 1px solid white !important;">SHOP NOW</a>
-      //       </div>
-      //     </div>
+          //           </span>
+          //         </div>
+          //       </a>
+          //       <div class="align-items-center justify-content-center pt-2 ct_mb__50 d-flex flex-column flex-lg-row "><a href="#"
+          //           id="btn-sign-up" class="emailSignUp btn-cta ml-md-0 mx-2 d-inline-block mb-md-0 mb-2 ct_w__mob__90"
+          //           style="background: #AB2317; color: #fff !important;">SIGN UP</a>
+          //         <a href="#" class="btn-cta siteSignIn mx-2 mr-md-0 d-inline-block "
+          //           style="background: transparent;color: #fff !important;border: 1px solid white !important;">SHOP NOW</a>
+          //       </div>
+          //     </div>
 
-      //   </div>
-      // </div>
-      //    ` );
+          //   </div>
+          // </div>
+          //    ` );
 
-      //       }
-    }
-    else
-      if (
-        (checkDate >= "250714" && checkDate <= "250727") ||
-        (fdFncs.vars.isTest >= "250714" && fdFncs.vars.isTest <= "250727")
-      ) {
-        //hero slider promotion
-        $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-        $("#hero-slider").append(
+          //       }
+        }
+        else
+          if (
+            (checkDate >= "250714" && checkDate <= "250727") ||
+            (fdFncs.vars.isTest >= "250714" && fdFncs.vars.isTest <= "250727")
+          ) {
+            //hero slider promotion
+            $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+            $("#hero-slider").append(
 
 
-          `
+              `
 
           <style>
         @media (min-width: 1200px) and (max-width: 1400px) {
@@ -406,15 +478,15 @@
         </div>
     </div>
     ` );
-      } else
-        if (
-          (checkDate >= "250714" && checkDate <= "250727") ||
-          (fdFncs.vars.isTest >= "250714" && fdFncs.vars.isTest <= "250727")
-        ) {
-          //hero slider promotion
-          $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-          $("#hero-slider").append(
-            `
+          } else
+            if (
+              (checkDate >= "250714" && checkDate <= "250727") ||
+              (fdFncs.vars.isTest >= "250714" && fdFncs.vars.isTest <= "250727")
+            ) {
+              //hero slider promotion
+              $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+              $("#hero-slider").append(
+                `
         <li>
 <div class="ct_space">
     <div class="ct_banner ct_hero">
@@ -458,14 +530,14 @@
     </div>
 </div>
    </li>` );
-        } else if (
-          (checkDate >= "250728" && checkDate <= "250824") ||
-          (fdFncs.vars.isTest >= "250728" && fdFncs.vars.isTest <= "250824")
-        ) {
-          //hero slider promotion
-          $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-          $("#hero-slider").append(
-            `
+            } else if (
+              (checkDate >= "250728" && checkDate <= "250824") ||
+              (fdFncs.vars.isTest >= "250728" && fdFncs.vars.isTest <= "250824")
+            ) {
+              //hero slider promotion
+              $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+              $("#hero-slider").append(
+                `
         <li>
 <style>
     @media (min-width: 1200px) and  (max-width: 1400px){
@@ -533,15 +605,15 @@
     </div>
 </div>
    </li>` );
-        } else
-          if (
-            (checkDate >= "250714" && checkDate <= "250727") ||
-            (fdFncs.vars.isTest >= "250714" && fdFncs.vars.isTest <= "250727")
-          ) {
-            //hero slider promotion
-            $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-            $("#hero-slider").append(
-              `
+            } else
+              if (
+                (checkDate >= "250714" && checkDate <= "250727") ||
+                (fdFncs.vars.isTest >= "250714" && fdFncs.vars.isTest <= "250727")
+              ) {
+                //hero slider promotion
+                $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                $("#hero-slider").append(
+                  `
         <li>
 <div class="ct_space">
     <div class="ct_banner ct_hero">
@@ -585,8 +657,8 @@
     </div>
 </div>
    </li>` )
-            $("#hero-slider").append(
-              `
+                $("#hero-slider").append(
+                  `
      <li>
       <style>
          @media (max-width: 1200px) {
@@ -673,16 +745,16 @@
 </div>
 </div>
    </li>`
-            );
-          } else
-            if (
-              (checkDate >= "250704" && checkDate <= "250713") ||
-              (fdFncs.vars.isTest >= "250704" && fdFncs.vars.isTest <= "250713")
-            ) {
-              //hero slider promotion
-              $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-              $("#hero-slider").append(
-                `
+                );
+              } else
+                if (
+                  (checkDate >= "250704" && checkDate <= "250713") ||
+                  (fdFncs.vars.isTest >= "250704" && fdFncs.vars.isTest <= "250713")
+                ) {
+                  //hero slider promotion
+                  $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                  $("#hero-slider").append(
+                    `
         <li>
 <style>
   #pb_200{
@@ -779,8 +851,8 @@
 </div>
 </div>
    </li>`)
-              $("#hero-slider").append(
-                `
+                  $("#hero-slider").append(
+                    `
         <li>
 <div class="ct_space">
     <div class="ct_banner ct_hero">
@@ -824,8 +896,8 @@
     </div>
 </div>
    </li>` )
-              $("#hero-slider").append(
-                `
+                  $("#hero-slider").append(
+                    `
      <li>
       <style>
          @media (max-width: 1200px) {
@@ -912,16 +984,16 @@
 </div>
 </div>
    </li>`
-              );
-            } else
+                  );
+                } else
 
-              if (
-                (checkDate >= "250616" && checkDate <= "250703") ||
-                (fdFncs.vars.isTest >= "250616" && fdFncs.vars.isTest <= "250703")
-              ) {
-                //hero slider promotion
-                $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-                $("#hero-slider").append(`
+                  if (
+                    (checkDate >= "250616" && checkDate <= "250703") ||
+                    (fdFncs.vars.isTest >= "250616" && fdFncs.vars.isTest <= "250703")
+                  ) {
+                    //hero slider promotion
+                    $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                    $("#hero-slider").append(`
    <li>
 <div class="ct_space">
     <div class="ct_banner ct_hero">
@@ -975,17 +1047,17 @@
 </div>
    </li>
 `
-                );
+                    );
 
-              } else
-                if (
-                  (checkDate >= "250612" && checkDate <= "250615") ||
-                  (fdFncs.vars.isTest >= "250612" && fdFncs.vars.isTest <= "250615")
-                ) {
-                  //hero slider promotion
-                  $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-                  $("#hero-slider").append(
-                    `
+                  } else
+                    if (
+                      (checkDate >= "250612" && checkDate <= "250615") ||
+                      (fdFncs.vars.isTest >= "250612" && fdFncs.vars.isTest <= "250615")
+                    ) {
+                      //hero slider promotion
+                      $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                      $("#hero-slider").append(
+                        `
      <li>
 <div class="ct_space">
   <div class="ct_banner ct_hero">
@@ -1038,15 +1110,15 @@
   </div>
 </div>
    </li>`
-                  );
-                } else
-                  if (
-                    (checkDate >= "250529" && checkDate <= "250611") ||
-                    (fdFncs.vars.isTest >= "250529" && fdFncs.vars.isTest <= "250611")
-                  ) {
-                    //hero slider promotion
-                    $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-                    $("#hero-slider").append(`
+                      );
+                    } else
+                      if (
+                        (checkDate >= "250529" && checkDate <= "250611") ||
+                        (fdFncs.vars.isTest >= "250529" && fdFncs.vars.isTest <= "250611")
+                      ) {
+                        //hero slider promotion
+                        $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                        $("#hero-slider").append(`
    <li>
 
 <div class="ct_space">
@@ -1100,173 +1172,173 @@
   </div>
 </div>
    </li>`
-                    )
-                    $("#hero-slider").append(
-                      `
-     <li>
-   <style>
-
-  #clearance_btn{
-    border: 1px solid #fff;
-    background: #fff !important;
-    color: #000 !important;
-    font-size: 16px;
-  }
-  @media (min-width: 1400px) {
-#thirdHeroImg {
-width: auto;
-left: 33%;
-}
-}
-
-@media (min-width: 1200px) and (max-width: 1440px) {
-#thirdHeroImg {
-width: auto;
-left: 33%;
-}
-}
-
-@media (max-width: 1200px) {
-#thirdHeroImg {
-padding: 0px !important;
-background-image: url("https://images.framesdirect.com/image/upload/v1745089591/homePage/HP_CLEARANCE_M.png") !important;
-}
-}
-  </style>
-<div class="ct_space">
-<div class="ct_banner ct_hero">
-<a href="/sale" aria-label="sale" style="color: white;">
-<div class="ct_assets__container">
-<picture class="ct_skeleton">
-  <img
-    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjXKco/p8BB2DEJwkAmwIDzfz492EAAAAASUVORK5CYII="
-    alt="structure image" />
-</picture>
-<picture class="ct_img">
-  <img src="https://images.framesdirect.com/image/upload/v1745089592/homePage/HP_CLEARANCE_D.jpg"
-    fetchpriority="high" alt="Clearance glasses"
-    width="3840" height="1108" />
-</picture>
-</div>
-
-<div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0 " id="thirdHeroImg" style="color: white !important;">
-<div class="mt-4 mt-lg-0">
-  <div class="ct_font__mob_28 ct_font__30 ct_font__desk__30 weight-bold ct_lh__sm ct_m__0 ct_mb__15 ">
-    Clearance Deals
-  </div>
-  <div class="ct_font__24 2 ct_font__desk__24 align-self-center ct_p__0 ct_mt__30 weight-medium" style="line-height: 1">
-    Save up to 
-  </div>
-  <div>
-    <p class="ct_font__mob_50 ct_font__64 ct_font__desk__50 weight-bold ct_m__0 transform-uppercase ct_mb__20">
-      <span class="d-block d-sm-inline">50% off</span>
-      <span class="d-block d-sm-inline ct_font__mob_32" style="line-height: 1;">frames</span>
-    </p>
-    <p class="ct_font__mob_30 ct_font__32 ct_font__desk__32 ct_lh__sm weight-bold ct_m__0 ct_mb__20 transform-uppercase">
-      + 60% off Lenses
-    </p>
-  </div>
-  <a href="/sale" class=" btn-cta ct_m__mob__10 ct_mb__mob__50 ct_mt__30 " id="clearance_btn">
-   SHOP CLEARANCE
-  </a>
-</div>
-</div>
-</a>
-</div>
-</div>
-   </li>`
-                    );
-                  } else
-                    if (
-                      (checkDate >= "250527" && checkDate <= "250528") ||
-                      (fdFncs.vars.isTest >= "250527" && fdFncs.vars.isTest <= "250528")
-                    ) {
-                      //hero slider promotion
-                      $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-                      $("#hero-slider").append(
-                        `   
-     <li>
-   <style>
-
-  #clearance_btn{
-    border: 1px solid #fff;
-    background: #fff !important;
-    color: #000 !important;
-    font-size: 16px;
-  }
-  @media (min-width: 1400px) {
-#thirdHeroImg {
-width: auto;
-left: 33%;
-}
-}
-
-@media (min-width: 1200px) and (max-width: 1440px) {
-#thirdHeroImg {
-width: auto;
-left: 33%;
-}
-}
-
-@media (max-width: 1200px) {
-#thirdHeroImg {
-padding: 0px !important;
-background-image: url("https://images.framesdirect.com/image/upload/v1745089591/homePage/HP_CLEARANCE_M.png") !important;
-}
-}
-  </style>
-<div class="ct_space">
-<div class="ct_banner ct_hero">
-<a href="/sale" aria-label="sale" style="color: white;">
-<div class="ct_assets__container">
-<picture class="ct_skeleton">
-  <img
-    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjXKco/p8BB2DEJwkAmwIDzfz492EAAAAASUVORK5CYII="
-    alt="structure image" />
-</picture>
-<picture class="ct_img">
-  <img src="https://images.framesdirect.com/image/upload/v1745089592/homePage/HP_CLEARANCE_D.jpg"
-    fetchpriority="high" alt="Clearance glasses"
-    width="3840" height="1108" />
-</picture>
-</div>
-
-<div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0 " id="thirdHeroImg" style="color: white !important;">
-<div class="mt-4 mt-lg-0">
-  <div class="ct_font__mob_28 ct_font__30 ct_font__desk__30 weight-bold ct_lh__sm ct_m__0 ct_mb__15 ">
-    Clearance Deals
-  </div>
-  <div class="ct_font__24 2 ct_font__desk__24 align-self-center ct_p__0 ct_mt__30 weight-medium" style="line-height: 1">
-    Save up to 
-  </div>
-  <div>
-    <p class="ct_font__mob_50 ct_font__64 ct_font__desk__50 weight-bold ct_m__0 transform-uppercase ct_mb__20">
-      <span class="d-block d-sm-inline">50% off</span>
-      <span class="d-block d-sm-inline ct_font__mob_32" style="line-height: 1;">frames</span>
-    </p>
-    <p class="ct_font__mob_30 ct_font__32 ct_font__desk__32 ct_lh__sm weight-bold ct_m__0 ct_mb__20 transform-uppercase">
-      + 60% off Lenses
-    </p>
-  </div>
-  <a href="/sale" class=" btn-cta ct_m__mob__10 ct_mb__mob__50 ct_mt__30 " id="clearance_btn">
-   SHOP CLEARANCE
-  </a>
-</div>
-</div>
-</a>
-</div>
-</div>
-   </li>`
-                      );
-                    } else
-                      if (
-                        (checkDate >= "250519" && checkDate <= "250526") ||
-                        (fdFncs.vars.isTest >= "250519" && fdFncs.vars.isTest <= "250526")
-                      ) {
-                        //hero slider promotion
-                        $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                        )
                         $("#hero-slider").append(
-                          `<div class="ct_space">
+                          `
+     <li>
+   <style>
+
+  #clearance_btn{
+    border: 1px solid #fff;
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 16px;
+  }
+  @media (min-width: 1400px) {
+#thirdHeroImg {
+width: auto;
+left: 33%;
+}
+}
+
+@media (min-width: 1200px) and (max-width: 1440px) {
+#thirdHeroImg {
+width: auto;
+left: 33%;
+}
+}
+
+@media (max-width: 1200px) {
+#thirdHeroImg {
+padding: 0px !important;
+background-image: url("https://images.framesdirect.com/image/upload/v1745089591/homePage/HP_CLEARANCE_M.png") !important;
+}
+}
+  </style>
+<div class="ct_space">
+<div class="ct_banner ct_hero">
+<a href="/sale" aria-label="sale" style="color: white;">
+<div class="ct_assets__container">
+<picture class="ct_skeleton">
+  <img
+    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjXKco/p8BB2DEJwkAmwIDzfz492EAAAAASUVORK5CYII="
+    alt="structure image" />
+</picture>
+<picture class="ct_img">
+  <img src="https://images.framesdirect.com/image/upload/v1745089592/homePage/HP_CLEARANCE_D.jpg"
+    fetchpriority="high" alt="Clearance glasses"
+    width="3840" height="1108" />
+</picture>
+</div>
+
+<div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0 " id="thirdHeroImg" style="color: white !important;">
+<div class="mt-4 mt-lg-0">
+  <div class="ct_font__mob_28 ct_font__30 ct_font__desk__30 weight-bold ct_lh__sm ct_m__0 ct_mb__15 ">
+    Clearance Deals
+  </div>
+  <div class="ct_font__24 2 ct_font__desk__24 align-self-center ct_p__0 ct_mt__30 weight-medium" style="line-height: 1">
+    Save up to 
+  </div>
+  <div>
+    <p class="ct_font__mob_50 ct_font__64 ct_font__desk__50 weight-bold ct_m__0 transform-uppercase ct_mb__20">
+      <span class="d-block d-sm-inline">50% off</span>
+      <span class="d-block d-sm-inline ct_font__mob_32" style="line-height: 1;">frames</span>
+    </p>
+    <p class="ct_font__mob_30 ct_font__32 ct_font__desk__32 ct_lh__sm weight-bold ct_m__0 ct_mb__20 transform-uppercase">
+      + 60% off Lenses
+    </p>
+  </div>
+  <a href="/sale" class=" btn-cta ct_m__mob__10 ct_mb__mob__50 ct_mt__30 " id="clearance_btn">
+   SHOP CLEARANCE
+  </a>
+</div>
+</div>
+</a>
+</div>
+</div>
+   </li>`
+                        );
+                      } else
+                        if (
+                          (checkDate >= "250527" && checkDate <= "250528") ||
+                          (fdFncs.vars.isTest >= "250527" && fdFncs.vars.isTest <= "250528")
+                        ) {
+                          //hero slider promotion
+                          $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                          $("#hero-slider").append(
+                            `   
+     <li>
+   <style>
+
+  #clearance_btn{
+    border: 1px solid #fff;
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 16px;
+  }
+  @media (min-width: 1400px) {
+#thirdHeroImg {
+width: auto;
+left: 33%;
+}
+}
+
+@media (min-width: 1200px) and (max-width: 1440px) {
+#thirdHeroImg {
+width: auto;
+left: 33%;
+}
+}
+
+@media (max-width: 1200px) {
+#thirdHeroImg {
+padding: 0px !important;
+background-image: url("https://images.framesdirect.com/image/upload/v1745089591/homePage/HP_CLEARANCE_M.png") !important;
+}
+}
+  </style>
+<div class="ct_space">
+<div class="ct_banner ct_hero">
+<a href="/sale" aria-label="sale" style="color: white;">
+<div class="ct_assets__container">
+<picture class="ct_skeleton">
+  <img
+    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAACCAYAAACUn8ZgAAAAAXNSR0IArs4c6QAAABNJREFUGFdjXKco/p8BB2DEJwkAmwIDzfz492EAAAAASUVORK5CYII="
+    alt="structure image" />
+</picture>
+<picture class="ct_img">
+  <img src="https://images.framesdirect.com/image/upload/v1745089592/homePage/HP_CLEARANCE_D.jpg"
+    fetchpriority="high" alt="Clearance glasses"
+    width="3840" height="1108" />
+</picture>
+</div>
+
+<div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0 " id="thirdHeroImg" style="color: white !important;">
+<div class="mt-4 mt-lg-0">
+  <div class="ct_font__mob_28 ct_font__30 ct_font__desk__30 weight-bold ct_lh__sm ct_m__0 ct_mb__15 ">
+    Clearance Deals
+  </div>
+  <div class="ct_font__24 2 ct_font__desk__24 align-self-center ct_p__0 ct_mt__30 weight-medium" style="line-height: 1">
+    Save up to 
+  </div>
+  <div>
+    <p class="ct_font__mob_50 ct_font__64 ct_font__desk__50 weight-bold ct_m__0 transform-uppercase ct_mb__20">
+      <span class="d-block d-sm-inline">50% off</span>
+      <span class="d-block d-sm-inline ct_font__mob_32" style="line-height: 1;">frames</span>
+    </p>
+    <p class="ct_font__mob_30 ct_font__32 ct_font__desk__32 ct_lh__sm weight-bold ct_m__0 ct_mb__20 transform-uppercase">
+      + 60% off Lenses
+    </p>
+  </div>
+  <a href="/sale" class=" btn-cta ct_m__mob__10 ct_mb__mob__50 ct_mt__30 " id="clearance_btn">
+   SHOP CLEARANCE
+  </a>
+</div>
+</div>
+</a>
+</div>
+</div>
+   </li>`
+                          );
+                        } else
+                          if (
+                            (checkDate >= "250519" && checkDate <= "250526") ||
+                            (fdFncs.vars.isTest >= "250519" && fdFncs.vars.isTest <= "250526")
+                          ) {
+                            //hero slider promotion
+                            $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                            $("#hero-slider").append(
+                              `<div class="ct_space">
   <div class="ct_banner ct_hero">
   <a  href="/email/customer-appreciation-dp" aria-label="customer week sale" class="w-100">
   <div class="ct_assets__container">
@@ -1358,16 +1430,16 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
   </div>
   </div>
   </div>`
-                        );
-                      } else
-                        if (
-                          (checkDate >= "250508" && checkDate <= "250511") ||
-                          (fdFncs.vars.isTest >= "250508" && fdFncs.vars.isTest <= "250511")
-                        ) {
-                          //hero slider promotion
-                          $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-                          $("#hero-slider").append(
-                            `<li>
+                            );
+                          } else
+                            if (
+                              (checkDate >= "250508" && checkDate <= "250511") ||
+                              (fdFncs.vars.isTest >= "250508" && fdFncs.vars.isTest <= "250511")
+                            ) {
+                              //hero slider promotion
+                              $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                              $("#hero-slider").append(
+                                `<li>
    <style>
 
   #clearance_btn{
@@ -1439,15 +1511,15 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
 </div>
 </div>
    </li>`
-                          );
-                        } else if (
-                          (checkDate >= "250501" && checkDate <= "250507") ||
-                          (fdFncs.vars.isTest >= "250501" && fdFncs.vars.isTest <= "250507")
-                        ) {
-                          //hero slider promotion
-                          $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-                          $("#hero-slider").append(
-                            `<li>
+                              );
+                            } else if (
+                              (checkDate >= "250501" && checkDate <= "250507") ||
+                              (fdFncs.vars.isTest >= "250501" && fdFncs.vars.isTest <= "250507")
+                            ) {
+                              //hero slider promotion
+                              $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                              $("#hero-slider").append(
+                                `<li>
           <style>
   @media (min-width: 1400px) {
 #secondHeroImg {
@@ -1638,15 +1710,15 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
 </div>
 </div>
    </li>`
-                          );
-                        } else if (
-                          (checkDate >= "250428" && checkDate <= "250507") ||
-                          (fdFncs.vars.isTest >= "250428" && fdFncs.vars.isTest <= "250507")
-                        ) {
-                          //hero slider promotion
-                          $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-                          $("#hero-slider").append(
-                            `<li>
+                              );
+                            } else if (
+                              (checkDate >= "250428" && checkDate <= "250507") ||
+                              (fdFncs.vars.isTest >= "250428" && fdFncs.vars.isTest <= "250507")
+                            ) {
+                              //hero slider promotion
+                              $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                              $("#hero-slider").append(
+                                `<li>
    <style>
 
   #clearance_btn{
@@ -1718,13 +1790,13 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
 </div>
 </div>
    </li>`
-                          );
-                        } else if (
-                          getCookie("fdRecognized") !== undefined &&
-                          ((checkDate >= "250417" && checkDate <= "250427") ||
-                            (fdFncs.vars.isTest >= "250417" && fdFncs.vars.isTest <= "250427"))
-                        ) {
-                          let heroBanner = `
+                              );
+                            } else if (
+                              getCookie("fdRecognized") !== undefined &&
+                              ((checkDate >= "250417" && checkDate <= "250427") ||
+                                (fdFncs.vars.isTest >= "250417" && fdFncs.vars.isTest <= "250427"))
+                            ) {
+                              let heroBanner = `
 
 
 <div class="ct_space">
@@ -1825,12 +1897,12 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
   </div>
   </div>
      `;
-                          $(".heroBanner").replaceWith(heroBanner);
-                        } else if (
-                          (checkDate >= "250417" && checkDate <= "250427") ||
-                          (fdFncs.vars.isTest >= "250417" && fdFncs.vars.isTest <= "250427")
-                        ) {
-                          let heroBanner = `
+                              $(".heroBanner").replaceWith(heroBanner);
+                            } else if (
+                              (checkDate >= "250417" && checkDate <= "250427") ||
+                              (fdFncs.vars.isTest >= "250417" && fdFncs.vars.isTest <= "250427")
+                            ) {
+                              let heroBanner = `
 <div class="ct_space">
   <div class="ct_banner ct_hero">
     <a href="/email/customer-promo-dp" aria-label="customer week sale" class="w-100">
@@ -1883,15 +1955,15 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
   </div>
 </div>
       `;
-                          $(".heroBanner").replaceWith(heroBanner);
-                        } else if (
-                          (checkDate >= "250411" && checkDate <= "250416") ||
-                          (fdFncs.vars.isTest >= "250411" && fdFncs.vars.isTest <= "250416")
-                        ) {
-                          //hero slider promotion
-                          $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-                          $("#hero-slider").append(
-                            `<li>
+                              $(".heroBanner").replaceWith(heroBanner);
+                            } else if (
+                              (checkDate >= "250411" && checkDate <= "250416") ||
+                              (fdFncs.vars.isTest >= "250411" && fdFncs.vars.isTest <= "250416")
+                            ) {
+                              //hero slider promotion
+                              $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+                              $("#hero-slider").append(
+                                `<li>
        <style>
           @media (min-width: 1200px) {
           #secondHeroImg{
@@ -1962,12 +2034,12 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
     </div>
   </div>
       </li>`
-                          );
-                        } else if (
-                          (checkDate >= "250407" && checkDate <= "250410") ||
-                          (fdFncs.vars.isTest >= "250407" && fdFncs.vars.isTest <= "250410")
-                        ) {
-                          let heroBanner = `
+                              );
+                            } else if (
+                              (checkDate >= "250407" && checkDate <= "250410") ||
+                              (fdFncs.vars.isTest >= "250407" && fdFncs.vars.isTest <= "250410")
+                            ) {
+                              let heroBanner = `
       <style>
   @media (max-width: 768px) {
     #firstHeroImg{
@@ -2042,16 +2114,16 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
       </a>
     </div>
   </div>`;
-                          $(".heroBanner").replaceWith(heroBanner);
-                        } else if (
-                          (checkDate >= "250331" && checkDate <= "250406") ||
-                          (fdFncs.vars.isTest >= "250320" && fdFncs.vars.isTest <= "250406")
-                        ) {
-                          //hero slider promotion
-                          $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>'); //Required to wrap around the existing heroBanner class for the first slide.
-                          $("#hero-slider").append(
-                            //This appends the second slide in the hero slider (second list item)
-                            `<li>
+                              $(".heroBanner").replaceWith(heroBanner);
+                            } else if (
+                              (checkDate >= "250331" && checkDate <= "250406") ||
+                              (fdFncs.vars.isTest >= "250320" && fdFncs.vars.isTest <= "250406")
+                            ) {
+                              //hero slider promotion
+                              $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>'); //Required to wrap around the existing heroBanner class for the first slide.
+                              $("#hero-slider").append(
+                                //This appends the second slide in the hero slider (second list item)
+                                `<li>
       <style>
   @media (min-width: 1200px) {
    .second_banner{
@@ -2166,12 +2238,12 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
 </div>
 
       </li>`
-                          );
-                        } else if (
-                          (checkDate >= "250320" && checkDate <= "250330") ||
-                          (fdFncs.vars.isTest >= "250320" && fdFncs.vars.isTest <= "250330")
-                        ) {
-                          let heroBanner = `
+                              );
+                            } else if (
+                              (checkDate >= "250320" && checkDate <= "250330") ||
+                              (fdFncs.vars.isTest >= "250320" && fdFncs.vars.isTest <= "250330")
+                            ) {
+                              let heroBanner = `
 <style>
   .ct_text__overlay {
     background: #E3DAC9;
@@ -2273,12 +2345,12 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
   </div>
 </div>
 `;
-                          $(".heroBanner").replaceWith(heroBanner);
-                        } else if (
-                          (checkDate >= "250313" && checkDate <= "250319") ||
-                          (fdFncs.vars.isTest >= "250313" && fdFncs.vars.isTest <= "250319")
-                        ) {
-                          let heroBanner = `
+                              $(".heroBanner").replaceWith(heroBanner);
+                            } else if (
+                              (checkDate >= "250313" && checkDate <= "250319") ||
+                              (fdFncs.vars.isTest >= "250313" && fdFncs.vars.isTest <= "250319")
+                            ) {
+                              let heroBanner = `
   <style>
       .ct_text__overlay {
     background: #C7D7D6;
@@ -2393,12 +2465,12 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
             </a>
           </div>
         </div>`;
-                          $(".heroBanner").replaceWith(heroBanner);
-                        } else if (
-                          (checkDate >= "250224" && checkDate <= "250312") ||
-                          (fdFncs.vars.isTest >= "250224" && fdFncs.vars.isTest <= "250312")
-                        ) {
-                          let heroBanner = `
+                              $(".heroBanner").replaceWith(heroBanner);
+                            } else if (
+                              (checkDate >= "250224" && checkDate <= "250312") ||
+                              (fdFncs.vars.isTest >= "250224" && fdFncs.vars.isTest <= "250312")
+                            ) {
+                              let heroBanner = `
 
           <div class="ct_space">
             <div class="ct_banner ct_hero ct_mb__10">
@@ -2491,9 +2563,9 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
       </div>
     </div>
        `;
-                          $(".heroBanner").replaceWith(heroBanner);
-                        } else {
-                        }
+                              $(".heroBanner").replaceWith(heroBanner);
+                            } else {
+                            }
   };
 
   const updateSecondBanner = () => {
