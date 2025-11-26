@@ -5,20 +5,20 @@
     $("#cata_hdr").text("Ray-Ban Meta (Gen 1)");
   }
   if (window.location.href.includes("/ray-ban-meta/brand") && window.location.href.includes("collection=1493")) {
-    $("#cata_hdr").text("Ray-Ban Meta (Gen 2) | AI Glasses starting from $95 a month");
+    $("#cata_hdr").text("Ray-Ban Meta (Gen 2) | AI Glasses starting from $95 a month with Klarna and PayPal");
   }
   if (pgURLPath("/oakley-meta/brand")) {
-    $("#cata_hdr").text("Oakley Meta | AI Glasses starting from $100 a month");
+    $("#cata_hdr").text("Oakley Meta | AI Glasses starting from $100 a month with Klarna and PayPal");
   }
 
   if (pgURLPath("/gucci/brand")) {
-    $("#cata_hdr").text("Gucci | Glasses starting from $50 a month");
+    $("#cata_hdr").text("Gucci | Glasses starting from $50 a month with Klarna and PayPal");
   }
   if (pgURLPath("/oakley/brand")) {
-    $("#cata_hdr").text("Oakley | Glasses starting from $36 a month");
+    $("#cata_hdr").text("Oakley | Glasses starting from $36 a month with Klarna and PayPal");
   }
   if (pgURLPath("/ai-glasses/")) {
-    $("#cata_hdr").text("AI Glasses | Starting from $60 a month");
+    $("#cata_hdr").text("AI Glasses | Starting from $60 a month with Klarna and PayPal");
   }
   if (((checkDate >= '251128' && checkDate <= '251128') || (fdFncs.vars.isTest >= '251128' && fdFncs.vars.isTest <= '251128'))) {
     var locName = [
@@ -36,7 +36,8 @@
     ];
 
     // Specific sale landing page
-    if (pgURLPath("/promotions/black-friday-dp")) {
+    if (pgURLPath("/promotions/black-friday-dp") || pgURLPath("/email/black-friday")) {
+
       var selectedCrumb = "Black Friday 2025 Eyewear Sale ";
       var topText = "";
       var bottomText = "Last Chance Black Friday Savings – Shop Top Eyewear Brands Before They’re Gone";
