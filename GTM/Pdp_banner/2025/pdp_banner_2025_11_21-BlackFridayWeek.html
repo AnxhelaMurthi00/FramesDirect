@@ -28,6 +28,91 @@
       (checkDate >= "251121" && checkDate <= "251127") ||
       (fdFncs.vars.isTest >= "251121" && fdFncs.vars.isTest <= "251127")
     ) {
+      $(".lens-bar-holder").remove();
+      if (
+
+        (
+          $('h1:contains("Prescription")').length > 0 ||
+          $('h1:contains("Eyeglasses")').length > 0
+        ) && (
+          $('h1:contains("Ray-Ban Meta")').length > 0 ||
+          $('h1:contains("Oakley Meta")').length > 0
+        )
+
+      ) {
+
+        // EXTRA10 META banner
+        $('<div class="lens-bar-holder mx-0 mb-3 mt-4">' +
+          '<div class="lens-bar d-block color-black px-2 size-12 text-left" ' +
+          'style="background: linear-gradient(270deg, #6299A7 0%, #BEE2F7 99%); padding: 10px; border-radius: 5px;">' +
+          'Use code <b>EXTRA10</b> to save an extra <b>10% on prescription lenses</b>' +
+          '</div>' +
+          '</div>'
+        ).prependTo("#prod-header-right");
+        // ---------- DISCOUNTED BADGE ----------
+        var amountSavings = getAmountSavings(fdFncs.currentProduct);
+        var savingsText = "";
+        if (amountSavings > 0) {
+          console.log(amountSavings);
+          savingsText =
+            '<span style="float:right; font-weight:700; color:black; width: auto;">-$' +
+            amountSavings.toFixed(2) +
+            "</span>";
+        } else {
+          savingsText = '<span style="display: none;"></span>';
+        }
+
+        $('<div class="lens-bar-holder mx-0 mb-3"><div class="lens-bar d-flex color-black px-2 size-12 text-left " style="justify-content: space-between;  background: linear-gradient(90deg, rgba(190,226,247,1) 0%, rgba(98,153,167,1) 100%);  border-radius: 5px;"><div><b> Your Black Friday Savings</b></div> <div id="discountPdp" style="display: inline-flex;justify-content: end;align-items: center;"></div>' +
+          savingsText +
+          "</div></div>"
+        ).prependTo("#prod-header-right");
+
+        return;
+      }
+
+
+
+
+      // ---------- PRESCRIPTION + BRAND BANNER ----------
+      if (
+        $('h1:contains("Prescription")').length > 0 && (
+          $('h1:contains("Costa")').length > 0 ||
+          ($('h1:contains("Oakley")').length > 0 && $('h1:contains("Oakley Meta")').length === 0) ||
+          $('h1:contains("Randolph")').length > 0 ||
+          $('h1:contains("Maui Jim")').length > 0
+        )
+      ) {
+
+        // Brand-specific 30% off banner
+        $('<div class="lens-bar-holder mx-0 mb-3 mt-4">' +
+          '<div class="lens-bar d-block color-black px-2 size-12 text-left" ' +
+          'style="background:#EFC681; padding: 10px; border-radius: 5px; font-weight: 700;">' +
+          '30% off branded lenses this Black Friday at checkout' +
+          '</div>' +
+          '</div>'
+        ).prependTo("#prod-header-right");
+
+        // ---------- DISCOUNTED BADGE ----------
+        var amountSavings = getAmountSavings(fdFncs.currentProduct);
+        var savingsText = "";
+        if (amountSavings > 0) {
+          console.log(amountSavings);
+          savingsText =
+            '<span style="float:right; font-weight:700; color:black; width: auto;">-$' +
+            amountSavings.toFixed(2) +
+            "</span>";
+        } else {
+          savingsText = '<span style="display: none;"></span>';
+        }
+
+        $('<div class="lens-bar-holder mx-0 mb-3"><div class="lens-bar d-flex color-black px-2 size-12 text-left " style="justify-content: space-between;  background: linear-gradient(90deg, rgba(190,226,247,1) 0%, rgba(98,153,167,1) 100%);  border-radius: 5px;"><div><b> Your Black Friday Savings</b></div> <div id="discountPdp" style="display: inline-flex;justify-content: end;align-items: center;"></div>' +
+          savingsText +
+          "</div></div>"
+        ).prependTo("#prod-header-right");
+
+        return;
+      }
+
       // ---------- GENERIC PRESCRIPTION / EYEGLASSES BANNER ----------
       if (
         $('h1:contains("Prescription")').length > 0 ||
@@ -51,52 +136,6 @@
           "</div></div>"
         ).prependTo("#prod-header-right");
       }
-
-
-      // ----------AI GLASSES ----------
-      if (
-        $('h1:contains("Prescription")').length > 0 && (
-          $('h1:contains("Ray-Ban Meta")').length > 0 ||
-          $('h1:contains("Oakley Meta")').length > 0
-        )
-      ) {
-
-        // Brand-specific 30% off banner
-        $('<div class="lens-bar-holder mx-0 mb-3 mt-4">' +
-          '<div class="lens-bar d-block color-black px-2 size-12 text-left" ' +
-          'style="background: linear-gradient(270deg, #6299A7 0%, #BEE2F7 100%); padding: 10px; border-radius: 5px;">' +
-          'Use code <b>EXTRA10</b> to save an extra <b>10% on prescription lenses</b>' +
-          '</div>' +
-          '</div>'
-        ).prependTo("#prod-header-right");
-
-        return;
-      }
-
-
-
-      // ---------- PRESCRIPTION + BRAND BANNER ----------
-      if (
-        $('h1:contains("Prescription")').length > 0 && (
-          $('h1:contains("Costa")').length > 0 ||
-          ($('h1:contains("Oakley")').length > 0 && $('h1:contains("Oakley Meta")').length === 0) ||
-          $('h1:contains("Randolph")').length > 0 ||
-          $('h1:contains("Maui Jim")').length > 0
-        )
-      ) {
-
-        // Brand-specific 30% off banner
-        $('<div class="lens-bar-holder mx-0 mb-3 mt-4">' +
-          '<div class="lens-bar d-block color-black px-2 size-12 text-left" ' +
-          'style="background:#EFC681; padding: 10px; border-radius: 5px; font-weight: 700;">' +
-          '30% off branded lenses this Black Friday ' +
-          '</div>' +
-          '</div>'
-        ).prependTo("#prod-header-right");
-
-        return;
-      }
-
     }
     else
       if (
@@ -301,9 +340,10 @@
                         }
                       }
   }
-  $(function () {
+  setTimeout(function () {
     prodDiscoBanner();
-  });
+  }, 250);
+
 
 
   //////////////////

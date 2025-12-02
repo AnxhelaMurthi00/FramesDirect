@@ -3,6 +3,12 @@
 </h1>
 
 <style>
+    .insurance-label {
+        position: absolute;
+        z-index: 10;
+        /* low value so the menu stays above it */
+    }
+
     @media (max-width: 1200px) {
 
         #text-image-bf {
@@ -12,7 +18,8 @@
 
 
     }
-        @media (min-width: 1200px) and (max-width: 1400px) {
+
+    @media (min-width: 1200px) and (max-width: 1400px) {
         #text-image-bf {
             width: 500px !important;
             height: 110px;
@@ -42,8 +49,12 @@
     <div class="insurance-label">
         <span class="insurance-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11.65 23.46C9.14 23.46 6.66 20.98 4.67 16.48C3.05 12.8 2 8.33 2 5.09C2 4.67 2.34 4.34 2.75 4.34C5.37 4.34 9.38 1.94 11.1 0.22C11.24 0.08 11.43 0 11.64 0C11.85 0 12.03 0.08 12.17 0.22C13.89 1.94 17.9 4.34 20.52 4.34C20.94 4.34 21.29 4.68 21.29 5.09C21.29 8.33 20.24 12.81 18.62 16.48C16.63 20.98 14.16 23.46 11.64 23.46H11.65ZM11.65 1.81C11.65 1.81 11.59 1.81 11.57 1.84C9.68 3.47 6.39 5.4 3.65 5.78C3.59 5.78 3.54 5.84 3.55 5.91C3.71 8.87 4.7 12.78 6.07 15.88C7.77 19.74 9.81 21.96 11.66 21.96C13.51 21.96 15.55 19.74 17.25 15.88C18.62 12.78 19.61 8.87 19.76 5.91C19.76 5.85 19.72 5.79 19.66 5.78C16.91 5.4 13.62 3.48 11.73 1.84C11.71 1.82 11.68 1.81 11.65 1.81Z" fill="#247534"></path>
-                <path d="M10.29 15.2C10.09 15.2 9.9 15.12 9.76 14.98L7.04 12.26C6.9 12.12 6.82 11.93 6.82 11.73C6.82 11.53 6.9 11.34 7.04 11.2C7.18 11.06 7.37 10.98 7.57 10.98C7.77 10.98 7.96 11.06 8.1 11.2L10.2 13.3C10.2 13.3 10.25 13.34 10.28 13.34C10.31 13.34 10.34 13.33 10.36 13.3L15.18 8.47C15.32 8.33 15.51 8.25 15.71 8.25C15.91 8.25 16.1 8.33 16.24 8.47C16.38 8.61 16.46 8.8 16.46 9C16.46 9.2 16.38 9.39 16.24 9.54L10.8 14.98C10.66 15.12 10.47 15.2 10.27 15.2H10.29Z" fill="#247534"></path>
+                <path
+                    d="M11.65 23.46C9.14 23.46 6.66 20.98 4.67 16.48C3.05 12.8 2 8.33 2 5.09C2 4.67 2.34 4.34 2.75 4.34C5.37 4.34 9.38 1.94 11.1 0.22C11.24 0.08 11.43 0 11.64 0C11.85 0 12.03 0.08 12.17 0.22C13.89 1.94 17.9 4.34 20.52 4.34C20.94 4.34 21.29 4.68 21.29 5.09C21.29 8.33 20.24 12.81 18.62 16.48C16.63 20.98 14.16 23.46 11.64 23.46H11.65ZM11.65 1.81C11.65 1.81 11.59 1.81 11.57 1.84C9.68 3.47 6.39 5.4 3.65 5.78C3.59 5.78 3.54 5.84 3.55 5.91C3.71 8.87 4.7 12.78 6.07 15.88C7.77 19.74 9.81 21.96 11.66 21.96C13.51 21.96 15.55 19.74 17.25 15.88C18.62 12.78 19.61 8.87 19.76 5.91C19.76 5.85 19.72 5.79 19.66 5.78C16.91 5.4 13.62 3.48 11.73 1.84C11.71 1.82 11.68 1.81 11.65 1.81Z"
+                    fill="#247534"></path>
+                <path
+                    d="M10.29 15.2C10.09 15.2 9.9 15.12 9.76 14.98L7.04 12.26C6.9 12.12 6.82 11.93 6.82 11.73C6.82 11.53 6.9 11.34 7.04 11.2C7.18 11.06 7.37 10.98 7.57 10.98C7.77 10.98 7.96 11.06 8.1 11.2L10.2 13.3C10.2 13.3 10.25 13.34 10.28 13.34C10.31 13.34 10.34 13.33 10.36 13.3L15.18 8.47C15.32 8.33 15.51 8.25 15.71 8.25C15.91 8.25 16.1 8.33 16.24 8.47C16.38 8.61 16.46 8.8 16.46 9C16.46 9.2 16.38 9.39 16.24 9.54L10.8 14.98C10.66 15.12 10.47 15.2 10.27 15.2H10.29Z"
+                    fill="#247534"></path>
             </svg>
         </span>
         You can pay with insurance
@@ -55,23 +66,31 @@
             <a href="/email/designer-brands-dp" aria-label="sale">
                 <div class="ct_assets__container">
                     <picture class="ct_skeleton">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAAJ0lEQVR4AeyQMQ0AAAjDyByABfxrBBHruSZ9e1SzfaQqmAT9ofjDBwAA//8Eo/fWAAAABklEQVQDADQTGXOFR5AvAAAAAElFTkSuQmCC" alt="structure image">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAAJ0lEQVR4AeyQMQ0AAAjDyByABfxrBBHruSZ9e1SzfaQqmAT9ofjDBwAA//8Eo/fWAAAABklEQVQDADQTGXOFR5AvAAAAAElFTkSuQmCC"
+                            alt="structure image">
                     </picture>
                     <picture class="ct_img">
-                        <img src="https://images.framesdirect.com/image/upload/v1763551756/homePage/HP_W50-51-52_D.gif" fetchpriority="high" alt="The left is wearing Burberry be4389 Sunglasses, other is Versace ve1175b Eyeglasses" width="3840" height="1108" usemap="#image-map">
+                        <img src="https://images.framesdirect.com/image/upload/v1763551756/homePage/HP_W50-51-52_D.gif"
+                            fetchpriority="high"
+                            alt="The left is wearing Burberry be4389 Sunglasses, other is Versace ve1175b Eyeglasses"
+                            width="3840" height="1108" usemap="#image-map">
                     </picture>
                     <map name="image-map" class="map-slider">
-                        <area target="" alt="Gucci gg0200s Sunglasses" title="Gucci gg0200s Sunglasses" href="/gucci-gg0200s-sunglasses" coords="345,233,701,990" shape="rect">
-                        <area target="" alt="Versace ve1287 Eyeglasses" title="Versace ve1287 Eyeglasses" href="/versace-ve1287-eyeglasses" coords="2530,279,3178,514" shape="rect">
+                        <area target="" alt="Gucci gg0200s Sunglasses" title="Gucci gg0200s Sunglasses"
+                            href="/gucci-gg0200s-sunglasses" coords="345,233,701,990" shape="rect">
+                        <area target="" alt="Versace ve1287 Eyeglasses" title="Versace ve1287 Eyeglasses"
+                            href="/versace-ve1287-eyeglasses" coords="2530,279,3178,514" shape="rect">
 
                     </map>
                 </div>
 
             </a>
             <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0 " id="firstHeroImg">
-                <img src="https://images.framesdirect.com/image/upload/v1763551755/homePage/HOLIDAY_DEALS_TEXT_D.png" fetchpriority="high" class="img-fluid d-block  ct_pt__mob__30 ct_mob__hide" id="text-image-bf">
+                <img src="https://images.framesdirect.com/image/upload/v1763551755/homePage/HOLIDAY_DEALS_TEXT_D.png"
+                    fetchpriority="high" class="img-fluid d-block  ct_pt__mob__30 ct_mob__hide" id="text-image-bf">
 
-                    <img src="https://images.framesdirect.com/image/upload/v1763551755/homePage/HOLIDAY_DEALS_TEXT_M.png" fetchpriority="high" class="img-fluid d-block  ct_pt__mob__30 ct_desk__hide" id="text-image-bf">
+                <img src="https://images.framesdirect.com/image/upload/v1763551755/homePage/HOLIDAY_DEALS_TEXT_M.png"
+                    fetchpriority="high" class="img-fluid d-block  ct_pt__mob__30 ct_desk__hide" id="text-image-bf">
 
                 <div class="d-flex flex-wrap   align-items-center justify-content-center w-100">
 
@@ -79,16 +98,20 @@
                         <p class="ct_m__0 ct_font__mob_14 ct_font__18 ct_font__desk__18 weight-normal">
                             UP TO
                         </p>
-                        <div class="transform-uppercase ct_font__mob_32 ct_font__34 ct_font__desk__34 weight-bold ct_lh__sm ct_m__0 ">
+                        <div
+                            class="transform-uppercase ct_font__mob_32 ct_font__34 ct_font__desk__34 weight-bold ct_lh__sm ct_m__0 ">
                             50% Off<br><span class="weight-normal">Frames</span>
                         </div>
 
                     </div>
-                    <div class="col-1 ct_font__70 ct_font__mob_60 ct_font__desk__70 align-self-center ct_p__0 px-0" style="line-height:1">
+                    <div class="col-1 ct_font__70 ct_font__mob_60 ct_font__desk__70 align-self-center ct_p__0 px-0"
+                        style="line-height:1">
                         +
                     </div>
                     <span class="col-5 col-md-4 px-0 mt-0 mt-md-2">
-                        <span class="transform-uppercase ct_font__mob_32 ct_font__34 ct_font__desk__34 ct_lh__sm weight-bold ct_m__0 ct_w-0 mb-3" style="width: 62%;">
+                        <span
+                            class="transform-uppercase ct_font__mob_32 ct_font__34 ct_font__desk__34 ct_lh__sm weight-bold ct_m__0 ct_w-0 mb-3"
+                            style="width: 62%;">
                             60% Off<br><span class="weight-normal">Lenses<sup>*</sup> </span>
                         </span>
 
@@ -99,13 +122,15 @@
                     deals<br> on Ray-Ban, Oakley, and more</p>
                 <p class=" mb-md-1 mt-0 ct_mob__hide" style="font-size: 14px;">
                     Add a touch of magic to your look with Ray-Ban, Oakley & more</p>
-                    <a href="/email/designer-brands-dp" class="ct_cta ct_cta__red ct_m__mob__10 ct_mb__mob__50 mt-3" style="background-color: #AB2317; font-size: 16px" data-element-id="1Hero_Banner1_CTA" data-description="saveNOW">
-                        SHOP THE DEAL
-                    </a>
-                </div>
+                <a href="/email/designer-brands-dp" class="ct_cta ct_cta__red ct_m__mob__10 ct_mb__mob__50 mt-3"
+                    style="background-color: #AB2317; font-size: 16px" data-element-id="1Hero_Banner1_CTA"
+                    data-description="saveNOW">
+                    SHOP THE DEAL
+                </a>
             </div>
-
         </div>
+
+    </div>
 </div>
 
 
@@ -240,7 +265,8 @@
         <div class="banner-content">
             <h2 class="ct_font__30  ct_font__mob_24 mt-4 mb-0 ct_text__black ct_font__desk__26">REFRAME YOUR GIFTING
             </h2>
-            <p class="mb-4 ct_text__black mt-0">From AI Glasses to prescription lenses <br class="ct_desk__hide"> and iconic styles find the perfect pair for <br> you or someone you love.<br>
+            <p class="mb-4 ct_text__black mt-0">From AI Glasses to prescription lenses <br class="ct_desk__hide"> and
+                iconic styles find the perfect pair for <br> you or someone you love.<br>
                 <span class="weight-bold mb-4 ct_text__black mt-0">Be your own Secret Santa, and score<br
                         class="ct_desk__hide"> major savings on frames & lenses.</span>
             </p>
@@ -278,7 +304,7 @@
         <p class="mb-4 ct_text__white mt-0">
             From Ray-Ban to Oakley, discover our<br class="ct_desk__hide"> full collections of AI Glasses <br>starting
             from
-            $75 a month.
+            $75 a month with Klarna and PayPal.
         </p>
 
         <div class="d-flex flex-column flex-md-row" style="gap:20px">
@@ -383,7 +409,7 @@
         <img src="https://images.framesdirect.com/image/upload/v1757344029/ray-ban-jupiter/ray-ban-white-logo.svg"
             width="200" height="66" alt="Ray-Ban logo">
         <h2 class="size-14 mt-4 mb-0" style="color:white !important">Ray-Ban Meta collection: starting <br
-                class="ct_desk__hide"> from $75 a month</h2>
+                class="ct_desk__hide"> from $75 a month with Klarna and PayPal.</h2>
         <p class="mb-4 ct_text__white mt-0">Integrated with AI-enhanced technology,
             Ray-Ban Meta AI Glasses enable you <br class="ct__mob__hide"> to
             call, listen, capture and livestream - all with
@@ -790,9 +816,9 @@
 
 <div id="firstInsuranceBanner" class="mb-4 pt-3 mt-5 mx-64" style="border-radius: 32px;">
     <div class="col-12 col-md-7 col-lg-8 ml-sm-auto text-center text-md-left p-3 bg-green mt-lg-5">
-        <h2 class="size-14 mt-4 mb-0">Insurance exclusive deal</h2>
+        <h2 class="size-14 mt-4 mb-0">Use it before you lose it</h2>
         <p class="mt-0">
-            <b>Get $60 off</b> Progressive, Blue Light or <br class="ct_desk__hide">Transitions® lenses with code
+            <b>Get up to $60 off</b> Progressive, Blue Light or <br class="ct_desk__hide">Transitions® lenses with code
             <b>NEWVISION</b><br> at checkout.
         </p>
         <p>
