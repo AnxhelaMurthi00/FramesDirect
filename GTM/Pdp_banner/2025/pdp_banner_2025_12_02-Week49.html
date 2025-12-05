@@ -9,89 +9,48 @@
     });
   });
 
-  function getAmountSavings(product) {
-    var retailStr = document.getElementById("spanRetailPrice").innerHTML;
-    var saleStr = document.getElementById("spanOurPrice").innerHTML;
-    if (!product) return 0;
-
-    var retail = parseFloat(retailStr.replace("$", ""));
-    if (isNaN(retail) || retail <= 0) return 0;
-
-    var discounted = parseFloat(saleStr.replace("$", ""));
-    if (isNaN(discounted) || discounted <= 0) return 0;
-
-    return Math.max(0, retail - discounted);
-  }
-
   function prodDiscoBanner() {
     if (
       (checkDate >= "251202" && checkDate <= "251210") ||
       (fdFncs.vars.isTest >= "251202" && fdFncs.vars.isTest <= "251210")
     ) {
       $(".lens-bar-holder").remove();
+
+      // ---------- META BANNER ----------
       if (
-
-        (
-          $('h1:contains("Prescription")').length > 0 ||
-          $('h1:contains("Eyeglasses")').length > 0
-        ) && (
-          $('h1:contains("Ray-Ban Meta")').length > 0 ||
-          $('h1:contains("Oakley Meta")').length > 0
-        )
-
+        ($('h1:contains("Prescription")').length > 0 ||
+          $('h1:contains("Eyeglasses")').length > 0) &&
+        ($('h1:contains("Ray-Ban Meta")').length > 0 ||
+          $('h1:contains("Oakley Meta")').length > 0)
       ) {
-
-        // EXTRA10 META banner
-        $('<div class="lens-bar-holder mx-0 mb-3 mt-4">' +
+        $('<div class="lens-bar-holder mx-0 mt-4">' +
           '<div class="lens-bar d-block color-black px-2 size-12 text-left" ' +
           'style="background: linear-gradient(270deg, #6299A7 0%, #BEE2F7 99%); padding: 10px; border-radius: 5px;">' +
           'Use code <b>EXTRA10</b> to save an extra <b>10% on prescription lenses</b>' +
           '</div>' +
           '</div>'
         ).prependTo("#prod-header-right");
-        // ---------- DISCOUNTED BADGE ----------
-        var amountSavings = getAmountSavings(fdFncs.currentProduct);
-        var savingsText = "";
-        if (amountSavings > 0) {
-          console.log(amountSavings);
-          savingsText =
-            '<span style="float:right; font-weight:700; color:black; width: auto;">-$' +
-            amountSavings.toFixed(2) +
-            "</span>";
-        } else {
-          savingsText = '<span style="display: none;"></span>';
-        }
-
-        $('<div class="lens-bar-holder mx-0 mb-3"><div class="lens-bar d-block color-black px-2 size-12 text-left" style="background:white; border-radius: 5px;">Get your complete pair:<b> 30% off select frames</b> at checkout <b>+ 60% off lenses with frame purchase</b></div></div>' + savingsText +
-          "</div></div>"
-        ).prependTo("#prod-header-right");
 
         return;
       }
-      // ---------- GENERIC PRESCRIPTION / EYEGLASSES BANNER ----------
+
+      // ---------- GENERIC PRESCRIPTION / EYEGLASSES / SUNGLASSES BANNER ----------
       if (
         $('h1:contains("Prescription")').length > 0 ||
         $('h1:contains("Eyeglasses")').length > 0 ||
         $('h1:contains("Sunglasses")').length > 0
       ) {
-        var amountSavings = getAmountSavings(fdFncs.currentProduct);
-        var savingsText = "";
-        if (amountSavings > 0) {
-          console.log(amountSavings);
-          savingsText =
-            '<span style="float:right; font-weight:700; color:black; width: auto;">-$' +
-            amountSavings.toFixed(2) +
-            "</span>";
-        } else {
-          savingsText = '<span style="display: none;"></span>';
-        }
-
-        $('<div class="lens-bar-holder mx-0 mb-3"><div class="lens-bar d-block color-black px-2 size-12 text-left" style="background:white; border-radius: 5px;">Get your complete pair:<b> 30% off select frames</b> at checkout <b>+ 60% off lenses with frame purchase</b></div></div>' + savingsText +
-          "</div></div>"
+        $('<div class="lens-bar-holder mx-0 mb-3">' +
+          '<div class="lens-bar d-block color-black px-2 size-12 text-left" ' +
+          'style="background:white; border-radius: 5px;">' +
+          'Get your complete pair:<b>30% off select frames</b> at checkout <b>+ 60% off lenses with frame purchase</b>' +
+          '</div>' +
+          '</div>'
         ).prependTo("#prod-header-right");
       }
     }
     else
+
       if (
         (checkDate >= "251109" && checkDate <= "251117") ||
         (fdFncs.vars.isTest >= "251109" && fdFncs.vars.isTest <= "251117")

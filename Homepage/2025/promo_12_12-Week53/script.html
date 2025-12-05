@@ -42,7 +42,7 @@
             </div>
         <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pb__mob__30" id="secondHero" style="background: #D6F3E9; width: 42%"><a href="/email/auth-lenses-dp" aria-label="sale" data-element-id="MainNav_Promo" data-description="Sale">
                 <div class="ct_text__black ct_font__36  ct_lh__sm ct_mt__mob__40 weight-bold ct_font__mob_38 ">
-                 Use it before <br class="ct_desk__hide"> you lose it
+                New Year,  <br> New Vision Benefits!
                 </div>
                 <div class="ct_font__18 ct_font__mob_20 pt-lg-2 pt-4">
                   <b>Get up to $60 off</b> Progressive, Blue Light <br> or Transitions® lenses with code 
@@ -115,7 +115,7 @@
             </div>
         <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pb__mob__30" id="secondHero" style="background: #D6F3E9; width: 42%"><a href="/email/auth-lenses-dp" aria-label="sale" data-element-id="MainNav_Promo" data-description="Sale">
                 <div class="ct_text__black ct_font__36  ct_lh__sm ct_mt__mob__40 weight-bold ct_font__mob_38 ">
-                 Use it before <br class="ct_desk__hide"> you lose it
+                 Use It Before <br class="ct_desk__hide"> You Lose It
                 </div>
                 <div class="ct_font__18 ct_font__mob_20 pt-lg-2 pt-4">
                   <b>Get up to $60 off</b> Progressive, Blue Light <br> or Transitions® lenses with code 
@@ -2644,30 +2644,41 @@ background-image: url("https://images.framesdirect.com/image/upload/v1745089591/
   const updateSecondBanner = () => {
 
     if (
-      (checkDate >= "250704" && checkDate <= "250706") ||
-      (fdFncs.vars.isTest >= "250704" && fdFncs.vars.isTest <= "250706")
+      (checkDate >= "251205" && checkDate <= "260102") ||
+      (fdFncs.vars.isTest >= "251205" && fdFncs.vars.isTest <= "260102")
     ) {
       let secondBanner = `
-<div id="firstInsuranceBanner" class="mb-4 mx-3 pt-3">
-        <div class="col-12 col-md-7 col-lg-8 ml-sm-auto text-center text-md-left p-3 bg-green">
-            <h2 class="size-14 mt-4 mb-0">Purchasing with insurance, made easy.</h2>
-            <p class="mt-0">This is our promise to you. We accept most vision insurance plans, both in and
-                out-of-network.</p>
-            <p>
-                <img src="https://images.framesdirect.com/image/upload/v1742409416/insurance/logo-eyemed.png" width="57" height="35" alt="EyeMed" class="m-2">
-                <img src="https://images.framesdirect.com/image/upload/v1742409416/insurance/logo-aetna.png" width="75" height="15" alt="Aetna" class="m-2">
-                <img src="https://images.framesdirect.com/image/upload/v1742409416/insurance/logo-humana.png" width="76" height="15" alt="Humana" class="m-2">
-                <img src="https://images.framesdirect.com/image/upload/v1742409416/insurance/logo-cigna.png" width="67" height="40" alt="Cigna" class="m-2">
-                ...and many more!
+  <div class="banner-container mb-4 mt-5 mx-64" style="border-radius: 32px; color:black;">
+        <!-- Desktop Image (hidden on mobile) -->
+        <img src="https://images.framesdirect.com/image/upload/v1761564342/homePage/HP_Secondary_Banner_PROMOMETA_D.png"
+            alt="Ray-Ban Meta Collection" class="img-fluid d-none d-md-block w-100">
+
+        <!-- Mobile Image (hidden on desktop) -->
+        <img src="https://images.framesdirect.com/image/upload/v1761564340/homePage/HP_Secondary_Banner_PROMOMETA_M.png"
+            alt="Ray-Ban Meta Collection" class="img-fluid d-block d-md-none w-100">
+
+        <!-- Banner Content -->
+        <div class="banner-content">
+            <img src="https://images.framesdirect.com/image/upload/v1761565365/ray-ban-jupiter/ray-ban-black-logo.svg"
+                width="200" height="66" alt="Ray-Ban logo">
+            <h2 class="size-14 mt-4 mb-0" style="color:black !important">25% Off Ray-Ban Meta (Gen 1)
+            </h2>
+            <p class="mb-4 ct_text__black mt-0">Ray-Ban Meta AI glasses now available with<br class="ct_desk__hide">
+                exclusive savings.
             </p>
-            <a href="/eyeglasses" class="btn-cta background-dk-gray" data-element-id="5Placement_Banner1_CTA" data-description="shopWithInsurance">Shop with Insurance</a>
-            <a href="/knowledge-center/vision-insurance-fsa-eligibility" class="btn-cta background-clear ml-lg-3" data-element-id="5Placement_Banner1_CTA" data-description="learn
-More">Learn
-                More</a>
+
+            <div class="d-flex flex-column flex-md-row" style="gap:20px">
+                <a href="/ray-ban-meta/brand 
+                " class=" btn-cta ct_m__mob__10 ct_mb__mob__50 ct_mt__30 " id="rayban_meta_btn"
+                    data-element-id="1Hero_Banner1_CTA" data-description="shop ray-ban meta"
+                    style="font-weight:400 !important; align-content: center; font-size: 17px; background-color:black !important; color: white !important;">
+                    Shop RAY-BAN | META AI GLASSES
+                </a>
+            </div>
         </div>
     </div>
    `;
-      $("#secondBanner").replaceWith(secondBanner);
+      $("#secondBanner").html(secondBanner);
     } else
       if (
         (checkDate >= "250606" && checkDate <= "250616") ||
