@@ -1,0 +1,54 @@
+<script>
+
+
+
+
+  if (window.location.href.includes("/ray-ban-meta/brand") && window.location.href.includes("collection=1492")) {
+    $("#cata_hdr").text("Ray-Ban Meta (Gen 1) | AI Glasses starting from $75 a month");
+  }
+  if (window.location.href.includes("/ray-ban-meta/brand") && window.location.href.includes("collection=1493")) {
+    $("#cata_hdr").text("Ray-Ban Meta (Gen 2) | AI Glasses starting from $95 a month");
+  }
+  if (pgURLPath("/oakley-meta/brand")) {
+    $("#cata_hdr").text("Oakley Meta | AI Glasses starting from $100 a month");
+  }
+
+  if (pgURLPath("/gucci/brand")) {
+    $("#cata_hdr").text("Gucci | Glasses starting from $50 a month");
+  }
+  if (pgURLPath("/oakley/brand")) {
+    $("#cata_hdr").text("Oakley | Glasses starting from $36 a month");
+  }
+  if (pgURLPath("/ai-glasses/")) {
+    $("#cata_hdr").text("AI Glasses | Starting from $75 a month");
+  }
+
+  if (((checkDate >= '260108' && checkDate <= '260118') || (fdFncs.vars.isTest >= '260108' && fdFncs.vars.isTest <= '260118'))) {
+    var locName = [
+      "/eyeglasses/",
+      "/sunglasses/",
+      "/prescription-sunglasses/",
+      "/men/eyewear-dp",
+      "/women/eyewear-dp",
+      "/eyeglasses/mens",
+      "/eyeglasses/womens",
+      "/sunglasses/mens",
+      "/sunglasses/womens",
+      "/prescription-sunglasses/mens",
+      "/prescription-sunglasses/womens"
+    ];
+
+    // Specific sale landing page
+    if (pgURLPath("/email/designer-brands-dp")) {
+      var selectedCrumb = "Get up to 50% off select frames + 60% off lenses";
+      var topText = "";
+      var bottomText = "Up to 50% off select frames + 60% off lenses*";
+      var bottomTextParagraph = '<p>Shop our selection of designer frames and lenses. From classic styles to cutting edge trends, be ready this winter and save up to 50% on select frames and 60% on lenses. Select styles only <a id="flash-disc-link" href="#">Details <i></i></a></p><p id="flash-disclaimer" style="display:none">Get up to 50% off select Eyeglasses, Sunglasses and Prescription Sunglasses. Combinable with 60% off lenses and treatments. Lenses discount applied with frame purchase. Valid on Armani Exchange, Arnette, Brooks Brothers, Burberry, Coach, Dolce&Gabbana, Dolce&Gabbana Kids, Emporio Armani, Emporio Armani Kids, Giorgio Armani, Jimmy Choo, Polo, Polo Kids, Ralph Lauren, RALPH, Scuderia Ferrari, Sferoflex, Swarovski, Tory Burch, Versace, Versace Kids, Vogue, Vogue Junior. Does not apply to products that have already been discounted. Frame purchase required. Offer may not be used on Oakley Meta, Oakley Goggles, Oakley Replacement Lenses, Ray-Ban Meta. Other exclusions may apply. Valid on order amount before any shipping costs and/or any applicable taxes are added. Cannot be used in conjunction with price match guarantee or insurance benefits. Free Shipping on domestic orders only. Offer ends 18 Jan, 2026.';
+      $("#top-content-box h2").html(bottomText);
+      $("#top-content-box p").html(bottomTextParagraph);
+      $("#selected-crumb").text(selectedCrumb);
+      $("#cata_hdr").text(selectedCrumb);
+    }
+  }
+
+</script>

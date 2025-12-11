@@ -1,0 +1,58 @@
+<script>
+  if (
+    (checkDate >= "260108" && checkDate <= "260118") ||
+    (fdFncs.vars.isTest >= "260108" && fdFncs.vars.isTest <= "260118")
+  ) {
+    $("#discountBar #exclusiveToggle").html(
+      $("#discountBar #exclusiveToggle")
+        .html()
+        .replace("See Exclusive Savings!", "Winter deals ")
+        .replace("Exclusive Savings", "Winter deals ")
+    );
+    $("#exclusiveSavings #discountBar > .blue-bg").css({
+      background: "#D5DFE3",
+    });
+  } else
+  if (
+    (checkDate >= "251229" && checkDate <= "260107") ||
+    (fdFncs.vars.isTest >= "251229" && fdFncs.vars.isTest <= "260107")
+  ) {
+    $("#discountBar #exclusiveToggle").html(
+      $("#discountBar #exclusiveToggle")
+        .html()
+        .replace("See Exclusive Savings!", "New Year’s deals ")
+        .replace("Exclusive Savings", "New Year’s deals ")
+    );
+    $("#exclusiveSavings #discountBar > .blue-bg").css({
+      background: "#D3BDAF",
+    });
+  } else
+    if (
+      (checkDate >= "251211" && checkDate <= "251228") ||
+      (fdFncs.vars.isTest >= "251211" && fdFncs.vars.isTest <= "251228")
+    ) {
+      $("#discountBar #exclusiveToggle").html(
+        $("#discountBar #exclusiveToggle")
+          .html()
+          .replace("See Exclusive Savings!", " Holiday deals")
+          .replace("Exclusive Savings", " Holiday deals")
+      );
+      $("#exclusiveSavings #discountBar > .blue-bg").css({
+        background: "#D3BDAF",
+      });
+    } else
+      if (
+        (checkDate >= "251202" && checkDate <= "251210") ||
+        (fdFncs.vars.isTest >= "251202" && fdFncs.vars.isTest <= "251210")
+      ) {
+        $("#discountBar #exclusiveToggle").html(
+          $("#discountBar #exclusiveToggle")
+            .html()
+            .replace("See Exclusive Savings!", " Complete Pair Savings")
+            .replace("Exclusive Savings", " Complete Pair Savings")
+        );
+        $("#exclusiveSavings #discountBar > .blue-bg").css({
+          background: "#CBC4BA",
+        });
+      } 
+</script>
