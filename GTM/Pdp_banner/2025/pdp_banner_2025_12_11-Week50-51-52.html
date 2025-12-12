@@ -29,8 +29,9 @@
 
       ) {
 
-        // EXTRA10 META banner
-        $('<div class="lens-bar-holder mx-0 mb-3 mt-4">' +
+        // ---------- META BANNER ----------
+
+        $('<div class="lens-bar-holder mx-0 mt-4">' +
           '<div class="lens-bar d-block color-black px-2 size-12 text-left" ' +
           'style="background: linear-gradient(270deg, #6299A7 0%, #BEE2F7 99%); padding: 10px; border-radius: 5px;">' +
           'Use code <b>EXTRA10</b> to save an extra <b>10% on prescription lenses</b>' +
@@ -38,11 +39,9 @@
           '</div>'
         ).prependTo("#prod-header-right");
 
-        $('<div class="lens-bar-holder mx-0 mb-3"><div class="lens-bar d-block color-black px-2 size-12 text-left" style="background:#D3BDAF; border-radius: 5px;">Holiday Deals: <b> Up to 50% off from Ray-Ban, Oakley & more + 60% off lenses with frame purchase</b></div></div>' + "</div></div>"
-        ).prependTo("#prod-header-right");
-
         return;
       }
+
       // ---------- GENERIC PRESCRIPTION / EYEGLASSES BANNER ----------
       if (
         $('h1:contains("Prescription")').length > 0 ||

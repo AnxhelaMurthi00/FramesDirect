@@ -48,7 +48,7 @@
                  New Year, <br > New Vision Benefits!
                 </div>
                 <div class="ct_font__18 ct_font__mob_18 pt-lg-2 pt-4">
-                  <b>Get up to $60 off</b> Progressive, Blue Light <br class="ct_mob__hide"> or Transitions® lenses <br class="ct_desk__hide"> with code 
+                  <b>Get $55 off</b> Progressive, Blue Light <br class="ct_mob__hide"> or Transitions® lenses <br class="ct_desk__hide"> with code 
 <b>NEWVISION</b> at checkout.
 </div>
                 <div class="logos ct_mob__hide d-flex justify-content-around align-items-center w-100 pt-2 ">
@@ -70,7 +70,7 @@
                     style="background:  #000; color: #fff !important; border: 0">LEARN MORE
                 </a>
                 <a href="/email/vision-insurance-dp" class="btn-cta nowrap mt-2 mt-lg-4 ml-lg-5"
-                    style="background:#AB2317; color: #fff !important; border: 0">Sync Now</a>
+                    style="background:#AB2317; color: #fff !important; border: 0">SHOP Now</a>
             </div>
         </div>
     </div>
@@ -78,14 +78,14 @@
    </li>` );
     } else
 
-    if (
-      (checkDate >= "251202" && checkDate <= "251210") ||
-      (fdFncs.vars.isTest >= "251202" && fdFncs.vars.isTest <= "251210")
-    ) {
-      //hero slider promotion
-      $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-      $("#hero-slider").append(
-        `
+      if (
+        (checkDate >= "251202" && checkDate <= "251210") ||
+        (fdFncs.vars.isTest >= "251202" && fdFncs.vars.isTest <= "251210")
+      ) {
+        //hero slider promotion
+        $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+        $("#hero-slider").append(
+          `
         <li>
 <style>
     @media (min-width: 1200px) and  (max-width: 1400px){
@@ -154,15 +154,15 @@
     </div>
 </div>
    </li>` );
-    } else
-      if (getCookie('fdRecognized') !== undefined &&
-        (
-          (checkDate >= "251121" && checkDate <= "251131") ||
-          (fdFncs.vars.isTest >= "251121" && fdFncs.vars.isTest <= "251131")
-        )
-      ) {
-        let heroBanner =
-          `
+      } else
+        if (getCookie('fdRecognized') !== undefined &&
+          (
+            (checkDate >= "251121" && checkDate <= "251131") ||
+            (fdFncs.vars.isTest >= "251121" && fdFncs.vars.isTest <= "251131")
+          )
+        ) {
+          let heroBanner =
+            `
 <style>
     @media (min-width: 1200px) and (max-width: 1400px) {
         #text-image-bf {
@@ -273,19 +273,19 @@
 
 
     `;
-        $(".heroBanner").replaceWith(heroBanner);
-      }
-      else
-        if (
-          (checkDate >= "250714" && checkDate <= "250727") ||
-          (fdFncs.vars.isTest >= "250714" && fdFncs.vars.isTest <= "250727")
-        ) {
-          //hero slider promotion
-          $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
-          $("#hero-slider").append(
+          $(".heroBanner").replaceWith(heroBanner);
+        }
+        else
+          if (
+            (checkDate >= "250714" && checkDate <= "250727") ||
+            (fdFncs.vars.isTest >= "250714" && fdFncs.vars.isTest <= "250727")
+          ) {
+            //hero slider promotion
+            $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+            $("#hero-slider").append(
 
 
-            `
+              `
 
           <style>
         @media (min-width: 1200px) and (max-width: 1400px) {
@@ -382,8 +382,8 @@
         </div>
     </div>
     ` );
-        } else {
-        }
+          } else {
+          }
   };
 
   const updateSecondBanner = () => {
