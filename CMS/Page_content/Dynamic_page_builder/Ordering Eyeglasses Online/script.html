@@ -1,0 +1,75 @@
+<script>
+/* =========================================
+   1. GLOBAL VIDEO LOGIC
+   (Must be outside DOMContentLoaded to work with onclick="")
+========================================== */
+function loadVideo(container, videoId) {
+    // Create the iframe element
+    var iframe = document.createElement('iframe');
+    
+    // Construct YouTube URL with autoplay
+    iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0');
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+    iframe.setAttribute('allowfullscreen', 'true');
+    
+    // Match CSS styles to prevent layout shift
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    iframe.style.borderRadius = "12px";
+    iframe.style.aspectRatio = "16/9";
+    iframe.style.display = "block";
+
+    // Clear the thumbnail and play button
+    container.innerHTML = '';
+    
+    // Inject the YouTube iframe
+    container.appendChild(iframe);
+}
+
+/* =========================================
+   2. DOM READY LOGIC
+========================================== */
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // --- Smooth Scrolling for Anchor Links ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                const headerOffset = 70; 
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+
+    // --- Simple Fade-in Animation on Scroll ---
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    const sections = document.querySelectorAll('section, .step-container-box');
+    sections.forEach(section => {
+        section.classList.add('fade-in-hidden');
+        observer.observe(section);
+    });
+});
+</script>
