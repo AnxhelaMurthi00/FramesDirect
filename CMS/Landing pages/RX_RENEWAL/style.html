@@ -1,0 +1,424 @@
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+
+    }
+
+    .fs-16 {
+        font-size: 16px;
+    }
+
+    #landing-content {
+
+        max-width: 100%;
+    }
+
+    .doctor-review {
+        position: absolute;
+        top: 50%;
+        left: 38%;
+        transform: translateY(-50%);
+        text-align: left;
+        max-width: 667px;
+    }
+
+    .faq-group {
+        text-align: left;
+    }
+
+    svg {
+        width: 64px;
+        height: 64px;
+    }
+
+    .btn {
+        font-weight: 700;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .section {
+
+        text-align: center;
+    }
+
+    .main-title {
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    .section.blue-bg {
+        background-color: #5a7d8c;
+        color: #fff;
+    }
+
+    .section h1,
+    .section h2 {
+        margin: 20px 0 10px;
+    }
+
+    .btn {
+        display: inline-block;
+        background-color: #777;
+        color: #fff;
+        padding: 10px 20px;
+        margin: 10px;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+
+    .ct__desk__hide {
+        display: none;
+    }
+
+    .requirements {
+        display: grid;
+        padding: 32px 64px 64px 64px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        text-align: center;
+        margin-top: 32px;
+    }
+
+    .faq-item {
+        color: #6B777B;
+    }
+
+    @media screen and (max-width: 768px) {
+        .requirements {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 767px) {
+
+        .doctor-review {
+            position: absolute;
+            top: 25%;
+            left: 8%;
+            right: 10%;
+            transform: translateY(-50%);
+            text-align: center;
+            max-width: 667px;
+        }
+
+        .ct__desk__hide {
+            display: block;
+        }
+
+        .ct__mob__hide {
+            display: none;
+        }
+
+        .main-title {
+            font-size: 32px;
+        }
+
+        .requirements {
+            grid-template-columns: 1fr;
+            padding: 0px;
+        }
+
+        .requirement-item {
+            display: flex;
+            align-items: center;
+            text-align: left;
+            gap: 16px;
+        }
+
+        .requirement-item svg {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+        }
+
+        .requirement-item p {
+            margin: 0;
+            font-size: 16px;
+            line-height: 1.4;
+        }
+    }
+
+    .banner-renew-bg {
+        border-radius: 0px !important;
+    }
+
+    .requirement-item {
+        width: 416;
+        height: 240;
+        gap: 16px;
+        background-color: #F1EDE3;
+        opacity: 1;
+        border-radius: 32px;
+        padding-top: 16px;
+        padding-right: 27.94px;
+        padding-bottom: 16px;
+        padding-left: 27.94px;
+
+    }
+
+    .requirement-item img {
+        width: 40px;
+        margin-bottom: 10px;
+    }
+
+    .image-hand {
+        max-width: 200px;
+        margin-top: 20px;
+    }
+
+    /* Mobile adjustments */
+    @media screen and (max-width: 768px) {
+        .section {
+            padding: 20px 10px;
+        }
+
+        .requirements {
+            grid-template-columns: 1fr;
+        }
+
+        .image-hand {
+            max-width: 150px;
+        }
+    }
+
+    /* ===== FAQ FULL WIDTH BEIGE SECTION ===== */
+    .faq-wrapper {
+        background-color: #f5f1e9;
+        width: 100%;
+        padding: 60px 0;
+    }
+
+    /* Constrain content but keep left aligned */
+    .faq-content {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 40px;
+        text-align: left;
+    }
+
+    .btn {
+        color: white !important;
+        border: none !important;
+        font-weight: 700 !important;
+    }
+
+    /* Title */
+    .faq-content h2 {
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 28px;
+    }
+
+    /* Section headers */
+    .faq-group h3 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    /* FAQ row */
+    .faq-item {
+        border-bottom: 1px solid #d6d1c6;
+        padding: 18px 0;
+    }
+
+    /* Remove default arrow */
+    .faq-item summary {
+        list-style: none;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        position: relative;
+        padding-right: 30px;
+    }
+
+    /* Hide default marker (Chrome/Safari) */
+    .faq-item summary::-webkit-details-marker {
+        display: none;
+    }
+
+    /* Custom chevron (RIGHT aligned) */
+    .faq-item summary::after {
+        content: "⌄";
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 18px;
+        color: #555;
+        transition: transform 0.2s ease;
+    }
+
+    /* Rotate on open */
+    .faq-item[open] summary::after {
+        transform: rotate(180deg);
+    }
+
+    /* Answer text */
+    .faq-item p {
+        margin-top: 12px;
+        max-width: 850px;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+        .faq-content {
+            padding: 0 20px;
+        }
+    }
+
+    /* ===== HOW IT WORKS BANNER ===== */
+    .how-it-works {
+        background-image: url("https://images.framesdirect.com/image/upload/v1766055798/rx_renewal/rx_banner_D.png");
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: cover;
+        min-height: 420px;
+
+        display: flex;
+        align-items: center;
+    }
+
+    /* Keep text readable */
+    .how-it-works-content {
+        max-width: 600px;
+        padding: 40px;
+        text-align: left;
+    }
+
+    /* ===== MOBILE IMAGE ===== */
+    @media (max-width: 768px) {
+        .how-it-works {
+            background-image: url("https://images.framesdirect.com/image/upload/v1766055848/rx_renewal/rx_renewal_m.png");
+            background-position: center top;
+            min-height: 520px;
+        }
+
+        .how-it-works-content {
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+
+
+    /* MOBILE */
+    @media (max-width: 767px) {
+        .how-it-works-banner {
+            background-image: url("https://images.framesdirect.com/image/upload/v1766055848/rx_renewal/rx_renewal_m.png");
+            min-height: 520px;
+        }
+
+        .how-it-works-banner>div {
+            left: 20px !important;
+            right: 20px;
+            max-width: none;
+        }
+    }
+
+    .banner-renew-bg {
+        background-color: #58848F;
+        /* MOBILE IMAGE URL GOES HERE */
+        background-image: url('https://images.framesdirect.com/image/upload/v1766055848/rx_renewal/rx_renewal_m.png');
+        background-size: 100% auto;
+        background-position: center bottom -50px;
+        background-repeat: no-repeat;
+        min-height: 460px;
+        padding-left: 0px;
+
+        text-align: center;
+    }
+
+    /* 2. Desktop Override (Horizontal Image) */
+    @media (min-width: 992px) {
+        .banner-renew-bg {
+            /* DESKTOP IMAGE URL GOES HERE */
+            background-image: url('https://images.framesdirect.com/image/upload/v1766055798/rx_renewal/rx_banner_D.png');
+            background-size: cover;
+            /* Covers the whole area */
+            background-position: center right;
+            /* Focuses on the right side */
+            height: 202px;
+            /* Fixed Height */
+            min-height: auto;
+
+            text-align: left;
+            padding-left: 64px;
+        }
+
+        .promo-banners h2 {
+            margin: 0 !important;
+            padding: 0 !important;
+            font-size: 20px !important;
+            color: #fff;
+            margin-bottom: 10px !important;
+        }
+
+        .promo-banners p {
+            font-size: 16px !important;
+            color: #fff;
+            margin: 0 !important;
+            padding: 0 !important;
+            margin-bottom: 18px !important;
+        }
+
+        .promo-banner-btns {
+            gap: 20px
+        }
+
+        .promo-banners p {
+            font-size: 16px;
+            font-weight: 400;
+        }
+    }
+
+    /* Doctor Review Banner */
+    .doctor-banner {
+        background-color: #58848F;
+        background-image: url('https://images.framesdirect.com/image/upload/v1766055924/rx_renewal/doctor_review_m.png');
+        background-size: 100% auto;
+        background-position: center bottom -50px;
+        background-repeat: no-repeat;
+        min-height: 460px;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    @media (min-width: 992px) {
+        .doctor-banner {
+            background-image: url('https://images.framesdirect.com/image/upload/v1766055923/rx_renewal/doctor_review_d.png');
+            background-size: cover;
+            background-position: center right;
+            height: 202px;
+            min-height: auto;
+            text-align: left;
+            padding-left: 64px;
+        }
+
+        .doctor-banner .promo-banners h2 {
+            font-size: 20px !important;
+            margin-bottom: 10px !important;
+            color: #fff;
+        }
+
+        .doctor-banner .promo-banners p {
+            font-size: 16px !important;
+            color: #fff;
+            margin-bottom: 18px !important;
+            font-weight: 400;
+        }
+
+    }
+
+    #content-main {
+        padding: 0px !important;
+    }
+</style>

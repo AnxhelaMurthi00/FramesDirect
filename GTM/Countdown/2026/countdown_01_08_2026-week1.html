@@ -14,8 +14,8 @@
   // Define the messages for the carousel based on date and device type
   var messages = [];
   if (
-    (checkDate >= "260111" && checkDate <= "260118") ||
-    (fdFncs.vars.isTest >= "260111" && fdFncs.vars.isTest <= "260118")
+    (checkDate >= "260108" && checkDate <= "260118") ||
+    (fdFncs.vars.isTest >= "260108" && fdFncs.vars.isTest <= "260118")
   ) {
     messages =
       $(window).width() <= 768
@@ -326,8 +326,8 @@
     // Initialize the countdown if the specific message is active
     if (
       (messages[currentMessageIndex].includes("Get your") &&
-        checkDate === "251210") ||
-      fdFncs.vars.isTest === "251210"
+        checkDate === "260108") ||
+      fdFncs.vars.isTest === "260108"
     ) {
       initializeCountdown();
     }
@@ -335,7 +335,7 @@
 
   // Function to initialize the countdown
   function initializeCountdown() {
-    var endDateLong = "12/11/2025"; // Set the end date for the countdown
+    var endDateLong = "12/11/2026"; // Set the end date for the countdown
     var digitBg = " white";
 
     $("#countdown-clockworks-holder").countdown(endDateLong, function (event) {
@@ -348,7 +348,7 @@
           digitBg +
           '"> <div class="digit">' +
           totalHours +
-          '</div> <div class="time-label">hours</div> </div> <div class="colon" style="margin-top:5px;">:</div></div><div class="dash minutes_dash"> <div class="countdown-digit-wrapper' +
+          '</div> <div class="time-label">hours</div> </div> <div class="colon" style="margin-top:5px; margin-left:5px;">:</div></div><div class="dash minutes_dash"> <div class="countdown-digit-wrapper' +
           digitBg +
           '"> <div class="digit">%M</div> <div class="time-label">min</div> </div> <div class="colon" style="margin-top:5px">:</div></div><div class="dash seconds_dash"> <div class="countdown-digit-wrapper' +
           digitBg +
@@ -398,8 +398,8 @@
     })();
 
     if (
-      (showBanner && checkDate >= "250224" && checkDate <= "251231") ||
-      (fdFncs.vars.isTest >= "250224" && fdFncs.vars.isTest <= "251231")
+      (showBanner && checkDate >= "250224" && checkDate <= "261231") ||
+      (fdFncs.vars.isTest >= "250224" && fdFncs.vars.isTest <= "261231")
     ) {
       $("#count-bnr-inner").remove();
       if ($(window).width() > 1300) {

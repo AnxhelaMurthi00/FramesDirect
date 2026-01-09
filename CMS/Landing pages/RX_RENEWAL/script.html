@@ -1,0 +1,44 @@
+<script>
+    function getCookie(name) {
+        var value = "; " + document.cookie;
+        var parts = value.split("; " + name + "=");
+        if (parts.length === 2) return parts.pop().split(";").shift();
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var cookie = getCookie('fdRecognized');
+
+        if (cookie !== undefined && cookie !== null) {
+
+            /* ========= HERO + OTHER LOGIN/REGISTER CTAs ========= */
+            document.querySelectorAll('.auth-buttons').forEach(function (container) {
+                container.innerHTML = '';
+
+                var shopBtn = document.createElement('a');
+                shopBtn.href = '/eyeglasses'; // ose homepage / PLP
+                shopBtn.className = 'btn btn-shop-now';
+                shopBtn.innerText = 'SHOP NOW';
+
+                container.appendChild(shopBtn);
+            });
+
+            /* ========= FINAL RENEW SECTION ========= */
+            var renewText = document.querySelector('.renew-text');
+            if (renewText) {
+                renewText.innerText = 'Renew your prescription online for only $29.00.';
+            }
+
+            var renewButtons = document.querySelector('.renew-buttons');
+            if (renewButtons) {
+                renewButtons.innerHTML = '';
+
+                var renewBtn = document.createElement('a');
+                renewBtn.href = '/prescription-renewal'; // flow real
+                renewBtn.className = 'btn btn-renew';
+                renewBtn.innerText = 'RENEW MY PRESCRIPTION';
+
+                renewButtons.appendChild(renewBtn);
+            }
+        }
+    });
+</script>
