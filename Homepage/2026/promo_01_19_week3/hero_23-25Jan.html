@@ -18,7 +18,7 @@
     .insurance-link {
         display: inline-flex;
         align-items: center;
-        gap: 2px;
+        gap: 6px;
         text-decoration: none;
         cursor: pointer;
         white-space: nowrap;
@@ -29,36 +29,34 @@
         align-items: center;
     }
 
-    #text-image-bf {
-        color: #6D374A;
-        font-family: 'Arima Madurai';
-        font-weight: 600;
-        margin-bottom: 20px;
+    @media (max-width: 1200px) {
+
+        #text-image-bf {
+            width: 340px;
+            margin-top: 45px;
+            height: auto;
+        }
+
 
     }
 
-    @media (max-width: 1200px) {
-        #firstHeroImg {
-            background-image: url('https://images.framesdirect.com/image/upload/v1764943761/homePage/HP_W01-02_M.png') !important;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-
-        }
-
+    @media (min-width: 1200px) and (max-width: 1400px) {
         #text-image-bf {
-            margin-top: 60px;
-            height: auto;
-            color: #6D374A;
+            margin-left: 20px !important;
+        }
+    }
+
+    @media (max-width: 470px) {
+
+        span.ct_text__white.ct_font__mob_38.ct_font__36.ct_font__desk__32.flex-column.flex-xl-row {
+            margin-top: -20px;
+            margin-bottom: 30px;
 
         }
-
-
     }
 </style>
 <!-- HERO BANNER -->
 <div class="heroBanner">
-
     <div class="insurance-label">
         <span class="insurance-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -88,32 +86,48 @@
             <a href="/email/flash-sale-dp" aria-label="sale">
                 <div class="ct_assets__container">
                     <picture class="ct_skeleton">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAAJ0lEQVR4AeyQoQ0AAAjDyP5/EI/iCThilWtSW1H17JGqYBL0h+IPHwAA///mMvTKAAAABklEQVQDACoVSQfc3yRAAAAAAElFTkSuQmCC"
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAAKElEQVR4AeyQMQ0AAAjDyPzrwwM3AkDEeq5J3x7VTh+pCiZBfyj+8AEAAP//5zrg/gAAAAZJREFUAwDyoEnjW82vrAAAAABJRU5ErkJggg=="
                             alt="structure image">
                     </picture>
                     <picture class="ct_img">
-                        <img src="https://images.framesdirect.com/image/upload/v1764943757/homePage/HP_W01-02_D.png"
+                        <img src="https://images.framesdirect.com/image/upload/v1767698435/homePage/HP_W03_D.png"
                             fetchpriority="high"
                             alt="The left is wearing Burberry be4389 Sunglasses, other is Versace ve1175b Eyeglasses"
                             width="3840" height="1108" usemap="#image-map">
                     </picture>
                     <map name="image-map" class="map-slider">
-                        <area target="" alt="Burberry be2387 Eyeglasses" title="Burberry be2387 Eyeglasses"
-                            href="/burberry-be2387-eyeglasses" coords="266,252,886,458" shape="rect">
-                        <area target="" alt="Coach hc6065 Eyeglasses" title="Coach hc6065 Eyeglasses"
-                            href="/coach-hc6065-eyeglasses?color=10050505" coords="2645,323,3206,530" shape="rect">
+                        <area target="" alt="Armani Exchange AX3053 Eyeglasses"
+                            title="Armani Exchange AX3053 Eyeglasses"
+                            href="/armani-exchange-ax3053-eyeglasses?color=10043590" coords="152,225,597,387"
+                            shape="rect">
 
+                        <area target="" alt="Burberry BE4291 Sunglasses" title="Burberry BE4291 Sunglasses"
+                            href="/burberry-be4291-sunglasses" coords="250,573,785,772" shape="rect">
+
+                        <area target="" alt="Dolce & Gabbana DG4478 Sunglasses"
+                            title="Dolce & Gabbana DG4478 Sunglasses" href="/dolce-gabbana-dg4478-sunglasses"
+                            coords="2673,231,3117,412" shape="rect">
+
+                        <area target="" alt="Versace VE1287 Eyeglasses" title="Versace VE1287 Eyeglasses"
+                            href="/versace-ve1287-eyeglasses" coords="2682,464,3126,645" shape="rect">
+
+                        <area target="" alt="Coach HC6065 Eyeglasses" title="Coach HC6065 Eyeglasses"
+                            href="/coach-hc6065-eyeglasses?color=10050505" coords="2694,708,3101,858" shape="rect">
                     </map>
+
                 </div>
 
             </a>
             <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_p__mob__0 " id="firstHeroImg">
-                <img src="https://images.framesdirect.com/image/upload/v1765796713/homePage/Winter_deals.png"
-                    fetchpriority="high" class="img-fluid d-block  ct_pt__mob__30" id="text-image-bf">
+                <img src="https://images.framesdirect.com/image/upload/v1767699085/homePage/logo_w3.png"
+                    fetchpriority="high" class="img-fluid d-block  ct_pt__mob__30 ct_mob__hide" id="text-image-bf">
 
+                <img src="https://images.framesdirect.com/image/upload/v1767699085/homePage/logo_w3.png"
+                    fetchpriority="high" class="img-fluid d-block  ct_pt__mob__30 ct_desk__hide" id="text-image-bf">
                 <div class="mt-lg-0 mb-2"><a href="/email/flash-sale-dp" aria-label="sale">
-                        <h1 class="ct_font__mob_34 ct_font__38 ct_font__desk__34 weight-bold ct_lh__sm ct_m__0 ">
-                            UP TO 50% OFF<br class="ct_desk__hide"> FRAMES
+                        <h1
+                            class="ct_font__mob_34 ct_font__38 ct_font__desk__34 weight-bold ct_lh__sm ct_m__0 ct_mt__20 ">
+                            UP TO 50% OFF FRAMES
                         </h1>
                         <span class="ct_font__mob_18 ct_font__18 ct_m__10 ct_font__desk__18">
                             Including our most-loved <br class="ct_desk__hide"> styles by Versace, Burberry & more
@@ -127,6 +141,8 @@
                                 class="ct_font__mob_34 ct_font__38 ct_font__desk__34 ct_lh__sm weight-bold ct_m__0 ct_mb__mob__10">
                                 <span class="ct_mob__hide">+<br></span> 60% OFF LENSES*
                             </h1>
+                            <div class="ct_font__16"><b>Extra 5% off</b> lenses at checkout</div>
+                            <div class="ct_font__16">Code: <b>LENSES5</b></div>
                         </div>
                     </a><a href="/email/flash-sale-dp" class="ct_cta ct_cta__red ct_m__mob__10 ct_mb__mob__50 mt-4"
                         style="background-color: #AB2317; font-size: 16px" data-element-id="1Hero_Banner1_CTA"
@@ -140,7 +156,6 @@
     </div>
 </div>
 
-
 <div class="info-boxes-wrapper">
     <div class="info-boxes-container">
         <div class="info-box text-center">
@@ -151,7 +166,8 @@
                 <div class="info-box-title font-weight-bold mb-1">
                     Use your vision plan.<br />FSA & HSA included
                 </div>
-                <a href="/knowledge-center/vision-insurance-fsa-eligibility" class="info-box-link">Vision insurance</a>
+                <a href="/knowledge-center/vision-insurance-fsa-eligibility" class="info-box-link">Vision
+                    insurance</a>
             </div>
         </div>
         <div class="info-box text-center">
@@ -258,9 +274,6 @@
 
 <div id="homepage-content">
 
-
-
-
     <div class="banner-container mb-4 mt-5 mx-64" style="border-radius: 32px; color:white;">
         <picture>
             <source media="(max-width: 767px)"
@@ -296,14 +309,11 @@
     </div>
 
     <div id="rfk-best-seller"></div>
-    ##product-carousel-eyeglasses-start##888392149787,0716736273679,8056597905428,8053672014952,8056597726450,888392497574,8056597663908,8056597920322##product-carousel-eyeglasses-end##
-    ##product-carousel-sunglasses-start##7318480129856,888392491633,8056597460941,889652277776,8056597761994,888392588470,8056262366455,8056597435796##product-carousel-sunglasses-end##
-    ##product-carousel-rxsunglasses-start##888392355980,8053672453515,712316000154,8053672398670,603429060022,97963809122,8053672923087,8053672453997##product-carousel-rxsunglasses-end##
+    ##product-carousel-eyeglasses-start##841356092017,8053672808469,888392497574,889652468624,888392192387,8056597829830,8056262043691,0716736273679##product-carousel-eyeglasses-end##
+    ##product-carousel-sunglasses-start##8056597626620,888392674968,8056597823449,700285081212,97963553728,805289126652,889652468983,888392491640##product-carousel-sunglasses-end##
+    ##product-carousel-rxsunglasses-start##805289052418,712316000154,888392388124,805289614098,888392459909,97963911078,716737634073,603429057930##product-carousel-rxsunglasses-end##
     ##product-carousel-contactlenses-start## ##product-carousel-contactlenses-end##
-    ##product-carousel-aiglasses-start##8056597982788,888392682888,8056262721377,8056262166185,888392690395,8056262721322,888392682871,8056262721391,8056262721414
-    ##product-carousel-aiglasses-end##
-
-
+    ##product-carousel-aiglasses-start##8056262721438,8056262721285,888392682857,8056597983563,888392690418,8056597982788,8056262721407,8056262721254##product-carousel-aiglasses-end##
     <section class="mx-64">
         <div class="container-fluid text-center">
             <h4 class="mb-4 weight-bold ct_font__24" style="color: #333333;">Best of the month</h4>
@@ -344,27 +354,27 @@
                                 NOW</a>
                         </div>
                     </div>
-
                     <div class="card h-100 border-0 slider-item">
-                        <a href="/gucci/brand">
+                        <a href="/email/flash-sale-dp">
                             <img src="https://images.framesdirect.com/image/upload/v1762424714/homePage/HP_W49_OFFERSHUB_3.png"
                                 class="card-img-top img-radius" alt="Brand Push">
                         </a>
                         <div class="card-body text-center px-0">
-                            <p class="weight-bold ct_font__16" style="color: #333333;">Gucci
+                            <p class="weight-bold ct_font__16" style="color: #333333;">Up to 40% off select Oakley
+                                Frames
                             </p>
-                            <p class="ct_font__14 pb-3">Explore the artistry of Gucci frames built to turn heads.
-                                <b>Starting
-                                    from $50 a month.</b>
+                            <p class="ct_font__14 pb-3">Get your hands on select Oakley styles. <br>
+                                <b>This flash sale won’t stick around.</b>
                             </p>
-                            <a href="/gucci/brand" class="btn btn-outline-dark weight-bold btn-sm text-secondary mb-4"
+                            <a href="/email/flash-sale-dp"
+                                class="btn btn-outline-dark weight-bold btn-sm text-secondary mb-4"
                                 style="color: #6B777B !important;">SHOP NOW</a>
                         </div>
                     </div>
 
                     <div class="card h-100 border-0 slider-item">
                         <a href="/promotions">
-                            <img src="https://images.framesdirect.com/image/upload/v1764943756/homePage/HP_W01-02_OFFERSHUB_4.png"
+                            <img src="https://images.framesdirect.com/image/upload/v1768398743/homePage/offer_hub_section4.png"
                                 class="card-img-top img-radius" alt="Transitions Lenses">
                         </a>
                         <div class="card-body text-center px-0">
@@ -381,6 +391,8 @@
 
         </div>
     </section>
+
+
 
 
 
@@ -774,11 +786,11 @@
 
     <div id="firstInsuranceBanner" class="mb-4 pt-3 mt-5 mx-64" style="border-radius: 32px;">
         <div class="col-12 col-md-7 col-lg-8 ml-sm-auto text-center text-md-left p-3 bg-green mt-lg-5">
-            <h2 class="size-14 mt-4 mb-0">New Year, New Vision Benefit
-            </h2>
+            <h2 class="size-14 mt-4 mb-0">New Year, New Vision Benefits</h2>
             <p class="mt-0">
-                <b>Get $55 off</b> Progressive, Blue Light or <br class="ct_desk__hide">Transitions® lenses with code
-                <b>NEWVISION</b>
+                <b>Get $55 off</b> Progressive, Blue Light or <br class="ct_desk__hide">Transitions® lenses with
+                code
+                <b>NEWVISION</b><br> at checkout.
             </p>
             <p>
                 <img src="https://images.framesdirect.com/image/upload/v1742409416/insurance/logo-eyemed.png" width="57"
@@ -792,7 +804,8 @@
                 ...and many more!
             </p>
             <a href="/email/vision-insurance-dp" class="btn-cta background-dk-gray"
-                data-element-id="5Placement_Banner1_CTA" data-description="shopWithInsurance">Shop with Insurance</a>
+                data-element-id="5Placement_Banner1_CTA" data-description="shopWithInsurance">Shop with
+                Insurance</a>
             <a href="/knowledge-center/vision-insurance-fsa-eligibility" class="btn-cta background-clear ml-lg-3"
                 data-element-id="5Placement_Banner1_CTA" data-description="learn
 More">Learn
@@ -810,7 +823,7 @@ More">Learn
                 Versace flair.</p>
 
             <div class="carouselLens position-relative">
-                <a href="https://www.framesdirect.com//versace-ve1274-eyeglasses">
+                <a href="/versace-ve1274-eyeglasses">
                     <img id="carouselImage" src="/product_elarge_images/Versace-VE1285-Black-1443-Eyeglasses.jpg"
                         alt="VERSACE Glasses"></a>
                 <div class="d-flex carousel-buttons position-absolute p-2 justify-content-between w-100">
@@ -823,7 +836,7 @@ More">Learn
                 <div>Versace VE1274</div>
                 <div><del class="mr-1">$316.00</del> <strong>$221.20</strong></div>
                 <div class="buttonsLens d-flex justify-content-center mt-4 ">
-                    <a href="https://www.framesdirect.com//versace-ve1274-eyeglasses" type="button"
+                    <a href="/versace-ve1274-eyeglasses" type="button"
                         class="btn weight-bold color-blue-gray p-2 pr-3 pl-3 btn-w-50">SHOP
                         NOW</a>
                     <a href="/versace/brand" type="button"
@@ -835,7 +848,7 @@ More">Learn
         </div>
 
         <div class="right col-12 col-md-6 p-0">
-            <a href="https://www.framesdirect.com//versace-ve1274-eyeglasses">
+            <a href="/versace-ve1274-eyeglasses">
                 <img src="https://images.framesdirect.com/image/upload/v1751277118/homePage/FD_HP_REDESIGN_VERSACE_D.png"
                     alt="Versace Glasses in Hand"></a>
         </div>
@@ -963,7 +976,8 @@ More">Learn
 
             <!-- Description -->
             <p class="description">
-                Free shipping on eligible US orders. Exclusions apply. See 'em by clicking on "Learn more". We deliver
+                Free shipping on eligible US orders. Exclusions apply. See 'em by clicking on "Learn more". We
+                deliver
                 to PO boxes.
             </p>
             <a href="/include/information/shipping_options.aspx"
@@ -1042,7 +1056,8 @@ More">Learn
                 Everyday savings on top brands and lens solutions – great style, smart prices.
             </p>
             <a href="/sale/"
-                class="align-items-end ct_font__16 display mt-4 weight-bold justify-content-center d-flex">Shop now</a>
+                class="align-items-end ct_font__16 display mt-4 weight-bold justify-content-center d-flex">Shop
+                now</a>
         </div>
         <div class="cardStyle">
             <!-- SVG Icon -->
@@ -1097,7 +1112,8 @@ More">Learn
     </div>
 
 
-    <button id="prevBtn" type="button" class="prevBtn cursor-pointer position-absolute ct_font__18">&#10094; </button>
+    <button id="prevBtn" type="button" class="prevBtn cursor-pointer position-absolute ct_font__18">&#10094;
+    </button>
     <button id="nextBtn" type="button" class="nextBtn cursor-pointer position-absolute ct_font__18">&#10095;</button>
 
 

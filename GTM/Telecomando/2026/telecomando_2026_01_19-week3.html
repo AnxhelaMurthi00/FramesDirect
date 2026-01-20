@@ -1,0 +1,30 @@
+<script>
+  if (
+    (checkDate >= "260119" && checkDate <= "260125") ||
+    (fdFncs.vars.isTest >= "260119" && fdFncs.vars.isTest <= "260125")
+  ) {
+    $("#discountBar #exclusiveToggle").html(
+      $("#discountBar #exclusiveToggle")
+        .html()
+        .replace("See Exclusive Savings!", "Anniversary sale")
+        .replace("Exclusive Savings", "Anniversary sale")
+    );
+    $("#exclusiveSavings #discountBar > .blue-bg").css({
+      background: "#E7DDC2",
+    });
+  } else
+    if (
+      (checkDate >= "260108" && checkDate <= "260118") ||
+      (fdFncs.vars.isTest >= "260108" && fdFncs.vars.isTest <= "260118")
+    ) {
+      $("#discountBar #exclusiveToggle").html(
+        $("#discountBar #exclusiveToggle")
+          .html()
+          .replace("See Exclusive Savings!", "Winter deals ")
+          .replace("Exclusive Savings", "Winter deals ")
+      );
+      $("#exclusiveSavings #discountBar > .blue-bg").css({
+        background: "#D5DFE3",
+      });
+    }
+</script>

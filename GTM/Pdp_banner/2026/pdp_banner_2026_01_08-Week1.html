@@ -28,6 +28,26 @@
       // ---------- META BANNER ----------
       if (
         ($('h1:contains("Prescription")').length > 0 ||
+          $('h1:contains("Eyeglasses")').length > 0 ||
+          $('h1:contains("Sunglasses")').length > 0) &&
+        ($('h1:contains("XXL")').length > 0 ||
+          $('h1:contains("Kate Spade")').length > 0 ||
+          $('h1:contains("Gucci")').length > 0 ||
+          $('h1:contains("Shuron ")').length > 0)
+      ) {
+        $('<div class="lens-bar-holder mx-0 mt-4">' +
+          '<div class="lens-bar d-block color-black px-2 size-12 text-left" ' +
+          'style="background: #D3BDAF; padding: 10px; border-radius: 5px;">' +
+          '<b>Get Your Complete Pair: up to 50% off select frames + 60% off lenses*.</b> Directly applied at checkout.</b>' +
+          '</div>' +
+          '</div>'
+        ).prependTo("#prod-header-right");
+
+        return;
+      }
+
+      if (
+        ($('h1:contains("Prescription")').length > 0 ||
           $('h1:contains("Eyeglasses")').length > 0) &&
         ($('h1:contains("Ray-Ban Meta")').length > 0 ||
           $('h1:contains("Oakley Meta")').length > 0)
@@ -49,6 +69,7 @@
         $('<div class="lens-bar-holder mx-0 mb-3 mt-4"><div class="lens-bar d-block color-black px-2 size-12 text-left weight-bold" style="background:#D5DFE3; border-radius: 5px;">Up to 50% off frames + 60% off lenses with frame purchase</b> </div></div>')
           .prependTo("#prod-header-right");
       }
+
     }
 
     else
