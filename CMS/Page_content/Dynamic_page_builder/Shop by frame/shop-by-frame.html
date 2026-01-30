@@ -1,0 +1,14 @@
+<script type="text/javascript" src="https://media.contactsdirect.com/DesignSystem/JS/script.js"></script>
+<script type="text/javascript" src="https://media.contactsdirect.com/utilities/CRMBanners/CD/CD_config.js"></script>
+<script type="text/javascript"
+    src="https://media.contactsdirect.com/utilities/CRMBanners/CRMBanner_core.min.js"></script>
+<script>$(document).ready(function () {
+        if (window.location.search.includes("cid=CM-ENL_")) {
+            document.cookie = "canShowWelcomeSignup=false";
+            $(".cd_welcome_modal_overlay").hide();
+            $(".cd_welcome_modal").hide();
+            $(".cd_welcome_modal").addClass("modalDisabled");
+            $(".cd_welcome_mobile_container").hide();
+        }
+    });
+</script>
