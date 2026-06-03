@@ -1,0 +1,249 @@
+<style>
+    #content-main {
+        padding: 0;
+    }
+
+    #landing-content {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .hero {
+        display: flex;
+        min-height: 100svh;
+        align-items: center;
+        justify-content: center;
+        padding: 24px 18px 88px;
+    }
+
+    .hero-inner {
+        width: 100%;
+        text-align: center;
+    }
+
+    h1 {
+        margin: 0 0 10px;
+        font-size: 24px;
+        line-height: 1.1;
+        letter-spacing: .2px;
+        font-weight: 800;
+        text-transform: none;
+    }
+
+    .sub {
+        margin: 0 0 22px;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .sub strong {
+        font-weight: 800
+    }
+
+    /* Form */
+    .field {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .field input[type="email"] {
+        flex: 1;
+        height: 48px;
+        padding: 0 14px;
+        font-size: 16px;
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, .12);
+        border-radius: var(--radius);
+        outline: none;
+    }
+
+    .cta {
+        height: 48px;
+        padding: 0 18px;
+        border: 0;
+        border-radius: var(--radius);
+        background: var(--btn);
+        color: var(--btn-text);
+        font-weight: 800;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .signed-in {
+
+        margin-top: 10px;
+        font-weight: 700;
+        font-size: 11px;
+    }
+
+    .sticky {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 12px 14px;
+        background: #2c3947;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .sticky .copy {
+        font-size: 13px;
+        line-height: 1.25;
+        opacity: .9;
+    }
+
+    .sticky .small-btn {
+        white-space: nowrap;
+        background: #fff;
+        color: #ffffff;
+        border: 0;
+        border-radius: 10px;
+        padding: 10px 16px;
+        font-weight: 800;
+        cursor: pointer;
+    }
+
+    @media (max-width: 769px) {
+
+        .hero {
+            background: radial-gradient(70% 70% at 50% 30%, var(--bg1) 0%, var(--bg2) 70%);
+        }
+
+        .image-section {
+            display: none !important;
+        }
+    }
+
+    /* ===== Desktop ===== */
+    @media (min-width: 769px) {
+        .image-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+        }
+
+
+
+        .image-section img {
+            width: min(80%, 680px);
+            height: auto;
+            display: block;
+        }
+
+        .hero {
+            min-height: 100vh;
+            padding: 40px;
+
+        }
+
+        .sticky {
+            display: none
+        }
+
+        .ct_desk__hide {
+            display: none;
+        }
+    }
+
+    .input>input {
+        min-height: 48px !important;
+        min-width: 50%;
+        border: 1px solid #C6C6C6;
+        border-radius: 4px;
+    }
+
+    @media(max-width: 765px) {
+        #subscription-shop a {
+            width: 90% !important;
+        }
+
+        .input>input {
+            min-width: 90%;
+        }
+
+        .ct_mob__hide {
+            display: none;
+        }
+
+        .subscription-page {
+            background-image: url('https://images.framesdirect.com/image/upload/q_auto/f_auto/v1775138030/subscription-page/FD_SUBSCRIPTION-PAGE_M.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+
+        h1,
+        .sub,
+        .signed-in,
+        h4,
+        #signed-in a {
+            color: #fff !important;
+        }
+    }
+
+
+    input::-webkit-input-placeholder {
+        position: absolute;
+        left: 15px;
+        font-size: 16px;
+    }
+
+    input:focus::placeholder {
+        color: transparent;
+    }
+
+    input {
+        font-size: 16px;
+    }
+
+    .btn-shop {
+        margin: 15px 5px 0 5px;
+        background-color: #000000;
+        font-weight: bold !important;
+        color: white !important;
+        border: none;
+    }
+
+    #subscription-shop {
+        display: none !important;
+    }
+
+    #subscription-shop a {
+        width: 50%;
+    }
+</style>
+
+
+<div class="subscription-page col-md-12 p-0 d-flex w-100">
+    <div class="image-section  d-flex justify-content-center w-100 p-0">
+        <img src="https://images.framesdirect.com/image/upload/q_auto/f_auto/v1775138030/subscription-page/FD_CUW_unlogged_SUBSCRIPTION-PAGE_D.png"
+            alt="
+                    Glasses " class="col-12 p-0">
+    </div>
+
+    <main class="d-flex align-items-center col-md-6 justify-content-center" role="main">
+        <div class="hero-inner">
+            <h1 id="subscription-title">Exclusive Access Week</h1>
+            <p class="sub" id="subscription-paragh">
+                Get our <strong>Exclusive Access Week</strong> deals! Shop best sellers now and save up to
+                <strong><br class="ct__mob__hide"> 50% on frames + up to 65% off lenses with code LENSES5</strong>
+            </p>
+            <p class="sub" id="subscription-paragh"></p>
+            <div class="d-flex flex-column justify-content-between input align-items-center w-100"
+                id="subscription-placeholder">
+                <input id="email" type="email" placeholder="Email address" autocomplete="email" required="true"
+                    class="mb-3">
+                <br />
+                <a href="#" class="btn btn-primary btn-shop mt-4" type="submit" id="subscription-submit">SIGN UP</a>
+
+            </div>
+        </div>
+    </main>
+</div>

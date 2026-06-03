@@ -1,0 +1,69 @@
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const chipBar = document.getElementById('prada-chip-bar');
+
+    if (!chipBar) {
+        return;
+    }
+
+    let isPointerDown = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+    let isDragging = false;
+
+    chipBar.addEventListener('pointerdown', function (event) {
+        isPointerDown = true;
+        isDragging = false;
+        startX = event.clientX;
+        startScrollLeft = chipBar.scrollLeft;
+        chipBar.classList.add('is-dragging');
+    });
+
+    chipBar.addEventListener('pointermove', function (event) {
+        if (!isPointerDown) {
+            return;
+        }
+
+        const deltaX = event.clientX - startX;
+
+        if (Math.abs(deltaX) > 8) {
+            isDragging = true;
+        }
+
+        if (!isDragging) {
+            return;
+        }
+
+        event.preventDefault();
+        chipBar.scrollLeft = startScrollLeft - deltaX;
+    });
+
+    function stopDragging() {
+        isPointerDown = false;
+        chipBar.classList.remove('is-dragging');
+
+        setTimeout(function () {
+            isDragging = false;
+        }, 0);
+    }
+
+    chipBar.addEventListener('pointerup', stopDragging);
+    chipBar.addEventListener('pointercancel', stopDragging);
+    chipBar.addEventListener('pointerleave', stopDragging);
+
+    chipBar.addEventListener('click', function (event) {
+        const chip = event.target.closest('.prada-chip');
+
+        if (!chip) {
+            return;
+        }
+
+        if (isDragging) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+    });
+});
+
+
+</script>
