@@ -1,25 +1,29 @@
 <script>
   const updateHeroBanner = () => {
     if (
-      (checkDate >= "260401" && checkDate <= "260625") ||
-      (fdFncs.vars.isTest >= "260401" && fdFncs.vars.isTest <= "260625")
+      (checkDate >= "260401" && checkDate <= "260725") ||
+      (fdFncs.vars.isTest >= "260401" && fdFncs.vars.isTest <= "260725")
     ) {
       //hero slider promotion
       $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
       $("#hero-slider").append(
         `
+
 <li class="clearanceHeroSlide">
 <style>
     @media (min-width: 1200px) and (max-width: 1430px) {
         .clearanceHeroSlide .clearanceHeroText {
             width: 44% !important;
-            left: 4%;
+            left: 50% !important;
+            transform: translateX(-50%);
         }
     }
+
     @media (min-width: 1440px) {
         .clearanceHeroSlide .clearanceHeroText {
-            width: 36%;
-            left: 2%;
+            width: 36% !important;
+            left: 50% !important;
+            transform: translateX(-50%);
         }
     }
     .ct_space .ct_lh__sm {
@@ -60,7 +64,7 @@
             <picture class="ct_img">
                 <source media="(max-width: 767px)"
                     srcset="https://images.framesdirect.com/image/upload/v1781616838/homePage/FD_HP_W25_M_CLEARANCE.png">
-                <img src="https://images.framesdirect.com/image/upload/v1780923508/homePage/HP_W21_CLEARANCE_D_3600x1260.png"
+                <img src="https://images.framesdirect.com/image/upload/v1782811234/homePage/FD_HP_CLEARANCE.png"
                     fetchpriority="high" alt="Clearance Deals" width="3840" height="1108">
             </picture>
             <!-- Left / men's glasses -->
@@ -79,7 +83,7 @@
             style="background: #C8CEB2; width: 42%;">
             <a href="/sale/" aria-label="sale" data-element-id="MainNav_Promo" data-description="Sale">
                 <div class="ct_text__black ct_font__18 ct_lh__sm weight-bold ct_mt__mob__10">
-                    Clearance Deals
+                   Only a few frames left:
                 </div>
                 <div class="ct_font__18 ct_font__mob_18 pt-lg-2 pt-1 pb-md-0 pb-3 ct_text__black">
                     Up to
@@ -103,9 +107,7 @@
                 SHOP THE DEAL
             </a>
             <!-- Mobile CTA -->
-            <a href="/sale/" class="ct_cta ct_cta__red ct_desk__hide"
-                style="background-color:#AB2317;font-size:16px;margin-top:15px !important;display:inline-block;"
-                data-element-id="MainNav_Promo" data-description="saveNOW">
+           <a href="/sale" class="ct_cta ct_cta__red ct_desk__hide" style="background-color:#AB2317;font-size:16px;margin-top:15px !important;display:inline-block;margin-bottom: 50px;" data-element-id="MainNav_Promo" data-description="saveNOW">
                 SHOP THE DEAL
             </a>
         </div>
@@ -113,111 +115,133 @@
 </div>
 </li>
 <li>
-  <style>
-    @media (min-width: 1200px) and (max-width: 1430px) {
-      #secondHero {
-        width: 50% !important;
-        left: 25%;
-      }
+<style>
 
-      .hide {
+@media (min-width: 1200px) and (max-width: 1430px){
+    #secondHero{
+        width:50% !important;
+        left: 25%;
+    }
+    .hide{
         display: none;
-      }
     }
-
-    @media (min-width: 1440px) {
-      #secondHero {
+}
+@media (min-width: 1440px){
+    #secondHero{
         width: 50% !important;
         left: 25%;
-      }
     }
-
-    .insurnace_brands {
-      width: 424px;
-      height: 42px;
-    }
-</style>
+}
+.insurnace_brands {
+    width: 424px;
+    height: 42px;
+}
     <style>
-      @media (max-width: 767px) {
-      #secondHero {
+@media (max-width: 767px) {
+    #secondHero {
         padding-top: 20px !important;
-      }
     }
-  </style>
-  <div class="ct_space ct_mob__hide">
+}
+</style>
+
+<div class="ct_space ct_mob__hide">
     <div class="ct_banner ct_hero">
-      <div class="ct_assets__container">
-        <picture class="ct_skeleton">
-          <img
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAAJ0lEQVR4AeyQMQ0AAAjDyByABfxrBBHruSZ9e1SzfaQqmAT9ofjDBwAA//8Eo/fWAAAABklEQVQDADQTGXOFR5AvAAAAAElFTkSuQmCC"
-            alt="structure image">
-        </picture>
-        <picture class="ct_img">
-          <img src="https://images.framesdirect.com/image/upload/v1781596459/homePage/FD_HP_INSURANCE.png"
-            fetchpriority="high" alt="Insurance" width="3840" height="1108" usemap="#image-map5">
-        </picture>
-      </div>
-      <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pb__mob__30" id="secondHero"
-        style="background:#D6F3E9; width:42%;">
-        <a href="/email/auth-lenses-dp" aria-label="sale">
-          <div class="ct_text__black ct_font__28 ct_lh__sm weight-bold">
-            Confidence Starts With The Right Coverage
-          </div>
-          <div class="ct_font__18 pt-lg-2 pt-4">
-            <b>Get $55 off</b> Progressive, Blue Light or Transitions®
-            lenses <br> with promo code <b>NEWVISION</b> at checkout.
-          </div>
-          <div class="logos d-flex justify-content-around align-items-center w-100 pt-2">
-            <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/EYEMED_logo-color.png" alt="">
-            <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/aetna-logo.png" alt="">
-            <img src="https://images.framesdirect.com/image/upload/v1752502287/logos/humana-logo.png" alt="">
-            <img src="https://images.framesdirect.com/image/upload/v1752502287/logos/cigna-logo.png" alt="">
-            <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/many-more-logo.png" alt="">
-          </div>
-        </a>
-        <div class="text-center ml-2 d-flex flex-column flex-lg-row pb-2">
-          <a href="/knowledge-center/vision-insurance-fsa-eligibility" class="btn-cta nowrap mt-4"
-            style="background:#000; color:#fff !important; border:0;">
-            LEARN MORE
-          </a>
-          <a href="/email/vision-insurance-dp" class="btn-cta nowrap mt-4 ml-lg-5"
-            style="background:#AB2317; color:#fff !important; border:0;">
-            SHOP NOW
-          </a>
+        <div class="ct_assets__container">
+            <picture class="ct_skeleton">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAAJ0lEQVR4AeyQMQ0AAAjDyByABfxrBBHruSZ9e1SzfaQqmAT9ofjDBwAA//8Eo/fWAAAABklEQVQDADQTGXOFR5AvAAAAAElFTkSuQmCC"
+                     alt="structure image">
+            </picture>
+
+            <picture class="ct_img">
+                <img src="https://images.framesdirect.com/image/upload/v1781596459/homePage/FD_HP_INSURANCE.png"
+                     fetchpriority="high"
+                     alt="Insurance"
+                     width="3840"
+                     height="1108"
+                     usemap="#image-map5">
+            </picture>
         </div>
-      </div>
+
+        <div class="ct_text__overlay ct_text__center ct_w__mob__100 ct_pb__mob__30"
+             id="secondHero"
+             style="background:#D6F3E9; width:42%;">
+
+            <a href="/email/auth-lenses-dp" aria-label="sale">
+                <div class="ct_text__black ct_font__28 ct_lh__sm weight-bold">
+                    Confidence Starts With The Right Coverage
+                </div>
+
+                <div class="ct_font__18 pt-lg-2 pt-4">
+                    <b>Get $55 off</b> Progressive, Blue Light or Transitions®
+                    lenses <br> with promo code <b>NEWVISION</b> at checkout.
+                </div>
+
+                <div class="logos d-flex justify-content-around align-items-center w-100 pt-2">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/EYEMED_logo-color.png" alt="">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/aetna-logo.png" alt="">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502287/logos/humana-logo.png" alt="">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502287/logos/cigna-logo.png" alt="">
+                    <img src="https://images.framesdirect.com/image/upload/v1752502288/logos/many-more-logo.png" alt="">
+                </div>
+            </a>
+
+            <div class="text-center ml-2 d-flex flex-column flex-lg-row pb-2">
+                <a href="/knowledge-center/vision-insurance-fsa-eligibility"
+                   class="btn-cta nowrap mt-4"
+                   style="background:#000; color:#fff !important; border:0;">
+                    LEARN MORE
+                </a>
+
+                <a href="/email/vision-insurance-dp"
+                   class="btn-cta nowrap mt-4 ml-lg-5"
+                   style="background:#AB2317; color:#fff !important; border:0;">
+                    SYNC NOW
+                </a>
+            </div>
+
+        </div>
     </div>
-  </div>
-  <div class="ct_space ct_desk__hide">
+</div>
+
+<div class="ct_space ct_desk__hide">
     <div class="ct_banner ct_hero" style="display:block; background:#F1EDE3;">
-      <a href="/email/auth-lenses-dp" aria-label="sale" style="display:block;">
-        <picture class="ct_img">
-          <img src="https://images.framesdirect.com/image/upload/v1781175421/homePage/FD_HP_W25_insurance_M.png"
-            fetchpriority="high" alt="Insurance" width="750" height="684"
-            style="width:100%; height:auto; display:block;">
-        </picture>
-      </a>
-      <div class="ct_text__center ct_text__black ct_pb__mob__30" style="background:#F1EDE3;padding: 28px 5px 34px;">
-        <a href="/email/auth-lenses-dp" aria-label="sale">
-          <div class="ct_font__28 ct_lh__sm weight-bold">
-            Confidence Starts With <br>
-            The Right Coverage
-          </div>
-          <div class="ct_font__18 ct_font__mob_16 pt-2">
-            <b>Get $55 off</b> Progressive, Blue Light or Transitions®
-            lenses with promo code <b>NEWVISION</b> at checkout.
-          </div>
+
+        <a href="/email/auth-lenses-dp" aria-label="sale" style="display:block;">
+            <picture class="ct_img">
+                <img src="https://images.framesdirect.com/image/upload/v1781175421/homePage/FD_HP_W25_insurance_M.png"
+                     fetchpriority="high"
+                     alt="Insurance"
+                     width="750"
+                     height="684"
+                     style="width:100%; height:auto; display:block;">
+            </picture>
         </a>
-        <div class="text-center d-flex flex-column align-items-center ct_mb__mob__30 pt-1">
-          <a href="/knowledge-center/vision-insurance-fsa-eligibility" class="btn-cta nowrap mt-3"
-            style="background:#000; color:#fff !important; border:0;">
-            LEARN MORE
+
+        <div class="ct_text__center ct_text__black ct_pb__mob__30"
+             style="background:#F1EDE3; padding:28px 20px 34px;">
+
+            <a href="/email/auth-lenses-dp" aria-label="sale">
+                <div class="ct_font__28 ct_lh__sm weight-bold">
+                    Confidence Starts With <br>
+                    The Right Coverage
+                </div>
+
+                <div class="ct_font__18 ct_font__mob_18 pt-3">
+                    <b>Get $55 off</b> Progressive, Blue Light or Transitions® lenses with promo code <b>NEWVISION</b> at checkout.
+                </div>
+            </a>
+
+            <div class="text-center d-flex flex-column align-items-center ct_mb__mob__30 pt-3">
+                <a href="/knowledge-center/vision-insurance-fsa-eligibility"
+                   class="btn-cta nowrap mt-3"
+                   style="background:#000; color:#fff !important; border:0;">
+                    LEARN MORE
+                </a>
+
+                <a href="/email/vision-insurance-dp" class="btn-cta nowrap mt-3" style="background:#AB2317;color:#fff !important;border:0;margin-bottom: 20px;" data-element-id="MainNav_Promo" data-description="Heroctalink">
+            SYNC NOW
           </a>
-          <a href="/email/vision-insurance-dp" class="btn-cta nowrap mt-3"
-            style="background:#AB2317; color:#fff !important; border:0;">
-            SHOP NOW
-          </a>
-        </div>
+            </div>
       </div>
     </div>
   </div>
@@ -1877,7 +1901,7 @@ style="min-height: 176px; background: #C5CEC1 !important; color: #2d3547;"
       src: "https://www.framesdirect.com/product_elarge_images/ralph-RA7158U-shiny-transparent-beige-6117.jpg",
       alt: "RALPH - Side View"
     },
-   
+
   ];
 
   let currentImageIndex = 0;
