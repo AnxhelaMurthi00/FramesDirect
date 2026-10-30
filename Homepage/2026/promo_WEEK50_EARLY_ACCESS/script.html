@@ -1,0 +1,1706 @@
+<script>
+  (function () {
+    "use strict";
+
+    function initializeIrisEntryPoint() {
+      var input = document.getElementById("vcInput");
+      var submitButton = document.getElementById("vcSubmitBtn");
+      var micButton = document.getElementById("vcMicBtn");
+      var status = document.getElementById("vcStatus");
+
+      if (!input || !submitButton || !micButton) {
+        return;
+      }
+
+      if (input.getAttribute("data-iris-initialized") === "true") {
+        return;
+      }
+
+      input.setAttribute("data-iris-initialized", "true");
+
+      var wrapper = input.closest(".vc-wrapper");
+      var recognition = null;
+      var isListening = false;
+      var speechFailed = false;
+      var finalTranscript = "";
+      var silenceTimer = null;
+
+      function announce(message) {
+        if (status) {
+          status.textContent = message;
+        }
+      }
+
+      function updateButtonState() {
+        var hasValue = input.value.trim().length > 0;
+
+        submitButton.disabled = !hasValue || isListening;
+        submitButton.classList.toggle(
+          "vc-action-hidden",
+          !hasValue || isListening
+        );
+
+        micButton.classList.toggle(
+          "vc-action-hidden",
+          hasValue && !isListening
+        );
+      }
+
+      function submitInput() {
+        var value = input.value.trim();
+
+        if (value && !isListening) {
+          window.location.href =
+            "/ai/default.aspx?search=" + encodeURIComponent(value);
+        }
+      }
+
+      function clearSilenceTimer() {
+        if (silenceTimer !== null) {
+          window.clearTimeout(silenceTimer);
+          silenceTimer = null;
+        }
+      }
+
+      function stopRecognition() {
+        clearSilenceTimer();
+
+        if (recognition && isListening) {
+          recognition.stop();
+        }
+      }
+
+      input.addEventListener("input", updateButtonState);
+
+      input.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" && !event.isComposing) {
+          event.preventDefault();
+          submitInput();
+        }
+      });
+
+      submitButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        submitInput();
+      });
+
+      wrapper.querySelectorAll(".vc-pill").forEach(function (button) {
+        button.addEventListener("click", function (event) {
+          event.preventDefault();
+
+          if (isListening) {
+            speechFailed = true;
+            stopRecognition();
+          }
+
+          input.value =
+            button.getAttribute("data-value") ||
+            button.textContent.trim();
+
+          updateButtonState();
+          input.focus();
+        });
+      });
+
+      var SpeechRecognition =
+        window.SpeechRecognition || window.webkitSpeechRecognition;
+
+      if (SpeechRecognition) {
+        recognition = new SpeechRecognition();
+        recognition.lang = "en-US";
+        recognition.continuous = false;
+        recognition.interimResults = true;
+
+        recognition.onstart = function () {
+          isListening = true;
+          micButton.classList.add("active");
+          micButton.setAttribute("aria-label", "Stop voice input");
+          micButton.setAttribute("title", "Stop voice input");
+          announce("Listening.");
+          updateButtonState();
+        };
+
+        recognition.onresult = function (event) {
+          if (speechFailed) {
+            return;
+          }
+
+          var interimTranscript = "";
+
+          for (var i = event.resultIndex; i < event.results.length; i++) {
+            var transcript = event.results[i][0].transcript;
+
+            if (event.results[i].isFinal) {
+              finalTranscript += transcript + " ";
+            } else {
+              interimTranscript += transcript;
+            }
+          }
+
+          input.value = (finalTranscript + interimTranscript).trim();
+          updateButtonState();
+
+          clearSilenceTimer();
+          silenceTimer = window.setTimeout(stopRecognition, 1200);
+        };
+
+        recognition.onspeechend = stopRecognition;
+
+        recognition.onerror = function (event) {
+          speechFailed = true;
+          clearSilenceTimer();
+
+          var message = "Voice input failed. Please type your request.";
+
+          if (
+            event.error === "not-allowed" ||
+            event.error === "service-not-allowed"
+          ) {
+            message =
+              "Microphone access was blocked. Please type your request.";
+          } else if (event.error === "no-speech") {
+            message = "No speech was detected. Please try again or type.";
+          }
+
+          announce(message);
+        };
+
+        recognition.onend = function () {
+          clearSilenceTimer();
+          isListening = false;
+
+          micButton.classList.remove("active");
+          micButton.setAttribute("aria-label", "Use voice input");
+          micButton.setAttribute("title", "Use voice input");
+
+          updateButtonState();
+
+          if (!speechFailed && input.value.trim()) {
+            announce("Opening IRIS.");
+            submitInput();
+          }
+        };
+      }
+
+      micButton.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        if (!recognition) {
+          announce(
+            "Voice input is not supported in this browser. Please type."
+          );
+          input.focus();
+          return;
+        }
+
+        if (isListening) {
+          stopRecognition();
+          return;
+        }
+
+        speechFailed = false;
+        finalTranscript = "";
+
+        try {
+          recognition.start();
+        } catch (error) {
+          speechFailed = true;
+          isListening = false;
+          updateButtonState();
+          announce("Unable to start voice input. Please type your request.");
+        }
+      });
+
+      updateButtonState();
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initializeIrisEntryPoint);
+    } else {
+      initializeIrisEntryPoint();
+    }
+  })();
+
+  const updateHeroBanner = () => {
+    if (getCookie('fdRecognized') !== undefined &&
+      (
+        (checkDate >= "261021" && checkDate <= "271120") ||
+        (fdFncs.vars.isTest >= "261021" && fdFncs.vars.isTest <= "271120")
+      )
+    ) {
+      let heroBanner =
+        `
+<style>
+    #firstHeroImg1 .fd-logged-cta {
+        background: #fff !important;
+        color: #222 !important;
+    }
+
+    @media (max-width: 767px) {
+        #firstHeroImg1 .fd-logged-cta {
+            background: #333 !important;
+            color: #fff !important;
+        }
+      .fd-routine-hero #firstHeroImg1 {
+      position: relative !important;
+      left: auto !important;
+      top: auto !important;
+      transform: none !important;
+      width: 100% !important;
+      height: auto !important;
+      padding: 20px 16px 32px !important;
+      background: #fff !important;
+      text-align: center !important;
+      align-items: center !important;
+      padding-bottom: 24px !important;
+    }
+
+    .fd-routine-hero #firstHeroImg1>div {
+
+      margin: 0 auto !important;
+    }
+
+    .fd-routine-hero #firstHeroImg1 .ct_font__16 {
+      background: transparent !important;
+      padding: 0 !important;
+      margin-bottom: 20px !important;
+    }
+
+    .fd-routine-hero #firstHeroImg1 h1 {
+      font-size: 24px !important;
+      line-height: 1.45 !important;
+      margin-bottom: 6px !important;
+      margin-top: 0px;
+    }
+
+
+    .fd-routine-hero #firstHeroImg1 .ct_cta {
+      padding: 12px 20px !important;
+      line-height: 20px;
+      background: #333 !important;
+    }
+    }
+
+      @media (max-width: 767px) {
+    .fd-routine-hero #firstHeroImg1 .ct_cta.ct_mb__mob__50 {
+      margin-bottom: 10px !important;
+      margin-top: 7px !important;
+    }
+  }
+      @media (min-width: 1201px) {
+    .fd-routine-hero #firstHeroImg1 h1 {
+      font-size: 26px !important;
+      line-height: 1.2 !important;
+      white-space: nowrap;
+    }
+  }
+.fd-exclusive { display: none; }
+
+@media (max-width: 767px) {
+    .fd-exclusive {
+        display: block;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #000;
+        margin-bottom: 12px;
+    }
+
+    </style>
+    
+<div class="ct_space fd-routine-hero">
+        <div class="ct_banner ct_hero">
+            <!--STICKY BANNER-->
+            <div class="fd-hero-offers" id="fdHeroOffers">
+                <a href="/email/auth-lenses-dp" class="fd-hero-offer">
+                    <span class="fd-hero-offer-title"><b>Branded lenses: 40% off with code GIFT40</b></span>
+                    <span class="fd-hero-offer-link">Shop Now</span>
+                    <span class="fd-hero-offer-arrow" aria-hidden="true">›</span>
+                </a>
+                 <a href="/ai-glasses" class="fd-hero-offer fd-active-offer">
+                    <span class="fd-hero-offer-title"><b>AI glasses lenses: extra 10% off with code EXTRA10
+                        </b></span>
+                    <span class="fd-hero-offer-link">Shop Now</span>
+                    <span class="fd-hero-offer-arrow" aria-hidden="true">›</span>
+                </a>
+                <a href="/collections/fsa-hsa-eligible-eyewear-dp" class="fd-hero-offer">
+                    <span class="fd-hero-offer-title"><b>Insurance: up to $120 off with code: NEWVISION</b></span>
+                    <span class="fd-hero-offer-link">Shop Now</span>
+                    <span class="fd-hero-offer-arrow" aria-hidden="true">›</span>
+                </a>
+               
+            </div>
+            <a href="/promotions/black-friday-dp" aria-label="Shop the deal">
+                <div class="ct_assets__container" style="position:relative;">
+                    <picture class="ct_skeleton">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAANCAYAAADbnyzoAAAAOklEQVR4AezSMQ0AQAgEwQ/+Fb0JBCAGRGxzxZJQXkKGq+m/yVsvfDyQPkhBBakAzdtBBakAzcd38AAAAP//o1fh6AAAAAZJREFUAwCpGoeTinTXNQAAAABJRU5ErkJggg=="
+                            alt="structure image">
+                    </picture>
+
+                    <picture class="ct_img">
+                        <source media="(max-width: 767px)"
+                            srcset="https://images.framesdirect.com/image/upload/v1792750323/homePage/HP_EA2026_hero_M.png">
+                        <img src="https://images.framesdirect.com/image/upload/v1792750332/homePage/FD_HP_EA2026_hero_D.png"
+                            fetchpriority="high" alt="Back-to-routine eyewear savings">
+                    </picture>
+                  <a href="/oakley-masseter-sunglasses?color=10057687" aria-label="Oakley Masseter"
+    title="Oakley"
+    style="position:absolute; left:37%; top:50%; width:28%; height:35%; z-index:5; display:block;">
+</a>
+
+<a href="/ray-ban-rb5154-clubmaster-eyeglasses?color=392445" aria-label="Ray-Ban Clubmaster Eyeglasses"
+    title="Ray-Ban Clubmaster"
+    style="position:absolute; left:65%; top:29%; width:26%; height:42%; z-index:5; display:block;">
+</a>
+                </div>
+            </a>
+
+<div class="ct_text__overlay ct_text__left ct_w__40 ct_w__mob__100 ct_p__mob__0" id="firstHeroImg1" style="left:5%;transform:none;align-items:flex-start;height: 105% !important;">
+    <div class="mt-lg-0 mb-2 ct_text__black" style="max-width:520px;">
+        <a href="/promotions/black-friday-dp" aria-label="Shop early deals">
+          <div class="fd-countdown" style="display:none" role="timer" aria-live="off"></div>
+
+            <img
+                class="fd-desktop-title ct_mob__hide"
+                src="https://images.framesdirect.com/image/upload/v1792768086/homePage/FD_HP_EA_TITLE_LOGGED.gif"
+                alt="Exclusive access"
+                style="width:410px; max-width:100%; height:auto;"
+            >
+<div class="fd-exclusive">EXCLUSIVE ACCESS GRANTED</div>
+<h1 class="ct_font__mob_34 ct_font__34 ct_font__desk__30 weight-bold luxury-promo-text ct_mb__10" style="
+    line-height: 1.5 !important;
+">
+                Enjoy up to 50% off FRAMES + <br class="ct_desk__hide"> <br class="ct_mob__hide"> 
+                60% off LENSES
+            </h1>
+
+            <div class="ct_mb__20">
+                <span class="ct_font__mob_16 ct_font__16 ct_font__desk__16 luxury-promo-text">
+                    Black Friday Deals on Ray-Ban, Oakley &amp; more <br class="ct_desk__hide"> start now
+                </span>
+            </div>
+        </a>
+
+        <a
+            href="/promotions/black-friday-dp"
+            class="ct_cta fd-logged-cta ct_m__mob__10 ct_mb__mob__50"
+            style="font-size:16px; min-width:172px;"
+            data-element-id="1Hero_Banner1_CTA"
+            data-description="shopEarlyDeals"
+        >
+            SHOP EARLY DEALS
+        </a>
+    </div>
+</div>
+
+    <!--box-->
+    <div class="info-boxes-wrapper fd-routine-strip">
+        <div class="info-boxes-container">
+            <a href="/knowledge-center/vision-insurance-fsa-eligibility" class="info-box text-center">
+                <img src="https://images.framesdirect.com/image/upload/v1783935459/logos/InsuranceLogo.png"
+                    alt="Insurance" class="info-box-logo">
+                <span class="info-box-title">Insurance Plan</span>
+            </a>
+            <a href="/eyeglasses/speedy-rx" class="info-box text-center">
+                <img src="https://images.framesdirect.com/image/upload/v1791450025/icons/SPEEDY_LOGO.png"
+                    alt="Insurance" class="info-box-logo">
+                <span class="info-box-title">2-Day Delivery</span>
+            </a>
+
+            <a href="/include/information/shipping_options.aspx" class="info-box text-center">
+                <img src="https://images.framesdirect.com/image/upload/v1783935459/logos/Shipping_Delivery-Icon.png"
+                    alt="Shipping" class="info-box-logo">
+                <span class="info-box-title">Free Shipping</span>
+            </a>
+
+            <a href="/customer-service" class="info-box text-center">
+                <img src="https://images.framesdirect.com/image/upload/v1783935459/logos/Contact-Us-logo.png"
+                    alt="Support" class="info-box-logo">
+                <span class="info-box-title">Talk with an expert</span>
+            </a>
+
+            <a href="/knowledge-center/payment-methods" class="info-box text-center">
+                <img src="https://images.framesdirect.com/image/upload/v1783935459/logos/Payment-logo.png" alt="Payment"
+                    class="info-box-logo">
+                <span class="info-box-title">Pay with different methods</span>
+            </a>
+        </div>
+    </div>
+    </div>
+    `;
+      $(".heroBanner").replaceWith(heroBanner);
+      initHeroOffers();
+    }
+    else
+      if (
+        (checkDate >= "250714" && checkDate <= "250727") ||
+        (fdFncs.vars.isTest >= "250714" && fdFncs.vars.isTest <= "250727")
+      ) {
+        //hero slider promotion
+        $(".heroBanner").wrap('<ul id="hero-slider"><li></li></ul>');
+        $("#hero-slider").append(
+
+
+          `
+
+    ` );
+      } else {
+      }
+  };
+
+  var bannerSlider = "";
+  function initBannerSlider() {
+    if (
+      bannerSlider.lightSlider &&
+      typeof bannerSlider.destroy === "function"
+    ) {
+      bannerSlider.destroy();
+    }
+    bannerSlider = $("#light-slider").lightSlider({
+      item: 9,
+      auto: true,
+      slideMove: 3,
+      loop: true,
+      autoWidth: false,
+      pauseOnHover: true,
+      easing: "cubic-bezier(0.25, 0, 0.25, 1)",
+      speed: 1000,
+      pause: 5000,
+      slideMargin: 5,
+      responsive: [
+        {
+          breakpoint: 1400,
+          settings: {
+            item: 6,
+          },
+        },
+        {
+          breakpoint: 1080,
+          settings: {
+            item: 4,
+          },
+        },
+        {
+          breakpoint: 500,
+          settings: {
+            item: 3,
+          },
+        },
+      ],
+      onSliderLoad: function (el) {
+        $("#light-slider").css("opacity", 1);
+      },
+    });
+  }
+  var heroSlider = "";
+
+  function initHeroSlider() {
+    const heroSliderElement = document.getElementById("hero-slider");
+
+    // Do nothing if hero slider was not created
+    if (!heroSliderElement) return;
+
+    // Count only real slides, not cloned lightSlider slides
+    const realSlides = heroSliderElement.querySelectorAll("li:not(.clone)");
+
+    // If there is only the main banner, do NOT activate slider
+    if (realSlides.length <= 1) {
+      heroSliderElement.style.opacity = "1";
+      return;
+    }
+
+    if (heroSlider.lightSlider && typeof heroSlider.destroy === "function") {
+      heroSlider.destroy();
+    }
+
+    heroSlider = $("#hero-slider").lightSlider({
+      item: 1,
+      loop: true,
+      auto: true,
+      autoWidth: false,
+      easing: "cubic-bezier(0.25, 0, 0.25, 1)",
+      speed: 1000,
+      pauseOnHover: true,
+      pager: false,
+      pause: 8000,
+      onSliderLoad: function () {
+        $("#hero-slider").css("opacity", 1);
+      },
+      onBeforeSlide: function () {
+        let videos = document.querySelectorAll("#hero-slider video");
+        videos.forEach((video) => {
+          video.pause();
+          video.currentTime = 0;
+        });
+      },
+      onAfterSlide: function () {
+        let videos = document.querySelectorAll("#hero-slider video");
+        videos.forEach((video) => {
+          video.play();
+          video.currentTime = 0;
+        });
+      },
+    });
+  }
+
+  $(function () {
+    updateHeroBanner();
+    updateFirstInsuranceBanner();
+    updateSecondBanner();
+    if (checkDate > "240508" && checkDate < "240514") {
+      $("#promoSale").removeClass("d-none").addClass("d-flex");
+    }
+    if (
+      checkDate > "240403" &&
+      checkDate < "240415" &&
+      getCookie("fdRecognized") !== undefined
+    ) {
+      var discAmt = "25";
+      if (checkDate > "240412") {
+        discAmt = "30";
+      }
+      $(".heroBanner").replaceWith(
+        '<div class="heroBanner position-relative img-flex extended d-flex"><a href="/email/customer-appreciation-dp" class="d-block"><video autoplay muted loop playsinline disablePictureInPicture width="100%" class="d-block"><source src="https://images.framesdirect.com/video/upload/v1711381956/homePage/FD_HP_CUW.mp4" type="video/mp4" /></video></a><div class="text-overlay col-12 col-xl-3 d-flex"><div class="home-promo col-12 d-flex flex-column align-items-center justify-content-center"><div class="size-16 color-white">Private Week is live<div class="weight-bold">Offer ends April 14th</div></div><div class="align-items-center pt-xl-3 pb-xl-5 py-4"><h1 class="size-50 mb-0">' +
+        discAmt +
+        '% OFF</h1><div class="size-18 weight-bold transform-none mt-0">Ray-Ban, Oakley, and more</div><div class="size-14 weight-normal transform-none mt-3">Combinable with 60% off lenses.<br class="d-none d-sm-block"> Enjoy your exclusive savings at checkout.</div></div><a href="/email/customer-appreciation-dp" class="btn-cta mx-5 px-5 py-2 d-inline-block" style="background: #bd0000; color: #fff !important;">Save Now</a></div></div></div>'
+      );
+    } else if (checkDate > "240403" && checkDate < "240415") {
+      $(".heroBanner").replaceWith(
+        '<div class="heroBanner position-relative img-flex extended d-flex"><a href="#" class="d-block"><video autoplay muted loop playsinline disablePictureInPicture width="100%" class="d-block"><source src="https://images.framesdirect.com/video/upload/v1711381956/homePage/FD_HP_CUW.mp4" type="video/mp4" /></video></a><div class="text-overlay col-12 col-xl-3 d-flex"><div class="home-promo col-12 d-flex flex-column align-items-center justify-content-center"><div class="img-flex mt-2" style="margin-bottom: 30px;"><img src="https://images.framesdirect.com/image/upload/v1711633428/homePage/FD_CUW_Herobanner_Mobile.png" width="581" height="437" alt="Private Week is Live" style="max-width: 200px;"></div><div class="color-white size-16">Sign up or sign in to access<br class="d-none d-sm-block"> your exclusive offer ending April 14th.</div><div class="align-items-center justify-content-center pt-4"><a href="#" id="btn-sign-up" class="btn-cta mx-5 ml-md-0 mr-md-5 px-5 py-2 d-inline-block" style="background: #bd0000; color: #fff !important;">SIGN UP</a> <a href="#" id="btn-sign-in" class="btn-cta signIn mx-5 mr-md-0 ml-md-5 px-5 py-2 d-inline-block" style="background: #fff; color: #000 !important;">SIGN IN</a></div></div></div>'
+      );
+      $("#btn-sign-up").on("click", function () {
+        $("#footer-newsletter-submit").click();
+      });
+      $(document).on("click", "a.signIn", function (e) {
+        e.preventDefault();
+        $("#ctl01_lnkNewLogin a").click();
+      });
+    }
+    if (checkDate > "240430" && checkDate < "240508") {
+      $("#promoSale").removeClass("display-none");
+    }
+    if (checkDate > "231108" && checkDate < "231116") {
+      $("#email-signup").removeClass("display-none");
+    }
+    $("#polarizedSale").on("click", function () {
+      window.location.href = "/sale/polarized-dp";
+    });
+    $(
+      "#saleBlock > div, #brand-callout, #text-overlay, #promoSale, #cyberSale"
+    ).on("click", function () {
+      let $this = $(this),
+        linkLoc = $this.find("a").attr("href");
+      window.location.href = linkLoc;
+    });
+    $("#email-signup").on("click", function () {
+      $("#footer-newsletter-submit").click();
+    });
+    if (checkDate > "230109") {
+      $("#saleBlock").removeClass("d-flex").addClass("d-none");
+    }
+    if (checkDate > "231130" && checkDate < "240101") {
+      $("#FSABar h2").html(
+        "Use Your FSA Dollars<br>Before They Expire December 31st"
+      );
+      $("#FSABar p").html(
+        "Many Flexible Spending Accounts expire on December 31st, but yours don't have to go to waste. Get new eyeglasses, prescription sunglasses, readers, or contact lenses before the new year."
+      );
+      $("#FSABar").insertBefore("#rfk-hp-custFaves");
+    } else if (checkDate > "231231" && checkDate < "240201") {
+      $("#FSABar h2").html("New Year, New FSA Dollars to Use!");
+      $("#FSABar p").html(
+        "Many Flexible Spending Accounts renewed January 1st. It's the perfect time to get new eyeglasses, prescription sunglasses, readers, or contact lenses."
+      );
+      $("#FSABar a.btn-cta")
+        .clone()
+        .text("FIND OUT MORE")
+        .attr(
+          "href",
+          "https://www.framesdirect.com/knowledge-center/do-you-have-flex-spending-dollars"
+        )
+        .attr(
+          "style",
+          "background: #000 !important; color: #fff !important; margin-left: 20px !important;"
+        )
+        .insertAfter("#FSABar a.btn-cta");
+    } else if (checkDate > "240304" && checkDate < "240316") {
+      $("#FSABar h2").html("Your FSA Dollars deadline is approaching!");
+      $("#FSABar p").html(
+        "With many Flexible Spending Accounts expiring on March 15th, it's the perfect time to get new prescription eyeglasses, sunglasses, readers, or contacts lenses."
+      );
+    } else {
+      $("#FSABar h2").html("We Accept FSA &amp; HSA");
+      $("#FSABar p").html(
+        "Did you know that you can use your flexible spending account (FSA) or health savings account (HSA) dollars to purchase prescription eyeglasses, prescription sunglasses, and prescription contact lenses? These funds can be used whether you have vision insurance or not. And if you use your flex spending or HSA debit card, you won't have to submit a reimbursement form to your insurance provider!"
+      );
+    }
+    $(".heroBanner").css("opacity", 1);
+    if (checkDate > "221205" && checkDate < "221209") {
+      $("#home-promo > a").attr("href", "/email/holiday-deals-dp");
+    }
+    $("#TransitionsBar").on("click", function () {
+      window.location.href = "/eyeglasses";
+    });
+    $("#FSABar").on("click", function () {
+      window.location.href = "/collections/fsa-hsa-eligible-eyewear-dp";
+    });
+
+    $("#klarna").on("click", function () {
+      window.location.href = "/knowledge-center/shopping-with-Klarna";
+    });
+    $("#promoBanner").show();
+
+    if (checkDate > "240205" && checkDate < "240215") {
+      $("#cyberSale").removeClass("display-none");
+    }
+    if (checkDate > "240311" && checkDate < "240315") {
+      $("#cyberSale").replaceWith(
+        '<div id="cyberSale" class="d-flex flex-wrap px-0 mb-4 weight-medium order" style="background: #D1D7D0; color: #535752;"><div class="col-12 col-xl-4 text-center d-flex flex-column align-items-center justify-content-center pt-0 py-2 px-0 img-flex"><p class="size-20 my-1 mt-0 mt-xl-0 weight-bold" style="line-height: 1.3;">Spring Break Sale</p><p class="size-40 weight-extra-bold my-xl-0 mt-2 mb-0">20% OFF</p><p class="size-20 my-1 mt-0 mt-xl-0 weight-bold" style="line-height: 1.3;">Frames from Versace,<br>Burberry, & more</p></div><div class="col-12 col-xl-4 text-center d-flex flex-column align-items-center justify-content-center pt-0 py-0 px-0 img-flex"><div class="my-0 my-lg-4 my-xl-0 px-2" style="max-width: 100%; width: 100%;"><img src="https://images.framesdirect.com/image/upload/v1709886560/homePage/FD_promo_Homepage_Spring_Break_Photo.png" alt="Spring Break Savings"></div><a href="/email/spring-break-sun-dp" class="btn-cta" style="background: #cd0000; border: 0; color: #fff !important;">SAVE NOW</a></div><div class="col-12 col-xl-4 d-flex flex-column justify-content-center align-items-center pb-4 pt-0 py-xl-5"><div class="size-20 pt-xl-0">Combinable with</div><p class="size-20 weight-extra-bold my-xl-2 mt-4 mb-0">60% OFF LENSES</p><a class="btn-cta py-2 px-5 transform-uppercase mt-3" href="/email/spring-break-sun-dp" style="background:#000; color: #fff !important; border: 0 !important; min-width: 250px;">SAVE NOW</a></div></div>'
+      );
+    }
+    initHeroSlider();
+    if (fdFncs.custType !== undefined) {
+      if (fdFncs.custType === "preferred" || fdFncs.custType === "vip") {
+        $(".ct_hero").html($(".ct_hero").html().replace("60", "65"));
+      }
+    }
+    if (window.location.href.toLowerCase().includes("upto50")) {
+      $(".home-promo h1").replaceWith(
+        '<h1>Up to 50% Off<div class="hp-promo-sm weight-normal transform-none">80+ Designer Brands</div></h1>'
+      );
+    }
+  });
+
+  function hpHero() {
+    if ($(".heroBanner > a img").length < 1) {
+      $(".heroImg").on("load", function () {
+        $(".heroBanner").css("min-height", "inherit");
+        $(".heroImg").rwdImageMaps();
+      });
+    }
+    $(".text-overlay").css("opacity", 1);
+  }
+  $(window)
+    .on("load", function () {
+      initHeroSlider();
+      $(".heroBanner").css("opacity", "1");
+      $(
+        '<li class="larger-brand"><a href="/dolce-gabbana/brand"><img src="https://images.framesdirect.com/image/upload/h_40,c_fit/v1531418607/logos/dolce-gabbana-logo.svg" width="300" height="29" alt="Dolce &amp; Gabbana Eyewear"></a></li><li><a href="/coach/brand"><img src="/images/customerimages/global/logos/coach-logo.svg" width="300" height="121" alt="Coach"></a></li><li class="larger-brand"><a href="/giorgio-armani/brand"><img src="https://images.framesdirect.com/image/upload/h_40,c_fit/v1626742482/logos/giorgio-armani-logo.svg" width="300" height="29" alt="Giorgio Armani"></a></li><li><a href="/wiley-x/brand"><img src="https://images.framesdirect.com/image/upload/v1707250152/logos/WX_logo_stacked_black.svg" width="110" height="70" alt="Wiley X Eyewear"></a></li><li class="larger-brand"><a href="/michael-kors/brand"><img src="/images/customerimages/global/logos/michael-kors-logo.svg" width="300" height="28" alt="Michael Kors"></a></li><li class="larger-brand"><a href="/tory-burch/brand"><img src="/images/customerimages/global/logos/tory-burch-logo.png" width="200" height="70" alt="Tory Burch"></a></li><li><a href="/hugo-boss/brand"><img src="/images/customerimages/global/logos/hugo-boss-logo.svg" width="300" height="110" alt="Hugo Boss"></a></li><li><a href="/polo/brand"><img src="https://images.framesdirect.com/image/upload/h_33/v1542731790/logos/polo-logo.svg" width="300" height="117" alt="Polo"></a></li><li><a href="/nike/brand"><img src="https://images.framesdirect.com/image/upload/h_33/v1591982175/logos/nike-logo.svg" width="300" height="105" alt="Nike"></a></li>   <li><a href="/shuron/brand"><img src="https://images.framesdirect.com/image/upload/w_103/v1630593191/logos/shuron-logo.png" width="103" height="24" alt="Shuron"></a></li><li><a href="/carrera/brand"><img src="https://images.framesdirect.com/image/upload/h_33/v1591982126/logos/carrera-logo.svg" width="300" height="60" alt="Carrera"></a></li><li><a href="/guess/brand"><img src="https://images.framesdirect.com/image/upload/h_33/v1591982146/logos/guess-logo.svg" width="300" height="53" alt="Guess"></a></li><li class="larger-brand"><a href="/ralph-lauren/brand"><img src="https://images.framesdirect.com/image/upload/h_40/v1531417371/logos/ralph-lauren-logo.svg" width="300" height="22" alt="Ralph Lauren"></a></li>'
+      ).appendTo("#light-slider");
+
+      if ($(window).width() < 1300) {
+        var array = $("#brand-showcase #light-slider li:not(.clone) a");
+
+        for (var i = array.length; i >= 0; i--) {
+          if (i % 2 == 0) {
+            $(array[i - 1])
+              .addClass("mb-auto")
+              .insertAfter(array[i - 2]);
+            $(array[i - 1])
+              .parent("li")
+              .addClass("keep");
+          }
+        }
+        $("#brand-showcase #light-slider li:not(.keep)").remove();
+        $("#brand-showcase #light-slider").addClass("d-flex");
+      }
+      $("#light-slider .lslide")
+        .removeAttr("style")
+        .prop("style", "min-height:1px;");
+      initBannerSlider();
+    })
+    .on("resize orientationchange", function () {
+      if ($(window).width() < 550) {
+        var array = $("#brand-showcase #light-slider li:not(.clone) a");
+
+        for (var i = array.length; i >= 0; i--) {
+          if (i % 2 == 0) {
+            $(array[i - 1])
+              .addClass("mb-auto")
+              .insertAfter(array[i - 2]);
+            $(array[i - 1])
+              .parent("li")
+              .addClass("keep");
+          }
+        }
+        $("#brand-showcase #light-slider li:not(.keep)").remove();
+        $("#brand-showcase #light-slider").addClass("d-flex");
+      }
+      initBannerSlider();
+
+      const ct_printProducts = function (products) {
+        // Shopping bag icon print
+        for (let element in ct_page__products.elements) {
+          let shoppingBag;
+          if ($(window).width() > 1199) {
+            shoppingBag = `<span class="ct_shopping-bag-icon icon-shopping-cart-o ${shoppingBagPosition[
+              ct_page__products.elements[element][0].shop_icon_position.desk
+            ]
+              }"></span>`;
+          }
+
+          // Banner type structure control
+          const dataElementId = `[data-element-id="${element}"]`;
+
+          $(dataElementId).append(shoppingBag);
+
+          const bannerElementIdSelector = $(dataElementId)
+            .children()
+            .hasClass("cm-hero__media-wrapper")
+            ? `${dataElementId} .cm-hero__media-wrapper`
+            : `${dataElementId} > a > div`;
+          if (
+            !$(bannerElementIdSelector).find(".ct_shopping-bag-icon").length
+          ) {
+            $(bannerElementIdSelector).append(shoppingBag);
+          }
+
+          // Desktop and mobile different behaviour
+          if ($(window).width() < 768) {
+            // ctas always clickables
+            $(dataElementId + " a").css("pointerEvents", "auto");
+            // Mobile pin show on scroll
+            const banners = document.querySelectorAll(dataElementId);
+            const observer = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    entry.target.classList.add("ct_show-pin");
+                  }
+                });
+              },
+
+              { threshold: 0.2 }
+            );
+
+            banners.forEach((pin) => {
+              observer.observe(pin);
+            });
+
+            // Desktop pin show on hover
+          } else {
+            $(dataElementId).addClass("ct_show-pin");
+          }
+
+          // Cycle on products inside each banner (we can have multiple products inside a single banner)
+
+          for (let productIndex in ct_page__products.elements[element]) {
+            const ct_productInfo =
+              ct_page__products.elements[element][productIndex];
+
+            // Check if an element/product already exist in the banner
+            if (
+              !$(
+                `${bannerElementIdSelector} a[data-element-id="${element}-PIN${productIndex}"]`
+              ).length
+            ) {
+              const ct_shopPin = ct_printPin(
+                ct_productInfo,
+                element,
+                productIndex,
+                products
+              );
+
+              $(bannerElementIdSelector).append(ct_shopPin);
+            }
+          }
+        }
+      };
+
+      // Pin print and positioning inside banner
+
+      const ct_printPin = (pinInfo, dataElementId, productIndex, products) => {
+        let pinStyleTop;
+        let pinStyleLeft;
+        let panelPosition;
+
+        if ($(window).width() < 768) {
+          pinStyleTop = pinInfo.top.mob;
+          pinStyleLeft = pinInfo.left.mob;
+          panelPosition = infoPanelPosition[pinInfo.panel_position.mob];
+        } else {
+          pinStyleTop = pinInfo.top.desk;
+          pinStyleLeft = pinInfo.left.desk;
+          panelPosition = infoPanelPosition[pinInfo.panel_position.desk];
+        }
+
+        const pinStyle = `top:${pinStyleTop + "%"};left:${pinStyleLeft + "%"};`;
+
+        // Filtering JSON products <-> Products in page
+
+        const productFilter = $(products.products).filter(function (index) {
+          return pinInfo.upc === products.products[index].UPC;
+        });
+
+        if (productFilter[0] === undefined) return;
+
+        const skuType = productFilter[0].skuType;
+
+        let modelImage = productFilter[0].qtImage;
+
+        const offerPrice = parseFloat(productFilter[0].offerPrice);
+
+        const listPrice = parseFloat(productFilter[0].listPrice);
+
+        const modelName = productFilter[0].modelName;
+
+        const pdpURL = productFilter[0].pdpURL;
+
+        const stock = productFilter[0].stock;
+
+        let imageUrl = modelImage;
+
+        const activePreviewDesktop = pinInfo.preview.desk;
+
+        const activePreviewMobile = pinInfo.preview.mob;
+
+        let previewClass;
+
+        if (activePreviewMobile && activePreviewDesktop) {
+          previewClass = "d-block";
+        } else if (activePreviewMobile && !activePreviewDesktop) {
+          previewClass = "d-block d-md-none";
+        } else if (!activePreviewMobile && activePreviewDesktop) {
+          previewClass = "d-none d-md-block";
+        }
+
+        // Currency
+
+        const currency = "$";
+
+        if (skuType === "AFA Accessories" || skuType === "AFA Apparel") {
+          modelImage = productFilter[0].frontImage;
+
+          imageUrl = modelImage
+
+            .replace("CostaDelMar", "CDMAFA")
+
+            .replace("__", "_main_");
+        } else if (skuType === "Accessory") {
+          imageUrl = modelImage
+
+            .replace("CostaDelMar", "CDMACC")
+
+            .replace("__", "_main_");
+        }
+
+        // Has offer price?
+
+        const hasOfferPrice = listPrice !== offerPrice;
+
+        // Is out of stock?
+
+        const isOutOfStock = stock == "0";
+
+        // Render based on different conditions (normal price | offer price | out of stock)
+
+        const printPrice =
+          hasOfferPrice && !isOutOfStock
+            ? `<p class="ct_infoPanel_productPrice">${currency}<del style="font-size: 11px">${listPrice.toFixed(
+              2
+            )}</del> <span>${currency}${offerPrice.toFixed(2)}</span></p>`
+            : `<p class="ct_infoPanel_productPrice">${currency}${listPrice.toFixed(
+              2
+            )}</p>`;
+
+        if (isOutOfStock) {
+          return `
+      
+          <div class="ct_pin-container ct_pin-container-not-clickable" style=${pinStyle}>
+      
+          <div class="ct_pin ct_pin-icon ct_pin-icon-light">
+      
+          </div>
+      
+          <div class="ct_infoPanel ${panelPosition}">
+      
+          <p class="ct_infoPanel_productName">${modelName}</p>
+      
+          <p class="ct_infoPanel_productPrice">Is Out of Stock</p>
+      
+          <img src="${imageUrl}?imwidth=220" alt="${modelName}" class="${previewClass}" />
+      
+          </div>
+      
+          </div>`;
+        } else {
+          return `
+      
+          <div class="ct_pin-container" style=${pinStyle}>
+      
+          <div class="ct_pin ct_pin-icon ct_pin-icon-light">
+      
+          </div>
+      
+          <a data-description="${modelName}" data-element-id="${dataElementId}-PIN${productIndex}" href="${pdpURL}" class="ct_infoPanel ${panelPosition} ct_infoPanel-hidden">
+      
+          <div>
+      
+          <p class="ct_infoPanel_productName">${modelName}</p>
+      
+          ${printPrice}
+      
+          </div>
+      
+          <img src="${imageUrl}?imwidth=220" alt="${modelName}" class="${previewClass}" />
+      
+          </a>
+      
+        </div>`;
+        }
+      };
+
+      const ct_HandleOnClickEvents = () => {
+        const infoPanels = document.querySelectorAll(".ct_infoPanel");
+
+        const pins = document.querySelectorAll(".ct_pin");
+
+        const shoppingBags = document.querySelectorAll(".ct_shopping-bag-icon");
+
+        // Banner behavior -> Click on image with panels closed redirect
+
+        if (banner_behavior !== "custom") {
+          $(document).on("click", function (e) {
+            pins.forEach((el) => {
+              el.classList.add("ct_pin-icon-light");
+              el.classList.remove("ct_pin-icon-dark");
+            });
+
+            infoPanels.forEach((el) => {
+              el.classList.add("ct_infoPanel-hidden");
+              el.classList.remove("ct_infoPanel-visible");
+            });
+
+            for (let element in ct_page__products.elements) {
+              const dataElementId = `[data-element-id="${element}"]`;
+
+              const banners = document.querySelectorAll(dataElementId);
+
+              banners.forEach((el) => {
+                el.classList.remove("ct_preventBannerClick");
+              });
+            }
+          });
+        }
+
+        const ct_PanelOpeningLogic = (e, target) => {
+          const targetElement = target[0];
+
+          let IsVisible = $(targetElement).hasClass("ct_infoPanel-visible")
+            ? true
+            : false;
+
+          if (!IsVisible) {
+            targetElement.classList.remove("ct_infoPanel-hidden");
+            targetElement.classList.add("ct_infoPanel-visible");
+          } else {
+            targetElement.classList.remove("ct_infoPanel-visible");
+            targetElement.classList.add("ct_infoPanel-hidden");
+          }
+
+          e.stopPropagation();
+          e.stopImmediatePropagation();
+        };
+
+        infoPanels.forEach((el) => {
+          $(`.ct_infoPanel`).click((e) => {
+            e.stopPropagation();
+
+            e.stopImmediatePropagation();
+          });
+
+          if ($(window).width() > 767) {
+            $(`.ct_infoPanel`).mouseenter((e) => {
+              const ct_infoPanels = $(e.currentTarget);
+
+              ct_infoPanels[0].classList.add("ct_infoPanel-visible");
+
+              ct_infoPanels[0].classList.remove("ct_infoPanel-hidden");
+
+              const pin = ct_infoPanels[0].previousElementSibling;
+
+              pin.classList.add("ct_pin-icon-dark");
+
+              pin.classList.remove("ct_pin-icon-light");
+            });
+
+            $(`.ct_infoPanel`).mouseleave((e) => {
+              const ct_infoPanels = $(e.currentTarget);
+
+              ct_infoPanels[0].classList.remove("ct_infoPanel-visible");
+
+              ct_infoPanels[0].classList.add("ct_infoPanel-hidden");
+
+              const pin = ct_infoPanels[0].previousElementSibling;
+
+              pin.classList.add("ct_pin-icon-light");
+
+              pin.classList.remove("ct_pin-icon-dark");
+            });
+
+            $(`.ct_show-pin`).mouseleave((e) => {
+              el.classList.remove("ct_infoPanel-visible");
+
+              el.classList.add("ct_infoPanel-hidden");
+
+              const pin = el.previousElementSibling;
+
+              pin.classList.remove("ct_pin-icon-dark");
+
+              pin.classList.add("ct_pin-icon-light");
+            });
+
+            $(`.ct_pin`).mouseenter((e) => {
+              const ct_pin = $(e.currentTarget);
+
+              ct_pin[0].classList.add("ct_pin-icon-dark");
+
+              ct_pin[0].classList.remove("ct_pin-icon-light");
+            });
+
+            $(`.ct_pin`).mouseleave((e) => {
+              const ct_pin = $(e.currentTarget);
+              ct_pin[0].classList.add("ct_pin-icon-light");
+
+              ct_pin[0].classList.remove("ct_pin-icon-dark");
+            });
+          }
+        });
+
+        pins.forEach((pin) => {
+          if ($(window).width() > 767) {
+            $(pin).click((e) => {
+              e.stopPropagation();
+
+              e.stopImmediatePropagation();
+            });
+
+            $(pin).mouseenter((e) => {
+              const ct_infoPanels = $(e.currentTarget)
+                .next()
+                .addClass("ct_infoPanel-visible")
+                .removeClass("ct_infoPanel-hidden");
+            });
+
+            $(pin).mouseleave((e) => {
+              const ct_infoPanels = $(e.currentTarget)
+                .next()
+                .addClass("ct_infoPanel-hidden")
+                .removeClass("ct_infoPanel-visible");
+            });
+          } else if ($(window).width() < 768) {
+            $(pin).click((e) => {
+              let banner = $(e.target).closest("[data-element-id]");
+
+              console.log("banner", banner);
+
+              let IsVisible = $(e.target).hasClass("ct_pin-icon-dark")
+                ? true
+                : false;
+
+              if (IsVisible) {
+                $(e.target)
+                  .addClass("ct_pin-icon-light")
+
+                  .removeClass("ct_pin-icon-dark");
+              } else {
+                $(e.target)
+                  .addClass("ct_pin-icon-dark")
+
+                  .removeClass("ct_pin-icon-light");
+              }
+
+              const ct_infoPanels = $(e.target).next();
+
+              ct_PanelOpeningLogic(e, ct_infoPanels);
+
+              // Banner behavior -> Click on image with panels closed redirect
+
+              if (banner_behavior !== "custom") {
+                const ct_infoPanelsActive = banner[0].querySelectorAll(
+                  ".ct_infoPanel.ct_infoPanel-visible"
+                );
+
+                const ct_infoPanelsHidden = banner[0].querySelectorAll(
+                  ".ct_infoPanel.ct_infoPanel-hidden"
+                );
+
+                if (ct_infoPanelsActive.length > 0) {
+                  $(banner[0]).addClass("ct_preventBannerClick");
+                } else {
+                  $(banner[0]).removeClass("ct_preventBannerClick");
+                }
+              }
+            });
+          }
+        });
+
+        shoppingBags.forEach((shoppingBag) => {
+          // Banner behavior -> Click on image with panels closed redirect
+          let bannerSelector;
+
+          if (banner_behavior !== "custom") {
+            bannerSelector = shoppingBag;
+          } else {
+            bannerSelector = $(shoppingBag).parent();
+          }
+
+          $(bannerSelector).click((e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+
+            let ct_pinContainers;
+
+            let banner;
+
+            if (banner_behavior !== "custom") {
+              ct_pinContainers = $(e.target).parent();
+
+              banner = $(e.target).closest("[data-element-id]");
+            } else {
+              ct_pinContainers = bannerSelector;
+
+              banner = $(e.target).closest("[data-element-id]");
+            }
+
+            const ct_infoPanelsActive = ct_pinContainers[0].querySelectorAll(
+              ".ct_infoPanel.ct_infoPanel-visible"
+            );
+
+            const ct_infoPanelsHidden = ct_pinContainers[0].querySelectorAll(
+              ".ct_infoPanel.ct_infoPanel-hidden"
+            );
+
+            const ct_infoPanels =
+              ct_infoPanelsActive.length === 0 ||
+                ct_infoPanelsHidden.length === 0
+                ? ct_pinContainers[0].querySelectorAll(".ct_infoPanel")
+                : ct_infoPanelsHidden;
+
+            for (let i = 0; i < ct_infoPanels.length; i++) {
+              ct_infoPanels[i].classList.toggle("ct_infoPanel-hidden");
+
+              ct_infoPanels[i].classList.toggle("ct_infoPanel-visible");
+            }
+
+            const ct_pinActive = ct_pinContainers[0].querySelectorAll(
+              ".ct_pin.ct_pin-icon-dark"
+            );
+
+            const ct_pinHidden = ct_pinContainers[0].querySelectorAll(
+              ".ct_pin.ct_pin-icon-light"
+            );
+
+            const ct_pinIcons =
+              ct_pinActive.length === 0 || ct_pinHidden.length === 0
+                ? ct_pinContainers[0].querySelectorAll(".ct_pin")
+                : ct_pinHidden;
+
+            for (let i = 0; i < ct_pinIcons.length; i++) {
+              ct_pinIcons[i].classList.toggle("ct_pin-icon-light");
+
+              ct_pinIcons[i].classList.toggle("ct_pin-icon-dark");
+            }
+          });
+        });
+      };
+    });
+  // setTimeout(() => {
+  //   (function () {
+  //     function checkElements() {
+  //       const heroSlider = document.getElementById('hero-slider');
+  //       const prevArrow = document.querySelector('.lSPrev');
+  //       const nextArrow = document.querySelector('.lSNext');
+
+  //       if (!heroSlider || !prevArrow || !nextArrow) {
+  //         setTimeout(checkElements, 100);
+  //         return;
+  //       }
+
+  //       function updateArrowVisibility() {
+  //         const slides = document.querySelectorAll('#hero-slider .lslide');
+  //         const activeSlide = document.querySelector('#hero-slider .lslide.active');
+
+  //         if (!slides.length || !activeSlide) return;
+
+  //         prevArrow.style.display = slides[0] === activeSlide ? 'none' : 'flex';
+  //         nextArrow.style.display = slides[slides.length - 1] === activeSlide ? 'none' : 'flex';
+  //       }
+
+  //       updateArrowVisibility();
+
+  //       const observer = new MutationObserver(updateArrowVisibility);
+  //       observer.observe(heroSlider, {
+  //         attributes: true,
+  //         childList: true,
+  //         subtree: true
+  //       });
+
+  //       heroSlider.addEventListener('transitionend', updateArrowVisibility);
+  //     }
+
+  //     checkElements();
+  //   })();
+  // }, 800);
+
+  /* UTILS */
+  function isTestingParameter(date) {
+    const url = window.location.href;
+    return url.includes(`?test=true&date=${date}`);
+  }
+  /* END UTILS*/
+  const track = document.getElementById('carouselTrackcard');
+  const nextBtn = document.getElementById('nextBtn');
+  const prevBtn = document.getElementById('prevBtn');
+  const progressBar = document.getElementById('progressBar');
+
+  const cardWidth = 275 + 20;
+  let scrollAmount = 0;
+  let scrollIndex = -1;
+  const totalCards = track.children.length;
+
+
+  const maxScrollAmount = track.scrollWidth - track.clientWidth;
+
+
+  prevBtn.style.display = 'none';
+
+  function updateProgressBar() {
+    const percent = (scrollAmount / maxScrollAmount) * 75;
+    progressBar.style.width = `${25 + percent}%`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    if (scrollAmount + cardWidth <= maxScrollAmount) {
+      scrollAmount += cardWidth;
+      scrollIndex++;
+      track.style.transform = `translateX(-${scrollAmount}px)`;
+    } else {
+
+      scrollAmount = maxScrollAmount;
+      scrollIndex = totalCards - 1;
+      track.style.transform = `translateX(-${scrollAmount}px)`;
+    }
+
+
+    prevBtn.style.display = scrollAmount > 0 ? 'block' : 'none';
+    nextBtn.style.display = scrollAmount >= maxScrollAmount ? 'none' : 'block';
+    updateProgressBar();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (scrollAmount - cardWidth >= 0) {
+      scrollAmount -= cardWidth;
+      scrollIndex--;
+      track.style.transform = `translateX(-${scrollAmount}px)`;
+    } else {
+      scrollAmount = 0;
+      scrollIndex = 0;
+      track.style.transform = `translateX(0)`;
+    }
+
+
+    prevBtn.style.display = scrollAmount > 0 ? 'block' : 'none';
+    nextBtn.style.display = scrollAmount >= maxScrollAmount ? 'none' : 'block';
+    updateProgressBar();
+  });
+
+
+  window.addEventListener('resize', () => {
+
+    const newMaxScroll = track.scrollWidth - track.clientWidth;
+    scrollAmount = Math.min(scrollAmount, newMaxScroll);
+    track.style.transform = `translateX(-${scrollAmount}px)`;
+    updateProgressBar();
+
+    prevBtn.style.display = scrollAmount > 0 ? 'block' : 'none';
+    nextBtn.style.display = scrollAmount >= newMaxScroll ? 'none' : 'block';
+  });
+  const carouselImages = [
+    {
+      src: "https://assets2.glasses.com/prod-onecp-record-files/pieyewear/8b7ecf7c-4f7e-494f-b2a4-b3620165956f/0VE3342__GB1__P21__shad__fr.png?impolicy=GL_parameters_transp_clone1440",
+      alt: "VERSACE - Front View"
+    },
+    {
+      src: "https://media.framesdirect.com/product_elarge_images/versace-VE3342-black-GB1.jpg",
+      alt: "VERSACE - Side View"
+    },
+    {
+      src: "https://assets2.glasses.com/prod-onecp-record-files/pieyewear/9ae7519e-c994-441f-9e60-b36201659806/0VE3342__GB1__P21__shad__lt.png?impolicy=GL_parameters_transp_clone1440",
+      alt: "VERSACE - Detail View"
+    }
+  ];
+
+  let currentImageIndex = 0;
+  const carouselImage = document.getElementById('carouselImage');
+  const prevBtnLens = document.getElementById('prevBtnLens');
+  const nextBtnLens = document.getElementById('nextBtnLens');
+  let autoAdvanceInterval;
+
+  function goToImage(index) {
+    if (index >= 0 && index < carouselImages.length) {
+      currentImageIndex = index;
+      carouselImage.src = carouselImages[currentImageIndex].src;
+      carouselImage.alt = carouselImages[currentImageIndex].alt;
+
+      // Reset the auto-advance timer whenever manual navigation occurs
+      resetAutoAdvance();
+    }
+  }
+
+  function nextImage() {
+    const nextIndex = (currentImageIndex + 1) % carouselImages.length;
+    goToImage(nextIndex);
+  }
+
+  function prevImage() {
+    const prevIndex = (currentImageIndex - 1 + carouselImages.length) % carouselImages.length;
+    goToImage(prevIndex);
+  }
+
+  function startAutoAdvance() {
+    autoAdvanceInterval = setInterval(() => {
+      nextImage();
+    }, 5000); // 3 seconds
+  }
+
+  function resetAutoAdvance() {
+    clearInterval(autoAdvanceInterval);
+    startAutoAdvance();
+  }
+
+  // Initialize the carousel
+  carouselImage.src = carouselImages[0].src;
+  carouselImage.alt = carouselImages[0].alt;
+  startAutoAdvance();
+
+  // Event listeners for manual navigation
+  nextBtnLens.addEventListener('click', nextImage);
+  prevBtnLens.addEventListener('click', prevImage);
+
+  // Pause auto-advance when hovering over carousel
+  carouselImage.parentElement.addEventListener('mouseenter', () => {
+    clearInterval(autoAdvanceInterval);
+  });
+
+  carouselImage.parentElement.addEventListener('mouseleave', () => {
+    startAutoAdvance();
+  });
+
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const container = document.querySelector('.info-boxes-container');
+    const progressBar = document.querySelector('.slider-progress-bar');
+
+    if (container && progressBar) {
+      container.addEventListener('scroll', function () {
+
+        const scrollWidth = container.scrollWidth - container.clientWidth;
+        const scrollPosition = container.scrollLeft;
+        const progress = (scrollPosition / scrollWidth) * 75;
+        progressBar.style.width = `${25 + progress}%`;
+      });
+    }
+  });
+
+  const toggleBrands = (function () {
+    function toggle(button) {
+      const clickedCard = button.closest('.eyewear-card');
+      const clickedBottom = clickedCard.querySelector('.card-bottom');
+
+      const isAlreadyOpen = clickedBottom.style.display === 'block';
+
+      // Close all other cards
+      document.querySelectorAll('.eyewear-card').forEach(card => {
+        const bottom = card.querySelector('.card-bottom');
+        const btn = card.querySelector('.see-brands-btn');
+        if (bottom) bottom.style.display = 'none';
+        if (btn) btn.textContent = 'See brands';
+        card.style.margin = "0px";
+        card.style.maxHeight = "144px";
+        card.classList.remove("active");
+      });
+
+      // Toggle clicked card
+      if (!isAlreadyOpen) {
+        clickedBottom.style.display = 'block';
+        button.textContent = 'Hide';
+        clickedCard.style.margin = "0px 0px 40px";
+        clickedCard.style.maxHeight = "315px";
+        clickedCard.classList.add("active");
+
+      }
+    }
+
+    // Auto-expand first card on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      const firstCard = document.querySelector('.eyewear-card');
+      if (firstCard) {
+        const bottom = firstCard.querySelector('.card-bottom');
+        const btn = firstCard.querySelector('.see-brands-btn');
+        if (bottom) bottom.style.display = 'block';
+        if (btn) btn.textContent = 'Hide';
+        firstCard.style.margin = "0px 0px 40px";
+        firstCard.style.maxHeight = "315px";
+        firstCard.classList.add("active");
+      }
+    });
+
+    return toggle;
+  })();
+  document.addEventListener('DOMContentLoaded', function () {
+    const slider = document.getElementById('perfectPairSlider');
+    const progressBar = document.getElementById('perfectPairProgressBar');
+
+    if (!slider || !progressBar) return;
+
+    function updatePerfectPairProgress() {
+      const maxScroll = slider.scrollWidth - slider.clientWidth;
+      const progress = maxScroll > 0 ? (slider.scrollLeft / maxScroll) * 100 : 0;
+      progressBar.style.width = `${progress}%`;
+    }
+
+    slider.addEventListener('scroll', updatePerfectPairProgress, { passive: true });
+    window.addEventListener('resize', updatePerfectPairProgress);
+
+    updatePerfectPairProgress();
+  });
+  document.addEventListener("DOMContentLoaded", function () {
+    const container = document.getElementById("carouselContainer");
+    const track = document.getElementById("carouselTrackcard");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const progressBar = document.getElementById("progressBar");
+
+    if (!container || !track || !prevBtn || !nextBtn) return;
+
+    let currentX = 0;
+
+    function getStep() {
+      const firstCard = track.querySelector(".cardStyle");
+      const gap = parseFloat(getComputedStyle(track).gap) || 0;
+      return firstCard.getBoundingClientRect().width + gap;
+    }
+
+    function getMaxX() {
+      return Math.max(0, track.scrollWidth - container.clientWidth);
+    }
+
+    function updateCarousel() {
+      const maxX = getMaxX();
+
+      currentX = Math.max(0, Math.min(currentX, maxX));
+
+      track.style.transform = `translateX(-${currentX}px)`;
+
+      if (progressBar) {
+        const totalWidth = track.scrollWidth;
+        const visibleWidth = container.clientWidth;
+
+        const percentage = totalWidth > 0
+          ? Math.min(100, ((currentX + visibleWidth) / totalWidth) * 100)
+          : 100;
+
+        progressBar.style.width = `${percentage}%`;
+      }
+    }
+    nextBtn.addEventListener("click", function () {
+      currentX = Math.min(currentX + getStep(), getMaxX());
+      updateCarousel();
+    });
+
+    prevBtn.addEventListener("click", function () {
+      currentX = Math.max(currentX - getStep(), 0);
+      updateCarousel();
+    });
+
+    window.addEventListener("resize", updateCarousel);
+
+    updateCarousel();
+  });
+
+
+  // STICKY HEADER
+  function initHeroOffers() {
+    const offers = document.getElementById("fdHeroOffers");
+    const hero = offers && offers.closest(".ct_banner.ct_hero");
+
+    if (!offers || !hero || offers.dataset.initialized === "true") return;
+    offers.dataset.initialized = "true";
+
+    let inactivityTimer;
+    let isShown = false;
+    let ticking = false;
+
+    function headerBottom() {
+      const stack = document.elementsFromPoint(window.innerWidth / 2, 2);
+
+      for (const element of stack) {
+        let el = element;
+
+        while (el && el !== document.body && el !== document.documentElement) {
+          // Ignore the offers and their children.
+          if (el === offers || offers.contains(el)) break;
+
+          const style = getComputedStyle(el);
+
+          if (style.position === "fixed" || style.position === "sticky") {
+            const rect = el.getBoundingClientRect();
+
+            if (rect.height <= 160 && rect.bottom > 0) {
+              return rect.bottom;
+            }
+
+            break;
+          }
+
+          el = el.parentElement;
+        }
+      }
+
+      return 0;
+    }
+
+    function updatePosition() {
+      ticking = false;
+
+      const headerHeight = Math.round(headerBottom());
+      const heroRect = hero.getBoundingClientRect();
+
+      // Në fillim të faqes: gjithmonë i ngjitur nën header
+      if (window.scrollY <= 0 || heroRect.top >= headerHeight) {
+        offers.style.setProperty("top", Math.max(heroRect.top, headerHeight) + "px", "important");
+        offers.classList.remove("fd-out");
+        return;
+      }
+
+      const shift = Math.min(0, Math.round(heroRect.bottom - headerHeight - offers.offsetHeight));
+      offers.style.setProperty("top", (headerHeight + shift) + "px", "important");
+
+      // Fshihe vetëm kur hero-ja ka dalë krejt nga ekrani
+      offers.classList.toggle("fd-out", heroRect.bottom <= headerHeight);
+    }
+
+    function showOffers() {
+      if (isShown) return;
+
+      isShown = true;
+      clearTimeout(inactivityTimer);
+
+      offers.classList.add("fd-show");
+      offers.setAttribute("aria-hidden", "false");
+
+      updatePosition();
+    }
+
+    function resetTimer() {
+      clearTimeout(inactivityTimer);
+      if (isShown) return;
+
+      inactivityTimer = setTimeout(showOffers, 10000);
+    }
+
+    function schedulePositionUpdate() {
+      if (ticking) return;
+
+      ticking = true;
+      requestAnimationFrame(updatePosition);
+    }
+
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 40) {
+        showOffers();
+      } else {
+        resetTimer();
+      }
+
+      schedulePositionUpdate();
+    }, { passive: true });
+
+    window.addEventListener("resize", schedulePositionUpdate);
+
+    ["mousemove", "keydown", "touchstart", "click"].forEach(function (eventName) {
+      window.addEventListener(eventName, resetTimer, { passive: true });
+    });
+
+    // Rotate offers on mobile.
+    const links = offers.querySelectorAll(".fd-hero-offer");
+
+    if (links.length > 1) {
+      const offerData = Array.from(links, function (link) {
+        return {
+          href: link.getAttribute("href"),
+          html: link.innerHTML
+        };
+      });
+
+      let currentOffer = 0;
+
+      setInterval(function () {
+        if (!isShown || window.innerWidth > 767) return;
+
+        currentOffer = (currentOffer + 1) % offerData.length;
+
+        links[0].setAttribute("href", offerData[currentOffer].href);
+        links[0].innerHTML = offerData[currentOffer].html;
+      }, 10000);
+    }
+
+    updatePosition();
+
+    if (window.scrollY > 40) {
+      showOffers();
+    } else {
+      resetTimer();
+    }
+  }
+  /*countdown*/
+  function fdCountdown(endDate) {
+    function pad(n) { return n < 10 ? '0' + n : n; }
+
+    var timer;
+
+    function tick() {
+      var els = document.querySelectorAll('.fd-countdown');
+      var diff = endDate - new Date();
+
+      // hide if more than 24h away (before Oct 28) or already ended
+      if (diff <= 0 || diff > 86400000) {
+        els.forEach(function (el) { el.style.display = 'none'; });
+        if (diff <= 0) clearInterval(timer);
+        return;
+      }
+
+      var h = Math.floor(diff / 3600000);
+      var m = Math.floor((diff % 3600000) / 60000);
+      var s = Math.floor((diff % 60000) / 1000);
+      var txt = pad(h) + ':' + pad(m) + ':' + pad(s);
+
+      els.forEach(function (el) {
+        el.style.display = 'block';
+        el.textContent = txt;
+      });
+    }
+
+    tick();
+    timer = setInterval(tick, 1000);
+  }
+
+  // Ends Oct 29, 00:00 -> visible Oct 28 00:00 to Oct 29 00:00
+  fdCountdown(new Date('2026-10-30T00:00:00-04:00'));
+  /*sitkcy banner*/
+
+  (function () {
+    function start() {
+      if (typeof initHeroOffers === "function") initHeroOffers();
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", start);
+    } else {
+      start();
+    }
+  })();
+</script>
